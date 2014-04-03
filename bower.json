@@ -1,0 +1,9 @@
+{
+  "name": "alloy",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "selectivizr": "latest"
+  },
+  "devDependencies": {}
+}
