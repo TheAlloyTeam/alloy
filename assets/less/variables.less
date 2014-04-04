@@ -6,7 +6,7 @@
 // DEBUG MODE
 // --------------------------------------------------
 
-@DEBUG:					false;
+@DEBUG:							false;
 
 // COLOR 
 // --------------------------------------------------
@@ -42,11 +42,11 @@
 // BASE
 // --------------------------------------------------
 
-@BASE-COLOR-Background: 		@COLOR-Gray-Lightest;
+@BASE-COLOR-Body: 				@COLOR-Gray-Lightest;
 
 @LINK-COLOR-Link: 				#1e0fbe;
 @LINK-COLOR-Visited:			#609;
-@LINK-COLOR-Hover:				@LINK-COLOR-Link;
+@LINK-COLOR-Hover:				darken(@LINK-COLOR-Link, 15%);
 @LINK-COLOR-Focus:				@LINK-COLOR-Link;
 @LINK-COLOR-Active:				@LINK-COLOR-Link;
 
@@ -60,7 +60,7 @@
 @TYPE-FontFamily-serif:         Georgia, "Times New Roman", Times, serif;  
 @TYPE-FontFamily-monospace:     Monaco, Consolas, "Courier New", monospace;
 
-@TYPE-FontFamily:				@TYPE-FontFamily-sans-serif
+@TYPE-FontFamily:				@TYPE-FontFamily-sans-serif;
 @TYPE-FontFamily-Heading:       @TYPE-FontFamily-serif;
 
 @TYPE-COLOR-Body:               @COLOR-Gray-Darkest;
