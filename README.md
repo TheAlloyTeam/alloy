@@ -12,3 +12,17 @@ A boilerplate and pattern library for all! Using HTML5 and LESS for building bot
 * **Grunt** - the system will use grunt to do a lot of the legwork and compilation of your static site.
 
 So much to do and what a fun journey it will be :)
+
+## Reference
+
+This whole project is based on many boilerplates and helpers from around the web. I will try to include a full list here for reference.
+
+https://github.com/necolas/normalize.css
+https://github.com/mattbegent/staddle
+https://github.com/twbs/bootstrap
+
+## Tools
+
+http://gruntjs.com/
+http://handlebarsjs.com/
+http://lesscss.org/
