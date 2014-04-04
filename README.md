@@ -6,8 +6,8 @@ A boilerplate and pattern library for all! Using HTML5 and LESS for building bot
 
 ## Upcoming features
 
-* **Grids** - more grids than you can shave a stick at, with systems that work for varying viewport siszes.
-* **LESS** - base styles, mixins and patterns using the atom, molecule & organism theory.
+* **Grids** - more grids than you can shake a stick at, with systems that work for varying viewport sizes.
+* **LESS** - base styles, mixins and patterns using atomic theory.
 * **Templates** - templates & patterns constructed with handlebars to help you start quickly. 
 * **Grunt** - the system will use grunt to do a lot of the legwork and compilation of your static site.
 
@@ -15,7 +15,7 @@ So much to do and what a fun journey it will be :)
 
 ## Reference
 
-This whole project is based on many boilerplates and helpers from around the web. I will try to include a full list here for reference.
+This whole project is based and influenced by many boilerplates and helpers from around the web. I will try to include a full list here for reference.
 
 https://github.com/necolas/normalize.css
 https://github.com/mattbegent/staddle
@@ -26,3 +26,7 @@ https://github.com/twbs/bootstrap
 http://gruntjs.com/
 http://handlebarsjs.com/
 http://lesscss.org/
+
+## Theories
+
+http://bradfrostweb.com/blog/post/atomic-web-design/
