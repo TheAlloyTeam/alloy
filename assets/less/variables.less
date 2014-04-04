@@ -2,3 +2,89 @@
 //  ALLOY - VARIABLES
 //  File: assets/less/variables.less
 */
+
+// DEBUG MODE
+// --------------------------------------------------
+
+@DEBUG:					false;
+
+// COLOR 
+// --------------------------------------------------
+
+@COLOR-Black:					#000000;
+@COLOR-White:					#FFFFFF;
+
+@COLOR-Gray:					darken(@COLOR-White, 50%);
+@COLOR-Gray-Darkest:			darken(@COLOR-White, 95%);
+@COLOR-Gray-Darker:				darken(@COLOR-White, 80%);
+@COLOR-Gray-Dark:				darken(@COLOR-White, 65%);
+@COLOR-Gray-Light:				darken(@COLOR-White, 35%);
+@COLOR-Gray-Lighter:			darken(@COLOR-White, 20%);
+@COLOR-Gray-Lightest:			darken(@COLOR-White, 5%);
+
+@COLOR-Success:					#468847;
+@COLOR-Success-Dark:			#DFF0D8;
+@COLOR-Success-Light:			#DFF0D8;
+
+@COLOR-Info:					#3A87AD;
+@COLOR-Info-Dark:				#8CABBB;
+@COLOR-Info-Light:				#D9EDF7;
+
+@COLOR-Warning:					#EC9C28;
+@COLOR-Warning-Dark:			#B67211;
+@COLOR-Warning-Light:			#B48138;
+
+@COLOR-Danger:					#B94A48;
+@COLOR-Danger-Dark:				#C78E8D;
+@COLOR-Danger-Light:			#F2DEDE;
+
+
+// BASE
+// --------------------------------------------------
+
+@BASE-COLOR-Background: @COLOR-Gray-Lightest;
+
+@LINK-COLOR-Link: 
+@LINK-COLOR-Visited:
+@LINK-COLOR-Hover:
+@LINK-COLOR-Focus:
+@LINK-COLOR-Active:
+
+
+// TYPEOGRAPHY
+// --------------------------------------------------
+
+@TYPE-FontSize:                 16;
+@TYPE-LineHeight:               24;
+@TYPE-FontFamily-sans-serif:   'Open Sans', Arial, Helvetica, sans-serif; 
+@TYPE-FontFamily-serif:         Georgia, "Times New Roman", Times, serif;  
+@TYPE-FontFamily-monospace:     Monaco, Consolas, "Courier New", monospace;
+
+@TYPE-FontFamily:				@TYPE-FontFamily-sans-serif
+@TYPE-FontFamily-Heading:       @TYPE-FontFamily-serif;
+
+@TYPE-COLOR-Body:               @COLOR-Gray-Darkest;
+@TYPE-COLOR-Quote:              @COLOR-Gray;
+@TYPE-COLOR-Heading:            @COLOR-Gray-Darker;
+@TYPE-COLOR-Footnote:           @COLOR-Gray-Light;
+
+
+// GRID
+// --------------------------------------------------
+
+@GRID-Cols-MAX:              	16;
+@GRID-GutterWidth:        		10;
+@GRID-ColWidth:              	60;
+@GRID-GutterWidth:           	21;
+@GRID-MaxWidth:              	(@GRID-Cols-MAX * @GRID-ColWidth) + ((@GRID-Cols-MAX - 1) * @GRID-GutterWidth);
+
+// MEDIA QUERIES
+// ---------------------------------------------------- 
+
+@MQ-Smallest:                 	((339/@TYPE-FontSize)*1em);  // Phone Portrait
+@MQ-Smaller:                  	((340/@TYPE-FontSize)*1em);  // Phone Landscape
+@MQ-Small:                    	((600/@TYPE-FontSize)*1em);  // Tablet Portrait
+@MQ-Medium:                   	((800/@TYPE-FontSize)*1em);  // Min Tab Landscape
+@MQ-Large:                    	((980/@TYPE-FontSize)*1em);  // Average PC Monitor
+@MQ-Larger:                   	((1260/@TYPE-FontSize)*1em); // HD TV 
+@MQ-Largest:                  	((1900/@TYPE-FontSize)*1em); // Full HD TV
