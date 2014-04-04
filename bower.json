@@ -5,7 +5,7 @@
 	    "type": "git",
 	    "url": "git://github.com/gfinbow/alloy.git"
 	},	
-  	"private": true,
+  	"private": false,
   	"directory": "alloy",
   	"dependencies": {
 	    "jquery": "~1.11.0",
