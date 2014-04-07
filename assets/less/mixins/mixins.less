@@ -2,3 +2,48 @@
 //  ALLOY - Mixins
 //  File: assets/less/mixins/mixins.less
 */
+
+
+// Clearfix as a mixin
+.clearfix () {
+    &:before, &:after { 
+        content: ""; 
+        display: table; 
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// COLUMN CALCULATIONS
+// ----------------------------------------------------
+
+.colwidth (@numberOfCols: 1, @numberOfTotalCols: @GRID-Cols){
+    
+    // Single Col
+    @singleColPx: (@GRID-MaxWidth - 1)/@numberOfTotalCols;
+    @singleColPercentage: 100%*(@singleColPx/@GRID-MaxWidth);
+
+    // This col offset
+    @thisColWidth: @singleColPercentage*@numberOfCols;
+
+    // All together
+    width: @thisColWidth;
+}
+
+.gutterPadding () {
+    // Gutters 
+    @horizontalPadding: ((@GRID-GutterWidth)/2)+0px; 
+    @verticalPadding: ((@TYPE-LineHeight)/2)+0px; 
+    padding: @verticalPadding ceil(@horizontalPadding) @verticalPadding floor(@horizontalPadding);
+}
+
+.colPaddingHori (){
+	@verticalPadding: ((@TYPE-LineHeight)/2)+0px;
+    padding: @verticalPadding 0;
+}
+
+.colPaddingVert (){
+	@horizontalPadding: ((@GRID-GutterWidth)/2)+0px; 
+	padding:0 @horizontalPadding;
+}
