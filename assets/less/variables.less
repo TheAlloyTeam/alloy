@@ -50,11 +50,26 @@
 @LINK-COLOR-Focus:				@LINK-COLOR-Link;
 @LINK-COLOR-Active:				@LINK-COLOR-Link;
 
+// SELECT
+// ---------------------------------------------------- 
+
+@SELECT-COLOR-Background        #FF00FF; // PINK!!
+@SELECT-COLOR-Text:             #FFF;
 
 // TYPEOGRAPHY
 // --------------------------------------------------
 
-@TYPE-FontSize:                 16;
+@TYPE-SIZE-Omega:               60;
+@TYPE-SIZE-Alpha:               48;
+@TYPE-SIZE-Beta:                36;
+@TYPE-SIZE-Gamma:               24;
+@TYPE-SIZE-Delta:               21;
+@TYPE-SIZE-Epsilon:             18;
+@TYPE-SIZE-Zeta:                16;
+@TYPE-SIZE-Eta:                 14;
+@TYPE-SIZE-Iota:                12;
+
+@TYPE-FontSize:                 @TYPE-SIZE-Zeta;
 @TYPE-LineHeight:               24;
 @TYPE-FontFamily-sans-serif:   'Open Sans', Arial, Helvetica, sans-serif; 
 @TYPE-FontFamily-serif:         Georgia, "Times New Roman", Times, serif;  
@@ -82,10 +97,48 @@
 // MEDIA QUERIES
 // ---------------------------------------------------- 
 
-@MQ-Smallest:                 	((339/@TYPE-FontSize)*1em);  // Phone Portrait
-@MQ-Smaller:                  	((340/@TYPE-FontSize)*1em);  // Phone Landscape
+@MQ-Smallest:                 	((300/@TYPE-FontSize)*1em);  // Phone Portrait
+@MQ-Smaller:                  	(340/@TYPE-FontSize)*1em);  // Phone Landscape
 @MQ-Small:                    	((600/@TYPE-FontSize)*1em);  // Tablet Portrait
 @MQ-Medium:                   	((800/@TYPE-FontSize)*1em);  // Min Tab Landscape
 @MQ-Large:                    	((980/@TYPE-FontSize)*1em);  // Average PC Monitor
 @MQ-Larger:                   	((1260/@TYPE-FontSize)*1em); // HD TV 
 @MQ-Largest:                  	((1900/@TYPE-FontSize)*1em); // Full HD TV
+
+@MQ-Small-Min:                  (@MQ-Smaller + 1);
+@MQ-Medium-Min:                 (@MQ-Small + 1);  
+@MQ-Large-Min:                  (@MQ-Medium + 1);
+@MQ-Larger-Min:                 (@MQ-Large + 1);
+@MQ-Largest-Min:                (@MQ-Larger + 1);
+
+// PATHS
+// ---------------------------------------------------- 
+
+@PATH-Assets:                   "../";
+@PATH-Images:                   "../images/";
+@PATH-Fonts:                    "../fonts/";
+
+
+// ALLOY MODULES
+// Change to false if not using
+// =========================================================================//
+
+@ALLOY-Alert:                  true;
+@ALLOY-Box:                    true;
+@ALLOY-Breadcrumbs:            true;
+@ALLOY-Browsehappy:            true;
+@ALLOY-Button:                 true;
+@ALLOY-Column:                 true;
+@ALLOY-Form:                   true;
+@ALLOY-Icon:                   true;
+@ALLOY-Image:                  true;
+@ALLOY-Map:                    true;
+@ALLOY-Media:                  true;
+@ALLOY-Navigation:             true;
+@ALLOY-Overlay:                true;
+@ALLOY-Pagination:             true;
+@ALLOY-Print:                  true;
+@ALLOY-Tabs:                   true;
+@ALLOY-Tooltip:                true;
+@ALLOY-Typography:             true;
+@ALLOY-Well:                   true;
