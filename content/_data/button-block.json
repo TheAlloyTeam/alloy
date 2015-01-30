@@ -1,0 +1,15 @@
+{
+	"item": {
+    	"modifier": "",
+		"size": "",
+		"disabled": "",
+		"target": "",
+		"block": true
+	},
+    "content": {
+		"text": "Full Width Block Button",
+		"title": "Block Button",
+		"url": "#linkurl1",
+		"icon": "icon-1"
+    }
+}

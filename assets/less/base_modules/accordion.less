@@ -1,0 +1,54 @@
+.accordion-styles() when not (@MODULE-Accordion) { }
+.accordion-styles() when (@MODULE-Accordion) {
+
+/* =========================================================================
+// ACCORDION
+// =======================================================================*/
+
+// BASE
+// ----------------------------------------------------
+.accordian{
+	width: 30em;
+}
+
+/* Accordian headers */
+.accordion__tab{
+	background: #eb5037;
+	display: block;
+	margin: 0;
+}
+
+.accordion__title{
+  color: #ffffff;  
+	padding: 0.2em;
+}
+
+/* collapsing-section */
+.accordion__content{
+    //display: none;
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+// END
+// -----------------------------------------------------
+} .accordion-styles();

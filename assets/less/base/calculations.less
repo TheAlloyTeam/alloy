@@ -1,0 +1,164 @@
+// ==========================================================================
+// CALCULATIONS
+// =========================================================================//
+
+// FONT SIZE
+// ----------------------------------------------------
+
+._font-size (@px-size) {
+    @rem-size: (@px-size / @TYPE-FontSize);
+    font-size: (@px-size * 1px);
+    font-size: (@rem-size * 1rem);
+}
+
+._font-size (@px-size, @line-height) {
+    @rem-font-size: (@px-size / @TYPE-FontSize);
+    @rem-line-height: (@line-height / @TYPE-FontSize);
+    font-size: (@px-size * 1px);
+    font-size: (@rem-font-size * 1rem);
+    line-height: (@line-height * 1px);
+    line-height: (@rem-line-height * 1rem);
+}
+
+._font-size-heading (@font-size) {
+    ._font-size (@font-size);
+    ._line-height (@font-size);
+}
+
+// LINE HEIGHT
+// ----------------------------------------------------
+
+._line-height (@font-size) when (@font-size >= @TYPE-LineHeight) {
+    line-height: ((@TYPE-LineHeight * 2)/@font-size);
+}
+
+._line-height (@font-size) when (@font-size < @TYPE-LineHeight) {
+    line-height: (@TYPE-LineHeight/@font-size);
+}
+
+// PADDINGS/MARGINS
+// ----------------------------------------------------
+
+._height (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    height: (@px-size * 1px);
+    height: (@rem-size * 1rem);
+}
+
+._min-height (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    min-height: (@px-size * 1px);
+    min-height: (@rem-size * 1rem);
+}
+
+._margin (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    margin: (@px-size * 1px);
+    margin: (@rem-size * 1rem);
+}
+
+._margin (@top, @left) {
+    @top-rem: @top / @TYPE-FontSize;
+    @left-rem: @left / @TYPE-FontSize;
+    margin: (@top * 1px) (@left * 1px) ;
+    margin: (@top-rem * 1rem) (@left-rem * 1rem);
+}
+
+._margin (@top, @right, @bottom, @left) {
+    @top-rem: @top / @TYPE-FontSize;
+    @right-rem: @right / @TYPE-FontSize;
+    @bottom-rem: @bottom / @TYPE-FontSize;
+    @left-rem: @left / @TYPE-FontSize;
+    margin: (@top * 1px) (@right * 1px)  (@bottom * 1px)  (@left * 1px) ;
+    margin: (@top-rem * 1rem) (@right-rem * 1rem) (@bottom-rem * 1rem) (@left-rem * 1rem);
+}
+
+._margin-top (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    margin-top: (@px-size * 1px);
+    margin-top: (@rem-size * 1rem);
+}
+
+._margin-right (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    margin-right: (@px-size * 1px);
+    margin-right: (@rem-size * 1rem);
+}
+
+._margin-bottom (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    margin-bottom: (@px-size * 1px);
+    margin-bottom: (@rem-size * 1rem);
+}
+
+._margin-left (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    margin-left: (@px-size * 1px);
+    margin-left: (@rem-size * 1rem);
+}
+
+._padding (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    padding: (@px-size * 1px);
+    padding: (@rem-size * 1rem);
+}
+
+._padding (@top,  @left) {
+    @top-rem: @top / @TYPE-FontSize;
+    @left-rem: @left / @TYPE-FontSize;
+    padding: (@top * 1px) (@left * 1px) ;
+    padding: (@top-rem * 1rem) (@left-rem * 1rem);
+}
+
+._padding (@top, @right, @bottom, @left) {
+    @top-rem: @top / @TYPE-FontSize;
+    @right-rem: @right / @TYPE-FontSize;
+    @bottom-rem: @bottom / @TYPE-FontSize;
+    @left-rem: @left / @TYPE-FontSize;
+    padding: (@top * 1px) (@right * 1px)  (@bottom * 1px)  (@left * 1px) ;
+    padding: (@top-rem * 1rem) (@right-rem * 1rem) (@bottom-rem * 1rem) (@left-rem * 1rem);
+}
+
+._padding-top (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    padding-top: (@px-size * 1px);
+    padding-top: (@rem-size * 1rem);
+}
+
+._padding-right (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    padding-right: (@px-size * 1px);
+    padding-right: (@rem-size * 1rem);
+}
+
+._padding-bottom (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    padding-bottom: (@px-size * 1px);
+    padding-bottom: (@rem-size * 1rem);
+}
+
+._padding-left (@px-size){
+    @rem-size: @px-size / @TYPE-FontSize;
+    padding-left: (@px-size * 1px);
+    padding-left: (@rem-size * 1rem);
+}
+
+// PERCENTAGES
+// ----------------------------------------------------
+
+._percentage (@first, @second) {
+    width: ((@first/@second) * 100%);
+}
+
+// SIZE
+// ----------------------------------------------------
+
+._size (@size) {
+    width: @size;
+    height: @size;
+}
+
+._size (@width, @height) {
+    width: @width;
+    height: @height;
+}

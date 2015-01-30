@@ -1,0 +1,67 @@
+.rte-styles() when not (@MODULE-RTE) { }
+.rte-styles() when (@MODULE-RTE) {
+
+/* ==========================================================================
+// RTE
+// =========================================================================*/
+
+.rte {
+    .image--left {
+        float: left;
+        ._margin (0, 20, 10, 0);
+    }
+
+    .image--right {
+        float: right;
+        ._margin (0, 0, 10, 20);
+    }
+
+    .image--block {
+        width: 100%;
+        ._margin (10, 0, 10, 0);
+    }
+    
+    ol,
+    ul {
+        ._padding-left (0);
+        ._margin (20, 0, 20, 20);
+
+        ol,
+        ul  {
+            ._padding-left (20);
+            ._margin (5, 0, 5, 0);
+        }
+    }
+    
+    ul {
+        list-style: circle;
+    }
+
+    strong, b {
+
+    }
+
+    i, em {
+
+    }
+
+    blockquote {
+        color: @COLOR-Base;
+        ._padding (20);
+        ._margin (20, 0, 20, 0);
+        ._border-radius (@STYLE-BorderRadius);
+        ._font-size (@TYPE-SIZE-Epsilon);
+
+        cite {
+
+        }
+    }
+
+    cite {}
+    li {}
+    dl {}
+    dd {}
+    dt {}
+}
+
+} .rte-styles();

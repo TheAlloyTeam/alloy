@@ -1,0 +1,28 @@
+{{#this}}
+	<article class="article article--{{variant}}">
+		<header class="article__head">
+			<h1 class="article__title">{{title}}</h1>
+			{{#if "sub-title"}}
+				<h2 class="article__subtitle">{{subtitle}}</h2>
+			{{/if}}
+		</header>
+		<div class="article__thumb"></div>
+		<div class="article__body rte">
+			{{{body}}}
+		</div>
+		{{#if "buttons"}}
+			<footer class="article__foot">
+				{{#each buttons}}
+					<a href="{{button-url}}" title="{{button-title}}" class="button button--{{button-variant}}">
+						{{#if "button-icon"}}
+							<i class="icon icon--{{button-icon}}"></i>
+						{{/if}}
+						{{#if "button-text"}}
+							<span>{{button-text}}</span>
+						{{/if}}
+					</a>
+				{{/each}}
+			</footer>
+		{{/if}}
+	</article>
+{{/this}}

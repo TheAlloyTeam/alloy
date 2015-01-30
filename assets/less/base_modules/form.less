@@ -1,0 +1,123 @@
+.form-styles() when not (@MODULE-Form) { }
+.form-styles() when (@MODULE-Form) {
+
+/* ==========================================================================
+// FORM
+// =========================================================================*/
+
+// DEFAULT
+// ----------------------------------------------------
+
+.form {
+    ._margin (0, 0, @TYPE-LineHeight, 0);
+}
+
+.form__row {
+    ._clearfix ();
+    ._margin (0, 0, @TYPE-LineHeight, 0);
+}
+
+.form__label  {
+    cursor: pointer;
+    display: block;
+}
+
+.form__input {
+    clear: left;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #888;
+    color: #555;
+    ._padding(6, 8);
+    ._border-radius (4);
+
+    &:focus {
+        outline: 0;
+        outline: thin dotted \9;
+        border-Color: rgba(82, 168, 236, 0.8);
+        ._box-shadow-custom (~"inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)");
+    }
+}
+
+.form__note {
+    display: block;
+    ._margin-top (5);
+    ._font-size ((@TYPE-FontSize - 2));
+}
+
+.form__row--check {
+.form__label,
+.form__input {
+        width: auto;
+        margin-top: 0;
+        ._inline-block ();
+    }
+}
+
+._placeholder (@FORM-Placeholder); 
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// TABLET UP ADJUSTMENTS
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) {
+
+    .form__label {
+        margin-top: 2px;
+    }
+
+    .form__input {
+        width: 40%;
+        vertical-align: middle;
+        ._inline-block ();
+    }
+
+    .form__note {
+        margin-top: 0;
+        ._inline-block ();
+    }
+
+    .form__input.xsmall {
+        width: 10%;
+    }
+
+    .form__input.small {
+        width: 20%;
+    }
+
+    .form__input.large {
+        width: 60%;
+    }
+
+    .form__input.xlarge {
+        width: 75%;
+    }
+
+    .form__input.full {
+        width: 100%;
+    }
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+} .form-styles();

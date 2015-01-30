@@ -1,6 +1,26 @@
 ---
-title: Alloy - Welcome
+title: Index
 ---
 
+<main class="w w--main">
+	<div class="g">
+		<div class="c__md--1">
 
-<h1>{{ title }}</h1>
+			<div class="page page--sitemap">
+				<div class="page__head">
+					<h1 class="page__title">Pages</h1>
+				</div>
+				<div class="page__body">
+					<ul class="list">
+					{{#withSort pages}}
+	                    {{#if data.nav-title }}
+	                        <li class="list__item"><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+                        {{/if}}
+	                {{/withSort}}
+	                </ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</main>

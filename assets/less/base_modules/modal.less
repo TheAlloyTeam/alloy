@@ -1,0 +1,32 @@
+.modal-styles() when not (@MODULE-Modal) { }
+.modal-styles() when (@MODULE-Modal) {
+
+/* =========================================================================
+// ACCORDION
+// =======================================================================*/
+
+// BASE
+// ----------------------------------------------------
+.modal{}
+
+/* Accordian headers */
+.modal__mask{
+	background-color: rgba(0,0,0,.5);
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+	position: fixed;
+	top:0;
+	left:0;
+	._transition-custom(~"visibility 0 linear .4s,opacity .4s cubic-bezier(.4,0,.2,1)");
+	._transform-custom(~"translateZ(0)");
+}
+
+.modal__mask--visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+// END
+// -----------------------------------------------------
+} .modal-styles();

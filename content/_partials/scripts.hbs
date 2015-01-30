@@ -1,0 +1,16 @@
+
+<!-- JavaScript -->
+<script src="{{ assets }}/js/app/conf.js"></script>
+<script data-main="app/main" src="{{ assets }}/js/libs/require/require.js"></script>
+
+{{#dev}}
+<script src="http://localhost:35730/livereload.js"></script>
+{{/dev}}
+
+<!-- Google Analytics -->
+<script>
+    var _gaq=[['_setAccount','{{app.analytics}}'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src='//www.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>

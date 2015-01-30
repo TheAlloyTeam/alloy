@@ -1,0 +1,14 @@
+{
+	"item": {
+    	"modifier": "",
+		"size": "large",
+		"disabled": "",
+		"target": ""
+	},
+    "content": {
+		"text": "Large Button",
+		"title": "Large",
+		"url": "#linkurl1",
+		"icon": "icon-1"
+    }
+}

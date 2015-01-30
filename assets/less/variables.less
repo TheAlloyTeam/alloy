@@ -1,144 +1,221 @@
-/*
-//  ALLOY - VARIABLES
-//  File: assets/less/variables.less
-*/
+// ==========================================================================
+// VARIABLES
+// =========================================================================//
 
-// DEBUG MODE
-// --------------------------------------------------
+// SETUP
+// =========================================================================//
 
-@DEBUG:							false;
+// DEBUG
+// ----------------------------------------------------
 
-// COLOR 
-// --------------------------------------------------
+@DEBUG:                         false;
 
-@COLOR-Black:					#000000;
-@COLOR-White:					#FFFFFF;
+// COLORS
+// ----------------------------------------------------
 
-@COLOR-Gray:					darken(@COLOR-White, 50%);
-@COLOR-Gray-Darkest:			darken(@COLOR-White, 95%);
-@COLOR-Gray-Darker:				darken(@COLOR-White, 80%);
-@COLOR-Gray-Dark:				darken(@COLOR-White, 65%);
-@COLOR-Gray-Light:				darken(@COLOR-White, 35%);
-@COLOR-Gray-Lighter:			darken(@COLOR-White, 20%);
-@COLOR-Gray-Lightest:			darken(@COLOR-White, 5%);
+@COLOR-Base:                    #7D9C9F;
 
-@COLOR-Success:					#468847;
-@COLOR-Success-Dark:			#DFF0D8;
-@COLOR-Success-Light:			#DFF0D8;
+// Sample generated colors
+@COLOR-Complement1:             spin(@COLOR-Base, 180);
+@COLOR-Complement2:             darken(spin(@COLOR-Base, 180), 5%);
+@COLOR-Lighten1:                lighten(@COLOR-Base, 15%);
+@COLOR-Lighten2:                lighten(@COLOR-Base, 30%);
 
-@COLOR-Info:					#3A87AD;
-@COLOR-Info-Dark:				#8CABBB;
-@COLOR-Info-Light:				#D9EDF7;
+@COLOR-Black:			#000000;
+@COLOR-White:			#FFFFFF;
 
-@COLOR-Warning:					#EC9C28;
-@COLOR-Warning-Dark:			#B67211;
-@COLOR-Warning-Light:			#B48138;
+@COLOR-Blue-Darker:		#003E74;
+@COLOR-Blue-Dark:		#00559F;
+@COLOR-Blue-Light:		#8799C8;
+@COLOR-Blue-Lighter:	#BFC7E2;
 
-@COLOR-Danger:					#B94A48;
-@COLOR-Danger-Dark:				#C78E8D;
-@COLOR-Danger-Light:			#F2DEDE;
+@COLOR-Grey-Dark:		#646669;
+@COLOR-Grey:			#B1B1B1;
+@COLOR-Grey-Light:		#ECECEC;
+@COLOR-Grey-Lighter:	#F7F7F7;
+
+@COLOR-Green-Dark:		#939D06;
+@COLOR-Green-Light:		#B8C406;
+
+@COLOR-Green:			#B8C406;
+@COLOR-Blue:			#4671AE;
+@COLOR-Pink: 			#AD235E;
+@COLOR-Yellow: 			#EEB712;
+@COLOR-Orange: 			#F07F07;
+@COLOR-Red:				#BE3803;
+@COLOR-Purple:			#8560A8;
+@COLOR-Violet:			#A864A8;
 
 
-// BASE
-// --------------------------------------------------
+// ANNIMATION CURVES
+// ----------------------------------------------------
 
-@BASE-COLOR-Body: 				@COLOR-Gray-Lightest;
+@ANIM-Curve:			~"cubic-bezier(0.4, 0, 0.2, 1)";
 
-@LINK-COLOR-Link: 				#1e0fbe;
-@LINK-COLOR-Visited:			#609;
-@LINK-COLOR-Hover:				darken(@LINK-COLOR-Link, 15%);
-@LINK-COLOR-Focus:				@LINK-COLOR-Link;
-@LINK-COLOR-Active:				@LINK-COLOR-Link;
 
-// SELECT
-// ---------------------------------------------------- 
+// TYPOGRAPHY
+// ----------------------------------------------------
 
-@SELECT-COLOR-Background        #FF00FF; // PINK!!
-@SELECT-COLOR-Text:             #FFF;
-
-// TYPEOGRAPHY
-// --------------------------------------------------
+@TYPE-FontSize:                 14;
+@TYPE-LineHeight:               24;
+@TYPE-FontFamily:               'Open Sans', Arial, Helvetica, sans-serif;
+@TYPE-FontColor:                #222;
+@TYPE-HeadingsFontFamily:       'Playfair Display', serif;
+@TYPE-HeadingsColor:            #222;
 
 @TYPE-SIZE-Omega:               60;
-@TYPE-SIZE-Alpha:               48;
-@TYPE-SIZE-Beta:                36;
-@TYPE-SIZE-Gamma:               24;
-@TYPE-SIZE-Delta:               21;
-@TYPE-SIZE-Epsilon:             18;
-@TYPE-SIZE-Zeta:                16;
-@TYPE-SIZE-Eta:                 14;
+@TYPE-SIZE-Alpha:               40;
+@TYPE-SIZE-Beta:                28;
+@TYPE-SIZE-Gamma:               20;
+@TYPE-SIZE-Delta:               18;
+@TYPE-SIZE-Epsilon:             16;
+@TYPE-SIZE-Zeta:                15;
+@TYPE-SIZE-Eta:                 @TYPE-FontSize;
 @TYPE-SIZE-Iota:                12;
 
-@TYPE-FontSize:                 @TYPE-SIZE-Zeta;
-@TYPE-LineHeight:               24;
-@TYPE-FontFamily-sans-serif:   'Open Sans', Arial, Helvetica, sans-serif; 
-@TYPE-FontFamily-serif:         Georgia, "Times New Roman", Times, serif;  
-@TYPE-FontFamily-monospace:     Monaco, Consolas, "Courier New", monospace;
-
-@TYPE-FontFamily:				@TYPE-FontFamily-sans-serif;
-@TYPE-CodeFontFamily:			@TYPE-FontFamily-monospace;
-@TYPE-FontFamily-Heading:       @TYPE-FontFamily-serif;
-
-@TYPE-COLOR-Body:               @COLOR-Gray-Darkest;
-@TYPE-COLOR-Quote:              @COLOR-Gray;
-@TYPE-COLOR-Heading:            @COLOR-Gray-Darker;
-@TYPE-COLOR-Footnote:           @COLOR-Gray-Light;
-
+@TYPE-CodeFontFamily:           Monaco, Courier New, monospace, serif;
 
 // GRID
-// --------------------------------------------------
+// ----------------------------------------------------
 
-@GRID-Cols-MAX:              	16;
-@GRID-GutterWidth:        		10;
-@GRID-ColWidth:              	60;
-@GRID-GutterWidth:           	21;
-@GRID-MaxWidth:              	(@GRID-Cols-MAX * @GRID-ColWidth) + ((@GRID-Cols-MAX - 1) * @GRID-GutterWidth);
+@GRID-MaxWidth:                 980;
+@GRID-GutterWidth:              20;
+@GRID-MobileGutterWidth:        10;
 
 // MEDIA QUERIES
-// ---------------------------------------------------- 
+// ----------------------------------------------------
 
-@MQ-Smallest:                 	((300/@TYPE-FontSize)*1em);  // Phone Portrait
-@MQ-Smaller:                  	(340/@TYPE-FontSize)*1em);  // Phone Landscape
-@MQ-Small:                    	((600/@TYPE-FontSize)*1em);  // Tablet Portrait
-@MQ-Medium:                   	((800/@TYPE-FontSize)*1em);  // Min Tab Landscape
-@MQ-Large:                    	((980/@TYPE-FontSize)*1em);  // Average PC Monitor
-@MQ-Larger:                   	((1260/@TYPE-FontSize)*1em); // HD TV 
-@MQ-Largest:                  	((1900/@TYPE-FontSize)*1em); // Full HD TV
+@MQ-Mobile:                     ((767/@TYPE-FontSize)*1em); //Max
+@MQ-TabletMin:                  ((768/@TYPE-FontSize)*1em); //Min
+@MQ-TabletMax:                  ((979/@TYPE-FontSize)*1em); //Max
+@MQ-Desktop:                    ((768/@TYPE-FontSize)*1em); //Min
+@MQ-DesktopOnly:                ((980/@TYPE-FontSize)*1em); //Min
 
-@MQ-Small-Min:                  (@MQ-Smaller + 1);
-@MQ-Medium-Min:                 (@MQ-Small + 1);  
-@MQ-Large-Min:                  (@MQ-Medium + 1);
-@MQ-Larger-Min:                 (@MQ-Large + 1);
-@MQ-Largest-Min:                (@MQ-Larger + 1);
+@MQ-Smallest:                 ((339/@TYPE-FontSize)*1em);  // Phone Portrait     = 21.1875
+@MQ-Small-min:                ((340/@TYPE-FontSize)*1em);  //                    = 21.25
+@MQ-Small:                    ((600/@TYPE-FontSize)*1em);  // Tablet Portrait    = 37.5
+@MQ-Medium-min:               ((601/@TYPE-FontSize)*1em);  //                    = 37.5625
+@MQ-Medium:                   ((800/@TYPE-FontSize)*1em);  // Min Tab Landscape  = 50
+@MQ-Large-min:                ((801/@TYPE-FontSize)*1em);  //                    = 50.0625
+@MQ-Large:                    ((980/@TYPE-FontSize)*1em);  // Average PC Monitor = 61.25
+@MQ-Larger-min:               ((981/@TYPE-FontSize)*1em);  //                    = 61.3125
+@MQ-Larger:                   ((1260/@TYPE-FontSize)*1em); // HD TV              = 78.75
+@MQ-Largest-min:              ((1261/@TYPE-FontSize)*1em); //                    = 78.8125
+@MQ-Largest:                  ((1900/@TYPE-FontSize)*1em); // Full HD TV         = 118.75
 
 // PATHS
-// ---------------------------------------------------- 
+// ----------------------------------------------------
 
 @PATH-Assets:                   "../";
 @PATH-Images:                   "../images/";
 @PATH-Fonts:                    "../fonts/";
 
 
-// ALLOY MODULES
+// LINKS
+// ----------------------------------------------------
+
+@LINK-Link:                     @COLOR-Pink;
+@LINK-Visited:                  lighten(@LINK-Link, 10);
+@LINK-Hover:                    darken(@LINK-Link, 20);
+@LINK-Active:                   darken(@LINK-Link, 20);
+@LINK-Focus:                    darken(@LINK-Link, 40);
+
+// SELEC
+// ---------------------------------------------------- 
+
+@SELECT-BgColor:                #639AFF;
+@SELECT-TextColor:              #FFF;
+
+// STYLE
+// ----------------------------------------------------
+
+@STYLE-RoundedCorners:          true; // Rounds buttons, alerts, pagination, wells.
+@STYLE-BorderRadius:            8;
+@STYLE-BodyBgColor:             #FFF;
+
+// BASE MODULES
 // Change to false if not using
 // =========================================================================//
 
-@ALLOY-Alert:                  true;
-@ALLOY-Box:                    true;
-@ALLOY-Breadcrumbs:            true;
-@ALLOY-Browsehappy:            true;
-@ALLOY-Button:                 true;
-@ALLOY-Column:                 true;
-@ALLOY-Form:                   true;
-@ALLOY-Icon:                   true;
-@ALLOY-Image:                  true;
-@ALLOY-Map:                    true;
-@ALLOY-Media:                  true;
-@ALLOY-Navigation:             true;
-@ALLOY-Overlay:                true;
-@ALLOY-Pagination:             true;
-@ALLOY-Print:                  true;
-@ALLOY-Tabs:                   true;
-@ALLOY-Tooltip:                true;
-@ALLOY-Typography:             true;
-@ALLOY-Well:                   true;
+@MODULE-Accordion:              true;
+@MODULE-Alert:                  true;
+@MODULE-Box:                    true;
+@MODULE-Breadcrumbs:            true;
+@MODULE-Browsehappy:            true;
+@MODULE-Button:                 true;
+@MODULE-Column:                 true;
+@MODULE-Form:                   true;
+@MODULE-Icon:                   true;
+@MODULE-Image:                  true;
+@MODULE-Map:                    true;
+@MODULE-Media:                  true;
+@MODULE-Modal:                  true;
+@MODULE-Navigation:             true;
+@MODULE-Overlay:                true;
+@MODULE-Pagination:             true;
+@MODULE-Print:                  true;
+@MODULE-Tabs:                   false;
+@MODULE-Tooltip:                true;
+@MODULE-Typography:             true;
+@MODULE-Well:                   true;
+@MODULE-RTE:					true;
+
+// MODULES
+// =========================================================================//
+
+
+
+// BOX
+// ---------------------------------------------------- 
+
+@BOX-HeaderBgColor:             @COLOR-Base;
+@BOX-HeaderTextColor:           #FFF;
+@BOX-BodyBgColor:               #F8F8F8;
+@BOX-FooterBgColor:             #DEDEDE;
+
+// BREADCRUMBS
+// ----------------------------------------------------
+
+@BREADCRUMBS-FontSize:          @TYPE-SIZE-Iota;
+@BREADCRUMBS-Color:             @TYPE-FontColor;
+@BREADCRUMBS-Activecolor:       @TYPE-FontColor;
+
+// BROWSEHAPPY
+// ----------------------------------------------------
+
+@BROWSEHAPPY-Color:             #FFF;
+@BROWSEHAPPY-BgColor:       	#e74c3c;
+
+
+
+// FORM
+// ---------------------------------------------------- 
+
+@FORM-Placeholder:              #CCC;
+
+// NAVIGATION
+// ---------------------------------------------------- 
+
+@NAV-BgColor:                   @COLOR-Blue;
+@NAV-Border:               		@COLOR-Blue;
+@NAV-TextColor:                 @COLOR-White;
+@NAV-HoverBgColor:              @COLOR-White;
+@NAV-HoverBorder:               @COLOR-White;
+@NAV-HoverTextColor:            @COLOR-Blue;
+@NAV-ActiveBorder:              @COLOR-Blue-Lighter;
+
+// PAGINATION
+// ---------------------------------------------------- 
+
+@PAGINATION-BgColor:            @BUTTON-MainColor;
+@PAGINATION-BgColorHover:       @BUTTON-HoverColor;
+
+// TOOLTIP
+// ---------------------------------------------------- 
+
+@TOOLTIP-BgColor:               rgba(0,0,0,0.9);
+
+// WELL
+// ---------------------------------------------------- 
+
+@WELL-BgColor:                  #EBEBEB;

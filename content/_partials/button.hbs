@@ -1,0 +1,34 @@
+
+{{#this}}
+    {{#if content.url}}
+    <a href="{{content.url}}"
+        {{#if item.disabled}} disabled="disabled"{{/if}}
+        {{#if item.target}} target="{{item.target}}"{{/if}}
+        class="button
+            {{#if item.modifier}} button--{{item.modifier}}{{/if}}
+            {{#if item.disabled}} disabled{{/if}}
+            {{#if item.size}} {{item.size}}{{/if}}
+            {{#if item.block}} block{{/if}}"
+        {{#if content.title}} title="{{content.title}}"{{/if}}>
+        <span class="ripple"></span>
+        <span class="button__content">
+        {{#if content.icon}}
+            <i class="icon icon--{{content.icon}}" aria-hidden="true" role="img"></i>
+        {{/if}}
+        {{content.text}}</span>
+    </a>
+    {{else}}
+    <span class="button
+            {{#if item.modifier}}button--{{item.modifier}}{{/if}}
+            {{#if item.disabled}} disabled{{/if}}
+            {{#if item.size}} {{item.size}}{{/if}}"
+        {{#if content.title}} title="{{content.title}}"{{/if}}>
+        <span class="ripple"></span>
+        <span class="{{item.block}}__content">
+        {{#if content.icon}}
+            <i class="icon icon--{{content.icon}}" aria-hidden="true" role="img"></i>
+        {{/if}}
+        {{content.text}}</span>
+    </span>
+    {{/if}}
+{{/this}}

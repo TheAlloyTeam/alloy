@@ -1,0 +1,193 @@
+// =========================================================================
+// CSS3
+// =======================================================================//
+
+// ANIMATION
+// ----------------------------------------------------
+
+._animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+    -webkit-animation:  @name @duration @delay @ease;
+    -moz-animation:     @name @duration @delay @ease;
+    animation:          @name @duration @delay @ease;
+}
+
+._animation-fill-mode (@fill: forwards) {
+    -webkit-animation-fill-mode:    @fill;
+    -moz-animation-fill-mode:       @fill;
+    animation-fill-mode:            @fill;
+}
+
+._animation-duration (@duration: 500ms) {
+    -webkit-animation-duration: @duration;
+    -moz-animation-duration:    @duration;
+    animation-duration:         @duration;
+}
+
+._transition (@range: all, @time: 1s, @ease: ease-in-out) {
+    -webkit-transition: @range @time @ease;
+    -moz-transition:    @range @time @ease;
+    transition:         @range @time @ease;
+}
+._transition-custom (@value) {
+    -webkit-transition: @value;
+    -moz-transition:    @value;
+    transition:         @value;
+}
+
+._transition-none () {
+    -webkit-transition: none;
+    -moz-transition:    none;
+    transition:         none;
+}
+
+// BORDER RADIUS
+// ----------------------------------------------------
+
+._border-radius (@pixel-size: @STYLE-BorderRadius) when (@STYLE-RoundedCorners) {
+    @rem-size: ((@pixel-size / @TYPE-FontSize)*1rem);
+    -webkit-border-radius:  @rem-size;
+    border-radius:          @rem-size;
+}
+
+._border-radius-custom (@topLeft: @STYLE-BorderRadius, @topRight: @STYLE-BorderRadius, @bottomLeft: @STYLE-BorderRadius, @bottomRight: @STYLE-BorderRadius) when (@STYLE-RoundedCorners) {
+    @topLeft-rem: ((@topLeft / @TYPE-FontSize)*1rem);
+    @topRight-rem: ((@topRight / @TYPE-FontSize)*1rem);
+    @bottomLeft-rem: ((@bottomLeft / @TYPE-FontSize)*1rem);
+    @bottomRight-rem: ((@bottomRight / @TYPE-FontSize)*1rem);
+    -webkit-border-radius:  @topLeft-rem @topRight-rem @bottomLeft-rem @bottomRight-rem;
+    border-radius:          @topLeft-rem @topRight-rem @bottomLeft-rem @bottomRight-rem;
+}
+
+// TODO: Find a better way of doing this
+
+._border-radius (@radius) when not (@STYLE-RoundedCorners) {
+
+}
+
+._border-radius-custom (@radius: @STYLE-BorderRadius) when not (@STYLE-RoundedCorners) {
+
+}
+
+// BOX SHADOW
+// ----------------------------------------------------
+
+._box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.4) {
+    -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow:         @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+._box-shadow-inner (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.4) {
+    -webkit-box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow:         inset @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+._box-shadow-custom (@customShadow) {
+    -webkit-box-shadow: @customShadow;
+    box-shadow:         @customShadow;
+}
+
+// BOX SIZING
+// ----------------------------------------------------
+
+._box-sizing (@type:border-box) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing:    @type;
+    box-sizing:         @type;
+}
+
+// GRADIENTS
+// ----------------------------------------------------
+
+._gradient (@origin: left, @alpha: 0.1) {
+    background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+}
+
+._gradient-custom (@origin: left, @start: #ffffff, @stop: #000000) {
+    background-color: mix(@start, @stop);
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+}
+
+// OPACITY
+// ----------------------------------------------------
+
+._opacity (@opacity: 1) {
+    opacity: @opacity;
+    //ie <9
+    @ieOpacity: (@opacity * 100);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ieOpacity})";
+    filter: ~"alpha(opacity=@{ieOpacity})";
+}
+
+// PLACEHOLDER
+// ----------------------------------------------------
+
+._placeholder (@COLOR: @FORM-Placeholder) {
+    :-moz-placeholder {
+        color: @COLOR;
+    }
+    ::-webkit-input-placeholder {
+        color: @COLOR;
+    }
+}
+
+// TEXT SHADOW
+// ----------------------------------------------------
+
+._text-shadow (@textshadow: 0 1px 0 rgba(0, 0, 0, 0.4)) {
+    text-shadow: @textshadow;
+}
+
+// TRANSFORMATION
+// ----------------------------------------------------
+
+._transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+    -webkit-transform:  rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -moz-transform:     rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -ms-transform:      rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    transform:          rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+._transform-custom (@value) {
+    -webkit-transform:  @value;
+    -moz-transform:     @value;
+    -ms-transform:      @value;
+    transform:          @value;
+}
+
+._scale (@factor: 1.05) {
+    -webkit-transform:  scale(@factor);
+    -moz-transform:     scale(@factor);
+    -ms-transform:      scale(@factor);
+    transform:       scale(@factor);
+}
+
+._rotate (@deg: 90deg) {
+    -webkit-transform:  rotate(@deg);
+    -moz-transform:     rotate(@deg);
+    -ms-transform:      rotate(@deg);
+    transform:          rotate(@deg);
+}
+
+._skew (@deg, @deg2) {
+    -webkit-transform:   skew(@deg, @deg2);
+    -moz-transform:      skew(@deg, @deg2);
+    -ms-transform:       skew(@deg, @deg2);
+    transform:           skew(@deg, @deg2);
+}
+
+
+// w WORDS
+// ----------------------------------------------------
+
+._w-words () {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}

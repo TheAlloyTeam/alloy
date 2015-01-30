@@ -1,0 +1,24 @@
+.image-styles() when not (@MODULE-Image) { }
+.image-styles() when (@MODULE-Image) {
+
+/* =========================================================================
+// IMAGE
+// =======================================================================*/
+
+.image {}
+
+.image--rounded {
+    ._border-radius (4);
+}
+
+.image--circle {
+    ._border-radius (1000);
+}
+
+.image--bordered {
+    padding: 4px;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+}
+
+} .image-styles();

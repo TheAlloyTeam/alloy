@@ -1,0 +1,14 @@
+{
+	"item": {
+    	"modifier": "success",
+		"size": "",
+		"disabled": "",
+		"target": ""
+	},
+    "content": {
+		"text": "Success Button",
+		"title": "Success",
+		"url": "#linkurl1",
+		"icon": "icon-1"
+    }
+}

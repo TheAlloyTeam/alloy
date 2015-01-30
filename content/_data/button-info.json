@@ -1,0 +1,14 @@
+{
+	"item": {
+    	"modifier": "info",
+		"size": "",
+		"disabled": "",
+		"target": ""
+	},
+    "content": {
+		"text": "Information Button",
+		"title": "Information",
+		"url": "#linkurl1",
+		"icon": "icon-1"
+    }
+}

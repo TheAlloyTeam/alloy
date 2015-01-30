@@ -1,0 +1,170 @@
+.button-styles() when not (@MODULE-Button) { }
+.button-styles() when (@MODULE-Button) {
+
+/* =========================================================================
+// BUTTON
+// =======================================================================*/
+
+@BUTTON-MainColor:              lighten(@COLOR-Blue, 35%);
+@BUTTON-HoverColor:             darken(@BUTTON-MainColor, 10%);
+@BUTTON-TextColor:              @COLOR-Blue;
+
+@BUTTON-AltColor:               lighten(@COLOR-Orange, 30%);
+@BUTTON-AltHoverColor:          darken(@BUTTON-AltColor, 10%);
+@BUTTON-AltTextColor:           @COLOR-Blue;
+
+@BUTTON-DisabledColor:          @COLOR-White;
+@BUTTON-DisabledHoverColor:     darken(@BUTTON-DisabledColor, 2%);
+@BUTTON-DisabledTextColor:      @COLOR-Grey;
+
+@BUTTON-SuccessColor:           @COLOR-Green;
+@BUTTON-SuccessHoverColor:      darken(@BUTTON-SuccessColor, 2%);
+@BUTTON-SuccessTextColor:       @COLOR-White;
+
+@BUTTON-InfoColor:              @COLOR-Blue;
+@BUTTON-InfoHoverColor:         darken(@BUTTON-InfoColor, 2%);
+@BUTTON-InfoTextColor:          @COLOR-White;
+
+@BUTTON-WarningColor:           @COLOR-Orange;
+@BUTTON-WarningHoverColor:      darken(@BUTTON-WarningColor, 2%);
+@BUTTON-WarningTextColor:       @COLOR-White;
+
+@BUTTON-DangerColor:            @COLOR-Red;
+@BUTTON-DangerHoverColor:       darken(@BUTTON-DangerColor, 2%);
+@BUTTON-DangerTextColor:        @COLOR-White;
+
+@BUTTON-Anim:                   @ANIM-Curve;
+
+// BUTTON CREATOR
+// ----------------------------------------------------
+
+._button-create (@backgroundcolor, @HoverColor, @TextColor) {
+
+    color: @TextColor;
+    background-color: @backgroundcolor;
+
+    &:visited {
+        color: @TextColor;
+    }
+
+    &:hover {
+        background-color: @HoverColor;
+        color: @TextColor;
+    }
+
+
+}
+
+// BUTTON BASE
+// ----------------------------------------------------
+
+.button {
+    display: block;
+    color: @BUTTON-TextColor;
+    background-color: @BUTTON-MainColor;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+
+    ._padding ((@TYPE-LineHeight/4), (@TYPE-FontSize * 1.5), (@TYPE-LineHeight/4), (@TYPE-FontSize * 1.5));
+    ._line-height (@TYPE-FontSize);
+    ._transition (box-shadow, 0.2s, @BUTTON-Anim);
+
+    &:visited {
+        color: @BUTTON-TextColor;
+    }
+
+    &:hover {
+        background-color: @BUTTON-HoverColor;
+        color: @BUTTON-TextColor;
+    }
+
+    &:active {
+        //transform: scale(0.95);
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    }
+
+}
+
+
+// BUTTON TYPES
+// ----------------------------------------------------
+
+.button--alt {
+    ._button-create (@BUTTON-AltColor, @BUTTON-AltHoverColor, @BUTTON-AltTextColor);
+}
+
+.button--success {
+    ._button-create (@BUTTON-SuccessColor, @BUTTON-SuccessHoverColor, @BUTTON-SuccessTextColor);
+}
+
+.button--info {
+    ._button-create (@BUTTON-InfoColor, @BUTTON-InfoHoverColor, @BUTTON-InfoTextColor);
+}
+
+.button--warning {
+    ._button-create (@BUTTON-WarningColor, @BUTTON-WarningHoverColor, @BUTTON-WarningTextColor);
+}
+
+.button--danger {
+    ._button-create (@BUTTON-DangerColor, @BUTTON-DangerHoverColor, @BUTTON-DangerTextColor);
+}
+
+.button.disabled {
+    cursor: not-allowed;
+    ._button-create (@BUTTON-DisabledColor, @BUTTON-DisabledHoverColor, @BUTTON-DisabledTextColor);
+}
+
+// BUTTON Standards
+// ----------------------------------------------------
+
+.button.xsmall {
+    ._font-size ((@TYPE-FontSize - 4));
+}
+.button.small {
+    ._font-size ((@TYPE-FontSize - 2));
+}
+.button.large {
+    ._font-size ((@TYPE-FontSize + 2));
+}
+.button.xlarge {
+    ._font-size ((@TYPE-FontSize + 4));
+}
+
+.button.full {
+    display: block !important;
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// TABLET UP ADJUSTMENT
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) { 
+
+    .button {
+        ._inline-block ();
+    }
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+} .button-styles();

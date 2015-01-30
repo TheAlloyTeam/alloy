@@ -1,0 +1,15 @@
+{
+	"item": {
+    	"modifier": "",
+		"size": "",
+		"disabled": true,
+		"target": ""
+	},
+    "content": {
+		"text": "No Link Button",
+		"title": "This is a No Link Button",
+		"url": "",
+		"icon": "icon-1"
+    },
+    "tracking": {}
+}

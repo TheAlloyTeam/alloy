@@ -1,0 +1,68 @@
+.box-styles() when not (@MODULE-Box) { }
+.box-styles() when (@MODULE-Box) {
+
+/* =========================================================================
+// BOX
+// =======================================================================*/
+
+.box {
+    display: block;
+    ._margin (0, 0, @TYPE-LineHeight, 0);
+    ._clearfix ();
+}
+
+.box__head {
+    display: block;
+    background-color: @BOX-HeaderBgColor;
+    ._border-radius-custom (@STYLE-BorderRadius, @STYLE-BorderRadius, 0,  0);
+}
+
+.box__title {
+    line-height: 1;
+    color: @BOX-HeaderTextColor;
+}
+
+.box__body {
+    display: block;
+    background-color: @BOX-BodyBgColor;
+}
+
+.box__foot {
+    display: block;
+    background-color: @BOX-FooterBgColor;
+    ._border-radius-custom (0, 0, @STYLE-BorderRadius, @STYLE-BorderRadius);
+}
+
+.box__head,
+.box__body,
+.box__foot {
+    margin-bottom: 0;
+    ._padding (@TYPE-FontSize);
+
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+} .box-styles();

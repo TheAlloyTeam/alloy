@@ -1,0 +1,35 @@
+.colum-styles() when not (@MODULE-Column) { }
+.colum-styles() when (@MODULE-Column) {
+
+/* =========================================================================
+// colum
+// =======================================================================*/
+
+// BASE
+// ----------------------------------------------------
+
+@columGap: (@TYPE-LineHeight * 1px);
+
+@media only screen and (min-width: @MQ-Medium-min) {
+
+.column-2 {
+    -moz-colum-count: 2;
+    -moz-colum-gap: @columGap;
+    -webkit-colum-count: 2;
+    -webkit-colum-gap: @columGap;
+    colum-count: 2;
+    colum-gap: @columGap;
+}
+
+.column-3 {
+    -moz-colum-count: 3;
+    -moz-colum-gap: @columGap;
+    -webkit-colum-count: 3;
+    -webkit-colum-gap: @columGap;
+    colum-count: 3;
+    colum-gap: @columGap;
+}
+
+}
+
+} .colum-styles();

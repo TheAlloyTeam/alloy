@@ -1,0 +1,14 @@
+{
+	"item": {
+    	"modifier": "",
+		"size": "",
+		"disabled": "",
+		"target": ""
+	},
+    "content": {
+		"text": "Tick Button",
+		"title": "Icon button example (tick)",
+		"url": "#linkurl1",
+		"icon": "check52"
+    }
+}

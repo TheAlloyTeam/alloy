@@ -1,0 +1,36 @@
+.pagination-styles() when not (@MODULE-Pagination) { }
+.pagination-styles() when (@MODULE-Pagination) {
+
+/* =========================================================================
+// PAGINATION
+// =======================================================================*/
+
+.list--pagination {
+
+    padding: 0;
+    list-style: none;
+    ._margin (0, 0, @TYPE-LineHeight, -8);
+    ._clearfix ();
+
+    .list__item {
+        float: left;
+        ._margin (0, 0, 0, 8);
+    }
+
+    .list__link {
+        float: left;
+        text-decoration: none;
+        color: #FFF;
+        background-color: @PAGINATION-BgColor;
+        ._padding (2, 10, 2, 10);
+        ._border-radius (4);
+        ._transition (background-Color,0.3s);
+
+        &:hover,
+        &.active {
+            background-color: @PAGINATION-BgColorHover;
+        }
+    }
+}
+
+} .pagination-styles();

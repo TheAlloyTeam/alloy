@@ -1,32 +1,35 @@
 {
-	"name":"alloy",
-	"verson":"0.0.0",
-	"repository": { },
-	"dependencies": { },
-	"devDependencies": {
-		"grunt": "~0.4.1",
-		"grunt-contrib-copy": "~0.4.1",
-	    "grunt-contrib-concat": "~0.3.0",
-	    "grunt-contrib-uglify": "~0.2.0",
-	    "grunt-contrib-jshint": "~0.7.0",
-	    "grunt-contrib-cssmin": "~0.7.0",
-	    "grunt-contrib-connect": "~0.5.0",
-	    "grunt-contrib-clean": "~0.5.0",
-	    "grunt-contrib-htmlmin": "~0.1.3",
-	    "grunt-bower-install": "~1.0.0",
-	    "grunt-contrib-imagemin": "~0.5.0",
-    	"grunt-contrib-less": "*",
-	    "grunt-contrib-watch": "~0.5.2",
-	    "grunt-usemin": "~2.0.0",
-	    "grunt-mocha": "~0.4.0",
-	    "grunt-newer": "~0.6.0",
-	    "grunt-svgmin": "~0.2.0",
-	    "grunt-concurrent": "~0.4.0",
-	    "load-grunt-tasks": "~0.2.0",
-	    "time-grunt": "~0.2.0",
-	    "jshint-stylish": "~0.1.3"
-		},
-	"engines": {
-		"node": ">=0.8.0"
-	}
+  "name": "staddle",
+  "version": "3.2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattbegent/staddle.git"
+  },
+  "staddle": {
+    "dev": true,
+    "content": "content",
+    "layouts": "_layouts",
+    "partials": "_partials",
+    "site": "_site",
+    "assets": "assets",
+    "data": "_data",
+    "css": "assets/css",
+    "img": "assets/img",
+    "js": "assets/js",
+    "less": "assets/less",
+    "port": 8008
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-requirejs": "*",
+    "assemble": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-uglify": "*"
+  }
 }

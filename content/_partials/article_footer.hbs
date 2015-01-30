@@ -1,0 +1,12 @@
+{{#this}}
+	<footer class="article__foot">
+		{{#each links}}
+			<a href="{{{link-url}}}" title="{{{link-title}}}" class="button button--full">
+				{{#if "link-icon"}}
+					<i class="icon icon--{{{link-icon}}}"></i>
+				{{/if}}
+				<span>{{{link-text}}}</span>
+			</a>
+		{{/each}}
+	</footer>
+{{/this}}

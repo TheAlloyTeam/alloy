@@ -1,0 +1,65 @@
+.media-styles() when not (@MODULE-Media) { }
+.media-styles() when (@MODULE-Media) {
+
+/* ==========================================================================
+// MEDIA OBJECT
+// Source: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+// =========================================================================*/
+
+.media {
+    ._margin (0, 0, @TYPE-LineHeight, 0);
+    ._clearfix ();
+}
+
+.media__content {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+}
+
+.media__image {
+    float: left;
+    ._margin (0, @TYPE-FontSize, 0, 0);
+
+    .image
+        display: block;
+    }
+}
+
+.media__image--alt {
+    float: right;
+    ._margin (0, 0, 0, @TYPE-FontSize);
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+    .media { }
+
+    .media__image {
+        float: none;
+        display: block;
+        margin: 0 auto;
+        ._margin-bottom (@TYPE-LineHeight);
+    }
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+
+} .media-styles();

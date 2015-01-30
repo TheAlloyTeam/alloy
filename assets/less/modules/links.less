@@ -1,0 +1,79 @@
+/* =========================================================================
+// TEMPLATE
+// =======================================================================*/
+
+// ALL
+// ----------------------------------------------------
+
+._link() {
+	color: @LINK-Link;
+	text-decoration: underline;
+
+	&:link {
+		color: @LINK-Link;
+	}
+	&:visited {
+		color: @LINK-Visited;
+	}
+	&:hover {
+		color: @LINK-Hover;
+		text-decoration: none;
+	}
+	&:focus {
+		color: @LINK-Focus;
+		text-decoration: none;
+	}
+	&:active {
+		color: @LINK-Active;
+	}
+}
+
+._link-alt() {
+	color: @COLOR-White;
+	text-decoration: underline;
+
+	&:link {
+		color: @COLOR-White;
+	}
+	&:visited {
+		color: @COLOR-Blue-Lighter;
+	}
+	&:hover {
+		color: @COLOR-Blue-Light;
+		text-decoration: none;
+	}
+	&:focus {
+		color: @COLOR-Blue-Light;
+		text-decoration: none;
+	}
+	&:active {
+		color: @COLOR-Blue-Light;
+	}
+}
+
+a {
+	._link();
+}
+
+
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}

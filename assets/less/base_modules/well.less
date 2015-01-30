@@ -1,0 +1,16 @@
+.well-styles() when not (@MODULE-Well) { }
+.well-styles() when (@MODULE-Well) {
+
+/* ==========================================================================
+// WELL
+// =========================================================================*/
+
+.well {
+    display: block;
+    background-color: @WELL-BgColor;
+    ._padding (@TYPE-FontSize);
+    ._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
+    ._border-radius ();
+}
+
+} .well-styles();

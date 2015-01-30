@@ -1,32 +1,39 @@
-/*
-//  ALLOY - HELLO!!!
-//  File: assets/less/main.less
-*/
+/* ==========================================================================
+// MAIN - DESIGN LANGUAGE
+// =========================================================================*/
 
+// LOAD ALLOY
+// ----------------------------------------------------
 
-// Start your engines!
-@import "variables.less";
-@import "mixins/alloy-mixins.less"
+@import "base/_alloy.less";
 
-// Reset ALL the things
-@import "alloy/alloy-helpers.less";
+// BASE MODULES
+// ----------------------------------------------------
 
-// Alloy Core
-@import "alloy/alloy-base.less";
-@import "alloy/alloy-typography.less";
-@import "alloy/alloy-grid.less";
-@import "alloy/alloy-tables.less";
-@import "alloy/alloy-forms.less";
-@import "alloy/alloy-buttons.less";
-@import "alloy/alloy-box.less";
-@import "alloy/alloy-media.less";
+@import "base_modules/accordion.less";
+@import "base_modules/button.less";
+@import "base_modules/modal.less";
+@import "base_modules/table.less";
+@import "base_modules/rte.less";
 
-// Patterns
+// MODULES
+// ----------------------------------------------------
 
-// Modules
+@import "modules/wraps.less";
+@import "modules/links.less";
+@import "modules/list.less";
+@import "modules/list__navigation.less";
+@import "modules/article.less";
+@import "modules/page.less";
+@import "modules/ie.less";
 
-// Helpers
-@import "alloy/alloy-helpers.less";
+// HELPERS/PRINT
+// ----------------------------------------------------
 
-// Debuger
-@import "alloy/alloy-debug.less";
+@import "base/helpers.less";
+@import "base/print.less";
+
+// DEBUG
+// ----------------------------------------------------
+
+@import "base/debug.less";

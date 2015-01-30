@@ -1,0 +1,25 @@
+{{#this}}
+<div class="card card__news card__news--{{variant}}">
+	<div class="card__front">
+		<div class="card__head">
+			{{#if image}}<div class="card_image"><img src="{{image}}" alt="" /></div>{{/if}}
+			<span class="card__title">{{title}}</span>
+		</div>
+		<div class="card__content">
+			<div class="card__body">{{summary}}</div>
+			<div class="card__foot">
+			{{#if "buttons"}}
+				{{#each buttons}}
+					<a href="{{button-url}}" title="{{button-title}}" class="button button--{{button-variant}}">
+						{{#if "button-icon"}}
+							<i class="icon icon--{{button-icon}}"></i>
+						{{/if}}
+						<span>{{button-text}}</span>
+					</a>
+				{{/each}}
+			{{/if}}
+			</div>
+		</div>
+	</div>
+</div>
+{{/this}}

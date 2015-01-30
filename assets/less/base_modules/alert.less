@@ -1,0 +1,85 @@
+.alert--styles() when not (@MODULE-Alert) { }
+.alert--styles() when (@MODULE-Alert) {
+
+/* =========================================================================
+// ALERT
+// =======================================================================*/
+
+@ALERT-TextShadowcolor:         rgba(255, 255, 255, 0.5);
+
+@ALERT-InfoBgColor:             #D9EDF7;
+@ALERT-InfoTextColor:           #3A87AD;
+@ALERT-InfoBordercolor:         #8CABBB;
+
+@ALERT-ErrorBgColor:            #F2DEDE;
+@ALERT-ErrorTextColor:          #B94A48;
+@ALERT-ErrorBordercolor:        #C78E8D;
+
+@ALERT-SuccessBgColor:          #DFF0D8;
+@ALERT-SuccessTextColor:        #468847;
+@ALERT-SuccessBordercolor:      #748B74;
+
+// BASE
+// ----------------------------------------------------
+
+.alert {
+    display: block;
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+    text-shadow: 0 1px 0 @ALERT-TextShadowcor;
+
+    ._border-radius ();
+    ._padding (@TYPE-FontSize); // TODO: Make better - take into account the 1px border
+    ._margin (0, 0, @TYPE-LineHeight, 0);
+}
+
+// INFO
+// ----------------------------------------------------
+
+.alert--info {
+    background-color: @ALERT-InfoBgColor;
+    color:  @ALERT-InfoTextColor;
+    border-Color: @ALERT-InfoBordercor;
+}
+
+// ERROR
+// ----------------------------------------------------
+
+.alert--error {
+    background-color: @ALERT-ErrorBgColor;
+    color: @ALERT-ErrorTextColor;
+    border-Color: @ALERT-ErrorBordercor;
+}
+
+// SUCCESS
+// ----------------------------------------------------
+
+.alert--success {
+    background-color: @ALERT-SuccessBgColor;
+    color: @ALERT-SuccessTextColor;
+    border-Color: @ALERT-SuccessBordercor;
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+} .alert--styles();

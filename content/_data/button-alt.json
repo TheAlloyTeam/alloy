@@ -1,0 +1,15 @@
+{
+	"item": {
+    	"modifier": "alt",
+		"size": "",
+		"disabled": "",
+		"target": ""
+	},
+    "content": {
+		"text": "Alt Button",
+		"title": "This is an alt Button",
+		"url": "#",
+		"icon": "icon-1"
+    },
+    "tracking": {}
+}

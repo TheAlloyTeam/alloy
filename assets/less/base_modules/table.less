@@ -1,0 +1,112 @@
+/* =========================================================================
+// TABLES
+// =======================================================================*/
+
+// VARS
+// ----------------------------------------------------
+
+@LOCAL-TableBorderColor:            @COLOR-Grey-Lighter;
+@LOCAL-TableHeaderTextColor:        @COLOR-Grey-Dark;
+@LOCAL-TableHeaderBackgroundColor:  @COLOR-White;
+@LOCAL-TableHeaderFontFamily:       @TYPE-HeadingsFontFamily;
+
+// ALL
+// ----------------------------------------------------
+
+
+// STANDARD TABLE NOT IN A LIST
+// ----------------------------------------------------
+
+table {
+
+    th,
+    td {
+        ._padding (20, 15, 20, 15);
+        border: 1px solid @LOCAL-TableBorderColor;
+        text-align: left;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #f6f6f6;
+    }
+
+    tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+}
+
+
+// TABLE USED ON A LIST
+// ----------------------------------------------------
+
+.table {
+    ._margin (0,0,@TYPE-LineHeight,0);
+    ._padding(0);
+    .block;
+}
+.table__row {
+    list-style: none;
+    border: 1px solid @LOCAL-TableBorderColor;
+    border-top: none;
+    ._clearfix();
+}
+
+.table__header {
+    color: @LOCAL-TableHeaderTextColor;
+    background-color: @LOCAL-TableHeaderBackgroundColor;
+    font-family: @LOCAL-TableHeaderFontFamily;
+    border-top: 1px solid @LOCAL-TableBorderColor;
+    ._font-size (14);
+}
+
+.table__header-cell {
+    border-right: 0;
+    word-w: normal;
+}
+
+.table__cell {
+    min-height: 100%; // Incase cell is empty
+    border-right: 0px solid @LOCAL-TableBorderColor;
+    word-w: break-word;
+    ._padding (10);
+
+    &:last-child {
+        border-right: none;
+    }
+}
+
+.centered {
+    text-align: center;
+}
+
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// TABLET UP
+// ----------------------------------------------------
+@media only screen and (min-width: @MQ-Medium-min) {
+
+    .table {
+
+    }
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}

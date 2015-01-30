@@ -1,15 +1,19 @@
 {
-  	"name": "alloy",
-  	"version": "0.0.0",
-  	"repository": {
-	    "type": "git",
-	    "url": "git://github.com/gfinbow/alloy.git"
-	},	
-  	"private": true,
-  	"directory": "alloy",
-  	"dependencies": {
-	    "jquery": "~1.11.0",
-	    "selectivizr": "latest"
-  	},
-  	"devDependencies": {}
+    "name": "Alloy",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mattbegent/staddle.git"
+    },
+    "main": [
+        "index.html",
+        "assets/js/app.js",
+        "assets/less/main.less"
+    ],
+    "devDependencies": {
+        "jquery": "1.11.0",
+        "respond": "latest",
+        "requirejs": "latest",
+        "selectivizr": "latest"
+    }
 }

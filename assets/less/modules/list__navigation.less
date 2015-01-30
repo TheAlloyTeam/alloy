@@ -1,0 +1,97 @@
+/* =========================================================================
+// list_navigation
+// =======================================================================*/
+
+// ALL
+// ----------------------------------------------------
+
+.list__navigation {
+    ._clearfix ();
+
+    .list__link {
+        display: block;
+        text-decoration: none;
+        font-weight:bold;
+    }
+}
+
+
+
+.list__navigation--main {
+	._padding(1, 0, 1, 0);
+
+	.list__item {}
+	.list__link {
+        float:left;
+
+        color: @NAV-TextColor;
+
+        background-color: @NAV-BgColor;
+        border-Color: @NAV-Border;
+        border-style: solid;
+        border-width: 2px 0 0 0;
+        ._padding(5, 20, 7, 20);
+        ._transition (all,0.2s);
+
+        &:hover {
+            background-color: @NAV-HoverBgColor;
+            color: @NAV-HoverTextColor;
+            border-Color: @NAV-HoverBorder;
+        }
+
+        &.active {
+            background-color: @NAV-HoverBgColor;
+            color: @NAV-HoverTextColor;
+            border-Color: @NAV-ActiveBorder;
+        }
+    }
+}
+
+.list__navigation--footer {._clearfix ();
+
+    .list__item {
+        margin:0;
+        ._padding-bottom(4);
+    }
+    .list__link {
+        color: @NAV-TextColor;
+        background-color: @NAV-BgColor;
+        border-Color: @NAV-Border;
+        border-style: solid;
+        border-width: 2px 0 0 0;
+        ._padding(4, 10, 5, 10);
+        ._transition (all,0.2s);
+        ._border-radius(8);
+
+        &:hover {
+            background-color: @NAV-HoverBgColor;
+            color: @NAV-HoverTextColor;
+            border-Color: @NAV-HoverBorder;
+        } 
+        &.active {
+            background-color: @NAV-HoverBgColor;
+            color: @NAV-HoverTextColor;
+            border-Color: @NAV-ActiveBorder;
+        }
+    }}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
