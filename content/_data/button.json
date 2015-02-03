@@ -1,15 +1,22 @@
 {
-	"item": {
-    	"modifier": "",
-		"size": "",
-		"disabled": "",
-		"target": "",
-		"block": ""
-	},
+    "item": {
+        "modifier": "",
+        "size": "",
+        "disabled": "",
+        "target": "",
+        "block": ""
+    },
     "content": {
-		"text": "Default Button",
-		"title": "Default",
-		"url": "#linkurl1",
-		"icon": "icon-1"
+        "text": "",
+        "title": "",
+        "url": "",
+        "icon": ""
+    },
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
     }
 }

@@ -1,26 +1,21 @@
 {
-    "variant": "article-css-variant",
-    "title": "Article Title",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere placerat eros ut lobortis. Ut mattis feugiat dui, euismod semper urna. In consectetur et metus quis laoreet. Sed nibh risus, congue sit amet dictum eget, fermentum at metus. In nec rutrum ex. Proin at ligula placerat, placerat lectus ut, lobortis orci. Aenean finibus imperdiet lorem. Nullam pulvinar massa eget nisl fermentum, sed vestibulum ex lacinia. Curabitur pulvinar imperdiet nibh, nec varius sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ut gravida sapien, ac scelerisque magna. Donec vel enim nec tortor scelerisque tincidunt ac nec massa.</p>",
-    "links": [
-    	{
-	    	"link-variant": "variant-1",
-	    	"link-url": "#linkurl1",
-    		"link-title": "Link Title Text",
-    		"link-text": "Link Text"
-    	},
-    	{
-	    	"link-variant": "variant-2",
-	    	"link-url": "#linkurl2",
-    		"link-title": "Link Title Text",
-    		"link-text": "Link Text"
-    	},
-    	{
-	    	"link-variant": "variant-3",
-	    	"link-url": "#linkurl3",
-    		"link-title": "Link Title Text",
-    		"link-text": "Link Text"
-    	}
-    ]
+    "item": {},
+    "content": {},
+    "actions": [{
+        "action" : {
+            "item": {},
+            "content": {}
+        },
+        "action" : {
+            "item": {},
+            "content": {}
+        }
+    }],
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
 }

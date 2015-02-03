@@ -1,0 +1,10 @@
+{{#this}}
+<div class="accordion{{#if item.modifier}} accordion--{{item.modifier}}{{/if}}"{{#if item.multiselectable}} aria-multiselectable="true"{{/if}} aria-live="polite">
+	{{#each content.tabs}}
+	<div id="acc__tab_1" class="accordion__tab" aria-controls="acc__content_1" role="tab">
+		<span class="accordion__title">{{content.title}}</span>
+	</div>
+	<div id="acc__content_1" class="accordion__panel rte" role="tabpanel" aria-labeledby="acc__tab_1">{{content.body}}</div>
+	{{/each}}
+</div>
+{{/this}}
