@@ -2,11 +2,11 @@
 <div class="card card__news card__news--{{variant}}">
 	<div class="card__front">
 		<div class="card__head">
-			{{#if image}}<div class="card_image"><img src="{{image}}" alt="" /></div>{{/if}}
+			{{#if image}}<img src="{{image}}" alt="" class="card__image" />{{/if}}
 			<span class="card__title">{{title}}</span>
 		</div>
 		<div class="card__content">
-			<div class="card__body">{{summary}}</div>
+			<div class="card__summary">{{summary}}</div>
 			<div class="card__foot">
 			{{#if "buttons"}}
 				{{#each buttons}}
@@ -19,6 +19,12 @@
 				{{/each}}
 			{{/if}}
 			</div>
+		</div>
+	</div>
+	<div class="card__back">
+		<div class="card__content">
+			<div class="card__title">{{title}}</div>
+			<div class="card__body">{{summary-extended}}</div>		
 		</div>
 	</div>
 </div>

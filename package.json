@@ -1,9 +1,9 @@
 {
-  "name": "staddle",
-  "version": "3.2.0",
+  "name": "alloy",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mattbegent/staddle.git"
+    "url": "https://github.com/gfinbow/alloy.git"
   },
   "staddle": {
     "dev": true,
