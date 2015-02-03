@@ -1,8 +1,8 @@
 {
-  "name": "staddle",
+  "name": "alloy",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mattbegent/staddle.git"
+    "url": "git://github.com/gfinbow/alloy.git"
   },
   "main": [
     "index.html",
@@ -14,15 +14,15 @@
     "respond": "latest",
     "selectivizr": "latest"
   },
-  "homepage": "https://github.com/mattbegent/staddle",
+  "homepage": "https://github.com/gfinbow/alloy",
   "_release": "c760c60889",
   "_resolution": {
     "type": "branch",
     "branch": "master",
     "commit": "c760c60889d39cef9c60c8477502da295d06bb1c"
   },
-  "_source": "git://github.com/mattbegent/staddle.git",
+  "_source": "git://github.com/gfinbow/alloy.git",
   "_target": "*",
-  "_originalSource": "staddle",
+  "_originalSource": "alloy",
   "_direct": true
 }
