@@ -21,5 +21,5 @@
 
     console.log("ALLOY.Lib Initializing");
     // force start of the Library Init function
-    E78.Lib.init();
+    ALLOY.Lib.init();
 })();

@@ -106,5 +106,5 @@
 
     // Autostart Plugin
     $(".accordion").accordion();
-    console.log("E78.Accordion Loaded");
+    console.log("ALLOY.Accordion Loaded");
 })();
