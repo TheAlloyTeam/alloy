@@ -1,30 +1,33 @@
 {{#this}}
-<div class="card card__news card__news--{{variant}}">
+<div class="card{{#if item.modifier}} card--{{item.modifier}}{{/if}}">
 	<div class="card__front">
 		<div class="card__head">
-			{{#if image}}<img src="{{image}}" alt="" class="card__image" />{{/if}}
-			<span class="card__title">{{title}}</span>
+			{{#if content.image}}
+			<img src="{{content.image}}" alt="" class="card__image" />
+			{{/if}}
+			<div class="card__title">{{content.title}}</div>
 		</div>
 		<div class="card__content">
-			<div class="card__summary">{{summary}}</div>
-			<div class="card__foot">
-			{{#if "buttons"}}
-				{{#each buttons}}
-					<a href="{{button-url}}" title="{{button-title}}" class="button button--{{button-variant}}">
-						{{#if "button-icon"}}
-							<i class="icon icon--{{button-icon}}"></i>
-						{{/if}}
-						<span>{{button-text}}</span>
-					</a>
-				{{/each}}
+			<div class="card__summary">{{{content.summary}}}</div>
+			{{#if actions}}
+				<div class="card__actions">
+				{{#each actions}}
+					{{#if buttons}}
+						{{#each buttons}}
+							{{#this}}
+							{{> button }}
+							{{/this}}
+						{{/each }}
+					{{/if}}
+				{{/each }}
+				</div>
 			{{/if}}
-			</div>
 		</div>
 	</div>
 	<div class="card__back">
 		<div class="card__content">
-			<div class="card__title">{{title}}</div>
-			<div class="card__body">{{summary-extended}}</div>		
+			<div class="card__title">{{content.title}}</div>
+			<div class="card__body">{{{content.summary-extended}}}</div>
 		</div>
 	</div>
 </div>

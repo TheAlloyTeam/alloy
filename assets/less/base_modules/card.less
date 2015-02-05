@@ -1,0 +1,52 @@
+.card-styles() when not (@MODULE-Card) { }
+.card-styles() when (@MODULE-Card) {
+
+/* =========================================================================
+// IMAGE
+// =======================================================================*/
+
+.card {
+	background-clip: padding-box;
+	background-color: @COLOR-Grey;
+	._margin(10,0,20,0);
+	._border-radius(2);
+	._box-shadow-custom(~"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)");
+}
+
+.card__head {
+	position:relative;
+
+	.card__image {
+		width:100%;
+
+	}
+
+	.card__title {
+		position: absolute;
+		bottom: 10px;
+		left: 20px;
+	}
+}
+
+.card__image {
+	width:100%;
+}
+
+.card__title {
+	._font-size-heading(@TYPE-SIZE-Beta);
+}
+
+.card__content {
+	._padding(20);
+}
+
+.card__front {}
+.card__back {}
+
+.card__actions {
+	border-top: 1px solid lighten(@COLOR-Grey, 5);
+	._margin-top(15);
+	._padding-top(20);
+}
+
+} .card-styles();
