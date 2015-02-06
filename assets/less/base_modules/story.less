@@ -1,0 +1,29 @@
+.story-styles() when not (@MODULE-Story) { }
+.story-styles() when (@MODULE-Story) {
+
+/* =========================================================================
+// IMAGE
+// =======================================================================*/
+
+.story {
+	background-clip: padding-box;
+	background-color: @COLOR-Base;
+	._margin(10,0,20,0);
+	._padding(20);
+	._border-radius(2);
+	._box-shadow-custom(~"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)");
+}
+
+.story__title {
+	._font-size-heading(@TYPE-SIZE-Beta);
+}
+
+.story__body {}
+
+.story__actions {
+	border-top: 1px solid lighten(@COLOR-Base, 5);
+	._margin-top(15);
+	._padding-top(20);
+}
+
+} .story-styles();

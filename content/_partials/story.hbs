@@ -1,0 +1,29 @@
+{{#this}}
+<div class="story{{#if item.modifier}} story--{{item.modifier}}{{/if}}">
+<div class="story__tools"></div>
+	<div class="story__ident">
+		{{> story-ident }}
+	</div>
+	<div class="story__content">
+		<div class="story__body">{{{content.body}}}</div>
+		<div class="story__cite">{{> story-cite }}</div>
+		{{#if actions}}
+			<div class="story__actions">
+			{{#each actions}}
+				{{#if buttons}}
+					{{#each buttons}}
+						{{#this}}
+						{{> button }}
+						{{/this}}
+					{{/each }}
+				{{/if}}
+			{{/each }}
+			</div>
+		{{/if}}
+		</div>
+	</div>
+	<div class="story__comments">
+		
+	</div>
+</div>
+{{/this}}
