@@ -8,10 +8,13 @@
                 {{#if item.size}} {{item.size}}{{/if}}
                 {{#if item.block}} block{{/if}}"
             {{#if content.title}} title="{{content.title}}"{{/if}}>
-            <img src="{{content.i}}" class="story-cite__image" />
+            {{#if content.image}}
+            <img src="{{content.image}}" class="story-cite__image" />
+            {{/if }}
             <span class="story-cite__content">
-                <span class="story-cite__content">{{content.title}}</span>
-                <span class="story-cite__content">{{content.body}}</span>
+                <span class="story-cite__title">{{content.title}}</span>
+                <span class="story-cite__body">{{{content.body}}}</span>
+                <span class="story-cite__refrence">{{{content.url}}}</span>
             </span>
         </a>
     </div>

@@ -7,7 +7,7 @@
 
 .story {
 	background-clip: padding-box;
-	background-color: @COLOR-Base;
+	background-color: @COLOR-White;
 	._margin(10,0,20,0);
 	._padding(20);
 	._border-radius(2);
@@ -21,9 +21,51 @@
 .story__body {}
 
 .story__actions {
-	border-top: 1px solid lighten(@COLOR-Base, 5);
+	border-top: 1px solid darken(@COLOR-White, 5);
 	._margin-top(15);
 	._padding-top(20);
 }
+
+.story-ident {
+	._margin-bottom(20);
+	._clearfix();
+}
+.story-ident__avatar-link {
+	display:block;
+	position:relative;
+	float:left;
+	._margin-right(20);
+}
+
+.story-cite {
+	border: 1px solid darken(@COLOR-White, 10);
+	._margin(10,0,20,0);
+	._border-radius(2);
+}
+.story-cite__image {
+	width:100%;
+}
+
+.story-cite__content {
+	display:block;
+	._padding(20);
+}
+
+.story-cite__link {
+	display:block;
+	text-decoration: none;
+	color: lighten(@TYPE-FontColor, 30);
+
+	&:link {
+		color: lighten(@TYPE-FontColor, 30);
+	}
+	&:visited {
+		color: lighten(@TYPE-FontColor, 30);
+	}
+	&:hover {}
+	&:focus {}
+	&:active {}
+}
+
 
 } .story-styles();
