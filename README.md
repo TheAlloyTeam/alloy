@@ -19,15 +19,15 @@ So much to do and what a fun journey it will be :)
 
 This whole project is based and influenced by many boilerplates and helpers from around the web. I will try to include a full list here for reference.
 
-https://github.com/necolas/normalize.css
-https://github.com/mattbegent/staddle
-https://github.com/twbs/bootstrap
+* https://github.com/necolas/normalize.css
+* https://github.com/mattbegent/staddle
+* https://github.com/twbs/bootstrap
 
 ## Tools
 
-http://gruntjs.com/
-http://handlebarsjs.com/
-http://lesscss.org/
+* http://gruntjs.com/
+* http://handlebarsjs.com/
+* http://lesscss.org/
 
 ## Theories
 
