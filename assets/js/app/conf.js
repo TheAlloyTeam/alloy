@@ -27,12 +27,13 @@ var require = {
         'utils': "modules/alloy.utils",
         'iefixes': "modules/alloy.iefixes",
         'mobile': "modules/alloy.mobile",
-        'accordion': "modules/alloy.accordion"
+        'accordion': "modules/alloy.accordion",
+        'amd': "modules/exports/amd"
     },
     shim: {
         'logging': {deps: ['jquery']},
         'utils': {deps: ['jquery', 'logging']},
-        'core': {deps: ['jquery', 'logging', "utils"]},
+        'core': {deps: ['jquery', 'logging', "utils", "amd"]},
         'iefixes': {deps: ['jquery', 'core', 'logging']},
         'mobile': {deps: ['jquery', 'core', 'logging']},
         'accordion': {deps: ['jquery', 'core', 'logging']}
