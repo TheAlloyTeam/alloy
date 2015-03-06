@@ -1,0 +1,15 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "disabled": "",
+        "target": "",
+        "block": ""
+    },
+    "content": {
+        "text": "<p>A well is prmeraly just a box of text - unless we can find another useage for it.</p>",
+        "title": "",
+        "url": "",
+        "icon": ""
+    }
+}

@@ -1,28 +1,27 @@
 {{#this}}
-	<article class="article article--{{variant}}">
+	<article class="article{{#if item.modifier}} article--{{item.modifier}}{{/if}}">
 		<header class="article__head">
-			<h1 class="article__title">{{title}}</h1>
+			<h1 class="article__title">{{{content.title}}}</h1>
 			{{#if "sub-title"}}
-				<h2 class="article__subtitle">{{subtitle}}</h2>
+				<p class="article__subtitle">{{{content.subtitle}}}</p>
 			{{/if}}
 		</header>
-		<div class="article__thumb"></div>
-		<div class="article__body rte">
-			{{{body}}}
-		</div>
-		{{#if "buttons"}}
-			<footer class="article__foot">
-				{{#each buttons}}
-					<a href="{{button-url}}" title="{{button-title}}" class="button button--{{button-variant}}">
-						{{#if "button-icon"}}
-							<i class="icon icon--{{button-icon}}"></i>
-						{{/if}}
-						{{#if "button-text"}}
-							<span>{{button-text}}</span>
-						{{/if}}
-					</a>
-				{{/each}}
-			</footer>
+		{{#if content.image}}
+		<div class="article__thumb"><img src="{{content.image}}" alt=""/></div>
 		{{/if}}
+		<div class="article__body rte">
+			{{{content.body}}}
+		</div>
+		<footer class="article__foot">
+		{{#each actions}}
+			{{#if buttons}}
+				{{#each buttons}}
+					{{#this}}
+					{{> button }}
+					{{/this}}
+				{{/each }}
+			{{/if}}
+		{{/each }}
+		</footer>
 	</article>
 {{/this}}
