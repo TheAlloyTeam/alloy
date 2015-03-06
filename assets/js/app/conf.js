@@ -20,7 +20,8 @@ var require = {
         app: "app",
         libs: "libs",
         modules: "modules",
-        jquery: "libs/jquery/jquery.min",
+        jquery: "libs/jquery/jquery.min",,
+        fontfaceobserver: "libs/fontfaceobserver/fontfaceobserver",
         selectivizr: "libs/selectivizr",
         'logging': "modules/alloy.logging",
         'core': "modules/alloy.core",
@@ -36,6 +37,7 @@ var require = {
         'core': {deps: ['jquery', 'logging', "utils", "amd"]},
         'iefixes': {deps: ['jquery', 'core', 'logging']},
         'mobile': {deps: ['jquery', 'core', 'logging']},
+        'fontloader': {deps: ['fontfaceobserver', 'core', 'logging']},
         'accordion': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
