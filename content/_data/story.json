@@ -27,7 +27,15 @@
                 "summary": "Cite Summary",
                 "author": "Cite Author",
                 "url": "#linkurl1",
-                "icon": "icon-1"
+                "icon": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
             }
         }]
     },
@@ -46,7 +54,15 @@
                 "text": "Default Button",
                 "title": "Default",
                 "url": "#linkurl1",
-                "icon": "icon-1"
+                "icon": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
             }
         },
         {
@@ -61,7 +77,15 @@
                 "text": "Default Button 2",
                 "title": "Default",
                 "url": "#linkurl2",
-                "icon": "icon-1"
+                "icon": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
             }
         }
         ]

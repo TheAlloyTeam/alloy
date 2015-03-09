@@ -7,6 +7,7 @@
         "block": ""
     },
     "content": {
+        "title": "",
         "text": "I did something",
         "icon": [{
             "item": {
@@ -14,8 +15,17 @@
                 "size": ""
             },
             "content": {
-                "title": ""
+                "title": "Icon Title"
             }
         }]
+
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
     }
 }
