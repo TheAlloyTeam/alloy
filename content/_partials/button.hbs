@@ -10,19 +10,19 @@
             {{#if item.block}} block{{/if}}"
         {{#if content.title}} title="{{content.title}}"{{/if}}>
         <span class="ripple"></span>
-        <span class="button__content">
-        {{#if content.icon}}{{#each content.icon}}{{>icon}}{{/each}}{{/if}}
+        {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+        <span>
         {{content.text}}</span>
     </a>
     {{else}}
     <span class="button
-            {{#if item.modifier}}button--{{item.modifier}}{{/if}}
+            {{#if item.modifier}} button--{{item.modifier}}{{/if}}
             {{#if item.disabled}} disabled{{/if}}
             {{#if item.size}} {{item.size}}{{/if}}"
         {{#if content.title}} title="{{content.title}}"{{/if}}>
         <span class="ripple"></span>
-        <span class="{{item.block}}__content">
-        {{#if content.icon}}{{#each content.icon}}{{>icon}}{{/each}}{{/if}}
+        {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+        <span>
         {{content.text}}</span>
     </span>
     {{/if}}

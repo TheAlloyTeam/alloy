@@ -1,5 +1,5 @@
 {{#this}}
 	<div class="toast{{#if item.modifier}} toast--{{item.modifier}}{{/if}}">
-        <span class="toast__content">{{#if content.icon}}{{#each content.icon}}{{>icon}}{{/each}}{{/if}}{{{content.text}}}</span>
+        <span class="toast__content">{{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}{{{content.text}}}</span>
 	</div>
 {{/this}}

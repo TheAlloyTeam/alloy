@@ -1,3 +1,2 @@
-{{#this}}
-    <i class="icon{{#if item.modifier}} icon--{{item.modifier}}{{/if}}{{#if item.size}} icon--{{item.size}}{{/if}}"{{#if content.title}} title="{{content.title}}"{{/if}} aria-hidden="true" role="img"></i>
+{{#this}}{{#if item.modifier}}<i class="icon icon--{{item.modifier}}{{#if item.size}} icon--{{item.size}}{{/if}}"{{#if content.title}} title="{{content.title}}"{{/if}} aria-hidden="true" role="img"></i>{{/if}}
 {{/this}}
