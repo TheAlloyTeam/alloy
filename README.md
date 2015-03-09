@@ -29,7 +29,8 @@ This whole project is based and influenced by many boilerplates and helpers from
 
 ## Theories
 
-* http://bradfrostweb.com/blog/post/atomic-web-design/
+* Atomic Design http://bradfrostweb.com/blog/post/atomic-web-design/
+* Google Design http://www.google.co.uk/design/
 
 ## Workers
 * Gary Finbow http://about.me/munchkin

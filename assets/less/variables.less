@@ -10,48 +10,101 @@
 
 @DEBUG:                         false;
 
-// COLORS
+// COLOURS
 // ----------------------------------------------------
 
-@COLOR-Base:                    #7D9C9F;
+@COLOR-Base:                    @COLOR-Indigo;
 
-// Sample generated colors
 @COLOR-Complement1:             spin(@COLOR-Base, 180);
 @COLOR-Complement2:             darken(spin(@COLOR-Base, 180), 5%);
-@COLOR-Lighten1:                lighten(@COLOR-Base, 15%);
-@COLOR-Lighten2:                lighten(@COLOR-Base, 30%);
+@COLOR-Lighten1:                lighten(@COLOR-Base, 10%);
+@COLOR-Lighten2:                lighten(@COLOR-Base, 20%);
 
-@COLOR-Black:			#000000;
-@COLOR-White:			#FFFFFF;
+@COLOR-Black:					#000000;
+@COLOR-White:					#FFFFFF;
 
-@COLOR-Blue-Darker:		#003E74;
-@COLOR-Blue-Dark:		#00559F;
-@COLOR-Blue-Light:		#8799C8;
-@COLOR-Blue-Lighter:	#BFC7E2;
+@COLOR-RedLighter:				#FFCDD2;
+@COLOR-RedLight:				#E57373;
+@COLOR-Red:						#F44336;
+@COLOR-RedDark:					#D32F2F;
+@COLOR-RedDarker:				#B71C1C;
 
-@COLOR-Grey-Dark:		#646669;
-@COLOR-Grey:			#B1B1B1;
-@COLOR-Grey-Light:		#ECECEC;
-@COLOR-Grey-Lighter:	#F7F7F7;
+@COLOR-PinkLighter:				#F8BBD0;
+@COLOR-PinkLight:				#F06292;
+@COLOR-Pink:					#E91E63;
+@COLOR-PinkDark:				#C2185B;
+@COLOR-PinkDarker:				#880E4F;
 
-@COLOR-Green-Dark:		#939D06;
-@COLOR-Green-Light:		#B8C406;
+@COLOR-PurpleLighter:			#E1BEE7;
+@COLOR-PurpleLight:				#BA68C8;
+@COLOR-Purple:					#9C27B0;
+@COLOR-PurpleDark:				#7B1FA2;
+@COLOR-PurpleDarker:			#4A148C;
 
-@COLOR-Green:			#B8C406;
-@COLOR-Blue:			#4671AE;
-@COLOR-Pink: 			#AD235E;
-@COLOR-Yellow: 			#EEB712;
-@COLOR-Orange: 			#F07F07;
-@COLOR-Red:				#BE3803;
-@COLOR-Purple:			#8560A8;
-@COLOR-Violet:			#A864A8;
+@COLOR-IndigoLighter:			#C5CAE9;
+@COLOR-IndigoLight:				#7986CB;
+@COLOR-Indigo:					#3F51B5;
+@COLOR-IndigoDark:				#303F9F;
+@COLOR-IndigoDarker:			#1A237E;
 
+@COLOR-BlueLighter:				#BBDEFB;
+@COLOR-BlueLight:				#64B5F6;
+@COLOR-Blue:					#2196F3;
+@COLOR-BlueDark:				#1976D2;
+@COLOR-BlueDarker:				#0D47A1;
+
+@COLOR-CyanLighter:				#B2EBF2;
+@COLOR-CyanLight:				#4DD0E1;
+@COLOR-Cyan:					#00BCD4;
+@COLOR-CyanDark:				#0097A7;
+@COLOR-CyanDarker:				#006064;
+
+@COLOR-TealLighter:				#B2DFDB;
+@COLOR-TealLight:				#4DB6AC;
+@COLOR-Teal:					#009688;
+@COLOR-TealDark:				#00796B;
+@COLOR-TealDarker:				#004D40;
+
+@COLOR-GreenLighter:			#C8E6C9;
+@COLOR-GreenLight:				#81C784;
+@COLOR-Green:					#4CAF50;
+@COLOR-GreenDark:				#388E3C;
+@COLOR-GreenDarker:				#1B5E20;
+
+@COLOR-LimeLighter:				#F0F4C3;
+@COLOR-LimeLight:				#DCE775;
+@COLOR-Lime:					#CDDC39;
+@COLOR-LimeDark:				#AFB42B;
+@COLOR-LimeDarker:				#827717;
+
+@COLOR-YellowLighter:			#FFF9C4;
+@COLOR-YellowLight:				#FFF176;
+@COLOR-Yellow:					#FFEB3B;
+@COLOR-YellowDark:				#FBC02D;
+@COLOR-YellowDarker:			#F57F17;
+
+@COLOR-OrangeLighter:			#FFE0B2;
+@COLOR-OrangeLight:				#FFB74D;
+@COLOR-Orange:					#FF9800;
+@COLOR-OrangeDark:				#F57C00;
+@COLOR-OrangeDarker:			#E65100;
+
+@COLOR-BrownLighter:			#D7CCC8;
+@COLOR-BrownLight:				#A1887F;
+@COLOR-Brown:					#795548;
+@COLOR-BrownDark:				#5D4037;
+@COLOR-BrownDarker:				#3E2723;
+
+@COLOR-GreyLighter:				#F5F5F5;
+@COLOR-GreyLight:				#E0E0E0;
+@COLOR-Grey:					#9E9E9E;
+@COLOR-GreyDark:				#616161;
+@COLOR-GreyDarker:				#212121;
 
 // ANNIMATION CURVES
 // ----------------------------------------------------
 
 @ANIM-Curve:			~"cubic-bezier(0.4, 0, 0.2, 1)";
-
 
 // TYPOGRAPHY
 // ----------------------------------------------------
@@ -59,9 +112,9 @@
 @TYPE-FontSize:                 14;
 @TYPE-LineHeight:               24;
 @TYPE-FontFamily:               'Open Sans', Arial, Helvetica, sans-serif;
-@TYPE-FontColor:                #333;
+@TYPE-FontColor:                @COLOR-GreyDark;
 @TYPE-HeadingsFontFamily:       'Playfair Display', serif;
-@TYPE-HeadingsColor:            #333;
+@TYPE-HeadingsColor:            @COLOR-GreyDark;
 
 @TYPE-SIZE-Omega:               60;
 @TYPE-SIZE-Alpha:               40;
@@ -101,31 +154,30 @@
 // ----------------------------------------------------
 
 @PATH-Assets:                   "../";
-@PATH-Images:                   "../images/";
+@PATH-Images:                   "../img/";
 @PATH-Fonts:                    "../fonts/";
-
 
 // LINKS
 // ----------------------------------------------------
 
-@LINK-Link:                     @COLOR-Pink;
+@LINK-Link:                     @COLOR-Base;
 @LINK-Visited:                  lighten(@LINK-Link, 10);
-@LINK-Hover:                    darken(@LINK-Link, 20);
+@LINK-Hover:                    darken(@LINK-Link, 10);
 @LINK-Active:                   darken(@LINK-Link, 20);
 @LINK-Focus:                    darken(@LINK-Link, 40);
 
-// SELEC
+// SELECT
 // ---------------------------------------------------- 
 
-@SELECT-BgColor:                #639AFF;
-@SELECT-TextColor:              #FFF;
+@SELECT-BgColor:                @COLOR-Base;
+@SELECT-TextColor:              @COLOR-White;
 
 // STYLE
 // ----------------------------------------------------
 
 @STYLE-RoundedCorners:          true; // Rounds buttons, alerts, pagination, wells.
 @STYLE-BorderRadius:            8;
-@STYLE-BodyBgColor:             #FFF;
+@STYLE-BodyBgColor:             @COLOR-White;
 
 // BASE MODULES
 // Change to false if not using
@@ -152,7 +204,7 @@
 @MODULE-Tabs:                   false;
 @MODULE-Tooltip:                true;
 @MODULE-Typography:             true;
-@MODULE-Story:             true;
+@MODULE-Story:             		true;
 @MODULE-Well:                   true;
 @MODULE-RTE:					true;
 @MODULE-Panel:					true;
@@ -165,10 +217,10 @@
 // BOX
 // ---------------------------------------------------- 
 
-@BOX-HeaderBgColor:             @COLOR-Base;
-@BOX-HeaderTextColor:           #FFF;
-@BOX-BodyBgColor:               #F8F8F8;
-@BOX-FooterBgColor:             #DEDEDE;
+@BOX-HeaderBgColor:             @COLOR-Red;
+@BOX-HeaderTextColor:           @COLOR-White;
+@BOX-BodyBgColor:               @COLOR-RedLighter;
+@BOX-FooterBgColor:             @COLOR-RedLight;
 
 // BREADCRUMBS
 // ----------------------------------------------------
@@ -180,26 +232,24 @@
 // BROWSEHAPPY
 // ----------------------------------------------------
 
-@BROWSEHAPPY-Color:             #FFF;
-@BROWSEHAPPY-BgColor:       	#e74c3c;
-
-
+@BROWSEHAPPY-Color:             @COLOR-White;
+@BROWSEHAPPY-BgColor:       	@COLOR-Red;
 
 // FORM
 // ---------------------------------------------------- 
 
-@FORM-Placeholder:              #CCC;
+@FORM-Placeholder:              @COLOR-GreyLight;
 
 // NAVIGATION
 // ---------------------------------------------------- 
 
-@NAV-BgColor:                   @COLOR-Blue;
-@NAV-Border:               		@COLOR-Blue;
+@NAV-BgColor:                   @COLOR-Base;
+@NAV-Border:               		@COLOR-Base;
 @NAV-TextColor:                 @COLOR-White;
-@NAV-HoverBgColor:              @COLOR-White;
+@NAV-HoverBgColor:              lighten(@COLOR-Base, 10%);
 @NAV-HoverBorder:               @COLOR-White;
 @NAV-HoverTextColor:            @COLOR-Blue;
-@NAV-ActiveBorder:              @COLOR-Blue-Lighter;
+@NAV-ActiveBorder:              @COLOR-BlueLighter;
 
 // PAGINATION
 // ---------------------------------------------------- 
@@ -210,9 +260,9 @@
 // TOOLTIP
 // ---------------------------------------------------- 
 
-@TOOLTIP-BgColor:               rgba(0,0,0,0.9);
+@TOOLTIP-BgColor:               rgba(0, 0, 0, 0.9);
 
 // WELL
 // ---------------------------------------------------- 
 
-@WELL-BgColor:                  #EBEBEB;
+@WELL-BgColor:                  @COLOR-GreyLight;
