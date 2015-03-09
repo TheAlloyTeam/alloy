@@ -69,7 +69,7 @@
 
     ._padding ((@TYPE-LineHeight/4), (@TYPE-FontSize * 1.5), (@TYPE-LineHeight/4), (@TYPE-FontSize * 1.5));
     ._line-height (@TYPE-FontSize);
-    ._transition (box-shadow, 0.2s, @BUTTON-Anim);
+    ._transition (all, 0.2s, @BUTTON-Anim);
 
     &:visited {
         color: @BUTTON-TextColor;
@@ -78,6 +78,7 @@
     &:hover {
         background-color: @BUTTON-HoverColor;
         color: @BUTTON-TextColor;
+        transform: scale(1.05);
     }
 
     &:active {
