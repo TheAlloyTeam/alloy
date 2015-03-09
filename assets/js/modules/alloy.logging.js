@@ -58,20 +58,20 @@
 		        } else {
 	                if (!consoleActive) {
 	                    // use internal logging
-	                    this.startup("Console is on");
-	                    this.startup("you have a working console implementation - well done");
+	                    startup("Console is on");
+	                    startup("you have a working console implementation - well done");
 	                    consoleActive = true;
 	                }
 	            }
 		    }
 		};
 
-		var logEvent = function(categoryName, level, message, data) {
+		var logEvent = function(level, message) {
 			var event = {};
 			event.time = new Date();
 			event.message = message;
-			event.data = data;
 			event.level = level;
+
 		};
 
 		var logToConsole =  function(event) {
@@ -79,7 +79,8 @@
 		};
 
 		var logThis = function(level, message) {
-			var logEvent = new logEvent(logLevel, message);
+			//var logEvent = new logEvent(level, message);
+			//logToConsole(logEvent);
 		};
 
 		// Log Items
@@ -114,7 +115,7 @@
 
         var public = {
             init: _init,
-            log : log,
+            log : logThis,
             info : info,
             debug : debug,
             trace : trace,

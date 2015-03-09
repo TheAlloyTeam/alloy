@@ -1,6 +1,23 @@
 (function() {
+    'use strict';
+
     ALLOY.Core = function () {
         var config = {
+
+        };
+
+        var _ready = function(callback) {
+            // https://developer.mozilla.org/en-US/docs/Web/API/document.readyState
+            var readyState = document.readyState;
+
+            if(readyState === "complete" || readyState === "loaded") {
+                callback();
+            } else {
+                document.addEventListener("ALLOYDocumentReady", callback);
+            }
+        };
+
+        var _hide = function() {
 
         };
 
@@ -16,14 +33,19 @@
     		$("html").removeClass("no-js");
     	};
 
-        var public = {
+        var output = {
+            ready: _ready,
             init: _init
         };
 
-        return public;
+        return output;
 
     }();
 
-    console.log("ALLOY.Core Initializing");
-    ALLOY.Core.init();
+
+
+    ALLOY.Core.ready(function() {
+        console.log("ALLOY.Core Initializing");
+        ALLOY.Core.init();
+    });
 })();
