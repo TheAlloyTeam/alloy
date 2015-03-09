@@ -20,24 +20,25 @@
 @LOCAL-Decimal: #F8F8F0;
 
 .prettyprint {
-  display: block;
-  background-color: #272822;
-  padding:1em;
-  overflow:hidden;
+    display: block;
+    color: @COLOR-GreyLighter;
+    background-color: @COLOR-GreyDark;
+    padding: 1em;
+    overflow: hidden;
 
     code {
-        display:inline;
-        line-height:1.3;
+        display: inline;
+        line-height: 1.3;
     }
 
-    *::selection{
-        background: #9d550f;    /* orange */
-        color: #F8F8F0;         /* whitish */
+    *::selection {
+        color: @COLOR-GreyLighter;
+        background: @COLOR-Yellow;
     }
 
-    *::-moz-selection{
-        background: #9d550f;    /* orange */
-        color: #F8F8F0;         /* whitish */
+    *::-moz-selection {
+        color: @COLOR-GreyLighter;
+        background: @COLOR-Yellow;
     }
 
     .nocode { background-color: none; color: @LOCAL-NoCode }

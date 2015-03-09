@@ -5,13 +5,13 @@
 // BUTTON
 // =======================================================================*/
 
-@BUTTON-MainColor:              lighten(@COLOR-Blue, 35%);
+@BUTTON-MainColor:              lighten(@COLOR-Base, 20%);
 @BUTTON-HoverColor:             darken(@BUTTON-MainColor, 10%);
-@BUTTON-TextColor:              @COLOR-Blue;
+@BUTTON-TextColor:              @COLOR-White;
 
-@BUTTON-AltColor:               lighten(@COLOR-Orange, 30%);
+@BUTTON-AltColor:               lighten(@COLOR-Purple, 20%);
 @BUTTON-AltHoverColor:          darken(@BUTTON-AltColor, 10%);
-@BUTTON-AltTextColor:           @COLOR-Blue;
+@BUTTON-AltTextColor:           @COLOR-White;
 
 @BUTTON-DisabledColor:          @COLOR-White;
 @BUTTON-DisabledHoverColor:     darken(@BUTTON-DisabledColor, 2%);
@@ -70,6 +70,7 @@
     ._line-height (@TYPE-FontSize);
     ._transition (all, 0.2s, @BUTTON-Anim);
 
+    &:link,
     &:visited {
         color: @BUTTON-TextColor;
     }
