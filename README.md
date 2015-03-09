@@ -35,9 +35,5 @@ http://bradfrostweb.com/blog/post/atomic-web-design/
 
 ## Workers
 * Gary Finbow http://about.me/munchkin
-<<<<<<< HEAD
-* Matthew Dixon http://matthewdixon.me.uk/
-=======
 * Matthew Dixon http://matthewdixon.me.uk/
 * JamCow http://jamcow.net/
->>>>>>> 925663eb8677b7bd47ee1f9b02f2ec726b6e8ce6
