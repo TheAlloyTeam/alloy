@@ -13,13 +13,6 @@
 // COLOURS
 // ----------------------------------------------------
 
-@COLOR-Base:                    @COLOR-Indigo;
-
-@COLOR-Complement1:             spin(@COLOR-Base, 180);
-@COLOR-Complement2:             darken(spin(@COLOR-Base, 180), 5%);
-@COLOR-Lighten1:                lighten(@COLOR-Base, 10%);
-@COLOR-Lighten2:                lighten(@COLOR-Base, 20%);
-
 @COLOR-Black:					#000000;
 @COLOR-White:					#FFFFFF;
 
@@ -101,6 +94,8 @@
 @COLOR-GreyDark:				#616161;
 @COLOR-GreyDarker:				#212121;
 
+@COLOR-Base:                    @COLOR-Indigo;
+
 // ANNIMATION CURVES
 // ----------------------------------------------------
 
@@ -175,39 +170,9 @@
 // STYLE
 // ----------------------------------------------------
 
-@STYLE-RoundedCorners:          true; // Rounds buttons, alerts, pagination, wells.
+@STYLE-RoundedCorners:          true; // Rounds buttons, alerts, pagination, wells
 @STYLE-BorderRadius:            8;
 @STYLE-BodyBgColor:             @COLOR-White;
-
-// BASE MODULES
-// Change to false if not using
-// =========================================================================//
-
-@MODULE-Accordion:              true;
-@MODULE-Alert:                  true;
-@MODULE-Box:                    true;
-@MODULE-Breadcrumbs:            true;
-@MODULE-Browsehappy:            true;
-@MODULE-Button:                 true;
-@MODULE-Card:                   true;
-@MODULE-Column:                 true;
-@MODULE-Form:                   true;
-@MODULE-Icon:                   true;
-@MODULE-Image:                  true;
-@MODULE-Map:                    true;
-@MODULE-Media:                  true;
-@MODULE-Modal:                  true;
-@MODULE-Navigation:             true;
-@MODULE-Overlay:                true;
-@MODULE-Pagination:             true;
-@MODULE-Print:                  true;
-@MODULE-Tabs:                   false;
-@MODULE-Tooltip:                true;
-@MODULE-Typography:             true;
-@MODULE-Story:             		true;
-@MODULE-Well:                   true;
-@MODULE-RTE:					true;
-@MODULE-Panel:					true;
 
 // MODULES
 // =========================================================================//
@@ -217,7 +182,7 @@
 // BOX
 // ---------------------------------------------------- 
 
-@BOX-HeaderBgColor:             @COLOR-Red;
+@BOX-HeaderBgColor:             @COLOR-Base;
 @BOX-HeaderTextColor:           @COLOR-White;
 @BOX-BodyBgColor:               @COLOR-RedLighter;
 @BOX-FooterBgColor:             @COLOR-RedLight;
@@ -266,3 +231,33 @@
 // ---------------------------------------------------- 
 
 @WELL-BgColor:                  @COLOR-GreyLight;
+
+// BASE MODULES
+// Change to false if not using
+// =========================================================================//
+
+@MODULE-Accordion:              true;
+@MODULE-Alert:                  true;
+@MODULE-Box:                    true;
+@MODULE-Breadcrumbs:            true;
+@MODULE-Browsehappy:            true;
+@MODULE-Button:                 true;
+@MODULE-Card:                   true;
+@MODULE-Column:                 true;
+@MODULE-Form:                   true;
+@MODULE-Icon:                   true;
+@MODULE-Image:                  true;
+@MODULE-Map:                    true;
+@MODULE-Media:                  true;
+@MODULE-Modal:                  true;
+@MODULE-Navigation:             true;
+@MODULE-Overlay:                true;
+@MODULE-Pagination:             true;
+@MODULE-Print:                  true;
+@MODULE-Tabs:                   false;
+@MODULE-Tooltip:                true;
+@MODULE-Typography:             true;
+@MODULE-Story:             		true;
+@MODULE-Well:                   true;
+@MODULE-RTE:					true;
+@MODULE-Panel:					true;
