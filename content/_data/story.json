@@ -11,7 +11,7 @@
                 "target": ""
             },
             "content": {
-                "avatar": "http://lorempixel.com/100/100/people",
+                "avatar": "//www.nicenicejpg.com/100/100",
                 "name": "John Doe",
                 "url": "#"
             }
@@ -22,7 +22,7 @@
                 "target": ""
             },
             "content": {
-                "image": "https://placekitten.com/360/280",
+                "image": "//www.nicenicejpg.com/360/280",
                 "title": "Cite Title",
                 "summary": "Cite Summary",
                 "author": "Cite Author",

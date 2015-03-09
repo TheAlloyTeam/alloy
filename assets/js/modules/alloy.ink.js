@@ -17,7 +17,7 @@
 
     	_init: function() {
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
-            this.$element.prepend("<span class=\"" + this.config.inkClass " "\"></span>");
+            this.$element.prepend("<span class=\"" + this.config.inkClass + "\"></span>");
             this.$element.on("click, tap", function() {
             	this.onEvent();
             });

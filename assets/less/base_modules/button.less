@@ -65,11 +65,10 @@
     text-decoration: none;
     border: none;
     cursor: pointer;
-    box-shadow: 0 0 0 rgba(0,0,0,0);
 
     ._padding ((@TYPE-LineHeight/4), (@TYPE-FontSize * 1.5), (@TYPE-LineHeight/4), (@TYPE-FontSize * 1.5));
     ._line-height (@TYPE-FontSize);
-    ._transition (box-shadow, 0.2s, @BUTTON-Anim);
+    ._transition (all, 0.2s, @BUTTON-Anim);
 
     &:visited {
         color: @BUTTON-TextColor;
@@ -78,11 +77,11 @@
     &:hover {
         background-color: @BUTTON-HoverColor;
         color: @BUTTON-TextColor;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     &:active {
-        //transform: scale(0.95);
-        box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+        
     }
 
 }

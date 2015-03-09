@@ -1,0 +1,39 @@
+{
+    "item": {
+        "modifier": "variant"
+    },
+    "content": {
+        "crumb": [{
+            "item": {
+                "modifier": "root"
+                },
+            "content": {
+                "text": "Home",
+                "title": "Goto the Homepage",
+                "icon": "icon-home52",
+                "url": "/",
+
+                "crumb": [{
+                    "item": {},
+                    "content": {
+                        "text": "Category",
+                        "title": "Goto the Category",
+                        "icon": "",
+                        "url": "#",
+
+                        "crumb": [{
+                            "item": {
+                                "modifier": "current"
+                                },
+                            "content": {
+                                "text": "Page",
+                                "title": "Goto the Page",
+                                "icon": ""
+                            }
+                        }]
+                    }    
+                }]
+            }
+        }]
+    }
+}

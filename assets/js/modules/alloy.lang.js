@@ -1,4 +1,6 @@
 (function() {
+    'use strict';
+    
     ALLOY.Lang = function() {
 
         var _init = function() {
@@ -6,11 +8,11 @@
         };
 
 
-        var public = {
+        var output = {
             init: _init
         };
 
-        return public;
+        return output;
 
     }();
 

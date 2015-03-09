@@ -7,9 +7,9 @@
         "block": ""
     },
     "content": {
-        "text": "xx",
-        "title": "",
-        "url": "",
+        "text": "Button",
+        "title": "Button",
+        "url": "#butonUrl",
         "icon": ""
     },
     "tracking": {

@@ -28,7 +28,7 @@
     }
 }
 
-.list__links--Corp {
+.list__links--corp {
 
 }
 
@@ -41,13 +41,15 @@
 .list--contact {
     border-right: 2px solid @COLOR-Grey;
     ._padding-right(20);
+    
     .list__item {
         font-weight: bold;
         color: @COLOR-Blue;
     }
+    
     .list__link {
         color: @COLOR-Blue;
-        text-decoration:none;
+        text-decoration: none;
         &:hover {
             text-decoration: underline;
         }
@@ -58,13 +60,13 @@
     list-style: none;
 
     .list__item {
-        display:block;
-        float:left;
+        display: block;
+        float: left;
         width: 31%;
-        ._margin(0, 10, 10, 0);
+        ._margin (0, 10, 10, 0);
 
-        &:nth-chlid(3n+3) {
-            ._margin(0,0,10,0);
+        &:nth-child(3n+3) {
+            ._margin (0, 0, 10, 0);
         }
 
     }
