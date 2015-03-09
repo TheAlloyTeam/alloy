@@ -11,9 +11,7 @@
         {{#if content.title}} title="{{content.title}}"{{/if}}>
         <span class="ripple"></span>
         <span class="button__content">
-        {{#if content.icon}}
-            <i class="icon icon--{{content.icon}}" aria-hidden="true" role="img"></i>
-        {{/if}}
+        {{#if content.icon}}{{#each content.icon}}{{>icon}}{{/each}}{{/if}}
         {{content.text}}</span>
     </a>
     {{else}}
@@ -24,9 +22,7 @@
         {{#if content.title}} title="{{content.title}}"{{/if}}>
         <span class="ripple"></span>
         <span class="{{item.block}}__content">
-        {{#if content.icon}}
-            <i class="icon icon--{{content.icon}}" aria-hidden="true" role="img"></i>
-        {{/if}}
+        {{#if content.icon}}{{#each content.icon}}{{>icon}}{{/each}}{{/if}}
         {{content.text}}</span>
     </span>
     {{/if}}

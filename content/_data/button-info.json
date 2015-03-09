@@ -9,6 +9,14 @@
 		"text": "Information Button",
 		"title": "Information",
 		"url": "#linkurl1",
-		"icon": "icon-1"
+		"icon": [{
+			"item": {
+		        "modifier": "",
+		        "size": ""
+			},
+			"content": {
+				"title": ""
+			}
+		}]
     }
 }

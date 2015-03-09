@@ -9,6 +9,14 @@
 		"text": "Extra Small Button",
 		"title": "Extra Small",
 		"url": "#linkurl1",
-		"icon": "icon-1"
+		"icon": [{
+			"item": {
+		        "modifier": "cross",
+		        "size": ""
+			},
+			"content": {
+				"title": ""
+			}
+		}]
     }
 }
