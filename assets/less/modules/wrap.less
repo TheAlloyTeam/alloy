@@ -8,9 +8,20 @@
 // BASE
 // ----------------------------------------------------
 
-.w {}
+.w {
+	._padding (40, 0);
+}
 
-.w--header {}
+.w--header {
+	background-color: lighten(@NAVIGATION-BgColor, 30%);
+	text-align: center;
+	._padding (20, 0, 0, 0);
+}
+
+.w--navigation {
+	background-color: @NAVIGATION-BgColor;
+	padding: 0;
+}
 
 .w--primary {}
 
@@ -18,12 +29,13 @@
 
 .w--footer {
 	color: @COLOR-White;
-	background-color: lighten(@COLOR-Base, 20%);
+	background-color: lighten(@COLOR-Base, 30%);
 }
 
 .w--copyright {
 	color: @COLOR-White;
 	background-color: @COLOR-Base;
+	padding: 0;
 
 	a {
 		&:link,
