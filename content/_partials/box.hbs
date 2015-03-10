@@ -1,7 +1,21 @@
 {{#this}}
-<div class="box box--{{box_variant}}">
-	<div class="box__head"><span class="box__title">{{box_title}}</span></div>
-	<div class="box__body"><p>{{box_body}}</p></div>
-	<div class="box__foot">{{#if box_button-url}}<a href="{{box_button-url}}" title="{{box_button-title}}">{{#if box_button-icon}}<i class="icon icon--{{box_button-icon}}"></i>{{/if}}<span>{{box_button-text}}</span></a>{{/if}}</div>
+<div class="box{{#if item.modifier}} box--{{item.modifier}}{{/if}}">
+	{{#if content.title}}
+	<div class="box__head"><span class="box__title">{{content.title}}</span></div>
+	{{/if}}
+	<div class="box__body rte">{{content.body}}</div>
+	{{#if actions}}
+	<div class="box__foot">
+		{{#each actions}}
+			{{#if buttons}}
+				{{#each buttons}}
+					{{#this}}
+					{{> button }}
+					{{/this}}
+				{{/each }}
+			{{/if}}
+		{{/each }}
+	</div>
+	{{/if}}
 </div>
 {{/this}}

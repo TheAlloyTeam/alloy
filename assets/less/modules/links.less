@@ -1,8 +1,17 @@
 /* =========================================================================
-// TEMPLATE
+// LINKS
 // =======================================================================*/
 
-// ALL
+// VARIABLES
+// ----------------------------------------------------
+
+@LINK-Link:                     @COLOR-Base;
+@LINK-Visited:                  lighten(@LINK-Link, 10);
+@LINK-Hover:                    darken(@LINK-Link, 10);
+@LINK-Active:                   darken(@LINK-Link, 20);
+@LINK-Focus:                    darken(@LINK-Link, 40);
+
+// BASE
 // ----------------------------------------------------
 
 ._link() {
@@ -12,17 +21,21 @@
 	&:link {
 		color: @LINK-Link;
 	}
+
 	&:visited {
 		color: @LINK-Visited;
 	}
+
 	&:hover {
 		color: @LINK-Hover;
 		text-decoration: none;
 	}
+
 	&:focus {
 		color: @LINK-Focus;
 		text-decoration: none;
 	}
+	
 	&:active {
 		color: @LINK-Active;
 	}
@@ -35,19 +48,23 @@
 	&:link {
 		color: @COLOR-White;
 	}
+
 	&:visited {
-		color: @COLOR-Blue-Lighter;
+		color: @COLOR-BlueLighter;
 	}
+
 	&:hover {
-		color: @COLOR-Blue-Light;
+		color: @COLOR-BlueLight;
 		text-decoration: none;
 	}
+
 	&:focus {
-		color: @COLOR-Blue-Light;
+		color: @COLOR-BlueLight;
 		text-decoration: none;
 	}
+
 	&:active {
-		color: @COLOR-Blue-Light;
+		color: @COLOR-BlueLight;
 	}
 }
 
@@ -55,7 +72,21 @@ a {
 	._link();
 }
 
+// VARIANTS
+// ----------------------------------------------------
 
+.link--logo {
+
+}
+
+.link--pagination {
+	color: @PAGINATION-BgColor;
+	display: inline-block;
+    text-decoration: none;
+    vertical-align: top;
+    line-height: 1;
+    ._font-size (28);
+}
 
 // MOBILE
 // ----------------------------------------------------

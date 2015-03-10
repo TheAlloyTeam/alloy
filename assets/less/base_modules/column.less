@@ -1,14 +1,17 @@
-.colum-styles() when not (@MODULE-Column) { }
-.colum-styles() when (@MODULE-Column) {
+.column-styles() when not (@MODULE-Column) { }
+.column-styles() when (@MODULE-Column) {
 
 /* =========================================================================
-// colum
+// COLUMN
 // =======================================================================*/
 
-// BASE
+// VARIABLES
 // ----------------------------------------------------
 
 @columGap: (@TYPE-LineHeight * 1px);
+
+// BASE
+// ----------------------------------------------------
 
 @media only screen and (min-width: @MQ-Medium-min) {
 
@@ -32,4 +35,4 @@
 
 }
 
-} .colum-styles();
+} .column-styles();

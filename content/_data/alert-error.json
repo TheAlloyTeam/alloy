@@ -1,0 +1,8 @@
+{
+	"item": {
+    	"modifier": "error"
+	},
+    "content": {
+		"text": "This is an error alert"
+    }
+}

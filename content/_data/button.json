@@ -10,7 +10,15 @@
         "text": "Button",
         "title": "Button",
         "url": "#butonUrl",
-        "icon": ""
+        "icon": [{
+            "item": {
+                "modifier": "",
+                "size": ""
+            },
+            "content": {
+                "title": ""
+            }
+        }]
     },
     "tracking": {
         "category": "",
