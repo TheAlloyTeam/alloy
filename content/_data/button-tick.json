@@ -9,7 +9,7 @@
 		"text": "Tick Button",
 		"title": "Icon button example (tick)",
 		"url": "#linkurl1",
-		"icon": {
+		"icon": [{
 			"item": {
 		        "modifier": "check52",
 		        "size": ""
@@ -17,6 +17,6 @@
 			"content": {
 				"title": ""
 			}
-		}
+		}]
     }
 }
