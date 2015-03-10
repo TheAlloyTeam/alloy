@@ -2,9 +2,11 @@
 // WRAPS
 // =======================================================================*/
 
-// ALL
+// VARIABLES
 // ----------------------------------------------------
 
+// BASE
+// ----------------------------------------------------
 
 .w {}
 
@@ -15,11 +17,21 @@
 .w--secondary {}
 
 .w--footer {
-	background-color: @COLOR-Blue-Dark;
 	color: @COLOR-White;
+	background-color: lighten(@COLOR-Base, 20%);
+}
+
+.w--copyright {
+	color: @COLOR-White;
+	background-color: @COLOR-Base;
 
 	a {
-		._link-alt();
+		&:link,
+		&:visited,
+		&:hover,
+		&:active {
+			color: @COLOR-White;
+		}
 	}
 }
 

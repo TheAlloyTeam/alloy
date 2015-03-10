@@ -10,7 +10,15 @@
             "content": {
                 "text": "Home",
                 "title": "Goto the Homepage",
-                "icon": "icon-home52",
+                "icon": [{
+                    "item": {
+                        "modifier": "home",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }],
                 "url": "/",
 
                 "crumb": [{
@@ -18,7 +26,15 @@
                     "content": {
                         "text": "Category",
                         "title": "Goto the Category",
-                        "icon": "",
+                        "icon": [{
+                            "item": {
+                                "modifier": "",
+                                "size": ""
+                            },
+                            "content": {
+                                "title": ""
+                            }
+                        }],
                         "url": "#",
 
                         "crumb": [{
@@ -28,10 +44,18 @@
                             "content": {
                                 "text": "Page",
                                 "title": "Goto the Page",
-                                "icon": ""
+                                "icon": [{
+                                    "item": {
+                                        "modifier": "",
+                                        "size": ""
+                                    },
+                                    "content": {
+                                        "title": ""
+                                    }
+                                }]
                             }
                         }]
-                    }    
+                    }
                 }]
             }
         }]

@@ -1,75 +1,36 @@
 /* =========================================================================
-// List
+// LIST
 // =======================================================================*/
 
-// ALL
+// BASE
 // ----------------------------------------------------
 
 .list {
-    ._margin(0);
-    ._padding(0);
-
-    .list__item {
-        list-style: none;
-        a {
-
-        }
-    }
+    margin: 0;
+    padding: 0;
 }
 
 .list__links {
     .list__item {
-        ._padding(0, 10, 0, 0)
-
+        ._padding (0, 10, 0, 0)
     }
 
     .list__link {
-        white-space: no-w;
+        white-space: no-wrap;
     }
 }
 
-.list__links--corp {
-
-}
+// VARIANTS
+// ----------------------------------------------------
 
 .list--horizontal {
-   li {
+   .list__item {
         display: inline;
     }
 }
 
-.list--contact {
-    border-right: 2px solid @COLOR-Grey;
-    ._padding-right(20);
-    
-    .list__item {
-        font-weight: bold;
-        color: @COLOR-Blue;
-    }
-    
-    .list__link {
-        color: @COLOR-Blue;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-
-.list--matrix {
+.list--clean {
     list-style: none;
-
-    .list__item {
-        display: block;
-        float: left;
-        width: 31%;
-        ._margin (0, 10, 10, 0);
-
-        &:nth-child(3n+3) {
-            ._margin (0, 0, 10, 0);
-        }
-
-    }
 }
 
 // MOBILE

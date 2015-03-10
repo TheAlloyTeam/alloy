@@ -1,0 +1,8 @@
+{
+	"item": {
+    	"modifier": "info"
+	},
+    "content": {
+		"text": "This is an info alert"
+    }
+}

@@ -1,13 +1,12 @@
 /* ==========================================================================
-// g
+// GRID
 // =========================================================================*/
-// @TODO: Make more dynamic
 
-// .g = g
-// .c = colum
-// .w = w
+// .g = grid
+// .c = column
+// .w = wrapper
 
-// colum CALCULATIONS
+// COLUMN CALCULATIONS
 // ----------------------------------------------------
 
 ._colwidth (@numberOfcols: 1, @numberOfTotalCols: @grid-cols){
@@ -52,19 +51,14 @@
     ._gutterPadding();
 }
 
+// VARIANTS
+// ----------------------------------------------------
+
 .g--rtl {
     [class*="c__"] {
-        float:right;
+        float: right;
     }
 }
-
-// FULL
-.c__md--1 {
-    ._colwidth(1,1);
-}
-
-// g NOGUTTER
-// ----------------------------------------------------
 
 .g--nogutter {
     [class*='c__'] {
@@ -72,13 +66,10 @@
     }
 }
 
-// g HALFGUTTER
-// ----------------------------------------------------
-
 .g--halfgutter {
     [class*='c__'] {
-        ._padding-top(5);
-        ._padding-bottom(5);
+        ._padding-top (5);
+        ._padding-bottom (5);
     }
 }
 
@@ -96,8 +87,9 @@
 // TABLET
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Large)  {
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium)  {
 
+    .c__md--1 { ._colwidth(1,1); }
     .c__md--1-2, .c__md--2-4, .c__md--3-6 { ._colwidth(1,2); }
     .c__md--1-3, .c__md--2-6 { ._colwidth(1,3); }
     .c__md--2-3, .c__md--4-6 { ._colwidth(2,3); }
@@ -114,7 +106,7 @@
 // DESKTOP
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Larger-min) {
+@media only screen and (min-width: @MQ-Large-min) {
 
     .g {
         //max-width: (@GRID-MaxWidth/@TYPE-FontSize) * 1em; // Make ems
@@ -122,7 +114,7 @@
         margin: 0 auto;
     }
 
-// columS
+// Columns
 
     // Halves
     .c__lg--1-2, .c__lg--2-4, .c__lg--3-6, .c__lg--4-8, .c__lg--5-10, .c__lg--6-12, .c__lg--7-14, .c__lg--8-16 { ._colwidth(1,2); }
@@ -159,7 +151,7 @@
     .c__lg--5-8, .c__lg--10-16 {._colwidth(5,8);}
     .c__lg--7-8, .c__lg--14-16 {._colwidth(7,8);}
 
-    // Nineths
+    // Ninths
     .c__lg--1-9 {._colwidth(1,9);}
     .c__lg--2-9 {._colwidth(2,9);}
     .c__lg--4-9 {._colwidth(4,9);}
@@ -173,7 +165,7 @@
     .c__lg--7-10 { ._colwidth(7,10); }
     .c__lg--9-10 { ._colwidth(9,10); }
 
-    // Elveenths
+    // Elevenths
     .c__lg--1-11 { ._colwidth(1,11); }
     .c__lg--2-11 { ._colwidth(2,11); }
     .c__lg--3-11 { ._colwidth(3,11); }

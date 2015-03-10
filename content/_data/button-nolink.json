@@ -9,7 +9,15 @@
 		"text": "No Link Button",
 		"title": "This is a No Link Button",
 		"url": "",
-		"icon": "icon-1"
+		"icon": [{
+			"item": {
+		        "modifier": "",
+		        "size": ""
+			},
+			"content": {
+				"title": ""
+			}
+		}]
     },
     "tracking": {}
 }

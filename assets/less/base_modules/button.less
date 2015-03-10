@@ -5,13 +5,16 @@
 // BUTTON
 // =======================================================================*/
 
-@BUTTON-MainColor:              lighten(@COLOR-Blue, 35%);
-@BUTTON-HoverColor:             darken(@BUTTON-MainColor, 10%);
-@BUTTON-TextColor:              @COLOR-Blue;
+// VARIABLES
+// ----------------------------------------------------
 
-@BUTTON-AltColor:               lighten(@COLOR-Orange, 30%);
+@BUTTON-BgColor:                lighten(@COLOR-Base, 20%);
+@BUTTON-HoverColor:             darken(@BUTTON-BgColor, 10%);
+@BUTTON-TextColor:              @COLOR-White;
+
+@BUTTON-AltColor:               lighten(@COLOR-Purple, 20%);
 @BUTTON-AltHoverColor:          darken(@BUTTON-AltColor, 10%);
-@BUTTON-AltTextColor:           @COLOR-Blue;
+@BUTTON-AltTextColor:           @COLOR-White;
 
 @BUTTON-DisabledColor:          @COLOR-White;
 @BUTTON-DisabledHoverColor:     darken(@BUTTON-DisabledColor, 2%);
@@ -52,7 +55,6 @@
         color: @TextColor;
     }
 
-
 }
 
 // BUTTON BASE
@@ -61,7 +63,7 @@
 .button {
     display: block;
     color: @BUTTON-TextColor;
-    background-color: @BUTTON-MainColor;
+    background-color: @BUTTON-BgColor;
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -70,6 +72,7 @@
     ._line-height (@TYPE-FontSize);
     ._transition (all, 0.2s, @BUTTON-Anim);
 
+    &:link,
     &:visited {
         color: @BUTTON-TextColor;
     }
