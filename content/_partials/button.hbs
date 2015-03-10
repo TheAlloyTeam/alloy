@@ -13,6 +13,7 @@
         {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
         <span>
         {{content.text}}</span>
+        {{#if content.badge}}{{#each content.badge}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
     </a>
     {{else}}
     <span class="button
@@ -22,8 +23,8 @@
         {{#if content.title}} title="{{content.title}}"{{/if}}>
         <span class="ripple"></span>
         {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
-        <span>
-        {{content.text}}</span>
+        <span>{{content.text}}</span>
+        {{#if content.badge}}{{#each content.badge}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
     </span>
     {{/if}}
 {{/this}}
