@@ -5,31 +5,46 @@
 // PAGINATION
 // =======================================================================*/
 
-.list--pagination {
+// VARIABLES
+// ----------------------------------------------------
 
+@PAGINATION-Color:              @BUTTON-TextColor;
+@PAGINATION-BgColor:            @BUTTON-BgColor;
+@PAGINATION-BgColorHover:       @BUTTON-HoverColor;
+
+// BASE
+// ----------------------------------------------------
+
+.list--pagination {
+    display: inline-block;
     padding: 0;
-    list-style: none;
-    ._margin (0, 0, @TYPE-LineHeight, -8);
+    ._margin (0, 10, @TYPE-LineHeight, 10);
     ._clearfix ();
 
     .list__item {
         float: left;
-        ._margin (0, 0, 0, 8);
+        ._margin-right (10);
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     .list__link {
+        color: @PAGINATION-Color;
+        background-color: @PAGINATION-BgColor;
         float: left;
         text-decoration: none;
-        color: #FFF;
-        background-color: @PAGINATION-BgColor;
         ._padding (2, 10, 2, 10);
-        ._border-radius (4);
-        ._transition (background-Color,0.3s);
+        ._transition (all, 0.1s);
 
-        &:hover,
-        &.active {
+        &:hover {
             background-color: @PAGINATION-BgColorHover;
         }
+    }
+
+    .current {
+        background-color: @PAGINATION-BgColorHover;
     }
 }
 

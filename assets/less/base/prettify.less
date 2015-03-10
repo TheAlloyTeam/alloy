@@ -3,58 +3,58 @@
 // PRETTIFY
 // =========================================================================*/
 
-// VARS
+// VARIABLES
 // =========================================================================
 
-@LOCAL-NoCode: #000000;
-@LOCAL-String: #E6DB74;
-@LOCAL-Keyword: #66D9EF;
-@LOCAL-Comment: #75715E;
-@LOCAL-Type: #66D9EF;
-@LOCAL-Literal: #AE81FF;
-@LOCAL-Punctuation: #F8F8F0;
-@LOCAL-Plaintext: #F8F8F0;
-@LOCAL-Tag: #F92672;
-@LOCAL-Attribute: #a0e22a;
-@LOCAL-AttributeValue: #E6DB74;
-@LOCAL-Decimal: #F8F8F0;
+@PRETTIFY-NoCode:               @COLOR-Black;
+@PRETTIFY-String:               @COLOR-YellowLight;
+@PRETTIFY-Keyword:              @COLOR-Cyan;
+@PRETTIFY-Comment:              @COLOR-GreyDark;
+@PRETTIFY-Type:                 @COLOR-Cyan;
+@PRETTIFY-Literal:              @COLOR-Purple;
+@PRETTIFY-Punctuation:          @COLOR-GreyLighter;
+@PRETTIFY-Plaintext:            @COLOR-GreyLighter;
+@PRETTIFY-Tag:                  @COLOR-Pink;
+@PRETTIFY-Attribute:            @COLOR-Lime;
+@PRETTIFY-AttributeValue:       @COLOR-LimeDark;
+@PRETTIFY-Decimal:              @COLOR-GreyLighter;
 
 .prettyprint {
-  display: block;
-  background-color: #272822;
-  padding:1em;
-  overflow:hidden;
+    display: block;
+    color: @COLOR-GreyLighter;
+    background-color: @COLOR-GreyDark;
+    padding: 1em;
+    overflow: hidden;
 
     code {
-        display:inline;
-        line-height:1.3;
+        display: inline;
+        line-height: 1.3;
     }
 
-    *::selection{
-        background: #9d550f;    /* orange */
-        color: #F8F8F0;         /* whitish */
+    *::selection {
+        color: @COLOR-GreyLighter;
+        background: @COLOR-Yellow;
     }
 
-    *::-moz-selection{
-        background: #9d550f;    /* orange */
-        color: #F8F8F0;         /* whitish */
+    *::-moz-selection {
+        color: @COLOR-GreyLighter;
+        background: @COLOR-Yellow;
     }
 
-    .nocode { background-color: none; color: @LOCAL-NoCode }
-    .str { color: @LOCAL-String; }
-    .kwd { color: @LOCAL-Keyword; }
-    .com { color: @LOCAL-Comment; }
-    .typ { color: @LOCAL-Type; }
-    .lit { color: @LOCAL-Literal; }
-    .pun { color: @LOCAL-Punctuation; }
-    .pln { color: @LOCAL-Plaintext; }
-    .tag { color: @LOCAL-Tag; }
-    .atn { color: @LOCAL-Attribute; }
-    .atv { color: @LOCAL-AttributeValue; }
-    .dec { color: @LOCAL-Decimal; }
+    .nocode { background-color: none; color: @PRETTIFY-NoCode }
+    .str { color: @PRETTIFY-String; }
+    .kwd { color: @PRETTIFY-Keyword; }
+    .com { color: @PRETTIFY-Comment; }
+    .typ { color: @PRETTIFY-Type; }
+    .lit { color: @PRETTIFY-Literal; }
+    .pun { color: @PRETTIFY-Punctuation; }
+    .pln { color: @PRETTIFY-Plaintext; }
+    .tag { color: @PRETTIFY-Tag; }
+    .atn { color: @PRETTIFY-Attribute; }
+    .atv { color: @PRETTIFY-AttributeValue; }
+    .dec { color: @PRETTIFY-Decimal; }
 
 }
-
 
 // LANGUAGE SPECIFIC COLOURS
 // =========================================================================
@@ -73,7 +73,6 @@
         .kwd{ color:#F92672; }  /* keyword  - pink/red */
     }
 }
-
 
 // LINENUMBERS (.linenums)
 // =========================================================================
@@ -112,20 +111,21 @@
     }
 }
 
-
 // PRINT STYLES
 // =========================================================================
 
 @media print {
-  .prettyprint { background-color: none }
-  .str { color: #060 }
-  .kwd { color: #006; font-weight: bold }
-  .com { color: #600; font-style: italic }
-  .typ { color: #404; font-weight: bold }
-  .lit { color: #044 }
-  .pun { color: #440 }
-  .pln { color: #000 }
-  .tag { color: #006; font-weight: bold }
-  .atn { color: #404 }
-  .atv { color: #060 }
+
+    .prettyprint { background-color: none }
+    .str { color: #060 }
+    .kwd { color: #006; font-weight: bold }
+    .com { color: #600; font-style: italic }
+    .typ { color: #404; font-weight: bold }
+    .lit { color: #044 }
+    .pun { color: #440 }
+    .pln { color: #000 }
+    .tag { color: #006; font-weight: bold }
+    .atn { color: #404 }
+    .atv { color: #060 }
+
 }

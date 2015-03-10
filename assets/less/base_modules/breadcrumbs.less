@@ -5,13 +5,22 @@
 // BREADCRUMBS
 // =======================================================================*/
 
+// VARIABLES
+// ----------------------------------------------------
+
+@BREADCRUMBS-FontSize:          @TYPE-SIZE-Iota;
+@BREADCRUMBS-Color:             @TYPE-FontColor;
+@BREADCRUMBS-ActiveColor:       @TYPE-FontColor;
+
+// BASE
+// ----------------------------------------------------
+
 .breadcrumb {}
 
 .list--breadcrumb {
     display: block;
     margin-left: 0;
     padding: 0;
-    list-style: none;
     ._clearfix ();
     ._font-size (@BREADCRUMBS-FontSize);
 
@@ -21,22 +30,23 @@
         &:before {
             content: ">\0000a0";
         }
+
         &:first-child:before  {
             content: "";
         }
     }
 
     .list__link {
-        text-decoration: none;
         color: @BREADCRUMBS-Color;
+        text-decoration: none;
 
         &:hover {
-            text-decoration: underline
+            text-decoration: underline;
         }
 
-        &.active,
+        &:active,
         span {
-            color: @BREADCRUMBS-Activecor;
+            color: @BREADCRUMBS-ActiveColor;
         }
     }
 }

@@ -9,6 +9,14 @@
 		"text": "Cross Button",
 		"title": "Icon button example (cross)",
 		"url": "#linkurl1",
-		"icon": "close47"
+		"icon": [{
+			"item": {
+		        "modifier": "close47",
+		        "size": ""
+			},
+			"content": {
+				"title": ""
+			}
+		}]
     }
 }

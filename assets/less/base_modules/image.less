@@ -5,10 +5,19 @@
 // IMAGE
 // =======================================================================*/
 
+// VARIABLES
+// ----------------------------------------------------
+
+@IMAGE-Color:				@COLOR-White;
+@IMAGE-BorderColor:			@COLOR-GreyLight;
+
+// BASE
+// ----------------------------------------------------
+
 .image {}
 
 .image--rounded {
-    ._border-radius (4);
+    ._border-radius ();
 }
 
 .image--circle {
@@ -16,9 +25,9 @@
 }
 
 .image--bordered {
-    padding: 4px;
-    background-color: #FFF;
-    border: 1px solid #CCC;
+    background-color: @IMAGE-Color;
+    border: 1px solid @IMAGE-BorderColor;
+    ._padding (4);
 }
 
 } .image-styles();

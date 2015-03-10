@@ -8,6 +8,14 @@
     },
     "content": {
         "text": "I did something",
-        "icon": ""
+        "icon": [{
+            "item": {
+                "modifier": "",
+                "size": ""
+            },
+            "content": {
+                "title": ""
+            }
+        }]
     }
 }

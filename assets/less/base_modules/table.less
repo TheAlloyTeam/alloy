@@ -1,18 +1,17 @@
 /* =========================================================================
-// TABLES
+// TABLE
 // =======================================================================*/
 
-// VARS
+// VARIABLES
 // ----------------------------------------------------
 
-@LOCAL-TableBorderColor:            @COLOR-Grey-Lighter;
-@LOCAL-TableHeaderTextColor:        @COLOR-Grey-Dark;
-@LOCAL-TableHeaderBackgroundColor:  @COLOR-White;
-@LOCAL-TableHeaderFontFamily:       @TYPE-HeadingsFontFamily;
+@TABLE-HeadColor:                   @COLOR-GreyDark;
+@TABLE-HeadBgColor:                 @COLOR-White;
+@TABLE-BorderColor:                 @COLOR-GreyLighter;
+@TABLE-HeadFontFamily:              @TYPE-HeadingsFontFamily;
 
-// ALL
+// BASE
 // ----------------------------------------------------
-
 
 // STANDARD TABLE NOT IN A LIST
 // ----------------------------------------------------
@@ -22,7 +21,7 @@ table {
     th,
     td {
         ._padding (20, 15, 20, 15);
-        border: 1px solid @LOCAL-TableBorderColor;
+        border: 1px solid @TABLE-BorderColor;
         text-align: left;
     }
 
@@ -40,22 +39,22 @@ table {
 // ----------------------------------------------------
 
 .table {
-    ._margin (0,0,@TYPE-LineHeight,0);
-    ._padding(0);
+    padding: 0;
+    ._margin (0, 0, @TYPE-LineHeight, 0);
     .block;
 }
 .table__row {
     list-style: none;
-    border: 1px solid @LOCAL-TableBorderColor;
+    border: 1px solid @TABLE-BorderColor;
     border-top: none;
     ._clearfix();
 }
 
 .table__header {
-    color: @LOCAL-TableHeaderTextColor;
-    background-color: @LOCAL-TableHeaderBackgroundColor;
-    font-family: @LOCAL-TableHeaderFontFamily;
-    border-top: 1px solid @LOCAL-TableBorderColor;
+    color: @TABLE-HeadColor;
+    background-color: @TABLE-HeadBgColor;
+    font-family: @TABLE-HeadFontFamily;
+    border-top: 1px solid @TABLE-BorderColor;
     ._font-size (14);
 }
 
@@ -66,7 +65,7 @@ table {
 
 .table__cell {
     min-height: 100%; // Incase cell is empty
-    border-right: 0px solid @LOCAL-TableBorderColor;
+    border-right: 0px solid @TABLE-BorderColor;
     word-w: break-word;
     ._padding (10);
 
@@ -91,16 +90,6 @@ table {
 // ----------------------------------------------------
 
 @media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
-
-}
-
-// TABLET UP
-// ----------------------------------------------------
-@media only screen and (min-width: @MQ-Medium-min) {
-
-    .table {
-
-    }
 
 }
 
