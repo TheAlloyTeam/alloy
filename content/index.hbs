@@ -1,8 +1,11 @@
 ---
 title: Alloy Index
-subtitle: This is where the fun starts
+subtitle: This is where the fun starts!
 
-nav-variant: home
+nav-variant: "home"
+nav-title: "Go to the Home"
+nav-text: "Home"
+mainmenu: "true"
 ---
 
 <main class="w w--main">
@@ -15,12 +18,12 @@ nav-variant: home
 					<h2 class="page__subtitle">{{subtitle}}</h2>
 				</div>
 
-				<div class="page__body">
+				<div class="page__body rte">
 					{{#if pages}}
-						<ul class="list">
+						<ul>
 						{{#withSort pages}}
 		                    {{#if data.nav-title }}
-		                        <li class="list__item"><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+		                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
 	                        {{/if}}
 		                {{/withSort}}
 		                </ul>

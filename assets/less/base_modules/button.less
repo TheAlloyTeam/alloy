@@ -70,7 +70,7 @@
 
     ._padding ((@TYPE-LineHeight/4), (@TYPE-FontSize * 1.5), (@TYPE-LineHeight/4), (@TYPE-FontSize * 1.5));
     ._line-height (@TYPE-FontSize);
-    ._transition (all, 0.2s, @BUTTON-Anim);
+    ._transition (all, 0.1s, @BUTTON-Anim);
 
     &:link,
     &:visited {
@@ -152,7 +152,7 @@
 
 }
 
-// TABLET UP ADJUSTMENT
+// TABLET & UP
 // ----------------------------------------------------
 
 @media only screen and (min-width: @MQ-Medium-min) { 
@@ -160,6 +160,7 @@
     .button {
         ._inline-block ();
     }
+
 }
 
 // DESKTOP
