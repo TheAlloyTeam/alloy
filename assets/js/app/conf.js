@@ -20,7 +20,7 @@ var require = {
         app: "app",
         libs: "libs",
         modules: "modules",
-        jquery: "libs/jquery/jquery.min",,
+        jquery: "libs/jquery/jquery.min",
         fontfaceobserver: "libs/fontfaceobserver/fontfaceobserver",
         selectivizr: "libs/selectivizr",
         'logging': "modules/alloy.logging",
