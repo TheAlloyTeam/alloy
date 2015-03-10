@@ -24,17 +24,17 @@
     ol,
     ul {
         ._padding-left (0);
-        ._margin (20, 0, 20, 20);
+        ._margin (20, 0, 20, 0);
 
         ol,
         ul  {
             ._padding-left (20);
-            ._margin (5, 0, 5, 0);
+            ._margin (10, 0, 10, 0);
         }
     }
     
     ul {
-        list-style: circle;
+        
     }
 
     strong, b {
@@ -46,14 +46,18 @@
     }
 
     blockquote {
-        color: @COLOR-Base;
+        color: @COLOR-GreenDarker;
+        background-color: @COLOR-GreenLighter;
+        font-family: @TYPE-HeadingsFontFamily;
         ._padding (20);
         ._margin (20, 0, 20, 0);
-        ._border-radius (@STYLE-BorderRadius);
+        ._border-radius (2);
         ._font-size (@TYPE-SIZE-Epsilon);
+        ._box-shadow-custom(~"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)");
 
         cite {
-
+            font-family: @TYPE-FontFamily;
+            ._font-size (@TYPE-FontSize);
         }
     }
 

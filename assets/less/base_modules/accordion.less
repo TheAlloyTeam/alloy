@@ -5,26 +5,32 @@
 // ACCORDION
 // =======================================================================*/
 
+// VARIABLES
+// ----------------------------------------------------
+
+@LOCAL-AccordianBackground:			@COLOR-Base;
+
 // BASE
 // ----------------------------------------------------
-.accordian{
+
+.accordian {
 	width: 30em;
 }
 
 /* Accordian headers */
-.accordion__tab{
-	background: #eb5037;
+.accordion__tab {
+	background-color: @LOCAL-AccordianBackground;
 	display: block;
 	margin: 0;
 }
 
-.accordion__title{
-  color: #ffffff;  
+.accordion__title {
+  	color: @COLOR-White;
 	padding: 0.2em;
 }
 
 /* collapsing-section */
-.accordion__content{
+.accordion__content {
     //display: none;
 }
 
@@ -49,6 +55,4 @@
 
 }
 
-// END
-// -----------------------------------------------------
 } .accordion-styles();

@@ -12,6 +12,7 @@ nav-variant: "alerts"
 	    <div class="c__md--1">
 
   			<article class="article">
+			    
 			    <header class="article__head head">
 			        <h1 class="article__title">{{title}}</h1>
 		        </header>
@@ -22,12 +23,18 @@ nav-variant: "alerts"
 
 <!-- example -->
 				<section class="section section--example">
+		            
 		            <header class="section__head">
 		                <h2 class="section__title">Example</h2>
 		            </header>
 
 		            <div class="secton__body">
 				        <!-- code -->
+
+				        {{> alert alert }}
+				        {{> alert alert-info }}
+				        {{> alert alert-error }}
+				        {{> alert alert-success }}
 
 				        <!-- end of code -->
 			        </div>
@@ -36,15 +43,20 @@ nav-variant: "alerts"
 
 <!-- code -->
 		    	<section class="section section--code">
+		            
 		            <header class="section__head">
 		            	<h2 class="section__title">Code</h2>
 		            </header>
 
-		            <div class="section__body">
-			            <pre class="prettyprint linenums"><code class="html">
-
-			             </code></pre>
-		            </div>
+					<div class="section__body">
+						<pre class="prettyprint linenums">
+							<code class="html">
+&lt;div class="alert"&gt;This is an alert&lt;/div&gt;
+&lt;div class="alert alert--info"&gt;This is an info alert&lt;/div&gt;
+&lt;div class="alert alert--error"&gt;This is an error alert&lt;/div&gt;
+&lt;div class="alert alert--success"&gt;This is a success alert&lt;/div&gt;</code>
+						</pre>
+					</div>
 
 		        </section>
 
