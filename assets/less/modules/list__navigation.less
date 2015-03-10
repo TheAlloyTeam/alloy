@@ -1,79 +1,40 @@
+.navigation-styles() when not (@MODULE-Navigation) { }
+.navigation-styles() when (@MODULE-Navigation) {
+
 /* =========================================================================
-// list_navigation
+// LIST NAVIGATION
 // =======================================================================*/
 
-// ALL
+// VARIABLES
+// ----------------------------------------------------
+
+@NAV-BgColor:                   @COLOR-Base;
+@NAV-Border:                    @COLOR-Base;
+@NAV-TextColor:                 @COLOR-White;
+@NAV-HoverBgColor:              lighten(@COLOR-Base, 10%);
+@NAV-HoverBorder:               @COLOR-Base;
+@NAV-HoverTextColor:            @COLOR-White;
+@NAV-ActiveBorder:              @COLOR-Base;
+
+// BASE
 // ----------------------------------------------------
 
 .list__navigation {
     ._clearfix ();
 
+    .list__item {
+        
+    }
+
     .list__link {
         display: block;
         text-decoration: none;
-        font-weight:bold;
+        font-weight: bold;
     }
 }
 
-
-
-.list__navigation--main {
-	._padding(1, 0, 1, 0);
-
-	.list__item {}
-	.list__link {
-        float:left;
-
-        color: @NAV-TextColor;
-
-        background-color: @NAV-BgColor;
-        border-Color: @NAV-Border;
-        border-style: solid;
-        border-width: 2px 0 0 0;
-        ._padding(5, 20, 7, 20);
-        ._transition (all,0.2s);
-
-        &:hover {
-            background-color: @NAV-HoverBgColor;
-            color: @NAV-HoverTextColor;
-            border-Color: @NAV-HoverBorder;
-        }
-
-        &.active {
-            background-color: @NAV-HoverBgColor;
-            color: @NAV-HoverTextColor;
-            border-Color: @NAV-ActiveBorder;
-        }
-    }
-}
-
-.list__navigation--footer {._clearfix ();
-
-    .list__item {
-        margin:0;
-        ._padding-bottom(4);
-    }
-    .list__link {
-        color: @NAV-TextColor;
-        background-color: @NAV-BgColor;
-        border-Color: @NAV-Border;
-        border-style: solid;
-        border-width: 2px 0 0 0;
-        ._padding(4, 10, 5, 10);
-        ._transition (all,0.2s);
-        ._border-radius(8);
-
-        &:hover {
-            background-color: @NAV-HoverBgColor;
-            color: @NAV-HoverTextColor;
-            border-Color: @NAV-HoverBorder;
-        } 
-        &.active {
-            background-color: @NAV-HoverBgColor;
-            color: @NAV-HoverTextColor;
-            border-Color: @NAV-ActiveBorder;
-        }
-    }}
+// VARIANTS
+// ----------------------------------------------------
 
 // MOBILE
 // ----------------------------------------------------
@@ -95,3 +56,5 @@
 @media only screen and (min-width: @MQ-Large-min) {
 
 }
+
+} .navigation-styles();
