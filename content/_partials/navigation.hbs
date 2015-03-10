@@ -1,12 +1,17 @@
-
-<div id="navigation" class="drawer">
-    <nav role="navigation">
-        <ul class="list list--horizontal list__navigation list__navigation--main">
-            {{#withSort pages "data.sort"}}
-                {{#if data.sort }}
-                    <li class="list__item"><a class="list__link{{#if page.nav-variant}} list__link--{{data.nav-variant}}{{/if}}{{#is page.dest this.dest}} active{{/is}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}">{{capitalizeFirst data.nav-text}}</a></li>
-                {{/if}}
-            {{/withSort}}
-        </ul>
-    </nav>
+<div class="w w--navigation">
+	<div class="g g--nogutter">
+		<div class="c__lg--1">
+	    	<nav id="navigation" role="navigation" class="drawer">
+		        <ul class="list list__navigation list__navigation--main">
+		            {{#withSort pages "data.mainmenu"}}
+		                {{#if data.mainmenu }}
+			                {{#this}}
+			                    <li class="list__item"><a class="list__link{{#if page.nav-variant}} list__link--{{data.nav-variant}}{{/if}}{{#is page.dest this.dest}} current{{/is}}" href="{{relative ../page.dest this.dest}}" title="{{data.nav-title}}">{{capitalizeFirst data.nav-text}}</a></li>
+			                {{/this}}
+		                {{/if}}
+		            {{/withSort}}
+		        </ul>
+	    	</nav>
+	    </div>
+	</div>
 </div>

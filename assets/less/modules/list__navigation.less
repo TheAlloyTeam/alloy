@@ -21,11 +21,10 @@
 .list__navigation {
 	margin: 0;
 	font-family: @NAVIGATION-FontFamily;
-	._padding (0, 10);
     ._clearfix ();
 
     .list__item {
-        float: left;
+
     }
 
     .list__link {
@@ -57,12 +56,30 @@
 
 @media only screen and (max-width: @MQ-Small) {
 
+    .list__navigation {
+        padding: 0;
+
+        .list__item {
+
+        }
+
+        .list__link {
+            text-align: center;
+        }
+    }
+
 }
 
 // TABLET
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+@media only screen and (min-width: @MQ-Medium-min) {
+
+    .list__navigation {
+        .list__item {
+            float: left;
+        }
+    }
 
 }
 
@@ -70,6 +87,10 @@
 // ----------------------------------------------------
 
 @media only screen and (min-width: @MQ-Large-min) {
+
+    .list__navigation {
+        ._padding (0, 10);
+    }
 
 }
 
