@@ -1,25 +1,30 @@
 ---
-title: Index
+title: Alloy Index
+subtitle: This is where the fun starts
+
+nav-variant: home
 ---
 
 <main class="w w--main">
 	<div class="g">
 		<div class="c__md--1">
 
-			<div class="page page--sitemap">
+			<div class="page page--{{nav-variant}}">
 				<div class="page__head">
-					<h1 class="page__title">Page Title</h1>
-					<h2 class="page__subtitle">Page Subtitle</h2>
+					<h1 class="page__title">{{title}}</h1>
+					<p class="page__subtitle">{{subtitle}}</p>
 				</div>
 
 				<div class="page__body">
-					<ul class="list">
-					{{#withSort pages}}
-	                    {{#if data.nav-title }}
-	                        <li class="list__item"><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
-                        {{/if}}
-	                {{/withSort}}
-	                </ul>
+					{{#if pages}}
+						<ul class="list">
+						{{#withSort pages}}
+		                    {{#if data.nav-title }}
+		                        <li class="list__item"><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+	                        {{/if}}
+		                {{/withSort}}
+		                </ul>
+	                {{/if}}
 				</div>
 			</div>
 
