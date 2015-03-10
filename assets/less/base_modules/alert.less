@@ -7,17 +7,17 @@
 
 @ALERT-TextShadowcolor:         rgba(255, 255, 255, 0.5);
 
-@ALERT-InfoBgColor:             #D9EDF7;
-@ALERT-InfoTextColor:           #3A87AD;
-@ALERT-InfoBordercolor:         #8CABBB;
+@ALERT-InfoBgColor:             @COLOR-BlueLighter;
+@ALERT-InfoTextColor:           @COLOR-BlueDarker;
+@ALERT-InfoBordercolor:         @COLOR-BlueDark;
 
-@ALERT-ErrorBgColor:            #F2DEDE;
-@ALERT-ErrorTextColor:          #B94A48;
-@ALERT-ErrorBordercolor:        #C78E8D;
+@ALERT-ErrorBgColor:            @COLOR-RedLighter;
+@ALERT-ErrorTextColor:          @COLOR-RedDarker;
+@ALERT-ErrorBordercolor:        @COLOR-RedDark;
 
-@ALERT-SuccessBgColor:          #DFF0D8;
-@ALERT-SuccessTextColor:        #468847;
-@ALERT-SuccessBordercolor:      #748B74;
+@ALERT-SuccessBgColor:          @COLOR-GreenLighter;
+@ALERT-SuccessTextColor:        @COLOR-GreenDarker;
+@ALERT-SuccessBordercolor:      @COLOR-GreenDark;
 
 // BASE
 // ----------------------------------------------------
@@ -25,40 +25,35 @@
 .alert {
     display: block;
     position: relative;
-    border-width: 1px;
-    border-style: solid;
-    text-shadow: 0 1px 0 @ALERT-TextShadowcor;
+    //border-width: 1px;
+    //border-style: solid;
+    //text-shadow: 0 1px 0 @ALERT-TextShadowcolor;
 
-    ._border-radius ();
+    //._border-radius ();
     ._padding (@TYPE-FontSize); // TODO: Make better - take into account the 1px border
     ._margin (0, 0, @TYPE-LineHeight, 0);
+    ._box-shadow-custom(~"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)");
 }
 
-// INFO
+// VARIABLES
 // ----------------------------------------------------
 
 .alert--info {
     background-color: @ALERT-InfoBgColor;
     color:  @ALERT-InfoTextColor;
-    border-Color: @ALERT-InfoBordercor;
+    border-color: @ALERT-InfoBordercolor;
 }
-
-// ERROR
-// ----------------------------------------------------
 
 .alert--error {
     background-color: @ALERT-ErrorBgColor;
     color: @ALERT-ErrorTextColor;
-    border-Color: @ALERT-ErrorBordercor;
+    border-color: @ALERT-ErrorBordercolor;
 }
-
-// SUCCESS
-// ----------------------------------------------------
 
 .alert--success {
     background-color: @ALERT-SuccessBgColor;
     color: @ALERT-SuccessTextColor;
-    border-Color: @ALERT-SuccessBordercor;
+    border-color: @ALERT-SuccessBordercolor;
 }
 
 // MOBILE

@@ -1,0 +1,8 @@
+{
+	"item": {
+    	"modifier": "success"
+	},
+    "content": {
+		"text": "This is a success alert"
+    }
+}

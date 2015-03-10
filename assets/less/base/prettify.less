@@ -6,18 +6,18 @@
 // VARS
 // =========================================================================
 
-@LOCAL-NoCode: #000000;
-@LOCAL-String: #E6DB74;
-@LOCAL-Keyword: #66D9EF;
-@LOCAL-Comment: #75715E;
-@LOCAL-Type: #66D9EF;
-@LOCAL-Literal: #AE81FF;
-@LOCAL-Punctuation: #F8F8F0;
-@LOCAL-Plaintext: #F8F8F0;
-@LOCAL-Tag: #F92672;
-@LOCAL-Attribute: #a0e22a;
-@LOCAL-AttributeValue: #E6DB74;
-@LOCAL-Decimal: #F8F8F0;
+@LOCAL-NoCode: @COLOR-Black;
+@LOCAL-String: @COLOR-YellowLight;
+@LOCAL-Keyword: @COLOR-Cyan;
+@LOCAL-Comment: @COLOR-GreyDark;
+@LOCAL-Type: @COLOR-Cyan;
+@LOCAL-Literal: @COLOR-Purple;
+@LOCAL-Punctuation: @COLOR-GreyLighter;
+@LOCAL-Plaintext: @COLOR-GreyLighter;
+@LOCAL-Tag: @COLOR-Pink;
+@LOCAL-Attribute: @COLOR-Lime;
+@LOCAL-AttributeValue: @COLOR-LimeDark;
+@LOCAL-Decimal: @COLOR-GreyLighter;
 
 .prettyprint {
     display: block;
@@ -56,7 +56,6 @@
 
 }
 
-
 // LANGUAGE SPECIFIC COLOURS
 // =========================================================================
 
@@ -74,7 +73,6 @@
         .kwd{ color:#F92672; }  /* keyword  - pink/red */
     }
 }
-
 
 // LINENUMBERS (.linenums)
 // =========================================================================
@@ -113,20 +111,21 @@
     }
 }
 
-
 // PRINT STYLES
 // =========================================================================
 
 @media print {
-  .prettyprint { background-color: none }
-  .str { color: #060 }
-  .kwd { color: #006; font-weight: bold }
-  .com { color: #600; font-style: italic }
-  .typ { color: #404; font-weight: bold }
-  .lit { color: #044 }
-  .pun { color: #440 }
-  .pln { color: #000 }
-  .tag { color: #006; font-weight: bold }
-  .atn { color: #404 }
-  .atv { color: #060 }
+
+    .prettyprint { background-color: none }
+    .str { color: #060 }
+    .kwd { color: #006; font-weight: bold }
+    .com { color: #600; font-style: italic }
+    .typ { color: #404; font-weight: bold }
+    .lit { color: #044 }
+    .pun { color: #440 }
+    .pln { color: #000 }
+    .tag { color: #006; font-weight: bold }
+    .atn { color: #404 }
+    .atv { color: #060 }
+
 }

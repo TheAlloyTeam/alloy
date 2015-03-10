@@ -5,7 +5,13 @@
 // ALL
 // ----------------------------------------------------
 
-.section {}
+.section {
+	._margin-bottom (@TYPE-LineHeight);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
 
 .section__head {}
 
