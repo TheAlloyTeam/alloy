@@ -5,18 +5,24 @@
 // OVERLAY
 // =======================================================================*/
 
+// VARIABLES
+// ----------------------------------------------------
+
+@OVERLAY-BgColor:               @COLOR-GreyDark;
+@OVERLAY-ContentBgColor:        @COLOR-White;
+
 // BASE
 // ----------------------------------------------------
 
 .overlay {
+    background-color: @OVERLAY-BgColor;
+    background: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color: #444;
-    background: rgba(0,0,0,0.7);
     overflow: auto; // If less than the height of the browser
 
     visibility: hidden;
@@ -36,16 +42,16 @@
 }
 
 .overlay__content {
+    background-color: @OVERLAY-ContentBgColor;
     position: relative;
     margin: 2em 0 1em 0;
     padding: 1.5em;
-    background-color: #FFF;
 
     .icon--cross {
+        color: @TYPE-FontColor;
         position: absolute;
         top: 0.5em;
         right: 0.5em;
-        color: @TYPE-FontColor;
         ._font-size (22);
     }
 }

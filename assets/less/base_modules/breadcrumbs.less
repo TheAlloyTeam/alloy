@@ -5,6 +5,16 @@
 // BREADCRUMBS
 // =======================================================================*/
 
+// VARIABLES
+// ----------------------------------------------------
+
+@BREADCRUMBS-FontSize:          @TYPE-SIZE-Iota;
+@BREADCRUMBS-Color:             @TYPE-FontColor;
+@BREADCRUMBS-ActiveColor:       @TYPE-FontColor;
+
+// BASE
+// ----------------------------------------------------
+
 .breadcrumb {}
 
 .list--breadcrumb {
@@ -21,22 +31,23 @@
         &:before {
             content: ">\0000a0";
         }
+
         &:first-child:before  {
             content: "";
         }
     }
 
     .list__link {
-        text-decoration: none;
         color: @BREADCRUMBS-Color;
+        text-decoration: none;
 
         &:hover {
-            text-decoration: underline
+            text-decoration: underline;
         }
 
-        &.active,
+        &:active,
         span {
-            color: @BREADCRUMBS-Activecor;
+            color: @BREADCRUMBS-ActiveColor;
         }
     }
 }

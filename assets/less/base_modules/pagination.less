@@ -5,26 +5,35 @@
 // PAGINATION
 // =======================================================================*/
 
-.list--pagination {
+// VARIABLES
+// ----------------------------------------------------
 
+@PAGINATION-Color:              @BUTTON-TextColor;
+@PAGINATION-BgColor:            @BUTTON-BgColor;
+@PAGINATION-BgColorHover:       @BUTTON-HoverColor;
+
+// BASE
+// ----------------------------------------------------
+
+.list--pagination {
     padding: 0;
     list-style: none;
-    ._margin (0, 0, @TYPE-LineHeight, -8);
+    ._margin (0, 0, @TYPE-LineHeight, -10);
     ._clearfix ();
 
     .list__item {
         float: left;
-        ._margin (0, 0, 0, 8);
+        ._margin (0, 0, 0, 10);
     }
 
     .list__link {
+        color: @PAGINATION-Color;
+        background-color: @PAGINATION-BgColor;
         float: left;
         text-decoration: none;
-        color: #FFF;
-        background-color: @PAGINATION-BgColor;
         ._padding (2, 10, 2, 10);
         ._border-radius (4);
-        ._transition (background-Color,0.3s);
+        ._transition (background-color, 0.3s);
 
         &:hover,
         &.active {

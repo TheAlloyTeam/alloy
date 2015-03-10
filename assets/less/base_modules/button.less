@@ -5,8 +5,11 @@
 // BUTTON
 // =======================================================================*/
 
-@BUTTON-MainColor:              lighten(@COLOR-Base, 20%);
-@BUTTON-HoverColor:             darken(@BUTTON-MainColor, 10%);
+// VARIABLES
+// ----------------------------------------------------
+
+@BUTTON-BgColor:                lighten(@COLOR-Base, 20%);
+@BUTTON-HoverColor:             darken(@BUTTON-BgColor, 10%);
 @BUTTON-TextColor:              @COLOR-White;
 
 @BUTTON-AltColor:               lighten(@COLOR-Purple, 20%);
@@ -52,7 +55,6 @@
         color: @TextColor;
     }
 
-
 }
 
 // BUTTON BASE
@@ -61,7 +63,7 @@
 .button {
     display: block;
     color: @BUTTON-TextColor;
-    background-color: @BUTTON-MainColor;
+    background-color: @BUTTON-BgColor;
     text-decoration: none;
     border: none;
     cursor: pointer;
