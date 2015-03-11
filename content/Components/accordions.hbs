@@ -7,93 +7,96 @@ nav-variant: "accordions"
 ---
 
 <main class="w w--main">
-	 <div class="g">
-			 <div class="c__md--1">
+	<div class="g">
+		<div class="c__lg--1">
 
-				<article class="article">
-					<header class="article__head head">
-							<h1 class="article__title">{{title}}</h1>
-						</header>
+			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
 <!-- writings -->
-						<div class="article__body rte">
 
-						</div>
+		        <div class="page__body rte">
+
+		        </div>
+
+				<section class="section section--example">
+					<header class="section__head">
+						 <h2 class="section__title">Example</h2>
+					</header>
+
+					<div class="accordion accordion--variant" aria-multiselectable="true" aria-live="polite">
+						 <div id="acc__tab_1" class="accordion__tab" aria-controls="acc__content_1" role="tab">
+								<span class="accordion__title">[TITLE]</span>
+						 </div>
+						 <div id="acc__content_1" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_1">[CONTENT]</div>
+
+						 <div id="acc__tab_2" class="accordion__tab" aria-controls="acc__content_2" role="tab">
+								<span class="accordion__title">[TITLE]</span>
+						 </div>
+						 <div id="acc__content_2" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_2">[CONTENT]</div>
+
+						 <div id="acc__tab_3" class="accordion__tab" aria-controls="acc__content_3" role="tab">
+								<span class="accordion__title">[TITLE]</span>
+						 </div>
+						 <div id="acc__content_3" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_3">[CONTENT]</div>
+					</div>
+
+				</section>
 
 
-				 <section class="section section--example">
-						<header class="section__head">
-							 <h2 class="section__title">Example</h2>
-						</header>
+				<section class="section section--code">
+					<header class="section__head">
+						<h2 class="section__title">Code</h2>
+					</header>
 
-						<div class="accordion accordion--variant" aria-multiselectable="true" aria-live="polite">
-							 <div id="acc__tab_1" class="accordion__tab" aria-controls="acc__content_1" role="tab">
-									<span class="accordion__title">[TITLE]</span>
-							 </div>
-							 <div id="acc__content_1" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_1">[CONTENT]</div>
+					<div class="section__body">
+						<pre class="prettyprint linenums"><code class="html">
+&lt;div class="accordion accordion--variant" aria-multiselectable="true" aria-live="polite"&gt;
 
-							 <div id="acc__tab_2" class="accordion__tab" aria-controls="acc__content_2" role="tab">
-									<span class="accordion__title">[TITLE]</span>
-							 </div>
-							 <div id="acc__content_2" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_2">[CONTENT]</div>
+	&lt;div id="acc__tab_1" class="accordion__head" aria-controls="acc__content_1" role="tab"&gt;
+		&lt;span class="accordion__title"&gt;[TITLE]&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div id="acc__content_1" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_1"&gt;
+		[CONTENT]
+	&lt;/div&gt;
 
-							 <div id="acc__tab_3" class="accordion__tab" aria-controls="acc__content_3" role="tab">
-									<span class="accordion__title">[TITLE]</span>
-							 </div>
-							 <div id="acc__content_3" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_3">[CONTENT]</div>
-						</div>
+	&lt;div id="acc__tab_2" class="accordion__head" aria-controls="acc__content_2" role="tab"&gt;
+		&lt;span class="accordion__title"&gt;[TITLE]&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div id="acc__content_2" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_2"&gt;
+		[CONTENT]
+	&lt;/div&gt;
 
-				 </section>
-
-
-						<section class="section section--code">
-							 <header class="section__head">
-									<h2 class="section__title">Code</h2>
-							 </header>
-
-						<div class="section__body">
-							 <pre class="prettyprint linenums"><code class="html">&lt;div class="accordion accordion--variant" aria-multiselectable="true" aria-live="polite"&gt;
-
-		&lt;div id="acc__tab_1" class="accordion__head" aria-controls="acc__content_1" role="tab"&gt;
-			&lt;span class="accordion__title"&gt;[TITLE]&lt;/span&gt;
-		&lt;/div&gt;
-		&lt;div id="acc__content_1" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_1"&gt;
-			[CONTENT]
-		&lt;/div&gt;
-
-		&lt;div id="acc__tab_2" class="accordion__head" aria-controls="acc__content_2" role="tab"&gt;
-			&lt;span class="accordion__title"&gt;[TITLE]&lt;/span&gt;
-		&lt;/div&gt;
-		&lt;div id="acc__content_2" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_2"&gt;
-			[CONTENT]
-		&lt;/div&gt;
-
-		&lt;div id="acc__tab_3" class="accordion__head" aria-controls="acc__content_3" role="tab"&gt;
-			&lt;span class="accordion__title">[TITLE]&lt;/span&gt;
-		&lt;/div&gt;
-		&lt;div id="acc__content_3" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_3"&gt;
-			[CONTENT]
-		&lt;/div&gt;
+	&lt;div id="acc__tab_3" class="accordion__head" aria-controls="acc__content_3" role="tab"&gt;
+		&lt;span class="accordion__title">[TITLE]&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div id="acc__content_3" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_3"&gt;
+		[CONTENT]
+	&lt;/div&gt;
 
 &lt;/div&gt;</code></pre>
-							</div>
+					</div>
 
-					 </section>
+				</section>
 
-					 <section class="section section--reference">
-						<header class="section__head">
-							 <h2 class="section__title">References</h2>
-						</header>
-						<div class="section__body rte">
-							 <ul class="list list--references">
-									<li class="list__item"><a href="http://test.cita.illinois.edu/aria/tabpanel/tabpanel2.php" class="list__link">http://test.cita.illinois.edu/aria/tabpanel/tabpanel2.php</a></li>
-									<li class="list__item"><a href="http://codepen.io/chrisyaxley/pen/JsKhb/" class="list__link">http://codepen.io/chrisyaxley/pen/JsKhb/</a></li>
-									<li class="list__item"><a href="http://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/" class="list__link">http://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/</a></li>
-							 </ul>
-						</div>
-					 </section>
+				<section class="section section--reference">
+					<header class="section__head">
+						 <h2 class="section__title">References</h2>
+					</header>
+					<div class="section__body rte">
+						 <ul class="list list--references">
+								<li class="list__item"><a href="http://test.cita.illinois.edu/aria/tabpanel/tabpanel2.php" class="list__link">http://test.cita.illinois.edu/aria/tabpanel/tabpanel2.php</a></li>
+								<li class="list__item"><a href="http://codepen.io/chrisyaxley/pen/JsKhb/" class="list__link">http://codepen.io/chrisyaxley/pen/JsKhb/</a></li>
+								<li class="list__item"><a href="http://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/" class="list__link">http://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/</a></li>
+						 </ul>
+					</div>
+				</section>
 
-					</article>
-			 </div>
-
+			</div>
+			
+		</div>
 	 </div>
 </main>

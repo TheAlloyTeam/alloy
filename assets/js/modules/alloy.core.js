@@ -25,7 +25,7 @@
             // add config to the ALLOY Namespace
             var config = ALLOY.config;
             pageSetup();
-            console.log("ALLOY.Core Started");
+            console.log('%cALLOY.Core Started', 'color: green;');
     	};
 
     	var pageSetup = function() {
@@ -38,6 +38,28 @@
             init: _init
         };
 
+        // Check if button__totop should be visible on page load
+        $(function() {
+            if ($(window).scrollTop() < 200) {
+                $(".button__totop").data("visible", "false").fadeOut(1);
+            }
+        });
+
+        // Check if button__totop should be visible on scroll
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= 200 && $(".button__totop").data("visible") != 'true') {
+                $(".button__totop").data("visible", "true").stop(true, true).fadeIn(200);
+            } else if ($(window).scrollTop() < 200 && $(".button__totop").data("visible") != "false") {
+                $(".button__totop").data("visible", "false").stop(true, true).fadeOut(200);
+            }
+        });
+
+        // Perform smooth scroll to top of page
+        $(".button__totop").click(function(e) {
+            $("html, body").animate({ scrollTop: 0}, 200);
+            e.preventDefault();
+        });
+
         return output;
 
     }();
@@ -45,7 +67,7 @@
 
 
     ALLOY.Core.ready(function() {
-        console.log("ALLOY.Core Initializing");
+    console.log('%cALLOY.Core Initializing', 'color: orange;');
         ALLOY.Core.init();
     });
 })();

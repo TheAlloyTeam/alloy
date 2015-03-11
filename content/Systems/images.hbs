@@ -1,7 +1,6 @@
 ---
 title: Images
 
-
 nav-title: "Images"
 nav-text: "Images"
 nav-variant: "images"
@@ -9,18 +8,22 @@ nav-variant: "images"
 
 <main class="w w--main">
 	<div class="g">
-	    <div class="c__md--1">
-<!--article -->
-  			<article class="article article--intro">
-			    <header class="article__head head">
-			        <h1 class="article__title">{{title}}</h1>
-		        </header>
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
 <!-- writings -->
-		        <div class="article__body rte">
-		        
+
+		        <div class="page__body rte">
+
 		        </div>
 
 <!-- example -->
+
 				<section class="section section--example">
 		            <header class="section__head">
 		                <h2 class="section__title">Example</h2>
@@ -41,6 +44,7 @@ nav-variant: "images"
 		        </section>
 
 <!-- code -->
+
 		    	<section class="section section--code">
 		            <header class="section__head">
 		            	<h2 class="section__title">Code</h2>
@@ -65,9 +69,8 @@ nav-variant: "images"
 		            </div>
 		        </section>
 
-	        </article>
-<!-- end -->
-	    </div>
+	        </div>
 
+	    </div>
 	</div>
 </main>
