@@ -14,8 +14,8 @@
         isAuto: true,
 
         defaults: {
-            buttonsListSelector: ".buttons",        // The selector for the ul list of buttons
-            contentsListSelector: ".contents",      // The selector for the ul list of contents
+            buttonsListSelector: ".list__tabs",        // The selector for the ul list of buttons
+            contentsListSelector: ".tabs__content",      // The selector for the ul list of contents
             indexDataAttr: "tabindex",              // The data attribute to use to set the tab index of elements
             inactiveClass: "inactive",              // The class to use when an element is inactive
             activeClass: "active",                  // The class to use when an element is active
@@ -31,17 +31,17 @@
             that = this;
 
             // Don't use _updateAll here as we also want to make sure that the data attribute is set before we alter its active-ness
-            this.$element.find(this.config.buttonsListSelector + " li").each(function(i) { 
+            this.$element.find(this.config.buttonsListSelector + " .list__item").each(function(i) { 
                 $(this).data(that.config.indexDataAttr, i); 
                 that._setActive(this, that.config.defaultIndex, false);
             });
-            this.$element.find(this.config.contentsListSelector + " li").each(function(i) { 
+            this.$element.find(this.config.contentsListSelector + " .tabs__body").each(function(i) { 
                 $(this).data(that.config.indexDataAttr, i); 
                 that._setActive(this, that.config.defaultIndex, true);
             });
 
             // Initialise the handle click of buttons
-            this.$element.find(this.config.buttonsListSelector + " li").click(this._handleClick);
+            this.$element.find(this.config.buttonsListSelector + " .list__item").click(this._handleClick);
 
             // Initialise the auto swap timer
             if (this.config.autoTime > this.config.transitionTime) { setTimeout(this._autoSwap, this.config.autoTime); }
@@ -51,7 +51,7 @@
             e.preventDefault();
 
             that.isAuto = false;
-            var index = $(e.target).closest(that.config.buttonsListSelector + " li").data(that.config.indexDataAttr);
+            var index = $(e.target).closest(that.config.buttonsListSelector + " .list__item").data(that.config.indexDataAttr);
             that._updateAll(index);
         },
 
@@ -79,7 +79,7 @@
             if (that.isAuto) {
                 var currentIndex = that._getCurrentIndex();
                 var nextIndex = currentIndex + 1;
-                var maxIndex = that.$element.find(that.config.buttonsListSelector + " li").length;
+                var maxIndex = that.$element.find(that.config.buttonsListSelector + " .list__item").length;
                 if (nextIndex >= maxIndex) { nextIndex = 0; }
                 
                 that._updateAll(nextIndex);
@@ -90,7 +90,7 @@
 
         _getCurrentIndex: function() {
             var cur = 0;
-            that.$element.find(that.config.buttonsListSelector + " li").each(function() {
+            that.$element.find(that.config.buttonsListSelector + " .list__item").each(function() {
                 if ($(this).hasClass(that.config.activeClass) || $(this).hasClass(that.config.activeClass)) {
                     cur = $(this).data(that.config.indexDataAttr);
                 }
@@ -100,8 +100,8 @@
         },
 
         _updateAll: function(index) {
-            that.$element.find(that.config.buttonsListSelector + " li").each(function() { that._setActive(this, index, false); });
-            that.$element.find(that.config.contentsListSelector + " li").each(function() { that._setActive(this, index, true); });
+            that.$element.find(that.config.buttonsListSelector + " .list__item").each(function() { that._setActive(this, index, false); });
+            that.$element.find(that.config.contentsListSelector + " .tabs__body").each(function() { that._setActive(this, index, true); });
         }
     };
 
