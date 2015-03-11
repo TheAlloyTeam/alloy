@@ -2,14 +2,13 @@
     ALLOY.Mobile = function() {
 
     	var _init = function() {
-            console.log("ALLOY.Mobile Started");
-
             navButton();
+            console.log('%cALLOY.Mobile Started', 'color: green;');
     	};
 
         var navButton = function() {
-            $(".button__mobile--nav").click(function() {
-                $(".list__navigation--main").slideToggle(200);
+            $(".button__mobile--navigation").click(function() {
+                $(".w--navigation").slideToggle(200);
                 this.classList.toggle( "active" );
             });
         };
@@ -23,6 +22,6 @@
     }();
 
     // force start of mobile functions
-    console.log("ALLOY.Mobile Initializing");
+    console.log('%cALLOY.Mobile Initializing', 'color: orange;');
     ALLOY.Mobile.init();
 })();

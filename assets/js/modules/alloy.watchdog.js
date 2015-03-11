@@ -5,7 +5,7 @@
     	};
 
     	var _init = function() {
-    		console.log("ALLOY.Watchdog Started");
+    		console.log('%cALLOY.Watchdog Started', 'color: green;');
     	
     	};
 
@@ -17,6 +17,6 @@
 
     }();
 
-    console.log("ALLOY.Watchdog Initializing");
+    console.log('%cALLOY.Watchdog Initializing', 'color: orange;');
     ALLOY.Watchdog.init();
 })();

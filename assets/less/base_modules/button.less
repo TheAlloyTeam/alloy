@@ -118,6 +118,28 @@
     ._button-create (@BUTTON-DisabledColor, @BUTTON-DisabledHoverColor, @BUTTON-DisabledTextColor);
 }
 
+.button__totop {
+    color: @COLOR-White;
+    background-color: @COLOR-Cyan;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 100;
+    ._padding (7);
+    ._box-shadow-custom(~"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)");
+    ._font-size (30);
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        color: @COLOR-White;
+    }
+}
+
 // BUTTON Standards
 // ----------------------------------------------------
 
@@ -143,12 +165,60 @@
 
 @media only screen and (max-width: @MQ-Small) {
 
-}
+    .button__mobile {
+        display: block;
+    }
 
-// TABLET
-// ----------------------------------------------------
-
-@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+    .button__mobile--navigation {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        height: 44px;
+        width: 44px;
+        cursor: pointer;
+        ._padding (21, 12, 0, 12);
+    }
+    
+    .button__mobile--navigation span, .button__mobile--navigation span:before, .button__mobile--navigation span:after {
+        cursor: pointer;
+        border-radius: 2px;
+        height: 2px;
+        width: 20px;
+        background: @COLOR-White;
+        position: absolute;
+        display: block;
+        content: '';
+    }
+    
+    .button__mobile--navigation span:before {
+        top: -4px; 
+    }
+    
+    .button__mobile--navigation span:after {
+        bottom: -4px;
+    }
+    
+    .button__mobile--navigation span, .button__mobile--navigation span:before, .button__mobile--navigation span:after {
+        transition: all 500ms ease-in-out;
+    }
+    
+    .button__mobile--navigation.active span {
+        background-color: transparent;
+    }
+    
+    .button__mobile--navigation.active span:before, .button__mobile--navigation.active span:after {
+        top: 0;
+    }
+    
+    .button__mobile--navigation.active span:before {
+        transform: rotate(45deg);
+    }
+    
+    .button__mobile--navigation.active span:after {
+        transform: translateY(-4px) rotate(-45deg);
+        top: 4px;
+    }
 
 }
 
@@ -159,6 +229,10 @@
 
     .button {
         ._inline-block ();
+    }
+
+    .button__mobile {
+        display: none;
     }
 
 }

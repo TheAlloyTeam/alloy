@@ -17,7 +17,8 @@
     	    } else {
     	        // else
     	    }
-            console.log("ALLOY.ieFixes Started");
+            
+            console.log('%cALLOY.ieFixes Started', 'color: green;');
     	};
 
     	var colSizing = function() {
@@ -44,7 +45,7 @@
 
     }();
 
-    console.log("ALLOY.ieFixes Initializing");
+    console.log('%cALLOY.ieFixes Initializing', 'color: orange;');
     ALLOY.iefixes.init();
 
 })();

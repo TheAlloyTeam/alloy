@@ -5,14 +5,13 @@
 // Start the main app logic.
 require(['jquery', 'core', 'mobile', 'iefixes'],
     function ($) {
-        console.log("ALLOY.Main Started");
+        console.log('%cALLOY.Main Started', 'color: green;');
     }
 );
 
 /* ==========================================================================
 // Require js Errors
 // =========================================================================*/
-
 
 if (DEBUG) {
 	requirejs.onError = function (err) {

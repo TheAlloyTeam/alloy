@@ -2,7 +2,7 @@
     ALLOY.Utils = function() {
 
     	var _init = function() {
-    		console.log("ALLOY.Utils Started");
+    		console.log('%cALLOY.Utils Started', 'color: green;');
     	
     	};
 
@@ -14,6 +14,6 @@
 
     }();
 
-    console.log("ALLOY.Utils Initializing");
+    console.log('%cALLOY.Utils Initializing', 'color: orange;');
     ALLOY.Utils.init();
 })();
