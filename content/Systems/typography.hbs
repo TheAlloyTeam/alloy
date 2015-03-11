@@ -1,7 +1,6 @@
 ---
 title: Typography
 
-
 nav-title: "Typography"
 nav-text: "Typography"
 nav-variant: "typography"
@@ -9,15 +8,18 @@ nav-variant: "typography"
 
 <main class="w w--main">
 	<div class="g">
-	    <div class="c__md--1">
+	    <div class="c__lg--1">
 
-		    <article class="article">
-			    <header class="article__head head">
-			        <h1 class="article__title">{{title}}</h1>
-			        <h2 class="article__subtitle">Article Subtitle</h2>
-		        </header>
-		        <div class="article__body rte">
-		        	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut nibh vel ipsum lacinia rutrum. Aenean maximus nibh vitae est cursus dignissim. Nunc at finibus erat. Aenean sollicitudin neque risus, at sollicitudin est accumsan ac. Donec ultrices fermentum euismod. Suspendisse eu suscipit ex. Quisque sit amet augue efficitur, lobortis justo a, auctor magna.</p>
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
 		        </div>
 
 		        <section class="section">
@@ -69,7 +71,6 @@ nav-variant: "typography"
 			        	</div>
 		        	</section>
 
-
 			        <section class="section">
 		        		<header class="section__head">
 				        	<h4 class="section__title">Inline Quotes</h4>
@@ -81,7 +82,6 @@ nav-variant: "typography"
 
 			        	</div>
 		        	</section>
-
 
 			        <section class="section">
 		        		<header class="section__head">
@@ -96,7 +96,6 @@ nav-variant: "typography"
 
 			        	</div>
 		        	</section>
-
 
 			        <section class="section">
 		        		<header class="section__head">
@@ -138,12 +137,12 @@ nav-variant: "typography"
 
 		        </section>
 
-		        <footer class="article__foot">
+		        <footer class="page__foot">
 		        	
 		        </footer>
 
-	        </article>
-	    </div>
+	        </div>
 
+	    </div>
 	</div>
 </main>

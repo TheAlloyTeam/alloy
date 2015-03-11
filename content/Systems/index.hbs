@@ -8,16 +8,18 @@ nav-variant: "systems"
 
 <main class="w w--main">
 	<div class="g">
-	    <div class="c__md--1">
+	    <div class="c__lg--1">
 
-  			<article class="article article--intro">
-			    <header class="article__head head">
-			        <h1 class="article__title">{{title}}</h1>
-		        </header>
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
 
 <!-- writings -->
 
-		        <div class="article__body rte">
+		        <div class="page__body rte">
+
 		  			<ul>
 					{{#withSort pages}}
 		                {{#if data.nav-title }}
@@ -25,6 +27,7 @@ nav-variant: "systems"
 		                {{/if}}
 		            {{/withSort}}
 		            </ul>
+
 		        </div>
 
 <!-- reference -->
@@ -38,11 +41,8 @@ nav-variant: "systems"
 		            </div>
 		        </section>
 
-	        </article>
-
-	      
+	        </div>
 
 	    </div>
-
 	</div>
 </main>
