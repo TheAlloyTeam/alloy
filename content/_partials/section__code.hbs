@@ -1,0 +1,14 @@
+{{#this}}
+	<section class="section section__code{{#if item.modifier}} section__code--{{item.modifier}}{{/if}}">
+        <header class="section__head">
+            <h2 class="section__title">{{content.title}}</h2>
+        </header>
+
+        <div class="section__body">
+            <pre class="prettyprint linenums"><code class="html">
+                {{content.body}}
+             </code></pre>
+        </div>
+
+    </section>
+{{/this}}
