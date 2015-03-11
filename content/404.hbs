@@ -1,6 +1,6 @@
 ---
-title: 404
-
+title: Oops!
+subtitle: Something went wrong...
 
 nav-title: "404 Error"
 nav-text: "404 Error"
@@ -9,19 +9,19 @@ nav-variant: "error"
 
 <main class="w w--main">
 	<div class="g">
-	    <div class="c__md--1">
+	    <div class="c__lg--1">
 
-			<div class="page page--{{nav-variant}}">
+			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
 				<div class="page__head">
-		        	<h1 class="page__title">Oops</h1>
-		        	<h2 class="page__subtitle">Something went wrong&hellip;</h2>
-		        </div>
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
 
 		        <div class="page__body rte">
-			        <p>Unfortunately the page that you requested could not be found. Please try one of the following:</p>
+			        <p><strong>Unfortunately the page you requested could not be found. Please try one of the following:</strong></p>
 
 			        <ul>
-			            <li>Go back to the <a href="javascript:window.history.back()">previous page</li>
+			            <li>Go back to the <a href="javascript:window.history.back()">previous page</a></li>
 			            <li>Visit the <a href="/">homepage</a></li>
 			            <li>Use the navigation at the top of the page</li>
 			        </ul>
