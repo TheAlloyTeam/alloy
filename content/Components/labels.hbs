@@ -1,7 +1,6 @@
 ---
 title: Labels
 
-
 nav-title: "Labels"
 nav-text: "Labels"
 nav-variant: "labels"
@@ -9,17 +8,22 @@ nav-variant: "labels"
 
 <main class="w w--main">
 	<div class="g">
-	    <div class="c__md--1">
+	    <div class="c__lg--1">
 
-  			<article class="article">
-			    <header class="article__head head">
-			        <h1 class="article__title">{{title}}</h1>
-		        </header>
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
 <!-- writings -->
-		        <div class="article__body rte">
+
+		        <div class="page__body rte">
+
 		        </div>
 
 <!-- example -->
+
 				<section class="section section--example">
 		            <header class="section__head">
 		                <h2 class="section__title">Example</h2>
@@ -29,12 +33,14 @@ nav-variant: "labels"
 				        <!-- code -->
 
 		        		{{> label label }}
+
 				        <!-- end of code -->
 			        </div>
 
 		        </section>
 
 <!-- code -->
+
 		    	<section class="section section--code">
 		            <header class="section__head">
 		            	<h2 class="section__title">Code</h2>
@@ -59,9 +65,8 @@ nav-variant: "labels"
 		            </div>
 		        </section>
 
-	        </article>
+	        </div>
 
 	    </div>
-
 	</div>
 </main>
