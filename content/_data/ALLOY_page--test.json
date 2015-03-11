@@ -1,0 +1,26 @@
+{
+	"item": {
+		"modifier": ""
+		},
+	"content": {
+		"body": "",
+		"examples": [{
+			"item": {},
+			"content": {}
+			}],
+		"code": [{
+			"item": {},
+			"content": {}
+			}]
+		},
+	"actions": {
+
+		},
+	"tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+	}
+}

@@ -1,0 +1,29 @@
+{
+    "item": {
+        "modifier": ""
+    },
+    "content": {
+        "title": "Message Us",
+        "body": "<p>ALLOY has a gitter chat room setup so that we can talk directly to you! Talk to us about how to improve ALLOY, discuss features, problems and everything else.</p>"
+    },
+    "actions": [
+    {
+        "buttons": [
+        {
+            "item": {
+                "modifier": "",
+                "size": "",
+                "disabled": "",
+                "target": "_blank",
+                "block": ""
+            },
+            "content": {
+                "text": "Join the chat",
+                "title": "Join the chat on Gitter",
+                "url": "https://gitter.im/gfinbow/alloy"
+            }
+        }
+        ]
+    }
+    ]
+}

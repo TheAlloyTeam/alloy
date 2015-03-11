@@ -19,7 +19,7 @@
             tabContentClass: ".tabs__content",      // The selector for the Tabs list of contents
             tabBodyClass: ".tabs__body",      // The selector for a Tabs Body
             indexDataAttr: "tabindex",              // The data attribute to use to set the tab index of elements
-            hiddenClass: "hidden",              // The class to use when an element is inactive
+            inactiveClass: "inactive",              // The class to use when an element is inactive
             activeClass: "active",                  // The class to use when an element is active
             //hidingClass: "hidden",                  // The class to use when transitioning from active to inactive
             //showingClass: "showing",                // The class to use when transitioning from inactive to active
@@ -66,14 +66,14 @@
             } else if (wasActive) {
                 // Was active, but isn't anymore...
                 $(el).removeClass(that.config.activeClass);
-                setTimeout(function() { $(el).addClass(that.config.hiddenClass); }, that.config.transitionTime);
+                setTimeout(function() { $(el).addClass(that.config.inactiveClass); }, that.config.transitionTime);
             } else if (id == elId) {
                 // Wasn't active, but is now...
                 if (content) { $(el).appendTo($(that.config.tabContentClass)); }
-                $(el).removeClass(that.config.hiddenClass);
+                $(el).removeClass(that.config.inactiveClass);
                 setTimeout(function() { $(el).addClass(that.config.activeClass); }, that.config.transitionTime);
             } else {
-                $(el).addClass(that.config.hiddenClass);
+                $(el).addClass(that.config.inactiveClass);
             }
         },
 

@@ -13,7 +13,11 @@
 
 }
 
-.tabs__content {}
+.tabs__content {
+    .inactive {
+        display:none;
+    }
+}
 
 .tabs__body {}
 
@@ -30,51 +34,14 @@
         ._padding(5,10);
         ._inline-block();
     }
+
+    .active {
+        .list__link {
+            background-color: orange;
+        }
+    }
 }
 
-.tabber .contents li.hiding {
-    -webkit-transition: all ease-in-out 350ms;
-    -moz-transition: all ease-in-out 350ms;
-    -ms-transition: all ease-in-out 350ms;
-    -o-transition: all ease-in-out 350ms;
-    transition: all ease-in-out 350ms;    
-    opacity: 0;
-    position: absolute;
-}
 
-.tabber .contents li.showing {
-    -webkit-transition: all ease-in-out 350ms;
-    -moz-transition: all ease-in-out 350ms;
-    -ms-transition: all ease-in-out 350ms;
-    -o-transition: all ease-in-out 350ms;
-    transition: all ease-in-out 350ms;    
-    opacity: 1;
-    position: relative;
-}
-
-.tabber .buttons li.active {
-    background-color: orange;
-}
-
-/* Variations for testing purposes */
-.tabber .contents .content-red {
-    background-color: red;
-}
-
-.tabber .contents .content-green {
-    background-color: green;
-}
-
-.tabber .contents .content-yellow {
-    background-color: yellow;
-}
-
-.tabber .contents .content-orange {
-    background-color: orange;
-}
-
-.tabber .contents .content-purple {
-    background-color: purple;
-}
 
 } .tabs-styles();
