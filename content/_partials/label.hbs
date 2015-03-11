@@ -1,3 +1,11 @@
 {{#this}}
-<span class="label{{#if item.modifier}} label--{{item.modifier}}{{/if}}">{{{content.text}}}</span>
+	{{#if content.for}}
+		<label
+		    for="{{content.for}}"
+		    class="label{{#if item.modifier}} label--{{item.modifier}}{{/if}}">
+		    <span>{{{content.text}}}</span>
+		</label>
+	{{else}}
+		<span class="label{{#if item.modifier}} label--{{item.modifier}}{{/if}}">{{{content.text}}}</span>
+	{{/if}}
 {{/this}}

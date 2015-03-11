@@ -1,0 +1,37 @@
+{{#this}}
+
+<form id="id" class="form form--modifier" role="role" method="post">
+
+<!-- form__fieldset -->
+<fieldset class="form__fieldset form__fieldset--modifier">
+
+    <!-- form__legend -->
+    <legend class="form__legend">{{legend-text}}</legend>
+
+</fieldset>
+
+<!-- form__row -->
+<div class="form__row form__row--modifier">
+</div>
+
+
+{{!
+
+if select
+    if optgroup
+        optgroup
+            if option
+    if !optgroup
+        if option
+
+<optgroup label="labelforoptgroup">
+
+    select__option
+
+</optgroup>
+
+}}
+
+</form>
+
+{{/this}}

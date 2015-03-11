@@ -1,0 +1,11 @@
+{{! don't add a lablel to optgroup > option}}
+{{#this}}
+<option
+    value="{{content.value}}"
+    {{#if content.label}} label="{{content.label}}"{{/if}}
+    {{#if item.selected}} selected="selected"{{/if}}
+    {{#if item.disabled}} disabled="disabled"{{/if}}
+>
+    {{content.text}}
+</option>
+{{/this}}
