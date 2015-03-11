@@ -20,17 +20,23 @@ This whole project is based and influenced by many boilerplates and helpers from
 * https://github.com/necolas/normalize.css
 * https://github.com/mattbegent/staddle
 * https://github.com/twbs/bootstrap
+* http://skyglobal.github.io/web-toolkit/
+* http://www.starbucks.com/static/reference/styleguide/
+* http://topcoat.io/topcoat/
+* https://www.polymer-project.org/0.5/
 
 ## Tools
 
 * http://gruntjs.com/
 * http://handlebarsjs.com/
 * http://lesscss.org/
+* http://assemble.io/
 
 ## Theories
 
 * Atomic Design http://bradfrostweb.com/blog/post/atomic-web-design/
 * Google Design http://www.google.co.uk/design/
+* Material Design http://www.google.co.uk/design/spec/material-design/
 
 ## Contributors
 * Gary Finbow http://about.me/munchkin
