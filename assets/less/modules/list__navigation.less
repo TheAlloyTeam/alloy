@@ -2,34 +2,49 @@
 .navigation-styles() when (@MODULE-Navigation) {
 
 /* =========================================================================
-// LIST NAVIGATION
+// NAVIGATION
 // =======================================================================*/
 
 // VARIABLES
 // ----------------------------------------------------
 
-@NAV-BgColor:                   @COLOR-Base;
-@NAV-Border:                    @COLOR-Base;
-@NAV-TextColor:                 @COLOR-White;
-@NAV-HoverBgColor:              lighten(@COLOR-Base, 10%);
-@NAV-HoverBorder:               @COLOR-Base;
-@NAV-HoverTextColor:            @COLOR-White;
-@NAV-ActiveBorder:              @COLOR-Base;
+@NAVIGATION-Color:                 		@COLOR-White;
+@NAVIGATION-BgColor:                   	@COLOR-Base;
+@NAVIGATION-HoverColor:            		@COLOR-White;
+@NAVIGATION-HoverBgColor:              	darken(@NAVIGATION-BgColor, 10%);
+@NAVIGATION-ActiveBorder:             	@COLOR-Base;
+@NAVIGATION-FontFamily:             	@TYPE-HeadingsFontFamily;
 
 // BASE
 // ----------------------------------------------------
 
 .list__navigation {
+	margin: 0;
+	font-family: @NAVIGATION-FontFamily;
     ._clearfix ();
 
     .list__item {
-        
+
     }
 
     .list__link {
-        display: block;
+    	color: @NAVIGATION-Color;
+    	display: block;
         text-decoration: none;
-        font-weight: bold;
+        line-height: 1;
+        ._padding (20);
+        ._font-size (@TYPE-SIZE-Gamma);
+        ._transition (all, 0.1s);
+
+        &:hover {
+        	color: @NAVIGATION-HoverColor;
+        	background-color: @NAVIGATION-HoverBgColor;
+        }
+    }
+
+    .current {
+    	color: @NAVIGATION-HoverColor;
+        background-color: @NAVIGATION-HoverBgColor;
     }
 }
 
@@ -41,12 +56,30 @@
 
 @media only screen and (max-width: @MQ-Small) {
 
+    .list__navigation {
+        padding: 0;
+
+        .list__item {
+
+        }
+
+        .list__link {
+            text-align: center;
+        }
+    }
+
 }
 
 // TABLET
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+@media only screen and (min-width: @MQ-Medium-min) {
+
+    .list__navigation {
+        .list__item {
+            float: left;
+        }
+    }
 
 }
 
@@ -54,6 +87,10 @@
 // ----------------------------------------------------
 
 @media only screen and (min-width: @MQ-Large-min) {
+
+    .list__navigation {
+        ._padding (0, 10);
+    }
 
 }
 

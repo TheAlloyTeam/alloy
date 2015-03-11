@@ -1,0 +1,29 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "disabled": "",
+        "target": "",
+        "block": ""
+    },
+    "content": {
+        "text": "Button with Badge",
+        "title": "Button with Badge",
+        "url": "#butonUrl",
+        "badge": [{
+            "item": {
+                "modifier": ""
+            },
+            "content": {
+                "text": "42"
+            }
+        }]
+    },
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

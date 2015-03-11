@@ -32,7 +32,7 @@ This whole project is based and influenced by many boilerplates and helpers from
 * Atomic Design http://bradfrostweb.com/blog/post/atomic-web-design/
 * Google Design http://www.google.co.uk/design/
 
-## Workers
+## Contributors
 * Gary Finbow http://about.me/munchkin
 * Matthew Dixon http://matthewdixon.me.uk
 * JamCow http://jamcow.net

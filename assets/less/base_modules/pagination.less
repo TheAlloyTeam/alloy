@@ -16,14 +16,18 @@
 // ----------------------------------------------------
 
 .list--pagination {
+    display: inline-block;
     padding: 0;
-    list-style: none;
-    ._margin (0, 0, @TYPE-LineHeight, -10);
+    ._margin (0, 10, @TYPE-LineHeight, 10);
     ._clearfix ();
 
     .list__item {
         float: left;
-        ._margin (0, 0, 0, 10);
+        ._margin-right (10);
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     .list__link {
@@ -32,13 +36,15 @@
         float: left;
         text-decoration: none;
         ._padding (2, 10, 2, 10);
-        ._border-radius (4);
-        ._transition (background-color, 0.3s);
+        ._transition (all, 0.1s);
 
-        &:hover,
-        &.active {
+        &:hover {
             background-color: @PAGINATION-BgColorHover;
         }
+    }
+
+    .current {
+        background-color: @PAGINATION-BgColorHover;
     }
 }
 

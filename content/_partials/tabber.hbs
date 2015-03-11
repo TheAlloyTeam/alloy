@@ -1,0 +1,24 @@
+{{#this}}
+<div class="tabber{{#if item.modifier}} tabber--{{item.modifier}}{{/if}}">
+	<div class="">
+		<ul class="buttons">
+			{{#each buttons}}
+				{{#this}}
+					<li class="button">
+						<a href="#">{{text}}</a>
+					</li>
+				{{/this}}
+			{{/each}}
+		</ul>
+	</div>
+	<div class="">
+		<ul class="contents">
+			{{#each contents}}
+				{{#this}}
+					<li class="content">{{body}}</li>
+				{{/this}}
+			{{/each}}
+		</ul>
+	</div>
+</div>
+{{/this}}
