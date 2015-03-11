@@ -115,5 +115,5 @@
 
     // Autostart Plugin
     $(".tabber").tabber();
-    console.log("ALLOY.Tabber Loaded");
+    console.log('%cALLOY.Tabber Started', 'color: green;');
 })();

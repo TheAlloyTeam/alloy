@@ -8,7 +8,7 @@
         };
 
     	var _init = function() {
-            console.log("ALLOY.ShareMe Started");
+            console.log('%cALLOY.ShareMe Started', 'color: green;');
     	};
 
         var update = function() {
@@ -35,6 +35,6 @@
     }();
 
     // force start of ShareMe functions
-    console.log("ALLOY.ShareMe Initializing");
+    console.log('%cALLOY.ShareMe Initializing', 'color: orange;');
     ALLOY.ShareMe.init();
 })();

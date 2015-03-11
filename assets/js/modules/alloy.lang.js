@@ -4,7 +4,7 @@
     ALLOY.Lang = function() {
 
         var _init = function() {
-            ALLOY.Log.Startup("ALLOY.Lang Started");
+            ALLOY.Log.Startup('%cALLOY.Lib Started', 'color: green;');
         };
 
 
@@ -16,6 +16,6 @@
 
     }();
 
-    ALLOY.Log.Startup("ALLOY.Lang Initializing");
+    ALLOY.Log.Startup('%cALLOY.Lang Initializing', 'color: orange;');
     ALLOY.Lang.init();
 })();

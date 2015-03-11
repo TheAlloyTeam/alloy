@@ -6,7 +6,7 @@
 
         // Private Functions
     	var _init = function() {
-    		console.log("ALLOY.Lib Started");
+    		console.log('%cALLOY.Lib Started', 'color: green;');
 
     	};
 
@@ -19,7 +19,7 @@
 
     }();
 
-    console.log("ALLOY.Lib Initializing");
+    console.log('%cALLOY.Lib Initializing', 'color: orange;');
     // force start of the Library Init function
     ALLOY.Lib.init();
 })();
