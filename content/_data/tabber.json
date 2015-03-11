@@ -1,27 +1,32 @@
 {
     "item": {
+    	"id": "",
         "modifier": "variant"
     },
-    "buttons": [{
-    	"text": "Button 1"
-	},{
-    	"text": "Button 2"
-	},{
-    	"text": "Button 3"
-	},{
-    	"text": "Button 4"
-	},{
-    	"text": "Button 5"
-	}],
-	"contents": [{
-		"body": "This is the first contents"
-	},{
-		"body": "This is the second contents"
-	},{
-		"body": "This is the third contents"
-	},{
-		"body": "This is the fourth contents"
-	},{
-		"body": "This is the fifth contents"
-	}]
+    "content": {
+    	"tabs": [
+		{
+			"item": {
+		    	"id": "tab-1",
+		        "modifier": ""
+	        },
+			"content": {
+    			"tabText": "Tab 1",
+    			"tabTitle": "Open Tab 1",
+    			"body": "<p>This is the body of tab 1 and its a bit longer than the content of tab two!</p>"
+			}
+			},
+			{
+			"item": {
+		    	"id": "tab-2",
+		        "modifier": ""
+	        },
+    		"content": {
+    			"tabText": "Tab 2",
+    			"tabTitle": "Open Tab 2",
+    			"body": "<p>This is the body of tab 2</p>"
+			}
+		}
+		]
+	}
 }

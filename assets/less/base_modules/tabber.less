@@ -6,16 +6,36 @@
 // TODO: Complete
 // =========================================================================*/
 
-.tabber .contents li {
-	list-style-type: none;
+
+.tabs {}
+
+.tabs__tray {
+    background-color: @COLOR-Grey;
+    ._clearfix()
+
 }
 
-.tabber .contents li.inactive {
+.tabs__content {}
+
+.tabs__body {}
+
+.list__tabs {
+    padding:0;
+    margin:0;
+    list-style: none;
+
+    .list__item {
+        float:left;
+    }
+    .list__link {}
+}
+
+.tabs .contents li.inactive {
 	display: none; 
 	position: absolute;
 }
 
-.tabber .contents li.active {
+.tabs .contents li.active {
 	display: block; 
 	position: relative;
 }
