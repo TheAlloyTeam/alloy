@@ -1,0 +1,14 @@
+{
+    "item": {},
+    "content": {
+        "label": "Group Label",
+        "select__option": [{
+            "item": {},
+            "content": {
+                "text": "Select option text",
+                "value": ""
+            }
+        }]
+
+    }
+}
