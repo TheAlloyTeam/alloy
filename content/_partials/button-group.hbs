@@ -1,0 +1,15 @@
+{{#this}}
+<div class="buttongroup{{#if item.modifier}} buttongroup--{{item.modifier}}{{/if}}">
+{{#if actions}}
+	{{#each actions}}
+		{{#if buttons}}
+			{{#each buttons}}
+				{{#this}}
+				{{> button }}
+				{{/this}}
+			{{/each }}
+		{{/if}}
+	{{/each }}
+{{/if}}
+</div>
+{{/this}}

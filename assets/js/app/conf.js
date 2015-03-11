@@ -29,7 +29,7 @@ var require = {
         'iefixes': "modules/alloy.iefixes",
         'mobile': "modules/alloy.mobile",
         'accordion': "modules/alloy.accordion",
-        'tabber' : "modules/alloy.tabber",
+        'tabs' : "modules/alloy.tabs",
         'amd': "modules/exports/amd"
     },
     shim: {
@@ -40,7 +40,7 @@ var require = {
         'mobile': {deps: ['jquery', 'core', 'logging']},
         'fontloader': {deps: ['fontfaceobserver', 'core', 'logging']},
         'accordion': {deps: ['jquery', 'core', 'logging']},
-        'tabber' : {deps: ['jquery']}
+        'tabs' : {deps: ['jquery']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
