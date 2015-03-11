@@ -16,15 +16,31 @@
         {{#if content.badge}}{{#each content.badge}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
     </a>
     {{else}}
-    <span class="button
-            {{#if item.modifier}} button--{{item.modifier}}{{/if}}
-            {{#if item.disabled}} disabled{{/if}}
-            {{#if item.size}} {{item.size}}{{/if}}"
-        {{#if content.title}} title="{{content.title}}"{{/if}}>
-        <span class="ripple"></span>
-        {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
-        <span>{{content.text}}</span>
-        {{#if content.badge}}{{#each content.badge}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
-    </span>
+        {{#if content.type}}
+            <button class="button
+                    {{#if item.modifier}} button--{{item.modifier}}{{/if}}
+                    {{#if item.disabled}} disabled{{/if}}
+                    {{#if item.size}} {{item.size}}{{/if}}
+                    {{#if item.block}} block{{/if}}"
+                type="submit"
+                {{#if item.disabled}} disabled="disabled"{{/if}}
+                >
+                <span class="ripple"></span>
+                {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+                <span>{{content.text}}</span>
+                {{#if content.badge}}{{#each content.badge}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
+            </button>
+        {{else}}
+            <span class="button
+                    {{#if item.modifier}} button--{{item.modifier}}{{/if}}
+                    {{#if item.disabled}} disabled{{/if}}
+                    {{#if item.size}} {{item.size}}{{/if}}"
+                {{#if content.title}} title="{{content.title}}"{{/if}}>
+                <span class="ripple"></span>
+                {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+                <span>{{content.text}}</span>
+                {{#if content.badge}}{{#each content.badge}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
+            </span>
+        {{/if}}
     {{/if}}
 {{/this}}

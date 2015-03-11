@@ -1,0 +1,22 @@
+{{#this}}
+    <input
+        type="text"
+        role="textbox"
+        class="input
+            {{#if item.modifier}} input--{{item.modifier}}{{/if}}
+            {{#if item.size}} {{item.size}}{{/if}}"
+        {{#if item.required}} required="required" aria-required="true"{{/if}}
+        {{#if item.readonly}} readonly="readonly" aria-readonly="true"{{/if}}
+        {{#if item.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
+        {{#if item.spellcheck}} spellcheck="true"{{/if}}
+        {{#if content.id}} id="{{content.id}}"{{/if}}
+        {{#if content.name}} name="{{content.name}}"{{/if}}
+        {{#if content.placeholder}} placeholder="{{content.placeholder}}"{{/if}}
+        {{#if content.value}} value="{{content.value}}"{{/if}}
+        {{#if content.maxlength}} maxlength="{{content.maxlength}}"{{/if}}
+        {{#if content.pattern}} pattern="{{content.pattern}}"{{/if}}
+        {{#if content.autocomplete}} autocomplete="{{content.autocomplete}}"{{/if}}
+        {{#if content.tabindex}} tabindex="{{content.tabindex}}"{{/if}}
+        {{#if content.accesskey}} accesskey="{{content.accesskey}}"{{/if}}
+    />
+{{/this}}
