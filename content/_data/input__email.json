@@ -2,10 +2,10 @@
     "item": {
         "modifier": "",
         "size": "",
+        "multiple": "",
         "required": "",
         "readonly": "",
         "disabled": "",
-        "spellcheck": "",
         "id": "",
         "name": "",
         "maxlength": "",
@@ -16,7 +16,7 @@
         "accesskey": ""
     },
     "content": {
-        "placeholder": "Text Placeholder",
+        "placeholder": "Email Placeholder",
         "value": ""
     }
 }

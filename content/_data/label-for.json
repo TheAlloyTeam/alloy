@@ -1,9 +1,9 @@
 {
     "item": {
-        "modifier": "hot"
+        "modifier": "hot",
+        "for": "input"
     },
     "content": {
-        "for": "input",
         "text": "Label for Input"
     }
 }

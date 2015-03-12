@@ -1,9 +1,9 @@
 ---
-title: Labels
+title: Input
 
-nav-title: "Labels"
-nav-text: "Labels"
-nav-variant: "labels"
+nav-title: "Input"
+nav-text: "Input"
+nav-variant: "input"
 ---
 
 <main class="w w--main">
@@ -32,8 +32,16 @@ nav-variant: "labels"
 		            <div class="secton__body">
 				        <!-- code -->
 
-		        		{{> label label }}
-		        		{{> label label-for }}
+						{{> input__hidden input__hidden }}
+						{{> input__checkbox input__checkbox }}
+						{{> input__radio input__radio }}
+						{{> input__search input__search }}
+						{{> input__text input__text }}
+						{{> input__email input__email }}
+						{{> input__password input__password }}
+						{{> input__tel input__tel }}
+						{{> input__url input__url }}
+						{{> textarea textarea }}
 
 				        <!-- end of code -->
 			        </div>
@@ -49,7 +57,9 @@ nav-variant: "labels"
 
 		            <div class="section__body">
 			            <pre class="prettyprint linenums"><code class="html">
-
+&lt;input type=&quot;search&quot; role=&quot;textbox&quot; class=&quot;input&quot; required=&quot;required&quot; aria-required=&quot;true&quot; placeholder=&quot;Search Placeholder&quot; value=&quot;&quot;&gt;
+&lt;input type=&quot;text&quot; role=&quot;textbox&quot; class=&quot;input&quot; disabled=&quot;disabled&quot; aria-disabled=&quot;true&quot; placeholder=&quot;Text Placeholder&quot; value=&quot;&quot;&gt;
+&lt;textarea type=&quot;text&quot; role=&quot;textbox&quot; aria-multiline=&quot;true&quot; class=&quot;textarea&quot; placeholder=&quot;Textarea Placeholder&quot;&gt;&lt;/textarea&gt;
 			             </code></pre>
 		            </div>
 

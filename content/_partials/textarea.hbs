@@ -1,22 +1,23 @@
 {{#this}}
-    <input
-        type="tel"
+    <textarea
+        type="text"
         role="textbox"
-        class="input
-            {{#if item.modifier}} input--{{item.modifier}}{{/if}}
+        aria-multiline="true"
+        class="textarea
+            {{#if item.modifier}} textarea--{{item.modifier}}{{/if}}
             {{#if item.size}} {{item.size}}{{/if}}"
         {{#if item.required}} required="required" aria-required="true"{{/if}}
         {{#if item.readonly}} readonly="readonly" aria-readonly="true"{{/if}}
         {{#if item.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
         {{#if item.id}} id="{{item.id}}"{{/if}}
         {{#if item.name}} name="{{item.name}}"{{/if}}
-        {{#if item.maxlength}} maxlength="{{item.maxlength}}"{{/if}}
-        {{#if item.minlength}} pattern="{{item.minlength}}"{{/if}}
-        {{#if item.pattern}} pattern="{{item.pattern}}"{{/if}}
-        {{#if item.autocomplete}} autocomplete="{{item.autocomplete}}"{{/if}}
         {{#if item.tabindex}} tabindex="{{item.tabindex}}"{{/if}}
         {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
+        {{#if item.cols}} cols="{{item.cols}}"{{/if}}
+        {{#if item.rows}} rows="{{item.rows}}"{{/if}}
+        {{#if item.maxlength}} maxlength="{{item.maxlength}}"{{/if}}
+        {{#if item.minlength}} minlength="{{item.minlength}}"{{/if}}
+        {{#if item.wrap}} wrap="{{item.wrap}}"{{/if}}
         {{#if content.placeholder}} placeholder="{{content.placeholder}}"{{/if}}
-        {{#if content.value}} value="{{content.value}}"{{/if}}
-    />
+     />{{{content.text}}}</textarea>
 {{/this}}
