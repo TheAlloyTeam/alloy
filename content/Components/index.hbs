@@ -4,6 +4,9 @@ title: Components Index
 nav-title: "Components"
 nav-text: "Components"
 nav-variant: "components"
+navigation-main: true
+navigation-order: 2
+page-category: "components"
 ---
 
 <main class="w w--main">
@@ -18,20 +21,23 @@ nav-variant: "components"
 
 <!-- writings -->
 
-		        <div class="page__body rte">
-
-		        </div>
+				<div class="page__body rte">
+					{{#withSort page-category "page.title"}}
+					{{#is page-category "components"}}
+					<ul>
+	    				{{#each this.pages}}
+		            		{{#this}}
+							{{#isnt data.navigation-main true}}
+	                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+	                        {{/isnt}}
+	                        {{/this}}
+	        			{{/each}}
+	                </ul>
+	                {{/is}}
+	                {{/withSort}}
+				</div>
 
 <!-- reference -->
-
-		        <section class="section section--reference">
-		            <header class="section__head">
-		                <h2 class="section__title">References</h2>
-		            </header>
-		            <div class="section__body rte">
-
-		            </div>
-		        </section>
 
 	        </div>
 
