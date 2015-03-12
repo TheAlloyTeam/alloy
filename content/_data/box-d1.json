@@ -1,0 +1,10 @@
+{
+    "item": {
+        "modifier": "",
+        "depth": "d1"
+    },
+    "content": {
+        "title": "Depth Level 1",
+        "body": "<p>Class: d1</p>"
+    }
+}

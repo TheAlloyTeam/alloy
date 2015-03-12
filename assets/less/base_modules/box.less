@@ -12,8 +12,8 @@
 @BOX-HeadBgColor:               @COLOR-Base;
 @BOX-BodyColor:                 @TYPE-FontColor;
 @BOX-BodyBgColor:               @COLOR-White;
-@BOX-FootColor:                 @COLOR-White;
-@BOX-FootBgColor:               @COLOR-Base;
+@BOX-FootColor:                 @TYPE-FontColor;
+@BOX-FootBgColor:               @COLOR-GreyLight;
 
 // BASE
 // ----------------------------------------------------
@@ -25,33 +25,32 @@
 }
 
 .box__head {
+    color: @BOX-HeadColor;
     background-color: @BOX-HeadBgColor;
-    display: block;
-    ._border-radius-custom (@STYLE-BorderRadius, @STYLE-BorderRadius, 0,  0);
+    //._border-radius-custom (@STYLE-BorderRadius, @STYLE-BorderRadius, 0,  0);
 }
 
 .box__title {
     color: @BOX-HeadColor;
     line-height: 1;
+    margin: 0;
 }
 
 .box__body {
     color: @BOX-BodyColor;
     background-color: @BOX-BodyBgColor;
-    display: block;
 }
 
 .box__foot {
     color: @BOX-FootColor;
     background-color: @BOX-FootBgColor;
-    display: block;
-    ._border-radius-custom (0, 0, @STYLE-BorderRadius, @STYLE-BorderRadius);
+    //._border-radius-custom (0, 0, @STYLE-BorderRadius, @STYLE-BorderRadius);
 }
 
 .box__head,
 .box__body,
 .box__foot {
-    margin-bottom: 0;
+    display: block;
     ._padding (@TYPE-FontSize);
 
     &:last-child {

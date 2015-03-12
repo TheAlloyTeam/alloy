@@ -6,7 +6,7 @@
 // ----------------------------------------------------
 
 // Clearfix as a mixin
-._clearfix () {
+._clearfix() {
     &:before,
     &:after {
         content: "";
@@ -20,7 +20,7 @@
 
 // Clearfix for use within html
 .c {
-    ._clearfix ();
+    ._clearfix();
 }
 
 
@@ -33,7 +33,7 @@
     white-space: nowrap;
 }
 
-._inline-block () {
+._inline-block() {
     display: inline-block;
     zoom: 1;
     *display: inline;
@@ -53,7 +53,8 @@
     display: block;
 }
 
-.hide, .hidden {
+.hide,
+.hidden {
     display: none;
 }
 
@@ -124,6 +125,23 @@
 .padding-none {
     padding: 0;
 }
+
+// DEPTH
+// ----------------------------------------------------
+
+._depth-0() { ._box-shadow-custom (@DEPTH-Level0); }
+._depth-1() { ._box-shadow-custom (@DEPTH-Level1); }
+._depth-2() { ._box-shadow-custom (@DEPTH-Level2); }
+._depth-3() { ._box-shadow-custom (@DEPTH-Level3); }
+._depth-4() { ._box-shadow-custom (@DEPTH-Level4); }
+._depth-5() { ._box-shadow-custom (@DEPTH-Level5); }
+
+.d0 { ._depth-0(); }
+.d1 { ._depth-1(); }
+.d2 { ._depth-2(); }
+.d3 { ._depth-3(); }
+.d4 { ._depth-4(); }
+.d5 { ._depth-5(); }
 
 // RESPONSIVE UTILITIES
 // ----------------------------------------------------

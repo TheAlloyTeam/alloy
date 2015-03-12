@@ -8,54 +8,54 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@ALERT-TextShadowcolor:         rgba(255, 255, 255, 0.5);
+@ALERT-InfoBgColor:             @COLOR-BlueLightest;
+@ALERT-InfoTextColor:           @COLOR-BlueDark;
+@ALERT-InfoBordercolor:         @COLOR-BlueLight;
 
-@ALERT-InfoBgColor:             @COLOR-BlueLight;
-@ALERT-InfoTextColor:           @COLOR-White;
-@ALERT-InfoBordercolor:         @COLOR-BlueLighter;
+@ALERT-ErrorBgColor:            @COLOR-RedLightest;
+@ALERT-ErrorTextColor:          @COLOR-RedDark;
+@ALERT-ErrorBordercolor:        @COLOR-RedLight;
 
-@ALERT-ErrorBgColor:            @COLOR-RedLight;
-@ALERT-ErrorTextColor:          @COLOR-White;
-@ALERT-ErrorBordercolor:        @COLOR-RedLighter;
-
-@ALERT-SuccessBgColor:          @COLOR-GreenLight;
-@ALERT-SuccessTextColor:        @COLOR-White;
-@ALERT-SuccessBordercolor:      @COLOR-GreenLighter;
+@ALERT-SuccessBgColor:          @COLOR-GreenLightest;
+@ALERT-SuccessTextColor:        @COLOR-GreenDark;
+@ALERT-SuccessBordercolor:      @COLOR-GreenLight;
 
 // BASE
 // ----------------------------------------------------
 
 .alert {
+    color: @COLOR-GreyDark;
+    background-color: @COLOR-GreyLighter;
     display: block;
     position: relative;
-    //border-width: 1px;
-    //border-style: solid;
-    //text-shadow: 0 1px 0 @ALERT-TextShadowcolor;
+    border-width: 0 5px;
+    border-style: solid;
+    border-color: @COLOR-GreyLight;
+    z-index: @Z-INDEX-Level4;
 
-    //._border-radius ();
-    ._padding (@TYPE-FontSize); // TODO: Make better - take into account the 1px border
+    ._padding (@TYPE-FontSize);
     ._margin (0, 0, @TYPE-LineHeight, 0);
-    ._box-shadow-custom(~"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)");
+    ._depth-1 ();
 }
 
 // VARIANTS
 // ----------------------------------------------------
 
 .alert--info {
+    color: @ALERT-InfoTextColor;
     background-color: @ALERT-InfoBgColor;
-    color:  @ALERT-InfoTextColor;
     border-color: @ALERT-InfoBordercolor;
 }
 
 .alert--error {
-    background-color: @ALERT-ErrorBgColor;
     color: @ALERT-ErrorTextColor;
+    background-color: @ALERT-ErrorBgColor;
     border-color: @ALERT-ErrorBordercolor;
 }
 
 .alert--success {
-    background-color: @ALERT-SuccessBgColor;
     color: @ALERT-SuccessTextColor;
+    background-color: @ALERT-SuccessBgColor;
     border-color: @ALERT-SuccessBordercolor;
 }
 
