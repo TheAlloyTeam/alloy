@@ -8,46 +8,57 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@BREADCRUMBS-FontSize:          @TYPE-SIZE-Iota;
-@BREADCRUMBS-Color:             @TYPE-FontColor;
-@BREADCRUMBS-ActiveColor:       @TYPE-FontColor;
+@BREADCRUMBS-FontSize:          @TYPE-FontSize;
+@BREADCRUMBS-Color:             @COLOR-White;
+@BREADCRUMBS-BgColor:           @COLOR-Base;
+@BREADCRUMBS-ActiveColor:       lighten(@BREADCRUMBS-BgColor, 40%);
 
 // BASE
 // ----------------------------------------------------
 
-.breadcrumb {}
+.nav__breadcrumbs {
+    color: @BREADCRUMBS-Color;
+    background-color: @BREADCRUMBS-BgColor;
+}
 
-.list--breadcrumb {
-    display: block;
-    margin-left: 0;
-    padding: 0;
-    ._clearfix ();
+.list__breadcrumb {
+    display: inline-block;
+    ._clearfix();
     ._font-size (@BREADCRUMBS-FontSize);
 
     .list__item {
-        display: inline;
 
-        &:before {
-            content: ">\0000a0";
-        }
-
-        &:first-child:before  {
-            content: "";
-        }
     }
 
     .list__link {
-        color: @BREADCRUMBS-Color;
+        color: @BREADCRUMBS-ActiveColor;
         text-decoration: none;
+        float: left;
+        ._padding (10);
+        ._transition (all, 0.1s);
+
+        &:after {
+            font-family: "Flaticon";
+            content: "\e11d";
+            ._margin-left (20);
+        }
 
         &:hover {
-            text-decoration: underline;
+            background-color: darken(@BREADCRUMBS-BgColor, 10%);
         }
+    }
+}
 
-        &:active,
-        span {
-            color: @BREADCRUMBS-ActiveColor;
-        }
+// VARIANTS
+// ----------------------------------------------------
+
+.list__breadcrumb--root {
+
+}
+
+.list__breadcrumb--current {
+    .list__item {
+        ._padding (10);
     }
 }
 
@@ -55,6 +66,25 @@
 // ----------------------------------------------------
 
 @media only screen and (max-width: @MQ-Small) {
+
+    .nav__breadcrumbs {
+        // text-overflow: ellipsis;
+        // overflow: hidden;
+        // white-space: nowrap;
+        // width: 100%;
+        // display: inline-block;
+    }
+
+    .list__breadcrumb {
+        .list__link {
+            display: block;
+            width: 100%;
+
+            &:after {
+                content: "\e06f";
+            }
+        }
+    }
 
 }
 
