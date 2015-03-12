@@ -8,13 +8,21 @@
 // VARIABLES
 // ----------------------------------------------------
 
+@ALERT-DefaultBgColor:          @COLOR-GreyLighter;
+@ALERT-DefaultTextColor:        @COLOR-GreyDark;
+@ALERT-DefaultBordercolor:      @COLOR-GreyLight;
+
 @ALERT-InfoBgColor:             @COLOR-BlueLightest;
 @ALERT-InfoTextColor:           @COLOR-BlueDark;
 @ALERT-InfoBordercolor:         @COLOR-BlueLight;
 
-@ALERT-ErrorBgColor:            @COLOR-RedLightest;
-@ALERT-ErrorTextColor:          @COLOR-RedDark;
-@ALERT-ErrorBordercolor:        @COLOR-RedLight;
+@ALERT-WarnBgColor:            @COLOR-OrangeLightest;
+@ALERT-WarnTextColor:          @COLOR-OrangeDarker;
+@ALERT-WarnBordercolor:        @COLOR-OrangeLight;
+
+@ALERT-DangerBgColor:             @COLOR-RedLightest;
+@ALERT-DangerTextColor:           @COLOR-RedDark;
+@ALERT-DangerBordercolor:         @COLOR-RedLight;
 
 @ALERT-SuccessBgColor:          @COLOR-GreenLightest;
 @ALERT-SuccessTextColor:        @COLOR-GreenDark;
@@ -24,13 +32,13 @@
 // ----------------------------------------------------
 
 .alert {
-    color: @COLOR-GreyDark;
-    background-color: @COLOR-GreyLighter;
+    color: @ALERT-DefaultTextColor;
+    background-color: @ALERT-DefaultBgColor;
     display: block;
     position: relative;
     border-width: 0 5px;
     border-style: solid;
-    border-color: @COLOR-GreyLight;
+    border-color: @ALERT-DefaultBordercolor;
     z-index: @Z-INDEX-Level4;
 
     ._padding (@TYPE-FontSize);
@@ -41,19 +49,25 @@
 // VARIANTS
 // ----------------------------------------------------
 
-.alert--info {
+.alert.info {
     color: @ALERT-InfoTextColor;
     background-color: @ALERT-InfoBgColor;
     border-color: @ALERT-InfoBordercolor;
 }
 
-.alert--error {
-    color: @ALERT-ErrorTextColor;
-    background-color: @ALERT-ErrorBgColor;
-    border-color: @ALERT-ErrorBordercolor;
+.alert.warn {
+    color: @ALERT-WarnTextColor;
+    background-color: @ALERT-WarnBgColor;
+    border-color: @ALERT-WarnBordercolor;
 }
 
-.alert--success {
+.alert.danger {
+    color: @ALERT-DangerTextColor;
+    background-color: @ALERT-DangerBgColor;
+    border-color: @ALERT-DangerBordercolor;
+}
+
+.alert.success {
     color: @ALERT-SuccessTextColor;
     background-color: @ALERT-SuccessBgColor;
     border-color: @ALERT-SuccessBordercolor;

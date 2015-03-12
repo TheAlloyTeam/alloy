@@ -25,7 +25,9 @@ navigation-order: 1
 					<ul>
 	    				{{#each this.pages}}
 		            		{{#this}}
-		                <li class="list__item"><a class="list__link{{#if page.nav-variant}} list__link--{{data.nav-variant}}{{/if}}" href="{{relative ../../../page.dest this.dest}}" title="{{data.nav-title}}"{{#if data.nav-target}} target="{{data.nav-target}}"{{/if}}>{{capitalizeFirst data.nav-text}}</a></li>
+							{{#isnt data.navigation-main true}}
+		                <li class="list__item"><a class="list__link{{#if page.nav-variant}} list__link--{{data.nav-variant}}{{/if}}" href="{{relative ../../../../page.dest this.dest}}" title="{{data.nav-title}}"{{#if data.nav-target}} target="{{data.nav-target}}"{{/if}}>{{capitalizeFirst data.nav-text}}</a></li>
+		                	{{/isnt}}
 	                        {{/this}}
 	        			{{/each}}
 	                </ul>
