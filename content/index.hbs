@@ -5,7 +5,8 @@ subtitle: This is where the fun starts!
 nav-variant: "home"
 nav-title: "Go to the Home"
 nav-text: "Home"
-mainmenu: "true"
+navigation-main: true
+navigation-order: 1
 ---
 
 <main class="w w--main">
@@ -19,15 +20,15 @@ mainmenu: "true"
 				</div>
 
 				<div class="page__body rte">
-					{{#if pages}}
-						<ul>
-						{{#withSort pages}}
-		                    {{#if data.nav-title}}
-		                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
-	                        {{/if}}
-		                {{/withSort}}
-		                </ul>
-	                {{/if}}
+					{{#withSort page-category "page.title"}}
+					<ul>
+	    				{{#each this.pages}}
+		            		{{#this}}
+	                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+	                        {{/this}}
+	        			{{/each}}
+	                </ul>
+	                {{/withSort}}
 				</div>
 			</div>
 
