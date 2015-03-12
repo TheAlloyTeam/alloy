@@ -1,0 +1,28 @@
+{
+    "item": {
+        "modifier": "",
+        "multiple": "",
+        "required": "",
+        "disabled": "",
+        "id": "",
+        "form": "",
+        "name": "",
+        "size": "",
+        "autocomplete": "",
+        "tabindex": "",
+        "accesskey": ""
+    },
+    "content": {
+        "select__option": [{
+            "item": {
+                "value": "",
+                "selected": "",
+                "disabled": ""
+            },
+            "content": {
+                "label": "Option Label",
+                "text": "Option Text"
+            }
+        }]
+    }
+}

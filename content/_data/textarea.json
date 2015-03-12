@@ -5,18 +5,18 @@
         "required": "",
         "readonly": "",
         "disabled": "",
-        "spellcheck": "",
         "id": "",
         "name": "",
+        "tabindex": "",
+        "accesskey": "",
+        "cols": "",
+        "rows": "",
         "maxlength": "",
         "minlength": "",
-        "pattern": "",
-        "autocomplete": "",
-        "tabindex": "",
-        "accesskey": ""
+        "wrap": ""
     },
     "content": {
-        "placeholder": "Text Placeholder",
+        "placeholder": "Textarea Placeholder",
         "value": ""
     }
 }
