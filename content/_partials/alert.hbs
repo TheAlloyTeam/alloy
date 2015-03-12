@@ -1,3 +1,5 @@
 {{#this}}
-<div class="alert {{#if item.modifier}}alert--{{item.modifier}}{{/if}}">{{{content.text}}}</div>
+<div class="alert{{#if item.modifier}} alert--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}">
+  {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+  <div class="alert__content">{{{content.text}}}</div></div>
 {{/this}}

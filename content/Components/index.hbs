@@ -27,7 +27,9 @@ page-category: "components"
 					<ul>
 	    				{{#each this.pages}}
 		            		{{#this}}
-	                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+							{{#isnt data.navigation-main true}}
+	                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../../../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+	                        {{/isnt}}
 	                        {{/this}}
 	        			{{/each}}
 	                </ul>
