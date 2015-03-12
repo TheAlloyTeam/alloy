@@ -1,7 +1,7 @@
 {
     "item": {
         "modifier": "",
-        "depth": "d3"
+        "depth": 3
     },
     "content": {
         "title": "Depth Level 3",
