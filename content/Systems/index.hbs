@@ -4,6 +4,9 @@ title: Systems Index
 nav-title: "Systems"
 nav-text: "Systems"
 nav-variant: "systems"
+navigation-main: true
+navigation-order: 3
+page-category: "systems"
 ---
 
 <main class="w w--main">
@@ -18,28 +21,24 @@ nav-variant: "systems"
 
 <!-- writings -->
 
-		        <div class="page__body rte">
 
-		  			<ul>
-					{{#withSort pages}}
-		                {{#if data.nav-title }}
-		                    <li class="list__item"><a class="list_link list_link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}">{{capitalizeFirst data.nav-text}}</a></li>
-		                {{/if}}
-		            {{/withSort}}
-		            </ul>
-
-		        </div>
+				<div class="page__body rte">
+					{{#withSort page-category "page.title"}}
+					{{#is page-category "systems"}}
+					<ul>
+	    				{{#each this.pages}}
+		            		{{#this}}
+							{{#isnt data.navigation-main true}}
+	                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../../../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+	                        {{/isnt}}
+	                        {{/this}}
+	        			{{/each}}
+	                </ul>
+	                {{/is}}
+	                {{/withSort}}
+				</div>
 
 <!-- reference -->
-
-		        <section class="section section--reference">
-		            <header class="section__head">
-		                <h2 class="section__title">References</h2>
-		            </header>
-		            <div class="section__body rte">
-
-		            </div>
-		        </section>
 
 	        </div>
 

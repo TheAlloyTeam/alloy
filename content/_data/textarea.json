@@ -1,0 +1,22 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "required": "",
+        "readonly": "",
+        "disabled": "",
+        "id": "",
+        "name": "",
+        "tabindex": "",
+        "accesskey": "",
+        "cols": "",
+        "rows": "",
+        "maxlength": "",
+        "minlength": "",
+        "wrap": ""
+    },
+    "content": {
+        "placeholder": "Textarea Placeholder",
+        "value": ""
+    }
+}

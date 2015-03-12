@@ -1,0 +1,23 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "required": "",
+        "readonly": "",
+        "disabled": "",
+        "spellcheck": "",
+        "autosave": "",
+        "id": "",
+        "name": "",
+        "maxlength": "",
+        "minlength": "",
+        "pattern": "",
+        "autocomplete": "",
+        "tabindex": "",
+        "accesskey": ""
+    },
+    "content": {
+        "placeholder": "Search Placeholder",
+        "value": ""
+    }
+}

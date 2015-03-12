@@ -1,0 +1,84 @@
+---
+title: Input
+
+nav-title: "Input"
+nav-text: "Input"
+nav-variant: "input"
+page-category: "components"
+---
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+<!-- example -->
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Example</h2>
+		            </header>
+
+		            <div class="secton__body">
+				        <!-- code -->
+
+						{{> input__hidden input__hidden }}
+						{{> input__checkbox input__checkbox }}
+						{{> input__radio input__radio }}
+						{{> input__search input__search }}
+						{{> input__text input__text }}
+						{{> input__email input__email }}
+						{{> input__password input__password }}
+						{{> input__tel input__tel }}
+						{{> input__url input__url }}
+						{{> textarea textarea }}
+
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Code</h2>
+		            </header>
+
+		            <div class="section__body">
+			            <pre class="prettyprint linenums"><code class="html">
+&lt;input type=&quot;search&quot; role=&quot;textbox&quot; class=&quot;input&quot; required=&quot;required&quot; aria-required=&quot;true&quot; placeholder=&quot;Search Placeholder&quot; value=&quot;&quot;&gt;
+&lt;input type=&quot;text&quot; role=&quot;textbox&quot; class=&quot;input&quot; disabled=&quot;disabled&quot; aria-disabled=&quot;true&quot; placeholder=&quot;Text Placeholder&quot; value=&quot;&quot;&gt;
+&lt;textarea type=&quot;text&quot; role=&quot;textbox&quot; aria-multiline=&quot;true&quot; class=&quot;textarea&quot; placeholder=&quot;Textarea Placeholder&quot;&gt;&lt;/textarea&gt;
+			             </code></pre>
+		            </div>
+
+		        </section>
+
+<!-- reference -->
+
+		        <section class="section section--reference">
+		            <header class="section__head">
+		                <h2 class="section__title">References</h2>
+		            </header>
+		            <div class="section__body rte">
+
+		            </div>
+		        </section>
+
+	        </div>
+
+	    </div>
+	</div>
+</main>

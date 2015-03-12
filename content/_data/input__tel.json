@@ -1,0 +1,21 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "required": "",
+        "readonly": "",
+        "disabled": "",
+        "id": "",
+        "name": "",
+        "maxlength": "",
+        "minlength": "",
+        "pattern": "",
+        "autocomplete": "",
+        "tabindex": "",
+        "accesskey": ""
+    },
+    "content": {
+        "placeholder": "Telephone Placeholder",
+        "value": ""
+    }
+}

@@ -1,10 +1,10 @@
 {{#this}}
-<optgroup {{#if content.label}} label="{{content.label}}"{{/if}}>
+<optgroup {{#if item.label}} label="{{item.label}}"{{/if}}>
 {{#if content.select__option}}
     {{#each content.select__option}}
-        {{#this}}
-            {{> select__option }}
-        {{/this}}
+            {{#this}}
+            {{> select__option}}
+            {{/this}}
     {{/each}}
 {{/if}}
 </optgroup>

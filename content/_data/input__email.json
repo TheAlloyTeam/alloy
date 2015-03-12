@@ -1,0 +1,22 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "multiple": "",
+        "required": "",
+        "readonly": "",
+        "disabled": "",
+        "id": "",
+        "name": "",
+        "maxlength": "",
+        "minlength": "",
+        "pattern": "",
+        "autocomplete": "",
+        "tabindex": "",
+        "accesskey": ""
+    },
+    "content": {
+        "placeholder": "Email Placeholder",
+        "value": ""
+    }
+}

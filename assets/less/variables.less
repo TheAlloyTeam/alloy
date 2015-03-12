@@ -16,78 +16,91 @@
 @COLOR-Black:					#000000;
 @COLOR-White:					#FFFFFF;
 
+@COLOR-RedLightest:				#FFEBEE;
 @COLOR-RedLighter:				#FFCDD2;
 @COLOR-RedLight:				#E57373;
 @COLOR-Red:						#F44336;
 @COLOR-RedDark:					#D32F2F;
 @COLOR-RedDarker:				#B71C1C;
 
+@COLOR-PinkLightest:			#FCE4EC;
 @COLOR-PinkLighter:				#F8BBD0;
 @COLOR-PinkLight:				#F06292;
 @COLOR-Pink:					#E91E63;
 @COLOR-PinkDark:				#C2185B;
 @COLOR-PinkDarker:				#880E4F;
 
+@COLOR-PurpleLightest:			#F3E5F5;
 @COLOR-PurpleLighter:			#E1BEE7;
 @COLOR-PurpleLight:				#BA68C8;
 @COLOR-Purple:					#9C27B0;
 @COLOR-PurpleDark:				#7B1FA2;
 @COLOR-PurpleDarker:			#4A148C;
 
+@COLOR-IndigoLightest:			#E8EAF6;
 @COLOR-IndigoLighter:			#C5CAE9;
 @COLOR-IndigoLight:				#7986CB;
 @COLOR-Indigo:					#3F51B5;
 @COLOR-IndigoDark:				#303F9F;
 @COLOR-IndigoDarker:			#1A237E;
 
+@COLOR-BlueLightest:			#E3F2FD;
 @COLOR-BlueLighter:				#BBDEFB;
 @COLOR-BlueLight:				#64B5F6;
 @COLOR-Blue:					#2196F3;
 @COLOR-BlueDark:				#1976D2;
 @COLOR-BlueDarker:				#0D47A1;
 
+@COLOR-CyanLightest:			#E0F7FA;
 @COLOR-CyanLighter:				#B2EBF2;
 @COLOR-CyanLight:				#4DD0E1;
 @COLOR-Cyan:					#00BCD4;
 @COLOR-CyanDark:				#0097A7;
 @COLOR-CyanDarker:				#006064;
 
+@COLOR-TealLightest:			#E0F2F1;
 @COLOR-TealLighter:				#B2DFDB;
 @COLOR-TealLight:				#4DB6AC;
 @COLOR-Teal:					#009688;
 @COLOR-TealDark:				#00796B;
 @COLOR-TealDarker:				#004D40;
 
+@COLOR-GreenLightest:			#E8F5E9;
 @COLOR-GreenLighter:			#C8E6C9;
 @COLOR-GreenLight:				#81C784;
 @COLOR-Green:					#4CAF50;
 @COLOR-GreenDark:				#388E3C;
 @COLOR-GreenDarker:				#1B5E20;
 
+@COLOR-LimeLightest:			#F9FBE7;
 @COLOR-LimeLighter:				#F0F4C3;
 @COLOR-LimeLight:				#DCE775;
 @COLOR-Lime:					#CDDC39;
 @COLOR-LimeDark:				#AFB42B;
 @COLOR-LimeDarker:				#827717;
 
+@COLOR-YellowLightest:			#FFFDE7;
 @COLOR-YellowLighter:			#FFF9C4;
 @COLOR-YellowLight:				#FFF176;
 @COLOR-Yellow:					#FFEB3B;
 @COLOR-YellowDark:				#FBC02D;
 @COLOR-YellowDarker:			#F57F17;
 
+@COLOR-OrangeLightest:			#FFF3E0;
 @COLOR-OrangeLighter:			#FFE0B2;
 @COLOR-OrangeLight:				#FFB74D;
 @COLOR-Orange:					#FF9800;
 @COLOR-OrangeDark:				#F57C00;
 @COLOR-OrangeDarker:			#E65100;
 
+@COLOR-BrownLightest:			#EFEBE9;
 @COLOR-BrownLighter:			#D7CCC8;
 @COLOR-BrownLight:				#A1887F;
 @COLOR-Brown:					#795548;
 @COLOR-BrownDark:				#5D4037;
 @COLOR-BrownDarker:				#3E2723;
 
+@COLOR-GreyLightest:			#FAFAFA;
 @COLOR-GreyLighter:				#F5F5F5;
 @COLOR-GreyLight:				#E0E0E0;
 @COLOR-Grey:					#9E9E9E;
@@ -99,7 +112,32 @@
 // ANNIMATION CURVES
 // ----------------------------------------------------
 
-@ANIM-Curve:			~"cubic-bezier(0.4, 0, 0.2, 1)";
+@ANIM-Curve:					~"cubic-bezier(0.4, 0, 0.2, 1)";
+
+// DEPTH
+// ----------------------------------------------------
+
+@DEPTH-Level0:                  ~"0 0 0 0 rgba(0, 0, 0, 0.0)";
+@DEPTH-Level1:                  ~"0 1px 4px 0 rgba(0, 0, 0, 0.37)";
+@DEPTH-Level2:                  ~"0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2)";
+@DEPTH-Level3:                  ~"0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19)";
+@DEPTH-Level4:                  ~"0 20px 40px 0 rgba(0, 0, 0, 0.3), 0 14px 12px 0 rgba(0, 0, 0, 0.17)";
+@DEPTH-Level5:                  ~"0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15)";
+
+// Z-INDEX
+// ----------------------------------------------------
+
+@Z-INDEX-Level0:				0;		// Page
+@Z-INDEX-Level1:				1000;	// Page
+@Z-INDEX-Level2:				2000;	// Page
+@Z-INDEX-Level3:				3000;	// Page
+@Z-INDEX-Level4:				4000;	// Alerts
+@Z-INDEX-Level5:				5000;	// Navigation
+@Z-INDEX-Level6:				6000;	// Header
+@Z-INDEX-Level7:				7000;	// Takeover
+@Z-INDEX-Level8:				8000;	// Flyout
+@Z-INDEX-Level9:				9000;	// Toast
+@Z-INDEX-Level10:				9999;	// System
 
 // TYPOGRAPHY
 // ----------------------------------------------------

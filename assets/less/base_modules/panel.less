@@ -8,17 +8,19 @@
 // VARIABLES
 // ----------------------------------------------------
 
+@PANEL-Color:				@COLOR-White;
 @PANEL-BgColor:				@COLOR-Base;
 
 // BASE
 // ----------------------------------------------------
 
 .panel {
+	color: @PANEL-Color;
 	background-color: @PANEL-BgColor;
 	background-clip: padding-box;
 	._padding (20);
 	._border-radius (2);
-	._box-shadow-custom(~"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)");
+	._depth-1 ();
 }
 
 .panel__title {

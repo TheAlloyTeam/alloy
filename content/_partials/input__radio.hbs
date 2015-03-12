@@ -6,10 +6,10 @@
         {{#if item.checked}} checked="checked" aria-checked="true"{{/if}}
         {{#if item.required}} required="required" aria-required="true"{{/if}}
         {{#if item.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
-        {{#if content.id}} id="{{content.id}}"{{/if}}
-        {{#if content.name}} name="{{content.name}}"{{/if}}
-        {{#if content.value}} value="{{content.value}}"{{/if}}
-        {{#if content.tabindex}} tabindex="{{content.tabindex}}"{{/if}}
-        {{#if content.accesskey}} accesskey="{{content.accesskey}}"{{/if}}
+        {{#if item.id}} id="{{item.id}}"{{/if}}
+        {{#if item.name}} name="{{item.name}}"{{/if}}
+        {{#if item.value}} value="{{item.value}}"{{/if}}
+        {{#if item.tabindex}} tabindex="{{item.tabindex}}"{{/if}}
+        {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
     />
 {{/this}}

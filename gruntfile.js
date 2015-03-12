@@ -81,14 +81,28 @@ module.exports = function(grunt) {
         assemble: {
           pages: {
             options: {
-              flatten: false,
+              flatten: true,
               assets: '<%= pkg.staddle.site %>/<%= pkg.staddle.assets %>',
-              layout: '<%= pkg.staddle.content %>/<%= pkg.staddle.layouts %>/default.hbs',
+              layout: 'default.hbs',
+              layoutdir: '<%= pkg.staddle.content %>/<%= pkg.staddle.layouts %>',
               data: '<%= pkg.staddle.content %>/<%= pkg.staddle.data %>/*.json',
               partials: '<%= pkg.staddle.content %>/<%= pkg.staddle.partials %>/**/*.hbs',
               dev: '<%= pkg.staddle.dev %>',
               year: '<%= grunt.template.today("yyyy") %>',
-              now: '<%= grunt.template.today("ddd dd MMMM yyyy - hh:mm:ss") %>'
+              now: '<%= grunt.template.today("ddd dd MMMM yyyy - hh:mm:ss") %>',
+              collections: [
+                {
+                  name: 'navigation-main',
+                  sortby: 'navigation-order',
+                  sortorder: 'ascending'
+                },
+                {
+                  name: 'page-category',
+                  sortby: 'title',
+                  sortorder: 'ascending'
+                }
+              ]
+
             },
             files: [
               {
