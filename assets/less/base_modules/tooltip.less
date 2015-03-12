@@ -11,7 +11,7 @@
 // ---------------------------------------------------- 
 
 @TOOLTIP-Color:                 @COLOR-White;
-@TOOLTIP-BgColor:               rgba(0, 0, 0, 0.9);
+@TOOLTIP-BgColor:               rgba (0, 0, 0, 0.9);
 
 // BASE
 // ----------------------------------------------------
@@ -25,8 +25,8 @@
     position: absolute;
     bottom: 90%;
     left: -9999px;
-    z-index: 100;
     opacity: 0;
+    z-index: @Z-INDEX-Level3;
     ._margin-bottom (12);
 
     -webkit-transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
@@ -44,10 +44,7 @@
     text-shadow: 0 0 5px @COLOR-Black;
     ._font-size (12);
     ._border-radius (5);
-    
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    ._depth-1 ();
 }
 
 [data-tooltip].tooltip-large:after {

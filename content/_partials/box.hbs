@@ -1,9 +1,11 @@
 {{#this}}
-<div class="box{{#if item.modifier}} box--{{item.modifier}}{{/if}}">
+<div class="box{{#if item.modifier}} box--{{item.modifier}}{{/if}}{{#if item.depth}} {{item.depth}}{{/if}}">
 	{{#if content.title}}
-	<div class="box__head"><span class="box__title">{{content.title}}</span></div>
+	<div class="box__head">
+		<h4 class="box__title">{{content.title}}</h4>
+	</div>
 	{{/if}}
-	<div class="box__body rte">{{content.body}}</div>
+	<div class="box__body rte">{{{content.body}}}</div>
 	{{#if actions}}
 	<div class="box__foot">
 		{{#each actions}}
