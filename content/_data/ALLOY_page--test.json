@@ -3,14 +3,35 @@
 		"modifier": ""
 		},
 	"content": {
-		"body": "",
+		"title": "This is a test page",
+		"subtitle": "Where I am trying out wether or not we can create dynamicly linked partials",
+		"body": "<p>The content for this is coming out of the JSON file.</p>",
 		"examples": [{
-			"item": {},
-			"content": {}
+			"item": {
+				"modifier": ""
+			},
+			"content": {
+				"title": "Examples",
+				"body": "{{>panel ALLOY_panel--messageus}} I want to get this to parse somehow"
+				}
 			}],
 		"code": [{
-			"item": {},
-			"content": {}
+			"item": {
+				"modifier": ""
+				},
+			"content": {
+				"title": "Code",
+				"body": ""
+				}
+			}],
+		"references": [{
+			"item": {
+				"modifier": ""
+				},
+			"content": {
+				"title": "References",
+				"body": ""
+				}
 			}]
 		},
 	"actions": {
