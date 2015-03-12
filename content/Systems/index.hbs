@@ -4,6 +4,9 @@ title: Systems Index
 nav-title: "Systems"
 nav-text: "Systems"
 nav-variant: "systems"
+navigation-main: true
+navigation-order: 3
+page-category: "systems"
 ---
 
 <main class="w w--main">
@@ -20,13 +23,7 @@ nav-variant: "systems"
 
 		        <div class="page__body rte">
 
-		  			<ul>
-					{{#withSort pages}}
-		                {{#if data.nav-title }}
-		                    <li class="list__item"><a class="list_link list_link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}">{{capitalizeFirst data.nav-text}}</a></li>
-		                {{/if}}
-		            {{/withSort}}
-		            </ul>
+
 
 		        </div>
 
