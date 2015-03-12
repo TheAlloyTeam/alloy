@@ -5,7 +5,6 @@
         "required": "",
         "readonly": "",
         "disabled": "",
-        "spellcheck": "",
         "id": "",
         "name": "",
         "maxlength": "",
@@ -16,7 +15,7 @@
         "accesskey": ""
     },
     "content": {
-        "placeholder": "Text Placeholder",
+        "placeholder": "Url Placeholder",
         "value": ""
     }
 }

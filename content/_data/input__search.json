@@ -6,6 +6,7 @@
         "readonly": "",
         "disabled": "",
         "spellcheck": "",
+        "autosave": "",
         "id": "",
         "name": "",
         "maxlength": "",
@@ -16,7 +17,7 @@
         "accesskey": ""
     },
     "content": {
-        "placeholder": "Text Placeholder",
+        "placeholder": "Search Placeholder",
         "value": ""
     }
 }
