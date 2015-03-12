@@ -28,7 +28,7 @@ page-category: "systems"
 					<ul>
 	    				{{#each this.pages}}
 		            		{{#this}}
-	                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+	                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
 	                        {{/this}}
 	        			{{/each}}
 	                </ul>

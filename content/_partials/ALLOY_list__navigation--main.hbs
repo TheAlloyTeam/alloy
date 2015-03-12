@@ -4,7 +4,7 @@
 	    	{{#each this.pages}}
 		        {{#if data.navigation-main }}
 		            {{#this}}
-		                <li class="list__item"><a class="list__link{{#if page.nav-variant}} list__link--{{data.nav-variant}}{{/if}}{{#is ../../../../page.dest this.dest}} current{{/is}}" href="{{relative ../../../../page.dest this.dest}}" title="{{data.nav-title}}">{{capitalizeFirst data.nav-text}}</a></li>
+		                <li class="list__item"><a class="list__link{{#if page.nav-variant}} list__link--{{data.nav-variant}}{{/if}}{{#is ../../../../page.dest this.dest}} current{{/is}}" href="{{relative ../../../../page.dest this.dest}}" title="{{data.nav-title}}"{{#if data.nav-target}} target="{{data.nav-target}}"{{/if}}>{{capitalizeFirst data.nav-text}}</a></li>
 		            {{/this}}
 		        {{/if}}
 	        {{/each}}
