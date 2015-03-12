@@ -10,19 +10,19 @@ mainmenu: "true"
 
 <main class="w w--main">
 	<div class="g">
-		<div class="c__md--1">
+		<div class="c__lg--1">
 
-			<div class="page page--{{nav-variant}}">
+			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
 				<div class="page__head">
 					<h1 class="page__title">{{title}}</h1>
-					<h2 class="page__subtitle">{{subtitle}}</h2>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
 				</div>
 
 				<div class="page__body rte">
 					{{#if pages}}
 						<ul>
 						{{#withSort pages}}
-		                    {{#if data.nav-title }}
+		                    {{#if data.nav-title}}
 		                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
 	                        {{/if}}
 		                {{/withSort}}

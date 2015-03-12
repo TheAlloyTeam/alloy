@@ -6,7 +6,7 @@
 
         // Private Functions
     	var _init = function() {
-    		console.log("ALLOY.FontLoader Started");
+    		console.log('%cALLOY.FontLoader Started', 'color: green;');
 
     	};
 
@@ -19,7 +19,7 @@
 
     }();
 
-    console.log("ALLOY.FontLoader Initializing");
+    console.log('%cALLOY.FontLoader Initializing', 'color: orange;');
     // force start of the Library Init function
     ALLOY.FontLoader.init();
 })();

@@ -15,7 +15,7 @@
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
 
     	    this.event();
-            console.log("ALLOY.Tracking Started");
+            console.log('%cALLOY.Tracking Started', 'color: green;');
     	},
 
         event: function() {
@@ -34,5 +34,5 @@
 
     // Autostart Plugin
     $(".trackme").track();
-    console.log("ALLOY.Tracking Loaded");
+    console.log('%cALLOY.Tracking Initializing', 'color: orange;');
 })();

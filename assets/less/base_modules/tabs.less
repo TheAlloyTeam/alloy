@@ -7,33 +7,41 @@
 
 .tabs {}
 
+.tabs__tray {
+    background-color: @COLOR-Grey;
+    ._clearfix();
+
+}
+
 .tabs__content {
-    > div {
-	   display: none;
-
-        &:first-child {
-        	display: block;
-        }
-
-        &:target {
-        	display: block;
-        }
+    .inactive {
+        display:none;
     }
 }
 
+.tabs__body {}
 
-.list--tabs {
-    margin: 0;
-    padding: 0;
+.list__tabs {
+    padding:0;
+    margin:0;
+    list-style: none;
 
     .list__item {
-        float: left;
+        display:inline;
+    }
+    .list__link {
+        background-color: @COLOR-White;
+        ._padding(5,10);
+        ._inline-block();
     }
 
-    .list__link {
-        display: block;
-        ._padding (10);
+    .active {
+        .list__link {
+            background-color: orange;
+        }
     }
 }
+
+
 
 } .tabs-styles();

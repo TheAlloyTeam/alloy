@@ -7,13 +7,19 @@
 
 .article {}
 
-.article__head {}
+.article__head {
+	._margin-bottom (@TYPE-LineHeight);
+}
 
 .article__title {
 	margin-bottom: 0;
+	._font-size (@TYPE-SIZE-Alpha);
 }
 
-.article__subtitle {}
+.article__subtitle {
+	margin-bottom: 0;
+	._font-size (@TYPE-SIZE-Delta);
+}
 
 .article__body {}
 

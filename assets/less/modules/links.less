@@ -76,7 +76,11 @@ a {
 // ----------------------------------------------------
 
 .link--logo {
+	display: inline-block;
 
+	.link__image {
+		height: 100%;
+	}
 }
 
 .link--pagination {
@@ -92,6 +96,11 @@ a {
 // ----------------------------------------------------
 
 @media only screen and (max-width: @MQ-Small) {
+
+	.link--logo {
+		height: 44px;
+		._padding-top (4);
+	}
 
 }
 

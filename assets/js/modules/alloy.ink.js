@@ -52,6 +52,5 @@
 
     // Autostart Plugin
     $(".button").ink();
-    console.log("ALLOY.Ink Loaded");
+    console.log('%cALLOY.Ink Started', 'color: green;');
 })();
-

@@ -131,6 +131,6 @@
 
 	// Functions
 
-	console.log("ALLOY.Logging Loaded");
+    console.log('%cALLOY.Logging Started', 'color: green;');
 	ALLOY.Logger.init();
 })();

@@ -1,0 +1,40 @@
+<div class="page{{#if item.modifier}} page--{{item.modifier}}{{/if}}">
+	<div class="page__head">
+		<h1 class="page__title">{{content.title}}</h1>
+		{{#if content.subtitle}}<p class="page__subtitle">{{content.subtitle}}</p>{{/if}}
+	</div>
+
+<!-- writings -->
+
+    <div class="page__body rte">
+    {{{content.body}}}
+	</div>
+
+	<!-- example -->
+	{{#if content.examples }}
+		{{#each content.examples}}
+			{{#this}}
+				{{> section }}
+	    	{{/this}}
+		{{/each}}
+	{{/if}}
+
+	<!-- code -->
+	{{#if content.code }}
+		{{#each content.code}}
+			{{#this}}
+				{{> section__code }}
+	    	{{/this}}
+		{{/each}}
+	{{/if}}
+
+	<!-- reference -->
+	{{#if content.references }}
+		{{#each content.references}}
+			{{#this}}
+				{{> section }}
+	    	{{/this}}
+		{{/each}}
+	{{/if}}
+
+</div>

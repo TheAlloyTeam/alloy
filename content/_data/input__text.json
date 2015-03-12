@@ -1,0 +1,21 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "required": "",
+        "readonly": "",
+        "disabled": "",
+        "spellcheck": ""
+    },
+    "content": {
+        "id": "",
+        "name": "",
+        "placeholder": "",
+        "value": "",
+        "maxlength": "",
+        "pattern": "",
+        "autocomplete": "",
+        "tabindex": "",
+        "accesskey": ""
+    }
+}
