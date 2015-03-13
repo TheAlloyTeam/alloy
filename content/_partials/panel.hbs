@@ -1,6 +1,8 @@
 {{#this}}
 <div class="panel{{#if item.modifier}} panel--{{item.modifier}}{{/if}}">
-	<div class="panel__title">{{content.title}}</div>
+	{{#if content.title}}
+		<div class="panel__title">{{content.title}}</div>
+	{{/if}}
 	<div class="panel__body rte">{{{content.body}}}</div>
 	{{#if actions}}
 		<div class="panel__actions">

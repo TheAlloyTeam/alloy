@@ -1,10 +1,10 @@
 {
     "item": {
         "modifier": "",
-        "status": ""
+        "status": "info"
     },
     "content": {
-        "text": "I did something",
+        "text": "You now have  75 apples attached to your account.",
         "icon": [{
             "item": {
                 "modifier": "tick7",
