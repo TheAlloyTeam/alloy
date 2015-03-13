@@ -15,8 +15,8 @@
     			"tabTitle": "Open Tab 1",
     			"body": "<p>This is the body of tab 1 and its a bit longer than the content of tab two!</p>"
 			}
-			},
-			{
+		},
+		{
 			"item": {
 		    	"id": "tab-2",
 		        "modifier": ""

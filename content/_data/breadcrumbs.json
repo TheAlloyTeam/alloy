@@ -9,7 +9,7 @@
                 },
             "content": {
                 "text": "Home",
-                "title": "Goto the Homepage",
+                "title": "Go to the homepage",
                 "icon": [{
                     "item": {
                         "modifier": "home",
@@ -25,7 +25,7 @@
                     "item": {},
                     "content": {
                         "text": "Category",
-                        "title": "Goto the Category",
+                        "title": "Go to the category",
                         "icon": [{
                             "item": {
                                 "modifier": "",
@@ -38,12 +38,10 @@
                         "url": "#",
 
                         "crumb": [{
-                            "item": {
-                                "modifier": "current"
-                                },
+                            "item": {},
                             "content": {
-                                "text": "Page",
-                                "title": "Goto the Page",
+                                "text": "Subcategory",
+                                "title": "Go to the subcategory",
                                 "icon": [{
                                     "item": {
                                         "modifier": "",
@@ -51,6 +49,26 @@
                                     },
                                     "content": {
                                         "title": ""
+                                    }
+                                }],
+                                "url": "#",
+
+                                "crumb": [{
+                                    "item": {
+                                        "modifier": "current"
+                                        },
+                                    "content": {
+                                        "text": "Page",
+                                        "title": "Go to the page",
+                                        "icon": [{
+                                            "item": {
+                                                "modifier": "",
+                                                "size": ""
+                                            },
+                                            "content": {
+                                                "title": ""
+                                            }
+                                        }]
                                     }
                                 }]
                             }

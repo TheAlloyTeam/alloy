@@ -8,16 +8,18 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@IMAGE-Color:				@COLOR-White;
-@IMAGE-BorderColor:			@COLOR-GreyLight;
+@IMAGE-BorderColor:			@COLOR-Base;
 
 // BASE
 // ----------------------------------------------------
 
 .image {}
 
+// VARIANTS
+// ----------------------------------------------------
+
 .image--rounded {
-    ._border-radius ();
+    ._border-radius();
 }
 
 .image--circle {
@@ -25,9 +27,8 @@
 }
 
 .image--bordered {
-    background-color: @IMAGE-Color;
-    border: 1px solid @IMAGE-BorderColor;
-    ._padding (4);
+	box-sizing: border-box;
+    border: 4px solid @IMAGE-BorderColor;
 }
 
 } .image-styles();
