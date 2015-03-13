@@ -8,7 +8,7 @@ var ALLOY = ALLOY || {};
 // Env Setup
 var DEBUG = true;
 window.DEBUG = DEBUG;
-
+ 
 // Main Require configuration
 
 var require = {
@@ -46,4 +46,4 @@ var require = {
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
     }
-};
+}; 

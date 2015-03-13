@@ -15,8 +15,8 @@
 @PRETTIFY-Punctuation:          @COLOR-GreyLighter;
 @PRETTIFY-Plaintext:            @COLOR-GreyLighter;
 @PRETTIFY-Tag:                  @COLOR-Pink;
-@PRETTIFY-Attribute:            @COLOR-LimeDark;
-@PRETTIFY-AttributeValue:       @COLOR-LimeLighter;
+@PRETTIFY-Attribute:            @COLOR-Lime;
+@PRETTIFY-AttributeValue:       @COLOR-YellowLight;
 @PRETTIFY-Decimal:              @COLOR-GreyLighter;
 
 .prettyprint {
@@ -79,29 +79,28 @@
 
 .prettyprint {
     .linenums {
+        color: @COLOR-Grey;
         margin: 0;
         padding-left: 0;
-        color: #8f908a;
         counter-reset: item;
         list-style-type: none;
 
-        li{
+        li {
             display: block;
             position: relative;
-            line-height:1.4;
+            line-height: 1.4;
 
             code {
-                border-left: 1px solid darken(#8f908a, 30%);
-                line-height:1.4;
-                ._margin-left(50);
-
+                border-left: 1px solid @COLOR-Grey;
+                line-height: 1.4;
+                ._margin-left (50);
             }
 
             &:before {
-                position:absolute;
-                top:0;
-                left:0;
-                width:50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50px;
                 display: block;
                 content: counter(item) "  ";
                 counter-increment: item;
