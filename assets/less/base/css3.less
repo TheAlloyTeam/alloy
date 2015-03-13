@@ -135,11 +135,21 @@
     }
 }
 
-// TEXT SHADOW
+// TEXT
 // ----------------------------------------------------
 
 ._text-shadow (@textshadow: 0 1px 0 rgba(0, 0, 0, 0.4)) {
     text-shadow: @textshadow;
+}
+
+._user-select (@value: none) {
+    cursor: default;
+    -webkit-touch-callout: @value;
+    -webkit-user-select: @value;
+    -khtml-user-select: @value;
+    -moz-user-select: @value;
+    -ms-user-select: @value;
+    user-select: @value;
 }
 
 // TRANSFORMATION

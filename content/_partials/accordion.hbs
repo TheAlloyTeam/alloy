@@ -1,10 +1,10 @@
 {{#this}}
 <div class="accordion{{#if item.modifier}} accordion--{{item.modifier}}{{/if}}"{{#if item.multiselectable}} aria-multiselectable="true"{{/if}} aria-live="polite">
 	{{#each content.tabs}}
-	<div id="acc__tab_1" class="accordion__tab" aria-controls="acc__content_1" role="tab">
-		<span class="accordion__title">{{content.title}}</span>
+	<div class="accordion__tab{{#if content.expanded}} open{{/if}} tab--{{content.id}}" aria-controls="{{content.id}}" role="tab" data-accordionindex="#{{content.id}}">
+		<a href="#{{content.id}}" class="accordion__title">{{content.title}}</a>
 	</div>
-	<div id="acc__content_1" class="accordion__panel rte" role="tabpanel" aria-labeledby="acc__tab_1">{{content.body}}</div>
+	<div id="{{content.id}}" class="accordion__panel rte" role="tabpanel" aria-labeledby="tab--{{content.id}}">{{content.body}}</div>
 	{{/each}}
 </div>
 {{/this}}

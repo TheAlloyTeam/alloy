@@ -1,0 +1,27 @@
+{
+    "item": {
+    	"id": "",
+        "modifier": "variant",
+        "multiselectable": true
+    },
+    "content": {
+    	"tabs": [
+		{
+			"content" : {
+				"id" : "tab-1",
+				"title" : "This is the first title",
+				"body" : "THIS IS THE FIRST BODY TEXT",
+				"expanded" : true
+			}
+		},
+		{
+			"content" : {
+				"id" : "tab-2",
+				"title" : "This is the second title",
+				"body" : "THIS IS THE SECOND BODY TEXT AND IS LONGER THAN THE FIRST!",
+				"expanded" : false
+			}
+		}
+		]
+	}
+}

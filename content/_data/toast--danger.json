@@ -1,0 +1,18 @@
+{
+    "item": {
+        "modifier": "",
+        "status": "danger"
+    },
+    "content": {
+        "text": "Its all going wrong - WE ARE ALL DOOMED!!",
+        "icon": [{
+            "item": {
+                "modifier": "tick7",
+                "size": "xlarge"
+            },
+            "content": {
+                "title": ""
+            }
+        }]
+    }
+}

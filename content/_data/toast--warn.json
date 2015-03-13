@@ -1,0 +1,18 @@
+{
+    "item": {
+        "modifier": "",
+        "status": "warn"
+    },
+    "content": {
+        "text": "Something is about to break!",
+        "icon": [{
+            "item": {
+                "modifier": "tick7",
+                "size": "xlarge"
+            },
+            "content": {
+                "title": ""
+            }
+        }]
+    }
+}

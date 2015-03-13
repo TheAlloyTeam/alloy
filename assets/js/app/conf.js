@@ -8,7 +8,7 @@ var ALLOY = ALLOY || {};
 // Env Setup
 var DEBUG = true;
 window.DEBUG = DEBUG;
-
+ 
 // Main Require configuration
 
 var require = {
@@ -22,7 +22,8 @@ var require = {
         modules: "modules",
         jquery: "libs/jquery/jquery.min",
         fontfaceobserver: "libs/fontfaceobserver/fontfaceobserver",
-        selectivizr: "libs/selectivizr",
+        'prettyprint': "libs/google-code-prettify/run_prettify",
+        'selectivizr': "libs/selectivizr",
         'logging': "modules/alloy.logging",
         'core': "modules/alloy.core",
         'utils': "modules/alloy.utils",
@@ -45,4 +46,4 @@ var require = {
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
     }
-};
+}; 

@@ -1,43 +1,101 @@
 .tabs-styles() when not (@MODULE-Tabs) { }
 .tabs-styles() when (@MODULE-Tabs) {
 
-/* ==========================================================================
+/* =========================================================================
 // TABS
-// =========================================================================*/
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+@TABS-TrayBgColor:          @COLOR-Blue;
+@TABS-Color:                @COLOR-White;
+@TABS-BgColor:              @COLOR-Blue;
+@TABS-HoverColor:           @TYPE-FontColor;
+@TABS-HoverBgColor:         @COLOR-White;
+@TABS-ActiveColor:          @TABS-HoverColor;
+@TABS-ActiveBgColor:        @COLOR-White;
+
+// BASE
+// ----------------------------------------------------
 
 .tabs {}
 
 .tabs__tray {
-    background-color: @COLOR-Grey;
+    background-color: @TABS-TrayBgColor;
     ._clearfix();
-
 }
 
 .tabs__content {
+    background-color: @TABS-ActiveBgColor;
+    ._padding (20);
+
     .inactive {
-        display:none;
+        display: none;
     }
 }
 
 .tabs__body {}
 
 .list__tabs {
-    padding:0;
-    margin:0;
-    list-style: none;
-
     .list__item {
-        display:inline;
+        display: inline-block;
+        float: left;
     }
+
     .list__link {
-        background-color: @COLOR-White;
-        ._padding(5,10);
+        color: @TABS-Color;
+        background-color: @TABS-BgColor;
+        text-decoration: none;
+        ._padding (5, 20);
         ._inline-block();
+        ._transition (all, 0.1s);
+
+        &:hover {
+            color: @TABS-HoverColor;
+            background-color: @TABS-HoverBgColor;
+        }
     }
 
     .active {
-        background-color: orange;
+        color: @TABS-ActiveColor;
+        background-color: @TABS-ActiveBgColor;
     }
+}
+
+// VARIANTS
+// ----------------------------------------------------
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+    .list__tabs {
+        .list__item {
+            //display: block;
+            width: 100%;
+        }
+
+        .list__link {
+            width: 100%;
+        }
+    }
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
 }
 
 } .tabs-styles();
