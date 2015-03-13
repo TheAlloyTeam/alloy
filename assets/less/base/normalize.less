@@ -1,6 +1,6 @@
 /* ==========================================================================
 // NORMALIZE
-// Reference: http://github.com/necas/normalize.css
+// Reference: http://github.com/necolas/normalize.css
 // =========================================================================*/
 
 // VARIABLES
@@ -78,6 +78,7 @@ body {
     color: @SELECT-TextColor;
     text-shadow: none;
 }
+
 ::selection {
     background: @SELECT-BgColor;
     color: @SELECT-TextColor;
@@ -172,9 +173,9 @@ form {
 }
 
 fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
+    border: 1px solid @COLOR-GreyLight;
     padding: 0.35em 0.625em 0.75em;
+    ._margin (0, 2);
 }
 
 legend {
