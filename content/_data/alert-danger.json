@@ -1,0 +1,8 @@
+{
+	"item": {
+    	"status": "danger"
+	},
+    "content": {
+		"text": "This is an danger alert"
+    }
+}

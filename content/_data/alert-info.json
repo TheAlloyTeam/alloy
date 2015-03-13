@@ -1,6 +1,6 @@
 {
 	"item": {
-    	"modifier": "info"
+    	"status": "info"
 	},
     "content": {
 		"text": "This is an info alert"
