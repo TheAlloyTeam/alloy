@@ -3,7 +3,7 @@
 // =========================================================================*/
 
 // Start the main app logic.
-require(['jquery', 'core', 'mobile', 'iefixes'],
+require(['jquery', 'core', 'mobile', 'fontloader', 'iefixes'],
     function ($) {
         console.log('%cALLOY.Main Started', 'color: green;');
     }

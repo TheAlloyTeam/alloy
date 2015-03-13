@@ -12,7 +12,7 @@
 			},
 			"content": {
 				"title": "Examples",
-				"body": "{{>panel ALLOY_panel--messageus}} I want to get this to parse somehow"
+				"body": "{{#parseJSON}}{{>panel ALLOY_panel--messageus}}{{/parseJSON}} I want to get this to parse somehow"
 				}
 			}],
 		"code": [{

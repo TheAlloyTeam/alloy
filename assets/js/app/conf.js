@@ -28,6 +28,7 @@ var require = {
         'utils': "modules/alloy.utils",
         'iefixes': "modules/alloy.iefixes",
         'mobile': "modules/alloy.mobile",
+        'fontloader': "modules/alloy.fontloader",
         'accordion': "modules/alloy.accordion",
         'tabs' : "modules/alloy.tabs",
         'amd': "modules/exports/amd"
