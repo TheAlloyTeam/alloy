@@ -1,0 +1,136 @@
+.toast-styles() when not (@MODULE-Toast) { }
+.toast-styles() when (@MODULE-Toast) {
+
+/* =========================================================================
+// TOAST
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+@TOAST-Color:               @COLOR-White;
+@TOAST-BgColor:             @COLOR-Grey;
+
+@TOAST-Info:                @COLOR-Blue;
+@TOAST-Success:             @COLOR-Green;
+@TOAST-Warn:                @COLOR-Orange;
+@TOAST-Danger:              @COLOR-Red;
+
+// BASE
+// ----------------------------------------------------
+
+.toast {
+    background-color: @TOAST-BgColor;
+    color: @TOAST-Color;
+    position:relative;
+    max-width: 320px;
+    ._padding (@TYPE-FontSize);
+
+    + .toast {
+        ._margin-top(10);
+    }
+    &.info {
+        background-color: @TOAST-Info;
+
+        .toast__close {
+            color: lighten(@TOAST-Info, 20);
+
+            &:link,&:visited {
+                color: lighten(@TOAST-Info, 20);
+            }
+            &:hover,&:focus {
+                color: darken(@TOAST-Info, 20);
+            }
+            &:active {
+                color: darken(@TOAST-Info, 40);
+            }
+        }
+    }
+
+    &.success {
+        background-color: @TOAST-Success;
+        .toast__close{
+            color: lighten(@TOAST-Success, 20);
+
+            &:link,&:visited {
+                color: lighten(@TOAST-Success, 20);
+            }
+            &:hover,&:focus {
+                color: darken(@TOAST-Success, 20);
+            }
+            &:active {
+                color: darken(@TOAST-Success, 40);
+            }
+        }
+    }
+
+    &.warn {
+        background-color: @TOAST-Warn;
+        .toast__close{
+            color: lighten(@TOAST-Warn, 20);
+
+            &:link,&:visited {
+                color: lighten(@TOAST-Warn, 20);
+            }
+            &:hover,&:focus {
+                color: darken(@TOAST-Warn, 20);
+            }
+            &:active {
+                color: darken(@TOAST-Warn, 40);
+            }
+        }
+    }
+
+    &.danger {
+        background-color: @TOAST-Danger;
+        .toast__close {
+            color: lighten(@TOAST-Danger, 20);
+
+            &:link,&:visited {
+                color: lighten(@TOAST-Danger, 20);
+            }
+            &:hover,&:focus {
+                color: darken(@TOAST-Danger, 20);
+            }
+            &:active {
+                color: darken(@TOAST-Danger, 40);
+            }
+        }
+    }
+}
+
+.toast__icon {
+    float:left;
+    ._padding-top(5);
+    ._margin-right(10);
+}
+
+.toast, .toast__content {
+    overflow:hidden;
+    _overflow:visible;
+    zoom:1;
+}
+
+.toast__content {
+    ._padding-right(20);
+}
+
+.toast__close {
+    color: lighten(@TOAST-BgColor, 20);
+    font-weight:bold;
+    text-decoration:none;
+    float:right;
+    display:block;
+    font-size: 1.75em;
+    line-height:1;
+
+    &:link,&:visited {
+        color: lighten(@TOAST-BgColor, 20);}
+    &:hover,&:focus {
+        color: darken(@TOAST-BgColor, 20);}
+    &:active {
+        color: darken(@TOAST-BgColor, 40);}
+}
+.toast__progress {}
+
+} .toast-styles();
