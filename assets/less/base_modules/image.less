@@ -8,26 +8,27 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@IMAGE-Color:				@COLOR-White;
-@IMAGE-BorderColor:			@COLOR-GreyLight;
+@IMAGE-BorderColor:			@COLOR-Base;
 
 // BASE
 // ----------------------------------------------------
 
 .image {}
 
+// VARIANTS
+// ----------------------------------------------------
+
 .image--rounded {
-    ._border-radius ();
+    ._border-radius();
 }
 
 .image--circle {
-    ._border-radius (1000);
+	border-radius: 50%;
 }
 
 .image--bordered {
-    background-color: @IMAGE-Color;
-    border: 1px solid @IMAGE-BorderColor;
-    ._padding (4);
+    border: 4px solid @IMAGE-BorderColor;
+	._box-sizing (border-box);
 }
 
 } .image-styles();
