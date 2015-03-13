@@ -15,7 +15,20 @@
 // BASE
 // ----------------------------------------------------
 
-.list--pagination {
+.pagination {
+
+}
+
+.pagination__control {
+    color: @PAGINATION-BgColor;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: top;
+    line-height: 1;
+    ._font-size (28);
+}    
+
+.list__pagination {
     display: inline-block;
     padding: 0;
     ._margin (0, 10, @TYPE-LineHeight, 10);
@@ -43,8 +56,17 @@
         }
     }
 
+    .list__separator {
+        color: @PAGINATION-Color;
+        background-color: lighten(@PAGINATION-BgColor, 20%);
+        float: left;
+        ._padding (2, 10, 2, 10);
+        ._user-select();
+    }
+
     .current {
         background-color: @PAGINATION-BgColorHover;
+        ._user-select();
     }
 }
 

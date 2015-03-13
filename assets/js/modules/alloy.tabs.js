@@ -26,7 +26,7 @@
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
 
             // Set a default tab value if none is set
-            if (this.config.defaultTab == undefined) {
+            if (this.config.defaultTab === undefined) {
                 var $btns = this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass);
                 if ($btns.length > 0) { this.config.defaultTab = this._getButtonIndex($btns[0]); }
             }
@@ -37,10 +37,10 @@
             that._updateAll(that.config.defaultTab);
 
             // Initialise the handle click of buttons
-            this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).click(this._handleClick)
+            this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).click(this._handleClick);
         },
 
-        _getButtonIndex: function(btn) {;
+        _getButtonIndex: function(btn) {
             if (this.config.btnIndexAttr.substring(0, 5) == "data-") { 
                 var att = this.config.btnIndexAttr.substring(5); 
                 return $(btn).data(att); 
