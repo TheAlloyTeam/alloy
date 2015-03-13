@@ -11,92 +11,60 @@
 
         that: {},
 
-        isAuto: true,
-
         defaults: {
-            tabListClass: ".list__tabs",            // The selector for the ul list of buttons
-            tabItemClass: ".list__item",            // The selector for the ul Item
-            tabContentClass: ".tabs__content",      // The selector for the Tabs list of contents
-            tabBodyClass: ".tabs__body",            // The selector for a Tabs Body
-            indexDataAttr: "tabindex",              // The data attribute to use to set the tab index of elements
-            inactiveClass: "inactive",              // The class to use when an element is inactive
-            activeClass: "active",                  // The class to use when an element is active
-            defaultIndex: 0,                        // The (zero based) index to default to
-            autoTime: 2500                          // The time between automatically moving to the next tab (must be greater than the transition time)
+            tabListClass: ".list__tabs",                    // The selector for the list of buttons
+            tabItemClass: ".list__link",                    // The selector for a button item
+            btnIndexAttr: "href",                           // The attribute on the button to use that matches up to the content id (prefix with 'data-' if applicable)
+            tabContentClass: ".tabs__content",              // The selector for the list of tabbed contents
+            tabBodyClass: ".tabs__body",                    // The selector for a tabbed content item
+            activeClass: "active",                          // The class to use when an element is active
+            inactiveClass: "inactive",                      // The class to use when an element is inactive
+            defaultTab: undefined,                          // The id of the tab which is to be selected by default
         },
  
         _init: function() { 
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
+
+            // Set a default tab value if none is set
+            if (this.config.defaultTab == undefined) {
+                var $btns = this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass);
+                if ($btns.length > 0) { this.config.defaultTab = this._getButtonIndex($btns[0]); }
+            }
+
             that = this;
 
-            // Don't use _updateAll here as we also want to make sure that the data attribute is set before we alter its active-ness
-            this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).each(function(i) {
-                $(this).data(that.config.indexDataAttr, i);
-                that._setActive(this, that.config.defaultIndex, false);
-            });
-            this.$element.find(this.config.tabContentClass + " " + this.config.tabBodyClass).each(function(i) {
-                $(this).data(that.config.indexDataAttr, i);
-                that._setActive(this, that.config.defaultIndex, true);
-            });
+            // Default all tabs and content to be displayed on load
+            that._updateAll(that.config.defaultTab);
 
             // Initialise the handle click of buttons
-            this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).click(this._handleClick);
+            this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).click(this._handleClick)
+        },
 
-            // Initialise the auto swap timer
-            if (this.config.autoTime > this.config.transitionTime) { setTimeout(this._autoSwap, this.config.autoTime); }
+        _getButtonIndex: function(btn) {;
+            if (this.config.btnIndexAttr.substring(0, 5) == "data-") { 
+                var att = this.config.btnIndexAttr.substring(5); 
+                return $(btn).data(att); 
+            }
+            else { return $(btn).attr(this.config.btnIndexAttr); }
         },
 
         _handleClick: function(e) {
             e.preventDefault();
-
-            that.isAuto = false;
-            var index = $(e.target).closest(that.config.tabListClass + " " + that.config.tabItemClass).data(that.config.indexDataAttr);
-            that._updateAll(index);
+            var id = that._getButtonIndex($(e.target).closest(that.config.tabListClass + " " + that.config.tabItemClass)[0]);
+            that._updateAll(id);
         },
 
-        _setActive: function(el, id, content) {
-            var elId = $(el).data(that.config.indexDataAttr);
-            var wasActive = $(el).hasClass(that.config.activeClass);
-
-            if (wasActive && id == elId) {
-                // Do nothing...
-            } else if (wasActive) {
-                // Was active, but isn't anymore...
-                $(el).removeClass(that.config.activeClass).addClass(that.config.inactiveClass);
-            } else if (id == elId) {
-                // Wasn't active, but is now...
-                $(el).removeClass(that.config.inactiveClass).addClass(that.config.activeClass);
-            } else {
-                $(el).addClass(that.config.inactiveClass);
-            }
+        _setBtnActive: function(btn, id, content) {
+            var elId = this._getButtonIndex($(btn)[0]);
+            if (elId == id) { $(btn).removeClass(that.config.inactiveClass).addClass(that.config.activeClass); } 
+            else { $(btn).removeClass(that.config.activeClass).addClass(that.config.inactiveClass); }
         },
 
-        _autoSwap: function() {
-            if (that.isAuto) {
-                var currentIndex = that._getCurrentIndex();
-                var nextIndex = currentIndex + 1;
-                var maxIndex = that.$element.find(that.config.tabListClass + " " + that.config.tabItemClass).length;
-                if (nextIndex >= maxIndex) { nextIndex = 0; }
-                that._updateAll(nextIndex);
-                setTimeout(that._autoSwap, that.config.autoTime);
-            }
+        _updateAll: function(id) {
+            that.$element.find(that.config.tabListClass + " " + that.config.tabItemClass).each(function() { that._setBtnActive(this, id, false); });
+            that.$element.find(that.config.tabContentClass + " " + that.config.tabBodyClass).removeClass(that.config.activeClass).addClass(that.config.inactiveClass);
+            $(id).removeClass(that.config.inactiveClass).addClass(that.config.activeClass);
         },
-
-        _getCurrentIndex: function() {
-            var cur = 0;
-            that.$element.find(that.config.tabListClass + " " + that.config.tabItemClass).each(function() {
-                if ($(this).hasClass(that.config.activeClass) || $(this).hasClass(that.config.activeClass)) {
-                    cur = $(this).data(that.config.indexDataAttr);
-                }
-            });
-
-            return cur;
-        },
-
-        _updateAll: function(index) {
-            that.$element.find(that.config.tabListClass + " " + that.config.tabItemClass).each(function() { that._setActive(this, index, false); });
-            that.$element.find(that.config.tabContentClass + " " + that.config.tabBodyClass).each(function() { that._setActive(this, index, true); });
-        }
     };
 
     Tabs.defaults = Tabs.prototype.defaults;

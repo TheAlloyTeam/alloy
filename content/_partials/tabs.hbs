@@ -3,7 +3,7 @@
 <div{{#if item.id}} id="{{item.id}}"{{/if}} class="tabs{{#if item.modifier}} tabs--{{item.modifier}}{{/if}}">
 	<div class="tabs__tray">
 		<ul class="list list__tabs">
-			{{#each content.tabs}}
+			{{#each content.tabs}} 
 				{{#this}}
 					<li class="list__item">
 						<a href="#{{#if item.id}}{{item.id}}{{/if}}" class="list__link"{{#if content.tabTitle}} title="{{content.tabTitle}}"{{/if}}><span>{{{content.tabText}}}</span></a>
