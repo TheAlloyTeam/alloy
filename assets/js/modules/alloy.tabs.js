@@ -38,6 +38,7 @@
 
             // Initialise the handle click of buttons
             this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).click(this._handleClick);
+            console.log('%cALLOY.Tabs Started', 'color: green;');
         },
 
         _getButtonIndex: function(btn) {
@@ -71,11 +72,11 @@
 
     $.fn.tabs = function(options) {
         return this.each(function() {
-            new Tabs(this, options)._init(this);
+            new Tabs(this, options)._init();
         });
     };
 
     // Autostart Plugin
+    console.log('%cALLOY.Tabs Initializing', 'color: orange;');
     $(".tabs").tabs();
-    console.log('%cALLOY.Tabs Started', 'color: green;');
 })();
