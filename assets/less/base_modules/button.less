@@ -97,27 +97,28 @@
     ._button-create (@BUTTON-AltColor, @BUTTON-AltHoverColor, @BUTTON-AltTextColor);
 }
 
-.button--success {
-    ._button-create (@BUTTON-SuccessColor, @BUTTON-SuccessHoverColor, @BUTTON-SuccessTextColor);
-}
+.button {
+    &.success {
+        ._button-create (@BUTTON-SuccessColor, @BUTTON-SuccessHoverColor, @BUTTON-SuccessTextColor);
+    }
 
-.button--info {
-    ._button-create (@BUTTON-InfoColor, @BUTTON-InfoHoverColor, @BUTTON-InfoTextColor);
-}
+    &.info {
+        ._button-create (@BUTTON-InfoColor, @BUTTON-InfoHoverColor, @BUTTON-InfoTextColor);
+    }
 
-.button--warning {
-    ._button-create (@BUTTON-WarningColor, @BUTTON-WarningHoverColor, @BUTTON-WarningTextColor);
-}
+    &.warn {
+        ._button-create (@BUTTON-WarningColor, @BUTTON-WarningHoverColor, @BUTTON-WarningTextColor);
+    }
 
-.button--danger {
-    ._button-create (@BUTTON-DangerColor, @BUTTON-DangerHoverColor, @BUTTON-DangerTextColor);
-}
+    &.danger {
+        ._button-create (@BUTTON-DangerColor, @BUTTON-DangerHoverColor, @BUTTON-DangerTextColor);
+    }
 
-.button.disabled {
-    cursor: not-allowed;
-    ._button-create (@BUTTON-DisabledColor, @BUTTON-DisabledHoverColor, @BUTTON-DisabledTextColor);
+    &.disabled {
+        cursor: not-allowed;
+        ._button-create (@BUTTON-DisabledColor, @BUTTON-DisabledHoverColor, @BUTTON-DisabledTextColor);
+    }
 }
-
 .button__totop {
     color: @COLOR-White;
     background-color: @COLOR-Cyan;
