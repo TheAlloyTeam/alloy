@@ -1,25 +1,28 @@
-(function() {
+(function( w ){
+    // if the class is already set, we're good.
+    if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
+        return;
+    }
+    var fontA = new w.FontFaceObserver( "Playfair Display", {
+        weight: 400
+    });
 
-    // the ALLOY Namespace is set up in the require config
+    var fontB = new w.FontFaceObserver( "Playfair Display", {
+        weight: 700
+    });
 
-    ALLOY.FontLoader = function() {
+    var fontC = new w.FontFaceObserver( "Open Sans", {
+        weight: 400
+    });
 
-        // Private Functions
-    	var _init = function() {
-    		console.log('%cALLOY.FontLoader Started', 'color: green;');
+    var fontD = new w.FontFaceObserver( "Open Sans", {
+        weight: 700
+    });
 
-    	};
+    w.Promise
+        .all([fontA.check(), fontB.check(), fontC.check(), fontD.check() ])
+        .then(function(){
+            w.document.documentElement.className += " fonts-loaded";
+        });
 
-        // Public Interface
-        var public = {
-            init: _init
-        };
-
-        return public;
-
-    }();
-
-    console.log('%cALLOY.FontLoader Initializing', 'color: orange;');
-    // force start of the Library Init function
-    ALLOY.FontLoader.init();
-})();
+}( this ));

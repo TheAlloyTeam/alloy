@@ -1,0 +1,83 @@
+/* ==========================================================================
+// FONT LOADER - DESIGN LANGUAGE
+// =========================================================================*/
+
+@PATH-ASSETS-Fonts:               '../fonts';
+
+// FONT FACES
+// ----------------------------------------------------
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('/assets/fonts/PlayfairDisplay-Regular-webfont.eot');
+    src: url('/assets/fonts/PlayfairDisplay-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/PlayfairDisplay-Regular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/PlayfairDisplay-Regular-webfont.woff') format('woff'),
+         url('/assets/fonts/PlayfairDisplay-Regular-webfont.ttf') format('truetype'),
+         url('/assets/fonts/PlayfairDisplay-Regular-webfont.svg#playfair_displayregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('/assets/fonts/PlayfairDisplay-Bold-webfont.eot');
+    src: url('/assets/fonts/PlayfairDisplay-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/PlayfairDisplay-Bold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/PlayfairDisplay-Bold-webfont.woff') format('woff'),
+         url('/assets/fonts/PlayfairDisplay-Bold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/PlayfairDisplay-Bold-webfont.svg#playfair_displaybold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/assets/fonts/OpenSans-Regular-webfont.eot');
+    src: url('/assets/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('/assets/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('/assets/fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/assets/fonts/OpenSans-Bold-webfont.eot');
+    src: url('/assets/fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/OpenSans-Bold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('/assets/fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@FONTLOADER-FontFamily:         'Open Sans', Arial, Helvetica, sans-serif;
+@FONTLOADER-HeadingsFontFamily: 'Playfair Display', serif;
+
+// INITIALISE FONTS
+// ----------------------------------------------------
+.fonts-loaded {
+	body,
+	html,
+	button,
+	input,
+	select,
+	textarea,
+	cite {
+		font-family: @FONTLOADER-FontFamily;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	blockquote,
+	.panel__title,
+	.list__navigation,
+	.table__header {
+		font-family: @FONTLOADER-HeadingsFontFamily;
+	}
+}
