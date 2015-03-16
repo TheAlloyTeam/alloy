@@ -159,6 +159,6 @@
     };
 
     // Autostart Plugin
-    ALLOY.Logger.startup('ALLOY.Accordion Initializing');
+    ALLOY.Logger.trace('ALLOY.Accordion Initializing');
     $(".accordion").accordion();
 })();
