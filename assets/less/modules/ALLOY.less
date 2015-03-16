@@ -5,6 +5,14 @@
 // Styles specifically only used by the toolkit site
 // ----------------------------------------------------
 
+.logo {
+	display: inline-block;
+}
+
+.logo__image {
+	height: 100%;
+}
+
 .gex {
 	color: @COLOR-White;
 	background-color: @COLOR-GreyLight;
@@ -16,6 +24,11 @@
 // ----------------------------------------------------
 
 @media only screen and (max-width: @MQ-Small) {
+
+	.logo {
+		height: 44px;
+		._padding-top (4);
+	}
 
 }
 

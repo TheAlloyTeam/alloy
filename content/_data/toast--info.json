@@ -1,0 +1,18 @@
+{
+    "item": {
+        "modifier": "",
+        "status": "info"
+    },
+    "content": {
+        "text": "You now have  75 apples attached to your account.",
+        "icon": [{
+            "item": {
+                "modifier": "tick7",
+                "size": "xlarge"
+            },
+            "content": {
+                "title": ""
+            }
+        }]
+    }
+}

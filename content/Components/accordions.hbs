@@ -1,10 +1,11 @@
 ---
-title: Accordions
+title: Accordions 
 
 nav-title: "Accordions"
 nav-text: "Accordions"
 nav-variant: "accordions"
 page-category: "components"
+js-accordion: true
 ---
 
 <main class="w w--main">
@@ -28,21 +29,8 @@ page-category: "components"
 						 <h2 class="section__title">Example</h2>
 					</header>
 
-					<div class="accordion accordion--variant" aria-multiselectable="true" aria-live="polite">
-						 <div id="acc__tab_1" class="accordion__tab" aria-controls="acc__content_1" role="tab">
-								<span class="accordion__title">[TITLE]</span>
-						 </div>
-						 <div id="acc__content_1" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_1">[CONTENT]</div>
-
-						 <div id="acc__tab_2" class="accordion__tab" aria-controls="acc__content_2" role="tab">
-								<span class="accordion__title">[TITLE]</span>
-						 </div>
-						 <div id="acc__content_2" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_2">[CONTENT]</div>
-
-						 <div id="acc__tab_3" class="accordion__tab" aria-controls="acc__content_3" role="tab">
-								<span class="accordion__title">[TITLE]</span>
-						 </div>
-						 <div id="acc__content_3" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_3">[CONTENT]</div>
+					<div class="section__body">
+						{{> accordion accordion }}
 					</div>
 
 				</section>

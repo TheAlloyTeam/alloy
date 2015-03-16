@@ -1,0 +1,31 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "disabled": "",
+        "target": "",
+        "block": ""
+    },
+    "content": {
+        "title": "",
+        "text": "I did something",
+        "icon": [{
+            "item": {
+                "modifier": "",
+                "size": ""
+            },
+            "content": {
+                "title": "Icon Title"
+            }
+        }]
+
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

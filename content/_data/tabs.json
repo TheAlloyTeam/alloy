@@ -13,7 +13,7 @@
 			"content": {
     			"tabText": "Tab 1",
     			"tabTitle": "Open Tab 1",
-    			"body": "<p>This is the body of tab 1 and its a bit longer than the content of tab two!</p>"
+    			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacinia vulputate fermentum. Sed a lorem fermentum, imperdiet ante nec, feugiat est. Donec eget sollicitudin orci. Etiam nisl nisl, venenatis eget sollicitudin a, tempor nec massa. Nullam tincidunt sit amet risus eu luctus. Vestibulum vitae feugiat magna. Cras dui augue, pretium eget enim id, ullamcorper tincidunt ex. Quisque ultrices imperdiet vulputate. Nullam elementum congue auctor. Cras ornare sit amet odio a accumsan.</p>"
 			}
 		},
 		{
@@ -24,7 +24,18 @@
     		"content": {
     			"tabText": "Tab 2",
     			"tabTitle": "Open Tab 2",
-    			"body": "<p>This is the body of tab 2</p>"
+    			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+			}
+		},
+		{
+			"item": {
+		    	"id": "tab-3",
+		        "modifier": ""
+	        },
+    		"content": {
+    			"tabText": "Tab 3",
+    			"tabTitle": "Open Tab 3",
+    			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacinia vulputate fermentum. Sed a lorem fermentum, imperdiet ante nec, feugiat est. Donec eget sollicitudin orci. Etiam nisl nisl, venenatis eget sollicitudin a, tempor nec massa.</p>"
 			}
 		}
 		]
