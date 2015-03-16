@@ -25,7 +25,7 @@
     ._margin (0, 0, @TYPE-LineHeight, 0);
 }
 
-.form__label  {
+.label  {
     cursor: pointer;
     display: block;
 }
@@ -53,14 +53,23 @@
     ._font-size ((@TYPE-FontSize - 2));
 }
 
-.form__row--check {
-.form__label,
-.form__input {
+
+.form__group {
+    .label,
+    .form__input {
         width: auto;
         margin-top: 0;
         ._inline-block ();
     }
+
+    &.vertical {
+        .checkbox__group,
+        .radio__group {
+            .block;
+        }
+    }
 }
+
 
 ._placeholder (@FORM-Placeholder); 
 
@@ -116,6 +125,48 @@
 
     .form__input.full {
         width: 100%;
+    }
+
+
+    .form.inline {
+
+        .label {
+            ._inline-block;
+        }
+
+        .form__row {
+            ._inline-block;
+        }
+
+        .form__input {
+            width: auto;
+        }
+    }
+
+    .form.aligned {
+
+        .form__row.offset {
+            margin-left: 25%;
+        }
+
+        .label {
+            width: 24%;
+            text-align: right;
+            margin-right: 1%;
+            .left;
+        }
+
+        .form__group {
+            .block;
+            .left;
+
+            .label {
+                width: auto;
+                text-align: left;
+                margin-right: auto;
+                float: none;
+            }
+        }
     }
 
 }

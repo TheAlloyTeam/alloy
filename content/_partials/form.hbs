@@ -1,9 +1,9 @@
 {{#this}}
 
-<form id="id" class="form form--modifier" role="" method="">
+<form id="id" class="form" role="" method="">
 
 <!-- form__fieldset -->
-<fieldset class="form__fieldset form__fieldset--modifier">
+<fieldset class="form__fieldset">
 
     <!-- form__legend -->
     <legend class="form__legend">{{legend-text}}</legend>
@@ -11,26 +11,12 @@
 </fieldset>
 
 <!-- form__row -->
-<div class="form__row form__row--modifier">
+<div class="form__row">
+
+	{{> input__text input__text}}
+
 </div>
 
-
-{{!
-
-if select
-    if optgroup
-        optgroup
-            if option
-    if !optgroup
-        if option
-
-<optgroup label="labelforoptgroup">
-
-    select__option
-
-</optgroup>
-
-}}
 
 </form>
 

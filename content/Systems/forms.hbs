@@ -19,7 +19,191 @@ page-category: "systems"
 
 <!-- writings -->
 
-		        <div class="page__body rte">
+				<div class="page__body rte">
+
+
+<form id="form-example-inline" class="form inline" role="" method="">
+	<fieldset class="form__fieldset">
+	    <legend class="form__legend">Form Inline</legend>
+
+		<div class="form__row">
+			{{> label label-for }}
+			{{> input__text input__text }}
+		</div>
+
+		<div class="form__row">
+			
+			<label class="label" for="inline-input"><span>Text Label</span></label>
+		    <input type="password" id="inline-input" role="textbox" class="form__input" placeholder="Text Placeholder">
+
+		</div>
+		<div class="form__row">
+
+			{{> button button-submit }}
+
+		</div>
+	</fieldset>
+</form>
+
+
+<form id="form-example-aligned" class="form aligned" role="" method="">
+	<fieldset class="form__fieldset">
+	    <legend class="form__legend">Form Aligned</legend>
+
+		<div class="form__row">
+			<label for="aligned-input-text" class="label">
+			    <span>Label for Input</span>
+			</label>
+
+		    <input type="text" role="textbox" class="form__input" id="aligned-input-text" placeholder="Text Placeholder">
+		</div>
+
+		<div class="form__row">
+			<label for="aligned-input-text2" class="label">
+			    <span>Label for Input</span>
+			</label>
+
+		    <input type="text" role="textbox" class="form__input xlarge" id="aligned-input-text2" placeholder="Text Placeholder">
+		</div>
+
+		<div class="form__row offset">
+			<div class="form__group">
+				<label class="label">
+				    <input type="checkbox" class="form__input">
+				    <span>Label for singular checkboxes</span>
+				</label>
+
+				<label class="label">
+				    <input type="checkbox" class="form__input">
+				    <span>Label for singular checkboxes</span>
+				</label>
+
+				<label class="label">
+				    <input type="checkbox" class="form__input">
+				    <span>Label for singular checkboxes</span>
+				</label>
+
+		    </div>
+		</div>
+
+
+		<div class="form__row offset">
+			<div class="form__group">
+				<input id="aligned-checkbox-4" type="checkbox" class="form__input">
+				<label for="aligned-checkbox-4" class="label">
+				    <span>Label for label+checkbox</span>
+				</label>
+
+				<input id="aligned-checkbox-5" type="checkbox" class="form__input">
+				<label for="aligned-checkbox-5" class="label">
+				    <span>Label for label+checkbox</span>
+				</label>
+
+				<input id="aligned-checkbox-6" type="checkbox" class="form__input">
+				<label for="aligned-checkbox-6" class="label">
+				    <span>Label for label+checkbox</span>
+				</label>
+
+		    </div>
+		</div>
+
+
+		<div class="form__row">
+			<label for="unique4" class="label">
+			    <span>Separate label and checkbox</span>
+			</label>
+			<div class="form__group">
+			    <input type="checkbox" class="form__input" id="unique4">
+			</div>
+		</div>
+
+
+		<div class="form__row">
+			<p class="label">Group Vertical</p>
+
+			<div class="form__group vertical">
+
+				<span class="checkbox__group">
+					<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosA1" value="option1" checked>
+					<label for="optionsRadiosA1" class="label">
+						<span>Option one</span>
+					</label>
+				</span>
+
+				<span class="checkbox__group">
+					<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosA2" value="option2">
+					<label for="optionsRadiosA2" class="label">
+						<span>Option two</span>
+					</label>
+				</span>
+
+				<span class="checkbox__group">
+					<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosA3" value="option3">
+					<label for="optionsRadiosA3" class="label">
+						<span>Option three</span>
+					</label>
+				</span>
+
+			</div>
+		</div>
+
+
+
+		<div class="form__row">
+			<p class="label">Group</p>
+
+			<div class="form__group">
+
+				<span class="checkbox__group">
+					<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosB1" value="option1a" checked>
+					<label for="optionsRadiosB1" class="label">
+						<span>Option one</span>
+					</label>
+				</span>
+
+				<span class="checkbox__group">
+					<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosB2" value="option2a">
+					<label for="optionsRadiosB2" class="label">
+						<span>Option one</span>
+					</label>
+				</span>
+
+				<span class="checkbox__group">
+					<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosB3" value="option3a">
+					<label for="optionsRadiosB3" class="label">
+						<span>Option one</span>
+					</label>
+				</span>
+
+			</div>
+		</div>
+
+
+
+		<div class="form__row">
+			<label class="label" for="form-select"><span>Text Label</span></label>
+			{{> select select }}
+		</div>
+
+		<div class="form__row">
+			
+			<label class="label" for="sdf3"><span>Text Label</span></label>
+		    <input type="password" id="sdf3" role="textbox" class="form__input" placeholder="Text Placeholder">
+
+		</div>
+
+
+
+		<div class="form__row offset">
+
+			{{> button button-submit }}
+
+		</div>
+
+	</fieldset>
+</form>
+
+
 
 		        </div>
 
