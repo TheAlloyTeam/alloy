@@ -15,9 +15,9 @@ require(['jquery', 'logging', 'core', 'mobile', 'fontloader', 'iefixes', 'pretty
 
 if (DEBUG) {
 	requirejs.onError = function (err) {
-	    console.log(err.requireType);
+	    console.log(log(err.requireType));
 	    if (err.requireType === 'timeout') {
-	        ALLOY.Logger.Warn('modules: ' + err.requireModules);
+	        console.log('modules: ' + err.requireModules);
 	    }
 	    throw err;
 	};
