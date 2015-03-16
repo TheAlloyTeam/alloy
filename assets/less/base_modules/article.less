@@ -7,7 +7,6 @@
 
 .article {
 	background-color: @COLOR-YellowLighter;
-	position: relative;
 
     .lead {
 		._font-size (@TYPE-SIZE-Delta);
@@ -31,6 +30,7 @@
 
 .article__body {
 	background-color: @COLOR-White;
+	position: relative;
  	max-width: 40em;
  	margin: 0 auto;
  	._clearfix();
@@ -39,9 +39,6 @@
 
  .article__aside {
  	background-color: @COLOR-LimeLighter;
- 	position: absolute;
- 	top: 0;
- 	right: 0;
  	._padding (@TYPE-LineHeight);
  }
 
@@ -125,6 +122,22 @@
 
 		blockquote {
         	._margin (0, -100, @TYPE-LineHeight, -100);
+		}
+	}
+
+}
+
+// DESKTOP WIDE
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Larger) {
+
+	.article {
+		.article__aside {
+		 	position: absolute;
+		 	top: 0;
+		 	right: -300px;
+		 	width: 300px;
 		}
 	}
 
