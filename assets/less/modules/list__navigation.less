@@ -19,7 +19,6 @@
 // ----------------------------------------------------
 
 .list__nav {
-	margin: 0;
 	font-family: @NAVIGATION-FontFamily;
     ._clearfix ();
 
@@ -32,7 +31,7 @@
     	display: block;
         text-decoration: none;
         line-height: 1;
-        ._padding (20);
+        ._padding (@TYPE-LineHeight);
         ._font-size (@TYPE-SIZE-Gamma);
         ._transition (all, 0.1s);
 
@@ -59,7 +58,7 @@
     .list__nav {
         .list__link {
             text-align: center;
-            ._padding (10);
+            ._padding (@TYPE-LineHeight/2);
         }
     }
 
@@ -84,7 +83,7 @@
 @media only screen and (min-width: @MQ-Large-min) {
 
     .list__nav {
-        ._padding (0, 10);
+        ._padding (0, @TYPE-LineHeight/2);
     }
 
 }

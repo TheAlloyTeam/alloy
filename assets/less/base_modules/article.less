@@ -5,9 +5,16 @@
 // BASE
 // ----------------------------------------------------
 
-.article {}
+.article {
+	background-color: @COLOR-YellowLighter;
+
+    .lead {
+		._font-size (@TYPE-SIZE-Delta);
+    }
+}
 
 .article__head {
+	text-align: center;
 	._margin-bottom (@TYPE-LineHeight);
 }
 
@@ -18,14 +25,32 @@
 
 .article__subtitle {
 	margin-bottom: 0;
-	._font-size (@TYPE-SIZE-Delta);
+	._font-size (@TYPE-SIZE-Epsilon);
 }
 
-.article__body {}
+.article__body {
+	background-color: @COLOR-White;
+	position: relative;
+ 	max-width: 40em;
+ 	margin: 0 auto;
+ 	._clearfix();
+	._font-size (@TYPE-SIZE-Delta);
+ }
 
-.article__nav {}
+ .article__aside {
+ 	background-color: @COLOR-LimeLighter;
+ 	._padding (@TYPE-LineHeight);
+ }
 
-.article__foot {}
+.article__foot {
+	text-align: center;
+	._margin-top (@TYPE-LineHeight);
+}
+
+.article__image {
+	display: block;
+	margin: 0 auto @TYPE-LineHeight+0px;
+}
 
 // MOBILE
 // ----------------------------------------------------
@@ -34,16 +59,86 @@
 
 }
 
-// TABLET
+// TABLET & UP
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+@media only screen and (min-width: @MQ-Medium-min) {
+
+	.article {
+		.left--wide {
+			float: left;
+			._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, 0);
+		}
+
+		.right--wide {
+			float: right;
+			._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
+		}
+	}
 
 }
 
 // DESKTOP
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Large-min) {
+@media only screen and (min-width: @MQ-Large) {
+
+	.article {
+		.left--wide {
+			._margin-left (-100);
+		}
+
+		.right--wide {
+			._margin-right (-100);
+		}
+
+		.block {
+			width: 100%;
+		}
+
+		.block--left {
+			._margin-left (-100);
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.block--right {
+			._margin-right (-100);
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.block--full {
+        	._margin (0, -100, @TYPE-LineHeight, -100);
+
+			img {
+				width: 100%;
+			}
+		}
+
+		blockquote {
+        	._margin (0, -100, @TYPE-LineHeight, -100);
+		}
+	}
+
+}
+
+// DESKTOP WIDE
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Larger) {
+
+	.article {
+		.article__aside {
+		 	position: absolute;
+		 	top: 0;
+		 	right: -300px;
+		 	width: 300px;
+		}
+	}
 
 }

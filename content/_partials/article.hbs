@@ -6,11 +6,17 @@
 				<p class="article__subtitle">{{{content.subtitle}}}</p>
 			{{/if}}
 		</header>
-		{{#if content.image}}
-		<div class="article__thumb"><img src="{{content.image}}" alt=""/></div>
+		{{#if content.thumb}}
+		<div class="article__thumb">
+			<img src="{{content.thumb}}" alt=""/>
+		</div>
 		{{/if}}
 		<div class="article__body rte">
 			{{{content.body}}}
+			<div class="article__aside rte">
+				<h4>Aside title</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere placerat eros ut lobortis.</p>
+			</div>
 		</div>
 		<footer class="article__foot">
 		{{#each actions}}

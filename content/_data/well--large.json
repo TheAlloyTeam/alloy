@@ -1,0 +1,22 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "large",
+        "disabled": "",
+        "target": "",
+        "block": ""
+    },
+    "content": {
+        "text": "<p>A well is prmeraly just a box of text - unless we can find another useage for it.</p>",
+        "title": "",
+        "icon": [{
+            "item": {
+                "modifier": "",
+                "size": ""
+            },
+            "content": {
+                "title": ""
+            }
+        }]
+    }
+}

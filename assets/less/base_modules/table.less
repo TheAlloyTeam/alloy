@@ -5,10 +5,13 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@TABLE-HeadColor:                   @COLOR-GreyDark;
-@TABLE-HeadBgColor:                 @COLOR-White;
-@TABLE-BorderColor:                 @COLOR-GreyLighter;
-@TABLE-HeadFontFamily:              @TYPE-HeadingsFontFamily;
+@TABLE-HeadColor:                   @COLOR-White;
+@TABLE-HeadBgColor:                 @COLOR-Base;
+@TABLE-RowOddColor:                 ;
+@TABLE-RowOddBgColor:               @COLOR-White;
+@TABLE-RowEvenColor:                ;
+@TABLE-RowEvenBgColor:              ;
+@TABLE-BorderColor:                 @COLOR-White;
 
 // BASE
 // ----------------------------------------------------
@@ -17,20 +20,21 @@
 // ----------------------------------------------------
 
 table {
-
     th,
     td {
-        ._padding (20, 15, 20, 15);
         border: 1px solid @TABLE-BorderColor;
         text-align: left;
+        ._padding (@TYPE-LineHeight/2);
     }
 
     tr:nth-child(odd) {
-        background-color: #f6f6f6;
+        color: @TABLE-RowOddColor;
+        background-color: @TABLE-RowOddBgColor;
     }
 
     tr:nth-child(even) {
-        background-color: #FFFFFF;
+        color: @TABLE-RowEvenColor;
+        background-color: @TABLE-RowEvenBgColor;
     }
 }
 
@@ -40,26 +44,25 @@ table {
 
 .table {
     padding: 0;
+    border: none;
     ._margin (0, 0, @TYPE-LineHeight, 0);
     .block;
 }
+
 .table__row {
     list-style: none;
-    border: 1px solid @TABLE-BorderColor;
-    border-top: none;
+    border: none;
     ._clearfix();
 }
 
 .table__header {
     color: @TABLE-HeadColor;
     background-color: @TABLE-HeadBgColor;
-    font-family: @TABLE-HeadFontFamily;
-    border-top: 1px solid @TABLE-BorderColor;
-    ._font-size (14);
+    font-weight: normal;
+    border-right: 0px solid @TABLE-BorderColor;
 }
 
 .table__header-cell {
-    border-right: 0;
     word-w: normal;
 }
 
@@ -67,10 +70,10 @@ table {
     min-height: 100%; // Incase cell is empty
     border-right: 0px solid @TABLE-BorderColor;
     word-w: break-word;
-    ._padding (10);
+    ._padding (@TYPE-LineHeight/2);
 
     &:last-child {
-        border-right: none;
+        border-right: 1px solid @TABLE-BorderColor;
     }
 }
 
