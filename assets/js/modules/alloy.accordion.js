@@ -45,7 +45,7 @@
             // Handle the click of the title
             this.$element.find("." + this.config.classes.title).click(this._handleClick);
 
-            console.log('%cALLOY.Accordion Started', 'color: green;');
+            ALLOY.Logger.startup('ALLOY.Accordion Started');
         },
 
         _handleClick: function(e) {
@@ -159,6 +159,6 @@
     };
 
     // Autostart Plugin
-    console.log('%cALLOY.Accordion Initializing', 'color: orange;');
+    ALLOY.Logger.startup('ALLOY.Accordion Initializing');
     $(".accordion").accordion();
 })();

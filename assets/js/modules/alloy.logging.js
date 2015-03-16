@@ -66,24 +66,20 @@
 		    }
 		};
 
-		var logEvent = function(level, message) {
-			var event = {};
-			event.time = new Date();
-			event.message = message;
-			event.level = level;
-
-		};
-
 		var logToConsole =  function(event) {
-
+			var colour = config.color[event.level];
+			console.log(event.timeStr() + " - %c" + event.message, "color: " + colour);
 		};
 
 		var logThis = function(level, message) {
-			//var logEvent = new logEvent(level, message);
-			//logToConsole(logEvent);
+			var logEvent = new LogEvent(level, message);
+			logToConsole(logEvent);
 		};
 
 		// Log Items
+		var startup = function(message) {
+			logThis("START", message);
+		};
 
 		var info = function(message) {
 			logThis("INFO", message);
@@ -109,23 +105,38 @@
 			logThis("FATAL", message);
 		};
 
-		var startup = function(message) {
-			logThis("START", message);
+		var log = function(message) {
+			logThis("OFF", message);
 		};
 
         var public = {
             init: _init,
-            log : logThis,
+            logEvent : logThis,
             info : info,
             debug : debug,
             trace : trace,
             warn : warn,
             error: error,
             fatal : fatal,
-            startup : startup
+            startup : startup,
+            log : log
         };
 
         return public;
+
+		function LogEvent(level, message) {
+			this.time = new Date();
+			this.message = message;
+			this.level = level;
+			this.timeStr = function() {
+				return this.time.getFullYear() + "-" + prependZero(this.time.getMonth() + 1) + "-" + prependZero(this.time.getDate()) + " " + prependZero(this.time.getHours() + 1) + ":" + prependZero(this.time.getMinutes()) + ":" + prependZero(this.time.getSeconds());
+			};
+
+			function prependZero(val) {
+				if (val <= 9) { return "0" + val; } 
+				else { return val; }
+			}
+		}
 
     }();
 
