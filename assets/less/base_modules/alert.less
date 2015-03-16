@@ -44,31 +44,33 @@
     ._depth-1 ();
 }
 
-// VARIANTS
+// STATUSES
 // ----------------------------------------------------
 
-.alert.info {
-    color: @ALERT-InfoTextColor;
-    background-color: @ALERT-InfoBgColor;
-    border-color: @ALERT-InfoBordercolor;
-}
+.alert {
+    &.info {
+        color: @ALERT-InfoTextColor;
+        background-color: @ALERT-InfoBgColor;
+        border-color: @ALERT-InfoBordercolor;
+    }
 
-.alert.warn {
-    color: @ALERT-WarnTextColor;
-    background-color: @ALERT-WarnBgColor;
-    border-color: @ALERT-WarnBordercolor;
-}
+    &.warn {
+        color: @ALERT-WarnTextColor;
+        background-color: @ALERT-WarnBgColor;
+        border-color: @ALERT-WarnBordercolor;
+    }
 
-.alert.danger {
-    color: @ALERT-DangerTextColor;
-    background-color: @ALERT-DangerBgColor;
-    border-color: @ALERT-DangerBordercolor;
-}
+    &.danger {
+        color: @ALERT-DangerTextColor;
+        background-color: @ALERT-DangerBgColor;
+        border-color: @ALERT-DangerBordercolor;
+    }
 
-.alert.success {
-    color: @ALERT-SuccessTextColor;
-    background-color: @ALERT-SuccessBgColor;
-    border-color: @ALERT-SuccessBordercolor;
+    &.success {
+        color: @ALERT-SuccessTextColor;
+        background-color: @ALERT-SuccessBgColor;
+        border-color: @ALERT-SuccessBordercolor;
+    }
 }
 
 // MOBILE
