@@ -1,6 +1,7 @@
 {
 	"item": {
-    	"modifier": "warn",
+    	"modifier": "",
+    	"status": "warn",
 		"size": "",
 		"disabled": "",
 		"target": ""
