@@ -11,14 +11,15 @@ page-category: "animation"
 
 <main class="w w--main">
 	<div class="g">
-	    <div class="c__md--1">
+	    <div class="c__lg--1">
 
-  			<article class="article">
-			    <header class="article__head head">
-			        <h1 class="article__title">{{title}}</h1>
-		        </header>
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
 <!-- writings -->
-		        <div class="article__body rte">
+		        <div class="page__body rte">
 
 		        </div>
 
@@ -61,9 +62,8 @@ page-category: "animation"
 		            </div>
 		        </section>
 
-	        </article>
+	        </div>
 
 	    </div>
-
 	</div>
 </main>
