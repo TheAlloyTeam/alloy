@@ -14,8 +14,8 @@ window.DEBUG = DEBUG;
 var require = {
     baseUrl: '/assets/js/',
     waitSeconds : 40,
-    urlArgs: "bust=" + (new Date()).getTime(), // For development to bypass the cache
-    //urlArgs: "bust=v2", // For production
+    //urlArgs: "bust=" + (new Date()).getTime(), // For development to bypass the cache
+    urlArgs: "bust=v2", // For production
     paths: {
         app: "app",
         libs: "libs",

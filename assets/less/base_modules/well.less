@@ -10,6 +10,11 @@
 
 @WELL-BgColor:                  @COLOR-GreyLight;
 
+@WELL-InfoBgColor:              @COLOR-BlueLighter;
+@WELL-WarnBgColor:              @COLOR-OrangeLighter;
+@WELL-DangerBgColor:            @COLOR-RedLighter;
+@WELL-SuccessBgColor:           @COLOR-GreenLighter;
+
 // BASE
 // ----------------------------------------------------
 
@@ -19,6 +24,25 @@
     ._padding (@TYPE-FontSize);
     ._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
     ._border-radius ();
+}
+
+// STATUSES
+// ----------------------------------------------------
+
+.well {
+
+	&.info {
+    	background-color: @WELL-InfoBgColor;
+	}
+	&.warn {
+    	background-color: @WELL-WarnBgColor;
+    }
+	&.danger {
+    	background-color: @WELL-DangerBgColor;
+    }
+	&.success {
+	    background-color: @WELL-SuccessBgColor;
+	}
 }
 
 } .well-styles();
