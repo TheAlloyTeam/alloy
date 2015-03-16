@@ -3,7 +3,7 @@
 
     	var _init = function() {
             navButton();
-            console.log('%cALLOY.Mobile Started', 'color: green;');
+            ALLOY.Logger.startup('ALLOY.Mobile Started');
     	};
 
         var navButton = function() {
@@ -22,6 +22,6 @@
     }();
 
     // force start of mobile functions
-    console.log('%cALLOY.Mobile Initializing', 'color: orange;');
+    ALLOY.Logger.trace('ALLOY.Mobile Initializing');
     ALLOY.Mobile.init();
 })();

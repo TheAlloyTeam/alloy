@@ -3,9 +3,9 @@
 // =========================================================================*/
 
 // Start the main app logic.
-require(['jquery', 'core', 'mobile', 'fontloader', 'iefixes', 'prettyprint'],
+require(['jquery', 'logging', 'core', 'mobile', 'fontloader', 'iefixes', 'prettyprint'],
     function ($) {
-        console.log('%cALLOY.Main Started', 'color: green;');
+        ALLOY.Logger.startup('ALLOY.Main Started');
     }
 );
 
@@ -17,7 +17,7 @@ if (DEBUG) {
 	requirejs.onError = function (err) {
 	    console.log(err.requireType);
 	    if (err.requireType === 'timeout') {
-	        console.log('modules: ' + err.requireModules);
+	        ALLOY.Logger.Warn('modules: ' + err.requireModules);
 	    }
 	    throw err;
 	};
