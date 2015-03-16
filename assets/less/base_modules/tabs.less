@@ -28,7 +28,7 @@
 
 .tabs__content {
     background-color: @TABS-ActiveBgColor;
-    ._padding (20);
+    ._padding (@TYPE-LineHeight);
 
     .inactive {
         display: none;
@@ -47,7 +47,7 @@
         color: @TABS-Color;
         background-color: @TABS-BgColor;
         text-decoration: none;
-        ._padding (5, 20);
+        ._padding (@TYPE-LineHeight/4, @TYPE-LineHeight);
         ._inline-block();
         ._transition (all, 0.1s);
 
@@ -73,7 +73,6 @@
 
     .list__tabs {
         .list__item {
-            //display: block;
             width: 100%;
         }
 
