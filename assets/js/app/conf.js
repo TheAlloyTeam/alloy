@@ -37,12 +37,12 @@ var require = {
     shim: {
         'logging': {deps: ['jquery']},
         'utils': {deps: ['jquery', 'logging']},
-        'core': {deps: ['jquery', 'logging', "utils", "amd"]},
+        'core': {deps: ['jquery', 'logging', 'utils', 'amd']},
         'iefixes': {deps: ['jquery', 'core', 'logging']},
         'mobile': {deps: ['jquery', 'core', 'logging']},
         'fontloader': {deps: ['fontfaceobserver', 'core', 'logging']},
         'accordion': {deps: ['jquery', 'core', 'logging']},
-        'tabs' : {deps: ['jquery']}
+        'tabs' : {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
