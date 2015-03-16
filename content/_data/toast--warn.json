@@ -1,10 +1,10 @@
 {
     "item": {
         "modifier": "",
-        "status": ""
+        "status": "warn"
     },
     "content": {
-        "text": "I did something",
+        "text": "Something is about to break!",
         "icon": [{
             "item": {
                 "modifier": "tick7",

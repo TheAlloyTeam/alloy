@@ -1,10 +1,10 @@
 {
     "item": {
         "modifier": "",
-        "status": ""
+        "status": "danger"
     },
     "content": {
-        "text": "I did something",
+        "text": "Its all going wrong - WE ARE ALL DOOMED!!",
         "icon": [{
             "item": {
                 "modifier": "tick7",
