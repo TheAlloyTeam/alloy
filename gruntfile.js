@@ -15,6 +15,7 @@ module.exports = function(grunt) {
               cleancss: true
             },
             files: {
+              '<%= pkg.staddle.site %>/<%= pkg.staddle.css %>/fontloader.css': '<%= pkg.staddle.less %>/fontloader.less',
               '<%= pkg.staddle.site %>/<%= pkg.staddle.css %>/main.css': '<%= pkg.staddle.less %>/main.less'
             }
           }
