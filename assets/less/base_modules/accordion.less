@@ -8,43 +8,55 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@ACCORDION-BgColor:				@COLOR-Base;
+@ACCORDION-TitleColor:				@COLOR-White;
+@ACCORDION-TitleBgColor:			@COLOR-Cyan;
+@ACCORDION-BodyColor:				@COLOR-White;
+@ACCORDION-BodyBgColor:				@COLOR-White;
+
+@ACCORDION-Anim:					@ANIM-Curve;
 
 // BASE
 // ----------------------------------------------------
 
-.accordian {
-	width: 30em;
+.accordion {
+	
 }
 
-/* Accordian headers */
 .accordion__tab {
-	background-color: @ACCORDION-BgColor;
-	display: block;
-	margin: 0;
+	
 }
 
 .accordion__title {
-  	color: @COLOR-White;
-	padding: 0.2em;
+	background-color: @ACCORDION-TitleBgColor;
+  	text-decoration: none;
+  	display: block;
+	._padding (10);
+
+  	&:link,
+  	&:visited {
+  		color: @ACCORDION-TitleColor;
+  	}
+
+  	&:hover {
+  		background-color: darken(@ACCORDION-TitleBgColor, 10%);
+  	}
 }
 
 .accordion__panel {
+	background-color: @COLOR-White;
 	overflow: hidden;
-} 
+}
+
+.accordion__body {
+	._padding (10);
+}
 
 .accordion__panel.opening { 
-	-webkit-transition: height linear 0.35s;
-	-moz-transition: height linear 0.35s;
-	-o-transition: height linear 0.35s;
-	transition: height linear 0.35s;
+    ._transition (height, 0.1s, @ACCORDION-Anim);
 }
 
 .accordion__panel.closing { 
-	-webkit-transition: height linear 0.35s;
-	-moz-transition: height linear 0.35s;
-	-o-transition: height linear 0.35s;
-	transition: height linear 0.35s;
+    ._transition (height, 0.1s, @ACCORDION-Anim);
 }
 
 .accordion__panel.open {

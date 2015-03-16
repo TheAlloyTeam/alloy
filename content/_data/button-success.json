@@ -1,6 +1,7 @@
 {
 	"item": {
-    	"modifier": "success",
+    	"modifier": "",
+    	"status": "success",
 		"size": "",
 		"disabled": "",
 		"target": ""

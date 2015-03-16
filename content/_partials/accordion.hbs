@@ -4,7 +4,7 @@
 	<div class="accordion__tab{{#if content.expanded}} open{{/if}} tab--{{content.id}}" aria-controls="{{content.id}}" role="tab" data-accordionindex="#{{content.id}}">
 		<a href="#{{content.id}}" class="accordion__title">{{content.title}}</a>
 	</div>
-	<div id="{{content.id}}" class="accordion__panel rte" role="tabpanel" aria-labeledby="tab--{{content.id}}">{{content.body}}</div>
+	<div id="{{content.id}}" class="accordion__panel" role="tabpanel" aria-labeledby="tab--{{content.id}}"><div class="accordion__body rte">{{content.body}}</div></div>
 	{{/each}}
 </div>
 {{/this}}
