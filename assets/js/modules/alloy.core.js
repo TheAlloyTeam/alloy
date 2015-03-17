@@ -25,18 +25,13 @@
             // add config to the ALLOY Namespace
             var config = ALLOY.config;
             pageSetup();
-            console.log('%cALLOY.Core Started', 'color: green;');
+            ALLOY.Logger.startup('ALLOY.Core Started');
     	};
 
     	var pageSetup = function() {
     	    window.$ = $;
     		$("html").removeClass("no-js");
     	};
-
-        var output = {
-            ready: _ready,
-            init: _init
-        };
 
         // Check if button__totop should be visible on page load
         $(function() {
@@ -60,6 +55,12 @@
             e.preventDefault();
         });
 
+
+        var output = {
+            ready: _ready,
+            init: _init
+        };
+
         return output;
 
     }();
@@ -67,7 +68,7 @@
 
 
     ALLOY.Core.ready(function() {
-    console.log('%cALLOY.Core Initializing', 'color: orange;');
+        ALLOY.Logger.trace('ALLOY.Core Initializing');
         ALLOY.Core.init();
     });
 })();

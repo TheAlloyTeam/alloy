@@ -27,13 +27,33 @@ page-category: "components"
 
 				<section class="section section--example">
 		            <header class="section__head">
-		                <h2 class="section__title">Example</h2>
+		                <h2 class="section__title">Example: Status</h2>
 		            </header>
 
 		            <div class="secton__body">
 				        <!-- code -->
 
 				        {{> well well }}
+				        {{> well well--info }}
+				        {{> well well--warn }}
+				        {{> well well--danger }}
+				        {{> well well--success }}
+			        </div>
+
+		        </section>
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Example: Size</h2>
+		            </header>
+
+				        {{> well well--xsmall }}
+				        {{> well well--small }}
+				        {{> well well }}
+				        {{> well well--large }}
+				        {{> well well--xlarge }}
 
 				        <!-- end of code -->
 			        </div>
@@ -49,7 +69,9 @@ page-category: "components"
 
 		            <div class="section__body">
 			            <pre class="prettyprint linenums"><code class="html">
-
+&lt;div class="well success"&gt;
+	&lt;p&gt;A well is prmeraly just a box of text - unless we can find another useage for it.&lt;/p&gt;
+&lt;/div&gt;
 			             </code></pre>
 		            </div>
 

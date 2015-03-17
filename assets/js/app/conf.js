@@ -14,8 +14,8 @@ window.DEBUG = DEBUG;
 var require = {
     baseUrl: '/assets/js/',
     waitSeconds : 40,
-    urlArgs: "bust=" + (new Date()).getTime(), // For development to bypass the cache
-    //urlArgs: "bust=v2", // For production
+    //urlArgs: "bust=" + (new Date()).getTime(), // For development to bypass the cache
+    urlArgs: "bust=v2", // For production
     paths: {
         app: "app",
         libs: "libs",
@@ -37,12 +37,12 @@ var require = {
     shim: {
         'logging': {deps: ['jquery']},
         'utils': {deps: ['jquery', 'logging']},
-        'core': {deps: ['jquery', 'logging', "utils", "amd"]},
+        'core': {deps: ['jquery', 'logging', 'utils', 'amd']},
         'iefixes': {deps: ['jquery', 'core', 'logging']},
         'mobile': {deps: ['jquery', 'core', 'logging']},
         'fontloader': {deps: ['fontfaceobserver', 'core', 'logging']},
         'accordion': {deps: ['jquery', 'core', 'logging']},
-        'tabs' : {deps: ['jquery']}
+        'tabs' : {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }

@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    
+
     ALLOY.iefixes = function(){
 
     	var _init =  function() {
@@ -17,8 +17,8 @@
     	    } else {
     	        // else
     	    }
-            
-            console.log('%cALLOY.ieFixes Started', 'color: green;');
+
+            ALLOY.Logger.startup('ALLOY.ieFixes Started');
     	};
 
     	var colSizing = function() {
@@ -45,7 +45,7 @@
 
     }();
 
-    console.log('%cALLOY.ieFixes Initializing', 'color: orange;');
+    ALLOY.Logger.trace('ALLOY.ieFixes Initializing');
     ALLOY.iefixes.init();
 
 })();

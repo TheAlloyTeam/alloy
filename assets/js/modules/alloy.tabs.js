@@ -77,6 +77,6 @@
     };
 
     // Autostart Plugin
-    ALLOY.Logger.startup('ALLOY.Tabs Initializing');
+    ALLOY.Logger.trace('ALLOY.Tabs Initializing');
     $(".tabs").tabs();
 })();
