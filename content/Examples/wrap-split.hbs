@@ -1,0 +1,56 @@
+---
+title: Wrap Split
+layout: example.hbs
+
+nav-title: "Wrap Split"
+nav-text: "Wrap Split"
+nav-variant: "examples"
+page-category: "examples"
+---
+
+<header class="w w--head">
+	<div class="g">
+	    <div class="c__lg--1">
+	    	<h1 class="page__title">{{title}}</h1>
+	    </div>
+	</div>
+</header>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" style="display:block;background-color:#F5F5F5;">
+	<path d="M0 0 C 50 100 80 100 100 0 Z" style="fill:#ABB4E2;"></path>
+</svg>
+
+<main class="w w--main">
+
+	<div class="w w--primary">
+		<div class="g">
+		    <div class="c__lg--5-7">
+		    	PAGE
+		    </div>
+		    <div class="c__lg--2-7">
+		    	{{> panel panel }}
+		    </div>
+		</div>
+	</div>
+
+	<div class="w w--secondary">
+		<div class="g">
+		    <div class="c__lg--1">
+		    	SECONDARY
+		    </div>
+		</div>
+	</div>
+
+</main>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none" style="display:block;background-color:#F5F5F5;">
+	<path d="M0 100 C 20 0 50 0 100 100 Z" style="fill:#ABB4E2;"></path>
+</svg>
+
+<footer class="w w--foot">
+	<div class="g">
+	    <div class="c__lg--1">
+	    	FOOTER
+	    </div>
+	</div>
+</footer>
