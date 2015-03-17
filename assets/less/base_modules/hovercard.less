@@ -1,0 +1,57 @@
+.hovercard-styles() when not (@MODULE-HoverCard) { }
+.hovercard-styles() when (@MODULE-HoverCard) {
+
+/* =========================================================================
+// IMAGE
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+
+// BASE
+// ----------------------------------------------------
+
+.hovercard {
+	max-width: 310px;
+	._padding(@TYPE-FontSize);
+	._depth-2();
+}
+
+.hovercard__content {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+}
+
+.hovercard__avatar {
+	float: left;
+    ._margin (0, @TYPE-FontSize, 0, 0);
+
+    .avatar {
+        display: block;
+    }
+
+}
+
+.hovercard__name {
+	font-weight:bold;
+}
+
+.hovercard__info {
+	color: @COLOR-Grey;
+	._font-size(@TYPE-SIZE-Iota);
+}
+
+.hovercard__bio {
+	._font-size(@TYPE-SIZE-Iota);
+}
+
+.hovercard__actions {
+	text-align:right;
+	._padding-top(@TYPE-FontSize);
+}
+
+
+
+} .hovercard-styles();
