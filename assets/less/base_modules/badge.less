@@ -1,0 +1,136 @@
+.badge-styles() when not (@MODULE-Badge) { }
+.badge-styles() when (@MODULE-Badge) {
+
+/* =========================================================================
+// BADGE
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+@BADGE-BgColor:                  @COLOR-GreyDark;
+
+@BADGE-TextColor:                @COLOR-White;
+
+@BADGE-SuccessBgColor:           @COLOR-Green;
+
+@BADGE-InfoBgColor:              @COLOR-Blue;
+
+@BADGE-WarningBgColor:           @COLOR-Orange;
+
+@BADGE-DangerBgColor:            @COLOR-Red;
+
+
+// BADGE BASE
+// ----------------------------------------------------
+
+.badge {
+    color: @BADGE-TextColor;
+    background-color: @BADGE-BgColor;
+    line-height:1;
+    min-width:10px;
+    text-align: center;
+    white-space: nowrap;
+    font-family: @TYPE-MonoSpaceFontFamily;
+    ._font-size(@TYPE-SIZE-Iota);
+    ._inline-block();
+    ._padding(3, @TYPE-FontSize/2);
+    ._border-radius(10);
+
+}
+
+.button {
+    .badge {
+        color: @BADGE-BgColor;
+        background-color: @BADGE-TextColor;
+        font-weight: bold;
+    }
+}
+
+// STATUSES
+// ----------------------------------------------------
+
+.badge {
+    &.success {
+        background-color: @BADGE-SuccessBgColor;
+    }
+
+    &.info {
+        background-color: @BADGE-InfoBgColor;
+    }
+
+    &.warn {
+        background-color: @BADGE-WarningBgColor;
+    }
+
+    &.danger {
+        background-color: @BADGE-DangerBgColor;
+    }
+
+    &.xsmall {
+        ._font-size ((@TYPE-FontSize - 4));
+    }
+    &.small {
+        ._font-size ((@TYPE-FontSize - 2));
+    }
+    &.large {
+        ._font-size ((@TYPE-FontSize + 2));
+    }
+    &.xlarge {
+        ._font-size ((@TYPE-FontSize + 4));
+    }
+}
+
+.button {
+
+     &.success {
+        color: @BADGE-SuccessBgColor;
+        background-color: @BADGE-TextColor;
+    }
+
+    &.info {
+        color: @BADGE-InfoBgColor;
+        background-color: @BADGE-TextColor;
+     }
+
+    &.warn {
+        color: @BADGE-WarningBgColor;
+        background-color: @BADGE-TextColor;
+    }
+
+    &.danger {
+        color: @BADGE-DangerBgColor;
+        background-color: @BADGE-TextColor;
+    }
+}
+
+
+// SIZES
+// ----------------------------------------------------
+
+
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+
+}
+
+// TABLET & UP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) {
+
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+} .badge-styles();

@@ -6,6 +6,6 @@
 		    <span>{{{content.text}}}</span>
 		</label>
 	{{else}}
-		<span class="label{{#if item.modifier}} label--{{item.modifier}}{{/if}}">{{{content.text}}}</span>
+		<span class="label{{#if item.modifier}} label--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}">{{{content.text}}}</span>
 	{{/if}}
 {{/this}}
