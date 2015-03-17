@@ -2,7 +2,7 @@
 <div class="accordion{{#if item.modifier}} accordion--{{item.modifier}}{{/if}}"{{#if item.multiselectable}} aria-multiselectable="true"{{/if}} aria-live="polite">
 	{{#each content.tabs}}
 	<div class="accordion__tab{{#if content.expanded}} open{{/if}} tab--{{content.id}}" aria-controls="{{content.id}}" role="tab" data-accordionindex="#{{content.id}}">
-		<a href="#{{content.id}}" class="accordion__title">{{content.title}}</a>
+		<a href="#{{content.id}}" class="accordion__title"><span>{{content.title}}</span><i class="icon"></i></a>
 	</div>
 	<div id="{{content.id}}" class="accordion__panel" role="tabpanel" aria-labeledby="tab--{{content.id}}"><div class="accordion__body rte">{{content.body}}</div></div>
 	{{/each}}
