@@ -1,0 +1,82 @@
+.focus-styles() when not (@MODULE-Focus) { }
+.focus-styles() when (@MODULE-Focus) {
+
+/* =========================================================================
+// FOCUS
+// =======================================================================*/
+
+// COLOURS
+// ----------------------------------------------------
+
+@FOCUS-HeadColor:                 @COLOR-White;
+@FOCUS-HeadBgColor:               @COLOR-PinkDarker;
+@FOCUS-BodyColor:                 @TYPE-FontColor;
+@FOCUS-BodyBgColor:               @COLOR-White;
+@FOCUS-FootColor:                 @COLOR-PinkDarker;
+@FOCUS-FootBgColor:               @COLOR-PinkLightest;
+
+// BASE
+// ----------------------------------------------------
+
+.focus {
+    display: block;
+    ._margin (0, 0, @TYPE-LineHeight, 0);
+    ._clearfix();
+}
+
+.focus__head {
+    color: @FOCUS-HeadColor;
+    background-color: @FOCUS-HeadBgColor;
+    ._border-radius-custom (@STYLE-BorderRadius, @STYLE-BorderRadius, 0,  0);
+}
+
+.focus__title {
+    color: @FOCUS-HeadColor;
+    line-height: 1;
+    margin: 0;
+}
+
+.focus__body {
+    color: @FOCUS-BodyColor;
+    background-color: @FOCUS-BodyBgColor;
+}
+
+.focus__foot {
+    color: @FOCUS-FootColor;
+    background-color: @FOCUS-FootBgColor;
+    ._border-radius-custom (0, 0, @STYLE-BorderRadius, @STYLE-BorderRadius);
+}
+
+.focus__head,
+.focus__body,
+.focus__foot {
+    display: block;
+    ._padding (@TYPE-FontSize);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+} .focus-styles();
