@@ -4,7 +4,17 @@
 
 {{#if js-accordion}}
 <script type="text/JavaScript">
-	require(["accordion"], function() { });
+	require(["accordion"], function() {
+		$(".accordion").accordion({
+			onChangeFunc: function($title, $content, toOpen) {
+				if (toOpen) {
+                	$title.find(".icon").addClass("icon--round53").removeClass("icon--round57");
+                } else {
+                	$title.find(".icon").addClass("icon--round57").removeClass("icon--round53");
+                }
+			}
+		});
+	});
 </script>
 {{/if}}
 
