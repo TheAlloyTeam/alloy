@@ -12,15 +12,28 @@
 @FORM-BgColor:              @COLOR-White;
 @FORM-BorderColor:          @COLOR-GreyLight;
 @FORM-Placeholder:          @COLOR-GreyLight;
+@FORM-Asterisk:             @COLOR-Red;
+@FORM-Offset:               25%;
+@FORM-OffsetGap:            3%;
+@FORM-OffsetLabel:          ((@FORM-Offset)-(@FORM-OffsetGap));
+@FORM-OffsetAsterisk:       ((@FORM-Offset)-(@FORM-OffsetGap/2));
 
 // BASE
 // ----------------------------------------------------
 
 .form {
     ._margin (0, 0, @TYPE-LineHeight, 0);
+
+    span.label,
+    .label span {
+        &:after {
+            content: ":";
+        }
+    }
 }
 
 .form__row {
+    position: relative;
     ._clearfix ();
     ._margin (0, 0, @TYPE-LineHeight, 0);
 }
@@ -53,6 +66,10 @@
     ._font-size ((@TYPE-FontSize - 2));
 }
 
+.form__asterisk {
+    color: @FORM-Asterisk;
+    border-bottom: none !important;
+}
 
 .form__group {
     .label,
@@ -62,13 +79,20 @@
         ._inline-block ();
     }
 
-    &.vertical {
-        .checkbox__group,
-        .radio__group {
-            .block;
+    span.label,
+    .label span {
+        &:after {
+            content: "";
         }
     }
 }
+
+.form__group.vertical {
+    .checkbox__item {
+        .block;
+    }
+}
+
 
 
 ._placeholder (@FORM-Placeholder); 
@@ -78,6 +102,15 @@
 
 @media only screen and (max-width: @MQ-Small) {
 
+    .form__asterisk {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .form__group {
+        ._padding-right(12);
+    }
 }
 
 // TABLET
@@ -146,13 +179,19 @@
     .form.aligned {
 
         .form__row.offset {
-            margin-left: 25%;
+            padding-left: @FORM-Offset;
+        }
+
+        .form__asterisk {
+            position: absolute;
+            left: @FORM-OffsetAsterisk;
+            top: 0;
         }
 
         .label {
-            width: 24%;
+            width: @FORM-OffsetLabel;
             text-align: right;
-            margin-right: 1%;
+            margin-right: @FORM-OffsetGap;
             .left;
         }
 
@@ -167,8 +206,12 @@
                 float: none;
             }
         }
-    }
 
+        .form__text {
+            display: block;
+            margin-left: @FORM-Offset;
+        }
+    }
 }
 
 // DESKTOP
