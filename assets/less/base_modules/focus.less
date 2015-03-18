@@ -9,25 +9,29 @@
 // ----------------------------------------------------
 
 @FOCUS-HeadColor:                 @COLOR-White;
-@FOCUS-HeadBgColor:               @COLOR-PinkDarker;
-@FOCUS-BodyColor:                 @TYPE-FontColor;
-@FOCUS-BodyBgColor:               @COLOR-White;
-@FOCUS-FootColor:                 @COLOR-PinkDarker;
-@FOCUS-FootBgColor:               @COLOR-PinkLightest;
+@FOCUS-HeadBgColor:               rgba(0, 0, 0, 0.1);
+@FOCUS-BodyColor:                 @COLOR-White;
+@FOCUS-BodyBgColor:               rgba(0, 0, 0, 0.1);
+@FOCUS-FootColor:                 @TYPE-FontColor;
+@FOCUS-FootBgColor:               rgba(0, 0, 0, 0.1);
 
 // BASE
 // ----------------------------------------------------
 
 .focus {
+    background-image: url('/assets/img/bg.jpg');
+    background-size: cover;
     display: block;
     ._margin (0, 0, @TYPE-LineHeight, 0);
     ._clearfix();
+
+    -ms-behavior: url('/assets/js/modules/backgroundsize.min.htc');
 }
 
 .focus__head {
     color: @FOCUS-HeadColor;
     background-color: @FOCUS-HeadBgColor;
-    ._border-radius-custom (@STYLE-BorderRadius, @STYLE-BorderRadius, 0,  0);
+    //._border-radius-custom (@STYLE-BorderRadius, @STYLE-BorderRadius, 0, 0);
 }
 
 .focus__title {
@@ -44,7 +48,7 @@
 .focus__foot {
     color: @FOCUS-FootColor;
     background-color: @FOCUS-FootBgColor;
-    ._border-radius-custom (0, 0, @STYLE-BorderRadius, @STYLE-BorderRadius);
+    //._border-radius-custom (0, 0, @STYLE-BorderRadius, @STYLE-BorderRadius);
 }
 
 .focus__head,

@@ -11,9 +11,6 @@
     {
         "buttons": [
         {
-            "item": {
-                "modifier": "alt"
-            },
             "content": {
                 "text": "Footer",
                 "title": "Footer",
