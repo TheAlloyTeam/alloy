@@ -8,32 +8,32 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@BUTTON-BgColor:                lighten(@COLOR-Base, 20%);
-@BUTTON-HoverColor:             darken(@BUTTON-BgColor, 10%);
+@BUTTON-BgColor:                lighten(@COLOR-Base, 10%);
+@BUTTON-HoverColor:             lighten(@BUTTON-BgColor, 5%);
 @BUTTON-TextColor:              @COLOR-White;
 
-@BUTTON-AltColor:               lighten(@COLOR-Purple, 20%);
-@BUTTON-AltHoverColor:          darken(@BUTTON-AltColor, 10%);
+@BUTTON-AltColor:               spin(@BUTTON-BgColor, 180);
+@BUTTON-AltHoverColor:          lighten(@BUTTON-AltColor, 5%);
 @BUTTON-AltTextColor:           @COLOR-White;
 
 @BUTTON-DisabledColor:          @COLOR-White;
-@BUTTON-DisabledHoverColor:     darken(@BUTTON-DisabledColor, 2%);
+@BUTTON-DisabledHoverColor:     lighten(@BUTTON-DisabledColor, 5%);
 @BUTTON-DisabledTextColor:      @COLOR-Grey;
 
 @BUTTON-SuccessColor:           @COLOR-Green;
-@BUTTON-SuccessHoverColor:      darken(@BUTTON-SuccessColor, 2%);
+@BUTTON-SuccessHoverColor:      lighten(@BUTTON-SuccessColor, 5%);
 @BUTTON-SuccessTextColor:       @COLOR-White;
 
 @BUTTON-InfoColor:              @COLOR-Blue;
-@BUTTON-InfoHoverColor:         darken(@BUTTON-InfoColor, 2%);
+@BUTTON-InfoHoverColor:         lighten(@BUTTON-InfoColor, 5%);
 @BUTTON-InfoTextColor:          @COLOR-White;
 
 @BUTTON-WarningColor:           @COLOR-Orange;
-@BUTTON-WarningHoverColor:      darken(@BUTTON-WarningColor, 2%);
+@BUTTON-WarningHoverColor:      lighten(@BUTTON-WarningColor, 5%);
 @BUTTON-WarningTextColor:       @COLOR-White;
 
 @BUTTON-DangerColor:            @COLOR-Red;
-@BUTTON-DangerHoverColor:       darken(@BUTTON-DangerColor, 2%);
+@BUTTON-DangerHoverColor:       lighten(@BUTTON-DangerColor, 5%);
 @BUTTON-DangerTextColor:        @COLOR-White;
 
 @BUTTON-Anim:                   @ANIM-Curve;
@@ -122,7 +122,7 @@
 
 .button__totop {
     color: @COLOR-White;
-    background-color: @COLOR-Cyan;
+    background-color: @BUTTON-AltColor;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -132,13 +132,13 @@
     z-index: @Z-INDEX-Level1;
     ._padding (7);
     ._font-size (30);
-    ._depth-4 ();
-
-    &:link,
-    &:visited,
-    &:hover,
-    &:active {
+    ._depth-4();
+    ._transition (background-color, 0.1s);
+    
+    &:hover {
         color: @COLOR-White;
+        background-color: lighten(@BUTTON-AltColor, 5%);
+        ._depth-4();
     }
 }
 
