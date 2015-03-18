@@ -14,6 +14,34 @@
 </script>
 {{/if}}
 
+{{#if js-toast}}
+<script type="text/JavaScript">
+ 	require(["toast"], function() {
+ 		$(".toast").click(function(e) {
+ 			e.preventDefault();
+ 			$(".w--main").toast({
+				"item": {
+					"modifier": "",
+					"status": "success"
+				},
+	    		"content": {
+	        		"text": "You did it! Its all fixed!",
+	        		"icon": [{
+	            		"item": {
+	                		"modifier": "tick7",
+	                		"size": "xlarge"
+	            		},
+	            		"content": {
+		                	"title": ""
+	        			}
+	        		}]
+	    		}
+			});
+ 		}); 		
+ 	});
+</script>
+{{/if}}
+
 {{#dev}} 
 <script src="http://localhost:35730/livereload.js"></script>
 {{/dev}}
