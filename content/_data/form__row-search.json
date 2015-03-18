@@ -1,0 +1,52 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "for": "formrow-search-1"
+    },
+    "content": {
+        "text": "Search for something",
+        "type": [{
+            "search": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "multiple": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "id": "formrow-search-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Search Query",
+                    "value": "",
+                    "icon": [{
+                        "item": {
+                            "modifier": "check52",
+                            "size": ""
+                        },
+                        "content": {
+                            "title": ""
+                        }
+                    }]
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

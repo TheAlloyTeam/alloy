@@ -1,0 +1,42 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "for": "formrow-tel-1"
+    },
+    "content": {
+        "text": "Label for tel input",
+        "type": [{
+            "tel": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "id": "formrow-tel-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Telephone Placeholder",
+                    "value": ""
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

@@ -1,0 +1,8 @@
+{{#this}}
+	<label
+	    {{#if item.for}}for="{{item.for}}"{{/if}}
+	    class="form__label{{#if item.modifier}} form__label--{{item.modifier}}{{/if}}
+	    {{#if item.disabled}} disabled{{/if}}">
+	    <span>{{{content.text}}}</span>
+	</label>
+{{/this}}
