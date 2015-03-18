@@ -20,7 +20,7 @@
 				'OFF': "grey"
 			},
 
-			'number': {
+			'number': { 
 				'ALL': 0,
 				'START': 10,
 				'TRACE': 5000,
@@ -30,17 +30,40 @@
 				'ERROR': 40000,
 				'FATAL': 50000,
 				'OFF': 0
-			}
+			},
+
+			'logToScreenFunc' : undefined,
+			'logToServerUrl' : undefined,
+			'logInterval' : 1500,
 		};
 
-		var _init = function() {
+		var logs = [];
+
+		var _init = function(args) {
+			config = $.extend({}, config, args);
+
 			_fixconsole();
+			var browser = getBrowserDetails();
+			info("Browser: " + browser.name + ", v" + browser.version);
+			writeLogs();
+		};
+
+		var writeLogs = function() {
+			var count = logs.length;
+			for(var i = 0; i < count; i++) {
+				var ev = logs.shift();
+				logToConsole(ev);
+				logToScreen(ev);
+				logToServer(ev);
+			}
+
+			setTimeout(writeLogs, config.logInterval);
 		};
 
 		var _fixconsole = function() {
 			var method;
 		    var noop = function () {};
-		    var methods = [
+			var methods = [
 		        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
 		        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
 		        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
@@ -66,6 +89,27 @@
 		    }
 		};
 
+		var logToServer = function(event) {
+			if (config.logToServerUrl != undefined) {
+				var browser = this.getBrowserDetails();
+				$.ajax({
+					url: config.logToServerUrl,
+					data: {
+						browser: browser.name + ", v" + browser.version,
+						level: event.level,
+						message: event.message,
+						time: event.timeStr()
+					}
+				});
+			}
+		};
+
+		var logToScreen = function(event) {
+			if (config.logToScreenFunc instanceof Function) {
+				config.logToScreenFunc(event);
+			}
+		};
+
 		var logToConsole =  function(event) {
 			var colour = config.color[event.level];
 			console.log(event.timeStr() + " - %c" + event.message, "color: " + colour);
@@ -73,7 +117,7 @@
 
 		var logThis = function(level, message) {
 			var logEvent = new LogEvent(level, message);
-			logToConsole(logEvent);
+			logs.push(logEvent);
 		};
 
 		// Log Items
@@ -109,7 +153,31 @@
 			logThis("OFF", message);
 		};
 
+		/* Retrieval of browser details from: http://stackoverflow.com/a/16938481 */
+		var getBrowserDetails = function() {
+			var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
+		    if(/trident/i.test(M[1])){
+		        tem=/\brv[ :]+(\d+)/g.exec(ua) || []; 
+		        return {name:'IE ',version:(tem[1]||'')};
+		        }   
+		    if(M[1]==='Chrome'){
+		        tem=ua.match(/\bOPR\/(\d+)/)
+		        if(tem!=null)   {return {name:'Opera', version:tem[1]};}
+		        }   
+		    M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+		    if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+		    return {
+		      name: M[0],
+		      version: M[1]
+		    };
+		};
+
+		var alterConfig = function(args) {
+			config = $.extend({}, config, args);
+		};
+
         var public = {
+        	alterConfig: alterConfig,
             init: _init,
             logEvent : logThis,
             info : info,
@@ -120,7 +188,7 @@
             fatal : fatal,
             startup : startup,
             log : log
-        };
+        }; 
 
         return public;
 
@@ -141,7 +209,6 @@
     }();
 
 	// Functions
-
     console.log('%cALLOY.Logging Started', 'color: green;');
 	ALLOY.Logger.init();
 })();
