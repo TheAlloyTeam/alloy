@@ -21,6 +21,7 @@
             this.$element.on("click, tap", function() {
             	this.onEvent();
             });
+            ALLOY.Logger.startup('ALLOY.Ink Started');
     	},
 
         onEvent: function() {
@@ -51,6 +52,6 @@
     };
 
     // Autostart Plugin
+    ALLOY.Logger.trace('ALLOY.Ink Initialized');
     $(".button").ink();
-    console.log('%cALLOY.Ink Started', 'color: green;');
 })();

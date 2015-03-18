@@ -112,6 +112,7 @@
 
 		var logToConsole =  function(event) {
 			var colour = config.color[event.level];
+			var number = config.number[event.number];
 			console.log(event.timeStr() + " - %c" + event.message, "color: " + colour);
 		};
 
@@ -153,6 +154,24 @@
 			logThis("OFF", message);
 		};
 
+		var LogEvent = function (level, message) {
+			this.time = new Date();
+			this.message = message;
+			this.level = level;
+			this.timeStr = function() {
+				return this.time.getFullYear() + "-" + prependZero(this.time.getMonth() + 1) + "-" + prependZero(this.time.getDate()) + " " + prependZero(this.time.getHours() + 1) + ":" + prependZero(this.time.getMinutes()) + ":" + prependZero(this.time.getSeconds());
+			};
+		};
+
+		var prependZero = function (val) {
+			if (val <= 9) {
+				return "0" + val;
+			}
+			else {
+				return val;
+			}
+		};
+
 		/* Retrieval of browser details from: http://stackoverflow.com/a/16938481 */
 		var getBrowserDetails = function() {
 			var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
@@ -191,24 +210,8 @@
         }; 
 
         return public;
-
-		function LogEvent(level, message) {
-			this.time = new Date();
-			this.message = message;
-			this.level = level;
-			this.timeStr = function() {
-				return this.time.getFullYear() + "-" + prependZero(this.time.getMonth() + 1) + "-" + prependZero(this.time.getDate()) + " " + prependZero(this.time.getHours() + 1) + ":" + prependZero(this.time.getMinutes()) + ":" + prependZero(this.time.getSeconds());
-			};
-
-			function prependZero(val) {
-				if (val <= 9) { return "0" + val; } 
-				else { return val; }
-			}
-		}
-
     }();
 
-	// Functions
-    console.log('%cALLOY.Logging Started', 'color: green;');
 	ALLOY.Logger.init();
+    ALLOY.Logger.startup('ALLOY.Logging Started');
 })();

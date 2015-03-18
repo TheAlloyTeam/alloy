@@ -11,7 +11,7 @@
 // ---------------------------------------------------- 
 
 @TOOLTIP-Color:                 @COLOR-White;
-@TOOLTIP-BgColor:               rgba (0, 0, 0, 0.9);
+@TOOLTIP-BgColor:               @COLOR-Grey;
 
 // BASE
 // ----------------------------------------------------
@@ -23,44 +23,38 @@
 [data-tooltip]:after,
 [data-tooltip]:before {
     position: absolute;
-    bottom: 90%;
+    bottom: -100px;
     left: -9999px;
     opacity: 0;
+    line-height: 1;
     z-index: @Z-INDEX-Level3;
-    ._margin-bottom (12);
-
-    -webkit-transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
-    -moz-transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
-    transition: bottom 0.25s ease-in-out, opacity 0.25s ease-in-out;
+    ._transition (opacity, 0.1s);
 }
 
 [data-tooltip]:after {
-    content: attr(data-tooltip);
-    padding: 0.5em;
-    text-align: center;
     color: @TOOLTIP-Color;
-    background: @TOOLTIP-BgColor;
+    background-color: @TOOLTIP-BgColor;
+    content: attr(data-tooltip);
+    text-align: center;
     white-space: now;
-    text-shadow: 0 0 5px @COLOR-Black;
-    ._font-size (12);
-    ._border-radius (5);
-    ._depth-1 ();
+    ._border-radius (2);
+    ._padding (@TYPE-LineHeight/2);
 }
 
 [data-tooltip].tooltip-large:after {
-    min-width: 150px;
+    min-width: 200px;
     white-space: normal;
 }
 
-[data-tooltip]:before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-width: 6px;
-    border-style: solid;
-    border-color: @TOOLTIP-BgColor transparent transparent transparent;
-    margin-bottom: 0;
-}
+// [data-tooltip]:before {
+//     content: "";
+//     width: 0;
+//     height: 0;
+//     border-width: 6px;
+//     border-style: solid;
+//     border-color: @TOOLTIP-BgColor transparent transparent transparent;
+//     margin-bottom: 0;
+// }
 
 [data-tooltip]:hover:after,
 [data-tooltip]:hover:before {
@@ -69,7 +63,7 @@
 
 [data-tooltip]:hover:after,
 [data-tooltip]:hover:before {
-    bottom: 100%;
+    bottom: -44px;
     left: 0;
 }
 [data-tooltip]:hover:before {
