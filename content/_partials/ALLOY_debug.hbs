@@ -1,0 +1,33 @@
+<style>
+   .debugger {
+        position: absolute;
+        top: 0;
+        z-index: 9999;
+        background-color: navajowhite;
+        opacity: 0.65;
+        pointer-events: none;
+    }
+ 
+        .debugger ul {
+            padding: 0;
+            margin: 0;
+        }
+</style>
+
+<div class="debugger">
+    <h4>Debugger</h4>
+    <ul id="debugger__list">            
+    </ul>
+</div>
+
+<script type="text/javascript">
+    require(['logging'], function() {
+        ALLOY.Logger.alterConfig({ 
+            logToScreenFunc : function(ev) {
+                $("#debugger__list").append(
+                    "<li>" + ev.timeStr() + " - " + ev.message + "</li>"
+                );
+            }
+        });
+    });
+</script>

@@ -15,6 +15,8 @@
 @TOAST-Success:             @COLOR-Green;
 @TOAST-Warn:                @COLOR-Orange;
 @TOAST-Danger:              @COLOR-Red;
+@TOAST-Anim:                    @ANIM-Curve;
+
 
 // BASE
 // ----------------------------------------------------
@@ -22,115 +24,163 @@
 .toast {
     background-color: @TOAST-BgColor;
     color: @TOAST-Color;
-    position:relative;
+    position: relative;
     max-width: 320px;
     ._padding (@TYPE-FontSize);
 
     + .toast {
         ._margin-top(10);
     }
+
+    /***** Added by AD for example toast *****/
+    &.popup {
+        width: 320px;
+        position: fixed;
+        bottom: -100px;
+        right: 250px;
+        z-index: 999;
+        ._transition (bottom, 2s, @ACCORDION-Anim);
+
+        &.active {
+            bottom: 250px;
+            right: 250px;
+        }
+
+        &.inactive {
+        }
+    }
+    /***** End of added by AD *****/
+    
     &.info {
         background-color: @TOAST-Info;
 
         .toast__close {
-            color: lighten(@TOAST-Info, 20);
+            color: lighten(@TOAST-Info, 20%);
 
-            &:link,&:visited {
-                color: lighten(@TOAST-Info, 20);
+            &:link,
+            &:visited {
+                color: lighten(@TOAST-Info, 20%);
             }
-            &:hover,&:focus {
-                color: darken(@TOAST-Info, 20);
+
+            &:hover,
+            &:focus {
+                color: darken(@TOAST-Info, 20%);
             }
+
             &:active {
-                color: darken(@TOAST-Info, 40);
+                color: darken(@TOAST-Info, 40%);
             }
         }
     }
 
     &.success {
         background-color: @TOAST-Success;
+        
         .toast__close{
-            color: lighten(@TOAST-Success, 20);
+            color: lighten(@TOAST-Success, 20%);
 
-            &:link,&:visited {
-                color: lighten(@TOAST-Success, 20);
+            &:link,
+            &:visited {
+                color: lighten(@TOAST-Success, 20%);
             }
-            &:hover,&:focus {
-                color: darken(@TOAST-Success, 20);
+
+            &:hover,
+            &:focus {
+                color: darken(@TOAST-Success, 20%);
             }
+
             &:active {
-                color: darken(@TOAST-Success, 40);
+                color: darken(@TOAST-Success, 40%);
             }
         }
     }
 
     &.warn {
         background-color: @TOAST-Warn;
+        
         .toast__close{
-            color: lighten(@TOAST-Warn, 20);
+            color: lighten(@TOAST-Warn, 20%);
 
-            &:link,&:visited {
-                color: lighten(@TOAST-Warn, 20);
+            &:link,
+            &:visited {
+                color: lighten(@TOAST-Warn, 20%);
             }
-            &:hover,&:focus {
-                color: darken(@TOAST-Warn, 20);
+
+            &:hover,
+            &:focus {
+                color: darken(@TOAST-Warn, 20%);
             }
+
             &:active {
-                color: darken(@TOAST-Warn, 40);
+                color: darken(@TOAST-Warn, 40%);
             }
         }
     }
 
     &.danger {
         background-color: @TOAST-Danger;
+        
         .toast__close {
-            color: lighten(@TOAST-Danger, 20);
+            color: lighten(@TOAST-Danger, 20%);
 
-            &:link,&:visited {
-                color: lighten(@TOAST-Danger, 20);
+            &:link,
+            &:visited {
+                color: lighten(@TOAST-Danger, 20%);
             }
-            &:hover,&:focus {
-                color: darken(@TOAST-Danger, 20);
+
+            &:hover,
+            &:focus {
+                color: darken(@TOAST-Danger, 20%);
             }
+
             &:active {
-                color: darken(@TOAST-Danger, 40);
+                color: darken(@TOAST-Danger, 40%);
             }
         }
     }
 }
 
 .toast__icon {
-    float:left;
-    ._padding-top(5);
-    ._margin-right(10);
+    float: left;
+    ._padding-top (5);
+    ._margin-right (10);
 }
 
-.toast, .toast__content {
-    overflow:hidden;
-    _overflow:visible;
-    zoom:1;
+.toast,
+.toast__content {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
 }
 
 .toast__content {
-    ._padding-right(20);
+    ._padding-right (20);
 }
 
 .toast__close {
-    color: lighten(@TOAST-BgColor, 20);
-    font-weight:bold;
-    text-decoration:none;
-    float:right;
-    display:block;
+    color: lighten(@TOAST-BgColor, 20%);
+    font-weight: bold;
+    text-decoration: none;
+    float: right;
+    display: block;
     font-size: 1.75em;
-    line-height:1;
+    line-height: 1;
 
-    &:link,&:visited {
-        color: lighten(@TOAST-BgColor, 20);}
-    &:hover,&:focus {
-        color: darken(@TOAST-BgColor, 20);}
+    &:link,
+    &:visited {
+        color: lighten(@TOAST-BgColor, 20%);
+    }
+
+    &:hover,
+    &:focus {
+        color: darken(@TOAST-BgColor, 20%);
+    }
+
     &:active {
-        color: darken(@TOAST-BgColor, 40);}
+        color: darken(@TOAST-BgColor, 40%);
+    }
 }
+
 .toast__progress {}
 
 } .toast-styles();

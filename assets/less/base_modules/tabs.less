@@ -8,11 +8,11 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@TABS-TrayBgColor:          @COLOR-Cyan;
+@TABS-TrayBgColor:          spin(@COLOR-Base, 180);
 @TABS-Color:                @COLOR-White;
-@TABS-BgColor:              @COLOR-Cyan;
+@TABS-BgColor:              @TABS-TrayBgColor;
 @TABS-HoverColor:           @COLOR-White;
-@TABS-HoverBgColor:         darken(@TABS-BgColor, 10%);
+@TABS-HoverBgColor:         lighten(@TABS-BgColor, 5%);
 @TABS-ActiveColor:          @TYPE-FontColor;
 @TABS-ActiveBgColor:        @COLOR-White;
 

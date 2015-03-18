@@ -9,7 +9,7 @@
 // ----------------------------------------------------
 
 @ACCORDION-TitleColor:				@COLOR-White;
-@ACCORDION-TitleBgColor:			@COLOR-Cyan;
+@ACCORDION-TitleBgColor:			spin(@COLOR-Base, 180);
 @ACCORDION-BodyColor:				@COLOR-White;
 @ACCORDION-BodyBgColor:				@COLOR-White;
 
@@ -38,7 +38,7 @@
   	}
 
   	&:hover {
-  		background-color: darken(@ACCORDION-TitleBgColor, 10%);
+  		background-color: lighten(@ACCORDION-TitleBgColor, 5%);
   	}
 
     .icon {
