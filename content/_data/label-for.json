@@ -1,7 +1,7 @@
 {
     "item": {
         "modifier": "hot",
-        "for": "input"
+        "for": "unique123"
     },
     "content": {
         "text": "Label for Input"

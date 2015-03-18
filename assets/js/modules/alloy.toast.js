@@ -12,7 +12,7 @@
         that: {},
 
         defaults: {
-            /***** Worth bearing in mind that mustache.js works quite differently to standard interpretations of handlebars so doesn't need if or each calls *****/
+            /***** Worth bearing in mind that mustache.js works quite differently to some other interpretations of handlebars so doesn't need if or each calls - worth changing version? *****/
             template: 
                     '<div class="toast popup{{#item.modifier}} toast--{{item.modifier}}{{/item.modifier}}{{#item.status}} {{item.status}}{{/item.status}}">' +
                         '<a href="#" class="toast__close">&times;</a>' +
@@ -44,7 +44,7 @@
 
             setTimeout(function() { $toastModifier.addClass(that.config.classes.active); });
             var hideTimeout
-            if (this.config.toggleInterval > 0) { hideTimeout = setTimeout(that._hideToast, that.config.toggleInterval); }
+            if (this.config.toggleInterval > 0) { hideTimeout = setTimeout(function() {that._hideToast($toastModifier)}, that.config.toggleInterval); }
             $closeButton.one('click', function(e) {
                 e.preventDefault();
                 if (hideTimeout != undefined) { clearTimeout(hideTimeout); }

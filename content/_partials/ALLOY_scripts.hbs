@@ -1,10 +1,22 @@
 
 <!-- JavaScript -->
 <script data-main="app/main" src="{{ assets }}/js/libs/require/require.js"></script>
+<!-- GitHub Buttons -->
+<script async defer id="github-bjs" src="//buttons.github.io/buttons.js"></script>
 
 {{#if js-accordion}}
 <script type="text/JavaScript">
-	require(["accordion"], function() { });
+	require(["accordion"], function() {
+		$(".accordion").accordion({
+			onChangeFunc: function($title, $content, toOpen) {
+				if (toOpen) {
+                	$title.find(".icon").addClass("icon--round53").removeClass("icon--round57");
+                } else {
+                	$title.find(".icon").addClass("icon--round57").removeClass("icon--round53");
+                }
+			}
+		});
+	});
 </script>
 {{/if}}
 
@@ -19,24 +31,8 @@
  	require(["toast"], function() {
  		$(".toast").click(function(e) {
  			e.preventDefault();
- 			$(".w--main").toast({
-				"item": {
-					"modifier": "",
-					"status": "success"
-				},
-	    		"content": {
-	        		"text": "You did it! Its all fixed!",
-	        		"icon": [{
-	            		"item": {
-	                		"modifier": "tick7",
-	                		"size": "xlarge"
-	            		},
-	            		"content": {
-		                	"title": ""
-	        			}
-	        		}]
-	    		}
-			});
+ 			var json = $(this).data("toast");
+ 			$(".w--main").toast(json);
  		}); 		
  	});
 </script>

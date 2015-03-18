@@ -1,0 +1,88 @@
+.focus-styles() when not (@MODULE-Focus) { }
+.focus-styles() when (@MODULE-Focus) {
+
+/* =========================================================================
+// FOCUS
+// =======================================================================*/
+
+// COLOURS
+// ----------------------------------------------------
+
+@FOCUS-HeadColor:                 @COLOR-White;
+@FOCUS-HeadBgColor:               rgba(0, 0, 0, 0.1);
+@FOCUS-BodyColor:                 @COLOR-White;
+@FOCUS-BodyBgColor:               rgba(0, 0, 0, 0.1);
+@FOCUS-FootColor:                 @TYPE-FontColor;
+@FOCUS-FootBgColor:               rgba(0, 0, 0, 0.1);
+
+// BASE
+// ----------------------------------------------------
+
+.focus {
+    background-image: url('/assets/img/bg.jpg');
+    background-size: cover;
+    display: block;
+    max-width: 320px;
+    ._margin (0, 0, @TYPE-LineHeight, 0);
+    ._clearfix();
+
+    -ms-behavior: url('/assets/js/modules/backgroundsize.min.htc');
+}
+
+.focus__head {
+    color: @FOCUS-HeadColor;
+    background-color: @FOCUS-HeadBgColor;
+    ._padding (@TYPE-FontSize);
+}
+
+.focus__title {
+    color: @FOCUS-HeadColor;
+    line-height: 1;
+    margin: 0;
+}
+
+.focus__body {
+    color: @FOCUS-BodyColor;
+    background-color: @FOCUS-BodyBgColor;
+    ._padding (0, @TYPE-FontSize);
+}
+
+.focus__foot {
+    color: @FOCUS-FootColor;
+    background-color: @FOCUS-FootBgColor;
+    ._padding (@TYPE-FontSize);
+}
+
+.focus__head,
+.focus__body,
+.focus__foot {
+    display: block;
+    text-align: center;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+} .focus-styles();

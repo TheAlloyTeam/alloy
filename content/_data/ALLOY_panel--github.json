@@ -1,0 +1,29 @@
+{
+    "item": {
+        "modifier": ""
+    },
+    "content": {
+        "title": "Keep your eye on us!",
+        "body": "<p>Why not keep track of the project on GitHub</p><a class=\"github-button\" href=\"https://github.com/gfinbow\" data-count-href=\"/gfinbow/followers\" data-count-api=\"/users/gfinbow#followers\">Follow @gfinbow</a> <a class=\"github-button\" href=\"https://github.com/gfinbow/alloy\" data-icon=\"octicon-eye\" data-count-href=\"/gfinbow/alloy/watchers\" data-count-api=\"/repos/gfinbow/alloy#subscribers_count\">Watch</a>"
+    },
+    "actions": [
+    {
+        "buttons": [
+        {
+            "item": {
+                "modifier": "",
+                "size": "",
+                "disabled": "",
+                "target": "_blank",
+                "block": ""
+            },
+            "content": {
+                "text": "View the Repo",
+                "title": "View the ALLOY repository",
+                "url": "https://github.com/gfinbow/alloy"
+            }
+        }
+        ]
+    }
+    ]
+}

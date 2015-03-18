@@ -1,6 +1,7 @@
 {
     "item": {
-        "modifier": ""
+        "modifier": "",
+        "status": ""
     },
     "content": {
         "text": "42"

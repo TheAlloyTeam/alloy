@@ -1,0 +1,23 @@
+{{#this}}
+<div class="focus{{#if item.modifier}} focus--{{item.modifier}}{{/if}}{{#if item.depth}} d{{item.depth}}{{/if}}">
+	{{#if content.title}}
+	<div class="focus__head">
+		<h4 class="focus__title">{{content.title}}</h4>
+	</div>
+	{{/if}}
+	<div class="focus__body rte">{{{content.body}}}</div>
+	{{#if actions}}
+	<div class="focus__foot">
+		{{#each actions}}
+			{{#if buttons}}
+				{{#each buttons}}
+					{{#this}}
+					{{> button }}
+					{{/this}}
+				{{/each }}
+			{{/if}}
+		{{/each }}
+	</div>
+	{{/if}}
+</div>
+{{/this}}
