@@ -23,8 +23,9 @@
                 'closing'   : 'closing',                // The class given to accordion elements in the process of closing
                 'disabled'  : 'disabled'                // The class given to accordion elements that cannot have their state altered
             },
-            transitionTime  : 350,                     // The amount of time it takes to transition from open to closed, and vice versa
-            titleIndexAttr  : 'data-accordionindex'     // The attribute on the title to use that matches up to the content id (prefix with 'data-' if applicable)
+            transitionTime  : 350,                      // The amount of time it takes to transition from open to closed, and vice versa
+            titleIndexAttr  : 'data-accordionindex',    // The attribute on the title to use that matches up to the content id (prefix with 'data-' if applicable)
+            onChangeFunc    : undefined                 // Custom callback function to handle functionality on accordion change
     	},
 
         // Set aria-multiselectable to true on the accordion element in order to turn on multi select
@@ -37,7 +38,7 @@
 
             that = this;
 
-            // Init all elements to closed (or open to start off open).
+            // Init all elements to closed (or open to start off open)
             this.$element.find("." + this.config.classes.title).each(function() { 
                 if ($(this).hasClass(that.config.classes.opened)) { that._handleElement(this, true); } else { that._handleElement(this, false); }
             });
@@ -81,8 +82,7 @@
             var $title = $(el);
             var $content = that.$element.find(that._getTitleIndex(el));
 
-
-            // Set our variables depending on if we are opening or closing this element.
+            // Set our variables depending on if we are opening or closing this element
             if (toOpen) {
                 $content.attr("aria-hidden", "false");
 
@@ -99,7 +99,10 @@
                 toEnd = that.config.classes.closed;                
             }
 
-            // If transitions turned on, then transition to end go to end, or transitions off so just go to end.             
+            // Trigger change event
+            if (that.config.onChangeFunc !== undefined) { that.config.onChangeFunc($title, $content, toOpen); }
+
+            // If transitions turned on, then transition to end go to end, or transitions off so just go to end          
             if (that.config.transitionTime > 0) {                
                 that._handleTransition($title, $content, fromTran, fromEnd, toTran, toEnd);
             } else {
@@ -160,5 +163,5 @@
 
     // Autostart Plugin
     ALLOY.Logger.trace('ALLOY.Accordion Initializing');
-    $(".accordion").accordion();
+    //$(".accordion").accordion();
 })();

@@ -1,0 +1,30 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "disabled": "",
+        "target": "",
+        "block": ""
+    },
+    "content": {
+        "type": "Submit",
+        "text": "Button",
+        "title": "Button",
+        "icon": [{
+            "item": {
+                "modifier": "",
+                "size": ""
+            },
+            "content": {
+                "title": ""
+            }
+        }]
+    },
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

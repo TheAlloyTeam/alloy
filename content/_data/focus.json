@@ -1,0 +1,21 @@
+{
+    "item": {
+        "modifier": "",
+        "depth": 5
+    },
+    "content": {
+        "title": "Title",
+        "body": "<p>Body</p>"
+    },
+    "actions": [
+    {
+        "buttons": [
+        {
+            "content": {
+                "text": "Footer",
+                "title": "Footer",
+                "url": ""
+            }
+    	}]
+    }]
+}
