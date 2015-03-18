@@ -22,6 +22,7 @@
     background-image: url('/assets/img/bg.jpg');
     background-size: cover;
     display: block;
+    max-width: 320px;
     ._margin (0, 0, @TYPE-LineHeight, 0);
     ._clearfix();
 
@@ -31,7 +32,7 @@
 .focus__head {
     color: @FOCUS-HeadColor;
     background-color: @FOCUS-HeadBgColor;
-    //._border-radius-custom (@STYLE-BorderRadius, @STYLE-BorderRadius, 0, 0);
+    ._padding (@TYPE-FontSize);
 }
 
 .focus__title {
@@ -43,19 +44,20 @@
 .focus__body {
     color: @FOCUS-BodyColor;
     background-color: @FOCUS-BodyBgColor;
+    ._padding (0, @TYPE-FontSize);
 }
 
 .focus__foot {
     color: @FOCUS-FootColor;
     background-color: @FOCUS-FootBgColor;
-    //._border-radius-custom (0, 0, @STYLE-BorderRadius, @STYLE-BorderRadius);
+    ._padding (@TYPE-FontSize);
 }
 
 .focus__head,
 .focus__body,
 .focus__foot {
     display: block;
-    ._padding (@TYPE-FontSize);
+    text-align: center;
 
     &:last-child {
         margin-bottom: 0;
