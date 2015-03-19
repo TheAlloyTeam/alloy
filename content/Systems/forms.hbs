@@ -28,28 +28,15 @@ validation
  disabled
 status
 -->
-{{! form__row form__row-inline}}
 
 					<form id="form-example-inline" class="form inline" role="" method="">
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Form Inline</legend>
 
-							<div class="form__row">
+							{{> form__row form__row-inline}}
 
-								{{> form__label label-for }}
-								{{> input__text input__text }}
+							{{> button button-submit }}
 
-								<label class="form__label" for="inline-input"><span>Text Label</span></label>
-								<input type="password" id="inline-input" role="textbox" class="form__input" placeholder="Text Placeholder">
-								{{> form__asterisk }}
-
-								{{> button button-submit }}
-
-
-
-
-
-							</div>
 						</fieldset>
 					</form>
 
