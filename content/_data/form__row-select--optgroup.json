@@ -1,0 +1,57 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "for": "formrow-selectopt-1"
+    },
+    "content": {
+        "text": "Label for select, with option group",
+        "type": [{
+            "select": [{
+                "item": {
+                    "modifier": "",
+                    "multiple": "",
+                    "required": "",
+                    "disabled": "",
+                    "id": "formrow-selectopt-1",
+                    "form": "",
+                    "name": "",
+                    "size": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                
+                "content": {
+                    "select__optgroup": [{
+                        "item": {
+                            "label": "OptionGroup Label"
+                        },
+                        "content": {
+                            "select__option": [{
+                                "item": {
+                                    "value": "",
+                                    "selected": "",
+                                    "disabled": ""
+                                },
+                                "content": {
+                                    "label": "",
+                                    "text": "Option Text"
+                                }
+                            }]
+                        }
+                    }]
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

@@ -2,8 +2,8 @@
 <select
     class="form__input{{#if item.modifier}} form__input--{{item.modifier}}{{/if}}"
     {{#if item.multiple}} multiple="multiple"{{/if}}
-    {{#if item.required}} required="required"{{/if}}
-    {{#if item.disabled}} disabled="disabled"{{/if}}
+    {{#if item.required}} required="required" aria-required="true"{{/if}}
+    {{#if item.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
     {{#if item.id}} id="{{item.id}}"{{/if}}
     {{#if item.form}} form="{{item.form}}"{{/if}}
     {{#if item.name}} name="{{item.name}}"{{/if}}

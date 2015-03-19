@@ -1,0 +1,49 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "for": "formrow-select-1"
+    },
+    "content": {
+        "text": "Label for select",
+        "type": [{
+            "select": [{
+                "item": {
+                    "modifier": "",
+                    "multiple": "",
+                    "required": "",
+                    "disabled": "",
+                    "id": "formrow-select-1",
+                    "form": "",
+                    "name": "",
+                    "size": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "select__option": [{
+                        "item": {
+                            "value": "",
+                            "selected": "",
+                            "disabled": ""
+                        },
+                        "content": {
+                            "label": "Option Label",
+                            "text": "Option Text"
+                        }
+                    }]
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

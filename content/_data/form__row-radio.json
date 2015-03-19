@@ -1,0 +1,98 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": ""
+    },
+    "content": {
+        "text": "Label for the radio group",
+        "group": [{
+            "item": {
+                "modifier": "",
+                "vertical": ""
+            },
+            "content": {
+                "type": [{
+                    "item": {
+                        "required": "",
+                        "disabled": "",
+                        "for": "formrow-radio-1"
+                    },
+                    "content": {
+                        "text": "Label for the group__item1"
+                    },
+                    "radio": [{
+                        "item": {
+                            "modifier": "",
+                            "checked": "",
+                            "required": "",
+                            "disabled": "",
+                            "id": "formrow-radio-1",
+                            "name": "formrow-radio-1",
+                            "value": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {}
+                    }]
+                },
+                {
+                    "item": {
+                        "required": "",
+                        "disabled": "",
+                        "for": "formrow-radio-2"
+                    },
+                    "content": {
+                        "text": "Label for the group__item2"
+                    },
+                    "radio": [{
+                        "item": {
+                            "modifier": "",
+                            "checked": "",
+                            "required": "",
+                            "disabled": "",
+                            "id": "formrow-radio-2",
+                            "name": "formrow-radio-1",
+                            "value": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {}
+                    }]
+                },
+                {
+                    "item": {
+                        "required": "",
+                        "disabled": "",
+                        "for": "formrow-radio-3"
+                    },
+                    "content": {
+                        "text": "Label for the group__item3"
+                    },
+                    "radio": [{
+                        "item": {
+                            "modifier": "",
+                            "checked": "",
+                            "required": "",
+                            "disabled": "",
+                            "id": "formrow-radio-3",
+                            "name": "formrow-radio-1",
+                            "value": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {}
+                    }]
+                }]
+            }
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

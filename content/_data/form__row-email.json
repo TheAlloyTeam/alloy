@@ -1,0 +1,43 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "for": "formrow-email-1"
+    },
+    "content": {
+        "text": "Label for email input",
+        "type": [{
+            "email": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "multiple": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "id": "formrow-email-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "e.g. email@placeholder.com",
+                    "value": ""
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

@@ -17,6 +17,8 @@
     },
     "content": {
         "placeholder": "Text Placeholder",
-        "value": ""
+        "value": "",
+        "prefix": "",
+        "postfix": ""
     }
 }
