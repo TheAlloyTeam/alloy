@@ -1,0 +1,168 @@
+.flash-styles() when not (@MODULE-Flash) { }
+.flash-styles() when (@MODULE-Flash) {
+
+/* =========================================================================
+// FLASH
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+@FLASH-Color:               @COLOR-White;
+@FLASH-BgColor:             @COLOR-Grey;
+
+@FLASH-Info:                @COLOR-Blue;
+@FLASH-Success:             @COLOR-Green;
+@FLASH-Warn:                @COLOR-Orange;
+@FLASH-Danger:              @COLOR-Red;
+@FLASH-Anim:                @ANIM-Curve;
+
+
+// BASE
+// ----------------------------------------------------
+
+.flash {
+    background-color: @FLASH-BgColor;
+    color: @FLASH-Color;
+    position: relative;
+    ._padding ( @TYPE-LineHeight/2, @TYPE-FontSize);
+
+    + .flash {
+        ._margin-top(10);
+    }
+
+    
+    &.info {
+        background-color: @FLASH-Info;
+
+        .flash__close {
+            color: lighten(@FLASH-Info, 20%);
+
+            &:link,
+            &:visited {
+                color: lighten(@FLASH-Info, 20%);
+            }
+
+            &:hover,
+            &:focus {
+                color: darken(@FLASH-Info, 20%);
+            }
+
+            &:active {
+                color: darken(@FLASH-Info, 40%);
+            }
+        }
+    }
+
+    &.success {
+        background-color: @FLASH-Success;
+        
+        .flash__close{
+            color: lighten(@FLASH-Success, 20%);
+
+            &:link,
+            &:visited {
+                color: lighten(@FLASH-Success, 20%);
+            }
+
+            &:hover,
+            &:focus {
+                color: darken(@FLASH-Success, 20%);
+            }
+
+            &:active {
+                color: darken(@FLASH-Success, 40%);
+            }
+        }
+    }
+
+    &.warn {
+        background-color: @FLASH-Warn;
+        
+        .flash__close{
+            color: lighten(@FLASH-Warn, 20%);
+
+            &:link,
+            &:visited {
+                color: lighten(@FLASH-Warn, 20%);
+            }
+
+            &:hover,
+            &:focus {
+                color: darken(@FLASH-Warn, 20%);
+            }
+
+            &:active {
+                color: darken(@FLASH-Warn, 40%);
+            }
+        }
+    }
+
+    &.danger {
+        background-color: @FLASH-Danger;
+        
+        .flash__close {
+            color: lighten(@FLASH-Danger, 20%);
+
+            &:link,
+            &:visited {
+                color: lighten(@FLASH-Danger, 20%);
+            }
+
+            &:hover,
+            &:focus {
+                color: darken(@FLASH-Danger, 20%);
+            }
+
+            &:active {
+                color: darken(@FLASH-Danger, 40%);
+            }
+        }
+    }
+}
+
+.flash__icon {
+    float: left;
+    line-height: 1;
+    ._padding-top (8);
+    ._margin-right (10);
+}
+
+.flash,
+.flash__content {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+}
+
+.flash__content {
+    ._padding (2, 20, 0, 0);
+}
+
+.flash__close {
+    color: lighten(@FLASH-BgColor, 20%);
+    font-weight: bold;
+    text-decoration: none;
+    float: right;
+    display: block;
+    font-size: 1.75em;
+    line-height: 1;
+    ._padding-top (2);
+
+    &:link,
+    &:visited {
+        color: lighten(@FLASH-BgColor, 20%);
+    }
+
+    &:hover,
+    &:focus {
+        color: darken(@FLASH-BgColor, 20%);
+    }
+
+    &:active {
+        color: darken(@FLASH-BgColor, 40%);
+    }
+}
+
+
+} .flash-styles();
