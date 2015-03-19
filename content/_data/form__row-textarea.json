@@ -1,0 +1,43 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "for": "formrow-textarea-1"
+    },
+    "content": {
+        "text": "Label for textarea",
+        "type": [{
+            "textarea": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "id": "formrow-textarea-1",
+                    "name": "",
+                    "tabindex": "",
+                    "accesskey": "",
+                    "cols": "",
+                    "rows": "6",
+                    "maxlength": "",
+                    "minlength": "",
+                    "wrap": ""
+                },
+                "content": {
+                    "placeholder": "Textarea Placeholder",
+                    "value": ""
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

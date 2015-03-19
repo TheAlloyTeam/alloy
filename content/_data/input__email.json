@@ -16,7 +16,7 @@
         "accesskey": ""
     },
     "content": {
-        "placeholder": "Email Placeholder",
+        "placeholder": "e.g. email@placeholder.com",
         "value": ""
     }
 }

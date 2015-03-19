@@ -1,13 +1,6 @@
 /* ==========================================================================
 // conf.js
 // =========================================================================*/
-
-// Namespace Setup
-var ALLOY = ALLOY || {};
-
-// Env Setup
-var DEBUG = true;
-window.DEBUG = DEBUG;
  
 // Main Require configuration
 
