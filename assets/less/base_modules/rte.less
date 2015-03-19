@@ -6,14 +6,6 @@
 // =========================================================================*/
 
 .rte {
-    .left {
-        ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, 0);
-    }
-
-    .right {
-        ._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
-    }
-    
     ol,
     ul {
         ._padding-left (@TYPE-LineHeight);
@@ -87,6 +79,121 @@
         }
     }
 
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) {
+
+    .rte {
+        .left,
+        .left--wide {
+            float: left;
+            ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, 0);
+        }
+
+        .right,
+        .right--wide {
+            float: right;
+            ._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
+        }
+    }
+}
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Large) {
+
+    .rte {
+        .left--wide {
+            ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, 0);
+        }
+
+        .right--wide {
+            ._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
+        }
+
+        blockquote {
+            &.left,
+            &.right,
+            &.left--wide,
+            &.right--wide {
+                ._margin (0, 0, @TYPE-LineHeight, 0);
+            }
+        }
+    }
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Larger-min) {
+
+    .rte {
+        .left,
+        .right,
+        .left--wide,
+        .right--wide {
+            max-width: 40%;
+        }
+
+        .left--wide {
+            ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, -100);
+        }
+
+        .right--wide {
+            ._margin (0, -100, @TYPE-LineHeight, @TYPE-LineHeight);
+        }
+
+        .block {
+            width: 100%;
+        }
+
+        .block--left {
+            ._margin-left (-100);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .block--right {
+            ._margin-right (-100);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .block--full {
+            ._margin (0, -100, @TYPE-LineHeight, -100);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        blockquote {
+            &.left,
+            &.left--wide {
+                border-left: none;
+                border-right: 5px solid @COLOR-GreyLight;
+                ._padding (0, @TYPE-LineHeight, 0, 0);
+            }
+
+            &.left {                
+                ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, 0);
+            }
+
+            &.right {
+                ._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
+            }
+
+            &.full {
+                ._margin (0, -100, @TYPE-LineHeight, -100);
+            }
+        }
+    }
 }
 
 } .rte-styles();
