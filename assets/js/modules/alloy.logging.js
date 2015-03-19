@@ -20,7 +20,7 @@
 				'OFF': "grey"
 			},
 
-			'number': { 
+			'number': {
 				'ALL': 0,
 				'START': 10,
 				'TRACE': 5000,
