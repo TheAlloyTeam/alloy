@@ -5,6 +5,7 @@ nav-title: "Toasts"
 nav-text: "Toasts"
 nav-variant: "toasts"
 page-category: "components"
+js-toast: true
 ---
 
 <main class="w w--main">
@@ -48,11 +49,22 @@ page-category: "components"
 				        {{> toast toast--warn }}
 				        {{> toast toast--danger }}
 				        {{> toast toast--success }}
-
 				        <!-- end of code -->
 			        </div>
 
 		        </section>
+
+<!-- example -->
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Example: Toast</h2>
+		            </header>
+		            	<a href="#" class="button toast" data-toast='{"item": {"modifier": "","status": "success"}, "content": {"text": "You did it! A toast that pops up from the bottom of the page!","icon": [{"item": {"modifier": "tick7","size": "xlarge"},"content": {"title": "" }}]}}'>Click here to see a live toast</a>
+		            	<!-- end of code -->
+			        </div>
+
+		        </section>
+
 
 <!-- code -->
 

@@ -26,6 +26,18 @@
 </script>
 {{/if}}
 
+{{#if js-toast}}
+<script type="text/JavaScript">
+ 	require(["toast"], function() {
+ 		$(".toast").click(function(e) {
+ 			e.preventDefault();
+ 			var json = $(this).data("toast");
+ 			$(".w--main").toast(json);
+ 		}); 		
+ 	});
+</script>
+{{/if}}
+
 {{#dev}} 
 <script src="http://localhost:35730/livereload.js"></script>
 {{/dev}}
