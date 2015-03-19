@@ -1,0 +1,18 @@
+{
+    "item": {
+        "modifier": "",
+        "status": "success"
+    },
+    "content": {
+        "text": "I did something",
+        "icon": [{
+            "item": {
+                "modifier": "tick7",
+                "size": "xlarge"
+            },
+            "content": {
+                "title": ""
+            }
+        }]
+    }
+}
