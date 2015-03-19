@@ -15,7 +15,7 @@ require(['jquery', 'fontloader', 'logging', 'core', 'mobile', 'iefixes', 'pretty
 
 if (DEBUG) {
 	requirejs.onError = function (err) {
-	    console.log(log(err.requireType));
+	    console.log(err.requireType);
 	    if (err.requireType === 'timeout') {
 	        console.log('modules: ' + err.requireModules);
 	    }
