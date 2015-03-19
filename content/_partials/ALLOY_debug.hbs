@@ -1,23 +1,24 @@
 <style>
    .debugger {
-        position: absolute;
-        top: 0;
-        z-index: 9999;
         background-color: navajowhite;
-        opacity: 0.65;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+        opacity: 0.7;
         pointer-events: none;
+        padding: 10px;
     }
  
-        .debugger ul {
-            padding: 0;
-            margin: 0;
-        }
+    .debugger ul {
+        padding: 0;
+        margin: 0;
+    }
 </style>
 
 <div class="debugger">
-    <h4>Debugger</h4>
-    <ul id="debugger__list">            
-    </ul>
+    <div><em>Debugger</em></div>
+    <ul id="debugger__list"></ul>
 </div>
 
 <script type="text/javascript">
