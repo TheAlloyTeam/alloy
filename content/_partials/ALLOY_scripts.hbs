@@ -52,7 +52,7 @@
 {{#if js-flash}} 
 <script type="text/JavaScript">
 	require(["flash"], function() {
-		$('[data-flash*]').click(function(e) {
+		$('[data-flash]').click(function(e) {
 			e.preventDefault();
 			var json = $(this).data("flash");
 			$.flash(json);
