@@ -6,8 +6,6 @@
 // ----------------------------------------------------
 
 .article {
-	background-color: @COLOR-YellowLighter;
-
     .lead {
 		._font-size (@TYPE-SIZE-Delta);
     }
@@ -24,12 +22,12 @@
 
 .article__title {
 	margin-bottom: 0;
-	._font-size (@TYPE-SIZE-Alpha);
+	._font-size (@TYPE-SIZE-Omega);
 }
 
 .article__subtitle {
 	margin-bottom: 0;
-	._font-size (@TYPE-SIZE-Epsilon);
+	._font-size (@TYPE-SIZE-Beta);
 }
 
 .article__body {
@@ -43,7 +41,8 @@
 
  .article__aside {
  	background-color: @COLOR-LimeLighter;
- 	._padding (0, @TYPE-LineHeight);
+ 	._padding (@TYPE-LineHeight);
+ 	._font-size (@TYPE-FontSize);
  }
 
 .article__foot {
@@ -140,7 +139,7 @@
 		.article__aside {
 		 	position: absolute;
 		 	top: 0;
-		 	right: -300px;
+		 	right: -310px;
 		 	width: 300px;
 		}
 	}
