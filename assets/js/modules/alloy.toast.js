@@ -3,16 +3,30 @@
     // Acts as a handler for all toasts - bringing them in 
     ALLOY.ToastRack = function() {
 
+        var processing = false;
+
         var toasts = [];
+
+        var queue = [];
 
         var config = {
             $container: $('body'),
+            limit: 5,
             classes: {
                 'toastrack' : 'toastrack'
             }
         };
 
         var addToast = function(t) {
+            if (toasts.length < config.limit && !processing) {
+                _processToast(t);
+            } else {
+                queue.push(t);
+            }
+        };
+
+        var _processToast = function(t) {
+            processing = true;
             _createToastrack();
 
             _showToast(t);
@@ -51,6 +65,7 @@
 
         var _activateToast = function(t) {
             t.$toast.removeClass(t.config.classes.activating).addClass(t.config.classes.active);
+            processing = false;
         };
 
         var _hideToast = function(t) {
@@ -67,6 +82,15 @@
             t.$toast.remove();
             var index = toasts.indexOf(t);
             toasts.splice(index, 1);
+            _pushNext();
+        };
+
+        var _pushNext = function() {
+            if (queue.length > 0) {
+                var t = queue[0];
+                queue.splice(0, 1);
+                _processToast(t);
+            }
         };
 
         var _createToastrack = function() {
