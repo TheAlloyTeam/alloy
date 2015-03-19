@@ -38,12 +38,17 @@
     }
 
     &.popup {
+        margin: 5px;
         position: fixed;
         bottom: -100px;
         right: 20px;
         z-index: @Z-INDEX-Level9;
         ._transition (bottom, 0.5s, @ACCORDION-Anim);
         ._depth-3();
+
+        &.activating {
+            bottom: 20px;
+        }
 
         &.active {
             bottom: 20px;
