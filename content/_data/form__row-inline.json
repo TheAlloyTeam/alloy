@@ -9,13 +9,16 @@
         "group": [{
             "item": {
                 "modifier": "",
-                "vertical": ""
+                "checkbox": "",
+                "vertical": "",
+                "inline": true
             },
             "content": {
                 "type": [{
                     "item": {
                         "required": "",
                         "disabled": "",
+                        "hidden": true,
                         "for": "formrow-inlinetext-1"
                     },
                     "content": {
@@ -48,6 +51,7 @@
                     "item": {
                         "required": "",
                         "disabled": "",
+                        "hidden": true,
                         "for": "formrow-inlinetext-2"
                     },
                     "content": {
