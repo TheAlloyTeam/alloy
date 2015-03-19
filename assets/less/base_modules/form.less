@@ -24,8 +24,8 @@
 .form {
     ._margin (0, 0, @TYPE-LineHeight, 0);
 
-    span.label,
-    .label span {
+    span.form__label,
+    .form__label span {
         &:after {
             content: ":";
         }
@@ -38,9 +38,13 @@
     ._margin (0, 0, @TYPE-LineHeight, 0);
 }
 
-.label  {
+.form__label  {
     cursor: pointer;
     display: block;
+
+    &.disabled {
+        cursor: not-allowed;
+    }
 }
 
 .form__input {
@@ -72,15 +76,15 @@
 }
 
 .form__group {
-    .label,
+    .form__label,
     .form__input {
         width: auto;
         margin-top: 0;
         ._inline-block ();
     }
 
-    span.label,
-    .label span {
+    span.form__label,
+    .form__label span {
         &:after {
             content: "";
         }
@@ -88,7 +92,7 @@
 }
 
 .form__group.vertical {
-    .checkbox__item {
+    .group__item {
         .block;
     }
 }
@@ -163,7 +167,7 @@
 
     .form.inline {
 
-        .label {
+        .form__label {
             ._inline-block;
         }
 
@@ -188,7 +192,7 @@
             top: 0;
         }
 
-        .label {
+        .form__label {
             width: @FORM-OffsetLabel;
             text-align: right;
             margin-right: @FORM-OffsetGap;
@@ -199,7 +203,7 @@
             .block;
             .left;
 
-            .label {
+            .form__label {
                 width: auto;
                 text-align: left;
                 margin-right: auto;

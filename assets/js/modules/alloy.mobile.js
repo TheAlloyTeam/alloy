@@ -8,7 +8,7 @@
 
         var navButton = function() {
             $(".button__mobile--navigation").click(function() {
-                $(".w--navigation").slideToggle(200);
+                $(".w--nav").slideToggle(200);
                 this.classList.toggle( "active" );
             });
         };
