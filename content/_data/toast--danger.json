@@ -4,10 +4,10 @@
         "status": "danger"
     },
     "content": {
-        "text": "Its all going wrong - WE ARE ALL DOOMED!!",
+        "text": "It's all going wrong - WE ARE ALL DOOMED!",
         "icon": [{
             "item": {
-                "modifier": "tick7",
+                "modifier": "round52",
                 "size": "xlarge"
             },
             "content": {

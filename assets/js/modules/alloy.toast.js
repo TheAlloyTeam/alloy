@@ -135,7 +135,7 @@
                 'deactivating': 'inactive'
             },
             transitionInterval: 500,
-            despawnInterval: 2500
+            despawnInterval: 5000
         },
 
         $toast: {},
