@@ -4,10 +4,10 @@
         "status": "success"
     },
     "content": {
-        "text": "You did it! Its all fixed!",
+        "text": "You did it! It's all fixed!",
         "icon": [{
             "item": {
-                "modifier": "tick7",
+                "modifier": "round52",
                 "size": "xlarge"
             },
             "content": {

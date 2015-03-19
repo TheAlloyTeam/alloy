@@ -4,10 +4,10 @@
         "status": ""
     },
     "content": {
-        "text": "I did something",
+        "text": "I did something.",
         "icon": [{
             "item": {
-                "modifier": "tick7",
+                "modifier": "round52",
                 "size": "xlarge"
             },
             "content": {
