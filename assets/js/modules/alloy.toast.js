@@ -43,11 +43,11 @@
             that.$element.append($html);
 
             setTimeout(function() { $toastModifier.addClass(that.config.classes.active); });
-            var hideTimeout
-            if (this.config.toggleInterval > 0) { hideTimeout = setTimeout(function() {that._hideToast($toastModifier)}, that.config.toggleInterval); }
+            var hideTimeout;
+            if (this.config.toggleInterval > 0) { hideTimeout = setTimeout(function() { that._hideToast($toastModifier); }, that.config.toggleInterval); }
             $closeButton.one('click', function(e) {
                 e.preventDefault();
-                if (hideTimeout != undefined) { clearTimeout(hideTimeout); }
+                if (hideTimeout !== undefined) { clearTimeout(hideTimeout); }
                 that._hideToast($toastModifier);
             });
         },
