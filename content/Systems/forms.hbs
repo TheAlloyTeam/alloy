@@ -23,6 +23,10 @@ page-category: "systems"
 
 
 <!--
+
+
+
+
  size
 validation
  disabled
@@ -42,21 +46,39 @@ status
 
 
 					<form id="form-example-search" class="form inline" role="" method="">
-						<fieldset class="form__fieldset">
-						    <legend class="form__legend hide">Form Search</legend>
+						<fieldset class="form__fieldset simple">
+						    <legend class="form__legend hidden-text">Form custom search example</legend>
 
-							{{> form__row form__row-hidden}}
-
-							{{> form__row form__row-search}}
+							{{> form__row form__row-search--inline}}
 
 						</fieldset>
-
-						{{> button button-submit }}
 
 					</form>
 
 
+
+					<form id="form-example-search" class="form inline" role="" method="">
+						<fieldset class="form__fieldset simple">
+						    <legend class="form__legend hidden-text">Form text and submit button</legend>
+
+							{{> form__row form__row-text}}
+
+						</fieldset>
+
+						<fieldset class="form__fieldset simple">
+
+							{{> form__row form__row--submit}}
+
+						</fieldset>
+
+					</form>
+
+
+
 					<form id="form-example-json" class="form aligned" role="" method="">
+
+						{{! form__hidden form__hidden }}
+
 
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Aligned form via JSON</legend>
@@ -71,14 +93,22 @@ status
 							{{> form__row form__row-select--optgroup}}
 
 
+							{{> form__row form__row-search}}
+
+
+
 							{{> form__row form__row-radio}}
 							{{> form__row form__row-checkbox}}
 
-							{{> form__row form__row-submit}}
+						</fieldset>
 
-							{{> button button-submit }}
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Submit button</legend>
+
+							{{> form__row form__row--submit}}
 
 						</fieldset>
+
 					</form>
 
 

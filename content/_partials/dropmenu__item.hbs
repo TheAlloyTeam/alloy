@@ -1,0 +1,12 @@
+{{#this}}
+	{{#if content.url}}
+	<li class="list__item">
+		<a href="{{content.url}}" class="list__link" title="{{content.title}}">
+   		{{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+		<span>{{content.text}}</span></a>
+		{{else}}
+	</li>
+	{{else}}
+	<li class="list__item seperator"></li>
+	{{/if}}
+{{/this}}
