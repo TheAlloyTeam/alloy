@@ -9,7 +9,9 @@
         "group": [{
             "item": {
                 "modifier": "",
-                "vertical": ""
+                "checkbox": true,
+                "vertical": "",
+                "inline": ""
             },
             "content": {
                 "type": [{

@@ -3,6 +3,7 @@
         "modifier": "modifier",
         "required": "",
         "disabled": "",
+        "hidden": "",
         "for": "formrow-text-1"
     },
     "content": {

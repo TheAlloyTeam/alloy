@@ -3,22 +3,12 @@
     // Acts as a handler for all toasts - bringing them in 
     ALLOY.ToastRack = function() {
 
-        var processing = false;
-
         var toasts = [];
 
         var queue = [];
 
-        var config = {
-            $container: $('body'),
-            limit: 5,
-            classes: {
-                'toastrack' : 'toastrack'
-            }
-        };
-
         var addToast = function(t) {
-            if (toasts.length < config.limit && !processing) {
+            if (toasts.length < ALLOY.ToastRack.config.limit && !_isProcessing()) {
                 _processToast(t);
             } else {
                 queue.push(t);
@@ -26,12 +16,14 @@
         };
 
         var _processToast = function(t) {
-            processing = true;
+
+            t.isProcessing = true;
+
             _createToastrack();
 
             _showToast(t);
 
-            setTimeout(function() { _activateToast(t); }, t.config.transitionInterval);
+            setTimeout(function() { _activateToast(t); t.isProcessing = false; }, t.config.transitionInterval);
 
             var hideTimeout;
             if (t.config.despawnInterval > 0) {
@@ -65,7 +57,6 @@
 
         var _activateToast = function(t) {
             t.$toast.removeClass(t.config.classes.activating).addClass(t.config.classes.active);
-            processing = false;
         };
 
         var _hideToast = function(t) {
@@ -86,7 +77,7 @@
         };
 
         var _pushNext = function() {
-            if (queue.length > 0) {
+            if (queue.length > 0 && !_isProcessing()) {
                 var t = queue[0];
                 queue.splice(0, 1);
                 _processToast(t);
@@ -95,16 +86,29 @@
 
         var _createToastrack = function() {
             if (_getToastRack().length === 0) {
-                config.$container.append('<div class="' + config.classes.toastrack + '"></div>');
+                ALLOY.ToastRack.config.$container.append('<div class="' + ALLOY.ToastRack.config.classes.toastrack + '"></div>');
             }
         };
 
         var _getToastRack = function() {
-            return $("." + config.classes.toastrack);
+            return $("." + ALLOY.ToastRack.config.classes.toastrack);
+        };
+
+        var _isProcessing = function() {
+            var processing = false;
+            $.each(toasts, function() { if (this.isProcessing) { processing = true; } });
+            return processing;
         };
 
         var public = {
-            add: addToast
+            config: {
+                $container: $('body'),
+                limit: 5,
+                classes: {
+                    'toastrack' : 'toastrack'
+                }
+            },
+            add: addToast,        
         }; 
 
         return public;
@@ -138,6 +142,8 @@
             despawnInterval: 5000
         },
 
+        isProcessing: false,
+
         $toast: {},
  
         _init: function(json) { 
@@ -155,7 +161,7 @@
     Toast.defaults = Toast.prototype.defaults;
 
     $.toast = function(json, options) {
-        if (json === undefined) { ALLOY.Logger.error("Json object required to turn on toaster"); }
+        if (json === undefined) { ALLOY.Logger.error("Json object required to turn on toaster"); return; }
         new Toast(options)._init(json);
     };
 
