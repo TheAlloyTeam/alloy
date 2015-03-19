@@ -29,10 +29,10 @@
 {{#if js-toast}}
 <script type="text/JavaScript">
  	require(["toast"], function() {
- 		$(".toast").click(function(e) {
+ 		$("[data-toast]").click(function(e) {
  			e.preventDefault();
  			var json = $(this).data("toast");
- 			$(".w--main").toast(json);
+ 			$.toast(json);
  		}); 		
  	});
 </script>

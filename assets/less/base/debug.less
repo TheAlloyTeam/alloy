@@ -1,9 +1,48 @@
-.debug-styles() when not (@DEBUG) { }
-.debug-styles() when (@DEBUG) {
+
+.debugger-styles() when not (@DEBUGGER) { }
+.debugger-styles() when (@DEBUGGER) {
 
 /* =========================================================================
 // DEBUG
 // =======================================================================*/
+
+.debugger {
+    background-color: @COLOR-GreyLighter;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 320px;
+    z-index: @Z-INDEX-Level10;
+    width: 100%;
+    ._padding(@TYPE-LineHeight/2, @TYPE-FontSize);
+    ._opacity(0.7);
+    ._depth-1();
+ }
+
+ .debugger__body {
+ 	max-height: 100px;
+ 	overflow-y: scroll;
+ }
+
+.list__debugger {
+    pointer-events: none;
+	.list__item {
+		color: @COLOR-GreyDark;
+		._font-size(@TYPE-SIZE-Iota);
+	}
+	.start {color: @COLOR-Green;}
+	.trace {color: @COLOR-Purple;}
+	.debug {color: @COLOR-Red;}
+	.info {color: @COLOR-BlueDarker;}
+	.warn {color: @COLOR-Orange;}
+	.error {color: @COLOR-Red;}
+	.fatal {color: @COLOR-Red;}
+	.off {}
+}
+} .debugger-styles();
+
+.debug-styles() when not (@DEBUG) { }
+.debug-styles() when (@DEBUG) {
 
 // INLINE STYLE
 // ----------------------------------------------------

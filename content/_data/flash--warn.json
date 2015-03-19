@@ -4,10 +4,10 @@
         "status": "warn"
     },
     "content": {
-        "text": "Something is about to break!",
+        "text": "I did something",
         "icon": [{
             "item": {
-                "modifier": "round52",
+                "modifier": "tick7",
                 "size": "xlarge"
             },
             "content": {
