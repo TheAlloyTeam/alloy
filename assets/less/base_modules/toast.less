@@ -38,13 +38,13 @@
     }
 
     &.popup {
-        margin: 5px;
         position: fixed;
         bottom: -100px;
         right: 20px;
         z-index: @Z-INDEX-Level9;
         ._transition (bottom, 0.5s, @ACCORDION-Anim);
         ._depth-3();
+        ._margin-left (20);
 
         &.activating {
             bottom: 20px;
@@ -166,8 +166,11 @@
 
 .toast__icon {
     float: left;
-    ._padding-top (5);
     ._margin-right (10);
+
+    .icon {
+        line-height: 1;
+    }
 }
 
 .toast,
@@ -212,6 +215,17 @@
     left: 0;
     width: 100%;
     height: 3px;
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+    .toast {
+        max-width: none;
+    }
+
 }
 
 } .toast-styles();

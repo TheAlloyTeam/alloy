@@ -7,7 +7,7 @@
         "text": "Something is about to break!",
         "icon": [{
             "item": {
-                "modifier": "tick7",
+                "modifier": "round52",
                 "size": "xlarge"
             },
             "content": {
