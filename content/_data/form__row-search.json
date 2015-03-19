@@ -3,15 +3,17 @@
         "modifier": "",
         "required": "",
         "disabled": "",
+        "offset": "",
+        "hidden": "",
         "for": "formrow-search-1"
     },
     "content": {
-        "text": "Search for something",
+        "text": "Label for search",
         "type": [{
             "search": [{
                 "item": {
                     "modifier": "",
-                    "size": "",
+                    "size": "xlarge",
                     "multiple": "",
                     "required": "",
                     "readonly": "",
@@ -27,16 +29,7 @@
                 },
                 "content": {
                     "placeholder": "Search Query",
-                    "value": "",
-                    "icon": [{
-                        "item": {
-                            "modifier": "check52",
-                            "size": ""
-                        },
-                        "content": {
-                            "title": ""
-                        }
-                    }]
+                    "value": ""
                 }
             }]
         }]

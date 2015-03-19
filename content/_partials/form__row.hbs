@@ -1,5 +1,5 @@
 {{#this}}
-    <div class="form__row{{#if item.modifier}} form__row--{{item.modifier}}{{/if}}{{#if content.text}}{{else}} offset{{/if}}{{#if item.disabled}} disabled{{/if}}
+    <div class="form__row{{#if item.modifier}} form__row--{{item.modifier}}{{/if}}{{#if item.offset}} offset{{/if}}{{#if item.disabled}} disabled{{/if}}
 ">
 
     {{#if content.text}}
@@ -9,7 +9,7 @@
 
     {{#if content.group}}
         {{#each content.group}}
-        <div class="form__group{{#if item.vertical}} vertical{{/if}}">
+        <div class="form__group{{#if item.checkbox}} form__group--check{{/if}}{{#if item.inline}} inline{{/if}}{{#if item.vertical}} vertical{{/if}}">
 
 
         {{#if content.type}}
@@ -32,9 +32,13 @@
                     {{/each}}
                 {{/if}}
 
-                {{#this}}
-                {{> form__label }}
-                {{/this}}
+                {{! If there are actions (buttons) don't add a label}}
+                {{#if actions}}
+                {{else}}
+                    {{#this}}
+                    {{> form__label }}
+                    {{/this}}
+                {{/if}}
 
 
                 {{#if password}}
@@ -107,6 +111,19 @@
                         {{> form__text }}
                         {{/this}}
                     {{/each}}
+                {{/if}}
+
+
+                {{#if actions}}
+                    {{#each actions}}
+                        {{#if buttons}}
+                            {{#each buttons}}
+                                {{#this}}
+                                {{> button }}
+                                {{/this}}
+                            {{/each }}
+                        {{/if}}
+                    {{/each }}
                 {{/if}}
 
             </span>
@@ -234,10 +251,21 @@
         {{#this}}{{> form__asterisk }}{{/this}}
     {{/if}}
 
+
+
+    {{#if actions}}
+        {{#each actions}}
+            {{#if buttons}}
+                {{#each buttons}}
+                    {{#this}}
+                    {{> button }}
+                    {{/this}}
+                {{/each }}
+            {{/if}}
+        {{/each }}
+    {{/if}}
+
+
     </div>
-
-
-    {{> button button-submit }}
-
 
 {{/this}}

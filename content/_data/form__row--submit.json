@@ -1,0 +1,45 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "offset": true,
+        "for": ""
+    },
+    "content": {
+        "text": ""
+    },
+    "actions": [{
+        "buttons": [
+        {
+            "item": {
+                "modifier": "",
+                "size": "",
+                "disabled": "",
+                "target": "",
+                "block": ""
+            },
+            "content": {
+                "text": "Submit Button",
+                "title": "Default",
+                "type": "submit",
+                "icon": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }]
+    }],
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}
