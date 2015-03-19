@@ -14,7 +14,7 @@ window.DEBUG = DEBUG;
 var require = {
     baseUrl: '/assets/js/',
     waitSeconds : 40,
-    urlArgs: "bust=" + (new Date()).getTime(), // For development to bypass the cache
+    //urlArgs: "bust=" + (new Date()).getTime(), // For development to bypass the cache
     //urlArgs: "bust=v2", // For production
     paths: {
         app: "app",
@@ -22,6 +22,7 @@ var require = {
         modules: "modules",
         jquery: "libs/jquery/jquery.min",
         fontfaceobserver: "libs/fontfaceobserver/fontfaceobserver",
+        'mustache' : "libs/mustache/mustache",
         'prettyprint': "libs/google-code-prettify/run_prettify",
         'selectivizr': "libs/selectivizr",
         'logging': "modules/alloy.logging",
@@ -32,7 +33,8 @@ var require = {
         'fontloader': "modules/alloy.fontloader",
         'accordion': "modules/alloy.accordion",
         'tabs' : "modules/alloy.tabs",
-        'amd': "modules/exports/amd"
+        'toast' : "modules/alloy.toast",
+        'amd': "modules/exports/amd",
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -42,7 +44,8 @@ var require = {
         'mobile': {deps: ['jquery', 'core', 'logging']},
         'fontloader': {deps: ['fontfaceobserver', 'core', 'logging']},
         'accordion': {deps: ['jquery', 'core', 'logging']},
-        'tabs' : {deps: ['jquery', 'core', 'logging']}
+        'tabs' : {deps: ['jquery', 'core', 'logging']},
+        'toast' : {deps: ['jquery', 'core', 'logging', 'mustache']},
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }

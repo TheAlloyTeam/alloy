@@ -20,16 +20,16 @@
     "port": 8008
   },
   "devDependencies": {
-    "grunt": "*",
-    "grunt-contrib-less": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-imagemin": "*",
-    "grunt-contrib-requirejs": "*",
     "assemble": "*",
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
     "grunt-contrib-connect": "*",
     "grunt-contrib-copy": "*",
-    "grunt-contrib-uglify": "*"
+    "grunt-contrib-imagemin": "^0.9.3",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-requirejs": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*"
   }
 }
