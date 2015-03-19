@@ -27,6 +27,7 @@ var require = {
         'accordion': "modules/alloy.accordion",
         'tabs' : "modules/alloy.tabs",
         'toast' : "modules/alloy.toast",
+        'flash' : "modules/alloy.flash",
         'amd': "modules/exports/amd",
     },
     shim: {
@@ -39,6 +40,7 @@ var require = {
         'accordion': {deps: ['jquery', 'core', 'logging']},
         'tabs' : {deps: ['jquery', 'core', 'logging']},
         'toast' : {deps: ['jquery', 'core', 'logging', 'mustache']},
+        'flash' : {deps: ['jquery', 'core', 'logging', 'mustache']},
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }

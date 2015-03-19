@@ -5,8 +5,7 @@ nav-title: "Flashes"
 nav-text: "Flashes"
 nav-variant: "flashes"
 page-category: "components"
-
-
+js-flash: true
 ---
 
 <main class="w w--main">
@@ -60,7 +59,9 @@ page-category: "components"
 		            <header class="section__head">
 		            	<h2 class="section__title">Example: Flash</h2>
 		            </header>
-		            	<a href="#" class="button" data-toast='{"item": {"modifier": "","status": "success"}, "content": {"text": "You did it! A toast that pops up from the bottom of the page!","icon": [{"item": {"modifier": "tick7","size": "xlarge"},"content": {"title": "" }}]}}'>Click here to see a live flash</a>
+		            	<a href="#" class="button" data-flash='{"item": {"modifier": "","status": "success"},"content": {"text": "This is a flash message and it wont go away until you click the close button!","icon": [{"item": {"modifier": "tick7","size": "xlarge"},"content": {"title": ""}}]}}'>Click here to see a live flash</a>
+
+		            	<a href="#" class="button" data-flash='{"item": {"modifier": "","status": "warn"},"content": {"text": "This is a warning - youve been warned!","icon": [{"item": {"modifier": "tick7","size": "xlarge"},"content": {"title": ""}}]}}'>Click here to see another example</a>
 		            	<!-- end of code -->
 			        </div>
 

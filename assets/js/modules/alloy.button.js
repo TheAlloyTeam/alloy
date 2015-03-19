@@ -15,6 +15,7 @@
 
         defaults: {
             classes: {},
+        },
 
         _init: function() {
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
