@@ -34,7 +34,30 @@
  			var json = $(this).data("toast");
  			$.toast(json);
  		}); 		
+
+ 		function changeToastLimit() {
+ 			if ($(window).width() <= 601) {
+ 				ALLOY.ToastRack.config.limit = 2;
+ 			} else {
+ 				ALLOY.ToastRack.config.limit = 5;
+ 			}
+ 		}
+
+ 		$(window).resize(changeToastLimit);
+ 		changeToastLimit();
  	});
+</script>
+{{/if}}
+
+{{#if js-flash}} 
+<script type="text/JavaScript">
+	require(["flash"], function() {
+		$('[data-flash*]').click(function(e) {
+			e.preventDefault();
+			var json = $(this).data("flash");
+			$.flash(json);
+		});
+	});
 </script>
 {{/if}}
 
