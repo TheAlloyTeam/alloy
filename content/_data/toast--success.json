@@ -7,7 +7,7 @@
         "text": "You did it! It's all fixed!",
         "icon": [{
             "item": {
-                "modifier": "round52",
+                "modifier": "tick7",
                 "size": "xlarge"
             },
             "content": {

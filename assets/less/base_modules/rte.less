@@ -61,6 +61,11 @@
     dl {}
     dd {}
     dt {}
+
+    figcaption {
+        font-style: italic;
+        ._font-size (@TYPE-SIZE-Iota);
+    }
     
 }
 
@@ -90,13 +95,13 @@
         .left,
         .left--wide {
             float: left;
-            ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, 0);
+            ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight/2, 0);
         }
 
         .right,
         .right--wide {
             float: right;
-            ._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
+            ._margin (0, 0, @TYPE-LineHeight/2, @TYPE-LineHeight);
         }
     }
 }
@@ -105,11 +110,11 @@
 
     .rte {
         .left--wide {
-            ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, 0);
+            ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight/2, 0);
         }
 
         .right--wide {
-            ._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
+            ._margin (0, 0, @TYPE-LineHeight/2, @TYPE-LineHeight);
         }
 
         blockquote {
@@ -138,11 +143,11 @@
         }
 
         .left--wide {
-            ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, -100);
+            ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight/2, -100);
         }
 
         .right--wide {
-            ._margin (0, -100, @TYPE-LineHeight, @TYPE-LineHeight);
+            ._margin (0, -100, @TYPE-LineHeight/2, @TYPE-LineHeight);
         }
 
         .block {
@@ -182,11 +187,11 @@
             }
 
             &.left {                
-                ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight, 0);
+                ._margin (0, @TYPE-LineHeight, @TYPE-LineHeight/2, 0);
             }
 
             &.right {
-                ._margin (0, 0, @TYPE-LineHeight, @TYPE-LineHeight);
+                ._margin (0, 0, @TYPE-LineHeight/2, @TYPE-LineHeight);
             }
 
             &.full {

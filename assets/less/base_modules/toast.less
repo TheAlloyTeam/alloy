@@ -27,8 +27,8 @@
 // ----------------------------------------------------
 
 .toast {
-    background-color: @TOAST-BgColor;
     color: @TOAST-Color;
+    background-color: @TOAST-BgColor;
     position: relative;
     max-width: 320px;
     ._padding (@TYPE-FontSize);
@@ -166,11 +166,9 @@
 
 .toast__icon {
     float: left;
+    line-height: 1;
+    ._padding-top (8);
     ._margin-right (10);
-
-    .icon {
-        line-height: 1;
-    }
 }
 
 .toast,
@@ -181,7 +179,7 @@
 }
 
 .toast__content {
-    ._padding-right (20);
+    ._padding (2, 20, 0, 0);
 }
 
 .toast__close {
@@ -191,6 +189,7 @@
     float: right;
     display: block;
     line-height: 1;
+    ._padding-top (1);
     ._font-size (@TYPE-LineHeight);
 
     &:link,
