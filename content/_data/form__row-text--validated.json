@@ -1,0 +1,145 @@
+{
+    "item": {
+        "modifier": "modifier",
+        "required": "",
+        "disabled": "",
+        "hidden": "",
+        "for": "formrow-text-1"
+    },
+    "content": {
+        "text": "Label for text input",
+        "type": [{
+            "text": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "status": "",
+                    "spellcheck": "",
+                    "id": "formrow-text-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Inert status",
+                    "value": ""
+                }
+            }]
+        },
+        {
+            "text": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "status": "success",
+                    "spellcheck": "",
+                    "id": "formrow-text-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Success Placeholder",
+                    "value": ""
+                }
+            }]
+        },
+        {
+            "text": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "status": "info",
+                    "spellcheck": "",
+                    "id": "formrow-text-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Info Placeholder",
+                    "value": ""
+                }
+            }]
+        },
+        {
+            "text": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "status": "warn",
+                    "spellcheck": "",
+                    "id": "formrow-text-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Warning Placeholder",
+                    "value": ""
+                }
+            }]
+        },
+        {
+            "text": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "status": "danger",
+                    "spellcheck": "",
+                    "id": "formrow-text-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Danger Placeholder",
+                    "value": ""
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}
