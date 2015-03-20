@@ -28,6 +28,7 @@ var require = {
         'tabs' : "modules/alloy.tabs",
         'toast' : "modules/alloy.toast",
         'flash' : "modules/alloy.flash",
+        'ink' : "modules/alloy.ink",
         'amd': "modules/exports/amd",
     },
     shim: {
@@ -41,6 +42,7 @@ var require = {
         'tabs' : {deps: ['jquery', 'core', 'logging']},
         'toast' : {deps: ['jquery', 'core', 'logging', 'mustache']},
         'flash' : {deps: ['jquery', 'core', 'logging', 'mustache']},
+        'ink' : {deps: ['jquery', 'core', 'logging']},
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
