@@ -8,6 +8,7 @@
 .DS_Store
 .DS_Store?
 ._*
+*.iml
 .Spotlight-V100
 .Trashes
 Icon?
@@ -19,3 +20,4 @@ Thumbs.db
 
 /node_modules/*
 /_site/*
+/.idea/*
