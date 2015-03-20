@@ -13,21 +13,33 @@
 		{{/if}}
 		<div class="article__body rte">
 			{{{content.body}}}
-			<div class="article__aside rte">
+			<aside class="article__aside rte">
 				<h4>Aside title</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere placerat eros ut lobortis.</p>
-			</div>
+			</aside>
 		</div>
 		<footer class="article__foot">
-		{{#each actions}}
-			{{#if buttons}}
-				{{#each buttons}}
-					{{#this}}
-					{{> button }}
-					{{/this}}
-				{{/each }}
-			{{/if}}
-		{{/each }}
+			{{!-- {{#each actions}}
+				{{#if buttons}}
+					{{#each buttons}}
+						{{#this}}
+						{{> button }}
+						{{/this}}
+					{{/each }}
+				{{/if}}
+			{{/each }} --}}
+			
+			<div class="share">
+				<a href="#" class="share__link">
+					<i class="icon icon--facebook56"></i>
+					<span></span>
+				</a>
+				<a href="#" class="share__link">
+					<i class="icon icon--twitter47"></i>
+					<span></span>
+				</a>
+			</div>
+
 		</footer>
 	</article>
 {{/this}}

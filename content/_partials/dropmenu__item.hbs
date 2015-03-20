@@ -3,10 +3,17 @@
 	<li class="list__item">
 		<a href="{{content.url}}" class="list__link" title="{{content.title}}">
    		{{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
-		<span>{{content.text}}</span></a>
-		{{else}}
+		<span>{{content.text}}</span>
+
+		{{#each content.badges}}
+			{{#this}}
+			{{> badge }}
+			{{/this}}
+		{{/each }}
+
+		</a>
 	</li>
 	{{else}}
-	<li class="list__item seperator"></li>
+	<li class="list__item seperator">&nbsp;</li>
 	{{/if}}
 {{/this}}
