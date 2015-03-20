@@ -8,15 +8,45 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@FORM-Color:                @COLOR-GreyDarker;
-@FORM-BgColor:              @COLOR-White;
-@FORM-BorderColor:          @COLOR-GreyLight;
+@FORM-DefaultBgColor:              @COLOR-White;
+@FORM-DefaultTextColor:            @COLOR-GreyDarker;
+@FORM-DefaultBordercolor:          @COLOR-GreyLight;
+
 @FORM-Placeholder:          @COLOR-GreyLight;
 @FORM-Asterisk:             @COLOR-Red;
+
 @FORM-Offset:               25%;
 @FORM-OffsetGap:            3%;
 @FORM-OffsetLabel:          ((@FORM-Offset)-(@FORM-OffsetGap));
 @FORM-OffsetAsterisk:       ((@FORM-Offset)-(@FORM-OffsetGap/2));
+
+@FORM-InfoBgColor:             @COLOR-BlueLightest;
+@FORM-InfoTextColor:           @COLOR-BlueDark;
+@FORM-InfoBordercolor:         @COLOR-BlueLight;
+
+@FORM-WarnBgColor:             @COLOR-OrangeLightest;
+@FORM-WarnTextColor:           @COLOR-OrangeDarker;
+@FORM-WarnBordercolor:         @COLOR-OrangeLight;
+
+@FORM-DangerBgColor:           @COLOR-RedLightest;
+@FORM-DangerTextColor:         @COLOR-RedDark;
+@FORM-DangerBordercolor:       @COLOR-RedLight;
+
+@FORM-SuccessBgColor:          @COLOR-GreenLightest;
+@FORM-SuccessTextColor:        @COLOR-GreenDark;
+@FORM-SuccessBordercolor:      @COLOR-GreenLight;
+
+
+
+// FORM INPUT STATUSES
+// ----------------------------------------------------
+
+._input-create (@BgColor, @TextColor, @Bordercolor) {
+    color: @TextColor;
+    border: 1px solid @Bordercolor;
+    //background-color: @BgColor;
+}
+
 
 // BASE
 // ----------------------------------------------------
@@ -48,12 +78,13 @@
 }
 
 .form__input {
-    color: @FORM-Color;
+    color: @FORM-DefaultTextColor;
     clear: left;
     display: block;
     width: 100%;
     max-width: 100%;
-    border: 1px solid @FORM-BorderColor;
+    border: 1px solid @FORM-DefaultBordercolor;
+    background-color: @FORM-DefaultBgColor;
     ._padding (6, 8);
     ._border-radius (4);
 
@@ -61,6 +92,22 @@
         outline: 0;
         outline: thin dotted \9;
         ._depth-1 ();
+    }
+
+    &.success {
+        ._input-create (@FORM-SuccessBgColor, @FORM-SuccessTextColor, @FORM-SuccessBordercolor);
+    }
+
+    &.info {
+        ._input-create (@FORM-InfoBgColor, @FORM-InfoTextColor, @FORM-InfoBordercolor);
+    }
+
+    &.warn {
+        ._input-create (@FORM-WarnBgColor, @FORM-WarnTextColor, @FORM-WarnBordercolor);
+    }
+
+    &.danger {
+        ._input-create (@FORM-DangerBgColor, @FORM-DangerTextColor, @FORM-DangerBordercolor);
     }
 }
 

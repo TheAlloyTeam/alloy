@@ -23,10 +23,6 @@ page-category: "systems"
 
 
 <!--
-
-
-
-
  size
 validation
  disabled
@@ -111,6 +107,35 @@ status
 
 					</form>
 
+
+					<form id="form-example-validation" class="form aligned" role="" method="">
+
+						{{! form__hidden form__hidden }}
+
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Validation items via JSON</legend>
+
+							{{> form__row form__row-text--validated }}
+
+
+
+							{{! form__row form__row-email}}
+							{{! form__row form__row-telephone}}
+							{{! form__row form__row-url}}
+							{{! form__row form__row-password}}
+							{{! form__row form__row-textarea}}
+							{{! form__row form__row-select}}
+							{{! form__row form__row-select--optgroup}}
+
+							{{! form__row form__row-search}}
+
+							{{! form__row form__row-radio}}
+							{{! form__row form__row-checkbox}}
+							{{! form__row form__row--submit}}
+
+						</fieldset>
+
+					</form>
 
 					<form id="form-example-aligned" class="form aligned" role="" method="">
 						
