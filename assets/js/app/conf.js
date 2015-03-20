@@ -15,6 +15,7 @@ var require = {
         modules: "modules",
         jquery: "libs/jquery/jquery.min",
         fontfaceobserver: "libs/fontfaceobserver/fontfaceobserver",
+        'bezier' : "libs/easing/index",
         'mustache' : "libs/mustache/mustache",
         'prettyprint': "libs/google-code-prettify/run_prettify",
         'selectivizr': "libs/selectivizr",
@@ -29,6 +30,7 @@ var require = {
         'toast' : "modules/alloy.toast",
         'flash' : "modules/alloy.flash",
         'ink' : "modules/alloy.ink",
+        'easing' : "modules/alloy.easing",
         'amd': "modules/exports/amd",
     },
     shim: {
@@ -42,7 +44,8 @@ var require = {
         'tabs' : {deps: ['jquery', 'core', 'logging']},
         'toast' : {deps: ['jquery', 'core', 'logging', 'mustache']},
         'flash' : {deps: ['jquery', 'core', 'logging', 'mustache']},
-        'ink' : {deps: ['jquery', 'core', 'logging']},
+        'easing' : {deps: ['jquery', 'bezier']},
+        'ink' : {deps: ['jquery', 'core', 'logging', 'easing']},
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
