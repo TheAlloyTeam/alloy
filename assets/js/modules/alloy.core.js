@@ -3,7 +3,16 @@
 
     ALLOY.Core = function () {
         var config = {
-
+            'animation': {
+                'interval' : 780
+            },
+            'arc': {
+                'center': [285,185],
+                'radius': 100,
+                'start': 30,
+                'end': 200,
+                'dir': -1
+            }
         };
 
         var _ready = function(callback) {
