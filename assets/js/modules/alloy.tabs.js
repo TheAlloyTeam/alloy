@@ -5,33 +5,6 @@
         this.$element = $(element);
         this.options = options;
         this.metadata = this.$element.data('options');
-
-        /* Functions */
-        this._getButtonIndex = function(btn) {
-            if (this.config.btnIndexAttr.substring(0, 5) == "data-") { 
-                var att = this.config.btnIndexAttr.substring(5); 
-                return $(btn).data(att); 
-            }
-            else { return $(btn).attr(this.config.btnIndexAttr); }
-        };
-
-        this._handleClick = function(el) {
-            var id = this._getButtonIndex($(el).closest(this.config.tabListClass + " " + this.config.tabItemClass)[0]);
-            this._updateAll(id);
-        };
-
-        this._setBtnActive = function(btn, id, content) {
-            var elId = this._getButtonIndex($(btn)[0]);
-            if (elId == id) { $(btn).removeClass(this.config.inactiveClass).addClass(this.config.activeClass); } 
-            else { $(btn).removeClass(this.config.activeClass).addClass(this.config.inactiveClass); }
-        };
-
-        this._updateAll = function(id) {
-            var that = this;
-            this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).each(function() { that._setBtnActive(this, id, false); });
-            this.$element.find(this.config.tabContentClass + " " + this.config.tabBodyClass).removeClass(this.config.activeClass).addClass(this.config.inactiveClass);
-            $(id).removeClass(this.config.inactiveClass).addClass(this.config.activeClass);
-        };
     };
 
     Tabs.prototype = {
@@ -65,6 +38,33 @@
             this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).click(function(e) { e.preventDefault(); that._handleClick(this); });
             ALLOY.Logger.startup('ALLOY.Tabs Started');
         },
+
+        _getButtonIndex: function(btn) {
+            if (this.config.btnIndexAttr.substring(0, 5) == "data-") { 
+                var att = this.config.btnIndexAttr.substring(5); 
+                return $(btn).data(att); 
+            }
+            else { return $(btn).attr(this.config.btnIndexAttr); }
+        },
+
+        _handleClick: function(el) {
+            var id = this._getButtonIndex($(el).closest(this.config.tabListClass + " " + this.config.tabItemClass)[0]);
+            this._updateAll(id);
+        },
+
+        _setBtnActive: function(btn, id, content) {
+            var elId = this._getButtonIndex($(btn)[0]);
+            if (elId == id) { $(btn).removeClass(this.config.inactiveClass).addClass(this.config.activeClass); } 
+            else { $(btn).removeClass(this.config.activeClass).addClass(this.config.inactiveClass); }
+        },
+
+        _updateAll: function(id) {
+            var that = this;
+            this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).each(function() { that._setBtnActive(this, id, false); });
+            this.$element.find(this.config.tabContentClass + " " + this.config.tabBodyClass).removeClass(this.config.activeClass).addClass(this.config.inactiveClass);
+            $(id).removeClass(this.config.inactiveClass).addClass(this.config.activeClass);
+        },
+
     };
 
     Tabs.defaults = Tabs.prototype.defaults;

@@ -10,8 +10,6 @@
     };
 
     Ink.prototype =  {
-        that: {},
-
         defaults: {
             classes: {
                 'box': 'button',
@@ -25,34 +23,32 @@
 
         _init: function() {
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
-            that = this;
-
-            this.$element.click(that._svgOnClick);
+            
+            var that = this;
+            this.$element.click(function(e) { that._onClick(this, e.pageX, e.pageY); } );
             ALLOY.Logger.startup('ALLOY.Ink Started');
         },
 
-        _svgOnClick: function(e) {
+        _onClick: function(el, x, y) {
             // In case button isn't position relative
-            $(this).css({ position: "relative" });
+            $(el).css({ position: "relative" });
 
-            var x = e.pageX;
-            var y = e.pageY;
-            var clickY = y - $(this).offset().top;
-            var clickX = x - $(this).offset().left;
-            var box = this;
+            var clickY = y - $(el).offset().top;
+            var clickX = x - $(el).offset().left;
+            var box = el;
             var setX = parseInt(clickX);
             var setY = parseInt(clickY);
-            $(this).find("." + that.config.classes.svg).remove();
-            $(this).append('<svg class="' + that.config.classes.svg + '"><circle class="' + that.config.classes.ripple + '" cx="'+setX+'" cy="'+setY+'" r="'+0+'"></circle></svg>');
+            $(el).find("." + this.config.classes.svg).remove();
+            $(el).append('<svg class="' + this.config.classes.svg + '"><circle class="' + this.config.classes.ripple + '" cx="'+setX+'" cy="'+setY+'" r="'+0+'"></circle></svg>');
                
-            var c = $(box).find("." + that.config.classes.ripple);
+            var c = $(box).find("." + this.config.classes.ripple);
             c.animate(
             {
                 "r" : Math.sqrt(Math.pow($(box).outerWidth(), 2) + Math.pow($(box).outerHeight(), 2)).toFixed(2)
             },
             {
-                easing: that.config.easing,
-                duration: that.config.rippleInterval,
+                easing: this.config.easing,
+                duration: this.config.rippleInterval,
                 step : function(val) {
                     c.attr("r", val);
                 },
