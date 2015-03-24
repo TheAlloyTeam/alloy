@@ -10,32 +10,31 @@
 
 @FLASH-Color:               @COLOR-White;
 @FLASH-BgColor:             @COLOR-Grey;
-
 @FLASH-Info:                @COLOR-Blue;
 @FLASH-Success:             @COLOR-Green;
 @FLASH-Warn:                @COLOR-Orange;
 @FLASH-Danger:              @COLOR-Red;
-@FLASH-Anim:                @ANIM-Curve;
 
+@FLASH-Anim:                @ANIM-Curve;
 
 // BASE
 // ----------------------------------------------------
 
 .flash {
-    background-color: @FLASH-BgColor;
     color: @FLASH-Color;
+    background-color: @FLASH-BgColor;
     position: relative;
     ._padding ( @TYPE-LineHeight/2, @TYPE-FontSize);
 
     + .flash {
-        ._margin-top(10);
+        ._margin-top (10);
     }
 
     &.example {
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: 9999;
+        z-index: @Z-INDEX-Level10;
     }
     
     &.info {
@@ -151,9 +150,9 @@
     text-decoration: none;
     float: right;
     display: block;
-    font-size: 1.75em;
     line-height: 1;
-    ._padding-top (2);
+    ._padding-top (1);
+    ._font-size (@TYPE-LineHeight);
 
     &:link,
     &:visited {
@@ -169,6 +168,5 @@
         color: darken(@FLASH-BgColor, 40%);
     }
 }
-
 
 } .flash-styles();

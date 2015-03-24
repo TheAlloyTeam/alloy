@@ -5,41 +5,41 @@
 			{{#if "subtitle"}}
 				<p class="article__subtitle">{{{content.subtitle}}}</p>
 			{{/if}}
+			
+			{{#if content.author}}
+				<p class="article__info">
+					By 
+					{{#if content.author-url}}
+						<a href="{{content.author-url}}" class="article__author" target="_blank">{{content.author}}</a>
+						{{else}}<span class="article__author">{{content.author}}</span>
+					{{/if}}
+					{{#if content.date}} on <time datetime="{{content.datetime}}">{{content.date}}</time>{{/if}}
+				</p>
+				{{else}}{{#if content.date}}<p class="article__info"><time datetime="">{{content.date}}</time></p>{{/if}}
+			{{/if}}
+			</p>
 		</header>
-		{{#if content.thumb}}
-		<div class="article__thumb">
-			<img src="{{content.thumb}}" alt=""/>
-		</div>
-		{{/if}}
+		
 		<div class="article__body rte">
+			{{#if content.thumb}}
+			<div class="article__thumb">
+				<img src="{{content.thumb}}" alt=""/>
+			</div>
+			{{/if}}
+			
 			{{{content.body}}}
+			
 			<aside class="article__aside rte">
-				<h4>Aside title</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere placerat eros ut lobortis.</p>
+
+				{{{content.aside}}}
+
 			</aside>
 		</div>
+		
 		<footer class="article__foot">
-			{{!-- {{#each actions}}
-				{{#if buttons}}
-					{{#each buttons}}
-						{{#this}}
-						{{> button }}
-						{{/this}}
-					{{/each }}
-				{{/if}}
-			{{/each }} --}}
-			
-			<div class="share">
-				<a href="#" class="share__link">
-					<i class="icon icon--facebook56"></i>
-					<span></span>
-				</a>
-				<a href="#" class="share__link">
-					<i class="icon icon--twitter47"></i>
-					<span></span>
-				</a>
-			</div>
 
+			{{> share }}
+			
 		</footer>
 	</article>
 {{/this}}
