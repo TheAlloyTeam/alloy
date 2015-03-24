@@ -19,7 +19,8 @@
                 'svg': 'svg',
                 'ripple': 'ripple'
             },
-            rippleInterval: 300
+            rippleInterval: 300,
+            easing: 'alloy'
         },
 
         _init: function() {
@@ -50,7 +51,7 @@
                 "r" : Math.sqrt(Math.pow($(box).outerWidth(), 2) + Math.pow($(box).outerHeight(), 2)).toFixed(2)
             },
             {
-                easing: "alloy",
+                easing: that.config.easing,
                 duration: that.config.rippleInterval,
                 step : function(val) {
                     c.attr("r", val);
