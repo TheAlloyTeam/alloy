@@ -6,7 +6,7 @@
         
         var config = {
             animation: {
-                interval : 780;
+                interval : 780
             },
             arc : {
                 center: [285,185],
