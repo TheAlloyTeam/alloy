@@ -2,16 +2,18 @@
     'use strict';
 
     ALLOY.Core = function () {
+        var readyque = [];
+        
         var config = {
-            'animation': {
-                'interval' : 780
+            animation: {
+                interval : 780;
             },
-            'arc': {
-                'center': [285,185],
-                'radius': 100,
-                'start': 30,
-                'end': 200,
-                'dir': -1
+            arc : {
+                center: [285,185],
+                radius: 100,
+                start: 30,
+                end: 200,
+                dir: -1
             }
         };
 
@@ -41,29 +43,6 @@
     	    window.$ = $;
     		$("html").removeClass("no-js");
     	};
-
-        // Check if button__totop should be visible on page load
-        $(function() {
-            if ($(window).scrollTop() < 200) {
-                $(".button__totop").data("visible", "false").fadeOut(1);
-            }
-        });
-
-        // Check if button__totop should be visible on scroll
-        $(window).scroll(function() {
-            if ($(window).scrollTop() >= 200 && $(".button__totop").data("visible") != 'true') {
-                $(".button__totop").data("visible", "true").stop(true, true).fadeIn(200);
-            } else if ($(window).scrollTop() < 200 && $(".button__totop").data("visible") != "false") {
-                $(".button__totop").data("visible", "false").stop(true, true).fadeOut(200);
-            }
-        });
-
-        // Perform smooth scroll to top of page
-        $(".button__totop").click(function(e) {
-            $("html, body").animate({ scrollTop: 0}, 200);
-            e.preventDefault();
-        });
-
 
         var output = {
             ready: _ready,

@@ -7,7 +7,7 @@
 var require = {
     baseUrl: '/assets/js/',
     waitSeconds : 40,
-    //urlArgs: "bust=" + (new Date()).getTime(), // For development to bypass the cache
+    urlArgs: "bust=" + (new Date()).getTime(), // For development to bypass the cache
     //urlArgs: "bust=v2", // For production
     paths: {
         app: "app",
@@ -25,6 +25,7 @@ var require = {
         'iefixes': "modules/alloy.iefixes",
         'mobile': "modules/alloy.mobile",
         'fontloader': "modules/alloy.fontloader",
+        'navigation': "modules/alloy.navigation",
         'accordion': "modules/alloy.accordion",
         'tabs' : "modules/alloy.tabs",
         'toast' : "modules/alloy.toast",
@@ -38,6 +39,7 @@ var require = {
         'utils': {deps: ['jquery', 'logging']},
         'core': {deps: ['jquery', 'logging', 'utils', 'amd']},
         'iefixes': {deps: ['jquery', 'core', 'logging']},
+        'navigation': {deps: ['jquery', 'core', 'logging']},
         'mobile': {deps: ['jquery', 'core', 'logging']},
         'fontloader': {deps: ['fontfaceobserver', 'core', 'logging']},
         'accordion': {deps: ['jquery', 'core', 'logging']},
