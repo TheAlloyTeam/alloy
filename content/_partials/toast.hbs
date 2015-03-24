@@ -2,9 +2,10 @@
 {{#this}}
 	<div class="toast{{#if item.modifier}} toast--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}">
 		<a href="#" class="toast__close">&times;</a>
-		<div class="toast__progress"></div>
 		{{#if content.icon}}<div class="toast__icon">{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}</div>{{/if}}
         <div class="toast__content">{{content.text}}</div>
+		<div class="toast__progress"></div>
 	</div>
 {{/this}}
-{{! <div class="toaster" aria-live="polite" role="alert"></div> }}
+
+{{!-- <div class="toaster" aria-live="polite" role="alert"></div> --}}

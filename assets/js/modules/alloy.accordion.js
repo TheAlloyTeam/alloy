@@ -32,14 +32,14 @@
         _isMultiSelectable: function() {
             return that.$element[0].getAttribute("aria-multiselectable");
         },
- 
+
         _init: function() {
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
 
             that = this;
 
             // Init all elements to closed (or open to start off open)
-            this.$element.find("." + this.config.classes.title).each(function() { 
+            this.$element.find("." + this.config.classes.title).each(function() {
                 if ($(this).hasClass(that.config.classes.opened)) { that._handleElement(this, true); } else { that._handleElement(this, false); }
             });
 
@@ -58,7 +58,7 @@
                 var id = that._getTitleIndex($el[0]);
                 that._update(id, toOpen);
             }
-        }, 
+        },
 
         _update: function(id, toOpen) {
             that.$element.find("." + that.config.classes.title).each(function() { that._handleTitle(this, id, toOpen); });
@@ -96,14 +96,14 @@
                 fromTran = that.config.classes.opening;
                 fromEnd = that.config.classes.opened;
                 toTran = that.config.classes.closing;
-                toEnd = that.config.classes.closed;                
+                toEnd = that.config.classes.closed;
             }
 
             // Trigger change event
             if (that.config.onChangeFunc !== undefined) { that.config.onChangeFunc($title, $content, toOpen); }
 
             // If transitions turned on, then transition to end go to end, or transitions off so just go to end          
-            if (that.config.transitionTime > 0) {                
+            if (that.config.transitionTime > 0) {
                 that._handleTransition($title, $content, fromTran, fromEnd, toTran, toEnd);
             } else {
                 $title.addClass(toEnd).removeClass(fromEnd).removeClass(fromTran);
@@ -119,22 +119,22 @@
             $content.removeClass(fromEnd).removeClass(fromTran).addClass(toEnd);
             var newHeight = $content.innerHeight();
 
-            // Set content to original height so we can transition to it using our new height 
+            // Set content to original height so we can transition to it using our new height
             $content.css({height: origHeight + "px"});
             setTimeout(function() { $content.addClass(toTran).css({height: newHeight + "px"}); });
 
             // Ensure that our button is also transitioning through states correctly aswell
             $title.removeClass(fromEnd).removeClass(fromTran).addClass(toTran);
-            setTimeout(function() { 
-                $title.removeClass(toTran).addClass(toEnd); 
+            setTimeout(function() {
+                $title.removeClass(toTran).addClass(toEnd);
                 $content.removeClass(toTran).addClass(toEnd).css({height: ""});
             }, that.config.transitionTime);
         },
 
         _getTitleIndex: function(el) {
-            if (this.config.titleIndexAttr.substring(0, 5) == "data-") { 
-                var att = this.config.titleIndexAttr.substring(5);  
-                return $(el).data(att); 
+            if (this.config.titleIndexAttr.substring(0, 5) == "data-") {
+                var att = this.config.titleIndexAttr.substring(5);
+                return $(el).data(att);
             }
             else { return $(el).attr(this.config.titleIndexAttr); }
         },

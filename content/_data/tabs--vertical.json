@@ -1,0 +1,44 @@
+{
+    "item": {
+    	"id": "tabgroup2",
+        "modifier": "variant",
+        "orientation": "vertical"
+    },
+    "content": {
+    	"tabs": [
+		{
+			"item": {
+		    	"id": "tab-7",
+		        "modifier": ""
+	        },
+			"content": {
+    			"tabText": "Tab 7",
+    			"tabTitle": "Open Tab 7",
+    			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacinia vulputate fermentum. Sed a lorem fermentum, imperdiet ante nec, feugiat est. Donec eget sollicitudin orci. Etiam nisl nisl, venenatis eget sollicitudin a, tempor nec massa. Nullam tincidunt sit amet risus eu luctus. Vestibulum vitae feugiat magna. Cras dui augue, pretium eget enim id, ullamcorper tincidunt ex. Quisque ultrices imperdiet vulputate. Nullam elementum congue auctor. Cras ornare sit amet odio a accumsan.</p>"
+			}
+		},
+		{
+			"item": {
+		    	"id": "tab-8",
+		        "modifier": ""
+	        },
+    		"content": {
+    			"tabText": "Tab 8",
+    			"tabTitle": "Open Tab 8",
+    			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+			}
+		},
+		{
+			"item": {
+		    	"id": "tab-9",
+		        "modifier": ""
+	        },
+    		"content": {
+    			"tabText": "Tab 9",
+    			"tabTitle": "Open Tab 9",
+    			"body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacinia vulputate fermentum. Sed a lorem fermentum, imperdiet ante nec, feugiat est. Donec eget sollicitudin orci. Etiam nisl nisl, venenatis eget sollicitudin a, tempor nec massa.</p>"
+			}
+		}
+		]
+	}
+}
