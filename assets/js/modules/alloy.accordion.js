@@ -7,13 +7,47 @@
     	this.$element = $(element);
     	this.options = options;
     	this.metadata = this.$element.data('options');
+    };
+
+    Accordion.prototype = {
+
+    	defaults: {
+            classes: {
+                'title'     : 'accordion__tab',         // The class to select the title (button) of an accordion'd element
+                'content'   : 'accordion__panel',       // The class to select the content of an accordion'd element
+                'opened'    : 'open',                   // The class given to open accordion elements (elements with this class on startup will start expanded)
+                'closed'    : 'closed',                 // The class given to closed accordion elements
+                'opening'   : 'opening',                // The class given to accordion elements in the process of opening
+                'closing'   : 'closing',                // The class given to accordion elements in the process of closing
+                'disabled'  : 'disabled'                // The class given to accordion elements that cannot have their state altered
+            },
+            transitionTime  : 350,                      // The amount of time it takes to transition from open to closed, and vice versa
+            titleIndexAttr  : 'data-accordionindex',    // The attribute on the title to use that matches up to the content id (prefix with 'data-' if applicable)
+            onChangeFunc    : undefined                 // Custom callback function to handle functionality on accordion change
+    	},
+
+        _init: function() {
+            this.config = $.extend({}, this.defaults, this.options, this.metadata);
+
+            var that = this;
+
+            // Init all elements to closed (or open to start off open)
+            this.$element.find("." + this.config.classes.title).each(function() {
+                if ($(this).hasClass(that.config.classes.opened)) { that._handleElement(this, true); } else { that._handleElement(this, false); }
+            });
+
+            // Handle the click of the title
+            this.$element.find("." + this.config.classes.title).click(function(e) {e.preventDefault(); that._handleClick(this);});
+
+            ALLOY.Logger.startup('ALLOY.Accordion Started');
+        },
 
         // Set aria-multiselectable to true on the accordion element in order to turn on multi select
-        this._isMultiSelectable = function() {
+        _isMultiSelectable: function() {
             return this.$element[0].getAttribute("aria-multiselectable");
-        };
+        },
 
-        this._handleClick = function(el) {
+        _handleClick: function(el) {
             var $el = $(el).closest("." + this.config.classes.title);
 
             if (!$el.hasClass(this.config.classes.disabled)) {
@@ -21,23 +55,23 @@
                 var id = this._getTitleIndex($el[0]);
                 this._update(id, toOpen);
             }
-        };
+        },
 
-        this._update = function(id, toOpen) {
+        _update: function(id, toOpen) {
             var that = this;
             this.$element.find("." + this.config.classes.title).each(function() { that._handleTitle(this, id, toOpen); });
-        };
+        },
 
-        this._handleTitle = function(el, id, toOpen) {
+        _handleTitle: function(el, id, toOpen) {
             var index = this._getTitleIndex(el);
             if (index == id) {
                 this._handleElement(el, toOpen);
             } else if (!this._isMultiSelectable() && toOpen) {
                 this._handleElement(el, false);
             }
-        };
+        },
 
-        this._handleElement = function(el, toOpen) {
+        _handleElement: function(el, toOpen) {
             var fromTran = "";
             var fromEnd = "";
             var toTran = "";
@@ -73,9 +107,9 @@
                 $title.addClass(toEnd).removeClass(fromEnd).removeClass(fromTran);
                 $content.addClass(toEnd).removeClass(fromEnd).removeClass(fromTran);
             }
-        };
+        },
 
-        this._handleTransition = function($title, $content, fromTran, fromEnd, toTran, toEnd) {
+        _handleTransition: function($title, $content, fromTran, fromEnd, toTran, toEnd) {
             // Get contents original height
             var origHeight = $content.innerHeight();
 
@@ -93,49 +127,15 @@
                 $title.removeClass(toTran).addClass(toEnd);
                 $content.removeClass(toTran).addClass(toEnd).css({height: ""});
             }, this.config.transitionTime);
-        };
+        },
 
-        this._getTitleIndex = function(el) {
+        _getTitleIndex: function(el) {
             if (this.config.titleIndexAttr.substring(0, 5) == "data-") {
                 var att = this.config.titleIndexAttr.substring(5);
                 return $(el).data(att);
             }
             else { return $(el).attr(this.config.titleIndexAttr); }
-        };
-    };
-
-    Accordion.prototype = {
-
-    	defaults: {
-            classes: {
-                'title'     : 'accordion__tab',         // The class to select the title (button) of an accordion'd element
-                'content'   : 'accordion__panel',       // The class to select the content of an accordion'd element
-                'opened'    : 'open',                   // The class given to open accordion elements (elements with this class on startup will start expanded)
-                'closed'    : 'closed',                 // The class given to closed accordion elements
-                'opening'   : 'opening',                // The class given to accordion elements in the process of opening
-                'closing'   : 'closing',                // The class given to accordion elements in the process of closing
-                'disabled'  : 'disabled'                // The class given to accordion elements that cannot have their state altered
-            },
-            transitionTime  : 350,                      // The amount of time it takes to transition from open to closed, and vice versa
-            titleIndexAttr  : 'data-accordionindex',    // The attribute on the title to use that matches up to the content id (prefix with 'data-' if applicable)
-            onChangeFunc    : undefined                 // Custom callback function to handle functionality on accordion change
-    	},
-
-        _init: function() {
-            this.config = $.extend({}, this.defaults, this.options, this.metadata);
-
-            var that = this;
-
-            // Init all elements to closed (or open to start off open)
-            this.$element.find("." + this.config.classes.title).each(function() {
-                if ($(this).hasClass(that.config.classes.opened)) { that._handleElement(this, true); } else { that._handleElement(this, false); }
-            });
-
-            // Handle the click of the title
-            this.$element.find("." + this.config.classes.title).click(function(e) {e.preventDefault(); that._handleClick(this);});
-
-            ALLOY.Logger.startup('ALLOY.Accordion Started');
-        }
+        },
     };
 
     Accordion.defaults = Accordion.prototype.defaults;
