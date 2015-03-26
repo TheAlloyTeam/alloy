@@ -30,14 +30,12 @@
 
 	.card__title {
 		position: absolute;
+	  	line-height:1.2;
 		bottom: 10px;
 		left: 20px;
 	}
 }
 
-.card__image {
-	width: 100%;
-}
 
 .card__title {
 	._font-size-heading (@TYPE-SIZE-Beta);
@@ -60,11 +58,10 @@
   // =====================================
 
   .card--alloythumb {
-
+	width:100%;
 	display:block;
 	float:left;
 	._transition();
-	._margin(@TYPE-LineHeight/2, @TYPE-FontSize);
 
 	&:hover {
 	  ._depth-3();
