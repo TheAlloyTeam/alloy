@@ -22,11 +22,19 @@ navigation-order: 1
 				<div class="page__body rte">
 					{{#withSort page-category "page.title"}}
 					<h2>{{page-category}}</h2>
-					<ul>
+					<ul class="list list--alloythumbs horizontal c">
 	    				{{#each this.pages}}
 		            		{{#this}}
 							{{#isnt data.navigation-main true}}
-		                <li class="list__item"><a class="list__link{{#if page.nav-variant}} list__link--{{data.nav-variant}}{{/if}}" href="{{relative ../../../../page.dest this.dest}}" title="{{data.nav-title}}"{{#if data.nav-target}} target="{{data.nav-target}}"{{/if}}>{{capitalizeFirst data.nav-text}}</a></li>
+								<li class="list__item">
+									<a href="{{relative ../../../../page.dest this.dest}}" class="card card--alloythumb{{#if page.nav-variant}} card--{{data.nav-variant}}{{/if}}" title="{{data.nav-title}}"{{#if data.nav-target}} target="{{data.nav-target}}"{{/if}}>
+										<div class="card__front">
+											<div class="card__head">{{#if data.nav-thumb}}<img src="{{data.nav-thumb}} alt="{{data.nav-text}}" />{{/if}}
+												<div class="card__title">{{capitalizeFirst data.nav-text}}</div>
+											</div>
+										</div>
+									</a>
+								</li>
 		                	{{/isnt}}
 	                        {{/this}}
 	        			{{/each}}

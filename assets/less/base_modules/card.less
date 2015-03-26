@@ -56,4 +56,19 @@
 	._padding-top (20);
 }
 
+  // CARD VARIANTS
+  // =====================================
+
+  .card--alloythumb {
+
+	display:block;
+	float:left;
+	._transition();
+	._margin(@TYPE-LineHeight/2, @TYPE-FontSize);
+
+	&:hover {
+	  ._depth-3();
+	}
+  }
+
 } .card-styles();
