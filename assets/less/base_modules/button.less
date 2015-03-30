@@ -119,7 +119,64 @@
         ._button-create (@BUTTON-DisabledColor, @BUTTON-DisabledHoverColor, @BUTTON-DisabledTextColor);
     }
 }
+    // BUTTON GROUPS
 
+    .buttongroup {
+        position:relative;
+        vertical-align:middle;
+        white-space: nowrap;
+        ._padding(@TYPE-LineHeight/2,0);
+        ._inline-block();
+
+        .buttongroup {
+            padding:0;
+        }
+
+        > .button, .buttongroup {
+            position: relative;
+            float: left;
+            ._border-radius(0);
+        }
+        > .button {
+            &:first-child, &.first {
+                ._border-radius-custom(5, 0, 0, 5);
+            }
+
+            &:last-child, &.last {
+                ._border-radius-custom(0,5,5,0);
+            }
+        }
+
+        &.justified {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: separate;
+
+            > .button {
+                display: table-cell;
+                float: none;
+                width: 1%;
+            }
+        }
+        &.vertical {
+            > .button, .buttongroup {
+                display: block;
+                float: none;
+                width: 100%;
+                max-width: 100%;
+            }
+            > .button {
+                &:first-child, &.first {
+                    ._border-radius-custom(5, 5, 0, 0);
+                }
+
+                &:last-child, &.last {
+                    ._border-radius-custom(0,0,5,5);
+                }
+            }
+        }
+    }
 .button__totop {
     color: @COLOR-White;
     background-color: @BUTTON-AltColor;

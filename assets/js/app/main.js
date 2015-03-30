@@ -3,7 +3,7 @@
 // =========================================================================*/
 
 // Start the main app logic.
-require(['jquery', 'fontloader', 'logging', 'core', 'mobile', 'iefixes', 'prettyprint'],
+require(['jquery', 'fontloader', 'navigation', 'logging', 'core', 'mobile', 'iefixes', 'prettyprint'],
     function ($) {
         ALLOY.Logger.startup('ALLOY.Main Started');
     }
@@ -21,4 +21,4 @@ if (DEBUG) {
 	    }
 	    throw err;
 	};
-};
+}

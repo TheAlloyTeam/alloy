@@ -11,8 +11,6 @@
 
     Accordion.prototype = {
 
-        that: {},
-
     	defaults: {
             classes: {
                 'title'     : 'accordion__tab',         // The class to select the title (button) of an accordion'd element
@@ -28,15 +26,10 @@
             onChangeFunc    : undefined                 // Custom callback function to handle functionality on accordion change
     	},
 
-        // Set aria-multiselectable to true on the accordion element in order to turn on multi select
-        _isMultiSelectable: function() {
-            return that.$element[0].getAttribute("aria-multiselectable");
-        },
-
         _init: function() {
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
 
-            that = this;
+            var that = this;
 
             // Init all elements to closed (or open to start off open)
             this.$element.find("." + this.config.classes.title).each(function() {
@@ -44,32 +37,37 @@
             });
 
             // Handle the click of the title
-            this.$element.find("." + this.config.classes.title).click(this._handleClick);
+            this.$element.find("." + this.config.classes.title).click(function(e) {e.preventDefault(); that._handleClick(this);});
 
             ALLOY.Logger.startup('ALLOY.Accordion Started');
         },
 
-        _handleClick: function(e) {
-            e.preventDefault();
-            var $el = $(e.target).closest("." + that.config.classes.title);
+        // Set aria-multiselectable to true on the accordion element in order to turn on multi select
+        _isMultiSelectable: function() {
+            return this.$element[0].getAttribute("aria-multiselectable");
+        },
 
-            if (!$el.hasClass(that.config.classes.disabled)) {
-                var toOpen = ($el.hasClass(that.config.classes.closed) || $el.hasClass(that.config.classes.closing));
-                var id = that._getTitleIndex($el[0]);
-                that._update(id, toOpen);
+        _handleClick: function(el) {
+            var $el = $(el).closest("." + this.config.classes.title);
+
+            if (!$el.hasClass(this.config.classes.disabled)) {
+                var toOpen = ($el.hasClass(this.config.classes.closed) || $el.hasClass(this.config.classes.closing));
+                var id = this._getTitleIndex($el[0]);
+                this._update(id, toOpen);
             }
         },
 
         _update: function(id, toOpen) {
-            that.$element.find("." + that.config.classes.title).each(function() { that._handleTitle(this, id, toOpen); });
+            var that = this;
+            this.$element.find("." + this.config.classes.title).each(function() { that._handleTitle(this, id, toOpen); });
         },
 
         _handleTitle: function(el, id, toOpen) {
-            var index = that._getTitleIndex(el);
+            var index = this._getTitleIndex(el);
             if (index == id) {
-                that._handleElement(el, toOpen);
-            } else if (!that._isMultiSelectable() && toOpen) {
-                that._handleElement(el, false);
+                this._handleElement(el, toOpen);
+            } else if (!this._isMultiSelectable() && toOpen) {
+                this._handleElement(el, false);
             }
         },
 
@@ -80,31 +78,31 @@
             var toEnd = "";
 
             var $title = $(el);
-            var $content = that.$element.find(that._getTitleIndex(el));
+            var $content = this.$element.find(this._getTitleIndex(el));
 
             // Set our variables depending on if we are opening or closing this element
             if (toOpen) {
                 $content.attr("aria-hidden", "false");
 
-                fromTran = that.config.classes.closing;
-                fromEnd = that.config.classes.closed;
-                toTran = that.config.classes.opening;
-                toEnd = that.config.classes.opened;
+                fromTran = this.config.classes.closing;
+                fromEnd = this.config.classes.closed;
+                toTran = this.config.classes.opening;
+                toEnd = this.config.classes.opened;
             } else {
                 $content.attr("aria-hidden", "true");
 
-                fromTran = that.config.classes.opening;
-                fromEnd = that.config.classes.opened;
-                toTran = that.config.classes.closing;
-                toEnd = that.config.classes.closed;
+                fromTran = this.config.classes.opening;
+                fromEnd = this.config.classes.opened;
+                toTran = this.config.classes.closing;
+                toEnd = this.config.classes.closed;
             }
 
             // Trigger change event
-            if (that.config.onChangeFunc !== undefined) { that.config.onChangeFunc($title, $content, toOpen); }
+            if (this.config.onChangeFunc !== undefined) { this.config.onChangeFunc($title, $content, toOpen); }
 
             // If transitions turned on, then transition to end go to end, or transitions off so just go to end          
-            if (that.config.transitionTime > 0) {
-                that._handleTransition($title, $content, fromTran, fromEnd, toTran, toEnd);
+            if (this.config.transitionTime > 0) {
+                this._handleTransition($title, $content, fromTran, fromEnd, toTran, toEnd);
             } else {
                 $title.addClass(toEnd).removeClass(fromEnd).removeClass(fromTran);
                 $content.addClass(toEnd).removeClass(fromEnd).removeClass(fromTran);
@@ -128,7 +126,7 @@
             setTimeout(function() {
                 $title.removeClass(toTran).addClass(toEnd);
                 $content.removeClass(toTran).addClass(toEnd).css({height: ""});
-            }, that.config.transitionTime);
+            }, this.config.transitionTime);
         },
 
         _getTitleIndex: function(el) {
@@ -138,19 +136,6 @@
             }
             else { return $(el).attr(this.config.titleIndexAttr); }
         },
-
-        // hashEvent: function () {
-        //     // Open accordion on hash change - used by our branches
-        //     var that = this;
-
-        //     if ($("." + this.classes.panel)) {
-        //         $(window).on('hashchange', function () {
-        //             var accordionToOpen = $(window.location.hash);
-        //             that.openContent(accordionToOpen);
-        //             accordionToOpen.removeClass(this.classes.closed);
-        //         });
-        //     }
-        // }
     };
 
     Accordion.defaults = Accordion.prototype.defaults;

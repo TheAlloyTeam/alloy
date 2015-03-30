@@ -108,8 +108,8 @@
                     'toastrack' : 'toastrack'
                 }
             },
-            add: addToast,        
-        }; 
+            add: addToast
+        };
 
         return public;
 
@@ -125,7 +125,7 @@
             /***** Worth bearing in mind that mustache.js works quite differently to some other interpretations of handlebars so doesn't need if or each calls - worth changing version? *****/
             template: 
                     '<div class="toast popup{{#item.modifier}} toast--{{item.modifier}}{{/item.modifier}}{{#item.status}} {{item.status}}{{/item.status}}">' +
-                        '<a href="#" class="toast__close">&times;</a>' +
+                        '<a href="?err=nojs&module=toast&action=close" class="toast__close">&times;</a>' +
                         '<div class="toast__progress"></div>' +
                         '<div class="toast__icon">{{#content.icon}}' +
                             '<i class="icon {{#item.modifier}}icon--{{item.modifier}}{{/item.modifier}}{{#item.size}} {{item.size}}{{/item.size}}"{{#content.title}} title="{{content.title}}"{{/content.title}} aria-hidden="true" role="img"></i>' +

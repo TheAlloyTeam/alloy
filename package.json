@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/gfinbow/alloy.git"
   },
-  "staddle": {
+  "alloy": {
     "dev": true,
     "content": "content",
     "layouts": "_layouts",
