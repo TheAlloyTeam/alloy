@@ -1,8 +1,8 @@
 
 {{#this}}
-	<div class="flash{{#if item.modifier}} flash--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}">
-		<a href="#" class="flash__close">&times;</a>
-		{{#if content.icon}}<div class="flash__icon">{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}</div>{{/if}}
-        <div class="flash__content">{{content.text}}</div>
-	</div>
+<div class="flash{{#if item.modifier}} flash--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}">
+	<a href="#" class="flash__close">&times;</a>
+	{{#if content.icon}}<div class="flash__icon">{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}</div>{{/if}}
+    <div class="flash__content rte">{{{content.body}}}</div>
+</div>
 {{/this}}
