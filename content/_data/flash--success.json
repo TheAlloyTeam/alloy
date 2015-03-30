@@ -4,7 +4,7 @@
         "status": "success"
     },
     "content": {
-        "text": "I did something",
+        "body": "<p>I did <a href=\"#\" class=\"flash__link\">something</a></p>",
         "icon": [{
             "item": {
                 "modifier": "tick7",

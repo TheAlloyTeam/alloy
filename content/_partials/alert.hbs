@@ -1,5 +1,6 @@
 {{#this}}
 <div class="alert{{#if item.modifier}} alert--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}">
+	<a href="#" class="alert__close">&times;</a>
 	{{#if content.icon}}<div class="alert__icon">{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}</div>{{/if}}
 	<div class="alert__content">
 		{{#if content.title}}<div class="alert__title">{{content.title}}</div>{{/if}}

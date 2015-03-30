@@ -51,8 +51,7 @@
 }
 
 .alert__title {
-    font-style: italic;
-    ._font-size (@TYPE-SIZE-Gamma);
+    font-weight: bold;
 }
 
 .alert__icon {
@@ -60,6 +59,30 @@
     line-height: 1;
     ._padding-top (10);
     ._margin-right (10);
+}
+
+.alert__close {
+    font-weight: bold;
+    text-decoration: none;
+    float: right;
+    display: block;
+    line-height: 1;
+    ._padding-top (1);
+    ._font-size (@TYPE-LineHeight);
+
+    &:link,
+    &:visited {
+        color: lighten(@ALERT-DefaultTextColor, 20%);
+    }
+
+    &:hover,
+    &:focus {
+        color: darken(@ALERT-DefaultTextColor, 20%);
+    }
+
+    &:active {
+        color: darken(@ALERT-DefaultTextColor, 40%);
+    }
 }
 
 // STATUSES
@@ -70,24 +93,96 @@
         color: @ALERT-InfoTextColor;
         background-color: @ALERT-InfoBgColor;
         border-color: @ALERT-InfoBordercolor;
+
+        .alert__close {
+            color: lighten(@ALERT-InfoTextColor, 20%);
+
+            &:link,
+            &:visited {
+                color: lighten(@ALERT-InfoTextColor, 20%);
+            }
+
+            &:hover,
+            &:focus {
+                color: darken(@ALERT-InfoTextColor, 20%);
+            }
+
+            &:active {
+                color: darken(@ALERT-InfoTextColor, 40%);
+            }
+        }
     }
 
     &.warn {
         color: @ALERT-WarnTextColor;
         background-color: @ALERT-WarnBgColor;
         border-color: @ALERT-WarnBordercolor;
+
+        .alert__close {
+            color: lighten(@ALERT-WarnTextColor, 20%);
+
+            &:link,
+            &:visited {
+                color: lighten(@ALERT-WarnTextColor, 20%);
+            }
+
+            &:hover,
+            &:focus {
+                color: darken(@ALERT-WarnTextColor, 20%);
+            }
+
+            &:active {
+                color: darken(@ALERT-WarnTextColor, 40%);
+            }
+        }
     }
 
     &.danger {
         color: @ALERT-DangerTextColor;
         background-color: @ALERT-DangerBgColor;
         border-color: @ALERT-DangerBordercolor;
+
+        .alert__close {
+            color: lighten(@ALERT-DangerTextColor, 20%);
+
+            &:link,
+            &:visited {
+                color: lighten(@ALERT-DangerTextColor, 20%);
+            }
+
+            &:hover,
+            &:focus {
+                color: darken(@ALERT-DangerTextColor, 20%);
+            }
+
+            &:active {
+                color: darken(@ALERT-DangerTextColor, 40%);
+            }
+        }
     }
 
     &.success {
         color: @ALERT-SuccessTextColor;
         background-color: @ALERT-SuccessBgColor;
         border-color: @ALERT-SuccessBordercolor;
+
+        .alert__close {
+            color: lighten(@ALERT-SuccessTextColor, 20%);
+
+            &:link,
+            &:visited {
+                color: lighten(@ALERT-SuccessTextColor, 20%);
+            }
+
+            &:hover,
+            &:focus {
+                color: darken(@ALERT-SuccessTextColor, 20%);
+            }
+
+            &:active {
+                color: darken(@ALERT-SuccessTextColor, 40%);
+            }
+        }
     }
 }
 
