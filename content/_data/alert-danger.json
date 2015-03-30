@@ -3,6 +3,6 @@
     	"status": "danger"
 	},
     "content": {
-		"text": "This is an danger alert"
+		"title": "This is a danger alert"
     }
 }

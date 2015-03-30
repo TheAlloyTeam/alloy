@@ -3,6 +3,13 @@
     	"modifier": ""
 	},
     "content": {
-		"text": "This is an alert"
+    	"title": "This is the title",
+		"body": "<p>This is the <strong>body</strong>. Here is a <u>list</u>:</p><ul><li>List item</li><li>List item</li></ul>",
+		"icon": [{
+            "item": {
+                "modifier": "round52",
+                "size": "xlarge"
+            }
+        }]
     }
 }

@@ -14,11 +14,11 @@
 // ----------------------------------------------------
 
 .card {
-	background-clip: padding-box;
 	background-color: @CARD-BgColor;
-	._margin (10,0,20,0);
+	background-clip: padding-box;
+	._margin (10, 0, 20, 0);
 	._border-radius (2);
-	._depth-1 ();
+	._depth-1();
 }
 
 .card__head {
@@ -30,12 +30,11 @@
 
 	.card__title {
 		position: absolute;
-	  	line-height:1.2;
+	  	line-height: 1.2;
 		bottom: 10px;
 		left: 20px;
 	}
 }
-
 
 .card__title {
 	._font-size-heading (@TYPE-SIZE-Beta);
@@ -54,18 +53,18 @@
 	._padding-top (20);
 }
 
-  // CARD VARIANTS
-  // =====================================
+// CARD VARIANTS
+// ----------------------------------------------------
 
-  .card--alloythumb {
-	width:100%;
-	display:block;
-	float:left;
-	._transition();
+.card--alloythumb {
+	width: 100%;
+	display: block;
+	float: left;
+	._transition (all, 0.1s);
 
 	&:hover {
-	  ._depth-3();
+	  ._depth-2();
 	}
-  }
+}
 
 } .card-styles();
