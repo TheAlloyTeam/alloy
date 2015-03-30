@@ -3,6 +3,6 @@
     	"status": "info"
 	},
     "content": {
-		"text": "This is an info alert"
+		"title": "This is an info alert"
     }
 }
