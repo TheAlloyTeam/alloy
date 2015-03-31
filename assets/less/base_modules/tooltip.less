@@ -23,27 +23,38 @@
 [data-tooltip]:after,
 [data-tooltip]:before {
     position: absolute;
-    bottom: -100px;
+    bottom: 80%;
     left: -9999px;
     opacity: 0;
     line-height: 1;
     z-index: @Z-INDEX-Level3;
-    ._transition (opacity, 0.1s);
+    ._margin-bottom (10);
+    ._transition (bottom, 0.1s);
 }
 
 [data-tooltip]:after {
     color: @TOOLTIP-Color;
     background-color: @TOOLTIP-BgColor;
     content: attr(data-tooltip);
-    text-align: center;
+    display: inline-table;
     white-space: now;
     ._border-radius (2);
-    ._padding (@TYPE-LineHeight/2);
+    ._padding (@TYPE-LineHeight/4);
 }
 
 [data-tooltip].tooltip-large:after {
-    min-width: 200px;
+    //min-width: 200px;
     white-space: normal;
+}
+
+[data-tooltip]:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color: @TOOLTIP-BgColor transparent transparent transparent;
+    margin-bottom: 0;
 }
 
 [data-tooltip]:hover:after,
@@ -53,11 +64,11 @@
 
 [data-tooltip]:hover:after,
 [data-tooltip]:hover:before {
-    bottom: -44px;
+    bottom: 100%;
     left: 0;
 }
 [data-tooltip]:hover:before {
-    left: 15px;
+    left: 20px;
 }
 
 } .tooltip-styles();

@@ -1,12 +1,12 @@
 ---
-title: Flashes
+title: Toasts
 
-nav-thumb: "//placehold.it/200x200/"
-nav-title: "Flashes"
-nav-text: "Flashes"
-nav-variant: "flashes"
+nav-thumb: "components/toasts.jpg"
+nav-title: "Toasts"
+nav-text: "Toasts"
+nav-variant: "toasts"
 page-category: "components"
-js-flash: true
+js-toast: true
 ---
 
 <main class="w w--main">
@@ -35,7 +35,8 @@ js-flash: true
 		            <div class="secton__body">
 				        <!-- code -->
 
-				        {{> flash flash }}
+				        {{> toast toast }}
+
 			        </div>
 
 		        </section>
@@ -46,11 +47,11 @@ js-flash: true
 		            <header class="section__head">
 		            	<h2 class="section__title">Example: Status</h2>
 		            </header>
-                    <div class="secton__body">
-				        {{> flash flash--info }}
-				        {{> flash flash--warn }}
-				        {{> flash flash--danger }}
-				        {{> flash flash--success }}
+					<div class="section__body">
+				        {{> toast toast--info }}
+				        {{> toast toast--warn }}
+				        {{> toast toast--danger }}
+				        {{> toast toast--success }}
 				        <!-- end of code -->
 			        </div>
 
@@ -59,13 +60,10 @@ js-flash: true
 <!-- example -->
 		    	<section class="section section--code">
 		            <header class="section__head">
-		            	<h2 class="section__title">Example: Flash</h2>
+		            	<h2 class="section__title">Example: Toast</h2>
 		            </header>
-                    <div class="secton__body">
-
-		            	<a href="#" class="button" data-flash='{"item": {"modifier": "","status": "success"},"content": {"text": "This is a flash message and it wont go away until you click the close button!","icon": [{"item": {"modifier": "tick7","size": "xlarge"},"content": {"title": ""}}]}}'>Click here to see a live flash</a>
-
-		            	<a href="#" class="button" data-flash='{"item": {"modifier": "","status": "warn"},"content": {"text": "This is a warning - youve been warned!","icon": [{"item": {"modifier": "tick7","size": "xlarge"},"content": {"title": ""}}]}}'>Click here to see another example</a>
+					<div class="section__body">
+		            	<a href="#" class="button" data-toast='{"item": {"modifier": "","status": "success"}, "content": {"text": "You did it! A toast that pops up from the bottom of the page!","icon": [{"item": {"modifier": "round52","size": "xlarge"},"content": {"title": "" }}]}}'>Click here to see a live toast</a>
 		            	<!-- end of code -->
 			        </div>
 
@@ -81,8 +79,13 @@ js-flash: true
 
 		            <div class="section__body">
 			            <pre class="prettyprint linenums"><code class="html">
-
-
+&lt;div class="toast danger"&gt;
+	&lt;a href="#" class="toast__close"&gt;&amp;times;&lt;/a&gt;
+	&lt;div class="toast__progress">&lt;/div&gt;
+	&lt;div class="toast__icon"&gt;&lt;i class="icon icon--tick7 xlarge" aria-hidden="true" role="img"&gt;&lt;/i&gt;
+&lt;/div&gt;
+    &lt;div class="toast__content"&gt;Its all going wrong - WE ARE ALL DOOMED!!&lt;/div&gt;
+&lt;/div&gt;
 			             </code></pre>
 		            </div>
 
