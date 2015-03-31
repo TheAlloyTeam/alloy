@@ -3,6 +3,12 @@
     	"status": "info"
 	},
     "content": {
-		"title": "This is an info alert"
+		"title": "This is an info alert",
+        "icon": [{
+            "item": {
+                "modifier": "round52",
+                "size": "xlarge"
+            }
+        }]
     }
 }
