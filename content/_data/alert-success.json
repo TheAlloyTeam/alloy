@@ -3,6 +3,6 @@
     	"status": "success"
 	},
     "content": {
-		"text": "This is a success alert"
+		"title": "This is a success alert"
     }
 }
