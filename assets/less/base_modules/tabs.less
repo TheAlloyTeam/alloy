@@ -14,12 +14,20 @@
 @TABS-HoverColor:           @COLOR-White;
 @TABS-HoverBgColor:         lighten(@TABS-BgColor, 5%);
 @TABS-ActiveColor:          @TYPE-FontColor;
-@TABS-ActiveBgColor:        @COLOR-White;
+@TABS-ActiveBgColor:        @COLOR-GreyLighter;
 
 // BASE
 // ----------------------------------------------------
 
-.tabs {}
+.tabs {
+    background-color: @TABS-ActiveBgColor;
+    ._margin-bottom (@TYPE-LineHeight);
+    ._clearfix();
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
 
 .tabs__tray {
     background-color: @TABS-TrayBgColor;
@@ -35,8 +43,6 @@
     }
 }
 
-.tabs__body {}
-
 .list__tabs {
     .list__item {
         display: inline-block;
@@ -47,8 +53,8 @@
         color: @TABS-Color;
         background-color: @TABS-BgColor;
         text-decoration: none;
-        ._padding (@TYPE-LineHeight/4, @TYPE-LineHeight);
         ._inline-block();
+        ._padding (@TYPE-LineHeight/4, @TYPE-LineHeight);
         ._transition (all, 0.1s);
 
         &:hover {
@@ -60,11 +66,13 @@
     .active {
         color: @TABS-ActiveColor;
         background-color: @TABS-ActiveBgColor;
+
+        &:hover {
+            color: @TABS-ActiveColor;
+            background-color: @TABS-ActiveBgColor;
+        }
     }
 }
-
-// VARIANTS
-// ----------------------------------------------------
 
 // MOBILE
 // ----------------------------------------------------
@@ -83,10 +91,35 @@
 
 }
 
-// TABLET
+// TABLET & UP
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+@media only screen and (min-width: @MQ-Medium-min) {
+
+    .tabs {
+        &.vertical {
+            .tabs__tray {
+                display: table-cell;
+                width: 200px;
+            }
+
+            .tabs__content {
+                display: table-cell;
+                vertical-align: top;
+            }
+
+            .list__tabs {
+                .list__item {
+                    display: block;
+                    width: 100%;
+                }
+
+                .list__link {
+                    width: 100%;
+                }
+            }
+        }
+    }
 
 }
 
