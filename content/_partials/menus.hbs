@@ -1,0 +1,25 @@
+{{#this}}
+<div class="menu{{#if item.modifier}} menu--{{item.modifier}}{{/if}}">
+    <ul class="list list__menu">
+		{{#if content.listitems}}
+			{{#each content.listitems}}
+				{{#this}}
+					<li class="list__{{item.modifier}}">
+						{{#if content.url}}
+							<a href="{{content.url}}" class="list__link" title="{{content.title}}">
+								{{#if content.icons}}{{#each content.icons}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+						        {{#if content.text}}<span>{{content.text}}</span>{{/if}}
+						        {{#if content.badges}}{{#each content.badges}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
+							</a>
+						{{else}}
+							{{#if content.icons}}{{#each content.icons}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+							{{#if content.text}}<span>{{content.text}}</span>{{/if}}
+						    {{#if content.badges}}{{#each content.badges}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
+						{{/if}}
+					</li>
+				{{/this}}
+			{{/each}}
+		{{/if}}
+	</ul>
+</div>
+{{/this}}

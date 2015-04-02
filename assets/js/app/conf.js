@@ -52,4 +52,4 @@ var require = {
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
     }
-}; 
+};

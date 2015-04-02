@@ -5,6 +5,7 @@
 
     	var _init = function() {
             totopnav();
+            dropdown();
             ALLOY.Logger.startup('ALLOY.Navigation Started');
     	};
 
@@ -29,6 +30,17 @@
             // Perform smooth scroll to top of page
             $(".button__totop").click(function(e) {
                 $("html, body").animate({ scrollTop: 0}, 200);
+                e.preventDefault();
+            });
+
+        };
+
+        var dropdown = function(){
+
+            /***** Dropdown *****/
+            $('[data-toggle="menu"]').click(function(e) {
+                $(".menu").slideToggle(100);
+                $("i",this).toggleClass("icon--up176 icon--downwards");
                 e.preventDefault();
             });
 
