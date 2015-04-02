@@ -10,12 +10,12 @@
             {{#if item.size}} {{item.size}}{{/if}}
             {{#if item.block}} block{{/if}}"
         {{#if content.title}} title="{{content.title}}"{{/if}}
-        {{#if item.dropdown}} data-toggle="dropdown" aria-expanded="false"{{/if}}>
+        {{#if item.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
         <span class="ripple"></span>
         {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
         {{#if content.text}}<span>{{content.text}}</span>{{/if}}
-        {{#if content.badge}}{{#each content.badge}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
-        {{#if item.dropdown}}<span></span>{{/if}}
+        {{#if content.badges}}{{#each content.badges}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
+        {{#if item.menu}}<span></span>{{/if}}
     </a>
     {{else}}
         {{#if content.type}}
@@ -26,11 +26,11 @@
                     {{#if item.block}} block{{/if}}"
                 type="submit"
                 {{#if item.disabled}} disabled="disabled"{{/if}}
-                {{#if item.dropdown}} data-toggle="dropdown" aria-expanded="false"{{/if}}>
+                {{#if item.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
                 <span class="ripple"></span>
                 {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
                 {{#if content.text}}<span>{{content.text}}</span>{{/if}}
-                {{#if content.badge}}{{#each content.badge}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
+                {{#if content.badges}}{{#each content.badges}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
             </button>
         {{else}}
             <span class="button
@@ -38,11 +38,11 @@
                     {{#if item.disabled}} disabled{{/if}}
                     {{#if item.size}} {{item.size}}{{/if}}"
                 {{#if content.title}} title="{{content.title}}"{{/if}}
-                {{#if item.dropdown}} data-toggle="dropdown" aria-expanded="false"{{/if}}>
+                {{#if item.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
                 <span class="ripple"></span>
                 {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
                 {{#if content.text}}<span>{{content.text}}</span>{{/if}}
-                {{#if content.badge}}{{#each content.badge}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
+                {{#if content.badges}}{{#each content.badges}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
             </span>
         {{/if}}
     {{/if}}

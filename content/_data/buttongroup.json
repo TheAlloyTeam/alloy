@@ -51,30 +51,29 @@
                     }
                 }]
             }
-        },{
-                "item": {
-                    "modifier": "",
-                    "size": "",
-                    "disabled": "",
-                    "target": "",
-                    "block": ""
-                },
-                "content": {
-                    "text": "Default Button 3",
-                    "title": "Default",
-                    "url": "#linkurl3",
-                    "icon": [{
-                        "item": {
-                            "modifier": "",
-                            "size": ""
-                        },
-                        "content": {
-                            "title": ""
-                        }
-                    }]
-                }
+        },
+        {
+            "item": {
+                "modifier": "",
+                "size": "",
+                "disabled": "",
+                "target": "",
+                "block": ""
+            },
+            "content": {
+                "text": "Default Button 3",
+                "title": "Default",
+                "url": "#linkurl3",
+                "icon": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
             }
-        ]
-    }
-    ]
+        }]
+    }]
 }

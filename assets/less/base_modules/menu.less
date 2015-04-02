@@ -1,0 +1,80 @@
+/* =========================================================================
+// DROPDOWN
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+@DROPDOWN-Color:						@COLOR-White;
+@DROPDOWN-BgColor:						@COLOR-Base;
+@DROPDOWN-HeadColor:					@COLOR-Grey;
+@DROPDOWN-ListColor:					@COLOR-Base;
+@DROPDOWN-ListBgColor:					@COLOR-White;
+
+// BASE
+// ----------------------------------------------------
+
+.menu {
+	display: none;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 100%;
+	background-color: @DROPDOWN-ListBgColor;
+	z-index: @Z-INDEX-Level3;
+	._depth-1();
+}
+
+.list__menu {
+	white-space: normal;
+
+	.list__head {
+		color: @DROPDOWN-HeadColor;
+		._padding (@TYPE-LineHeight/4);
+	}
+
+	.list__link {
+		color: @DROPDOWN-ListColor;
+		text-decoration: none;
+		display: block;
+		._padding (@TYPE-LineHeight/4);
+
+		&:hover {
+			background-color: darken(@DROPDOWN-ListBgColor, 5%);
+		}
+	}
+
+	.list__separator {
+		background-color: darken(@DROPDOWN-ListBgColor, 5%);
+		height: 1px;
+	}
+
+	.badge {
+		float: right;
+		._margin-top (3);
+	}
+}
+
+// VARIANTS
+// ----------------------------------------------------
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
