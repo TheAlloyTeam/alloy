@@ -25,6 +25,12 @@
 	._font-size (12);
 }
 
+.list--alloythumbs {
+	.list__item {
+		float: left;
+	}
+}
+
 // MOBILE
 // ----------------------------------------------------
 
@@ -35,12 +41,36 @@
 		._padding-top (4);
 	}
 
+	.list--alloythumbs {
+	    .list__item {
+	        width: 48%;
+	        margin-right: 4%;
+	        ._margin-bottom (@TYPE-LineHeight);
+
+	        &:nth-child(even) {
+	          margin-right: 0;
+	        }
+	    }
+	}
+
 }
 
-// TABLET
+// TABLET & UP
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+@media only screen and (min-width: @MQ-Medium-min) {
+
+	.list--alloythumbs {
+	    .list__item {
+	        width: 15%;
+	        margin-right: 5%;
+	        ._margin-bottom (@TYPE-LineHeight*2);
+
+	        &:nth-child(5n+5) {
+	          margin-right: 0;
+	        }
+	    }
+	}
 
 }
 

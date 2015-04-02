@@ -1,0 +1,9 @@
+{
+	"item": {
+    	"modifier": "right"
+	},
+    "content": {
+    	"title": "Popover right",
+		"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere placerat eros ut lobortis. Ut mattis feugiat dui, euismod semper urna."
+    }
+}
