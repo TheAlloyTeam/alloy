@@ -1,0 +1,52 @@
+{
+  "item": {
+    "modifier": ""
+  },
+  "content": {
+    "backgroundUrl": "",
+    "foregroundUrl": "//placehold.it/200x200",
+    "foregroundAlt": "",
+    "title": "Banner Title",
+    "subtitle": "Banner Subtitle",
+    "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet lobortis lectus, in mattis sem pellentesque nec. Vivamus scelerisque pharetra pharetra&hellip;</p>"
+  },
+  "actions": [{
+   "buttons": [{
+     "item": {
+       "modifier": "",
+       "size": "",
+       "disabled": "",
+       "target": "",
+       "block": ""
+     },
+     "content": {
+       "text": "Button",
+       "title": "Button",
+       "url": "#butonUrl",
+       "icon": [{
+         "item": {
+           "modifier": "",
+           "size": ""
+         },
+         "content": {
+           "title": ""
+         }
+       }]
+     },
+     "tracking": {
+       "category": "",
+       "action": "",
+       "label": "",
+       "value": "",
+       "count": ""
+     }
+   }]
+  }],
+  "tracking": {
+    "category": "",
+    "action": "",
+    "label": "",
+    "value": "",
+    "count": ""
+  }
+}
