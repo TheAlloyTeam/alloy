@@ -7,10 +7,7 @@
 
 @TABLE-HeadColor:                   @COLOR-White;
 @TABLE-HeadBgColor:                 @COLOR-Base;
-@TABLE-RowOddColor:                 ;
 @TABLE-RowOddBgColor:               @COLOR-White;
-@TABLE-RowEvenColor:                ;
-@TABLE-RowEvenBgColor:              ;
 @TABLE-BorderColor:                 @COLOR-White;
 
 // BASE
@@ -28,13 +25,13 @@ table {
     }
 
     tr:nth-child(odd) {
-        color: @TABLE-RowOddColor;
+        //color: @TABLE-RowOddColor;
         background-color: @TABLE-RowOddBgColor;
     }
 
     tr:nth-child(even) {
-        color: @TABLE-RowEvenColor;
-        background-color: @TABLE-RowEvenBgColor;
+        //color: @TABLE-RowEvenColor;
+       // background-color: @TABLE-RowEvenBgColor;
     }
 }
 
@@ -59,17 +56,17 @@ table {
     color: @TABLE-HeadColor;
     background-color: @TABLE-HeadBgColor;
     font-weight: normal;
-    border-right: 0px solid @TABLE-BorderColor;
+    border-right: 0 solid @TABLE-BorderColor;
 }
 
 .table__header-cell {
-    word-w: normal;
+    word-wrap: normal;
 }
 
 .table__cell {
     min-height: 100%; // Incase cell is empty
-    border-right: 0px solid @TABLE-BorderColor;
-    word-w: break-word;
+    border-right: 0 solid @TABLE-BorderColor;
+    word-wrap: break-word;
     ._padding (@TYPE-LineHeight/2);
 
     &:last-child {
