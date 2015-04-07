@@ -3,8 +3,8 @@
     "modifier": ""
   },
   "content": {
-    "backgroundUrl": "",
-    "foregroundUrl": "/assets/img/bg.jpg",
+    "backgroundUrl": "/assets/img/bg.jpg",
+    "foregroundUrl": "",
     "foregroundAlt": "",
     "title": "Banner Title",
     "subtitle": "Banner Subtitle",

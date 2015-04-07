@@ -69,6 +69,27 @@
 
 }
 
+// COLOURS
+// ----------------------------------------------------
+
+// RGBA MIXIN Source: https://gist.github.com/Daniel15/2549243
+// ----------------------------------------------------
+
+._background-color (@colour, @alpha) {
+    @alphaColour: hsla(hue(@colour), saturation(@colour), lightness(@colour), @alpha);
+    @ieAlphaColour: argb(@alphaColour);
+ 
+    background-color: @colour; // Fallback for older browsers 
+     
+    // IE hacks
+    zoom: 1; // hasLayout
+    background-color: transparent\9;
+    -ms-filter:  "progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 8+
+        filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 6 & 7
+
+    background-color: @alphaColour; 
+}
+
 // BOX SHADOW
 // ----------------------------------------------------
 
@@ -172,7 +193,7 @@
 // TEXT
 // ----------------------------------------------------
 
-._text-shadow (@textshadow: 0 1px 0 rgba(0, 0, 0, 0.4)) {
+._text-shadow (@textshadow: 1px 1px 1px rgba(0, 0, 0, 0.3)) {
     text-shadow: @textshadow;
 }
 
@@ -207,7 +228,7 @@
     -webkit-transform:  scale(@factor);
     -moz-transform:     scale(@factor);
     -ms-transform:      scale(@factor);
-    transform:       scale(@factor);
+    transform:          scale(@factor);
 }
 
 ._rotate (@deg: 90deg) {
@@ -218,12 +239,25 @@
 }
 
 ._skew (@deg, @deg2) {
-    -webkit-transform:   skew(@deg, @deg2);
-    -moz-transform:      skew(@deg, @deg2);
-    -ms-transform:       skew(@deg, @deg2);
-    transform:           skew(@deg, @deg2);
+    -webkit-transform:  skew(@deg, @deg2);
+    -moz-transform:     skew(@deg, @deg2);
+    -ms-transform:      skew(@deg, @deg2);
+    transform:          skew(@deg, @deg2);
 }
 
+._translate-y (@deg) {
+    -webkit-transform:  translateY(@deg);
+    -moz-transform:     translateY(@deg);
+    -ms-transform:      translateY(@deg);
+    transform:          translateY(@deg);
+}
+
+._translate-x (@deg) {
+    -webkit-transform:  translateX(@deg);
+    -moz-transform:     translateX(@deg);
+    -ms-transform:      translateX(@deg);
+    transform:          translateX(@deg);
+}
 
 // w WORDS
 // ----------------------------------------------------
