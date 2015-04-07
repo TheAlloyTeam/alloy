@@ -1,6 +1,6 @@
 {
     "item": {
-        "modifier": ""
+        "modifier": "example"
     },
     "content": {
         "title": "Card Title",
