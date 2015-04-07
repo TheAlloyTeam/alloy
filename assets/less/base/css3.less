@@ -112,6 +112,40 @@
     background-image: linear-gradient(@origin, @start, @stop);
 }
 
+// 3D
+// ----------------------------------------------------
+
+._perspective (@perspective: 1200px){
+    -webkit-perspective: @perspective;
+    -moz-perspective: @perspective;
+    -o-perspective: @perspective;
+    perspective: @perspective;
+}
+
+._transform-style (@style: preserve-3d) {
+    -webkit-transform-style: @style;
+    -moz-transform-style: @style;
+    transform-style: @style;
+}
+
+._backface-visibility (@visibility: hidden) {
+    -webkit-backface-visibility: @visibility;
+    -moz-backface-visibility: @visibility;
+    backface-visibility: @visibility;
+}
+
+._transform-x (@deg: 0deg) {
+    -webkit-transform: rotateX(@deg);
+    -moz-transform: rotateX(@deg);
+    transform: rotateX(@deg);
+}
+
+._transform-y (@deg: 180deg) {
+    -webkit-transform: rotateY(@deg);
+    -moz-transform: rotateY(@deg);
+    transform: rotateY(@deg);
+}
+
 // OPACITY
 // ----------------------------------------------------
 

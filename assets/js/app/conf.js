@@ -33,6 +33,7 @@ var require = {
         'ink' : "modules/alloy.ink",
         'easing' : "modules/alloy.easing",
         'amd': "modules/exports/amd",
+        'cardflipper': "modules/alloy.cardflipper",
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -48,6 +49,7 @@ var require = {
         'flash' : {deps: ['jquery', 'core', 'logging', 'mustache']},
         'easing' : {deps: ['jquery', 'bezier']},
         'ink' : {deps: ['jquery', 'core', 'logging', 'easing']},
+        'cardflipper': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
