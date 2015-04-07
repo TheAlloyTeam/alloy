@@ -11,7 +11,7 @@
 * **Templates** - templates & patterns constructed with handlebars to help you start quickly using atomic theory
 * **Grunt** - the system will use grunt to do a lot of the legwork and compilation of your static site
 * **Accessibility** - we will be working closely to the guidelines to make sure that interactive elements are as accessible as they can be
-* **Roll our own javascript** - We will spend the time to create JavaScript and jQuery plugins that answer the problems that we need them to rather than taking off-the-shelf solutions
+* **Roll our own JavaScript** - We will spend the time to create JavaScript and jQuery plugins that answer the problems that we need them to rather than taking off-the-shelf solutions
 
 So much to do and what a fun journey it will be :)
 
