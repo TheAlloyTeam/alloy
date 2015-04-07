@@ -1,24 +1,30 @@
 {{#this}}
-    <div class="banner{{#if item.modifier}} banner--{{item.modifier}}{{/if}}"{{#if content.background}} style="background-image:url('{{content.backgroundUrl}}')"{{/if}}>
-        <div class="banner__overlay"></div>
-        <div class="banner__content">
-            {{#if content.foregroundUrl}}<div class="banner__foreground"><img src="{{content.foregroundUrl}}" alt="{{content.foregroundUrl}}" /></div>{{/if}}
-            <div class="banner__title">{{{content.title}}}</div>
-            <div class="banner__subtitle">{{{content.subtitle}}}</div>
-            <div class="banner__body">{{{content.body}}}</div>
+<div class="banner{{#if item.modifier}} banner--{{item.modifier}}{{/if}}"{{#if content.backgroundUrl}} style="background-image:url('{{content.backgroundUrl}}')"{{/if}}>
+    <div class="banner__overlay"></div>
+    <div class="banner__content">
+        <div class="banner__foreground">
+
+            {{#if content.foregroundUrl}}<img src="{{content.foregroundUrl}}" class="banner__image" alt="{{content.foregroundUrl}}" />{{/if}}
+
+            <div class="banner__title">{{content.title}}</div>
+            <div class="banner__subtitle">{{content.subtitle}}</div>
+            <div class="banner__body rte">{{{content.body}}}</div>
+        
             {{#if actions}}
-                <div class="banner__actions">
-                    {{#each actions}}
-                        {{#if buttons}}
-                            {{#each buttons}}
-                                {{#this}}
-                                    {{> button }}
-                                {{/this}}
-                            {{/each }}
-                        {{/if}}
-                    {{/each }}
-                </div>
+            <div class="banner__actions">
+                {{#each actions}}
+                    {{#if buttons}}
+                        {{#each buttons}}
+                            {{#this}}
+                                {{> button }}
+                            {{/this}}
+                        {{/each }}
+                    {{/if}}
+                {{/each }}
+            </div>
             {{/if}}
+
         </div>
     </div>
+</div>
 {{/this}}
