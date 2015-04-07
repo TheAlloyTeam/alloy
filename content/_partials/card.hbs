@@ -1,5 +1,6 @@
 {{#this}}
 <div class="card{{#if item.modifier}} card--{{item.modifier}}{{/if}}">
+
 	<div class="card__front">
 		<div class="card__head">
 			{{#if content.image}}
@@ -9,6 +10,13 @@
 		</div>
 		<div class="card__content">
 			<div class="card__summary">{{{content.summary}}}</div>
+		</div>
+	</div>
+
+	<div class="card__back init">
+		<div class="card__content">
+			<div class="card__title">{{content.title}}</div>
+			<div class="card__body">{{{content.body}}}</div>
 			{{#if actions}}
 				<div class="card__actions">
 				{{#each actions}}
@@ -17,18 +25,13 @@
 							{{#this}}
 							{{> button }}
 							{{/this}}
-						{{/each }}
+						{{/each}}
 					{{/if}}
-				{{/each }}
+				{{/each}}
 				</div>
-			{{/if}}
+			{{/if}} 
 		</div>
 	</div>
-	<div class="card__back">
-		<div class="card__content">
-			<div class="card__title">{{content.title}}</div>
-			<div class="card__body">{{{content.body}}}</div>
-		</div>
-	</div>
+	
 </div>
 {{/this}}

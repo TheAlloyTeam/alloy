@@ -4,7 +4,7 @@
   },
   "content": {
     "backgroundUrl": "",
-    "foregroundUrl": "//placehold.it/200x200",
+    "foregroundUrl": "/assets/img/bg.jpg",
     "foregroundAlt": "",
     "title": "Banner Title",
     "subtitle": "Banner Subtitle",
