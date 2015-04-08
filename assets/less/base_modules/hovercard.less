@@ -8,10 +8,16 @@
 // VARIABLES
 // ----------------------------------------------------
 
+@HOVERCARD-Color:					@COLOR-White;
+@HOVERCARD-BgColor:					@COLOR-Base;
+@HOVERCARD-InfoColor:				@COLOR-Yellow;
+
 // BASE
 // ----------------------------------------------------
 
 .hovercard {
+	color: @HOVERCARD-Color;
+	background-color: @HOVERCARD-BgColor;
 	max-width: 300px;
 	._padding (@TYPE-FontSize);
 	._depth-2();
@@ -29,26 +35,60 @@
 
     .avatar {
         display: block;
+		width: 60px;
+		height: 60px;
+        object-fit: cover;
+        ._border-radius (30);
     }
 
 }
 
 .hovercard__name {
-	font-weight:bold;
+	._font-size (@TYPE-SIZE-Gamma);
 }
 
 .hovercard__info {
-	color: @COLOR-Grey;
+	color: @HOVERCARD-InfoColor;
 	._font-size (@TYPE-SIZE-Iota);
 }
 
 .hovercard__bio {
-	._font-size (@TYPE-SIZE-Iota);
+	
 }
 
 .hovercard__actions {
 	text-align: right;
 	._padding-top (@TYPE-FontSize);
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+	.hovercard {
+		text-align: center;
+	}
+
+	.hovercard__avatar {
+		float: none;
+		display: inline-block;
+	}
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
 }
 
 } .hovercard-styles();
