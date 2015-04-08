@@ -8,52 +8,112 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@CARD-BgColor:				@COLOR-Grey;
+@CARD-Color:						@COLOR-White;
+@CARD-BgColor:						darken(@COLOR-Base, 20%);
+@CARD-TitleColor:					@COLOR-White;
+@CARD-TitleBgColor:					rgba(0, 0, 0, 0.7);
 
 // BASE
 // ----------------------------------------------------
 
 .card {
+	color: @CARD-Color;
 	background-clip: padding-box;
+	display: block;
+	position: relative;
+
+	+ .card {
+		._margin-top (@TYPE-LineHeight);
+	}
+}
+
+.card__front,
+.card__back {
 	background-color: @CARD-BgColor;
-	._margin (10,0,20,0);
+	._depth-1();
 	._border-radius (2);
-	._depth-1 ();
 }
 
 .card__head {
 	position: relative;
 
+	.card__title {
+		color: @CARD-TitleColor;
+		background-color: @CARD-TitleBgColor;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		._padding (@TYPE-LineHeight/2);
+	}
+
 	.card__image {
 		width: 100%;
 	}
-
-	.card__title {
-		position: absolute;
-		bottom: 10px;
-		left: 20px;
-	}
-}
-
-.card__image {
-	width: 100%;
 }
 
 .card__title {
-	._font-size-heading (@TYPE-SIZE-Beta);
+	._font-size-heading (@TYPE-SIZE-Delta);
 }
 
 .card__content {
-	._padding (20);
+	._padding (@TYPE-LineHeight);
 }
 
-.card__front {}
-.card__back {}
-
 .card__actions {
-	border-top: 1px solid lighten(@CARD-BgColor, 5);
-	._margin-top (15);
-	._padding-top (20);
+	border-top: 1px solid lighten(@CARD-BgColor, 5%);
+	._margin-top (@TYPE-LineHeight/2);
+	._padding-top (@TYPE-LineHeight);
+}
+
+// FLIPPER
+// ----------------------------------------------------
+
+.flip {
+	._perspective();
+
+	&:hover,
+	&.flipped {
+		.flip__front {
+			._transform-y (180deg);
+		}
+		
+		.flip__back {
+			z-index: 9;
+			._transform-y (0deg);
+			._box-shadow-custom (0 15px 50px rgba(0, 0, 0, 0.2));
+			._transition (all, 0.5s, @ANIM-Curve);
+		}
+	}
+}
+
+.flip__front {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 8;
+	._transform-y (0deg);
+	._transform-style (preserve-3d);
+	._backface-visibility (hidden);
+	._transition (all, 0.5s, @ANIM-Curve);
+}
+
+.flip__back {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 7;
+	._transform-y (-180deg);
+	._transform-style (preserve-3d);
+	._backface-visibility (hidden);
+	._transition (all, 0.5s, @ANIM-Curve);
+
+	&.init {
+		._transition (none);
+	}
 }
 
 } .card-styles();

@@ -3,6 +3,12 @@
     	"status": "danger"
 	},
     "content": {
-		"text": "This is an danger alert"
+		"title": "This is a danger alert",
+        "icon": [{
+            "item": {
+                "modifier": "round52",
+                "size": "xlarge"
+            }
+        }]
     }
 }

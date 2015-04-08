@@ -3,6 +3,12 @@
     	"status": "warn"
 	},
     "content": {
-		"text": "This is an warning alert"
+		"title": "This is a warning alert",
+        "icon": [{
+            "item": {
+                "modifier": "round52",
+                "size": "xlarge"
+            }
+        }]
     }
 }

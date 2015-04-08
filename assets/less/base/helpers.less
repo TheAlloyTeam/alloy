@@ -23,7 +23,6 @@
     ._clearfix();
 }
 
-
 // TEXT MANIPULTAION
 // ----------------------------------------------------
 
@@ -76,7 +75,7 @@
     font: 0/0 a;
     overflow: hidden;
     text-indent: 100%;
-    white-space: now;
+    white-space: nowrap;
 }
 
 // ALIGNMENT
@@ -149,16 +148,16 @@
 
 // RESPONSIVE UTILITIES
 // ----------------------------------------------------
-
+// TODO: look into this to make sure all use cases are being considered
 // Desktop
 
-.show-desktop {
+.show-lg {
     display: inherit !important;
 }
 
-.hide-desktop,
-.show-mobile,
-.show-tablet {
+.hide-lg,
+.show-sm,
+.show-md {
     display: none !important;
 }
 
@@ -167,13 +166,13 @@
 
 @media only screen and (max-width: @MQ-Small) {
 
-    .show-mobile {
+    .show-sm {
         display: inherit !important;
     }
 
-    .hide-mobile,
-    .show-desktop,
-    .show-tablet {
+    .hide-sm,
+    .show-lg,
+    .show-md {
         display: none !important;
     }
 }
@@ -182,14 +181,14 @@
 // ----------------------------------------------------
 
 @media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
-  .show-tablet,
-    .hide-desktop {
+  .show-md,
+    .hide-lg {
         display: inherit !important;
     }
 
-    .hide-tablet,
-    .show-mobile,
-    .show-desktop {
+    .hide-md,
+    .show-sm,
+    .show-lg {
         display: none !important;
     }
 }

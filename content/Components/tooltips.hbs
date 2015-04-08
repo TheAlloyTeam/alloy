@@ -1,9 +1,10 @@
 ---
-title: Hover Card
+title: Tooltips
 
-nav-title: "Hover Card"
-nav-text: "Hover Card"
-nav-variant: "hovercard"
+nav-thumb: "components/tooltips.jpg"
+nav-title: "Tooltips"
+nav-text: "Tooltips"
+nav-variant: "tooltips"
 page-category: "components"
 ---
 
@@ -30,18 +31,11 @@ page-category: "components"
 		                <h2 class="section__title">Example</h2>
 		            </header>
 
-		            <div class="secton__body">
+		            <div class="section__body">
 				        <!-- code -->
 
-				        <div class="hovercard">
-        					<a href="#" class="hovercard__avatar"><img src="http://placehold.it/64x64" alt="" class="avatar" /></a>
-			        		<div class="hovercard__content">
-		        				<div class="hovercard__name">Davey Jones</div>
-		        				<div class="hovercard__info">40,000 followers</div>
-			        			<div class="hovercard__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat augue vel varius tincidunt. Suspendisse blandit gravida egestas.</div>
-			        			<div class="hovercard__actions"><a href="#" class="button">Profile</a> <a href="#" class="button">Follow</a></div>
-			        		</div>
-				        </div>
+				        <p><a href="#" data-tooltip="Small tooltip">Small tooltip</a></p>
+				        <p><a href="#" data-tooltip="This is a large tooltip with far too much text for a tooltip but that's OK for now" class="tooltip-large">Large tooltip</a></p>
 
 				        <!-- end of code -->
 			        </div>

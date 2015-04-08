@@ -15,15 +15,20 @@
 // ----------------------------------------------------
 
 .browsehappy {
-    margin: 0;
-    padding: 1em 0;
-    background-color: @BROWSEHAPPY-BgColor;
     color: @BROWSEHAPPY-Color;
+    background-color: @BROWSEHAPPY-BgColor;
     font-weight: bold;
     text-align: center;
+    margin: 0;
+    ._padding (@TYPE-LineHeight/2);
     
     a {
         color: @BROWSEHAPPY-Color;
+
+        &:link,
+        &:visited {
+        	color: @BROWSEHAPPY-Color;
+        }
     }
 }
 

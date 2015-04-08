@@ -1,0 +1,22 @@
+{{#this}}
+<div role="group" class="buttongroup{{#if item.modifier}} buttongroup--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}{{#if item.alignment}} {{item.alignment}}{{/if}}">
+{{#if actions}}
+	{{#each actions}}
+		{{#if buttons}}
+			{{#each buttons}}
+				{{#this}}
+				{{> button }}
+				{{/this}}
+			{{/each }}
+		{{/if}}
+		{{#if menus}}
+			{{#each menus}}
+				{{#this}}
+				{{> menus }}
+				{{/this}}
+			{{/each}}
+		{{/if}}
+	{{/each}}
+{{/if}}
+</div>
+{{/this}}

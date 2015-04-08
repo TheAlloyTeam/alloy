@@ -1,0 +1,25 @@
+{{#this}}
+    <div class="content{{#if item.modifier}} content--{{item.modifier}}{{/if}}">
+        <div class="content__head">
+            <div class="content__title">{{{content.title}}}</div>
+            {{#if content.subtitle}}<div class="content__subtitle">{{content.subtitle}}</div>{{/if}}
+            <hr class="separator" />
+        </div>
+        <div class="content__body rte">
+            {{{content.body}}}
+        </div>
+        {{#if actions}}
+            <div class="content__actions">
+                {{#each actions}}
+                    {{#if buttons}}
+                        {{#each buttons}}
+                            {{#this}}
+                                {{> button }}
+                            {{/this}}
+                        {{/each }}
+                    {{/if}}
+                {{/each }}
+            </div>
+        {{/if}}
+    </div>
+{{/this}}

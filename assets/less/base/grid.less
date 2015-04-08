@@ -9,7 +9,7 @@
 // COLUMN CALCULATIONS
 // ----------------------------------------------------
 
-._colwidth (@numberOfcols: 1, @numberOfTotalCols: @grid-cols){
+._colwidth (@numberOfcols: 1, @numberOfTotalCols: 2){
 
     // Single c
     @singlecPx: (@GRID-MaxWidth - 1)/@numberOfTotalCols;
@@ -27,6 +27,19 @@
     @horizontalPadding: ((@GRID-GutterWidth)/2)+0px;
     @verticalPadding: ((@TYPE-LineHeight)/2)+0px;
     padding: @verticalPadding ceil(@horizontalPadding) @verticalPadding floor(@horizontalPadding);
+}
+
+._coloffset (@numberOfcols: 1, @numberOfTotalCols: 2) {
+    // Single c
+    @singlecPx: (@GRID-MaxWidth - 1)/@numberOfTotalCols;
+    @singleColPercentage: 100%*(@singlecPx/@GRID-MaxWidth);
+
+    // This c offset
+    @thisColWidth: @singleColPercentage*@numberOfcols;
+
+    // All together
+    margin-left: @thisColWidth;
+
 }
 
 // BASE
@@ -230,5 +243,52 @@
     .c__lg--11-16 {._colwidth(11,16);}
     .c__lg--13-16 {._colwidth(13,16);}
     .c__lg--15-16 {._colwidth(15,16);}
+
+    // OFFSETS
+
+    // Halves
+    .o__lg--1-2 { ._coloffset(1,2); }
+
+    // Thirds
+    .o__lg--1-3 { ._coloffset(1,3); }
+
+    // Quarters
+    .o__lg--1-4 { ._coloffset(1,4); }
+
+    // Fifths
+    .o__lg--1-5 { ._coloffset(1,5); }
+
+    // Sixths
+    .o__lg--1-6 {._coloffset(1,6);}
+
+    // Sevenths
+    .o__lg--1-7 {._coloffset(1,7);}
+
+    // Eighths
+    .o__lg--1-8 {._coloffset(1,8);}
+
+    // Ninths
+    .o__lg--1-9 {._coloffset(1,9);}
+
+    // Tenths
+    .o__lg--1-10 { ._coloffset(1,10); }
+
+    // Elevenths
+    .o__lg--1-11 { ._coloffset(1,11); }
+
+    // Twelths
+    .o__lg--1-12 {._coloffset(1,12);}
+
+    // Thirteenths
+    .o__lg--1-13 {._coloffset(1,13);}
+
+    // Fourteenths
+    .o__lg--1-14 {._coloffset(1,14);}
+
+    // Fifthteenths
+    .o__lg--1-15 {._coloffset(1,15);}
+
+    // Sixteenths
+    .o__lg--1-16 {._coloffset(1,16);}
 
 }

@@ -65,7 +65,15 @@
 </script>
 {{/if}}
 
-{{#dev}} 
+{{#if js-cardflipper}} 
+<script type="text/JavaScript">
+	require(["cardflipper"], function() { 
+		$(".card").cardflipper();
+	});
+</script>
+{{/if}}
+
+{{#dev}}
 <script src="http://localhost:35730/livereload.js"></script>
 {{/dev}}
 
