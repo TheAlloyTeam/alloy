@@ -93,8 +93,12 @@ body {
 }
 
 *,
-*:after,
-*:before {
+*::before,
+*::after {
+    ._box-sizing (inherit);
+}
+
+html {
     ._box-sizing (border-box);
 }
 
