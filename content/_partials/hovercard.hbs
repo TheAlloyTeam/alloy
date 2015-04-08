@@ -1,0 +1,21 @@
+{{#this}}
+<div class="hovercard{{#if item.modifier}} {{item.modifier}}{{/if}}">
+	<a href="{{content.imageUrl}}" class="hovercard__avatar"><img src="{{content.image}}" class="avatar" alt="{{content.imageAlt}}" /></a>
+	<div class="hovercard__content">
+		<div class="hovercard__name">{{content.title}}</div>
+		<div class="hovercard__info">{{content.subtitle}}</div>
+		<div class="hovercard__bio">{{content.text}}</div>
+		<div class="hovercard__actions">
+			{{#each actions}}
+				{{#if buttons}}
+					{{#each buttons}}
+						{{#this}}
+						{{> button }}
+						{{/this}}
+					{{/each }}
+				{{/if}}
+			{{/each }}
+		</div>
+	</div>
+</div>
+{{/this}}
