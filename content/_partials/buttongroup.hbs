@@ -9,7 +9,14 @@
 				{{/this}}
 			{{/each }}
 		{{/if}}
-	{{/each }}
+		{{#if menus}}
+			{{#each menus}}
+				{{#this}}
+				{{> menus }}
+				{{/this}}
+			{{/each}}
+		{{/if}}
+	{{/each}}
 {{/if}}
 </div>
 {{/this}}

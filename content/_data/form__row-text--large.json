@@ -1,0 +1,44 @@
+{
+    "item": {
+        "modifier": "modifier",
+        "required": "",
+        "disabled": "",
+        "hidden": "",
+        "for": "formrow-size-3"
+    },
+    "content": {
+        "text": "Large",
+        "type": [{
+            "text": [{
+                "item": {
+                    "modifier": "",
+                    "size": "large",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "spellcheck": "",
+                    "id": "formrow-size-3",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Text Placeholder",
+                    "value": ""
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

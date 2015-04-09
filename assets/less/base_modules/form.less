@@ -8,17 +8,17 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@FORM-DefaultBgColor:              @COLOR-White;
-@FORM-DefaultTextColor:            @COLOR-GreyDarker;
-@FORM-DefaultBordercolor:          @COLOR-GreyLight;
+@FORM-DefaultBgColor:           @COLOR-White;
+@FORM-DefaultTextColor:         @COLOR-GreyDarker;
+@FORM-DefaultBordercolor:       @COLOR-GreyLight;
 
-@FORM-Placeholder:          @COLOR-GreyLight;
-@FORM-Asterisk:             @COLOR-Red;
+@FORM-Placeholder:              @COLOR-GreyLight;
+@FORM-Asterisk:                 @COLOR-Red;
 
-@FORM-Offset:               25%;
-@FORM-OffsetGap:            3%;
-@FORM-OffsetLabel:          ((@FORM-Offset)-(@FORM-OffsetGap));
-@FORM-OffsetAsterisk:       ((@FORM-Offset)-(@FORM-OffsetGap/2));
+@FORM-Offset:                   25%;
+@FORM-OffsetGap:                3%;
+@FORM-OffsetLabel:              ((@FORM-Offset)-(@FORM-OffsetGap));
+@FORM-OffsetAsterisk:           ((@FORM-Offset)-(@FORM-OffsetGap/2));
 
 @FORM-InfoBgColor:             @COLOR-BlueLightest;
 @FORM-InfoTextColor:           @COLOR-BlueDark;
@@ -42,9 +42,28 @@
 // ----------------------------------------------------
 
 ._input-create (@BgColor, @TextColor, @Bordercolor) {
-    color: @TextColor;
+    //color: @TextColor;
     border: 1px solid @Bordercolor;
     //background-color: @BgColor;
+
+    .input {
+        background-color: @BgColor;
+        color: @TextColor;
+
+        &:-moz-placeholder{
+            color: lighten(@TextColor, 35%);
+        }
+        &::-moz-placeholder{
+            color: lighten(@TextColor, 35%);
+        }
+        &:-ms-input-placeholder{
+            color: lighten(@TextColor, 35%);
+        }
+        &::-webkit-input-placeholder {
+            color: lighten(@TextColor, 35%);
+        }
+    }
+
 }
 
 
@@ -65,7 +84,7 @@
 .form__row {
     position: relative;
     ._clearfix ();
-    ._margin (0, 0, @TYPE-LineHeight, 0);
+    ._margin (0, 0, @TYPE-LineHeight/2, 0);
 }
 
 .form__label  {
@@ -81,17 +100,28 @@
     color: @FORM-DefaultTextColor;
     clear: left;
     display: block;
-    width: 100%;
-    max-width: 100%;
     border: 1px solid @FORM-DefaultBordercolor;
     background-color: @FORM-DefaultBgColor;
-    ._padding (6, 8);
     ._border-radius (4);
 
-    &:focus {
-        outline: 0;
-        outline: thin dotted \9;
-        ._depth-1 ();
+    .input {
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        width: 100%;
+        ._border-radius (4);
+        ._padding (8, 5, 7, 5);
+
+        &--checkbox,
+        &--radio {
+            width: auto;
+        }
+
+        &:focus {
+            outline: 0;
+            outline: thin dotted \9;
+            ._depth-1 ();
+        }
     }
 
     &.success {
@@ -125,21 +155,42 @@
 
 .form__group {
 
+    .group__item {
+        ._inline-block();
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        .button {
+            position:relative;
+            bottom: -1px;
+        }
+    }
+    .form__input {
+        width: 100%;
+    }
+
     &.inline {
         display: table;
 
         .group__item {
             display: table-cell;
-        }
-
-        .form__input {
-            width: 100%;
+            vertical-align: middle;
         }
     }
 
+
     &.vertical {
+        display: block;
+
         .group__item {
-            .block;
+            display: block;
+            ._padding(0,0,5,0);
+
+            &:last-child {
+                padding-bottom: 0;
+            }
         }
     }
 }
@@ -160,12 +211,14 @@
     }
 }
 
-fieldset.simple {
-    border: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    .block;
+fieldset {
+    .simple {
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display:block;
+    }
 }
 
 
@@ -214,80 +267,92 @@ fieldset.simple {
         ._inline-block ();
     }
 
-    .form__input.xsmall {
-        width: 10%;
-    }
-
-    .form__input.small {
-        width: 20%;
-    }
-
-    .form__input.large {
-        width: 60%;
-    }
-
-    .form__input.xlarge {
-        width: 75%;
-    }
-
-    .form__input.full {
-        width: 100%;
-    }
-
-
-    .form.inline {
-
-        .form__label {
-            ._inline-block;
+    .form__input {
+        &.xsmall {
+            width: 10%;
         }
 
-        .form__row {
-            display: inline;
+        &.small {
+            width: 20%;
+            ._font-size(@TYPE-SIZE-Eta);
         }
 
-        .form__input {
-            //width: auto;
+        &.large {
+            width: 60%;
+        }
+
+        &.xlarge {
+            width: 75%;
+        }
+
+        &.full {
+            width: 100%;
         }
     }
 
-    .form.aligned {
-
-        .form__row.offset {
-            padding-left: @FORM-Offset;
-        }
-
-        .form__asterisk {
-            position: absolute;
-            left: @FORM-OffsetAsterisk;
-            top: 0;
-        }
-
-        .form__label {
-            width: @FORM-OffsetLabel;
-            text-align: right;
-            margin-right: @FORM-OffsetGap;
-            .left;
-        }
-
-        .form__group {
-            .block;
-            .left;
+    .form {
+        &.inline {
 
             .form__label {
-                width: auto;
-                text-align: left;
-                margin-right: auto;
-                float: none;
+                ._inline-block();
+            }
+
+            .form__row {
+                display: inline;
+            }
+
+            .form__input {
+                //width: auto;
+            }
+
+        }
+
+        &.aligned {
+
+            .form__row {
+                &.offset {
+                    margin-left: @FORM-Offset;
+
+                    .form__group {
+                        width:100%;
+                    }
+                }
+            }
+
+            .form__asterisk {
+                position: absolute;
+                left: @FORM-OffsetAsterisk;
+                top: 0;
+            }
+
+            .form__label {
+                width: @FORM-OffsetLabel;
+                text-align: right;
+                margin-right: @FORM-OffsetGap;
+                float: left;
+            }
+
+            .form__group {
+                display:block;
+                width:75%;
+                float: left;
+
+                .form__label {
+                    width: auto;
+                    text-align: left;
+                    margin-right: auto;
+                    float: none;
+                }
+            }
+
+            .form__text {
+                display: block;
+                margin-left: @FORM-Offset;
             }
         }
-
-        .form__text {
-            display: block;
-            margin-left: @FORM-Offset;
-        }
     }
-}
 
+}
 // DESKTOP
 // ----------------------------------------------------
 

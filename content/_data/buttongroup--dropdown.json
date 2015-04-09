@@ -1,0 +1,115 @@
+{
+    "item": {
+        "modifier": ""
+    },
+    "content": {},
+    "actions": [
+    {
+        "buttons": [{
+            "item": {
+                "modifier": "",
+                "size": "",
+                "disabled": "",
+                "target": "",
+                "block": ""
+            },
+            "content": {
+                "text": "Default action",
+                "title": "Default",
+                "url": "#linkurl1",
+                "icon": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        },
+        {
+            "item": {
+                "menu": true
+            },
+            "content": {
+                "url": "#linkurl2",
+                "icon": [{
+                    "item": {
+                        "modifier": "downwards",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "menus": [{
+            "item": {
+                "modifier": "dropdown"
+            },
+            "content": {
+                "listitems": [
+                {
+                    "item": {
+                        "modifier": "head"
+                    },
+                    "content": {
+                        "text": "Please select one of the following:"
+                    }
+                },
+                {
+                    "item": {
+                        "modifier": "item"
+                    },
+                    "content": {
+                        "text": "Option with icon",
+                        "title": "Option with icon",
+                        "url": "#",
+                        "icons": [{
+                            "item": {
+                                "modifier": "round52"
+                            }
+                        }]
+                    }
+                },
+                {
+                    "item": {
+                        "modifier": "item"
+                    },
+                    "content": {
+                        "text": "Option with badge",
+                        "title": "Option with badge",
+                        "url": "#",
+                        "badges": [{
+                            "item": {
+                                "status": "success"
+                            },
+                            "content": {
+                                "text": "47"
+                            }
+                        }]
+                    }
+                },
+                {
+                    "item": {
+                        "modifier": "separator"
+                    }
+                },
+                {
+                    "item": {
+                        "modifier": "item"
+                    },
+                    "content": {
+                        "text": "Standard option",
+                        "title": "Standard option",
+                        "url": "#",
+                        "icon": ""
+                    }
+                }
+                ]
+            }
+        }]
+    }]
+}

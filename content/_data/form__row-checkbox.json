@@ -5,7 +5,7 @@
         "disabled": ""
     },
     "content": {
-        "text": "",
+        "text": "Label for the checkboxes",
         "group": [{
             "item": {
                 "modifier": "",

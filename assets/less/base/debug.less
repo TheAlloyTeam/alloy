@@ -11,11 +11,11 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    max-width: 320px;
+    max-width: 300px;
     z-index: @Z-INDEX-Level10;
     width: 100%;
-    ._padding(@TYPE-LineHeight/2, @TYPE-FontSize);
-    ._opacity(0.7);
+    ._padding (@TYPE-LineHeight/2, @TYPE-FontSize);
+    ._opacity (0.7);
     ._depth-1();
  }
 
@@ -26,10 +26,12 @@
 
 .list__debugger {
     pointer-events: none;
-	.list__item {
+	
+    .list__item {
 		color: @COLOR-GreyDark;
 		._font-size(@TYPE-SIZE-Iota);
 	}
+
 	.start {color: @COLOR-Green;}
 	.trace {color: @COLOR-Purple;}
 	.debug {color: @COLOR-Red;}
@@ -39,9 +41,10 @@
 	.fatal {color: @COLOR-Red;}
 	.off {color: @COLOR-GreyLight;}
 }
+
 } .debugger-styles();
 
-.debug-styles() when not (@DEBUG) { }
+.debug-styles() when not (@DEBUG) {}
 .debug-styles() when (@DEBUG) {
 
 // INLINE STYLE

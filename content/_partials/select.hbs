@@ -1,6 +1,8 @@
 {{#this}}
+
+    <span class="form__input{{#if item.modifier}} form__input--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
 <select
-    class="form__input{{#if item.modifier}} form__input--{{item.modifier}}{{/if}}"
+    class="input input--select"
     {{#if item.multiple}} multiple="multiple"{{/if}}
     {{#if item.required}} required="required" aria-required="true"{{/if}}
     {{#if item.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
@@ -8,7 +10,6 @@
     {{#if item.form}} form="{{item.form}}"{{/if}}
     {{#if item.name}} name="{{item.name}}"{{/if}}
     {{#if item.size}} size="{{item.size}}"{{/if}}
-    {{#if item.autocomplete}} autocomplete="{{item.autocomplete}}"{{/if}}
     {{#if item.tabindex}} tabindex="{{item.tabindex}}"{{/if}}
     {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
 >
@@ -33,4 +34,5 @@
     {{/if}}
 
 </select>
+    </span>
 {{/this}}

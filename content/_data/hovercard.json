@@ -1,0 +1,84 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "disabled": "",
+        "target": "",
+        "block": ""
+    },
+    "content": {
+        "image": "//www.nicenicejpg.com/60/60",
+        "imageUrl": "#",
+        "imageAlt": "",
+        "title": "Robert Matthew Van Winkle",
+        "subtitle": "237K followers",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat augue vel varius tincidunt. Suspendisse blandit gravida egestas.",
+        "icon": [{
+            "item": {
+                "modifier": "",
+                "size": ""
+            },
+            "content": {
+                "title": "Icon Title"
+            }
+        }]
+    },
+    "actions": [
+    {
+        "buttons": [
+        {
+            "item": {
+                "modifier": "",
+                "size": "",
+                "disabled": "",
+                "target": "",
+                "block": ""
+            },
+            "content": {
+                "text": "Profile",
+                "title": "Profile",
+                "url": "#linkurl1",
+                "icon": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        },
+        {
+            "item": {
+                "modifier": "alt",
+                "size": "",
+                "disabled": "",
+                "target": "",
+                "block": ""
+            },
+            "content": {
+                "text": "Follow",
+                "title": "Follow",
+                "url": "#linkurl2",
+                "icon": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }
+        ]
+    }],
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

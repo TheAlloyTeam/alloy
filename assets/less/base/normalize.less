@@ -1,6 +1,6 @@
 /* ==========================================================================
 // NORMALIZE
-// Reference: http://github.com/necolas/normalize.css
+// Reference: http://github.com/necolas/normalize.css, http://callmenick.com/post/the-new-box-sizing-reset
 // =========================================================================*/
 
 // VARIABLES
@@ -93,8 +93,12 @@ body {
 }
 
 *,
-*:after,
-*:before {
+*::before,
+*::after {
+    ._box-sizing (inherit);
+}
+
+html {
     ._box-sizing (border-box);
 }
 

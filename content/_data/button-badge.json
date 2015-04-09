@@ -10,7 +10,7 @@
         "text": "Button with Badge",
         "title": "Button with Badge",
         "url": "#butonUrl",
-        "badge": [{
+        "badges": [{
             "item": {
                 "modifier": ""
             },
