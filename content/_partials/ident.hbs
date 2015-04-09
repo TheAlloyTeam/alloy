@@ -1,0 +1,25 @@
+{{#this}}
+<div class="ident{{#if item.modifier}} ident--{{item.modifier}}{{/if}}">
+	<a href="{{content.avatarUrl}}" class="ident__avatar">
+		<img src="{{content.avatar}}" class="avatar" alt="{{content.avatarAlt}}" />
+	</a>
+
+	<div class="ident__info">
+		<a href="{{content.authorUrl}}" class="ident__author" target="_blank">{{content.author}}</a>
+		<time datetime="{{content.datetime}}" class="ident__date">{{now}}</time>
+
+		{{#if content.tags}}
+		<div class="ident__tags">
+			<ul class="list horizontal">
+				{{#each content.tags}}
+					{{#this}}
+					<li class="list__item"><a href="{{content.url}}" class="tag"><span>{{content.text}}</span></a></li>
+					{{/this}}
+				{{/each }}
+			</ul>
+		</div>
+		{{/if}}
+
+	</div>
+</div>
+{{/this}}

@@ -8,78 +8,42 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@STORY-BgColor:				@COLOR-White;
-@STORY-CiteColor:			@TYPE-FontColor;
+@STORY-Color:					@TYPE-FontColor;
+@STORY-BgColor:					@COLOR-White;
+@STORY-BorderColor:				@COLOR-GreyLighter;
 
 // BASE
 // ----------------------------------------------------
 
 .story {
-	background-clip: padding-box;
+	color: @STORY-Color;
 	background-color: @STORY-BgColor;
-	._margin (10, 0, 20 ,0);
-	._padding (20);
+	background-clip: padding-box;
+	._margin (@TYPE-LineHeight/2, 0, @TYPE-LineHeight, 0);
+	._padding (@TYPE-LineHeight);
 	._border-radius (2);
-	._depth-1 ();
-}
-
-.story__title {
-	._font-size-heading (@TYPE-SIZE-Beta);
+	._depth-1();
 }
 
 .story__body {
-	._margin-bottom (20);
+	._margin-bottom (@TYPE-LineHeight);
 }
 
 .story__actions {
-	border-top: 1px solid darken(@STORY-BgColor, 5%);
-	._margin-top (15);
-	._padding-top (20);
+	border-top: 1px solid @STORY-BorderColor;
+	._margin-top (@TYPE-LineHeight/2);
+	._padding-top (@TYPE-LineHeight);
 }
 
-.story-ident {
-	._margin-bottom (20);
-	._clearfix ();
-}
-.story-ident__avatar-link {
-	display: block;
-	position: relative;
-	float: left;
-	border: 1px solid darken(@STORY-BgColor, 5%);
-	._margin-right (20);
-}
+// MOBILE
+// ----------------------------------------------------
 
-.story-cite {
-	border: 1px solid darken(@STORY-BgColor, 5%);
-	._margin (10, 0, 20, 0);
-	._border-radius (2);
-}
+@media only screen and (max-width: @MQ-Small) {
 
-.story-cite__image {
-	width: 100%;
-}
-
-.story-cite__content {
-	display: block;
-	._padding (20);
-}
-
-.story-cite__link {
-	color: lighten(@STORY-CiteColor, 30%);
-	display:block;
-	text-decoration: none;
-
-	&:link {
-		color: lighten(@STORY-CiteColor, 30%);
+	.story {
+		text-align: center;
 	}
 
-	&:visited {
-		color: lighten(@STORY-CiteColor, 30%);
-	}
-
-	&:hover {}
-	&:focus {}
-	&:active {}
 }
 
 } .story-styles();

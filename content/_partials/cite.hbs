@@ -1,0 +1,21 @@
+{{#this}}
+<div class="cite{{#if item.modifier}} cite--{{item.modifier}}{{/if}}">
+    <a href="{{content.url}}"
+        {{#if item.disabled}} disabled="disabled"{{/if}}
+        {{#if item.target}} target="{{item.target}}"{{/if}}
+        class="cite__link
+            {{#if item.disabled}} disabled{{/if}}
+            {{#if item.size}} {{item.size}}{{/if}}
+            {{#if item.block}} block{{/if}}"
+        {{#if content.title}} title="{{content.title}}"{{/if}}>
+        {{#if content.image}}
+        <img src="{{content.image}}" class="cite__image" />
+        {{/if }}
+        <span class="cite__content">
+            <span class="cite__title">{{content.title}}</span>
+            <span class="cite__body">{{{content.body}}}</span>
+            <span class="cite__refrence">{{{content.url}}}</span>
+        </span>
+    </a>
+</div>
+{{/this}}

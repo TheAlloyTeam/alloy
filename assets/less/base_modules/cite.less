@@ -1,0 +1,49 @@
+/* =========================================================================
+// CITE
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+@CITE-Color:					@COLOR-White;
+@CITE-BgColor:					@COLOR-Base;
+
+// BASE
+// ----------------------------------------------------
+
+.cite {
+	._margin (@TYPE-LineHeight/2, 0, @TYPE-LineHeight, 0);
+	._border-radius (2);
+
+	&:hover {
+		.cite__content {
+			background-color: lighten(@CITE-BgColor, 5%);
+		}
+	}
+}
+
+.cite__image {
+	width: 100%;
+}
+
+.cite__content {
+	background-color: @CITE-BgColor;
+	display: block;
+	._padding (@TYPE-LineHeight/2);
+	._transition (background-color, 0.1s, @ANIM-Curve);
+}
+
+.cite__link {
+	color: @CITE-Color;
+	display: block;
+	text-decoration: none;
+
+	&:link,
+	&:visited {
+		color: @CITE-Color;
+	}
+
+	&:hover {}
+	&:focus {}
+	&:active {}
+}

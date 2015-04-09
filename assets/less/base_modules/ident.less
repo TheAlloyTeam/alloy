@@ -1,0 +1,80 @@
+/* =========================================================================
+// IDENT
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+@IDENT-Color:					@COLOR-Grey;
+@IDENT-BgColor:					@COLOR-White;
+@IDENT-BorderColor:				@COLOR-GreyLighter;
+
+// BASE
+// ----------------------------------------------------
+
+.ident {
+	border-bottom: 1px solid @IDENT-BorderColor;
+	._padding-bottom (@TYPE-LineHeight/2);
+	._margin-bottom (@TYPE-LineHeight/2);
+	._clearfix();
+}
+
+.ident__avatar {
+	display: block;
+	float: left;
+	._margin-right (@TYPE-LineHeight);
+
+	.avatar {
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		._border-radius (50);
+	}
+}
+
+.ident__info {
+	color: @IDENT-Color;
+	background-color: @IDENT-BgColor;
+}
+
+.ident__author {
+	text-decoration: none;
+	._font-size (@TYPE-SIZE-Gamma);
+}
+
+.ident__date {
+	display: block;
+	._margin-bottom (10);
+}
+
+.ident__tags {
+	._font-size (@TYPE-SIZE-Iota);
+}
+
+.list__tags {
+	._inline-block();
+
+	.list__item {
+		._inline-block();
+	}
+
+	.list__link {
+		
+	}
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+	.ident {
+		text-align: center;
+	}
+
+	.ident__avatar {
+		float: none;
+		._margin (0, 0, @TYPE-LineHeight, 0);
+	}
+
+}
