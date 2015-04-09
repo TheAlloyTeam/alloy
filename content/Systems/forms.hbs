@@ -21,15 +21,6 @@ page-category: "systems"
 <!-- writings -->
 
 				<div class="page__body rte">
-
-
-<!--
- size
-validation
- disabled
-status
--->
-
 					<form id="form-example-inline" class="form inline" role="" method="">
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Form Inline</legend>
@@ -88,12 +79,7 @@ status
 							{{> form__row form__row-textarea}}
 							{{> form__row form__row-select}}
 							{{> form__row form__row-select--optgroup}}
-
-
 							{{> form__row form__row-search}}
-
-
-
 							{{> form__row form__row-radio}}
 							{{> form__row form__row-checkbox}}
 
@@ -305,7 +291,7 @@ status
                         </form>
 
 
-					<form id="form-example-sizes" class="form aligned" role="" method="">
+					<form id="form-example-checkboxes" class="form aligned" role="" method="">
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Checkboxes</legend>
 
@@ -414,12 +400,37 @@ status
 
 				<section class="section section--example">
 		            <header class="section__head">
-		                <h2 class="section__title">Example</h2>
+		                <h2 class="section__title">Example: Contact Us</h2>
 		            </header>
 
 		            <div class="section__body">
 				        <!-- code -->
+                        <form id="form-example-address" class="form aligned" role="" method="">
 
+                            <div class="form__row form__row--modifier">
+                                <label for="formrow-text-1" class="form__label form__label--modifier">
+                                    <span>Label for text input</span>
+                                </label>
+								<span class="form__input">
+                               	 	<span class="input__addon">@</span>
+									<input type="text" role="textbox" class="input input--text" id="formrow-text-1" placeholder="Text Placeholder">
+                                	<span class="input__addon">.00</span>
+								</span>
+							</div>
+
+                            <fieldset class="form__fieldset">
+                                <legend class="form__legend">Contact Us</legend>
+
+								{{> form__row form__row--name}}
+								{{> form__row form__row--email}}
+								{{> form__row form__row--phone}}
+								{{> form__row form__row--address}}
+								{{> form__row form__row--postcode}}
+
+								{{> button button-submit }}
+
+                            </fieldset>
+                        </form>
 				        <!-- end of code -->
 			        </div>
 

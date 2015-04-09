@@ -13,6 +13,8 @@
 @FORM-DefaultBordercolor:       @COLOR-GreyLight;
 
 @FORM-Placeholder:              @COLOR-GreyLight;
+@FORM-AddonBgColor:             @COLOR-GreyLight;
+@FORM-AddonColor:               @COLOR-GreyDark;
 @FORM-Asterisk:                 @COLOR-Red;
 
 @FORM-Offset:                   25%;
@@ -96,33 +98,52 @@
     }
 }
 
+.input__addon {
+    background-color: @FORM-AddonBgColor;
+    color: @FORM-AddonColor;
+    ._text-shadow(~"0 1px 0 rgba(255, 255, 255, 0.8)");
+    ._padding (8, 12, 7, 12);
+    ._inline-block();
+}
+
+.input {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    width: 100%;
+    display: table;
+    //._border-radius (4);
+    ._padding (8, 5, 7, 5);
+    ._inline-block();
+
+    .input__addon {
+        display: table-cell;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    &--checkbox,
+    &--radio {
+        width: auto;
+    }
+
+    &:focus {
+        outline: 0;
+        outline: thin dotted \9;
+        ._depth-1 ();
+    }
+}
+
 .form__input {
     color: @FORM-DefaultTextColor;
     clear: left;
     display: block;
     border: 1px solid @FORM-DefaultBordercolor;
     background-color: @FORM-DefaultBgColor;
-    ._border-radius (4);
+    //._border-radius (4);
 
-    .input {
-        background-color: transparent;
-        border: none;
-        margin: 0;
-        width: 100%;
-        ._border-radius (4);
-        ._padding (8, 5, 7, 5);
 
-        &--checkbox,
-        &--radio {
-            width: auto;
-        }
 
-        &:focus {
-            outline: 0;
-            outline: thin dotted \9;
-            ._depth-1 ();
-        }
-    }
 
     &.success {
         ._input-create (@FORM-SuccessBgColor, @FORM-SuccessTextColor, @FORM-SuccessBordercolor);
@@ -196,10 +217,26 @@
 }
 
 .form__group--check {
+    .group__item {
+        ._margin-left(@TYPE-FontSize);
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &.vertical {
+        .group__item {
+            margin-left: 0;
+        }
+
+    }
+
     .form__label,
     .form__input {
         width: auto;
         margin-top: 0;
+        border: none;
         ._inline-block ();
     }
 
