@@ -1,7 +1,6 @@
 {{#this}}
     {{#if content.url}}
     <a href="{{content.url}}"
-        {{#if item.disabled}} disabled="disabled"{{/if}}
         {{#if item.target}} target="{{item.target}}"{{/if}}
         class="button
             {{#if item.modifier}} button--{{item.modifier}}{{/if}}
@@ -11,7 +10,6 @@
             {{#if item.block}} block{{/if}}"
         {{#if content.title}} title="{{content.title}}"{{/if}}
         {{#if item.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
-        <span class="ripple"></span>
         {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
         {{#if content.text}}<span>{{content.text}}</span>{{/if}}
         {{#if content.badges}}{{#each content.badges}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
@@ -39,7 +37,6 @@
                     {{#if item.size}} {{item.size}}{{/if}}"
                 {{#if content.title}} title="{{content.title}}"{{/if}}
                 {{#if item.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
-                <span class="ripple"></span>
                 {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
                 {{#if content.text}}<span>{{content.text}}</span>{{/if}}
                 {{#if content.badges}}{{#each content.badges}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}

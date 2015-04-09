@@ -287,33 +287,22 @@ status
 					</form>
 
 
-					<form id="form-example-sizes" class="form" role="" method="">
-						<fieldset class="form__fieldset">
-						    <legend class="form__legend">Input Sizes</legend>
+					<form id="form-example-sizes" class="form aligned" role="" method="">
 
-							<div class="form__row">
-								<label for="input-size-xsmall" class="label"><span>Input xsmall</span></label>
-							    <input type="text" role="textbox" class="form__input xsmall" placeholder="Text Placeholder">
-							</div>
-							<div class="form__row">
-								<label for="input-size-small" class="label"><span>Input small</span></label>
-							    <input type="text" role="textbox" class="form__input small" placeholder="Text Placeholder">
-							</div>
-							<div class="form__row">
-								<label for="input-size-large" class="label"><span>Input large</span></label>
-							    <input type="text" role="textbox" class="form__input large" placeholder="Text Placeholder">
-							</div>
-							<div class="form__row">
-								<label for="input-size-xlarge" class="label"><span>Input xlarge</span></label>
-							    <input type="text" role="textbox" class="form__input xlarge" placeholder="Text Placeholder">
-							</div>
-							<div class="form__row">
-								<label for="input-size-full" class="label"><span>Input full</span></label>
-							    <input type="text" role="textbox" class="form__input full" placeholder="Text Placeholder">
-							</div>
+                            <fieldset class="form__fieldset">
+                                <legend class="form__legend">Example Sizes</legend>
 
-						</fieldset>
-					</form>
+								{{> form__row form__row-text--xsmall }}
+								{{> form__row form__row-text--small }}
+								{{> form__row form__row-text--large }}
+								{{> form__row form__row-text--xlarge }}
+								{{> form__row form__row-text--full }}
+
+
+
+                            </fieldset>
+
+                        </form>
 
 
 					<form id="form-example-sizes" class="form aligned" role="" method="">
