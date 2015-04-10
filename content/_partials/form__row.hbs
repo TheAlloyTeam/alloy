@@ -6,7 +6,6 @@
         {{#this}}{{> form__label }}{{/this}}
     {{/if}}
 
-
     {{#if content.group}}
         {{#each content.group}}
         <div class="form__group{{#if item.checkbox}} form__group--check{{/if}}{{#if item.inline}} inline{{/if}}{{#if item.vertical}} vertical{{/if}}">
@@ -134,8 +133,6 @@
         {{/each}}
     {{/if}}
 
-
-
     {{#if content.type}}
         {{#each content.type}}
 
@@ -246,12 +243,9 @@
         {{/each }}
     {{/if}}
 
-
     {{#if item.required}}
         {{#this}}{{> form__asterisk }}{{/this}}
     {{/if}}
-
-
 
     {{#if actions}}
         {{#each actions}}
@@ -264,7 +258,6 @@
             {{/if}}
         {{/each }}
     {{/if}}
-
 
     </div>
 

@@ -1,0 +1,44 @@
+{
+  "item": {},
+  "content": {
+    "labels": [{
+      "item": {},
+      "content": {
+        "icons": [{
+          "item": {},
+          "content": {}
+        }]
+      }
+    }],
+    "controls": [{
+      "item": {},
+      "content": {
+        "groups": [{
+          "item": {},
+          "content": {
+            "types": [
+              {
+                "label": {}
+              },
+              {
+                "addon": {}
+              },
+              {
+                "text": {}
+              },
+              {
+                "addon": {}
+              },
+              {
+                "button": {}
+              },
+              {
+                "note": {}
+              }
+            ]
+          }
+        }]
+      }
+    }]
+  }
+}

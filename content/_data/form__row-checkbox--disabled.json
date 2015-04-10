@@ -1,0 +1,104 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": true,
+        "offset": true
+    },
+    "content": {
+        "text": "",
+        "group": [{
+            "item": {
+                "modifier": "",
+                "checkbox": true,
+                "vertical": true,
+                "inline": ""
+            },
+            "content": {
+                "type": [{
+                    "item": {
+                        "required": "",
+                        "disabled": true,
+                        "hidden": "",
+                        "for": "formrow-disabledcheckbox-1"
+                    },
+                    "content": {
+                        "text": "Label for the group__item1"
+                    },
+                    "checkbox": [{
+                        "item": {
+                            "modifier": "",
+                            "checked": "",
+                            "required": "",
+                            "disabled": true,
+                            "id": "formrow-disabledcheckbox-1",
+                            "name": "",
+                            "value": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {}
+                    }]
+                },
+                {
+                    "item": {
+                        "required": "",
+                        "disabled": true,
+                        "hidden": "",
+                        "for": "formrow-disabledcheckbox-2"
+                    },
+                    "content": {
+                        "text": "Label for the group__item2"
+                    },
+                    "checkbox": [{
+                        "item": {
+                            "modifier": "",
+                            "checked": "",
+                            "required": "",
+                            "disabled": true,
+                            "id": "formrow-disabledcheckbox-2",
+                            "name": "",
+                            "value": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {}
+                    }]
+                },
+                {
+                    "item": {
+                        "required": "",
+                        "disabled": true,
+                        "hidden": "",
+                        "for": "formrow-disabledcheckbox-3"
+                    },
+                    "content": {
+                        "text": "Label for the group__item3"
+                    },
+                    "checkbox": [{
+                        "item": {
+                            "modifier": "",
+                            "checked": "",
+                            "required": "",
+                            "disabled": true,
+                            "id": "formrow-disabledcheckbox-3",
+                            "name": "",
+                            "value": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {}
+                    }]
+                }]
+            }
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}
