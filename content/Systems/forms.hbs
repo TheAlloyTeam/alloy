@@ -180,22 +180,9 @@ page-category: "systems"
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Disabled Inputs</legend>
 
-							<div class="form__row">
-								<label for="inputsizedisabled" class="label disabled"><span>Disabled label and input</span></label>
-								<input type="text" role="textbox" class="form__input"
-									disabled="disabled" aria-disabled="true" />
-							</div>
+							{{> form__row form__row-text--disabled}}
 
-							<div class="form__row disabled">
-								<label class="label disabled" for="form-select"><span>Select Label</span></label>
-								<select class="form__input" disabled="disabled" aria-disabled="true" >
-									<option value="" label="Option Label1">Option Text1</option>
-									<option value="" label="Option Label2">Option Text2</option>
-									<option value="" label="Option Label3" selected>Option Text3</option>
-									<option value="" label="Option Label4">Option Text4</option>
-									<option value="" label="Option Label5">Option Text5</option>
-								</select>
-							</div>
+							{{> form__row form__row-select--disabled}}
 
 							<div class="form__row offset">
 								<div class="form__group vertical">
@@ -252,22 +239,14 @@ page-category: "systems"
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Readonly Input</legend>
 
-							<div class="form__row">
-								<label for="InputSizeDisabled" class="label"><span>Input xsmall</span></label>
-								<input type="text" role="textbox" class="form__input"
-									readonly="readonly" aria-readonly="true" />
-							</div>
+
+							{{> form__row form__row-text--readonly}}
 						</fieldset>
 
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Required Input</legend>
 
-							<div class="form__row">
-								<label for="InputSizeDisabled" class="label"><span>Input xsmall</span></label>
-								<input type="text" role="textbox" class="form__input"
-									required="required" aria-required="true" />
-								{{> form__asterisk }}
-							</div>
+							{{> form__row form__row-text--required}}
 						</fieldset>
 
 					</form>

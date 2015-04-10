@@ -2,21 +2,23 @@
     "item": {
         "modifier": "",
         "size": "",
-        "multiple": "",
         "required": "",
         "readonly": "",
         "disabled": "",
-        "id": "",
+        "spellcheck": "",
+        "id": "unique125",
         "name": "",
         "maxlength": "",
         "minlength": "",
-        "pattern": "[^ @]*@[^ @]*",
+        "pattern": "[0-9]*",
         "autocomplete": "",
         "tabindex": "",
         "accesskey": ""
     },
     "content": {
-        "placeholder": "e.g. email@placeholder.com",
-        "value": ""
+        "placeholder": "Number Placeholder",
+        "value": "",
+        "prefix": "",
+        "postfix": ""
     }
 }

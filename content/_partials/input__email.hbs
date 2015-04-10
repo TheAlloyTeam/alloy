@@ -1,6 +1,6 @@
 {{! http://html5doctor.com/html5-forms-input-types/#input-email }}
 {{#this}}
-    <span class="form__input{{#if item.modifier}} form__input--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}">
+    <span class="form__input{{#if item.modifier}} form__input--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
     <input
         type="email"
         role="textbox"
