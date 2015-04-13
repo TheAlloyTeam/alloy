@@ -1,0 +1,44 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "disabled",
+        "hidden": "",
+        "for": "formrow-disabled-1"
+    },
+    "content": {
+        "text": "Label for disabled text input",
+        "type": [{
+            "text": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "disabled",
+                    "spellcheck": "",
+                    "id": "formrow-disabled-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Disabled Text Placeholder",
+                    "value": ""
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

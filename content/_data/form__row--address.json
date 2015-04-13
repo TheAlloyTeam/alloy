@@ -11,14 +11,14 @@
                 "modifier": "",
                 "checkbox": "",
                 "vertical": "",
-                "inline": true
+                "inline": ""
             },
             "content": {
                 "type": [{
                     "item": {
                         "required": "",
                         "disabled": "",
-                        "hidden": true,
+                        "hidden": "",
                         "for": "formrow-inlinetext-1"
                     },
                     "content": {
@@ -51,7 +51,7 @@
                     "item": {
                         "required": "",
                         "disabled": "",
-                        "hidden": true,
+                        "hidden": "",
                         "for": "formrow-inlinetext-2"
                     },
                     "content": {

@@ -6,135 +6,21 @@
         {{#this}}{{> form__label }}{{/this}}
     {{/if}}
 
-
     {{#if content.group}}
         {{#each content.group}}
+            {{#this}}
         <div class="form__group{{#if item.checkbox}} form__group--check{{/if}}{{#if item.inline}} inline{{/if}}{{#if item.vertical}} vertical{{/if}}">
-
-
         {{#if content.type}}
             {{#each content.type}}
-            <span class="group__item">
-
-                {{#if checkbox}}
-                    {{#each checkbox}}
-                        {{#this}}
-                        {{> input__checkbox }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-                {{#if radio}}
-                    {{#each radio}}
-                        {{#this}}
-                        {{> input__radio }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-                {{! If there are actions (buttons) don't add a label}}
-                {{#if actions}}
-                {{else}}
-                    {{#this}}
-                    {{> form__label }}
-                    {{/this}}
-                {{/if}}
-
-
-                {{#if password}}
-                    {{#each password}}
-                        {{#this}}
-                        {{> input__password }}
-                        {{/this}}
-                    {{/each }}
-                {{/if}}
-
-                {{#if email}}
-                    {{#each email}}
-                        {{#this}}
-                        {{> input__email }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-                {{#if search}}
-                    {{#each search}}
-                        {{#this}}
-                        {{> input__search }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-                {{#if tel}}
-                    {{#each tel}}
-                        {{#this}}
-                        {{> input__tel }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-                {{#if text}}
-                    {{#each text}}
-                        {{#this}}
-                        {{> input__text }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-                {{#if url}}
-                    {{#each url}}
-                        {{#this}}
-                        {{> input__url }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-                {{#if select}}
-                    {{#each select}}
-                        {{#this}}
-                        {{> select }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-                {{#if textarea}}
-                    {{#each textarea}}
-                        {{#this}}
-                        {{> textarea }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-                {{#if form__text}}
-                    {{#each form__text}}
-                        {{#this}}
-                        {{> form__text }}
-                        {{/this}}
-                    {{/each}}
-                {{/if}}
-
-
-                {{#if actions}}
-                    {{#each actions}}
-                        {{#if buttons}}
-                            {{#each buttons}}
-                                {{#this}}
-                                {{> button }}
-                                {{/this}}
-                            {{/each }}
-                        {{/if}}
-                    {{/each }}
-                {{/if}}
-
-            </span>
+                {{#this}}
+                    {{> input }}
+                {{/this}}
             {{/each}}
         {{/if}}
-
         </div>
+            {{/this}}
         {{/each}}
     {{/if}}
-
-
 
     {{#if content.type}}
         {{#each content.type}}
@@ -246,12 +132,9 @@
         {{/each }}
     {{/if}}
 
-
     {{#if item.required}}
         {{#this}}{{> form__asterisk }}{{/this}}
     {{/if}}
-
-
 
     {{#if actions}}
         {{#each actions}}
@@ -264,7 +147,6 @@
             {{/if}}
         {{/each }}
     {{/if}}
-
 
     </div>
 

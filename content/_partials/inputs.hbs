@@ -1,0 +1,96 @@
+{{#this}}
+    {{#if checkbox}}
+        {{#each checkbox}}
+            {{#this}}
+                {{> input__checkbox }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if radio}}
+        {{#each radio}}
+            {{#this}}
+                {{> input__radio }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if actions}}
+    {{else}}
+        {{#this}}
+            {{> form__label }}
+        {{/this}}
+    {{/if}}
+
+    {{#if password}}
+        {{#each password}}
+            {{#this}}
+                {{> input__password }}
+            {{/this}}
+        {{/each }}
+    {{/if}}
+
+    {{#if email}}
+        {{#each email}}
+            {{#this}}
+                {{> input__email }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if search}}
+        {{#each search}}
+            {{#this}}
+                {{> input__search }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if tel}}
+        {{#each tel}}
+            {{#this}}
+                {{> input__tel }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if text}}
+        {{#each text}}
+            {{#this}}
+                {{> input__text }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if url}}
+        {{#each url}}
+            {{#this}}
+                {{> input__url }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if select}}
+        {{#each select}}
+            {{#this}}
+                {{> select }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if textarea}}
+        {{#each textarea}}
+            {{#this}}
+                {{> textarea }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if note}}
+        {{#each note}}
+            {{#this}}
+                {{> input__note }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+{{/this}}

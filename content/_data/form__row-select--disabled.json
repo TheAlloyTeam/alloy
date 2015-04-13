@@ -1,0 +1,49 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "disabled",
+        "for": "formrow-disabled-2"
+    },
+    "content": {
+        "text": "Label for disabled select",
+        "type": [{
+            "select": [{
+                "item": {
+                    "modifier": "",
+                    "multiple": "",
+                    "required": "",
+                    "disabled": "disabled",
+                    "id": "formrow-disabled-2",
+                    "form": "",
+                    "name": "",
+                    "size": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "select__option": [{
+                        "item": {
+                            "value": "",
+                            "selected": "",
+                            "disabled": ""
+                        },
+                        "content": {
+                            "label": "Option Label",
+                            "text": "Option Text"
+                        }
+                    }]
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

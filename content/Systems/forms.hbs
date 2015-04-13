@@ -21,30 +21,22 @@ page-category: "systems"
 <!-- writings -->
 
 				<div class="page__body rte">
-
-
-<!--
- size
-validation
- disabled
-status
--->
-
-					<form id="form-example-inline" class="form inline" role="" method="">
+					<form id="form-example-default" class="form" role="" method="">
 						<fieldset class="form__fieldset">
-						    <legend class="form__legend">Form Inline</legend>
+						    <legend class="form__legend">Form Default</legend>
 
-							{{> form__row form__row-inline}}
+							{{> form__row form__row }}
+
+
 
 							{{> button button-submit }}
 
 						</fieldset>
 					</form>
 
-
-					<form id="form-example-search" class="form inline" role="" method="">
+					<form id="form-example-inline" class="form inline" role="" method="">
 						<fieldset class="form__fieldset simple">
-						    <legend class="form__legend hidden-text">Form custom search example</legend>
+						    <legend class="form__legend">Form Inline</legend>
 
 							{{> form__row form__row-search--inline}}
 
@@ -52,11 +44,9 @@ status
 
 					</form>
 
-
-
-					<form id="form-example-search" class="form inline" role="" method="">
+					<form id="form-example-split" class="form inline" role="" method="">
 						<fieldset class="form__fieldset simple">
-						    <legend class="form__legend hidden-text">Form text and submit button</legend>
+						    <legend class="form__legend hidden-text">Form Split</legend>
 
 							{{> form__row form__row-text}}
 
@@ -72,13 +62,13 @@ status
 
 
 
-					<form id="form-example-json" class="form aligned" role="" method="">
+					<form id="form-example-fields" class="form aligned" role="" method="">
 
 						{{! form__hidden form__hidden }}
 
 
 						<fieldset class="form__fieldset">
-						    <legend class="form__legend">Aligned form via JSON</legend>
+						    <legend class="form__legend">Show me the fields</legend>
 
 							{{> form__row form__row-text}}
 							{{> form__row form__row-email}}
@@ -88,12 +78,7 @@ status
 							{{> form__row form__row-textarea}}
 							{{> form__row form__row-select}}
 							{{> form__row form__row-select--optgroup}}
-
-
 							{{> form__row form__row-search}}
-
-
-
 							{{> form__row form__row-radio}}
 							{{> form__row form__row-checkbox}}
 
@@ -114,7 +99,7 @@ status
 						{{! form__hidden form__hidden }}
 
 						<fieldset class="form__fieldset">
-						    <legend class="form__legend">Validation items via JSON</legend>
+						    <legend class="form__legend">Form Validation Examples</legend>
 
 							{{> form__row form__row-text--validated }}
 
@@ -192,96 +177,25 @@ status
 
 					<form id="form-example-disabled" class="form aligned" role="" method="">
 						<fieldset class="form__fieldset">
-						    <legend class="form__legend">Disabled Inputs</legend>
+						    <legend class="form__legend">Form with Disabled Inputs</legend>
 
-							<div class="form__row">
-								<label for="inputsizedisabled" class="label disabled"><span>Disabled label and input</span></label>
-								<input type="text" role="textbox" class="form__input"
-									disabled="disabled" aria-disabled="true" />
-							</div>
-
-							<div class="form__row disabled">
-								<label class="label disabled" for="form-select"><span>Select Label</span></label>
-								<select class="form__input" disabled="disabled" aria-disabled="true" >
-									<option value="" label="Option Label1">Option Text1</option>
-									<option value="" label="Option Label2">Option Text2</option>
-									<option value="" label="Option Label3" selected>Option Text3</option>
-									<option value="" label="Option Label4">Option Text4</option>
-									<option value="" label="Option Label5">Option Text5</option>
-								</select>
-							</div>
-
-							<div class="form__row offset">
-								<div class="form__group vertical">
-									<span class="group__item">
-										<input type="checkbox" class="form__input" checked="checked"
-											disabled="disabled" aria-disabled="true" />
-										<label for="InputSizeDisabled" class="label disabled"><span>Disabled Checkboxes</span></label>
-									</span>
-
-									<span class="group__item">
-										<input type="checkbox" class="form__input"
-											disabled="disabled" aria-disabled="true" />
-										<label for="InputSizeDisabled" class="label disabled"><span>Disabled Checkboxes</span></label>
-									</span>
-
-									<span class="group__item">
-										<input type="checkbox" class="form__input"
-											disabled="disabled" aria-disabled="true" />
-										<label for="InputSizeDisabled" class="label disabled"><span>Disabled Checkboxes</span></label>
-									</span>
-								</div>
-							</div>
-
-							<div class="form__row offset">
-								<div class="form__group vertical">
-									<span class="group__item">
-										<input type="radio" class="form__input" checked="checked"
-											disabled="disabled" aria-disabled="true" />
-										<label for="InputSizeDisabled" class="label"><span>Disabled Radio</span></label>
-									</span>
-
-									<span class="group__item">
-										<input type="radio" class="form__input"
-											disabled="disabled" aria-disabled="true" />
-										<label for="InputSizeDisabled" class="label"><span>Disabled Radio</span></label>
-									</span>
-
-									<span class="group__item">
-										<input type="radio" class="form__input"
-											disabled="disabled" aria-disabled="true" />
-										<label for="InputSizeDisabled" class="label"><span>Disabled Radio</span></label>
-									</span>
-								</div>
-							</div>
-
-							<div class="form__row">
-								<label for="InputSizeDisabled" class="label"><span>Input xsmall</span></label>
-								<input type="text" role="textbox" class="form__input"
-									disabled="disabled" aria-disabled="true" />
-							</div>
+							{{> form__row form__row-text--disabled}}
+							{{> form__row form__row-select--disabled}}
+							{{> form__row form__row-radio--disabled}}
+							{{> form__row form__row-checkbox--disabled}}
 
 						</fieldset>
 
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Readonly Input</legend>
 
-							<div class="form__row">
-								<label for="InputSizeDisabled" class="label"><span>Input xsmall</span></label>
-								<input type="text" role="textbox" class="form__input"
-									readonly="readonly" aria-readonly="true" />
-							</div>
+							{{> form__row form__row-text--readonly}}
 						</fieldset>
 
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Required Input</legend>
 
-							<div class="form__row">
-								<label for="InputSizeDisabled" class="label"><span>Input xsmall</span></label>
-								<input type="text" role="textbox" class="form__input"
-									required="required" aria-required="true" />
-								{{> form__asterisk }}
-							</div>
+							{{> form__row form__row-text--required}}
 						</fieldset>
 
 					</form>
@@ -298,110 +212,19 @@ status
 								{{> form__row form__row-text--xlarge }}
 								{{> form__row form__row-text--full }}
 
-
-
                             </fieldset>
 
                         </form>
 
 
-					<form id="form-example-sizes" class="form aligned" role="" method="">
+					<form id="form-example-checkboxes" class="form aligned" role="" method="">
 						<fieldset class="form__fieldset">
-						    <legend class="form__legend">Checkboxes</legend>
+						    <legend class="form__legend">Checkbox/Radio Layouts</legend>
 
-
-							<div class="form__row offset">
-								<div class="form__group">
-									<input id="aligned-checkbox-4" type="checkbox" class="form__input">
-									<label for="aligned-checkbox-4" class="label">
-									    <span>Label for label+checkbox</span>
-									</label>
-
-									<input id="aligned-checkbox-5" type="checkbox" class="form__input">
-									<label for="aligned-checkbox-5" class="label">
-									    <span>Label for label+checkbox</span>
-									</label>
-
-									<input id="aligned-checkbox-6" type="checkbox" class="form__input">
-									<label for="aligned-checkbox-6" class="label">
-									    <span>Label for label+checkbox</span>
-									</label>
-							    </div>
-							    {{> form__asterisk }}
-							</div>
-
-
-							<div class="form__row">
-								<label for="aligned-checkbox-7" class="label">
-								    <span>Separate label and checkbox</span>
-								</label>
-								<div class="form__group">
-								    <input type="checkbox" class="form__input" id="aligned-checkbox-7">
-								</div>
-							</div>
-
-
-							<div class="form__row">
-								<span class="label">Group Vertical</span>
-
-								<div class="form__group vertical">
-
-									<span class="group__item">
-										<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosA1" value="option1" checked>
-										<label for="optionsRadiosA1" class="label">
-											<span>Option one</span>
-										</label>
-									</span>
-
-									<span class="group__item">
-										<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosA2" value="option2">
-										<label for="optionsRadiosA2" class="label">
-											<span>Option two</span>
-										</label>
-									</span>
-
-									<span class="group__item">
-										<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosA3" value="option3">
-										<label for="optionsRadiosA3" class="label">
-											<span>Option three</span>
-										</label>
-									</span>
-
-								</div>
-							</div>
-
-
-
-							<div class="form__row">
-								<span class="label">Group</span>
-
-								<div class="form__group">
-
-									<span class="group__item">
-										<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosB1" value="option1a" checked>
-										<label for="optionsRadiosB1" class="label">
-											<span>Option one</span>
-										</label>
-									</span>
-
-									<span class="group__item">
-										<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosB2" value="option2a">
-										<label for="optionsRadiosB2" class="label">
-											<span>Option one</span>
-										</label>
-									</span>
-
-									<span class="group__item">
-										<input type="radio" class="radio" name="optionsRadios" id="optionsRadiosB3" value="option3a">
-										<label for="optionsRadiosB3" class="label">
-											<span>Option one</span>
-										</label>
-									</span>
-
-									{{> form__asterisk }}
-
-								</div>
-							</div>
+							[vertical checkbox]
+							[horizontal checkbox]
+							[vertical radio]
+							[horizontal radio]
 
 
 						</fieldset>
@@ -414,12 +237,48 @@ status
 
 				<section class="section section--example">
 		            <header class="section__head">
-		                <h2 class="section__title">Example</h2>
+		                <h2 class="section__title">Example: Contact Us</h2>
 		            </header>
 
 		            <div class="section__body">
 				        <!-- code -->
+                        <form id="form-example-address" class="form aligned" role="" method="">
 
+                            <div class="form__row form__row--modifier">
+								{{>label}}
+								<div class="form__control">
+									<div class="input__group">
+                                        {{>label}}
+										{{>input}}
+										<span class="input">
+											<span class="input__addon">@</span>
+											<input type="text" role="textbox" class="input__field input__field--text" id="formrow-text-1" placeholder="Text Placeholder">
+											<span class="input__addon">.00</span>
+											<div class="input__note">
+												This is where the form note would go.
+											</div>
+										</span>
+									</div>
+                                    {{> form__text }}
+								</div>
+                                <abbr class="form__asterisk" title="required">*</abbr>
+                                <div class="form__optional" title="this field is optional">(optional)</div>
+							</div>
+
+
+                            <fieldset class="form__fieldset">
+                                <legend class="form__legend">Contact Us</legend>
+
+								{{> form__row form__row--name}}
+								{{> form__row form__row--email}}
+								{{> form__row form__row--phone}}
+								{{> form__row form__row--address}}
+								{{> form__row form__row--postcode}}
+
+								{{> button button-submit }}
+
+                            </fieldset>
+                        </form>
 				        <!-- end of code -->
 			        </div>
 

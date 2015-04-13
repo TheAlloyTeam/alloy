@@ -26,7 +26,13 @@
     // Gutters
     @horizontalPadding: ((@GRID-GutterWidth)/2)+0px;
     @verticalPadding: ((@TYPE-LineHeight)/2)+0px;
-    padding: @verticalPadding ceil(@horizontalPadding) @verticalPadding floor(@horizontalPadding);
+    padding: ceil(@verticalPadding) floor(@horizontalPadding) floor(@verticalPadding) ceil(@horizontalPadding);
+}
+._gutterMarginReverse() {
+    // Gutters
+    @horizontalPadding: -((@GRID-GutterWidth)/2)+0px;
+    margin-left: ceil(@horizontalPadding);
+    margin-right: floor(@horizontalPadding);
 }
 
 ._coloffset (@numberOfcols: 1, @numberOfTotalCols: 2) {
@@ -55,9 +61,19 @@
     position: relative;
     margin: 0 auto;
     ._clearfix();
+
+    .g {
+        padding:0;
+        ._gutterMarginReverse();
+
+        [class*="c--"] {
+        padding-top:0;
+            padding-bottom:0;
+        }
+    }
 }
 
-[class*="c__"] {
+[class*="c__"], [class*="c--"] {
     width: 100%;
     display: inline;
     float: left;
@@ -68,7 +84,8 @@
 // ----------------------------------------------------
 
 .g--rtl {
-    [class*="c__"] {
+    [class*="c__"],
+    [class*="c--"] {
         float: right;
     }
 }
@@ -91,6 +108,20 @@
 
 @media only screen and (max-width: @MQ-Small)  {
 
+    .g {
+
+        .g {
+
+            [class*="c--"] {
+                padding-top: ceil(@TYPE-LineHeight);
+
+                &:first-child {
+                padding-top:0;
+            }
+            }
+        }
+    }
+
     .c__sm--1-2 { ._colwidth(1,2); }
     .c__sm--1-3 { ._colwidth(1,3); }
     .c__sm--2-3 { ._colwidth(2,3); }
@@ -99,6 +130,29 @@
 
 // TABLET
 // ----------------------------------------------------
+
+
+@media only screen and (min-width: @MQ-Medium-min)  {
+
+    // GRIDS in GRIDS code that will still
+
+    // Halves
+    .c--1-2, .c--2-4 { ._colwidth(1,2); }
+
+    // Thirds
+    .c--1-3 { ._colwidth(1,3); }
+    .c--2-3 { ._colwidth(2,3); }
+
+    // Quarters
+    .c--1-4 { ._colwidth(1,4); }
+    .c--3-4 { ._colwidth(3,4); }
+
+    // Fifths
+    .c--1-5  { ._colwidth(1,5); }
+    .c--2-5 { ._colwidth(2,5); }
+    .c--3-5 { ._colwidth(3,5); }
+    .c--4-5 { ._colwidth(4,5); }
+}
 
 @media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium)  {
 
