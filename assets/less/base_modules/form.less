@@ -48,7 +48,7 @@
     border: 1px solid @Bordercolor;
     //background-color: @BgColor;
 
-    .input {
+    .input__field {
         background-color: @BgColor;
         color: @TextColor;
 
@@ -72,8 +72,25 @@
 // BASE
 // ----------------------------------------------------
 
-.form {
-    ._margin (0, 0, @TYPE-LineHeight, 0);
+    .form {
+        ._margin (0, 0, @TYPE-LineHeight, 0);
+    }
+
+    .form__row {
+        position: relative;
+        ._clearfix ();
+        ._margin (0, 0, @TYPE-LineHeight/2, 0);
+    }
+
+    .form__label  {
+        cursor: pointer;
+        display: block;
+        float:left;
+
+        &.disabled {
+            cursor: not-allowed;
+        }
+    }
 
     span.form__label,
     .form__label span {
@@ -81,102 +98,111 @@
             content: ":";
         }
     }
-}
 
-.form__row {
-    position: relative;
-    ._clearfix ();
-    ._margin (0, 0, @TYPE-LineHeight/2, 0);
-}
-
-.form__label  {
-    cursor: pointer;
-    display: block;
-
-    &.disabled {
-        cursor: not-allowed;
+    .form__control {
+        position:relative;
+        ._haslayout();
     }
-}
 
-.input__addon {
-    background-color: @FORM-AddonBgColor;
-    color: @FORM-AddonColor;
-    ._text-shadow(~"0 1px 0 rgba(255, 255, 255, 0.8)");
-    ._padding (8, 12, 7, 12);
-    ._inline-block();
-}
+    .form__note {
+        display: block;
+        ._margin-top (5);
+        ._font-size ((@TYPE-FontSize - 2));
+    }
 
-.input {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    width: 100%;
-    display: table;
-    //._border-radius (4);
-    ._padding (8, 5, 7, 5);
-    ._inline-block();
+    .form__required {
+        color: @FORM-Asterisk;
+        border-bottom: none !important;
+    }
+
+    .form__actions {
+
+    }
+
+
+    .input {
+        color: @FORM-DefaultTextColor;
+        position:relative;
+        display: block;
+        border: 1px solid @FORM-DefaultBordercolor;
+        background-color: @FORM-DefaultBgColor;
+
+        .form__label {
+            position:absolute;
+            top: -@TYPE-LineHeight+0px;
+            left:0;
+            ._font-size(@TYPE-SIZE-Iota);
+        }
+
+        &.success {
+            ._input-create (@FORM-SuccessBgColor, @FORM-SuccessTextColor, @FORM-SuccessBordercolor);
+        }
+
+        &.info {
+            ._input-create (@FORM-InfoBgColor, @FORM-InfoTextColor, @FORM-InfoBordercolor);
+        }
+
+        &.warn {
+            ._input-create (@FORM-WarnBgColor, @FORM-WarnTextColor, @FORM-WarnBordercolor);
+        }
+
+        &.danger {
+            ._input-create (@FORM-DangerBgColor, @FORM-DangerTextColor, @FORM-DangerBordercolor);
+        }
+    }
 
     .input__addon {
+        background-color: @FORM-AddonBgColor;
+        color: @FORM-AddonColor;
         display: table-cell;
         white-space: nowrap;
         vertical-align: middle;
+        ._text-shadow(~"0 1px 0 rgba(255, 255, 255, 0.8)");
+        ._padding (8, 12, 7, 12);
+        ._inline-block();
     }
 
-    &--checkbox,
-    &--radio {
-        width: auto;
+    .input__faux {
+
+        &--checkbox {}
+        &--radio {}
     }
 
-    &:focus {
-        outline: 0;
-        outline: thin dotted \9;
-        ._depth-1 ();
+
+    .input__field {
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        width: 100%;
+        display: table;
+        //._border-radius (4);
+        ._padding (8, 5, 7, 5);
+        ._inline-block();
+
+
+        &--checkbox,
+        &--radio {
+            width: auto;
+
+            .form__label {
+                position: static;
+                ._inline-block();
+            }
+        }
+
+        &:focus {
+            outline: 0;
+            outline: thin dotted \9;
+            ._depth-1 ();
+        }
     }
-}
-
-.form__input {
-    color: @FORM-DefaultTextColor;
-    clear: left;
-    display: block;
-    border: 1px solid @FORM-DefaultBordercolor;
-    background-color: @FORM-DefaultBgColor;
-    //._border-radius (4);
 
 
 
 
-    &.success {
-        ._input-create (@FORM-SuccessBgColor, @FORM-SuccessTextColor, @FORM-SuccessBordercolor);
-    }
+.input__group {
 
-    &.info {
-        ._input-create (@FORM-InfoBgColor, @FORM-InfoTextColor, @FORM-InfoBordercolor);
-    }
-
-    &.warn {
-        ._input-create (@FORM-WarnBgColor, @FORM-WarnTextColor, @FORM-WarnBordercolor);
-    }
-
-    &.danger {
-        ._input-create (@FORM-DangerBgColor, @FORM-DangerTextColor, @FORM-DangerBordercolor);
-    }
-}
-
-.form__note {
-    display: block;
-    ._margin-top (5);
-    ._font-size ((@TYPE-FontSize - 2));
-}
-
-.form__asterisk {
-    color: @FORM-Asterisk;
-    border-bottom: none !important;
-}
-
-
-.form__group {
-
-    .group__item {
+    .input {
         ._inline-block();
 
         &:last-child {
@@ -188,14 +214,14 @@
             bottom: -1px;
         }
     }
-    .form__input {
+    .input__field {
         width: 100%;
     }
 
     &.inline {
         display: table;
 
-        .group__item {
+        .item {
             display: table-cell;
             vertical-align: middle;
         }
@@ -216,8 +242,8 @@
     }
 }
 
-.form__group--check {
-    .group__item {
+.input__group--check {
+    .input {
         ._margin-left(@TYPE-FontSize);
 
         &:first-child {
@@ -233,18 +259,11 @@
     }
 
     .form__label,
-    .form__input {
+    .input {
         width: auto;
         margin-top: 0;
         border: none;
         ._inline-block ();
-    }
-
-    span.form__label,
-    .form__label span {
-        &:after {
-            content: "";
-        }
     }
 }
 
@@ -266,7 +285,7 @@ fieldset {
 
 @media only screen and (max-width: @MQ-Small) {
 
-    .form__asterisk {
+    .form__required {
         position: absolute;
         right: 0;
         top: 0;
@@ -293,7 +312,7 @@ fieldset {
         ._margin-top (2);
     }
 
-    .form__input {
+    .input {
         width: 40%;
         vertical-align: middle;
         ._inline-block ();
@@ -304,7 +323,7 @@ fieldset {
         ._inline-block ();
     }
 
-    .form__input {
+    .input {
         &.xsmall {
             width: 10%;
         }
@@ -350,13 +369,13 @@ fieldset {
                 &.offset {
                     margin-left: @FORM-Offset;
 
-                    .form__group {
+                    .input__group {
                         width:100%;
                     }
                 }
             }
 
-            .form__asterisk {
+            .form__required {
                 position: absolute;
                 left: @FORM-OffsetAsterisk;
                 top: 0;

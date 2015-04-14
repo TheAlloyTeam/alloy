@@ -1,8 +1,7 @@
 {{#this}}
-    <span class="form__input{{#if item.modifier}} form__input--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
     <input
         type="checkbox"
-        class="input input--checkbox"
+        class="input__field input_field--checkbox"
         {{#if item.checked}} checked="checked" aria-checked="true"{{/if}}
         {{#if item.required}} required="required" aria-required="true"{{/if}}
         {{#if item.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
@@ -12,6 +11,6 @@
         {{#if item.tabindex}} tabindex="{{item.tabindex}}"{{/if}}
         {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
     />
-        <label class="faux__checkbox" for=""{{item.id}}"></label>
-    </span>
+        <label class="input__faux input__faux--checkbox" for=""{{item.id}}"></label>
+
 {{/this}}
