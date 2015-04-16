@@ -25,7 +25,7 @@
             "item": {
                 "modifier": "",
                 "checkbox": "",
-                "vertical": "",
+                "vertical": true,
                 "inline": ""
             },
             "content": {

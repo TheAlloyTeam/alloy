@@ -19,7 +19,9 @@
 @FORM-Asterisk:                 @COLOR-Red;
 
 @FORM-Offset:                   25%;
+@FORM-OffsetMin:                200px;
 @FORM-OffsetGap:                3%;
+@FORM-OffsetMin:                20px;
 @FORM-OffsetLabel:              ((@FORM-Offset)-(@FORM-OffsetGap));
 @FORM-OffsetAsterisk:           ((@FORM-Offset)-(@FORM-OffsetGap/2));
 
@@ -132,6 +134,8 @@
     }
 
 
+// INPUTS
+// ----------------------------------------------------
 
     .input {
         color: @FORM-DefaultTextColor;
@@ -157,6 +161,7 @@
         }
     }
 
+
     .input__addon {
         background-color: @FORM-AddonBgColor;
         color: @FORM-AddonColor;
@@ -172,16 +177,13 @@
         display: block;
         background-color: @FORM-DefaultBordercolor;
         color: @FORM-DefaultTextColor;
-        ._text-shadow(~"1px 1px 0 rgba(255, 255, 255, 0.7)");
+        ._text-shadow(~"1px 1px 0 rgba(255, 255, 255, 0.8)");
         ._font-size(@TYPE-SIZE-Iota);
         ._padding(2, 5);
 
     }
 
     .input__faux {
-
-        &--checkbox {}
-        &--radio {}
     }
 
     .input__label {
@@ -200,8 +202,6 @@
         //._border-radius (4);
         ._padding (8, 5, 7, 5);
         ._inline-block();
-
-
 
         &:focus {
             outline: 0;
@@ -231,7 +231,7 @@
         &.inline {
             display: table;
 
-            .item {
+            .input {
                 display: table-cell;
                 vertical-align: middle;
             }
@@ -241,24 +241,63 @@
         &.vertical {
             display: block;
 
-            .item {
+            .input {
                 display: block;
-                ._padding(0,0,5,0);
+                ._margin(0,0,5,0);
 
                 &:last-child {
-                    padding-bottom: 0;
+                    margin-bottom: 0;
                 }
             }
         }
     }
 
+
+    ._placeholder (@FORM-Placeholder);
+
+// VARIANTS
+// ----------------------------------------------------
+
+    .input--check {
+        ._padding(8,5,7,5);
+
+        .input__label {
+            display: inline;
+            position:static;
+            ._font-size(@TYPE-SIZE-Eta);
+
+        }
+
+        .input__field {
+            width: auto;
+            display: inline;
+            float:left;
+            ._height(@TYPE-LineHeight);
+            ._margin-right(@TYPE-FontSize/1.5);
+
+            &:focus {
+                ._depth-0 ();
+            }
+        }
+    }
+
+
     .input__group--check {
 
         .input {
+            width: auto;
             margin-top: 0;
             border: none;
             ._inline-block ();
-            ._margin-left(@TYPE-FontSize);
+            ._margin(0, @TYPE-FontSize*2, 0, @TYPE-FontSize);
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        .input--check {
+            margin:0;
         }
 
         &.vertical {
@@ -270,9 +309,6 @@
         }
     }
 
-
-._placeholder (@FORM-Placeholder); 
-
 // MOBILE
 // ----------------------------------------------------
 
@@ -280,12 +316,9 @@
 
     .form__required {
         position: absolute;
+        cursor: help;
         right: 0;
         top: 0;
-    }
-
-    .form__group {
-        ._padding-right(12);
     }
 }
 
@@ -356,16 +389,6 @@
 
         &.aligned {
 
-            .form__row {
-                &.offset {
-                    margin-left: @FORM-Offset;
-
-                    .input__group {
-                        width:100%;
-                    }
-                }
-            }
-
             .form__required {
                 position: absolute;
                 left: @FORM-OffsetAsterisk;
@@ -379,17 +402,19 @@
                 float: left;
             }
 
-            .form__group {
-                display:block;
-                width:75%;
-                float: left;
+            .input__group {
+                display: block;
+            }
 
-                .input__label {
-                    width: auto;
-                    text-align: left;
-                    margin-right: auto;
-                    float: none;
-                }
+            .input__label {
+                width: auto;
+                text-align: left;
+                margin-right: auto;
+                float: none;
+            }
+
+            .input__group {
+                width: 100%;
             }
 
             .form__note {

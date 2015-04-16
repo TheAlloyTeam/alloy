@@ -2,19 +2,35 @@
     "item": {
         "modifier": "",
         "required": "",
-        "disabled": "disabled",
-        "for": "formrow-disabled-2"
+        "disabled": true,
+        "for": "formrow-select-1"
     },
     "content": {
-        "text": "Label for disabled select",
-        "types": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-disabled-select-1"
+            },
+            "content": {
+                "text": "Select",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
             "selects": [{
                 "item": {
                     "modifier": "",
                     "multiple": "",
                     "required": "",
-                    "disabled": "disabled",
-                    "id": "formrow-disabled-2",
+                    "disabled": true,
+                    "id": "formrow-disabled-select-1",
                     "form": "",
                     "name": "",
                     "size": "",
@@ -30,20 +46,32 @@
                             "disabled": ""
                         },
                         "content": {
-                            "label": "Option Label",
-                            "text": "Option Text"
+                            "label": "Option 1 Label",
+                            "text": "Option 1 Text"
+                        }
+                    },{
+                        "item": {
+                            "value": "",
+                            "selected": "",
+                            "disabled": ""
+                        },
+                        "content": {
+                            "label": "Option 2 Label",
+                            "text": "Option 2 Text"
+                        }
+                    },{
+                        "item": {
+                            "value": "",
+                            "selected": "",
+                            "disabled": ""
+                        },
+                        "content": {
+                            "label": "Option 3 Label",
+                            "text": "Option 3 Text"
                         }
                     }]
                 }
             }]
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

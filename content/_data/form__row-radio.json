@@ -30,6 +30,9 @@
             },
             "content": {
                 "inputs": [{
+                    "item": {
+                      "modifier": "check"
+                    },
                     "radios": [{
                         "item": {
                             "modifier": "",
@@ -64,6 +67,9 @@
                     }]
                 },
                 {
+                    "item": {
+                        "modifier": "check"
+                    },
                     "radios": [{
                         "item": {
                             "modifier": "",
@@ -97,6 +103,9 @@
                     }]
                 },
                 {
+                    "item": {
+                        "modifier": "check"
+                    },
                     "radios": [{
                         "item": {
                             "modifier": "",
