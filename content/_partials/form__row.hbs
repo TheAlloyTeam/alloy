@@ -1,34 +1,16 @@
 {{#this}}
     <div class="form__row{{#if item.modifier}} form__row--{{item.modifier}}{{/if}}{{#if item.offset}} offset{{/if}}{{#if item.disabled}} disabled{{/if}}
 ">
-        {{#if content.text}}
-            {{#this}}{{> form__label }}{{/this}}
+        {{#if content.labels}}
+            {{#each content.labels}}
+                {{#this}}{{> form__label }}{{/this}}
+            {{/each}}
         {{/if}}
 
-        <div class="form__control">
-            {{! bring in groups of inputs }}
-            {{#if content.group}}
-                {{#each content.group}}
-                    {{#this}}
-                       {{> input__group }}
-                    {{/this}}
-                {{/each}}
-            {{/if}}
-
-            {{!bring in single input }}
-            {{#if content.type}}
-                {{#each content.type}}
-                    {{#this}}
-                        {{> input }}
-                    {{/this}}
-                {{/each}}
-            {{/if}}
-
-        </div>
+        {{> form__control }}
 
         {{#if item.required}}
             {{#this}}{{> form__asterisk }}{{/this}}
         {{/if}}
     </div>
-
 {{/this}}

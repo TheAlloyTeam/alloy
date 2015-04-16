@@ -15,7 +15,7 @@
                 "inline": ""
             },
             "content": {
-                "type": [{
+                "types": [{
                     "item": {
                         "required": "",
                         "disabled": true,
@@ -25,7 +25,7 @@
                     "content": {
                         "text": "Label for the group__item1"
                     },
-                    "checkbox": [{
+                    "checkboxes": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
@@ -50,7 +50,7 @@
                     "content": {
                         "text": "Label for the group__item2"
                     },
-                    "checkbox": [{
+                    "checkboxes": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
@@ -75,7 +75,7 @@
                     "content": {
                         "text": "Label for the group__item3"
                     },
-                    "checkbox": [{
+                    "checkboxes": [{
                         "item": {
                             "modifier": "",
                             "checked": "",

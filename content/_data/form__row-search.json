@@ -3,17 +3,33 @@
         "modifier": "",
         "required": "",
         "disabled": "",
-        "offset": "",
-        "hidden": "",
-        "for": "formrow-search-1"
+        "offset": ""
     },
     "content": {
-        "text": "Label for search",
-        "type": [{
-            "search": [{
+        "labels": [{
+        "item": {
+            "for": "formrow-search-1"
+        },
+        "content": {
+            "text": "Search",
+            "icons": [{
                 "item": {
                     "modifier": "",
-                    "size": "xlarge",
+                    "size": ""
+                },
+                "content": {
+                    "title": ""
+                }
+            }]
+        }
+    }],
+        "inputs": [{
+            "item": {
+              "size": "xlarge"
+            },
+            "searches": [{
+                "item": {
+                    "modifier": "",
                     "multiple": "",
                     "required": "",
                     "readonly": "",

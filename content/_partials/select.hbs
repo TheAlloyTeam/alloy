@@ -1,5 +1,13 @@
 {{#this}}
 
+    {{#if content.labels}}
+        {{#each content.labels}}
+            {{#this}}
+                {{> input__label }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
 <select
     class="input__field input__field--select"
     {{#if item.multiple}} multiple="multiple"{{/if}}
@@ -13,8 +21,8 @@
     {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
 >
 
-    {{#if content.select__optgroup}}
-        {{#each content.select__optgroup}}
+    {{#if content.optgroups}}
+        {{#each content.optgroups}}
                 {{#this}}
                 {{> select__optgroup}}
                 {{/this}}
@@ -22,8 +30,8 @@
 
     {{else}}
 
-        {{#if content.select__option}}
-            {{#each content.select__option}}
+        {{#if content.options}}
+            {{#each content.options}}
                     {{#this}}
                     {{> select__option}}
                     {{/this}}

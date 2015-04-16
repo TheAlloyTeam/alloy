@@ -2,27 +2,20 @@
     "item": {
         "modifier": "",
         "required": "",
-        "disabled": ""
+        "disabled": "",
+        "for": "formrow-url-1"
     },
     "content": {
-        "labels": [{
-            "item": {
-                "for": "formrow-email-1"
-            },
-            "content": {
-                "text": "Email Address"
-            }
-        }],
-        "inputs": [{
-            "emails": [{
+        "text": "Label for URL input",
+        "types": [{
+            "url": [{
                 "item": {
                     "modifier": "",
                     "size": "",
-                    "multiple": "",
                     "required": "",
                     "readonly": "",
                     "disabled": "",
-                    "id": "formrow-email-1",
+                    "id": "formrow-url-1",
                     "name": "",
                     "maxlength": "",
                     "minlength": "",
@@ -32,10 +25,18 @@
                     "accesskey": ""
                 },
                 "content": {
-                    "placeholder": "e.g. email@placeholder.com",
+                    "placeholder": "Url Placeholder",
                     "value": ""
                 }
             }]
         }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
     }
 }

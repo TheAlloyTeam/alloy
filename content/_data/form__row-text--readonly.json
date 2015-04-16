@@ -7,8 +7,8 @@
     },
     "content": {
         "text": "Label for required text input",
-        "type": [{
-            "text": [{
+        "types": [{
+            "texts": [{
                 "item": {
                     "modifier": "",
                     "size": "",

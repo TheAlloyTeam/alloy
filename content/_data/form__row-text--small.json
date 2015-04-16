@@ -1,23 +1,38 @@
 {
     "item": {
         "modifier": "modifier",
-        "required": "",
-        "disabled": "",
-        "hidden": "",
-        "for": "formrow-size-1"
+        "required": ""
     },
     "content": {
-        "text": "Small",
-        "type": [{
-            "text": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-size-25"
+            },
+            "content": {
+                "text": "Small Width",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+                "size": "small"
+            },
+            "texts": [{
                 "item": {
                     "modifier": "",
-                    "size": "small",
                     "required": "",
                     "readonly": "",
                     "disabled": "",
                     "spellcheck": "",
-                    "id": "formrow-size-1",
+                    "id": "formrow-size-25",
                     "name": "",
                     "maxlength": "",
                     "minlength": "",
@@ -31,14 +46,12 @@
                     "value": ""
                 }
             }]
+        }],
+        "notes": [{
+            "item": {},
+            "content": {
+                "body": "This is a note for the small width text test."
+            }
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

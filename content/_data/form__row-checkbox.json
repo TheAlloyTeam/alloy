@@ -5,8 +5,22 @@
         "disabled": ""
     },
     "content": {
-        "text": "Label for the checkboxes",
-        "group": [{
+        "labels": [{
+            "item": {},
+            "content": {
+                "text": "Label for the checkboxes",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "groups": [{
             "item": {
                 "modifier": "",
                 "checkbox": true,
@@ -14,42 +28,11 @@
                 "inline": ""
             },
             "content": {
-                "type": [{
+                "inputs": [{
                     "item": {
-                        "required": "",
-                        "disabled": "",
-                        "hidden": "",
-                        "for": "formrow-checkbox-1"
+                        "modifier": "checkbox"
                     },
-                    "content": {
-                        "text": "Label for the group__item1"
-                    },
-                    "checkbox": [{
-                        "item": {
-                            "modifier": "",
-                            "checked": "",
-                            "required": "",
-                            "disabled": "",
-                            "id": "formrow-checkbox-1",
-                            "name": "",
-                            "value": "",
-                            "tabindex": "",
-                            "accesskey": ""
-                        },
-                        "content": {}
-                    }]
-                },
-                {
-                    "item": {
-                        "required": "",
-                        "disabled": "",
-                        "hidden": "",
-                        "for": "formrow-checkbox-2"
-                    },
-                    "content": {
-                        "text": "Label for the group__item2"
-                    },
-                    "checkbox": [{
+                    "checkboxes": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
@@ -61,20 +44,65 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {}
+                        "content": {
+                            "labels": [{
+                                "item": {
+                                    "for": "formrow-checkbox-2"
+                                },
+                                "content": {
+                                    "text": "Yes",
+                                    "icons": [{
+                                        "item": {
+                                            "modifier": "",
+                                            "size": ""
+                                        },
+                                        "content": {
+                                            "title": ""
+                                        }
+                                    }]
+                                }
+                            }]
+                        }
                     }]
-                },
-                {
+                },{
                     "item": {
-                        "required": "",
-                        "disabled": "",
-                        "hidden": "",
-                        "for": "formrow-checkbox-3"
+                        "modifier": "checkbox"
                     },
-                    "content": {
-                        "text": "Label for the group__item3"
+                    "checkboxes": [{
+                        "item": {
+                            "modifier": "",
+                            "checked": "",
+                            "required": "",
+                            "disabled": "",
+                            "id": "formrow-checkbox-1",
+                            "name": "",
+                            "value": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {"labels": [{
+                            "item": {
+                                "for": "formrow-checkbox-1"
+                            },
+                            "content": {
+                                "text": "No",
+                                "icons": [{
+                                    "item": {
+                                        "modifier": "",
+                                        "size": ""
+                                    },
+                                    "content": {
+                                        "title": ""
+                                    }
+                                }]
+                            }
+                        }]}
+                    }]
+                },{
+                    "item": {
+                        "modifier": "checkbox"
                     },
-                    "checkbox": [{
+                    "checkboxes": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
@@ -86,18 +114,32 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {}
+                        "content": {"labels": [{
+                            "item": {
+                                "for": "formrow-checkbox-3"
+                            },
+                            "content": {
+                                "text": "Maybe",
+                                "icons": [{
+                                    "item": {
+                                        "modifier": "",
+                                        "size": ""
+                                    },
+                                    "content": {
+                                        "title": ""
+                                    }
+                                }]
+                            }
+                        }]}
                     }]
                 }]
             }
+        }],
+        "notes": [{
+            "item": {},
+            "content": {
+                "body": "This is a <strong>form control</strong> note for checkboxes."
+            }
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

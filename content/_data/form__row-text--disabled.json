@@ -3,13 +3,28 @@
         "modifier": "",
         "required": "",
         "disabled": "disabled",
-        "hidden": "",
-        "for": "formrow-disabled-1"
+        "hidden": ""
     },
     "content": {
-        "text": "Label for disabled text input",
-        "type": [{
-            "text": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-disabled-1"
+            },
+            "content": {
+                "text": "Text Disabled",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "texts": [{
                 "item": {
                     "modifier": "",
                     "size": "",

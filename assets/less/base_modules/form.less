@@ -11,6 +11,7 @@
 @FORM-DefaultBgColor:           @COLOR-White;
 @FORM-DefaultTextColor:         @COLOR-GreyDarker;
 @FORM-DefaultBordercolor:       @COLOR-GreyLight;
+@FORM-ActionsBgColor:           @COLOR-GreyLightest;
 
 @FORM-Placeholder:              @COLOR-GreyLight;
 @FORM-AddonBgColor:             @COLOR-GreyLight;
@@ -83,9 +84,7 @@
     }
 
     .form__label  {
-        cursor: pointer;
         display: block;
-        float:left;
 
         &.disabled {
             cursor: not-allowed;
@@ -106,8 +105,10 @@
 
     .form__note {
         display: block;
+        font-style: italic;
+        color: @FORM-DefaultTextColor;
+        ._padding(2, 5);
         ._margin-top (5);
-        ._font-size ((@TYPE-FontSize - 2));
     }
 
     .form__required {
@@ -116,8 +117,20 @@
     }
 
     .form__actions {
-
+        background-color: @FORM-ActionsBgColor;
     }
+
+    .form__fieldset {
+
+        &.nostyle {
+            border: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: block;
+        }
+    }
+
 
 
     .input {
@@ -126,13 +139,6 @@
         display: block;
         border: 1px solid @FORM-DefaultBordercolor;
         background-color: @FORM-DefaultBgColor;
-
-        .form__label {
-            position:absolute;
-            top: -@TYPE-LineHeight+0px;
-            left:0;
-            ._font-size(@TYPE-SIZE-Iota);
-        }
 
         &.success {
             ._input-create (@FORM-SuccessBgColor, @FORM-SuccessTextColor, @FORM-SuccessBordercolor);
@@ -162,12 +168,28 @@
         ._inline-block();
     }
 
+    .input__note {
+        display: block;
+        background-color: @FORM-DefaultBordercolor;
+        color: @FORM-DefaultTextColor;
+        ._text-shadow(~"1px 1px 0 rgba(255, 255, 255, 0.7)");
+        ._font-size(@TYPE-SIZE-Iota);
+        ._padding(2, 5);
+
+    }
+
     .input__faux {
 
         &--checkbox {}
         &--radio {}
     }
 
+    .input__label {
+        position:absolute;
+        top: -@TYPE-LineHeight+0px;
+        left:0;
+        ._font-size(@TYPE-SIZE-Iota);
+    }
 
     .input__field {
         background-color: transparent;
@@ -180,15 +202,6 @@
         ._inline-block();
 
 
-        &--checkbox,
-        &--radio {
-            width: auto;
-
-            .form__label {
-                position: static;
-                ._inline-block();
-            }
-        }
 
         &:focus {
             outline: 0;
@@ -197,85 +210,65 @@
         }
     }
 
+    .input__group {
 
-
-
-.input__group {
-
-    .input {
-        ._inline-block();
-
-        &:last-child {
-            padding-right: 0;
-        }
-
-        .button {
-            position:relative;
-            bottom: -1px;
-        }
-    }
-    .input__field {
-        width: 100%;
-    }
-
-    &.inline {
-        display: table;
-
-        .item {
-            display: table-cell;
-            vertical-align: middle;
-        }
-    }
-
-
-    &.vertical {
-        display: block;
-
-        .group__item {
-            display: block;
-            ._padding(0,0,5,0);
+        .input {
+            ._inline-block();
 
             &:last-child {
-                padding-bottom: 0;
+                padding-right: 0;
+            }
+
+            .button {
+                position:relative;
+                bottom: -1px;
+            }
+        }
+        .input__field {
+            width: 100%;
+        }
+
+        &.inline {
+            display: table;
+
+            .item {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+
+        &.vertical {
+            display: block;
+
+            .item {
+                display: block;
+                ._padding(0,0,5,0);
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
             }
         }
     }
-}
 
-.input__group--check {
-    .input {
-        ._margin-left(@TYPE-FontSize);
+    .input__group--check {
 
-        &:first-child {
-            margin-left: 0;
-        }
-    }
-
-    &.vertical {
-        .group__item {
-            margin-left: 0;
+        .input {
+            margin-top: 0;
+            border: none;
+            ._inline-block ();
+            ._margin-left(@TYPE-FontSize);
         }
 
-    }
+        &.vertical {
+            .input {
+                margin-left: 0;
+                display:block;
+            }
 
-    .form__label,
-    .input {
-        width: auto;
-        margin-top: 0;
-        border: none;
-        ._inline-block ();
+        }
     }
-}
-
-fieldset {
-    .simple {
-        border: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        display:block;
-    }
-}
 
 
 ._placeholder (@FORM-Placeholder); 
@@ -312,18 +305,16 @@ fieldset {
         ._margin-top (2);
     }
 
-    .input {
-        width: 40%;
-        vertical-align: middle;
-        ._inline-block ();
-    }
-
     .form__note {
         margin-top: 0;
         ._inline-block ();
     }
 
     .input {
+        width: 40%;
+        vertical-align: top;
+        ._inline-block ();
+
         &.xsmall {
             width: 10%;
         }
@@ -393,7 +384,7 @@ fieldset {
                 width:75%;
                 float: left;
 
-                .form__label {
+                .input__label {
                     width: auto;
                     text-align: left;
                     margin-right: auto;
@@ -401,9 +392,8 @@ fieldset {
                 }
             }
 
-            .form__text {
+            .form__note {
                 display: block;
-                margin-left: @FORM-Offset;
             }
         }
     }

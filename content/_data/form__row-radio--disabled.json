@@ -7,7 +7,7 @@
     },
     "content": {
         "text": "",
-        "group": [{
+        "groups": [{
             "item": {
                 "modifier": "",
                 "checkbox": true,
@@ -15,7 +15,7 @@
                 "inline": ""
             },
             "content": {
-                "type": [{
+                "types": [{
                     "item": {
                         "required": "",
                         "disabled": "disabled",
@@ -24,7 +24,7 @@
                     "content": {
                         "text": "Label for the group__item1"
                     },
-                    "radio": [{
+                    "radios": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
@@ -48,7 +48,7 @@
                     "content": {
                         "text": "Label for the group__item2"
                     },
-                    "radio": [{
+                    "radios": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
@@ -72,7 +72,7 @@
                     "content": {
                         "text": "Label for the group__item3"
                     },
-                    "radio": [{
+                    "radios": [{
                         "item": {
                             "modifier": "",
                             "checked": "",

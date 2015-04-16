@@ -6,9 +6,28 @@
         "for": "formrow-url-1"
     },
     "content": {
-        "text": "Label for URL input",
-        "type": [{
-            "url": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-url-1"
+            },
+            "content": {
+                "text": "URL",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+                "size": "large"
+            },
+            "urls": [{
                 "item": {
                     "modifier": "",
                     "size": "",

@@ -1,4 +1,13 @@
 {{#this}}
+
+    {{#if content.labels}}
+        {{#each content.labels}}
+            {{#this}}
+                {{> input__label }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
     <textarea
         type="text"
         role="textbox"

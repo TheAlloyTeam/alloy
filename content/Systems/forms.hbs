@@ -27,15 +27,11 @@ page-category: "systems"
 
 							{{> form__row form__row }}
 
-
-
-							{{> button button-submit }}
-
 						</fieldset>
 					</form>
 
 					<form id="form-example-inline" class="form inline" role="" method="">
-						<fieldset class="form__fieldset simple">
+						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Form Inline</legend>
 
 							{{> form__row form__row-search--inline}}
@@ -45,14 +41,14 @@ page-category: "systems"
 					</form>
 
 					<form id="form-example-split" class="form inline" role="" method="">
-						<fieldset class="form__fieldset simple">
+						<fieldset class="form__fieldset">
 						    <legend class="form__legend hidden-text">Form Split</legend>
 
 							{{> form__row form__row-text}}
 
 						</fieldset>
 
-						<fieldset class="form__fieldset simple">
+						<fieldset class="form__fieldset">
 
 							{{> form__row form__row--submit}}
 
@@ -128,49 +124,8 @@ page-category: "systems"
 						<fieldset class="form__fieldset">
 						    <legend class="form__legend">Form Aligned</legend>
 
-							<div class="form__row">
-								{{> form__label label-for }}
-								{{> select select }}
-							    {{> form__asterisk }}
-							</div>
-
-							<div class="form__row">
-								
-								{{> form__label label-for }}
-							    {{> input__text }}
-
-							</div>
-
-							<div class="form__row offset">
-								<div class="form__group">
-									<span class="group__item">
-									    {{> input__text }}
-									</span>
-									<span class="group__item">
-									    {{> input__text }}
-									</span>
-									<span class="group__item">
-									    {{> input__text }}
-									</span>
-									<span class="group__item">
-									    {{> input__text }}
-									</span>
-								</div>
-							</div>
-
-							<div class="form__row">
-								
-								{{> form__label label-for }}
-							    {{> input__password }}
-							    <span class="form__text">Aligned form text eg, Have you <a href="#">Forgotten your password?</a></span>
-
-							</div>
-
-							<div class="form__row offset">
-
 								{{> button button-submit }}
 
-							</div>
 						</fieldset>
 					</form>
 
@@ -259,7 +214,7 @@ page-category: "systems"
 											</div>
 										</span>
 									</div>
-                                    {{> form__text }}
+                                    {{> form__note }}
 								</div>
                                 <abbr class="form__asterisk" title="required">*</abbr>
                                 <div class="form__optional" title="this field is optional">(optional)</div>

@@ -1,4 +1,13 @@
 {{#this}}
+
+    {{#if content.labels}}
+        {{#each content.labels}}
+            {{#this}}
+                {{> input__label }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
     <input
         type="radio"
         class="input__field input__field--radio"
@@ -11,5 +20,15 @@
         {{#if item.tabindex}} tabindex="{{item.tabindex}}"{{/if}}
         {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
     />
-        <label class="input__faux input__faux--radio" for=""{{item.id}}"></label>
+
+    <label class="input__faux input__faux--radio" for=""{{item.id}}"></label>
+
+    {{#if content.notes}}
+        {{#each content.notes}}
+            {{#this}}
+                {{> input__note }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
 {{/this}}

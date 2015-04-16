@@ -5,8 +5,23 @@
         "disabled": ""
     },
     "content": {
-        "text": "Label for the radio group",
-        "group": [{
+        "labels": [{
+            "item": {
+            },
+            "content": {
+                "text": "Radios Test",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "groups": [{
             "item": {
                 "modifier": "",
                 "checkbox": true,
@@ -14,16 +29,8 @@
                 "inline": ""
             },
             "content": {
-                "type": [{
-                    "item": {
-                        "required": "",
-                        "disabled": "",
-                        "for": "formrow-radio-1"
-                    },
-                    "content": {
-                        "text": "Label for the group__item1"
-                    },
-                    "radio": [{
+                "inputs": [{
+                    "radios": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
@@ -35,19 +42,29 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {}
+                        "content": {
+                            "labels": [{
+                                "item": {
+                                    "for": "formrow-radio-1"
+                                },
+                                "content": {
+                                    "text": "Yes",
+                                    "icons": [{
+                                        "item": {
+                                            "modifier": "",
+                                            "size": ""
+                                        },
+                                        "content": {
+                                            "title": ""
+                                        }
+                                    }]
+                                }
+                            }]
+                        }
                     }]
                 },
                 {
-                    "item": {
-                        "required": "",
-                        "disabled": "",
-                        "for": "formrow-radio-2"
-                    },
-                    "content": {
-                        "text": "Label for the group__item2"
-                    },
-                    "radio": [{
+                    "radios": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
@@ -59,19 +76,28 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {}
+                        "content": {
+                            "labels": [{
+                                "item": {
+                                    "for": "formrow-radio-2"
+                                },
+                                "content": {
+                                    "text": "No",
+                                    "icons": [{
+                                        "item": {
+                                            "modifier": "",
+                                            "size": ""
+                                        },
+                                        "content": {
+                                            "title": ""
+                                        }
+                                    }]
+                                }
+                            }]}
                     }]
                 },
                 {
-                    "item": {
-                        "required": "",
-                        "disabled": "",
-                        "for": "formrow-radio-3"
-                    },
-                    "content": {
-                        "text": "Label for the group__item3"
-                    },
-                    "radio": [{
+                    "radios": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
@@ -83,18 +109,27 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {}
+                        "content": {
+                            "labels": [{
+                                "item": {
+                                    "for": "formrow-radio-3"
+                                },
+                                "content": {
+                                    "text": "Maybe",
+                                    "icons": [{
+                                        "item": {
+                                            "modifier": "",
+                                            "size": ""
+                                        },
+                                        "content": {
+                                            "title": ""
+                                        }
+                                    }]
+                                }
+                            }]}
                     }]
                 }]
             }
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

@@ -6,7 +6,7 @@
     },
     "content": {
         "text": "",
-        "group": [{
+        "groups": [{
             "item": {
                 "modifier": "",
                 "checkbox": "",
@@ -14,7 +14,7 @@
                 "inline": ""
             },
             "content": {
-                "type": [{
+                "types": [{
                     "item": {
                         "required": "",
                         "disabled": "",
@@ -24,7 +24,7 @@
                     "content": {
                         "text": "Label for the group__item1"
                     },
-                    "search": [{
+                    "searches": [{
                         "search": [{
                             "item": {
                                 "modifier": "",
@@ -59,7 +59,7 @@
                     "content": {
                         "text": "Label for the group__item2"
                     },
-                    "text": [{
+                    "texts": [{
                         "item": {
                             "modifier": "",
                             "size": "",
