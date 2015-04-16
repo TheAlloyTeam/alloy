@@ -30,9 +30,9 @@
 }
 ._gutterMarginReverse() {
     // Gutters
-    @horizontalPadding: -((@GRID-GutterWidth)/2)+0px;
-    margin-left: ceil(@horizontalPadding);
-    margin-right: floor(@horizontalPadding);
+    @horiMargin: -((@GRID-GutterWidth)/2)+0px;
+    @vertMargin: -((@TYPE-LineHeight)/2)+0px;
+    margin: ceil(@vertMargin) floor(@horiMargin) floor(@vertMargin) ceil(@horiMargin);
 }
 
 ._coloffset (@numberOfcols: 1, @numberOfTotalCols: 2) {
@@ -66,10 +66,6 @@
         padding:0;
         ._gutterMarginReverse();
 
-        [class*="c--"] {
-        padding-top:0;
-            padding-bottom:0;
-        }
     }
 }
 
@@ -168,6 +164,22 @@
     .c__md--4-5 { ._colwidth(4,5); }
     .c__md--1-6 { ._colwidth(1,6); }
     .c__md--5-6 { ._colwidth(5,6); }
+
+
+    // Halves
+    .o__md--1-2 { ._coloffset(1,2); }
+
+    // Thirds
+    .o__md--1-3 { ._coloffset(1,3); }
+
+    // Quarters
+    .o__md--1-4 { ._coloffset(1,4); }
+
+    // Fifths
+    .o__md--1-5 { ._coloffset(1,5); }
+
+    // Sixths
+    .o__md--1-6 { ._coloffset(1,6); }
 }
 
 // DESKTOP
