@@ -1,0 +1,138 @@
+{
+    "item": {
+        "modifier": "",
+        "required": ""
+    },
+    "content": {
+        "labels": [{
+            "item": {},
+            "content": {
+                "text": "Default Form Test",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "groups": [{
+            "item": {
+                "modifier": "",
+                "checkbox": "",
+                "vertical": "",
+                "inline": ""
+            },
+            "content": {
+                "inputs": [{
+                    "texts": [{
+                        "item": {
+                            "modifier": "",
+                            "size": "",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "spellcheck": "",
+                            "id": "formrow-default-1",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "Text Placeholder",
+                            "value": "",
+                            "labels": [{
+                                "item": {},
+                                "content": {
+                                    "text": "Default Form Test",
+                                    "icons": [{
+                                        "item": {
+                                            "modifier": "",
+                                            "size": ""
+                                        },
+                                        "content": {
+                                            "title": ""
+                                        }
+                                    }]
+                                }
+                            }],
+                            "notes": [{
+                                "item": {},
+                                "content": {
+                                    "body": "This is a note for default text item 1"
+                                }
+                            }]
+                        }
+                    }]
+                },{
+                    "texts": [{
+                        "item": {
+                            "modifier": "",
+                            "size": "",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "spellcheck": "",
+                            "id": "formrow-default-2",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "Text Placeholder",
+                            "value": ""
+                        }
+                    }]
+                },{
+                    "buttons": [{
+                        "item": {
+                        "modifier": "",
+                        "size": "",
+                        "disabled": "",
+                        "target": "",
+                        "block": ""
+                    },
+                        "content": {
+                            "type": "Submit",
+                            "text": "Submit Search",
+                            "title": "Button",
+                            "icon": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        },
+                        "tracking": {
+                            "category": "",
+                            "action": "",
+                            "label": "",
+                            "value": "",
+                            "count": ""
+                        }
+                    }]
+                }]
+            }
+        }],
+        "notes": [{
+            "item": {},
+            "content": {
+                "body": "This is a <strong>form control</strong> note."
+            }
+        }]
+    }
+}

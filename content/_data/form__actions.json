@@ -1,0 +1,51 @@
+{
+    "item": {
+        "modifier": "",
+        "required": ""
+    },
+    "content": {
+    },
+    "actions": [{
+        "buttons": [{
+            "item": {
+                "modifier": "",
+                "size": "",
+                "disabled": "",
+                "target": "",
+                "block": ""
+            },
+            "content":{
+                "type": "Submit",
+                "text": "Submit Form",
+                "title": "Submit Button"
+            },
+            "tracking": {
+                "category": "",
+                "action": "",
+                "label": "",
+                "value": "",
+                "count": ""
+            }
+        },{
+            "item": {
+                "modifier": "alt",
+                "size": "",
+                "disabled": "",
+                "target": "",
+                "block": ""
+            },
+            "content":{
+                "type": "Cancel",
+                "text": "Cancel",
+                "title": "Cancel Button"
+            },
+            "tracking": {
+                "category": "",
+                "action": "",
+                "label": "",
+                "value": "",
+                "count": ""
+            }
+        }]
+    }]
+}

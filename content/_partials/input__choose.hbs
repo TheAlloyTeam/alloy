@@ -1,0 +1,83 @@
+{{#this}}
+
+    {{#if checkboxes}}
+        {{#each checkboxes}}
+            {{#this}}
+                {{> input__checkbox }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if radios}}
+        {{#each radios}}
+            {{#this}}
+                {{> input__radio }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if passwords}}
+        {{#each passwords}}
+            {{#this}}
+                {{> input__password }}
+            {{/this}}
+        {{/each }}
+    {{/if}}
+
+    {{#if emails}}
+        {{#each emails}}
+            {{#this}}
+                {{> input__email }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if searches}}
+        {{#each searches}}
+            {{#this}}
+                {{> input__search }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if tels}}
+        {{#each tels}}
+            {{#this}}
+                {{> input__tel }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if texts}}
+        {{#each texts}}
+            {{#this}}
+                {{> input__text }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if urls}}
+        {{#each urls}}
+            {{#this}}
+                {{> input__url }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if selects}}
+        {{#each selects}}
+            {{#this}}
+                {{> select }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+    {{#if textareas}}
+        {{#each textareas}}
+            {{#this}}
+                {{> textarea }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
+{{/this}}

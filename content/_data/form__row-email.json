@@ -2,13 +2,19 @@
     "item": {
         "modifier": "",
         "required": "",
-        "disabled": "",
-        "for": "formrow-email-1"
+        "disabled": ""
     },
     "content": {
-        "text": "Label for email input",
-        "type": [{
-            "email": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-email-1"
+            },
+            "content": {
+                "text": "Email Address"
+            }
+        }],
+        "inputs": [{
+            "emails": [{
                 "item": {
                     "modifier": "",
                     "size": "",
@@ -31,13 +37,5 @@
                 }
             }]
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

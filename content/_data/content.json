@@ -1,0 +1,20 @@
+{
+  "item": {
+    "modifier": "",
+    "size": "",
+    "disabled": "",
+    "target": "",
+    "block": ""
+  },
+  "content": {
+    "title": "blandit tristique <strong>metus</strong>",
+    "body": "<p><strong>Maecenas molestie et justo ac gravida. Sed nec augue non mi facilisis ultricies. Class aptent taciti sociosqu ad litora torquent per conubia nostra</strong></p><p>Per inceptos himenaeos. Aenean facilisis lacus nunc, nec iaculis massa porta non. Mauris malesuada tortor a nunc pellentesque.</p>"
+  },
+  "tracking": {
+    "category": "",
+    "action": "",
+    "label": "",
+    "value": "",
+    "count": ""
+  }
+}

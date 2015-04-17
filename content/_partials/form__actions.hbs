@@ -1,0 +1,19 @@
+{{#this}}
+    <div class="form__actions{{#if item.modifier}} form__actions--{{item.modifier}}{{/if}}{{#if item.offset}} offset{{/if}}{{#if item.disabled}} disabled{{/if}}
+">
+        {{#if actions.buttons}}
+            {{#each actions.buttons}}
+                {{#this}}
+                    {{> button }}
+                {{/this}}
+            {{/each}}
+        {{/if}}
+
+        {{#if content.body}}
+            <div class="action__note">
+                {{{content.body}}}
+            </div>
+        {{/if}}
+    </div>
+
+{{/this}}

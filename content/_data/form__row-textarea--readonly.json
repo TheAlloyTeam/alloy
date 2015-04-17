@@ -1,0 +1,61 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": ""
+    },
+    "content": {
+        "labels": [{
+            "item": {
+                "for": "formrow-textarea-2"
+            },
+            "content": {
+                "text": "Textarea Readonly",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+                "size": "full"
+            },
+            "textareas": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": true,
+                    "disabled": "",
+                    "id": "formrow-textarea-2",
+                    "name": "",
+                    "tabindex": "",
+                    "accesskey": "",
+                    "cols": "",
+                    "rows": "6",
+                    "maxlength": "",
+                    "minlength": "",
+                    "wrap": ""
+                },
+                "content": {
+                    "placeholder": "Textarea Placeholder",
+                    "value": ""
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

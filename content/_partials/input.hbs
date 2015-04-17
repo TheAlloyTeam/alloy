@@ -1,0 +1,15 @@
+{{#this}}
+
+    {{#if buttons}}
+        {{#each buttons}}
+            {{#this}}
+                {{> button }}
+            {{/this}}
+        {{/each}}
+
+    {{else}}
+        <span class="input{{#if item.modifier}} input--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
+            {{> input__choose }}
+        </span>
+    {{/if}}
+{{/this}}

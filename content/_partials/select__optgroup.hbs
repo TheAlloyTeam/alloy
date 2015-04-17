@@ -1,7 +1,7 @@
 {{#this}}
 <optgroup {{#if item.label}} label="{{item.label}}"{{/if}}>
-{{#if content.select__option}}
-    {{#each content.select__option}}
+{{#if content.options}}
+    {{#each content.options}}
             {{#this}}
             {{> select__option}}
             {{/this}}

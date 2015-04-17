@@ -1,0 +1,203 @@
+{
+  "item": {},
+  "content": {
+    "labels": [{
+      "item": {},
+      "content": {
+        "icons": [{
+          "item": {
+            "modifier": "",
+            "size": ""
+          },
+          "content": {
+            "title": ""
+          }
+        }]
+      }
+    }],
+    "controls": [{
+      "item": {},
+      "content": {
+        "groups": [{
+          "item": {},
+          "content": {
+            "inputs": [{
+              "item": {},
+              "content": {
+                "types": [
+                  {
+                    "addons": [
+                      {
+                        "item": {
+                          "modifier": "",
+                          "size": ""
+                        },
+                        "content": {
+                          "text": "@"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "texts": [
+                      {
+                        "item": {
+                          "modifier": "",
+                          "size": "",
+                          "id": "unique123",
+                          "name": "",
+                          "autocomplete": "",
+                          "tabindex": "",
+                          "accesskey": ""
+                        },
+                        "content": {
+                          "placeholder": "Text Placeholder",
+                          "value": "",
+                          "prefix": "",
+                          "postfix": ""
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "buttons": [{
+                      "item": {
+                        "modifier": "",
+                        "size": "",
+                        "disabled": "",
+                        "target": "",
+                        "block": ""
+                      },
+                      "content": {
+                        "type": "Submit",
+                        "text": "Button",
+                        "title": "Button",
+                        "icon": [{
+                          "item": {
+                            "modifier": "",
+                            "size": ""
+                          },
+                          "content": {
+                            "title": ""
+                          }
+                        }]
+                      },
+                      "tracking": {
+                        "category": "",
+                        "action": "",
+                        "label": "",
+                        "value": "",
+                        "count": ""
+                      }
+                    }]
+                  },
+                  {
+                    "notes": [{
+                      "item": {
+                        "modifier": "",
+                        "size": ""
+                      },
+                      "content": {
+                        "body": "For more information <a href=\"#\">go here</a>"
+                      }
+                    }]
+                  }
+                ]
+              }
+            }]
+          }
+        }],
+        "inputs": [{
+          "item": {},
+          "content": {
+            "types": [
+              {
+                "addons": [
+                  {
+                    "item": {
+                      "modifier": "",
+                      "size": ""
+                    },
+                    "content": {
+                      "text": "@"
+                    }
+                  }
+                ]
+              },
+              {
+                "texts": [
+                  {
+                    "item": {
+                      "modifier": "",
+                      "size": "",
+                      "id": "unique123",
+                      "name": "",
+                      "autocomplete": "",
+                      "tabindex": "",
+                      "accesskey": ""
+                    },
+                    "content": {
+                      "placeholder": "Text Placeholder",
+                      "value": "",
+                      "prefix": "",
+                      "postfix": ""
+                    }
+                  }
+                ]
+              },
+              {
+                "buttons": [{
+                  "item": {
+                    "modifier": "",
+                    "size": "",
+                    "disabled": "",
+                    "target": "",
+                    "block": ""
+                  },
+                  "content": {
+                    "type": "Submit",
+                    "text": "Button",
+                    "title": "Button",
+                    "icon": [{
+                      "item": {
+                        "modifier": "",
+                        "size": ""
+                      },
+                      "content": {
+                        "title": ""
+                      }
+                    }]
+                  },
+                  "tracking": {
+                    "category": "",
+                    "action": "",
+                    "label": "",
+                    "value": "",
+                    "count": ""
+                  }
+                }]
+              },
+              {
+                "note": [{
+                  "item": {
+                    "modifier": "",
+                    "size": ""
+                  },
+                  "content": {
+                    "body": "For more information <a href=\"#\">go here</a>"
+                  }
+                }]
+              }
+            ]
+          }
+        }]
+      }
+    }],
+    "notes": [{
+      "item": {},
+      "content": {
+        "body": "this is a <b>form note</b>."
+      }
+    }]
+  }
+}
