@@ -91,6 +91,19 @@
         &.disabled {
             cursor: not-allowed;
         }
+
+        &.success {
+            color:@FORM-SuccessTextColor;
+        }
+        &.info {
+            color:@FORM-InfoTextColor;
+        }
+        &.warn {
+            color:@FORM-WarnTextColor;
+        }
+        &.danger {
+            color:@FORM-DangerTextColor;
+        }
     }
 
     span.form__label,
@@ -120,6 +133,7 @@
 
     .form__actions {
         background-color: @FORM-ActionsBgColor;
+        ._padding (@TYPE-LineHeight, @TYPE-FontSize, @TYPE-LineHeight, @TYPE-FontSize);
     }
 
     .form__fieldset {
@@ -191,6 +205,19 @@
         top: -@TYPE-LineHeight+0px;
         left:0;
         ._font-size(@TYPE-SIZE-Iota);
+
+        &.success {
+            color:@FORM-SuccessTextColor;
+        }
+        &.info {
+            color:@FORM-InfoTextColor
+        ;}
+        &.warn {
+            color:@FORM-WarnTextColor;
+        }
+        &.danger {
+            color:@FORM-DangerTextColor;
+        }
     }
 
     .input__field {
@@ -249,6 +276,10 @@
                     margin-bottom: 0;
                 }
             }
+
+            .input--check {
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -260,6 +291,8 @@
 
     .input--check {
         ._padding(8,5,7,5);
+
+
 
         .input__label {
             display: inline;

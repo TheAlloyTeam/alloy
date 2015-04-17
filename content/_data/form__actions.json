@@ -4,6 +4,7 @@
         "required": ""
     },
     "content": {
+        "body": "So you want to press buttons do you?"
     },
     "actions": [{
         "buttons": [{
