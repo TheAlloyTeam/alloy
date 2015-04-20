@@ -1,15 +1,29 @@
 {
     "item": {
-        "modifier": "modifier",
+        "modifier": "",
         "required": "",
         "disabled": "",
         "hidden": "",
         "for": "formrow-text-1"
     },
     "content": {
-        "text": "Label for text input",
-        "type": [{
-            "text": [{
+        "labels": [{
+            "item": {},
+            "content": {
+                "text": "Label for text input",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "texts": [{
                 "item": {
                     "modifier": "",
                     "size": "",
@@ -32,13 +46,5 @@
                 }
             }]
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

@@ -7,7 +7,7 @@
     "content": {
         "labels": [{
             "item": {
-                "for": "formrow-email-1"
+                "for": "formrow-email-2"
             },
             "content": {
                 "text": "Email Address"
@@ -22,7 +22,7 @@
                     "required": "",
                     "readonly": "",
                     "disabled": "",
-                    "id": "formrow-email-1",
+                    "id": "formrow-email-2",
                     "name": "",
                     "maxlength": "",
                     "minlength": "",
@@ -32,7 +32,7 @@
                     "accesskey": ""
                 },
                 "content": {
-                    "placeholder": "e.g. email@placeholder.com",
+                    "placeholder": "e.g. email@website.com",
                     "value": ""
                 }
             }]

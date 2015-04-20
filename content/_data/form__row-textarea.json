@@ -2,13 +2,31 @@
     "item": {
         "modifier": "",
         "required": "",
-        "disabled": "",
-        "for": "formrow-textarea-1"
+        "disabled": ""
     },
     "content": {
-        "text": "Label for textarea",
-        "type": [{
-            "textarea": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-textarea-1"
+            },
+            "content": {
+                "text": "Textarea",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+                "size": "full"
+            },
+            "textareas": [{
                 "item": {
                     "modifier": "",
                     "size": "",

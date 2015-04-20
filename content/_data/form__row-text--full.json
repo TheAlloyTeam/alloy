@@ -1,23 +1,38 @@
 {
     "item": {
         "modifier": "modifier",
-        "required": "",
-        "disabled": "",
-        "hidden": "",
-        "for": "formrow-size-5"
+        "required": ""
     },
     "content": {
-        "text": "Full width",
-        "type": [{
-            "text": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-size-100"
+            },
+            "content": {
+                "text": "Full Width",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+              "size": "full"
+            },
+            "texts": [{
                 "item": {
                     "modifier": "",
-                    "size": "full",
                     "required": "",
                     "readonly": "",
                     "disabled": "",
                     "spellcheck": "",
-                    "id": "formrow-size-54",
+                    "id": "formrow-size-100",
                     "name": "",
                     "maxlength": "",
                     "minlength": "",
@@ -31,14 +46,12 @@
                     "value": ""
                 }
             }]
+        }],
+        "notes": [{
+            "item": {},
+            "content": {
+                "body": "This is a note for the full width text test."
+            }
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

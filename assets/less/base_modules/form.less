@@ -11,6 +11,7 @@
 @FORM-DefaultBgColor:           @COLOR-White;
 @FORM-DefaultTextColor:         @COLOR-GreyDarker;
 @FORM-DefaultBordercolor:       @COLOR-GreyLight;
+@FORM-ActionsBgColor:           @COLOR-GreyLightest;
 
 @FORM-Placeholder:              @COLOR-GreyLight;
 @FORM-AddonBgColor:             @COLOR-GreyLight;
@@ -18,7 +19,9 @@
 @FORM-Asterisk:                 @COLOR-Red;
 
 @FORM-Offset:                   25%;
+@FORM-OffsetMin:                200px;
 @FORM-OffsetGap:                3%;
+@FORM-OffsetMin:                20px;
 @FORM-OffsetLabel:              ((@FORM-Offset)-(@FORM-OffsetGap));
 @FORM-OffsetAsterisk:           ((@FORM-Offset)-(@FORM-OffsetGap/2));
 
@@ -83,12 +86,23 @@
     }
 
     .form__label  {
-        cursor: pointer;
         display: block;
-        float:left;
 
         &.disabled {
             cursor: not-allowed;
+        }
+
+        &.success {
+            color:@FORM-SuccessTextColor;
+        }
+        &.info {
+            color:@FORM-InfoTextColor;
+        }
+        &.warn {
+            color:@FORM-WarnTextColor;
+        }
+        &.danger {
+            color:@FORM-DangerTextColor;
         }
     }
 
@@ -106,8 +120,10 @@
 
     .form__note {
         display: block;
+        font-style: italic;
+        color: @FORM-DefaultTextColor;
+        ._padding(2, 5);
         ._margin-top (5);
-        ._font-size ((@TYPE-FontSize - 2));
     }
 
     .form__required {
@@ -116,9 +132,24 @@
     }
 
     .form__actions {
-
+        background-color: @FORM-ActionsBgColor;
+        ._padding (@TYPE-LineHeight, @TYPE-FontSize, @TYPE-LineHeight, @TYPE-FontSize);
     }
 
+    .form__fieldset {
+
+        &.nostyle {
+            border: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: block;
+        }
+    }
+
+
+// INPUTS
+// ----------------------------------------------------
 
     .input {
         color: @FORM-DefaultTextColor;
@@ -126,13 +157,6 @@
         display: block;
         border: 1px solid @FORM-DefaultBordercolor;
         background-color: @FORM-DefaultBgColor;
-
-        .form__label {
-            position:absolute;
-            top: -@TYPE-LineHeight+0px;
-            left:0;
-            ._font-size(@TYPE-SIZE-Iota);
-        }
 
         &.success {
             ._input-create (@FORM-SuccessBgColor, @FORM-SuccessTextColor, @FORM-SuccessBordercolor);
@@ -151,6 +175,7 @@
         }
     }
 
+
     .input__addon {
         background-color: @FORM-AddonBgColor;
         color: @FORM-AddonColor;
@@ -162,12 +187,38 @@
         ._inline-block();
     }
 
-    .input__faux {
+    .input__note {
+        display: block;
+        background-color: @FORM-DefaultBordercolor;
+        color: @FORM-DefaultTextColor;
+        ._text-shadow(~"1px 1px 0 rgba(255, 255, 255, 0.8)");
+        ._font-size(@TYPE-SIZE-Iota);
+        ._padding(2, 5);
 
-        &--checkbox {}
-        &--radio {}
     }
 
+    .input__faux {
+    }
+
+    .input__label {
+        position:absolute;
+        top: -@TYPE-LineHeight+0px;
+        left:0;
+        ._font-size(@TYPE-SIZE-Iota);
+
+        &.success {
+            color:@FORM-SuccessTextColor;
+        }
+        &.info {
+            color:@FORM-InfoTextColor
+        ;}
+        &.warn {
+            color:@FORM-WarnTextColor;
+        }
+        &.danger {
+            color:@FORM-DangerTextColor;
+        }
+    }
 
     .input__field {
         background-color: transparent;
@@ -179,17 +230,6 @@
         ._padding (8, 5, 7, 5);
         ._inline-block();
 
-
-        &--checkbox,
-        &--radio {
-            width: auto;
-
-            .form__label {
-                position: static;
-                ._inline-block();
-            }
-        }
-
         &:focus {
             outline: 0;
             outline: thin dotted \9;
@@ -197,88 +237,110 @@
         }
     }
 
+    .input__group {
 
-
-
-.input__group {
-
-    .input {
-        ._inline-block();
-
-        &:last-child {
-            padding-right: 0;
-        }
-
-        .button {
-            position:relative;
-            bottom: -1px;
-        }
-    }
-    .input__field {
-        width: 100%;
-    }
-
-    &.inline {
-        display: table;
-
-        .item {
-            display: table-cell;
-            vertical-align: middle;
-        }
-    }
-
-
-    &.vertical {
-        display: block;
-
-        .group__item {
-            display: block;
-            ._padding(0,0,5,0);
+        .input {
+            ._inline-block();
 
             &:last-child {
-                padding-bottom: 0;
+                padding-right: 0;
+            }
+
+            .button {
+                position:relative;
+                bottom: -1px;
+            }
+        }
+        .input__field {
+            width: 100%;
+        }
+
+        &.inline {
+            display: table;
+
+            .input {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+
+        &.vertical {
+            display: block;
+
+            .input {
+                display: block;
+                ._margin(0,0,5,0);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .input--check {
+                margin-bottom: 0;
             }
         }
     }
-}
 
-.input__group--check {
-    .input {
-        ._margin-left(@TYPE-FontSize);
 
-        &:first-child {
-            margin-left: 0;
+    ._placeholder (@FORM-Placeholder);
+
+// VARIANTS
+// ----------------------------------------------------
+
+    .input--check {
+        ._padding(8,5,7,5);
+
+
+
+        .input__label {
+            display: inline;
+            position:static;
+            ._font-size(@TYPE-SIZE-Eta);
+
+        }
+
+        .input__field {
+            width: auto;
+            display: inline;
+            float:left;
+            ._height(@TYPE-LineHeight);
+            ._margin-right(@TYPE-FontSize/1.5);
+
+            &:focus {
+                ._depth-0 ();
+            }
         }
     }
 
-    &.vertical {
-        .group__item {
-            margin-left: 0;
+
+    .input__group--check {
+
+        .input {
+            width: auto;
+            margin-top: 0;
+            border: none;
+            ._inline-block ();
+            ._margin(0, @TYPE-FontSize*2, 0, @TYPE-FontSize);
+
+            &:first-child {
+                margin-left: 0;
+            }
         }
 
+        .input--check {
+            margin:0;
+        }
+
+        &.vertical {
+            .input {
+                margin-left: 0;
+                display:block;
+            }
+
+        }
     }
-
-    .form__label,
-    .input {
-        width: auto;
-        margin-top: 0;
-        border: none;
-        ._inline-block ();
-    }
-}
-
-fieldset {
-    .simple {
-        border: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        display:block;
-    }
-}
-
-
-._placeholder (@FORM-Placeholder); 
 
 // MOBILE
 // ----------------------------------------------------
@@ -287,12 +349,9 @@ fieldset {
 
     .form__required {
         position: absolute;
+        cursor: help;
         right: 0;
         top: 0;
-    }
-
-    .form__group {
-        ._padding-right(12);
     }
 }
 
@@ -312,18 +371,16 @@ fieldset {
         ._margin-top (2);
     }
 
-    .input {
-        width: 40%;
-        vertical-align: middle;
-        ._inline-block ();
-    }
-
     .form__note {
         margin-top: 0;
         ._inline-block ();
     }
 
     .input {
+        width: 40%;
+        vertical-align: top;
+        ._inline-block ();
+
         &.xsmall {
             width: 10%;
         }
@@ -365,16 +422,6 @@ fieldset {
 
         &.aligned {
 
-            .form__row {
-                &.offset {
-                    margin-left: @FORM-Offset;
-
-                    .input__group {
-                        width:100%;
-                    }
-                }
-            }
-
             .form__required {
                 position: absolute;
                 left: @FORM-OffsetAsterisk;
@@ -388,22 +435,23 @@ fieldset {
                 float: left;
             }
 
-            .form__group {
-                display:block;
-                width:75%;
-                float: left;
-
-                .form__label {
-                    width: auto;
-                    text-align: left;
-                    margin-right: auto;
-                    float: none;
-                }
+            .input__group {
+                display: block;
             }
 
-            .form__text {
+            .input__label {
+                width: auto;
+                text-align: left;
+                margin-right: auto;
+                float: none;
+            }
+
+            .input__group {
+                width: 100%;
+            }
+
+            .form__note {
                 display: block;
-                margin-left: @FORM-Offset;
             }
         }
     }

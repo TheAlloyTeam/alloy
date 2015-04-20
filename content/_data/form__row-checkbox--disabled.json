@@ -2,12 +2,25 @@
     "item": {
         "modifier": "",
         "required": "",
-        "disabled": true,
-        "offset": true
+        "disabled": true
     },
     "content": {
-        "text": "",
-        "group": [{
+        "labels": [{
+            "item": {},
+            "content": {
+                "text": "Disabled Checkboxes",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "groups": [{
             "item": {
                 "modifier": "",
                 "checkbox": true,
@@ -15,90 +28,112 @@
                 "inline": ""
             },
             "content": {
-                "type": [{
+                "inputs": [{
                     "item": {
-                        "required": "",
-                        "disabled": true,
-                        "hidden": "",
-                        "for": "formrow-disabledcheckbox-1"
+                        "modifier": "check"
                     },
-                    "content": {
-                        "text": "Label for the group__item1"
-                    },
-                    "checkbox": [{
+                    "checkboxes": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
                             "required": "",
                             "disabled": true,
-                            "id": "formrow-disabledcheckbox-1",
+                            "id": "formrow-disabled-checkbox-2",
                             "name": "",
                             "value": "",
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {}
+                        "content": {
+                            "labels": [{
+                                "item": {
+                                    "for": "formrow-disabled-checkbox-2"
+                                },
+                                "content": {
+                                    "text": "Yes",
+                                    "icons": [{
+                                        "item": {
+                                            "modifier": "",
+                                            "size": ""
+                                        },
+                                        "content": {
+                                            "title": ""
+                                        }
+                                    }]
+                                }
+                            }]
+                        }
                     }]
-                },
-                {
+                },{
                     "item": {
-                        "required": "",
-                        "disabled": true,
-                        "hidden": "",
-                        "for": "formrow-disabledcheckbox-2"
+                        "modifier": "check"
                     },
-                    "content": {
-                        "text": "Label for the group__item2"
-                    },
-                    "checkbox": [{
+                    "checkboxes": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
                             "required": "",
                             "disabled": true,
-                            "id": "formrow-disabledcheckbox-2",
+                            "id": "formrow-disabled-checkbox-1",
                             "name": "",
                             "value": "",
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {}
+                        "content": {"labels": [{
+                            "item": {
+                                "for": "formrow-disabled-checkbox-1"
+                            },
+                            "content": {
+                                "text": "No",
+                                "icons": [{
+                                    "item": {
+                                        "modifier": "",
+                                        "size": ""
+                                    },
+                                    "content": {
+                                        "title": ""
+                                    }
+                                }]
+                            }
+                        }]}
                     }]
-                },
-                {
+                },{
                     "item": {
-                        "required": "",
-                        "disabled": true,
-                        "hidden": "",
-                        "for": "formrow-disabledcheckbox-3"
+                        "modifier": "check"
                     },
-                    "content": {
-                        "text": "Label for the group__item3"
-                    },
-                    "checkbox": [{
+                    "checkboxes": [{
                         "item": {
                             "modifier": "",
                             "checked": "",
                             "required": "",
                             "disabled": true,
-                            "id": "formrow-disabledcheckbox-3",
+                            "id": "formrow-disabled-checkbox-3",
                             "name": "",
                             "value": "",
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {}
+                        "content": {"labels": [{
+                            "item": {
+                                "for": "formrow-disabled-checkbox-3"
+                            },
+                            "content": {
+                                "text": "Maybe",
+                                "icons": [{
+                                    "item": {
+                                        "modifier": "",
+                                        "size": ""
+                                    },
+                                    "content": {
+                                        "title": ""
+                                    }
+                                }]
+                            }
+                        }]}
                     }]
                 }]
             }
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

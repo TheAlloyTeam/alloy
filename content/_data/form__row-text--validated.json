@@ -7,8 +7,24 @@
         "for": "formrow-text-1"
     },
     "content": {
-        "text": "Label for text input",
-        "group": [{
+        "labels": [{
+            "item": {
+                "for": ""
+            },
+            "content": {
+                "text": "Validated input",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "groups": [{
             "item": {
                 "modifier": "",
                 "checkbox": "",
@@ -16,15 +32,17 @@
                 "inline": ""
             },
             "content": {
-                "type": [{
-                    "text": [{
+                "inputs": [{
+                    "item": {
+                        "status": ""
+                    },
+                    "texts": [{
                         "item": {
                             "modifier": "",
                             "size": "large",
                             "required": "",
                             "readonly": "",
                             "disabled": "",
-                            "status": "",
                             "spellcheck": "",
                             "id": "formrow-text-1",
                             "name": "",
@@ -42,7 +60,10 @@
                     }]
                 },
                 {
-                    "text": [{
+                    "item": {
+                        "status": "success"
+                    },
+                    "texts": [{
                         "item": {
                             "modifier": "",
                             "size": "",
@@ -67,7 +88,10 @@
                     }]
                 },
                 {
-                    "text": [{
+                    "item": {
+                        "status": "info"
+                    },
+                    "texts": [{
                         "item": {
                             "modifier": "",
                             "size": "",
@@ -92,7 +116,10 @@
                     }]
                 },
                 {
-                    "text": [{
+                    "item": {
+                        "status": "warn"
+                    },
+                    "texts": [{
                         "item": {
                             "modifier": "",
                             "size": "",
@@ -117,7 +144,10 @@
                     }]
                 },
                 {
-                    "text": [{
+                    "item": {
+                        "status": "danger"
+                    },
+                    "texts": [{
                         "item": {
                             "modifier": "",
                             "size": "",

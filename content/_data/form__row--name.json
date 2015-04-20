@@ -1,15 +1,17 @@
 {
     "item": {
-        "modifier": "modifier",
-        "required": ""
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "hidden": ""
     },
     "content": {
         "labels": [{
             "item": {
-                "for": "formrow-size-75"
+                "for": "formrow-name-1"
             },
             "content": {
-                "text": "Large Width",
+                "text": "Name",
                 "icons": [{
                     "item": {
                         "modifier": "",
@@ -22,17 +24,15 @@
             }
         }],
         "inputs": [{
-            "item": {
-                "size": "large"
-            },
             "texts": [{
                 "item": {
                     "modifier": "",
+                    "size": "",
                     "required": "",
                     "readonly": "",
                     "disabled": "",
                     "spellcheck": "",
-                    "id": "formrow-size-75",
+                    "id": "formrow-name-1",
                     "name": "",
                     "maxlength": "",
                     "minlength": "",
@@ -42,16 +42,10 @@
                     "accesskey": ""
                 },
                 "content": {
-                    "placeholder": "Text Placeholder",
+                    "placeholder": "John Smith",
                     "value": ""
                 }
             }]
-        }],
-        "notes": [{
-            "item": {},
-            "content": {
-                "body": "This is a note for the large width text test."
-            }
         }]
     }
 }

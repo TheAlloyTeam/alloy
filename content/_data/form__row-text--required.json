@@ -1,41 +1,53 @@
 {
     "item": {
-        "modifier": "modifier",
+        "modifier": "",
         "required": true,
         "disabled": "",
+        "hidden": "",
         "for": "formrow-required-1"
     },
     "content": {
-        "text": "Label for required text input",
-        "type": [{
-            "text": [{
+        "labels": [{
+            "item": {},
+            "content": {
+                "text": "Required Text",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+                "required": true
+            },
+            "texts": [{
                 "item": {
                     "modifier": "",
                     "size": "",
                     "required": true,
                     "readonly": "",
                     "disabled": "",
+                    "spellcheck": "",
                     "id": "formrow-required-1",
                     "name": "",
                     "maxlength": "",
                     "minlength": "",
+                    "pattern": "",
                     "autocomplete": "",
                     "tabindex": "",
                     "accesskey": ""
                 },
                 "content": {
-                    "placeholder": "Required Placeholder",
+                    "placeholder": "Text Placeholder",
                     "value": ""
                 }
             }]
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

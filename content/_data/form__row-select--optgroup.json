@@ -7,8 +7,8 @@
     },
     "content": {
         "text": "Label for select, with option group",
-        "type": [{
-            "select": [{
+        "types": [{
+            "selects": [{
                 "item": {
                     "modifier": "",
                     "multiple": "",
@@ -24,12 +24,12 @@
                 },
                 
                 "content": {
-                    "select__optgroup": [{
+                    "optgroups": [{
                         "item": {
                             "label": "OptionGroup Label"
                         },
                         "content": {
-                            "select__option": [{
+                            "options": [{
                                 "item": {
                                     "value": "",
                                     "selected": "",

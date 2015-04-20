@@ -14,12 +14,12 @@
     },
     
     "content": {
-        "select__optgroup": [{
+        "optgroups": [{
             "item": {
                 "label": "OptionGroup Label"
             },
             "content": {
-                "select__option": [{
+                "options": [{
                     "item": {
                         "value": "",
                         "selected": "",

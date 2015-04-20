@@ -1,38 +1,46 @@
 {
     "item": {
         "modifier": "",
-        "required": "",
+        "required": true,
         "disabled": ""
     },
     "content": {
+        "labels": [{
+            "item": {},
+            "content": {
+                "text": "Address",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
         "text": "",
-        "group": [{
+        "groups": [{
             "item": {
                 "modifier": "",
                 "checkbox": "",
-                "vertical": "",
+                "vertical": true,
                 "inline": ""
             },
             "content": {
-                "type": [{
+                "inputs": [{
                     "item": {
-                        "required": "",
-                        "disabled": "",
-                        "hidden": "",
-                        "for": "formrow-inlinetext-1"
+                        "size": ""
                     },
-                    "content": {
-                        "text": "Label for the group__item1"
-                    },
-                    "text": [{
+                    "texts": [{
                         "item": {
                             "modifier": "",
-                            "size": "",
                             "required": "",
                             "readonly": "",
                             "disabled": "",
                             "spellcheck": "",
-                            "id": "formrow-inlinetext-1",
+                            "id": "formrow-address-1",
                             "name": "",
                             "maxlength": "",
                             "minlength": "",
@@ -42,30 +50,22 @@
                             "accesskey": ""
                         },
                         "content": {
-                            "placeholder": "Text Placeholder",
+                            "placeholder": "Address Line 1",
                             "value": ""
                         }
                     }]
-                },
-                {
+                },{
                     "item": {
-                        "required": "",
-                        "disabled": "",
-                        "hidden": "",
-                        "for": "formrow-inlinetext-2"
+                        "size": ""
                     },
-                    "content": {
-                        "text": "Label for the group__item2"
-                    },
-                    "text": [{
+                    "texts": [{
                         "item": {
                             "modifier": "",
-                            "size": "",
                             "required": "",
                             "readonly": "",
                             "disabled": "",
                             "spellcheck": "",
-                            "id": "formrow-inlinetext-2",
+                            "id": "formrow-address-2",
                             "name": "",
                             "maxlength": "",
                             "minlength": "",
@@ -75,20 +75,37 @@
                             "accesskey": ""
                         },
                         "content": {
-                            "placeholder": "Text Placeholder",
+                            "placeholder": "Address Line 2",
+                            "value": ""
+                        }
+                    }]
+                },{
+                    "item": {
+                        "size": ""
+                    },
+                    "texts": [{
+                        "item": {
+                            "modifier": "",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "spellcheck": "",
+                            "id": "formrow-address-3",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "Address Line 3",
                             "value": ""
                         }
                     }]
                 }]
             }
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }

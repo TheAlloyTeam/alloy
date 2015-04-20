@@ -2,20 +2,38 @@
     "item": {
         "modifier": "",
         "required": "",
-        "disabled": "",
-        "for": "formrow-readonly-1"
+        "disabled": ""
     },
     "content": {
-        "text": "Label for textarea",
-        "type": [{
-            "textarea": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-textarea-2"
+            },
+            "content": {
+                "text": "Textarea Readonly",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+                "size": "full"
+            },
+            "textareas": [{
                 "item": {
                     "modifier": "",
                     "size": "",
                     "required": "",
-                    "readonly": "true",
+                    "readonly": true,
                     "disabled": "",
-                    "id": "formrow-readonly-1",
+                    "id": "formrow-textarea-2",
                     "name": "",
                     "tabindex": "",
                     "accesskey": "",
