@@ -1,0 +1,41 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": ""
+    },
+    "content": {
+        "labels": [{
+            "item": {
+                "for": "formrow-email-2"
+            },
+            "content": {
+                "text": "Email Address"
+            }
+        }],
+        "inputs": [{
+            "emails": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "multiple": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "id": "formrow-email-2",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "e.g. email@website.com",
+                    "value": ""
+                }
+            }]
+        }]
+    }
+}
