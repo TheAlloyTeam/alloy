@@ -1,0 +1,77 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": true,
+        "for": "formrow-select-1"
+    },
+    "content": {
+        "labels": [{
+            "item": {
+                "for": "formrow-disabled-select-1"
+            },
+            "content": {
+                "text": "Select",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "selects": [{
+                "item": {
+                    "modifier": "",
+                    "multiple": "",
+                    "required": "",
+                    "disabled": true,
+                    "id": "formrow-disabled-select-1",
+                    "form": "",
+                    "name": "",
+                    "size": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "options": [{
+                        "item": {
+                            "value": "",
+                            "selected": "",
+                            "disabled": ""
+                        },
+                        "content": {
+                            "label": "Option 1 Label",
+                            "text": "Option 1 Text"
+                        }
+                    },{
+                        "item": {
+                            "value": "",
+                            "selected": "",
+                            "disabled": ""
+                        },
+                        "content": {
+                            "label": "Option 2 Label",
+                            "text": "Option 2 Text"
+                        }
+                    },{
+                        "item": {
+                            "value": "",
+                            "selected": "",
+                            "disabled": ""
+                        },
+                        "content": {
+                            "label": "Option 3 Label",
+                            "text": "Option 3 Text"
+                        }
+                    }]
+                }
+            }]
+        }]
+    }
+}

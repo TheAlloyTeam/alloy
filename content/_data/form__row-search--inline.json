@@ -5,8 +5,24 @@
         "disabled": ""
     },
     "content": {
-        "text": "",
-        "group": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-inlinetext-1"
+            },
+            "content": {
+                "text": "Search",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "groups": [{
             "item": {
                 "modifier": "",
                 "checkbox": "",
@@ -14,52 +30,41 @@
                 "inline": ""
             },
             "content": {
-                "type": [{
+                "inputs": [{
                     "item": {
+                        "size": "large",
                         "required": "",
-                        "disabled": "",
-                        "hidden": true,
-                        "for": "formrow-inlinetext-1"
+                        "disabled": ""
                     },
-                    "content": {
-                        "text": "Label for the group__item1"
-                    },
-                    "search": [{
-                        "search": [{
-                            "item": {
-                                "modifier": "",
-                                "size": "xlarge",
-                                "multiple": "",
-                                "required": "",
-                                "readonly": "",
-                                "disabled": "",
-                                "id": "formrow-search-1",
-                                "name": "",
-                                "maxlength": "",
-                                "minlength": "",
-                                "pattern": "",
-                                "autocomplete": "",
-                                "tabindex": "",
-                                "accesskey": ""
-                            },
-                            "content": {
-                                "placeholder": "Search Query",
-                                "value": ""
-                            }
-                        }]
+                    "searches": [{
+                        "item": {
+                            "modifier": "",
+                            "multiple": "",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "id": "formrow-search-1",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "Search Query",
+                            "value": ""
+                        }
                     }]
                 },
                 {
                     "item": {
                         "required": "",
-                        "disabled": "",
-                        "hidden": true,
-                        "for": "formrow-inlinetext-2"
+                        "size": "small",
+                        "disabled": ""
                     },
-                    "content": {
-                        "text": "Label for the group__item2"
-                    },
-                    "text": [{
+                    "texts": [{
                         "item": {
                             "modifier": "",
                             "size": "",
@@ -89,34 +94,28 @@
                         "hidden": "",
                         "for": ""
                     },
-                    "content": {
-                        "text": ""
-                    },
-                    "actions": [{
-                        "buttons": [
-                        {
-                            "item": {
-                                "modifier": "",
-                                "size": "",
-                                "disabled": "",
-                                "target": "",
-                                "block": ""
-                            },
-                            "content": {
-                                "text": "Inline Submit Button",
-                                "title": "Default",
-                                "type": "submit",
-                                "icon": [{
-                                    "item": {
-                                        "modifier": "",
-                                        "size": ""
-                                    },
-                                    "content": {
-                                        "title": ""
-                                    }
-                                }]
-                            }
-                        }]
+                    "buttons": [{
+                        "item": {
+                            "modifier": "",
+                            "size": "",
+                            "disabled": "",
+                            "target": "",
+                            "block": ""
+                        },
+                        "content": {
+                            "text": "Inline Submit Button",
+                            "title": "Default",
+                            "type": "submit",
+                            "icon": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
                     }],
                     "tracking": {
                         "category": "",

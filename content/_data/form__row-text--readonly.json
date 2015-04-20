@@ -1,0 +1,41 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "for": "formrow-readonly-1"
+    },
+    "content": {
+        "text": "Label for required text input",
+        "types": [{
+            "texts": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": true,
+                    "disabled": "",
+                    "id": "formrow-readonly-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Readonly Placeholder",
+                    "value": "This value is Readonly"
+                }
+            }]
+        }]
+    },
+    "actions": {},
+    "tracking": {
+        "category": "",
+        "action": "",
+        "label": "",
+        "value": "",
+        "count": ""
+    }
+}

@@ -8,17 +8,22 @@
 // VARIABLES
 // ----------------------------------------------------
 
-@FORM-DefaultBgColor:              @COLOR-White;
-@FORM-DefaultTextColor:            @COLOR-GreyDarker;
-@FORM-DefaultBordercolor:          @COLOR-GreyLight;
+@FORM-DefaultBgColor:           @COLOR-White;
+@FORM-DefaultTextColor:         @COLOR-GreyDarker;
+@FORM-DefaultBordercolor:       @COLOR-GreyLight;
+@FORM-ActionsBgColor:           @COLOR-GreyLightest;
 
-@FORM-Placeholder:          @COLOR-GreyLight;
-@FORM-Asterisk:             @COLOR-Red;
+@FORM-Placeholder:              @COLOR-GreyLight;
+@FORM-AddonBgColor:             @COLOR-GreyLight;
+@FORM-AddonColor:               @COLOR-GreyDark;
+@FORM-Asterisk:                 @COLOR-Red;
 
-@FORM-Offset:               25%;
-@FORM-OffsetGap:            3%;
-@FORM-OffsetLabel:          ((@FORM-Offset)-(@FORM-OffsetGap));
-@FORM-OffsetAsterisk:       ((@FORM-Offset)-(@FORM-OffsetGap/2));
+@FORM-Offset:                   25%;
+@FORM-OffsetMin:                200px;
+@FORM-OffsetGap:                3%;
+@FORM-OffsetMin:                20px;
+@FORM-OffsetLabel:              ((@FORM-Offset)-(@FORM-OffsetGap));
+@FORM-OffsetAsterisk:           ((@FORM-Offset)-(@FORM-OffsetGap/2));
 
 @FORM-InfoBgColor:             @COLOR-BlueLightest;
 @FORM-InfoTextColor:           @COLOR-BlueDark;
@@ -42,17 +47,64 @@
 // ----------------------------------------------------
 
 ._input-create (@BgColor, @TextColor, @Bordercolor) {
-    color: @TextColor;
+    //color: @TextColor;
     border: 1px solid @Bordercolor;
     //background-color: @BgColor;
+
+    .input__field {
+        background-color: @BgColor;
+        color: @TextColor;
+
+        &:-moz-placeholder{
+            color: lighten(@TextColor, 35%);
+        }
+        &::-moz-placeholder{
+            color: lighten(@TextColor, 35%);
+        }
+        &:-ms-input-placeholder{
+            color: lighten(@TextColor, 35%);
+        }
+        &::-webkit-input-placeholder {
+            color: lighten(@TextColor, 35%);
+        }
+    }
+
 }
 
 
 // BASE
 // ----------------------------------------------------
 
-.form {
-    ._margin (0, 0, @TYPE-LineHeight, 0);
+    .form {
+        ._margin (0, 0, @TYPE-LineHeight, 0);
+    }
+
+    .form__row {
+        position: relative;
+        ._clearfix ();
+        ._margin (0, 0, @TYPE-LineHeight/2, 0);
+    }
+
+    .form__label  {
+        display: block;
+
+        &.disabled {
+            cursor: not-allowed;
+        }
+
+        &.success {
+            color:@FORM-SuccessTextColor;
+        }
+        &.info {
+            color:@FORM-InfoTextColor;
+        }
+        &.warn {
+            color:@FORM-WarnTextColor;
+        }
+        &.danger {
+            color:@FORM-DangerTextColor;
+        }
+    }
 
     span.form__label,
     .form__label span {
@@ -60,130 +112,246 @@
             content: ":";
         }
     }
-}
 
-.form__row {
-    position: relative;
-    ._clearfix ();
-    ._margin (0, 0, @TYPE-LineHeight, 0);
-}
-
-.form__label  {
-    cursor: pointer;
-    display: block;
-
-    &.disabled {
-        cursor: not-allowed;
-    }
-}
-
-.form__input {
-    color: @FORM-DefaultTextColor;
-    clear: left;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    border: 1px solid @FORM-DefaultBordercolor;
-    background-color: @FORM-DefaultBgColor;
-    ._padding (6, 8);
-    ._border-radius (4);
-
-    &:focus {
-        outline: 0;
-        outline: thin dotted \9;
-        ._depth-1 ();
+    .form__control {
+        position:relative;
+        ._haslayout();
     }
 
-    &.success {
-        ._input-create (@FORM-SuccessBgColor, @FORM-SuccessTextColor, @FORM-SuccessBordercolor);
+    .form__note {
+        display: block;
+        font-style: italic;
+        color: @FORM-DefaultTextColor;
+        ._padding(2, 5);
+        ._margin-top (5);
     }
 
-    &.info {
-        ._input-create (@FORM-InfoBgColor, @FORM-InfoTextColor, @FORM-InfoBordercolor);
+    .form__required {
+        color: @FORM-Asterisk;
+        border-bottom: none !important;
     }
 
-    &.warn {
-        ._input-create (@FORM-WarnBgColor, @FORM-WarnTextColor, @FORM-WarnBordercolor);
+    .form__actions {
+        background-color: @FORM-ActionsBgColor;
+        ._padding (@TYPE-LineHeight, @TYPE-FontSize, @TYPE-LineHeight, @TYPE-FontSize);
     }
 
-    &.danger {
-        ._input-create (@FORM-DangerBgColor, @FORM-DangerTextColor, @FORM-DangerBordercolor);
+    .form__fieldset {
+
+        &.nostyle {
+            border: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: block;
+        }
     }
-}
-
-.form__note {
-    display: block;
-    ._margin-top (5);
-    ._font-size ((@TYPE-FontSize - 2));
-}
-
-.form__asterisk {
-    color: @FORM-Asterisk;
-    border-bottom: none !important;
-}
 
 
-.form__group {
+// INPUTS
+// ----------------------------------------------------
 
-    &.inline {
-        display: table;
+    .input {
+        color: @FORM-DefaultTextColor;
+        position:relative;
+        display: block;
+        border: 1px solid @FORM-DefaultBordercolor;
+        background-color: @FORM-DefaultBgColor;
 
-        .group__item {
-            display: table-cell;
+        &.success {
+            ._input-create (@FORM-SuccessBgColor, @FORM-SuccessTextColor, @FORM-SuccessBordercolor);
         }
 
-        .form__input {
+        &.info {
+            ._input-create (@FORM-InfoBgColor, @FORM-InfoTextColor, @FORM-InfoBordercolor);
+        }
+
+        &.warn {
+            ._input-create (@FORM-WarnBgColor, @FORM-WarnTextColor, @FORM-WarnBordercolor);
+        }
+
+        &.danger {
+            ._input-create (@FORM-DangerBgColor, @FORM-DangerTextColor, @FORM-DangerBordercolor);
+        }
+    }
+
+
+    .input__addon {
+        background-color: @FORM-AddonBgColor;
+        color: @FORM-AddonColor;
+        display: table-cell;
+        white-space: nowrap;
+        vertical-align: middle;
+        ._text-shadow(~"0 1px 0 rgba(255, 255, 255, 0.8)");
+        ._padding (8, 12, 7, 12);
+        ._inline-block();
+    }
+
+    .input__note {
+        display: block;
+        background-color: @FORM-DefaultBordercolor;
+        color: @FORM-DefaultTextColor;
+        ._text-shadow(~"1px 1px 0 rgba(255, 255, 255, 0.8)");
+        ._font-size(@TYPE-SIZE-Iota);
+        ._padding(2, 5);
+
+    }
+
+    .input__faux {
+    }
+
+    .input__label {
+        position:absolute;
+        top: -@TYPE-LineHeight+0px;
+        left:0;
+        ._font-size(@TYPE-SIZE-Iota);
+
+        &.success {
+            color:@FORM-SuccessTextColor;
+        }
+        &.info {
+            color:@FORM-InfoTextColor
+        ;}
+        &.warn {
+            color:@FORM-WarnTextColor;
+        }
+        &.danger {
+            color:@FORM-DangerTextColor;
+        }
+    }
+
+    .input__field {
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        width: 100%;
+        display: table;
+        //._border-radius (4);
+        ._padding (8, 5, 7, 5);
+        ._inline-block();
+
+        &:focus {
+            outline: 0;
+            outline: thin dotted \9;
+            ._depth-1 ();
+        }
+    }
+
+    .input__group {
+
+        .input {
+            ._inline-block();
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            .button {
+                position:relative;
+                bottom: -1px;
+            }
+        }
+        .input__field {
             width: 100%;
         }
-    }
 
-    &.vertical {
-        .group__item {
-            .block;
+        &.inline {
+            display: table;
+
+            .input {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+
+        &.vertical {
+            display: block;
+
+            .input {
+                display: block;
+                ._margin(0,0,5,0);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .input--check {
+                margin-bottom: 0;
+            }
         }
     }
-}
 
-.form__group--check {
-    .form__label,
-    .form__input {
-        width: auto;
-        margin-top: 0;
-        ._inline-block ();
-    }
 
-    span.form__label,
-    .form__label span {
-        &:after {
-            content: "";
+    ._placeholder (@FORM-Placeholder);
+
+// VARIANTS
+// ----------------------------------------------------
+
+    .input--check {
+        ._padding(8,5,7,5);
+
+
+
+        .input__label {
+            display: inline;
+            position:static;
+            ._font-size(@TYPE-SIZE-Eta);
+
+        }
+
+        .input__field {
+            width: auto;
+            display: inline;
+            float:left;
+            ._height(@TYPE-LineHeight);
+            ._margin-right(@TYPE-FontSize/1.5);
+
+            &:focus {
+                ._depth-0 ();
+            }
         }
     }
-}
-
-fieldset.simple {
-    border: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    .block;
-}
 
 
-._placeholder (@FORM-Placeholder); 
+    .input__group--check {
+
+        .input {
+            width: auto;
+            margin-top: 0;
+            border: none;
+            ._inline-block ();
+            ._margin(0, @TYPE-FontSize*2, 0, @TYPE-FontSize);
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        .input--check {
+            margin:0;
+        }
+
+        &.vertical {
+            .input {
+                margin-left: 0;
+                display:block;
+            }
+
+        }
+    }
 
 // MOBILE
 // ----------------------------------------------------
 
 @media only screen and (max-width: @MQ-Small) {
 
-    .form__asterisk {
+    .form__required {
         position: absolute;
+        cursor: help;
         right: 0;
         top: 0;
-    }
-
-    .form__group {
-        ._padding-right(12);
     }
 }
 
@@ -203,91 +371,92 @@ fieldset.simple {
         ._margin-top (2);
     }
 
-    .form__input {
-        width: 40%;
-        vertical-align: middle;
-        ._inline-block ();
-    }
-
     .form__note {
         margin-top: 0;
         ._inline-block ();
     }
 
-    .form__input.xsmall {
-        width: 10%;
-    }
+    .input {
+        width: 40%;
+        vertical-align: top;
+        ._inline-block ();
 
-    .form__input.small {
-        width: 20%;
-    }
-
-    .form__input.large {
-        width: 60%;
-    }
-
-    .form__input.xlarge {
-        width: 75%;
-    }
-
-    .form__input.full {
-        width: 100%;
-    }
-
-
-    .form.inline {
-
-        .form__label {
-            ._inline-block;
+        &.xsmall {
+            width: 10%;
         }
 
-        .form__row {
-            display: inline;
+        &.small {
+            width: 20%;
+            ._font-size(@TYPE-SIZE-Eta);
         }
 
-        .form__input {
-            //width: auto;
+        &.large {
+            width: 60%;
+        }
+
+        &.xlarge {
+            width: 75%;
+        }
+
+        &.full {
+            width: 100%;
         }
     }
 
-    .form.aligned {
-
-        .form__row.offset {
-            padding-left: @FORM-Offset;
-        }
-
-        .form__asterisk {
-            position: absolute;
-            left: @FORM-OffsetAsterisk;
-            top: 0;
-        }
-
-        .form__label {
-            width: @FORM-OffsetLabel;
-            text-align: right;
-            margin-right: @FORM-OffsetGap;
-            .left;
-        }
-
-        .form__group {
-            .block;
-            .left;
+    .form {
+        &.inline {
 
             .form__label {
+                ._inline-block();
+            }
+
+            .form__row {
+                display: inline;
+            }
+
+            .form__input {
+                //width: auto;
+            }
+
+        }
+
+        &.aligned {
+
+            .form__required {
+                position: absolute;
+                left: @FORM-OffsetAsterisk;
+                top: 0;
+            }
+
+            .form__label {
+                width: @FORM-OffsetLabel;
+                text-align: right;
+                margin-right: @FORM-OffsetGap;
+                float: left;
+            }
+
+            .input__group {
+                display: block;
+            }
+
+            .input__label {
                 width: auto;
                 text-align: left;
                 margin-right: auto;
                 float: none;
             }
-        }
 
-        .form__text {
-            display: block;
-            margin-left: @FORM-Offset;
+            .input__group {
+                width: 100%;
+            }
+
+            .form__note {
+                display: block;
+            }
         }
     }
-}
 
+}
 // DESKTOP
 // ----------------------------------------------------
 

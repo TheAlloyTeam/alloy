@@ -1,0 +1,51 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "hidden": ""
+    },
+    "content": {
+        "labels": [{
+            "item": {
+                "for": "formrow-name-1"
+            },
+            "content": {
+                "text": "Name",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "texts": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "spellcheck": "",
+                    "id": "formrow-name-1",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "John Smith",
+                    "value": ""
+                }
+            }]
+        }]
+    }
+}

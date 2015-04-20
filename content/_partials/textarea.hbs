@@ -1,10 +1,19 @@
 {{#this}}
+
+    {{#if content.labels}}
+        {{#each content.labels}}
+            {{#this}}
+                {{> input__label }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
     <textarea
         type="text"
         role="textbox"
         aria-multiline="true"
-        class="form__input
-            {{#if item.modifier}} form__input--{{item.modifier}}{{/if}}
+        class="input__field
+            {{#if item.modifier}} input__field--{{item.modifier}}{{/if}}
             {{#if item.size}} {{item.size}}{{/if}}"
         {{#if item.required}} required="required" aria-required="true"{{/if}}
         {{#if item.readonly}} readonly="readonly" aria-readonly="true"{{/if}}

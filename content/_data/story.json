@@ -1,94 +1,126 @@
 {
     "item": {
-        "modifier": "variant"
+        "modifier": "ice"
     },
     "content": {
         "title": "Panel Title",
         "body": "<p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Mauris nec purus turpis. Praesent et feugiat magna, eget elementum sem. Ut congue consectetur libero, sit amet placerat ex aliquam sit amet. Proin ornare nisl vel purus interdum molestie. Aliquam consectetur arcu vitae ligula faucibus, nec dapibus nisl mollis. Mauris id cursus ipsum. Sed vulputate libero vitae enim rutrum, non tempus tortor efficitur. Integer ut malesuada metus, aliquam pulvinar enim. In turpis nulla, fermentum in ligula nec, tristique efficitur nibh. Etiam ullamcorper, ex in pharetra faucibus, ipsum magna bibendum nulla, in mollis orci enim et eros. Nullam luctus sollicitudin tortor ut imperdiet. Nam condimentum libero nec est fermentum posuere. Vivamus turpis ex, venenatis ac venenatis facilisis, tempus eget quam. Nunc congue dui nec venenatis tempus. Etiam in ligula ultricies, dictum orci nec, varius diam.</p>",
-        "ident": [{
-            "item": {
-                "modifier": "",
-                "target": ""
-            },
-            "content": {
-                "avatar": "//www.nicenicejpg.com/100/100",
-                "name": "John Doe",
-                "url": "http://en.wikipedia.org/wiki/James_Van_Der_Beek"
+        "ident": [
+            {
+                "item": {
+                    "modifier": "story",
+                    "target": ""
+                },
+                "content": {
+                    "avatar": "//www.nicenicejpg.com/100/100",
+                    "title" : "Title",
+                    "author": "Robert Matthew Van Winkle",
+                    "authorUrl": "http://en.wikipedia.org/wiki/Vanilla_Ice",
+                    "datetime": "YYYY-MM-DDThh:mm:ssTZD",
+                    "tags": [
+                        {
+                            "content": {
+                                "url": "#",
+                                "text": "Ice"
+                            }
+                        },
+                        {
+                            "content": {
+                                "url": "#",
+                                "text": "Ice"
+                            }
+                        },
+                        {
+                            "content": {
+                                "url": "#",
+                                "text": "Baby"
+                            }
+                        }
+                    ]
+                }
             }
-        }],
-        "cite": [{
-             "item": {
-                "modifier": "",
-                "target": ""
-            },
-            "content": {
-                "image": "/assets/img/bg.jpg",
-                "title": "Cite Title",
-                "summary": "Cite Summary",
-                "author": "Cite Author",
-                "url": "#linkurl1",
-                "icon": [{
-                    "item": {
-                        "modifier": "",
-                        "size": ""
-                    },
-                    "content": {
-                        "title": ""
-                    }
-                }]
+        ],
+        "cite": [
+            {
+                "item": {
+                    "modifier": "story",
+                    "target": ""
+                },
+                "content": {
+                    "image": "/assets/img/bg.jpg",
+                    "title": "Cite Title",
+                    "summary": "Cite Summary",
+                    "author": "Cite Author",
+                    "url": "#linkurl1",
+                    "icon": [
+                        {
+                            "item": {
+                                "modifier": "",
+                                "size": ""
+                            },
+                            "content": {
+                                "title": ""
+                            }
+                        }
+                    ]
+                }
             }
-        }]
+        ]
     },
     "actions": [
-    {
-        "buttons": [
         {
-            "item": {
-                "modifier": "",
-                "size": "",
-                "disabled": "",
-                "target": "",
-                "block": ""
-            },
-            "content": {
-                "text": "Default Button",
-                "title": "Default",
-                "url": "#linkurl1",
-                "icon": [{
+            "buttons": [
+                {
                     "item": {
                         "modifier": "",
-                        "size": ""
+                        "size": "",
+                        "disabled": "",
+                        "target": "",
+                        "block": ""
                     },
                     "content": {
-                        "title": ""
+                        "text": "Default Button",
+                        "title": "Default",
+                        "url": "#linkurl1",
+                        "icon": [
+                            {
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }
+                        ]
                     }
-                }]
-            }
-        },
-        {
-            "item": {
-                "modifier": "alt",
-                "size": "",
-                "disabled": "",
-                "target": "",
-                "block": ""
-            },
-            "content": {
-                "text": "Default Button 2",
-                "title": "Default",
-                "url": "#linkurl2",
-                "icon": [{
+                },
+                {
                     "item": {
-                        "modifier": "",
-                        "size": ""
+                        "modifier": "alt",
+                        "size": "",
+                        "disabled": "",
+                        "target": "",
+                        "block": ""
                     },
                     "content": {
-                        "title": ""
+                        "text": "Default Button 2",
+                        "title": "Default",
+                        "url": "#linkurl2",
+                        "icon": [
+                            {
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }
+                        ]
                     }
-                }]
-            }
+                }
+            ]
         }
-        ]
-    }
     ]
 }

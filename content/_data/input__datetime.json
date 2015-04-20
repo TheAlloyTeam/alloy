@@ -1,0 +1,24 @@
+{
+    "item": {
+        "modifier": "",
+        "size": "",
+        "required": "",
+        "readonly": "",
+        "disabled": "",
+        "spellcheck": "",
+        "id": "unique127",
+        "name": "",
+        "maxlength": "",
+        "minlength": "",
+        "pattern": "",
+        "autocomplete": "",
+        "tabindex": "",
+        "accesskey": ""
+    },
+    "content": {
+        "placeholder": "Datetime Placeholder",
+        "value": "",
+        "prefix": "",
+        "postfix": ""
+    }
+}

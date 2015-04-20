@@ -1,0 +1,126 @@
+{
+    "item": {
+        "modifier": "",
+        "required": "",
+        "disabled": true
+    },
+    "content": {
+        "labels": [{
+            "item": {
+            },
+            "content": {
+                "text": "Radios Test",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "groups": [{
+            "item": {
+                "modifier": "",
+                "checkbox": true,
+                "vertical": "",
+                "inline": ""
+            },
+            "content": {
+                "inputs": [{
+                    "item": {
+                        "modifier": "check"
+                    },
+                    "radios": [{
+                        "item": {
+                            "modifier": "",
+                            "checked": "",
+                            "required": "",
+                            "disabled": true,
+                            "id": "formrow-disabled-radio-1",
+                            "name": "formrow-disabled-radio-1",
+                            "value": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "labels": [{
+                                "item": {
+                                    "for": "formrow-disabled-radio-1"
+                                },
+                                "content": {
+                                    "text": "Yes"
+                                }
+                            }]
+                        }
+                    }]
+                },
+                    {
+                        "item": {
+                            "modifier": "check"
+                        },
+                        "radios": [{
+                            "item": {
+                                "modifier": "",
+                                "checked": "",
+                                "required": "",
+                                "disabled": true,
+                                "id": "formrow-disabled-radio-2",
+                                "name": "formrow-disabled-radio-1",
+                                "value": "",
+                                "tabindex": "",
+                                "accesskey": ""
+                            },
+                            "content": {
+                                "labels": [{
+                                    "item": {
+                                        "for": "formrow-disabled-radio-2"
+                                    },
+                                    "content": {
+                                        "text": "No"
+                                    }
+                                }]}
+                        }]
+                    },
+                    {
+                        "item": {
+                            "modifier": "check"
+                        },
+                        "radios": [{
+                            "item": {
+                                "modifier": "",
+                                "checked": "",
+                                "required": "",
+                                "disabled": true,
+                                "id": "formrow-disabled-radio-3",
+                                "name": "formrow-disabled-radio-1",
+                                "value": "",
+                                "tabindex": "",
+                                "accesskey": ""
+                            },
+                            "content": {
+                                "labels": [{
+                                    "item": {
+                                        "for": "formrow-disabled-radio-3"
+                                    },
+                                    "content": {
+                                        "text": "Maybe",
+                                        "icons": [{
+                                            "item": {
+                                                "modifier": "",
+                                                "size": ""
+                                            },
+                                            "content": {
+                                                "title": ""
+                                            }
+                                        }]
+                                    }
+                                }]}
+                        }]
+                    }]
+            }
+        }]
+    }
+}

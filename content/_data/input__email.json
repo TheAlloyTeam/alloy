@@ -10,7 +10,7 @@
         "name": "",
         "maxlength": "",
         "minlength": "",
-        "pattern": "",
+        "pattern": "[^ @]*@[^ @]*",
         "autocomplete": "",
         "tabindex": "",
         "accesskey": ""

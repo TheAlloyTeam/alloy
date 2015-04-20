@@ -4,16 +4,16 @@
 	{{#if content.ident}}
 		{{#each content.ident}}
 			{{#this}}
-			{{> story-ident }}
+			{{> ident }}
 			{{/this}}
 		{{/each }}
 	{{/if}}
 	<div class="story__content">
-		<div class="story__body">{{{content.body}}}</div>
+		<div class="story__body rte">{{{content.body}}}</div>
 		{{#if content.cite}}
 			{{#each content.cite}}
 				{{#this}}
-				{{> story-cite }}
+				{{> cite }}
 				{{/this}}
 			{{/each }}
 		{{/if}}

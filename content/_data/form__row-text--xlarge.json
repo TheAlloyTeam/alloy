@@ -1,0 +1,57 @@
+{
+    "item": {
+        "modifier": "modifier",
+        "required": true
+    },
+    "content": {
+        "labels": [{
+            "item": {
+                "for": "formrow-size-90"
+            },
+            "content": {
+                "text": "Extra Large Width",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+                "size": "xlarge"
+            },
+            "texts": [{
+                "item": {
+                    "modifier": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "spellcheck": "",
+                    "id": "formrow-size-90",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Text Placeholder",
+                    "value": ""
+                }
+            }]
+        }],
+        "notes": [{
+            "item": {},
+            "content": {
+                "body": "This is a note for the xlarge width text test."
+            }
+        }]
+    }
+}

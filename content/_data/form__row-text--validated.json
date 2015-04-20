@@ -7,132 +7,173 @@
         "for": "formrow-text-1"
     },
     "content": {
-        "text": "Label for text input",
-        "type": [{
-            "text": [{
-                "item": {
-                    "modifier": "",
-                    "size": "",
-                    "required": "",
-                    "readonly": "",
-                    "disabled": "",
-                    "status": "",
-                    "spellcheck": "",
-                    "id": "formrow-text-1",
-                    "name": "",
-                    "maxlength": "",
-                    "minlength": "",
-                    "pattern": "",
-                    "autocomplete": "",
-                    "tabindex": "",
-                    "accesskey": ""
+        "labels": [{
+            "item": {
+                "for": ""
+            },
+            "content": {
+                "text": "Validated input",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "groups": [{
+            "item": {
+                "modifier": "",
+                "checkbox": "",
+                "vertical": "true",
+                "inline": ""
+            },
+            "content": {
+                "inputs": [{
+                    "item": {
+                        "status": ""
+                    },
+                    "texts": [{
+                        "item": {
+                            "modifier": "",
+                            "size": "large",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "spellcheck": "",
+                            "id": "formrow-text-1",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "Inert status",
+                            "value": ""
+                        }
+                    }]
                 },
-                "content": {
-                    "placeholder": "Inert status",
-                    "value": ""
-                }
-            }]
-        },
-        {
-            "text": [{
-                "item": {
-                    "modifier": "",
-                    "size": "",
-                    "required": "",
-                    "readonly": "",
-                    "disabled": "",
-                    "status": "success",
-                    "spellcheck": "",
-                    "id": "formrow-text-1",
-                    "name": "",
-                    "maxlength": "",
-                    "minlength": "",
-                    "pattern": "",
-                    "autocomplete": "",
-                    "tabindex": "",
-                    "accesskey": ""
+                {
+                    "item": {
+                        "status": "success"
+                    },
+                    "texts": [{
+                        "item": {
+                            "modifier": "",
+                            "size": "",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "status": "success",
+                            "spellcheck": "",
+                            "id": "formrow-text-1",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "Success Placeholder",
+                            "value": ""
+                        }
+                    }]
                 },
-                "content": {
-                    "placeholder": "Success Placeholder",
-                    "value": ""
-                }
-            }]
-        },
-        {
-            "text": [{
-                "item": {
-                    "modifier": "",
-                    "size": "",
-                    "required": "",
-                    "readonly": "",
-                    "disabled": "",
-                    "status": "info",
-                    "spellcheck": "",
-                    "id": "formrow-text-1",
-                    "name": "",
-                    "maxlength": "",
-                    "minlength": "",
-                    "pattern": "",
-                    "autocomplete": "",
-                    "tabindex": "",
-                    "accesskey": ""
+                {
+                    "item": {
+                        "status": "info"
+                    },
+                    "texts": [{
+                        "item": {
+                            "modifier": "",
+                            "size": "",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "status": "info",
+                            "spellcheck": "",
+                            "id": "formrow-text-1",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "Info Placeholder",
+                            "value": ""
+                        }
+                    }]
                 },
-                "content": {
-                    "placeholder": "Info Placeholder",
-                    "value": ""
-                }
-            }]
-        },
-        {
-            "text": [{
-                "item": {
-                    "modifier": "",
-                    "size": "",
-                    "required": "",
-                    "readonly": "",
-                    "disabled": "",
-                    "status": "warn",
-                    "spellcheck": "",
-                    "id": "formrow-text-1",
-                    "name": "",
-                    "maxlength": "",
-                    "minlength": "",
-                    "pattern": "",
-                    "autocomplete": "",
-                    "tabindex": "",
-                    "accesskey": ""
+                {
+                    "item": {
+                        "status": "warn"
+                    },
+                    "texts": [{
+                        "item": {
+                            "modifier": "",
+                            "size": "",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "status": "warn",
+                            "spellcheck": "",
+                            "id": "formrow-text-1",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "Warning Placeholder",
+                            "value": ""
+                        }
+                    }]
                 },
-                "content": {
-                    "placeholder": "Warning Placeholder",
-                    "value": ""
-                }
-            }]
-        },
-        {
-            "text": [{
-                "item": {
-                    "modifier": "",
-                    "size": "",
-                    "required": "",
-                    "readonly": "",
-                    "disabled": "",
-                    "status": "danger",
-                    "spellcheck": "",
-                    "id": "formrow-text-1",
-                    "name": "",
-                    "maxlength": "",
-                    "minlength": "",
-                    "pattern": "",
-                    "autocomplete": "",
-                    "tabindex": "",
-                    "accesskey": ""
-                },
-                "content": {
-                    "placeholder": "Danger Placeholder",
-                    "value": ""
-                }
-            }]
+                {
+                    "item": {
+                        "status": "danger"
+                    },
+                    "texts": [{
+                        "item": {
+                            "modifier": "",
+                            "size": "",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "status": "danger",
+                            "spellcheck": "",
+                            "id": "formrow-text-1",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "Danger Placeholder",
+                            "value": ""
+                        }
+                    }]
+                }]
+            }
         }]
+
     },
     "actions": {},
     "tracking": {

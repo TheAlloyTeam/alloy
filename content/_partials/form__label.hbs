@@ -1,9 +1,19 @@
 {{#this}}
-	<label
-	    {{#if item.for}}for="{{item.for}}"{{/if}}
-	    class="form__label{{#if item.modifier}} form__label--{{item.modifier}}{{/if}}
-	    {{#if item.disabled}} disabled{{/if}}
-	    {{#if item.hidden}} hidden-text{{/if}}">
-	    <span>{{{content.text}}}</span>
-	</label>
+	{{#if content.text}}
+		{{#if item.for}}
+			<label
+				{{#if item.for}}for="{{item.for}}"{{/if}}
+				class="form__label{{#if item.modifier}} form__label--{{item.modifier}}{{/if}}
+				{{#if item.status}} {{item.status}}{{/if}}
+				{{#if item.disabled}} disabled{{/if}}">
+				{{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+				<span{{#if item.hidden}} class="hidden-text"{{/if}}>{{{content.text}}}</span>
+			</label>
+		{{else}}
+			<div class="form__label{{#if item.modifier}} form__label--{{item.modifier}}{{/if}}">
+				{{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
+				<span{{#if item.hidden}} class="hidden-text"{{/if}}>{{{content.text}}}</span>
+			</div>
+		{{/if}}
+	{{/if}}
 {{/this}}

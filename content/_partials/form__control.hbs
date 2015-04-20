@@ -1,0 +1,25 @@
+{{#this}}
+    <div class="form__control">
+        {{! bring in groups of inputs }}
+        {{#if content.groups}}
+            {{#each content.groups}}
+                {{#this}}{{> input__group }}{{/this}}
+            {{/each}}
+        {{/if}}
+
+        {{!bring in single input }}
+        {{#if content.inputs}}
+            {{#each content.inputs}}
+                {{#this}}{{> input }}{{/this}}
+            {{/each}}
+        {{/if}}
+
+        {{#if content.notes}}
+            {{#each content.notes}}
+                {{#this}}
+                    {{> form__note }}
+                {{/this}}
+            {{/each}}
+        {{/if}}
+    </div>
+{{/this}}

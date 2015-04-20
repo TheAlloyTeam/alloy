@@ -21,19 +21,19 @@
 
 .pagination__control {
     color: @PAGINATION-BgColor;
-    display: inline-block;
     text-decoration: none;
     vertical-align: top;
     line-height: 1;
     ._font-size (28);
     ._transition (color, 0.1s);
+    ._inline-block();
 }    
 
 .list__pagination {
-    display: inline-block;
     padding: 0;
     ._margin (0, 10, @TYPE-LineHeight, 10);
     ._clearfix();
+    ._inline-block();
 
     .list__item {
         float: left;

@@ -13,7 +13,7 @@
         "accesskey": ""
     },
     "content": {
-        "select__option": [{
+        "options": [{
             "item": {
                 "value": "",
                 "selected": "",

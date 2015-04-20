@@ -1,0 +1,57 @@
+{
+    "item": {
+        "modifier": "modifier",
+        "required": ""
+    },
+    "content": {
+        "labels": [{
+            "item": {
+                "for": "formrow-size-75"
+            },
+            "content": {
+                "text": "Large Width",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+                "size": "large"
+            },
+            "texts": [{
+                "item": {
+                    "modifier": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "spellcheck": "",
+                    "id": "formrow-size-75",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Text Placeholder",
+                    "value": ""
+                }
+            }]
+        }],
+        "notes": [{
+            "item": {},
+            "content": {
+                "body": "This is a note for the large width text test."
+            }
+        }]
+    }
+}

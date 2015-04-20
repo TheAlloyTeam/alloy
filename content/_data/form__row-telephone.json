@@ -6,9 +6,28 @@
         "for": "formrow-tel-1"
     },
     "content": {
-        "text": "Label for tel input",
-        "type": [{
-            "tel": [{
+        "labels": [{
+            "item": {
+                "for": "formrow-tel-1"
+            },
+            "content": {
+                "text": "Telephone",
+                "icons": [{
+                    "item": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "item": {
+              "size": "small"
+            },
+            "tels": [{
                 "item": {
                     "modifier": "",
                     "size": "",
