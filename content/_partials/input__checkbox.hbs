@@ -8,6 +8,7 @@
         {{/each}}
     {{/if}}
 
+    <span class="input{{#if item.modifier}} input--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
     <input
         type="checkbox"
         class="input__field input_field--checkbox"
@@ -21,7 +22,7 @@
         {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
     />
         <label class="input__faux input__faux--checkbox" for=""{{item.id}}"></label>
-
+</span>
     {{#if content.notes}}
         {{#each content.notes}}
             {{#this}}
