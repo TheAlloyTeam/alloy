@@ -37,7 +37,8 @@ var require = {
         'cardflipper': "modules/alloy.cardflipper",
         'cardslider': "modules/alloy.cardslider",
         'gmap': "modules/alloy.gmap",
-        'equalizer': "modules/alloy.equalizer"
+        'equalizer': "modules/alloy.equalizer",
+        'gridify': "modules/alloy.gridify",
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -56,7 +57,8 @@ var require = {
         'cardflipper': {deps: ['jquery', 'core', 'logging']},
         'cardslider': {deps: ['jquery', 'core', 'logging']},
         'gmap': {deps: ['jquery', 'core', 'logging', 'async!http://maps.google.com/maps/api/js?sensor=false']},
-        'equalizer': {deps: ['jquery', 'core', 'logging']}
+        'equalizer': {deps: ['jquery', 'core', 'logging']},
+        'gridify': { deps: ['jquery', 'core', 'logging'] },
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
