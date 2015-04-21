@@ -110,6 +110,59 @@
 </script>
 {{/if}}
 
+{{#if js-gridify}}
+<script type="text/JavaScript">
+	require(["gridify", "equalizer"], function() {
+		var equalizeMasonryCards = function() {
+		    $(".card--gridify").equalizer({
+		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
+		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
+		        applyTo: ".card__body",       		// The element on which to apply the style to
+		    });
+		};
+
+		equalizeMasonryCards();
+		$(".gridify").gridify({
+            cardSelector: ".card", // The selector for cards within this.$element
+	        activeClass: "active",
+	        transitionClass: "deactivating",
+	        inactiveClass: "inactive",
+	        transitionLength: 400,
+	        noItemsEl: '<div class="alert alert--info">There were no results for your current search.  Try adjusting your search options.</div>',
+	        searchArgs: { randomise: false },
+	        // Example search function to randomly select which elements to display
+	        searchFunction: function ($cards, searchArgs) {
+	            var matches = [];
+	            var nonmatches = [];
+
+	            $cards.each(function() {
+	                if (searchArgs.randomise === false || Math.random() > 0.5) { matches.push(this); } 
+	                else { nonmatches.push(this); }
+	            });
+
+	            var results = { $matches: $(matches), $nonmatches: $(nonmatches) };
+	            return results;
+	        },
+		});
+
+		$(".gridify__control.randomise").click(function(e) {
+			e.preventDefault();
+	        $(".gridify").gridify({ randomise: true });
+		});
+
+		$(".gridify__control.reset").click(function(e) {
+			e.preventDefault();
+	        $(".gridify").gridify({ randomise: false });
+		});
+
+		$(window).resize(function() {
+			equalizeMasonryCards();
+	        $(".gridify").gridify();
+		});
+	});
+</script>
+{{/if}}
+
 {{#dev}}
 <script src="http://localhost:35730/livereload.js"></script>
 {{/dev}}

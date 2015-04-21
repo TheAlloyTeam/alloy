@@ -19,12 +19,12 @@
 
             var tallest = 0;
             $(els).each(function () {
-                var height = $(this).height();
+                var height = $(this).outerHeight(true);
                 if (height > tallest) { tallest = height; }
             });
 
             $(els).each(function () {
-                var height = $(this).height();
+                var height = $(this).outerHeight(true);
                 var diff = tallest - height;
                 $(this).find(config.applyTo).css(config.applyWhat, diff + "px");
             });
