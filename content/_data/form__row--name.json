@@ -11,7 +11,7 @@
                 "for": "formrow-name-1"
             },
             "content": {
-                "text": "Name",
+                "text": "First &amp; Last Name",
                 "icons": [{
                     "item": {
                         "modifier": "",
@@ -24,6 +24,9 @@
             }
         }],
         "inputs": [{
+            "item": {
+                "size": "small"
+            },
             "texts": [{
                 "item": {
                     "modifier": "",
@@ -42,7 +45,33 @@
                     "accesskey": ""
                 },
                 "content": {
-                    "placeholder": "John Smith",
+                    "placeholder": "John",
+                    "value": ""
+                }
+            }]
+        },{
+            "item": {
+                "size": "small"
+            },
+            "texts": [{
+                "item": {
+                    "modifier": "",
+                    "size": "",
+                    "required": "",
+                    "readonly": "",
+                    "disabled": "",
+                    "spellcheck": "",
+                    "id": "formrow-name-2",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "Smith",
                     "value": ""
                 }
             }]
