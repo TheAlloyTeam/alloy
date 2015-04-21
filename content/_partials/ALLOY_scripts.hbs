@@ -73,6 +73,14 @@
 </script>
 {{/if}}
 
+{{#if js-gmap}}
+<script type="text/JavaScript">
+	require(["gmap"], function() {
+		$(".gmap").gmap();
+	});
+</script>
+{{/if}}
+
 {{#dev}}
 <script src="http://localhost:35730/livereload.js"></script>
 {{/dev}}
