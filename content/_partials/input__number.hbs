@@ -8,6 +8,7 @@
         {{/each}}
     {{/if}}
 
+    <span class="input{{#if item.modifier}} input--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
     <input
         type="number"
         role="textbox"
@@ -26,7 +27,7 @@
         {{#if content.placeholder}} placeholder="{{content.placeholder}}"{{/if}}
         {{#if content.value}} value="{{content.value}}"{{/if}}
     />
-
+</span>
     {{#if content.notes}}
         {{#each content.notes}}
             {{#this}}

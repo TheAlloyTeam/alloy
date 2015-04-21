@@ -8,6 +8,8 @@
         {{/each}}
     {{/if}}
 
+    <span class="input{{#if item.modifier}} input--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
+
     <textarea
         type="text"
         role="textbox"
@@ -29,4 +31,15 @@
         {{#if item.wrap}} wrap="{{item.wrap}}"{{/if}}
         {{#if content.placeholder}} placeholder="{{content.placeholder}}"{{/if}}
      />{{{content.text}}}</textarea>
+
+    </span>
+
+    {{#if content.notes}}
+        {{#each content.notes}}
+            {{#this}}
+                {{> input__note }}
+            {{/this}}
+        {{/each}}
+    {{/if}}
+
 {{/this}}
