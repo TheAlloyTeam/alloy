@@ -5,7 +5,15 @@
 <script async defer id="github-bjs" src="//buttons.github.io/buttons.js"></script>
 
 <script type="text/JavaScript">
-	require(["ink"], function() { });
+	require(["ink", "equalizer"], function() {
+		setTimeout(function(){ 
+			$(".w--foot .panel").equalizer({
+		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
+		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
+		        applyTo: ".panel__body",       		// The element on which to apply the style to
+			});
+		}, 2000);
+	});
 </script>
 
 {{#if js-accordion}}
@@ -77,6 +85,27 @@
 <script type="text/JavaScript">
 	require(["gmap"], function() {
 		$(".gmap").gmap();
+	});
+</script>
+{{/if}}
+
+{{#if js-cardslider}}
+<script type="text/JavaScript">
+	require(["cardslider", "equalizer"], function() {
+
+		var equalizeSliderCards = function() {
+		    $(".cardslider .card").equalizer({
+		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
+		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
+		        applyTo: ".card__body",       		// The element on which to apply the style to
+		    });
+		};
+
+		equalizeSliderCards();
+		$(".cardslider").cardslider({
+			onScreenResize: equalizeSliderCards
+		});
+
 	});
 </script>
 {{/if}}
