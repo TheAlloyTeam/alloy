@@ -1,0 +1,29 @@
+.gridify-styles() when not (@MODULE-Gridify) { }
+.gridify-styles() when (@MODULE-Gridify) {
+
+.gridify {
+ 
+ 	.card--gridify {
+ 		width: 33%;
+ 		padding: 0.625rem;
+    	margin-top: 0;
+
+		float: left;
+    	._transition (all, 0.4s, @ACCORDION-Anim);
+
+        &.inactive {
+        	opacity: 0;
+        	z-index: -1;
+        }
+
+        &.deactivating {
+        	opacity: 0;
+        }
+
+        &.active {
+        	opacity: 1;
+        }
+    }
+}
+
+} .gridify-styles();

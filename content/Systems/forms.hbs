@@ -173,18 +173,39 @@ page-category: "systems"
                         </form>
 
 
-					<form id="form-example-checkboxes" class="form aligned" role="" method="">
-						<fieldset class="form__fieldset">
-						    <legend class="form__legend">Checkbox/Radio Layouts</legend>
+                    <form id="form-example-checkboxes" class="form aligned" role="" method="">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Checkbox/Radio Layouts</legend>
 
-							[vertical checkbox]
-							[horizontal checkbox]
-							[vertical radio]
-							[horizontal radio]
+                            [vertical checkbox]
+                            [horizontal checkbox]
+                            [vertical radio]
+                            [horizontal radio]
 
 
-						</fieldset>
-					</form>
+                        </fieldset>
+                    </form>
+
+
+                    <form id="form-example-grid" class="form" role="" method="">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Checkbox/Radio Layouts</legend>
+
+							<div class="g">
+                                <div class="c--1-2">
+
+								</div>
+
+								<div class="c--1-2">
+
+								</div>
+
+
+
+							</div>
+
+                        </fieldset>
+                    </form>
 
 
 		        </div>
@@ -200,27 +221,32 @@ page-category: "systems"
 				        <!-- code -->
                         <form id="form-example-address" class="form aligned" role="" method="">
 
-                            <div class="form__row form__row--modifier">
-								{{>label}}
-								<div class="form__control">
-									<div class="input__group">
-                                        {{>label}}
-										{{>input}}
-										<span class="input">
-											<span class="input__addon">@</span>
-											<input type="text" role="textbox" class="input__field input__field--text" id="formrow-text-1" placeholder="Text Placeholder">
-											<span class="input__addon">.00</span>
-											<div class="input__note">
-												This is where the form note would go.
-											</div>
-										</span>
-									</div>
-                                    {{> form__note }}
-								</div>
-                                <abbr class="form__asterisk" title="required">*</abbr>
-                                <div class="form__optional" title="this field is optional">(optional)</div>
-							</div>
+                            <fieldset class="form__fieldset">
+                                <legend class="form__legend">Contact Us</legend>
 
+								{{> form__row form__row--name}}
+								{{> form__row form__row--email}}
+								{{> form__row form__row--phone}}
+								{{> form__row form__row--address}}
+								{{> form__row form__row--postcode}}
+
+								{{> form__actions form__actions }}
+
+                            </fieldset>
+                        </form>
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+                <section class="section section--example">
+                    <header class="section__head">
+                        <h2 class="section__title">Example: Contact Us</h2>
+                    </header>
+
+                    <div class="section__body">
+                        <!-- code -->
+                        <form id="form-example-address-2" class="form" role="" method="">
 
                             <fieldset class="form__fieldset">
                                 <legend class="form__legend">Contact Us</legend>
@@ -231,14 +257,14 @@ page-category: "systems"
 								{{> form__row form__row--address}}
 								{{> form__row form__row--postcode}}
 
-								{{> button button-submit }}
+								{{> form__actions form__actions }}
 
                             </fieldset>
                         </form>
-				        <!-- end of code -->
-			        </div>
+                        <!-- end of code -->
+                    </div>
 
-		        </section>
+                </section>
 
 <!-- code -->
 

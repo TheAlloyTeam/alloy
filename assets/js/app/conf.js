@@ -15,6 +15,7 @@ var require = {
         modules: "modules",
         jquery: "libs/jquery/jquery.min",
         fontfaceobserver: "libs/fontfaceobserver/fontfaceobserver",
+        async: "libs/async",
         'bezier' : "libs/easing/index",
         'mustache' : "libs/mustache/mustache",
         'prettyprint': "libs/google-code-prettify/run_prettify",
@@ -34,6 +35,10 @@ var require = {
         'easing' : "modules/alloy.easing",
         'amd': "modules/exports/amd",
         'cardflipper': "modules/alloy.cardflipper",
+        'cardslider': "modules/alloy.cardslider",
+        'gmap': "modules/alloy.gmap",
+        'equalizer': "modules/alloy.equalizer",
+        'gridify': "modules/alloy.gridify",
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -49,7 +54,11 @@ var require = {
         'flash' : {deps: ['jquery', 'core', 'logging', 'mustache']},
         'easing' : {deps: ['jquery', 'bezier']},
         'ink' : {deps: ['jquery', 'core', 'logging', 'easing']},
-        'cardflipper': {deps: ['jquery', 'core', 'logging']}
+        'cardflipper': {deps: ['jquery', 'core', 'logging']},
+        'cardslider': {deps: ['jquery', 'core', 'logging']},
+        'gmap': {deps: ['jquery', 'core', 'logging', 'async!http://maps.google.com/maps/api/js?sensor=false']},
+        'equalizer': {deps: ['jquery', 'core', 'logging']},
+        'gridify': { deps: ['jquery', 'core', 'logging'] },
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }

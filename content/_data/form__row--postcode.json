@@ -1,0 +1,29 @@
+{
+    "item": {
+        "required": true
+    },
+    "content": {
+        "labels": [{
+            "item": {
+                "for": "formrow-postcode-1"
+            },
+            "content": {
+                "text": "Post Code"
+            }
+        }],
+        "text": "",
+        "inputs": [{
+            "item": {
+                "size": "small"
+            },
+            "texts": [{
+                "item": {
+                    "id": "formrow-postcode-1"
+                },
+                "content": {
+                    "placeholder": "BS7 9QT"
+                }
+            }]
+        }]
+    }
+}

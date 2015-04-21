@@ -1,0 +1,18 @@
+{{#this}}
+<div class="cardslider{{#if item.modifier}} cardslider--{{item.modifier}}{{/if}}">
+	{{#each content.cards}}
+	<div class="card">
+		<div class="card__front">
+			<div class="card__content">
+				<div class="card__title">{{content.title}}</div>
+				<div class="card__body"><p>{{content.body}}</p></div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>
+
+<a href="#" class="cardslider__control previous">Previous</a>
+<a href="#" class="cardslider__control next">Next</a>
+
+{{/this}}
