@@ -1,6 +1,6 @@
 # Alloy v0.0.2
 
-[![Join the chat at https://gitter.im/gfinbow/alloy](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gfinbow/alloy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/TheAlloyTeam/alloy](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TheAlloyTeam/alloy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 **Alloy** is a starting point - the begining of a boilerplate and pattern library for all! Using HTML5, LESS and JavaScript to help us build both small and large scaleable websites.
 
