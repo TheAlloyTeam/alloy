@@ -1,8 +1,12 @@
 (function( w ){
+
+    if ($.readCookie("fonts") !== null) { w.document.documentElement.className += " fonts-loaded"; }
+
     // if the class is already set, we're good.
-    if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
+    if( w.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ) {
         return;
     }
+
     var fontA = new w.FontFaceObserver( "Playfair Display", {
         weight: 400
     });
@@ -23,6 +27,7 @@
         .all([fontA.check(), fontB.check(), fontC.check(), fontD.check() ])
         .then(function(){
             w.document.documentElement.className += " fonts-loaded";
+            $.setCookie("fonts", { value: true });
         });
 
 }( this ));
