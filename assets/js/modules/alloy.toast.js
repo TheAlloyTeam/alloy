@@ -13,6 +13,8 @@
             } else {
                 queue.push(t);
             }
+
+            ALLOY.Logger.info("Toast added");
         };
 
         var _processToast = function(t) {

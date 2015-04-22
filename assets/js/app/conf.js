@@ -42,6 +42,8 @@ var require = {
         'gridify': "modules/alloy.gridify",
         'sticky': "modules/alloy.sticky",
         'dragdrop': "modules/alloy.dragdrop",
+        'modal': "modules/alloy.modal",
+        'configretriever': "modules/alloy.configretriever"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -63,9 +65,10 @@ var require = {
         'gmap': {deps: ['jquery', 'core', 'logging', 'async!http://maps.google.com/maps/api/js?sensor=false']},
         'equalizer': {deps: ['jquery', 'core', 'logging']},
         'gridify': {deps: ['jquery', 'core', 'logging']},
-        'gridify': { deps: ['jquery', 'core', 'logging'] },
         'sticky': { deps: ['jquery', 'core', 'logging'] },
         'dragdrop': {deps: ['jquery']},
+        'modal': {deps: ['jquery', 'core', 'logging']},
+        'configretriever': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }

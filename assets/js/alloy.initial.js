@@ -10,6 +10,9 @@ window.ALLOY = ALLOY;
 var DEBUG = true;
 window.DEBUG = DEBUG;
 
+var DEV = true;
+window.DEV = DEV;
+
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   var msViewportStyle = document.createElement("style");
   msViewportStyle.appendChild(

@@ -1,0 +1,49 @@
+[
+	
+	{
+		"defaultView": {
+            "lat": 51.4531659,
+            "lng": -2.5984168,
+            "zoom": 14
+        },
+        "markers": [{
+            "lat": 51.4531659,
+            "lng": -2.5984168,
+            "info": "<h4>This is a marker</h4><p>At the Hippodrome</p>",
+            "args": {}
+        },{
+            "lat": 51.4490832,
+            "lng": -2.5811728,
+            "info": "<h4>This is a second marker</h4><p>At Bristol Temple Meads</p>",
+            "args": {}
+        }],
+        "mapOptions": {
+            "scrollWheel": false
+        }
+	},{
+		"defaultView": {
+            "lat": 49.2228079,
+            "lng": 0.3364361,
+            "zoom": 7
+        },
+        "markers": [{
+            "lat": 48.85837,
+            "lng": 2.294481,
+            "info": "<h4>Eiffel Tower!!</h4>",
+            "args": {}
+        }],
+        "mapOptions": {
+            "scrollWheel": false
+        }
+	},{
+		"defaultView": {
+            "lat": 22.3593252,
+            "lng": 114.1408686,
+            "zoom": 11
+        },
+        "mapOptions": {
+            "scrollWheel": false
+        }
+	}
+	
+]
