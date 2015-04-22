@@ -35,12 +35,12 @@ var dragDrop = (function() {
 				element.addClass(_dragSourceClassName);
 			}
 			
-			try {
-				e.dataTransfer .setData('text/plain', e.target.id);
+			// try {
+			// 	e.dataTransfer .setData('text/plain', e.target.id);
 		
-			} catch (e) {
-				_isDnDTypesSupported = false;
-			}
+			// } catch (e) {
+			// 	_isDnDTypesSupported = false;
+			// }
 		},
 
 		dragEnd = function(e) {
