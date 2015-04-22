@@ -1,45 +1,45 @@
 {{#this}}
-	<article class="article{{#if item.modifier}} article--{{item.modifier}}{{/if}}" role="article">
-		<header class="article__head">
-			<h1 class="article__title">{{{content.title}}}</h1>
-			{{#if "subtitle"}}
-				<p class="article__subtitle">{{{content.subtitle}}}</p>
-			{{/if}}
-			
-			{{#if content.author}}
-				<p class="article__info">
-					By 
-					{{#if content.author-url}}
-						<a href="{{content.author-url}}" class="article__author" target="_blank">{{content.author}}</a>
-						{{else}}<span class="article__author">{{content.author}}</span>
-					{{/if}}
-					{{#if content.date}} on <time datetime="{{content.datetime}}">{{content.date}}</time>{{/if}}
-				</p>
-				{{else}}{{#if content.date}}<p class="article__info"><time datetime="">{{content.date}}</time></p>{{/if}}
-			{{/if}}
+<article class="article{{#if item.modifier}} article--{{item.modifier}}{{/if}}" role="article">
+	<header class="article__head">
+		<h1 class="article__title">{{{content.title}}}</h1>
+		{{#if "subtitle"}}
+			<p class="article__subtitle">{{{content.subtitle}}}</p>
+		{{/if}}
+		
+		{{#if content.author}}
+			<p class="article__info">
+				By 
+				{{#if content.author-url}}
+					<a href="{{content.author-url}}" class="article__author" target="_blank">{{content.author}}</a>
+					{{else}}<span class="article__author">{{content.author}}</span>
+				{{/if}}
+				{{#if content.date}} on <time datetime="{{content.datetime}}">{{content.date}}</time>{{/if}}
 			</p>
-		</header>
-		
-		<div class="article__body rte">
-			{{#if content.thumb}}
-			<div class="article__thumb">
-				<img src="{{content.thumb}}" alt=""/>
-			</div>
-			{{/if}}
-			
-			{{{content.body}}}
-			
-			<aside class="article__aside rte">
-
-				{{{content.aside}}}
-
-			</aside>
+			{{else}}{{#if content.date}}<p class="article__info"><time datetime="">{{content.date}}</time></p>{{/if}}
+		{{/if}}
+		</p>
+	</header>
+	
+	<div class="article__body rte">
+		{{#if content.thumb}}
+		<div class="article__thumb">
+			<img src="{{content.thumb}}" alt=""/>
 		</div>
+		{{/if}}
 		
-		<footer class="article__foot">
+		{{{content.body}}}
+		
+		<aside class="article__aside rte">
 
-			{{> share }}
-			
-		</footer>
-	</article>
+			{{{content.aside}}}
+
+		</aside>
+	</div>
+	
+	<footer class="article__foot">
+
+		{{> share }}
+		
+	</footer>
+</article>
 {{/this}}

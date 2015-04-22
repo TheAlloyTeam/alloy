@@ -25,6 +25,7 @@ var require = {
         'utils': "modules/alloy.utils",
         'iefixes': "modules/alloy.iefixes",
         'mobile': "modules/alloy.mobile",
+        'cookies': "modules/alloy.cookies",
         'fontloader': "modules/alloy.fontloader",
         'navigation': "modules/alloy.navigation",
         'accordion': "modules/alloy.accordion",
@@ -39,7 +40,8 @@ var require = {
         'gmap': "modules/alloy.gmap",
         'equalizer': "modules/alloy.equalizer",
         'gridify': "modules/alloy.gridify",
-        'sticky': "modules/alloy.sticky"
+        'sticky': "modules/alloy.sticky",
+        'dragdrop': "modules/alloy.dragdrop",
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -48,7 +50,8 @@ var require = {
         'iefixes': {deps: ['jquery', 'core', 'logging']},
         'navigation': {deps: ['jquery', 'core', 'logging']},
         'mobile': {deps: ['jquery', 'core', 'logging']},
-        'fontloader': {deps: ['fontfaceobserver', 'core', 'logging']},
+        'cookies': {deps: ['jquery', 'core', 'logging']},
+        'fontloader': {deps: ['fontfaceobserver', 'core', 'logging', 'cookies']},
         'accordion': {deps: ['jquery', 'core', 'logging']},
         'tabs' : {deps: ['jquery', 'core', 'logging']},
         'toast' : {deps: ['jquery', 'core', 'logging', 'mustache']},
@@ -59,8 +62,10 @@ var require = {
         'cardslider': {deps: ['jquery', 'core', 'logging']},
         'gmap': {deps: ['jquery', 'core', 'logging', 'async!http://maps.google.com/maps/api/js?sensor=false']},
         'equalizer': {deps: ['jquery', 'core', 'logging']},
+        'gridify': {deps: ['jquery', 'core', 'logging']},
         'gridify': { deps: ['jquery', 'core', 'logging'] },
         'sticky': { deps: ['jquery', 'core', 'logging'] },
+        'dragdrop': {deps: ['jquery']},
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
