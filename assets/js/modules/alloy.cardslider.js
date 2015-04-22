@@ -24,7 +24,7 @@
             nextButtonSelector: ".cardslider__control.next",            // The selector for the 'next' button
             automaticTimer: 2500,                                       // 0 to turn off automatic timer
             startIndex: 0,                                              // The index to start the cardslider at
-            onScreenResize: function() { },                             // Function to call during the standard screen resize function
+            onScreenResize: function() { }                              // Function to call during the standard screen resize function
         },
 
         _init: function () {
