@@ -1,0 +1,214 @@
+---
+title: HTML5 Tags
+subtitle: Playing with some new tags...
+
+nav-title: "HTML5 Tags"
+page-category: "tests"
+nav-text: "HTML5 Tags"
+---
+
+<style type="text/css">
+	[draggable="true"] {
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+
+		-khtml-user-drag: element;
+		-webkit-user-drag: element;
+	}
+
+	div[draggable="true"],
+	[data-role="draggable"] {
+		cursor: move;
+	}
+
+	.move {
+		background-color: white;
+		border: 1px dashed gray;
+	}
+
+	.drag {
+		opacity: 0.3;
+	}
+</style>
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1 rte">
+
+	    	<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+		        <div class="page__body rte">
+
+			    	<h2>Details &amp; Summary</h2>
+					
+					<details>
+		        		<summary>This is the summary</summary>
+		        		<ul>
+		        			<li>This is a detail</li>
+		        			<li>This is a detail</li>
+		        			<li>This is a detail</li>
+		        		</ul>
+		        	</details>
+
+		        	<hr/>
+
+					<h2>Mark</h2>
+		        	
+		        	<p>The <mark>text in yellow</mark> has been marked.</p>
+
+		        	<hr/>
+
+		        	<h2>Meter</h2>
+		        	
+		        	<meter value="5" min="0" max="10">5 out of 10</meter>
+
+		        	<hr/>
+
+		        	<h2>Progress</h2>
+		        	
+		        	<progress value="5" max="10">5 out of 10</progress>
+
+		        	<hr/>
+
+		        	<h2>Forms</h2>
+		        	
+		        	<form class="form">
+		        		<div class="form__row">
+		        			<input type="color" />
+		        		</div>
+		        		<div class="form__row">
+		        			<input type="date" />
+		        		</div>
+		        		<div class="form__row">
+		        			<input type="month" />
+		        		</div>
+		        		<div class="form__row">
+		        			<input type="time" />
+		        		</div>
+		        		<div class="form__row">
+		        			<input type="datetime-local" />
+		        		</div>
+		        		<div class="form__row">
+		        			<input type="range" />
+		        		</div>
+		        		<div class="form__row">
+		        			<input type="number" />
+		        		</div>
+		        		<div class="form__row">
+		        			<label for="colors-box">Colours:</label><br/>
+				        	<input type="text" id="colors-box" list="colors" />
+				        	<datalist id="colors">
+				        		<option value="Red" />
+				        		<option value="Yellow" />
+				        	</datalist>
+				        </div>
+		        	</form>
+
+		        	<hr/>
+
+		        	<h2>Video</h2>
+		        	
+		        	{{!-- <video controls="controls">
+		        		<source src="" />
+		        	</video> --}}
+
+		        	<iframe width="420" height="315" src="https://www.youtube.com/embed/bQnm1yv8vgU" frameborder="0"></iframe>
+
+		        	<hr/>
+
+		        	<h2>Audio</h2>
+		        	
+		        	<audio controls="controls">
+		        		<source src="" />
+		        	</audio>
+
+		        	<hr/>
+
+		        	<h2>Canvas</h2>
+		        	
+		        	<canvas id="canvas" height="300"></canvas>
+
+		        	<hr/>
+
+		        	<h2>Drag &amp; Drop</h2>
+		        	
+		        	<div>
+		        		<div class="flash" data-dnd-role="dropzone" data-dnd-dropeffect="link">
+		        			<div class="flash__content">
+		        				<p>Drop Here: <span id="count">0</span> (effect: link)</p>
+		        			</div>
+		        		</div>
+		        		<div class="flash" data-dnd-role="dropzone" data-dnd-dropeffect="move">
+		        			<div class="flash__content">
+		        				<p>Drop Here: <span id="count">0</span> (effect: move)</p>
+		        			</div>
+		        		</div>
+		        		<div class="flash" data-dnd-role="draggable" data-dnd-effectallowed="copy">
+		        			<div class="flash__content">
+		        				<p>Allowed Effect: copy</p>
+		        			</div>
+		        		</div>
+		        		<div class="flash" data-dnd-role="draggable" data-dnd-dropeffect="linkMove">
+		        			<div class="flash__content">
+		        				<p>Allowed Effect: linkMove</p>
+		        			</div>
+		        		</div>
+		        	</div>
+
+		        </div>
+
+		    </div>
+
+		</div>
+	</div>
+</main>
+
+<script type="text/javascript">
+	
+	// Canvas
+	var canvas = document.getElementById('canvas');
+	var	context = null;
+
+	if (canvas && canvas.getContext) {
+		
+		context = canvas.getContext('2d');
+
+		context.beginPath();
+		context.moveTo(100, 100);
+		context.lineTo(100, 300);
+		context.lineTo(150, 300);
+		context.lineTo(150, 155);
+		context.lineTo(205, 155);
+		context.lineTo(205, 100);
+		context.closePath();
+
+		context.fillStyle = 'red';
+		context.fill();
+
+		context.lineWidth = 4;
+		context.lineJoin='round';
+		context.strokeStyle = 'yellow';
+		context.stroke();
+		context.clip();
+		
+		context.save();
+		
+		context.translate(100, 100);
+		context.rotate('1');
+
+		context.fillStyle = 'blue';
+		context.fillRect(0, 0, 100, 100);
+
+		context.restore();
+
+		context.fillStyle = 'green';
+		context.fillRect(0, 0, 20, 20);
+	};
+
+</script>
