@@ -13,7 +13,7 @@
 			<ul class="list horizontal">
 				{{#each content.tags}}
 					{{#this}}
-					<li class="list__item"><a href="{{content.url}}" class="tag"><span>{{content.text}}</span></a></li>
+					<li class="list__item">{{> tag }}</li>
 					{{/this}}
 				{{/each }}
 			</ul>
