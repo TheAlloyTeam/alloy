@@ -24,21 +24,26 @@
         },
 
         _init: function () {
-            this.config = $.extend({}, this.defaults, this.options, this.metadata);
-            this.config.mapOptions.center = new google.maps.LatLng(this.config.defaultView.lat, this.config.defaultView.lng);
-            this.config.mapOptions.zoom = this.config.defaultView.zoom;
+            var that = this;
+            $.configretriever("gmap", that.defaults, that.options, that.metadata, { success: function(config) { that._start(config, that); } });
+        },
+
+        _start: function(config, that) {
+            that.config = config;
+            that.config.mapOptions.center = new google.maps.LatLng(that.config.defaultView.lat, that.config.defaultView.lng);
+            that.config.mapOptions.zoom = that.config.defaultView.zoom;
 
             // Create map
-            var mapCanvas = this.element;
-            this.map = new google.maps.Map(mapCanvas);
-            this.map.setOptions(this.config.mapOptions);
+            var mapCanvas = that.element;
+            that.map = new google.maps.Map(mapCanvas);
+            that.map.setOptions(that.config.mapOptions);
 
-            this.infoWindow = new google.maps.InfoWindow();
+            that.infoWindow = new google.maps.InfoWindow();
 
             // Add markers
-            for (var i = 0; i < this.config.markers.length; i++) {
-                var m = this.config.markers[i];
-                this._addMarker(m.lat, m.lng, m.info, m.args);
+            for (var i = 0; i < that.config.markers.length; i++) {
+                var m = that.config.markers[i];
+                that._addMarker(m.lat, m.lng, m.info, m.args, that);
             }
 
             ALLOY.Logger.startup('ALLOY.Gmap Started');
@@ -46,9 +51,7 @@
 
         // See https://developers.google.com/maps/documentation/javascript/reference#MarkerOptions
         // for more information on 'args' parameter
-        _addMarker: function (lat, lng, info, args) {
-            var that = this;
-
+        _addMarker: function (lat, lng, info, args, that) {
             args.position = new google.maps.LatLng(lat, lng);
 
             var marker = {
