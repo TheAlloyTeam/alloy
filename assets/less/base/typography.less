@@ -20,6 +20,7 @@ h6 {
     text-rendering: optimizelegibility;
     ._margin (0, 0, @TYPE-LineHeight, 0);
 }
+
 .omega {
     ._font-size-heading (@TYPE-SIZE-Omega);
 }
@@ -59,6 +60,7 @@ h6,
 
 p {
     ._margin (0, 0, @TYPE-LineHeight, 0);
+    
     &:last-child {
         margin-bottom: 0;
     }
@@ -98,10 +100,7 @@ ins {
 }
 
 mark {
-    color: @COLOR-Black;
     background: @COLOR-Yellow;
-    font-style: italic;
-    font-weight: bold;
 }
 
 pre,
@@ -116,6 +115,7 @@ pre {
     white-space: pre;
     white-space: pre-w;
     word-w: break-word;
+    
     code {
         display: block;
         //._padding (@TYPE-FontSize);
@@ -124,7 +124,6 @@ pre {
 
 code {
     ._padding (0, @TYPE-FontSize, 0, @TYPE-FontSize);
-
     //._border-radius (3);
 }
 
@@ -162,6 +161,16 @@ sup {
 
 sub {
     bottom: -0.25em;
+}
+
+summary {
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
 }
 
 } .typography-styles();
