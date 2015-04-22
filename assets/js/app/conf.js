@@ -39,6 +39,7 @@ var require = {
         'gmap': "modules/alloy.gmap",
         'equalizer': "modules/alloy.equalizer",
         'gridify': "modules/alloy.gridify",
+        'sticky': "modules/alloy.sticky"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -59,6 +60,7 @@ var require = {
         'gmap': {deps: ['jquery', 'core', 'logging', 'async!http://maps.google.com/maps/api/js?sensor=false']},
         'equalizer': {deps: ['jquery', 'core', 'logging']},
         'gridify': { deps: ['jquery', 'core', 'logging'] },
+        'sticky': { deps: ['jquery', 'core', 'logging'] },
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
