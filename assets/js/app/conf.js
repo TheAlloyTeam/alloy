@@ -43,7 +43,8 @@ var require = {
         'sticky': "modules/alloy.sticky",
         'dragdrop': "modules/alloy.dragdrop",
         'modal': "modules/alloy.modal",
-        'configretriever': "modules/alloy.configretriever"
+        'configretriever': "modules/alloy.configretriever",
+        'watchdog': "modules/alloy.watchdog"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -68,7 +69,8 @@ var require = {
         'sticky': { deps: ['jquery', 'core', 'logging'] },
         'dragdrop': {deps: ['jquery']},
         'modal': {deps: ['jquery', 'core', 'logging']},
-        'configretriever': {deps: ['jquery', 'core', 'logging']}
+        'configretriever': {deps: ['jquery', 'core', 'logging']},
+        'watchdog': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
