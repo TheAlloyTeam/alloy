@@ -1,0 +1,79 @@
+[
+	{
+        "content": {
+            "item": {
+                "modifier": "",
+                "status": "danger"
+            },
+            "content": {
+                "text": "It's all going wrong - WE ARE ALL DOOMED!",
+                "icon": [{
+                    "item": {
+                        "modifier": "round52",
+                        "size": "xlarge"
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }
+    },{
+        "content": {
+            "item": {
+                "modifier": "",
+                "status": "info"
+            },
+            "content": {
+                "text": "You now have  75 apples attached to your account.",
+                "icon": [{
+                    "item": {
+                        "modifier": "round52",
+                        "size": "xlarge"
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }
+    },{
+        "content": {
+            "item": {
+                "modifier": "",
+                "status": "success"
+            },
+            "content": {
+                "text": "You did it! It's all fixed!",
+                "icon": [{
+                    "item": {
+                        "modifier": "tick7",
+                        "size": "xlarge"
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }
+    },{
+        "content": {
+            "item": {
+                "modifier": "",
+                "status": "warn"
+            },
+            "content": {
+                "text": "Something is about to break!",
+                "icon": [{
+                    "item": {
+                        "modifier": "round52",
+                        "size": "xlarge"
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }
+    }
+]
