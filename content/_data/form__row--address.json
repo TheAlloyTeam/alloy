@@ -31,6 +31,37 @@
             "content": {
                 "inputs": [{
                     "item": {
+                        "size": "small"
+                    },
+                    "texts": [{
+                        "item": {
+                            "modifier": "",
+                            "required": "",
+                            "readonly": "",
+                            "disabled": "",
+                            "spellcheck": "",
+                            "id": "formrow-address-0",
+                            "name": "",
+                            "maxlength": "",
+                            "minlength": "",
+                            "pattern": "",
+                            "autocomplete": "",
+                            "tabindex": "",
+                            "accesskey": ""
+                        },
+                        "content": {
+                            "placeholder": "15",
+                            "value": "",
+                            "notes": [{
+                                "item": {},
+                                "content": {
+                                    "body": "House name / number"
+                                }
+                            }]
+                        }
+                    }]
+                },{
+                    "item": {
                         "size": ""
                     },
                     "texts": [{
@@ -50,8 +81,14 @@
                             "accesskey": ""
                         },
                         "content": {
-                            "placeholder": "Address Line 1",
-                            "value": ""
+                            "placeholder": "Ketchup Lane",
+                            "value": "",
+                            "notes": [{
+                                "item": {},
+                                "content": {
+                                    "body": "Street"
+                                }
+                            }]
                         }
                     }]
                 },{
@@ -75,8 +112,14 @@
                             "accesskey": ""
                         },
                         "content": {
-                            "placeholder": "Address Line 2",
-                            "value": ""
+                            "placeholder": "Sasquach",
+                            "value": "",
+                            "notes": [{
+                                "item": {},
+                                "content": {
+                                    "body": "Locality"
+                                }
+                            }]
                         }
                     }]
                 },{
@@ -100,8 +143,29 @@
                             "accesskey": ""
                         },
                         "content": {
-                            "placeholder": "Address Line 3",
-                            "value": ""
+                            "placeholder": "Burgersville",
+                            "value": "",
+                            "labels": [{
+                                "item": {},
+                                "content": {
+                                    "text": "This is a town",
+                                    "icons": [{
+                                        "item": {
+                                            "modifier": "",
+                                            "size": ""
+                                        },
+                                        "content": {
+                                            "title": ""
+                                        }
+                                    }]
+                                }
+                            }],
+                            "notes": [{
+                                "item": {},
+                                "content": {
+                                    "body": "e.g. Town/City"
+                                }
+                            }]
                         }
                     }]
                 }]

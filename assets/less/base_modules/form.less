@@ -175,6 +175,12 @@
         }
     }
 
+    .input__wrap {
+        .input {
+            width: 100%;
+        }
+
+    }
 
     .input__addon {
         background-color: @FORM-AddonBgColor;
@@ -189,8 +195,7 @@
 
     .input__note {
         display: block;
-        background-color: @FORM-DefaultBordercolor;
-        color: @FORM-DefaultTextColor;
+        color: @COLOR-Grey;
         ._text-shadow(~"1px 1px 0 rgba(255, 255, 255, 0.8)");
         ._font-size(@TYPE-SIZE-Iota);
         ._padding(2, 5);
@@ -201,10 +206,6 @@
     }
 
     .input__label {
-        position:absolute;
-        top: -@TYPE-LineHeight+0px;
-        left:0;
-        ._font-size(@TYPE-SIZE-Iota);
 
         &.success {
             color:@FORM-SuccessTextColor;
@@ -239,7 +240,7 @@
 
     .input__group {
 
-        .input {
+        .input__wrap {
             ._inline-block();
 
             &:last-child {
@@ -258,7 +259,7 @@
         &.inline {
             display: table;
 
-            .input {
+            .input__wrap {
                 display: table-cell;
                 vertical-align: middle;
             }
@@ -268,7 +269,7 @@
         &.vertical {
             display: block;
 
-            .input {
+            .input__wrap {
                 display: block;
                 ._margin(0,0,5,0);
 
@@ -376,7 +377,7 @@
         ._inline-block ();
     }
 
-    .input {
+    .input__wrap {
         width: 40%;
         vertical-align: top;
         ._inline-block ();

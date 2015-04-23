@@ -12,6 +12,9 @@
                 $(".list__debugger").append(
                     "<li class=\"list__item " + ev.level.toLowerCase() + "\"><strong>" + ev.timeStr() + "</strong> " + ev.message + "</li>"
                 );
+                var $debugger = $(".debugger__body");            
+                var height = $debugger[0].scrollHeight;
+                $debugger.scrollTop(height);    
             }
         });
     });

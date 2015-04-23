@@ -1,0 +1,23 @@
+.cardslider-styles() when not (@MODULE-Cardslider) { }
+.cardslider-styles() when (@MODULE-Cardslider) {
+
+.cardslider {
+
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+
+    img {
+    	max-width: none;
+    }
+
+    .anim--cardslider {
+    	._transition (left, 0.4s, @ACCORDION-Anim);
+    }
+
+    .card {
+    	margin-top: 0;
+    }
+}
+
+} .cardslider-styles();

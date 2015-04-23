@@ -5,7 +5,15 @@
 <script async defer id="github-bjs" src="//buttons.github.io/buttons.js"></script>
 
 <script type="text/JavaScript">
-	require(["ink"], function() { });
+	require(["ink", "equalizer", "sticky"], function() {
+		setTimeout(function(){ 
+			$(".w--foot .panel").equalizer({
+		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
+		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
+		        applyTo: ".panel__body"       		// The element on which to apply the style to
+			});
+		}, 2000);
+	});
 </script>
 
 {{#if js-accordion}}
@@ -73,6 +81,113 @@
 </script>
 {{/if}}
 
+{{#if js-gmap}}
+<script type="text/JavaScript">
+	require(["gmap"], function() {
+		$(".gmap").gmap();
+	});
+</script>
+{{/if}}
+
+{{#if js-cardslider}}
+<script type="text/JavaScript">
+	require(["cardslider", "equalizer"], function() {
+
+		var equalizeSliderCards = function() {
+		    $(".cardslider .card").equalizer({
+		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
+		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
+		        applyTo: ".card__body"       		// The element on which to apply the style to
+		    });
+		};
+
+		equalizeSliderCards();
+		$(".cardslider").cardslider({
+			onScreenResize: equalizeSliderCards
+		});
+
+	});
+</script>
+{{/if}}
+
+{{#if js-gridify}}
+<script type="text/JavaScript">
+	require(["gridify", "equalizer"], function() {
+		var equalizeMasonryCards = function() {
+		    $(".card--gridify").equalizer({
+		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
+		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
+		        applyTo: ".card__body"       		// The element on which to apply the style to
+		    });
+		};
+
+		equalizeMasonryCards();
+		$(".gridify").gridify({
+            cardSelector: ".card", // The selector for cards within this.$element
+	        activeClass: "active",
+	        transitionClass: "deactivating",
+	        inactiveClass: "inactive",
+	        transitionLength: 400,
+	        noItemsEl: '<div class="alert alert--info">There were no results for your current search.  Try adjusting your search options.</div>',
+	        searchArgs: { randomise: false },
+	        // Example search function to randomly select which elements to display
+	        searchFunction: function ($cards, searchArgs) {
+	            var matches = [];
+	            var nonmatches = [];
+
+	            $cards.each(function() {
+	                if (searchArgs.randomise === false || Math.random() > 0.5) { matches.push(this); } 
+	                else { nonmatches.push(this); }
+	            });
+
+	            var results = { $matches: $(matches), $nonmatches: $(nonmatches) };
+	            return results;
+	        },
+		});
+
+		$(".gridify__control.randomise").click(function(e) {
+			e.preventDefault();
+	        $(".gridify").gridify({ randomise: true });
+		});
+
+		$(".gridify__control.reset").click(function(e) {
+			e.preventDefault();
+	        $(".gridify").gridify({ randomise: false });
+		});
+
+		$(window).resize(function() {
+			equalizeMasonryCards();
+	        $(".gridify").gridify();
+		});
+	});
+</script>
+{{/if}}
+
+{{#if js-modal}}
+<script>
+	require(["modal"], function() {
+		$(".modal--alt").modal({
+            content: '<div class="g"><div class="c__lg--1"><div class="panel full"><h1>A Title</h1>This is another modal! It&#39;s got some content in it...<br>And that content was set in the javascript initialising this button for modal-ing.<br /><a href="#" class="button close-modal-content">Close</a></div></div></div>',
+
+            maskClass: "modal__mask",
+            maskActiveClass: "modal__mask--visible",
+            maskTransitionLength: 500,
+
+            modalClass: "modal__content",
+            modalActiveClass: "modal__content--visible",
+            modalTransitionLength: 250,
+
+            closeButtonSelector: ".close-modal-content"
+		})
+	});
+</script>
+{{/if}}
+
+
+<!-- Example functionality -->
+<script>
+	require(["examples/example.watchdog"], function(){ });
+</script>
 {{#dev}}
 <script src="http://localhost:35730/livereload.js"></script>
 {{/dev}}

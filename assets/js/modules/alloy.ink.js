@@ -28,7 +28,7 @@
             this.$element.click(function(e) { that._onClick(this, e.pageX, e.pageY); } );
             ALLOY.Logger.startup('ALLOY.Ink Started');
         },
-
+ 
         _onClick: function(el, x, y) {
             // In case button isn't position relative
             $(el).css({ position: "relative" });
