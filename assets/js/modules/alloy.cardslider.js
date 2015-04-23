@@ -20,8 +20,8 @@
             cardSelector: ".card",                                      // The selector for the card elements, that will be scrolled through
             animationClass: "anim--cardslider",                         // The class to use when animating the slider
             animationLength: 400,                                       // The length of the animation
-            previousButtonSelector: ".cardslider__control.previous",    // The selector for the 'previous' button
-            nextButtonSelector: ".cardslider__control.next",            // The selector for the 'next' button
+            controlDataAttr: "cardslidercontrol",                        // The data attribute which specifies how a button controls the cardslider
+            controlSelector: ".cardslider__control",                    // The selector for a cardslider control
             automaticTimer: 2500,                                       // 0 to turn off automatic timer
             startIndex: 0,                                              // The index to start the cardslider at
             onScreenResize: function() { }                              // Function to call during the standard screen resize function
@@ -36,10 +36,10 @@
             this._initTray();
             this._initAuto();
 
-            // Handle button clicks
             var that = this;
-            $(this.config.previousButtonSelector).click(function (e) { e.preventDefault(); that._previousCardClick(that); });
-            $(this.config.nextButtonSelector).click(function (e) { e.preventDefault(); that._nextCardClick(that); });
+
+            // Handle button clicks
+            $(this.config.controlSelector).click(function(e) { e.preventDefault(); that._handleControlClick($(this).data(that.config.controlDataAttr), that); });
 
             // Make sure everything is still working correctly on resize
             $(window).resize(function () { that._onResize(that); });
@@ -120,15 +120,21 @@
             }, this.config.animationLength);
         },
 
-        _previousCardClick: function (that) {
+        _handleControlClick: function(data, that) {
             if (that.doAuto) { that.doAuto = false; }
+            if (data === "previous") { that._previousCardClick(that); return; }                     // Previous
+            else if (data === "next") { that._nextCardClick(that); return; }                        // Next
+            else if (typeof data === "number") { that._goto(data - 1); }                            // Direct Index
+            else { ALLOY.Logger.error("Didn't recognise cardslider control action: " + data); }     // Broken
+        },
+
+        _previousCardClick: function (that) {
             var index = that.index - 1;
             if (index < 0) { index = that.$cards.length - 1; }
             that._goto(index);
         },
 
         _nextCardClick: function (that) {
-            if (that.doAuto) { that.doAuto = false; }
             var index = that.index + 1;
             if (index >= that.$cards.length) { index = 0; }
             that._goto(index);
