@@ -1,13 +1,5 @@
 {{#this}}
 
-    {{#if content.labels}}
-        {{#each content.labels}}
-            {{#this}}
-                {{> input__label }}
-            {{/this}}
-        {{/each}}
-    {{/if}}
-
     <span class="input{{#if item.modifier}} input--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
     <input
         type="radio"
@@ -24,12 +16,5 @@
 
     <label class="input__faux input__faux--radio" for=""{{item.id}}"></label>
     </span>
-    {{#if content.notes}}
-        {{#each content.notes}}
-            {{#this}}
-                {{> input__note }}
-            {{/this}}
-        {{/each}}
-    {{/if}}
 
 {{/this}}

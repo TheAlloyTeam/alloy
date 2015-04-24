@@ -51,13 +51,13 @@
                         },
                         "content": {
                             "placeholder": "15",
-                            "value": "",
-                            "notes": [{
-                                "item": {},
-                                "content": {
-                                    "body": "House name / number"
-                                }
-                            }]
+                            "value": ""
+                        }
+                    }],
+                    "notes": [{
+                        "item": {},
+                        "content": {
+                            "body": "House name / number"
                         }
                     }]
                 },{
@@ -82,13 +82,13 @@
                         },
                         "content": {
                             "placeholder": "Ketchup Lane",
-                            "value": "",
-                            "notes": [{
-                                "item": {},
-                                "content": {
-                                    "body": "Street"
-                                }
-                            }]
+                            "value": ""
+                        }
+                    }],
+                    "notes": [{
+                        "item": {},
+                        "content": {
+                            "body": "Street"
                         }
                     }]
                 },{
@@ -113,19 +113,34 @@
                         },
                         "content": {
                             "placeholder": "Sasquach",
-                            "value": "",
-                            "notes": [{
-                                "item": {},
-                                "content": {
-                                    "body": "Locality"
-                                }
-                            }]
+                            "value": ""
+                        }
+                    }],
+                    "notes": [{
+                        "item": {},
+                        "content": {
+                            "body": "Locality"
                         }
                     }]
                 },{
                     "item": {
                         "size": ""
                     },
+                    "labels": [{
+                        "item": {},
+                        "content": {
+                            "text": "This is a town",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "texts": [{
                         "item": {
                             "modifier": "",
@@ -144,28 +159,13 @@
                         },
                         "content": {
                             "placeholder": "Burgersville",
-                            "value": "",
-                            "labels": [{
-                                "item": {},
-                                "content": {
-                                    "text": "This is a town",
-                                    "icons": [{
-                                        "item": {
-                                            "modifier": "",
-                                            "size": ""
-                                        },
-                                        "content": {
-                                            "title": ""
-                                        }
-                                    }]
-                                }
-                            }],
-                            "notes": [{
-                                "item": {},
-                                "content": {
-                                    "body": "e.g. Town/City"
-                                }
-                            }]
+                            "value": ""
+                        }
+                    }],
+                    "notes": [{
+                        "item": {},
+                        "content": {
+                            "body": "e.g. Town/City"
                         }
                     }]
                 }]

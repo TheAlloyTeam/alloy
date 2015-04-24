@@ -10,7 +10,7 @@
 			$(".w--foot .panel").equalizer({
 		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
 		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
-		        applyTo: ".panel__body",       		// The element on which to apply the style to
+		        applyTo: ".panel__body"       		// The element on which to apply the style to
 			});
 		}, 2000);
 	});
@@ -97,7 +97,7 @@
 		    $(".cardslider .card").equalizer({
 		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
 		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
-		        applyTo: ".card__body",       		// The element on which to apply the style to
+		        applyTo: ".card__body"       		// The element on which to apply the style to
 		    });
 		};
 
@@ -117,7 +117,7 @@
 		    $(".card--gridify").equalizer({
 		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
 		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
-		        applyTo: ".card__body",       		// The element on which to apply the style to
+		        applyTo: ".card__body"       		// The element on which to apply the style to
 		    });
 		};
 
@@ -163,6 +163,31 @@
 </script>
 {{/if}}
 
+{{#if js-modal}}
+<script>
+	require(["modal"], function() {
+		$(".modal--alt").modal({
+            content: '<div class="g"><div class="c__lg--1"><div class="panel full"><h1>A Title</h1>This is another modal! It&#39;s got some content in it...<br>And that content was set in the javascript initialising this button for modal-ing.<br /><a href="#" class="button close-modal-content">Close</a></div></div></div>',
+
+            maskClass: "modal__mask",
+            maskActiveClass: "modal__mask--visible",
+            maskTransitionLength: 500,
+
+            modalClass: "modal__content",
+            modalActiveClass: "modal__content--visible",
+            modalTransitionLength: 250,
+
+            closeButtonSelector: ".close-modal-content"
+		})
+	});
+</script>
+{{/if}}
+
+
+<!-- Example functionality -->
+<script>
+	require(["examples/example.watchdog"], function(){ });
+</script>
 {{#dev}}
 <script src="http://localhost:35730/livereload.js"></script>
 {{/dev}}

@@ -25,6 +25,7 @@ var require = {
         'utils': "modules/alloy.utils",
         'iefixes': "modules/alloy.iefixes",
         'mobile': "modules/alloy.mobile",
+        'cookies': "modules/alloy.cookies",
         'fontloader': "modules/alloy.fontloader",
         'navigation': "modules/alloy.navigation",
         'accordion': "modules/alloy.accordion",
@@ -41,6 +42,9 @@ var require = {
         'gridify': "modules/alloy.gridify",
         'sticky': "modules/alloy.sticky",
         'dragdrop': "modules/alloy.dragdrop",
+        'modal': "modules/alloy.modal",
+        'configretriever': "modules/alloy.configretriever",
+        'watchdog': "modules/alloy.watchdog"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -49,7 +53,8 @@ var require = {
         'iefixes': {deps: ['jquery', 'core', 'logging']},
         'navigation': {deps: ['jquery', 'core', 'logging']},
         'mobile': {deps: ['jquery', 'core', 'logging']},
-        'fontloader': {deps: ['fontfaceobserver', 'core', 'logging']},
+        'cookies': {deps: ['jquery', 'core', 'logging']},
+        'fontloader': {deps: ['fontfaceobserver', 'core', 'logging', 'cookies']},
         'accordion': {deps: ['jquery', 'core', 'logging']},
         'tabs' : {deps: ['jquery', 'core', 'logging']},
         'toast' : {deps: ['jquery', 'core', 'logging', 'mustache']},
@@ -61,9 +66,11 @@ var require = {
         'gmap': {deps: ['jquery', 'core', 'logging', 'async!http://maps.google.com/maps/api/js?sensor=false']},
         'equalizer': {deps: ['jquery', 'core', 'logging']},
         'gridify': {deps: ['jquery', 'core', 'logging']},
-        'gridify': { deps: ['jquery', 'core', 'logging'] },
         'sticky': { deps: ['jquery', 'core', 'logging'] },
         'dragdrop': {deps: ['jquery']},
+        'modal': {deps: ['jquery', 'core', 'logging']},
+        'configretriever': {deps: ['jquery', 'core', 'logging']},
+        'watchdog': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
