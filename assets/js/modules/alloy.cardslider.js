@@ -20,10 +20,13 @@
             cardSelector: ".card",                                      // The selector for the card elements, that will be scrolled through
             animationClass: "anim--cardslider",                         // The class to use when animating the slider
             animationLength: 400,                                       // The length of the animation
-            controlDataAttr: "cardslidercontrol",                        // The data attribute which specifies how a button controls the cardslider
+            controlDataAttr: "cardslidercontrol",                       // The data attribute which specifies how a button controls the cardslider
             controlSelector: ".cardslider__control",                    // The selector for a cardslider control
+            currentClass: "current",                                    // The class to use when on the current card or control
             automaticTimer: 2500,                                       // 0 to turn off automatic timer
+            automaticDirection: "left",                                 // The direction to automatically scroll - "left" or "right", defaults to "right" if unrecognised
             startIndex: 0,                                              // The index to start the cardslider at
+            endless: true,                                              // True to endlessly scroll the carousel, or false to 'go' back to the beginning
             onScreenResize: function() { }                              // Function to call during the standard screen resize function
         },
 
@@ -95,8 +98,14 @@
         _doAuto: function(that) {
             if (that.doAuto) {
                 if (!that.pauseAuto) {
-                    var index = that.index + 1;
-                    if (index >= that.$cards.length) { index = 0; }
+                    var index;
+                    if (that.config.automaticDirection === "left") {
+                        index = that.index - 1;
+                        if (index < 0) { index =  that.$cards.length - 1; }
+                    } else {
+                        index = that.index + 1;
+                        if (index >= that.$cards.length) { index = 0; }
+                    }
                     that._goto(index);
                 }
                 setTimeout(function() { that._doAuto(that); }, that.config.automaticTimer);
@@ -110,14 +119,72 @@
         },
 
         _goto: function (index) {
+            // Handle endless scrolls to last from first or vice versa differently
+            if (this.index === 0 && index === (this.$cards.length - 1) && this.config.endless) { this._gotoLastEndless(); return; }
+            else if (this.index === (this.$cards.length - 1) && index === 0 && this.config.endless) { this._gotoFirstEndless(); return; }
+
+            // Scroll normally
             this.index = index;
             var goto = (this._getCardsliderWidth() * this.index) * -1;
             this.$tray.addClass(this.config.animationClass).css({ left: goto + "px" });
 
+            // Update the currently active controls and cards
             var that = this;
+            this._updateControls(index);
+            this.$cards.removeClass(this.config.currentClass);
+            $(this.$cards.get(this.index)).addClass(this.config.currentClass);
+            if (index >= this.$cards.length) { 
+                var tempindex = index - this.$cards.length; 
+                $(this.$cards.get(tempindex)).addClass(this.config.currentClass); 
+            }
+
+            // Remove the animation class from the tray at the end of the animation
             setTimeout(function () {
                 that.$tray.removeClass(that.config.animationClass);
             }, this.config.animationLength);
+        },
+
+        _updateControls: function(index) {
+            if (index >= this.$cards.length) { index -= this.$cards.length; }
+
+            var that = this;
+            $(this.config.controlSelector).each(function() {
+                var id = $(this).data(that.config.controlDataAttr);
+                if (typeof id === "number") { id -= 1; }
+                if (id == index) { $(this).addClass(that.config.currentClass); }
+                else { $(this).removeClass(that.config.currentClass); }
+            });
+        },
+
+        _gotoLastEndless: function() {
+            // Create a clone of the first one on the end, travel directly to it, then scroll left to the last one and once done, then remove the clone
+            var $clone = this._cloneAndInsertFirst();
+            var that = this;
+            this.$tray.css({ left: ((that._getCardsliderWidth() * this.$cards.length) * -1) + "px" });
+            
+            this.index = this.$cards.length;
+            that._goto(this.$cards.length - 1);
+            setTimeout(function() {
+                $clone.remove();
+            }, this.config.animationLength);
+        },
+
+        _gotoFirstEndless: function() {
+            // Create a clone of the first one on the end, travel to the clone and then after finished travelling, go to the real first one and remove the clone
+            var $clone = this._cloneAndInsertFirst();
+            this._goto(this.$cards.length);
+
+            var that = this;
+            setTimeout(function() {
+                that.$tray.css({ left: "0" });
+                $clone.remove();
+            }, this.config.animationLength);
+        },
+
+        _cloneAndInsertFirst: function() {
+            var $clone = this.$cards.first().clone();
+            $clone.insertAfter(this.$cards.last());
+            return $clone;
         },
 
         _handleControlClick: function(data, that) {
@@ -136,7 +203,7 @@
 
         _nextCardClick: function (that) {
             var index = that.index + 1;
-            if (index >= that.$cards.length) { index = 0; }
+            if (index >= that.$cards.length) { index = index - that.$cards.length; }
             that._goto(index);
         },
 

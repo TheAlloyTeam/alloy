@@ -17,6 +17,22 @@
 
     .card {
     	margin-top: 0;
+
+        &.current {
+            .card__front  {
+                background-color: purple;
+            }
+        }
+
+    }
+
+}
+
+.cardslider__control {
+    ._transition (background-color, 0.4s, @ACCORDION-Anim);
+
+    &.current {
+        background-color: purple;   
     }
 }
 
