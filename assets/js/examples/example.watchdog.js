@@ -1,4 +1,4 @@
-require(['watchdog', 'toastrack', 'flash', 'configretriever'],function () {
+require(['watchdog', 'toastrack', 'flash', 'configretriever', 'mustacheretriever'],function () {
 
     var createRandomPuppy = function() {
         ALLOY.Watchdog.upsertPuppy({
