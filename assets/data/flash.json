@@ -1,0 +1,69 @@
+[{
+  "item": {
+    "modifier": "",
+    "status": "warn"
+  },
+  "content": {
+    "text": "You really need to pay attention",
+    "icon": [{
+      "item": {
+        "modifier": "round52",
+        "size": "xlarge"
+      },
+      "content": {
+        "title": ""
+      }
+    }]
+  }
+},{
+  "item": {
+    "modifier": "",
+    "status": "info"
+  },
+  "content": {
+    "text": "The ALLOY Team are some pretty cool cats!",
+    "icon": [{
+      "item": {
+        "modifier": "round52",
+        "size": "xlarge"
+      },
+      "content": {
+        "title": ""
+      }
+    }]
+  }
+},{
+  "item": {
+    "modifier": "",
+    "status": "danger"
+  },
+  "content": {
+    "text": "You stopped paying attention now im mad!",
+    "icon": [{
+      "item": {
+        "modifier": "round52",
+        "size": "xlarge"
+      },
+      "content": {
+        "title": ""
+      }
+    }]
+  }
+},{
+  "item": {
+    "modifier": "",
+    "status": "success"
+  },
+  "content": {
+    "text": "Thanks for the attention :D",
+    "icon": [{
+      "item": {
+        "modifier": "round52",
+        "size": "xlarge"
+      },
+      "content": {
+        "title": ""
+      }
+    }]
+  }
+}]
