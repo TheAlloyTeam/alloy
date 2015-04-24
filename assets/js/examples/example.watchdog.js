@@ -10,22 +10,19 @@ require(['watchdog', 'toast', 'flash', 'configretriever'],function () {
                     $.configretriever("toast", undefined, undefined, undefined, { success: function(config) { $.toast(config.content); } } );
                 }
             },
-            intervalMs: 5000
+            intervalMs: 25000
         });
 
         ALLOY.Watchdog.upsertPuppy({
-            name: "cool-cats",
-            url: "/assets/data/toast.json",
+            name: "example-flash-alert",
+            url: "/assets/data/flash.json",
             bite: function(data) {
                 var chance = 0.95;
                 if (Math.random() > chance) {
-                    var config = {"item": {"modifier": "","status": "warn" },"content": {"text": "The ALLOY Team are some pretty cool cats!","icon": [{"item": {"modifier": "round52","size": "xlarge"},"content": {"title": ""}}]}};
-                    
-                    $.flash(config);
-                    $.configretriever("toast", undefined, undefined, undefined, { success: function(config) { $.toast(config.content); } } );
+                    $.configretriever("flash", undefined, undefined, undefined, { success: function(config) { $.flash(config.content); } } );
                 }
             },
-            intervalMs: 5000
+            intervalMs: 60000
         });
 
     };
