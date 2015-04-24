@@ -48,13 +48,17 @@
         };
 
         var _pushToast = function(t) {
-            var height = t.$toast.outerHeight() + parseInt(t.$toast.css("margin-top")) + parseInt(t.$toast.css("margin-bottom"));
+            var height = _getToastHeight(t);
             $.each(toasts, function() { 
                 if (!this.$toast.hasClass(this.config.classes.deactivating)) { 
                     this.$toast.css({ "bottom": "+=" + height + "px" }); 
                 } 
             });
             toasts.push(t);
+        };
+
+        var _getToastHeight = function(t) {
+            return t.$toast.outerHeight() + parseInt(t.$toast.css("margin-top")) + parseInt(t.$toast.css("margin-bottom"));
         };
 
         var _activateToast = function(t) {
@@ -66,6 +70,10 @@
             t.$toast.removeClass(t.config.classes.active).removeClass(t.config.classes.activating).addClass(t.config.classes.deactivating).css({ "bottom" : "" });
             var wantedBottom = t.$toast.css("bottom");
             t.$toast.css({ "bottom" : currentBottom + "px" });
+
+            var index = toasts.indexOf(t);
+            _dropToasts(t, index);
+
             setTimeout(function() { t.$toast.css({ "bottom" : wantedBottom + "px" }); });
 
             setTimeout(function() { _removeToast(t); }, t.config.transitionInterval);
@@ -76,6 +84,13 @@
             var index = toasts.indexOf(t);
             toasts.splice(index, 1);
             _pushNext();
+        };
+
+        var _dropToasts = function(t, index) {
+            var height = _getToastHeight(t);
+            for(var i = index - 1; i >= 0; i--) {
+                toasts[i].$toast.css({ "bottom" : "-=" + height + "px" });
+            }
         };
 
         var _pushNext = function() {
@@ -138,10 +153,11 @@
                 'closeButton': 'toast__close',
                 'activating' : 'activating',
                 'active': 'active',
-                'deactivating': 'inactive'
+                'deactivating': 'inactive',
+                'progressbar': 'toast__progress'
             },
             transitionInterval: 500,
-            despawnInterval: 5000
+            despawnInterval: 50000
         },
 
         isProcessing: false,
