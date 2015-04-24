@@ -40,23 +40,18 @@
 
 {{#if js-toast}}
 <script type="text/JavaScript">
- 	require(["toast"], function() {
- 		$("[data-toast]").click(function(e) {
+ 	require(["toastrack", "mustacheretriever"], function() {
+ 		$(".toast-trigger").click(function(e) {
  			e.preventDefault();
- 			var json = $(this).data("toast");
- 			$.toast(json);
+
+			$.configretriever("toast", undefined, undefined, undefined, 
+				{ success: function(config) { 
+					$.mustacheretriever("toast", config.content, function(html) {
+						ALLOY.Toastrack.add({html: html});
+					});
+				}
+			});
  		}); 		
-
- 		function changeToastLimit() {
- 			if ($(window).width() <= 601) {
- 				ALLOY.ToastRack.config.limit = 2;
- 			} else {
- 				ALLOY.ToastRack.config.limit = 5;
- 			}
- 		}
-
- 		$(window).resize(changeToastLimit);
- 		changeToastLimit();
  	});
 </script>
 {{/if}}
@@ -188,6 +183,7 @@
 <script>
 	require(["examples/example.watchdog"], function(){ });
 </script>
+
 {{#dev}}
 <script src="http://localhost:35730/livereload.js"></script>
 {{/dev}}

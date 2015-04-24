@@ -1,4 +1,4 @@
-require(['watchdog', 'toast', 'flash', 'configretriever'],function () {
+require(['watchdog', 'toastrack', 'flash', 'configretriever'],function () {
 
     var createRandomPuppy = function() {
         ALLOY.Watchdog.upsertPuppy({
@@ -7,7 +7,13 @@ require(['watchdog', 'toast', 'flash', 'configretriever'],function () {
             bite: function(data) {
                 var chance = 0.25;
                 if (Math.random() > chance) {
-                    $.configretriever("toast", undefined, undefined, undefined, { success: function(config) { $.toast(config.content); } } );
+                    $.configretriever("toast", undefined, undefined, undefined,
+                        { success: function(config) {
+                            $.mustacheretriever("toast", config.content, function(html) {
+                                ALLOY.Toastrack.add({html: html});
+                            });
+                        }
+                    });
                 }
             },
             intervalMs: 5000
@@ -20,9 +26,7 @@ require(['watchdog', 'toast', 'flash', 'configretriever'],function () {
                 var chance = 0.95;
                 if (Math.random() > chance) {
                     var config = {"item": {"modifier": "","status": "warn" },"content": {"text": "The ALLOY Team are some pretty cool cats!","icon": [{"item": {"modifier": "round52","size": "xlarge"},"content": {"title": ""}}]}};
-                    
                     $.flash(config);
-                    $.configretriever("toast", undefined, undefined, undefined, { success: function(config) { $.toast(config.content); } } );
                 }
             },
             intervalMs: 5000
