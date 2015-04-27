@@ -8,8 +8,57 @@
         {{/each}}
 
     {{else}}
-        <div class="input__wrap{{#if item.modifier}} input__wrap--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
-            {{> input__choose }}
-        </div>
+
+        {{#if labels}}
+
+            {{#if notes}}
+
+                <div class="input__wrap{{#if item.modifier}} input__wrap--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
+                    {{#each labels}}
+                        {{#this}}
+                            {{> input__label }}
+                        {{/this}}
+                    {{/each}}
+                    {{> input__choose }}
+                    {{#each notes}}
+                        {{#this}}
+                            {{> input__note}}
+                        {{/this}}
+                    {{/each}}
+                </div>
+
+            {{else}}
+
+                <div class="input__wrap{{#if item.modifier}} input__wrap--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
+                    {{#each labels}}
+                        {{#this}}
+                            {{> input__label }}
+                        {{/this}}
+                    {{/each}}
+                    {{> input__choose }}
+                </div>
+
+            {{/if}}
+
+        {{else}}
+
+            {{#if notes}}
+
+                <div class="input__wrap{{#if item.modifier}} input__wrap--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
+                    {{> input__choose }}
+                    {{#each notes}}
+                        {{#this}}
+                            {{> input__note}}
+                        {{/this}}
+                    {{/each}}
+                </div>
+
+            {{else}}
+
+                {{> input__choose }}
+
+            {{/if}}
+
+        {{/if}}
     {{/if}}
 {{/this}}
