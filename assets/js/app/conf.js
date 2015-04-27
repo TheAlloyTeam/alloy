@@ -30,7 +30,7 @@ var require = {
         'navigation': "modules/alloy.navigation",
         'accordion': "modules/alloy.accordion",
         'tabs' : "modules/alloy.tabs",
-        'toast' : "modules/alloy.toast",
+        'toastrack' : "modules/alloy.toastrack",
         'flash' : "modules/alloy.flash",
         'ink' : "modules/alloy.ink",
         'easing' : "modules/alloy.easing",
@@ -43,6 +43,7 @@ var require = {
         'sticky': "modules/alloy.sticky",
         'dragdrop': "modules/alloy.dragdrop",
         'modal': "modules/alloy.modal",
+        'mustacheretriever': "modules/alloy.mustacheretriever",
         'configretriever': "modules/alloy.configretriever",
         'watchdog': "modules/alloy.watchdog"
     },
@@ -57,7 +58,7 @@ var require = {
         'fontloader': {deps: ['fontfaceobserver', 'core', 'logging', 'cookies']},
         'accordion': {deps: ['jquery', 'core', 'logging']},
         'tabs' : {deps: ['jquery', 'core', 'logging']},
-        'toast' : {deps: ['jquery', 'core', 'logging', 'mustache']},
+        'toastrack' : {deps: ['jquery', 'core', 'logging']},
         'flash' : {deps: ['jquery', 'core', 'logging', 'mustache']},
         'easing' : {deps: ['jquery', 'bezier']},
         'ink' : {deps: ['jquery', 'core', 'logging', 'easing']},
@@ -69,6 +70,7 @@ var require = {
         'sticky': { deps: ['jquery', 'core', 'logging'] },
         'dragdrop': {deps: ['jquery']},
         'modal': {deps: ['jquery', 'core', 'logging']},
+        'mustacheretriever': {deps: ['jquery', 'core', 'logging', 'mustache']},
         'configretriever': {deps: ['jquery', 'core', 'logging']},
         'watchdog': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
