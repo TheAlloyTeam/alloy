@@ -2,9 +2,14 @@
     'use strict';
 
     ALLOY.Core = function () {
-        var readyque = [];
+        var ready = false;
+        var version = "0.0.2";
+        var readyQue = [];
         
         var config = {
+            expressions: {
+                "whitespace": "[\\x20\\t\\r\\n\\f]"
+            },
             animation: {
                 interval : 780
             },
@@ -18,13 +23,27 @@
         };
 
         var _ready = function(callback) {
-            // https://developer.mozilla.org/en-US/docs/Web/API/document.readyState
             var readyState = document.readyState;
+            if(document.addEventListener) {
+                // https://developer.mozilla.org/en-US/docs/Web/API/document.readyState
 
-            if(readyState === "complete" || readyState === "loaded") {
-                callback();
+                if(readyState.match(/interactive|complete|loaded/)) {
+                    callback();
+                } else {
+                    document.addEventListener("ALLOYDocumentReady", callback);
+                }
             } else {
-                document.addEventListener("ALLOYDocumentReady", callback);
+                // https://gist.github.com/vseventer/1476064
+                document.onreadystatechange = function() {
+                    // Interactive equals DOMContentLoaded, but doesn't always fire
+                    if(readyState.match(/interactive|complete|loaded/)) {
+                        this.onreadystatechange = null;//unbind
+                        callback();
+                    }
+                    else {
+                        document.addEventListener("ALLOYDocumentReady", callback);
+                    }
+                };
             }
         };
 
