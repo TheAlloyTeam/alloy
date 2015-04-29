@@ -34,6 +34,23 @@
                     "item": {
                       "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-radio-1"
+                        },
+                        "content": {
+                            "text": "Yes",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "radios": [{
                         "item": {
                             "modifier": "",
@@ -46,24 +63,8 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
+
                         "content": {
-                            "labels": [{
-                                "item": {
-                                    "for": "formrow-radio-1"
-                                },
-                                "content": {
-                                    "text": "Yes",
-                                    "icons": [{
-                                        "item": {
-                                            "modifier": "",
-                                            "size": ""
-                                        },
-                                        "content": {
-                                            "title": ""
-                                        }
-                                    }]
-                                }
-                            }]
                         }
                     }]
                 },
@@ -71,6 +72,23 @@
                     "item": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-radio-2"
+                        },
+                        "content": {
+                            "text": "No",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "radios": [{
                         "item": {
                             "modifier": "",
@@ -83,30 +101,31 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {
-                            "labels": [{
-                                "item": {
-                                    "for": "formrow-radio-2"
-                                },
-                                "content": {
-                                    "text": "No",
-                                    "icons": [{
-                                        "item": {
-                                            "modifier": "",
-                                            "size": ""
-                                        },
-                                        "content": {
-                                            "title": ""
-                                        }
-                                    }]
-                                }
-                            }]}
+
+                        "content": {}
                     }]
                 },
                 {
                     "item": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-radio-3"
+                        },
+                        "content": {
+                            "text": "Maybe",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "radios": [{
                         "item": {
                             "modifier": "",
@@ -120,23 +139,7 @@
                             "accesskey": ""
                         },
                         "content": {
-                            "labels": [{
-                                "item": {
-                                    "for": "formrow-radio-3"
-                                },
-                                "content": {
-                                    "text": "Maybe",
-                                    "icons": [{
-                                        "item": {
-                                            "modifier": "",
-                                            "size": ""
-                                        },
-                                        "content": {
-                                            "title": ""
-                                        }
-                                    }]
-                                }
-                            }]}
+                           }
                     }]
                 }]
             }

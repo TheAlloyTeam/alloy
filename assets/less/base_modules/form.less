@@ -180,6 +180,11 @@
             width: 100%;
         }
 
+        &--check {
+            .input__label {
+                ._inline-block();
+            }
+        }
     }
 
     .input__addon {
@@ -238,10 +243,23 @@
         }
     }
 
+    .input__field--checkbox,
+    .input__field--radio {
+        width: auto;
+    }
+
     .input__group {
+
+        .input {
+            ._inline-block();
+        }
 
         .input__wrap {
             ._inline-block();
+
+            .input {
+                display:block;
+            }
 
             &:last-child {
                 padding-right: 0;
@@ -251,9 +269,6 @@
                 position:relative;
                 bottom: -1px;
             }
-        }
-        .input__field {
-            width: 100%;
         }
 
         &.inline {
@@ -280,6 +295,7 @@
 
             .input--check {
                 margin-bottom: 0;
+                width: auto;
             }
         }
     }
@@ -292,8 +308,6 @@
 
     .input--check {
         ._padding(8,5,7,5);
-
-
 
         .input__label {
             display: inline;
@@ -434,6 +448,16 @@
                 text-align: right;
                 margin-right: @FORM-OffsetGap;
                 float: left;
+            }
+
+
+            .input__wrap--check {
+                .input__label {
+                    ._inline-block();
+                }
+
+                .input {float: left;
+                }
             }
 
             .input__group {

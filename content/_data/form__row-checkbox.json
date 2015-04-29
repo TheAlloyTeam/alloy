@@ -32,6 +32,23 @@
                     "item": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-checkbox-2"
+                        },
+                        "content": {
+                            "text": "Yes",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "checkboxes": [{
                         "item": {
                             "modifier": "",
@@ -45,29 +62,29 @@
                             "accesskey": ""
                         },
                         "content": {
-                            "labels": [{
-                                "item": {
-                                    "for": "formrow-checkbox-2"
-                                },
-                                "content": {
-                                    "text": "Yes",
-                                    "icons": [{
-                                        "item": {
-                                            "modifier": "",
-                                            "size": ""
-                                        },
-                                        "content": {
-                                            "title": ""
-                                        }
-                                    }]
-                                }
-                            }]
                         }
                     }]
                 },{
                     "item": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-checkbox-1"
+                        },
+                        "content": {
+                            "text": "No",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "checkboxes": [{
                         "item": {
                             "modifier": "",
@@ -80,23 +97,7 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {"labels": [{
-                            "item": {
-                                "for": "formrow-checkbox-1"
-                            },
-                            "content": {
-                                "text": "No",
-                                "icons": [{
-                                    "item": {
-                                        "modifier": "",
-                                        "size": ""
-                                    },
-                                    "content": {
-                                        "title": ""
-                                    }
-                                }]
-                            }
-                        }]}
+                        "content": {}
                     }]
                 },{
                     "item": {
@@ -114,7 +115,7 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {"labels": [{
+                        "labels": [{
                             "item": {
                                 "for": "formrow-checkbox-3"
                             },
@@ -130,7 +131,8 @@
                                     }
                                 }]
                             }
-                        }]}
+                        }],
+                        "content": {}
                     }]
                 }]
             }
