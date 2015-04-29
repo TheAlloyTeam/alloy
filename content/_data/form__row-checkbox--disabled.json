@@ -44,24 +44,25 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
+
+                        "labels": [{
+                            "item": {
+                                "for": "formrow-disabled-checkbox-2"
+                            },
+                            "content": {
+                                "text": "Yes",
+                                "icons": [{
+                                    "item": {
+                                        "modifier": "",
+                                        "size": ""
+                                    },
+                                    "content": {
+                                        "title": ""
+                                    }
+                                }]
+                            }
+                        }],
                         "content": {
-                            "labels": [{
-                                "item": {
-                                    "for": "formrow-disabled-checkbox-2"
-                                },
-                                "content": {
-                                    "text": "Yes",
-                                    "icons": [{
-                                        "item": {
-                                            "modifier": "",
-                                            "size": ""
-                                        },
-                                        "content": {
-                                            "title": ""
-                                        }
-                                    }]
-                                }
-                            }]
                         }
                     }]
                 },{
@@ -80,7 +81,7 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {"labels": [{
+                        "labels": [{
                             "item": {
                                 "for": "formrow-disabled-checkbox-1"
                             },
@@ -96,7 +97,8 @@
                                     }
                                 }]
                             }
-                        }]}
+                        }],
+                        "content": {}
                     }]
                 },{
                     "item": {
@@ -114,7 +116,7 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "content": {"labels": [{
+                        "labels": [{
                             "item": {
                                 "for": "formrow-disabled-checkbox-3"
                             },
@@ -130,7 +132,8 @@
                                     }
                                 }]
                             }
-                        }]}
+                        }],
+                        "content": {}
                     }]
                 }]
             }
