@@ -51,7 +51,7 @@
                     }],
                     "checkboxes": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": "",
@@ -87,7 +87,7 @@
                     }],
                     "checkboxes": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": "",
@@ -103,9 +103,26 @@
                     "item": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-checkbox-3"
+                        },
+                        "content": {
+                            "text": "Maybe",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "checkboxes": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": "",
@@ -115,23 +132,6 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "labels": [{
-                            "item": {
-                                "for": "formrow-checkbox-3"
-                            },
-                            "content": {
-                                "text": "Maybe",
-                                "icons": [{
-                                    "item": {
-                                        "modifier": "",
-                                        "size": ""
-                                    },
-                                    "content": {
-                                        "title": ""
-                                    }
-                                }]
-                            }
-                        }],
                         "content": {}
                     }]
                 }]
