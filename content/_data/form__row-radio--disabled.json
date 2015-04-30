@@ -33,9 +33,17 @@
                     "item": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-disabled-radio-1"
+                        },
+                        "content": {
+                            "text": "Yes"
+                        }
+                    }],
                     "radios": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": true,
@@ -46,14 +54,7 @@
                             "accesskey": ""
                         },
                         "content": {
-                            "labels": [{
-                                "item": {
-                                    "for": "formrow-disabled-radio-1"
-                                },
-                                "content": {
-                                    "text": "Yes"
-                                }
-                            }]
+
                         }
                     }]
                 },
@@ -61,9 +62,17 @@
                         "item": {
                             "modifier": "check"
                         },
+                        "labels": [{
+                            "item": {
+                                "for": "formrow-disabled-radio-2"
+                            },
+                            "content": {
+                                "text": "No"
+                            }
+                        }],
                         "radios": [{
                             "item": {
-                                "modifier": "",
+                                "modifier": "check",
                                 "checked": "",
                                 "required": "",
                                 "disabled": true,
@@ -74,23 +83,33 @@
                                 "accesskey": ""
                             },
                             "content": {
-                                "labels": [{
-                                    "item": {
-                                        "for": "formrow-disabled-radio-2"
-                                    },
-                                    "content": {
-                                        "text": "No"
-                                    }
-                                }]}
+                                }
                         }]
                     },
                     {
                         "item": {
                             "modifier": "check"
                         },
+                        "labels": [{
+                            "item": {
+                                "for": "formrow-disabled-radio-3"
+                            },
+                            "content": {
+                                "text": "Maybe",
+                                "icons": [{
+                                    "item": {
+                                        "modifier": "",
+                                        "size": ""
+                                    },
+                                    "content": {
+                                        "title": ""
+                                    }
+                                }]
+                            }
+                        }],
                         "radios": [{
                             "item": {
-                                "modifier": "",
+                                "modifier": "check",
                                 "checked": "",
                                 "required": "",
                                 "disabled": true,
@@ -100,24 +119,7 @@
                                 "tabindex": "",
                                 "accesskey": ""
                             },
-                            "content": {
-                                "labels": [{
-                                    "item": {
-                                        "for": "formrow-disabled-radio-3"
-                                    },
-                                    "content": {
-                                        "text": "Maybe",
-                                        "icons": [{
-                                            "item": {
-                                                "modifier": "",
-                                                "size": ""
-                                            },
-                                            "content": {
-                                                "title": ""
-                                            }
-                                        }]
-                                    }
-                                }]}
+                            "content": {}
                         }]
                     }]
             }

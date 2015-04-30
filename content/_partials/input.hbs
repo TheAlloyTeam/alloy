@@ -55,7 +55,9 @@
 
             {{else}}
 
-                {{> input__choose }}
+                <div class="input__wrap{{#if item.modifier}} input__wrap--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
+                    {{> input__choose }}
+                </div>
 
             {{/if}}
 
