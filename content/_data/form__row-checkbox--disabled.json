@@ -32,9 +32,26 @@
                     "item": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-disabled-checkbox-2"
+                        },
+                        "content": {
+                            "text": "Yes",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "checkboxes": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": true,
@@ -44,24 +61,6 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-
-                        "labels": [{
-                            "item": {
-                                "for": "formrow-disabled-checkbox-2"
-                            },
-                            "content": {
-                                "text": "Yes",
-                                "icons": [{
-                                    "item": {
-                                        "modifier": "",
-                                        "size": ""
-                                    },
-                                    "content": {
-                                        "title": ""
-                                    }
-                                }]
-                            }
-                        }],
                         "content": {
                         }
                     }]
@@ -69,9 +68,26 @@
                     "item": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-disabled-checkbox-1"
+                        },
+                        "content": {
+                            "text": "No",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "checkboxes": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": true,
@@ -81,32 +97,32 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "labels": [{
-                            "item": {
-                                "for": "formrow-disabled-checkbox-1"
-                            },
-                            "content": {
-                                "text": "No",
-                                "icons": [{
-                                    "item": {
-                                        "modifier": "",
-                                        "size": ""
-                                    },
-                                    "content": {
-                                        "title": ""
-                                    }
-                                }]
-                            }
-                        }],
                         "content": {}
                     }]
                 },{
                     "item": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "item": {
+                            "for": "formrow-disabled-checkbox-3"
+                        },
+                        "content": {
+                            "text": "Maybe",
+                            "icons": [{
+                                "item": {
+                                    "modifier": "",
+                                    "size": ""
+                                },
+                                "content": {
+                                    "title": ""
+                                }
+                            }]
+                        }
+                    }],
                     "checkboxes": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": true,
@@ -116,23 +132,6 @@
                             "tabindex": "",
                             "accesskey": ""
                         },
-                        "labels": [{
-                            "item": {
-                                "for": "formrow-disabled-checkbox-3"
-                            },
-                            "content": {
-                                "text": "Maybe",
-                                "icons": [{
-                                    "item": {
-                                        "modifier": "",
-                                        "size": ""
-                                    },
-                                    "content": {
-                                        "title": ""
-                                    }
-                                }]
-                            }
-                        }],
                         "content": {}
                     }]
                 }]

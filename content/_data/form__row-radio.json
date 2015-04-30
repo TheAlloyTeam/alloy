@@ -53,7 +53,7 @@
                     }],
                     "radios": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": "",
@@ -91,7 +91,7 @@
                     }],
                     "radios": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": "",
@@ -128,7 +128,7 @@
                     }],
                     "radios": [{
                         "item": {
-                            "modifier": "",
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": "",
