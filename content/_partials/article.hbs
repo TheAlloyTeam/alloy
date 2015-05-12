@@ -28,18 +28,27 @@
 		{{/if}}
 		
 		{{{content.body}}}
-		
+
+		{{#if content.sections }}
+			{{#each content.sections}}
+				{{#this}}
+					{{> section }}
+				{{/this}}
+			{{/each}}
+		{{/if}}
+
+		{{#if content.aside}}
 		<aside class="article__aside rte">
-
 			{{{content.aside}}}
-
 		</aside>
+		{{/if}}
 	</div>
-	
-	<footer class="article__foot">
+	{{#if attribute.shareable}}
+		<footer class="article__foot">
 
-		{{> share }}
-		
-	</footer>
+			{{> share }}
+
+		</footer>
+	{{/if}}
 </article>
 {{/this}}
