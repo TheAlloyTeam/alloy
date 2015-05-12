@@ -8,11 +8,7 @@ require(['watchdog', 'toastrack', 'flash', 'configretriever', 'mustacheretriever
                 var chance = 0.25;
                 if (Math.random() > chance) {
                     $.configretriever("toast", undefined, undefined, undefined,
-                        { success: function(config) {
-                            $.mustacheretriever("toast", config.content, function(html) {
-                                ALLOY.Toastrack.add({html: html});
-                            });
-                        }
+                        { success: function(config) { $.mustacheretriever("toast", config.content, function(html) { ALLOY.Toastrack.add({html: html}); }); }
                     });
                 }
             },
@@ -23,12 +19,14 @@ require(['watchdog', 'toastrack', 'flash', 'configretriever', 'mustacheretriever
             name: "example-flash-alert",
             url: "/assets/data/flash.json",
             bite: function(data) {
-                var chance = 0.95;
+                var chance = 0.05;
                 if (Math.random() > chance) {
-                    $.configretriever("flash", undefined, undefined, undefined, { success: function(config) { $.flash(config.content); } } );
+                    $.configretriever("flash", undefined, undefined, undefined,
+                        { success: function(config) { $.mustacheretriever("flash", config, function(html) { $.flash({html: html}); }); }
+                    });
                 }
             },
-            intervalMs: 60000
+            intervalMs: 10000
         });
 
     };
