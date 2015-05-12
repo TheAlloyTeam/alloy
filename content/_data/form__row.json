@@ -1,15 +1,15 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": ""
     },
     "content": {
         "labels": [{
-            "item": {},
+            "attribute": {},
             "content": {
                 "text": "Default Form Test",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -20,7 +20,7 @@
             }
         }],
         "groups": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "checkbox": "",
                 "vertical": "",
@@ -29,7 +29,7 @@
             "content": {
                 "inputs": [{
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "size": "",
                             "required": "",
@@ -49,11 +49,11 @@
                             "placeholder": "Text Placeholder",
                             "value": "",
                             "labels": [{
-                                "item": {},
+                                "attribute": {},
                                 "content": {
                                     "text": "Default Form Test",
                                     "icons": [{
-                                        "item": {
+                                        "attribute": {
                                             "modifier": "",
                                             "size": ""
                                         },
@@ -64,7 +64,7 @@
                                 }
                             }],
                             "notes": [{
-                                "item": {},
+                                "attribute": {},
                                 "content": {
                                     "body": "This is a note for default text item 1"
                                 }
@@ -73,7 +73,7 @@
                     }]
                 },{
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "size": "",
                             "required": "",
@@ -96,7 +96,7 @@
                     }]
                 },{
                     "buttons": [{
-                        "item": {
+                        "attribute": {
                         "modifier": "",
                         "size": "",
                         "disabled": "",
@@ -108,7 +108,7 @@
                             "text": "Submit Search",
                             "title": "Button",
                             "icon": [{
-                                "item": {
+                                "attribute": {
                                     "modifier": "",
                                     "size": ""
                                 },
@@ -129,7 +129,7 @@
             }
         }],
         "notes": [{
-            "item": {},
+            "attribute": {},
             "content": {
                 "body": "This is a <strong>form control</strong> note."
             }

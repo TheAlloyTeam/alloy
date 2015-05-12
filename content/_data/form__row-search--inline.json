@@ -1,18 +1,18 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": ""
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-inlinetext-1"
             },
             "content": {
                 "text": "Search",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -23,7 +23,7 @@
             }
         }],
         "groups": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "checkbox": "",
                 "vertical": "",
@@ -31,13 +31,13 @@
             },
             "content": {
                 "inputs": [{
-                    "item": {
+                    "attribute": {
                         "size": "large",
                         "required": "",
                         "disabled": ""
                     },
                     "searches": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "multiple": "",
                             "required": "",
@@ -59,13 +59,13 @@
                     }]
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "required": "",
                         "size": "small",
                         "disabled": ""
                     },
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "size": "",
                             "required": "",
@@ -88,14 +88,14 @@
                     }]
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "required": "",
                         "disabled": "",
                         "hidden": "",
                         "for": ""
                     },
                     "buttons": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "size": "",
                             "disabled": "",
@@ -107,7 +107,7 @@
                             "title": "Default",
                             "type": "submit",
                             "icon": [{
-                                "item": {
+                                "attribute": {
                                     "modifier": "",
                                     "size": ""
                                 },

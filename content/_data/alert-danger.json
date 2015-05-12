@@ -1,11 +1,11 @@
 {
-	"item": {
+	"attribute": {
     	"status": "danger"
 	},
     "content": {
 		"title": "This is a danger alert",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "round52",
                 "size": "xlarge"
             }

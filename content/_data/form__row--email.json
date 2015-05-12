@@ -1,12 +1,12 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": ""
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-email-2"
             },
             "content": {
@@ -15,7 +15,7 @@
         }],
         "inputs": [{
             "emails": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "size": "",
                     "multiple": "",

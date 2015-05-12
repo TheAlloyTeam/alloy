@@ -1,12 +1,12 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "status": "info"
     },
     "content": {
         "text": "You now have  75 apples attached to your account.",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "round52",
                 "size": "xlarge"
             },

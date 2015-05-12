@@ -1,10 +1,10 @@
 {{#this}}
-<div class="menu{{#if item.modifier}} menu--{{item.modifier}}{{/if}}">
+<div class="menu{{#if attribute.modifier}} menu--{{attribute.modifier}}{{/if}}">
     <ul class="list list__menu">
 		{{#if content.listitems}}
 			{{#each content.listitems}}
 				{{#this}}
-					<li class="list__{{item.modifier}}">
+					<li class="list__{{attribute.modifier}}">
 						{{#if content.url}}
 							<a href="{{content.url}}" class="list__link" title="{{content.title}}">
 								{{#if content.icons}}{{#each content.icons}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}

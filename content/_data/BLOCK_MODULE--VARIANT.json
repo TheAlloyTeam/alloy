@@ -1,13 +1,13 @@
 {
-    "item": {},
+    "attribute": {},
     "content": {},
     "actions": [{
         "action" : {
-            "item": {},
+            "attribute": {},
             "content": {}
         },
         "action" : {
-            "item": {},
+            "attribute": {},
             "content": {}
         }
     }],

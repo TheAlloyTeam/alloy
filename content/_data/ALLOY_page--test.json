@@ -1,5 +1,5 @@
 {
-	"item": {
+	"attribute": {
 		"modifier": ""
 		},
 	"content": {
@@ -7,7 +7,7 @@
 		"subtitle": "Where I am trying out wether or not we can create dynamicly linked partials",
 		"body": "<p>The content for this is coming out of the JSON file.</p>",
 		"examples": [{
-			"item": {
+			"attribute": {
 				"modifier": ""
 			},
 			"content": {
@@ -16,7 +16,7 @@
 				}
 			}],
 		"code": [{
-			"item": {
+			"attribute": {
 				"modifier": ""
 				},
 			"content": {
@@ -25,7 +25,7 @@
 				}
 			}],
 		"references": [{
-			"item": {
+			"attribute": {
 				"modifier": ""
 				},
 			"content": {

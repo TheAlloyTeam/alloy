@@ -1,12 +1,12 @@
 {
-	"item": {
+	"attribute": {
     	"modifier": ""
 	},
     "content": {
     	"title": "This is the title",
 		"body": "<p>This is the <strong>body</strong>. Here is a <u>list</u>:</p><ul><li>List item</li><li>List item</li></ul>",
 		"icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "round52",
                 "size": "xlarge"
             }

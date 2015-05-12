@@ -1,16 +1,16 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": ""
     },
     "content": {
         "labels": [{
-            "item": {},
+            "attribute": {},
             "content": {
                 "text": "Label for the checkboxes",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -21,7 +21,7 @@
             }
         }],
         "groups": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "checkbox": true,
                 "vertical": true,
@@ -29,17 +29,17 @@
             },
             "content": {
                 "inputs": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "check"
                     },
                     "labels": [{
-                        "item": {
+                        "attribute": {
                             "for": "formrow-checkbox-2"
                         },
                         "content": {
                             "text": "Yes",
                             "icons": [{
-                                "item": {
+                                "attribute": {
                                     "modifier": "",
                                     "size": ""
                                 },
@@ -50,7 +50,7 @@
                         }
                     }],
                     "checkboxes": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "check",
                             "checked": "",
                             "required": "",
@@ -65,17 +65,17 @@
                         }
                     }]
                 },{
-                    "item": {
+                    "attribute": {
                         "modifier": "check"
                     },
                     "labels": [{
-                        "item": {
+                        "attribute": {
                             "for": "formrow-checkbox-1"
                         },
                         "content": {
                             "text": "No",
                             "icons": [{
-                                "item": {
+                                "attribute": {
                                     "modifier": "",
                                     "size": ""
                                 },
@@ -86,7 +86,7 @@
                         }
                     }],
                     "checkboxes": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "check",
                             "checked": "",
                             "required": "",
@@ -100,17 +100,17 @@
                         "content": {}
                     }]
                 },{
-                    "item": {
+                    "attribute": {
                         "modifier": "check"
                     },
                     "labels": [{
-                        "item": {
+                        "attribute": {
                             "for": "formrow-checkbox-3"
                         },
                         "content": {
                             "text": "Maybe",
                             "icons": [{
-                                "item": {
+                                "attribute": {
                                     "modifier": "",
                                     "size": ""
                                 },
@@ -121,7 +121,7 @@
                         }
                     }],
                     "checkboxes": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "check",
                             "checked": "",
                             "required": "",
@@ -138,7 +138,7 @@
             }
         }],
         "notes": [{
-            "item": {},
+            "attribute": {},
             "content": {
                 "body": "This is a <strong>form control</strong> note for checkboxes."
             }

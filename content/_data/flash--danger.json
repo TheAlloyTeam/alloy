@@ -1,12 +1,12 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "status": "danger"
     },
     "content": {
         "body": "<p>I did <a href=\"#\" class=\"flash__link\">something</a></p>",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "round52",
                 "size": "xlarge"
             },

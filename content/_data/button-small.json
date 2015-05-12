@@ -1,5 +1,5 @@
 {
-	"item": {
+	"attribute": {
     	"modifier": "",
 		"size": "small",
 		"disabled": "",
@@ -10,7 +10,7 @@
 		"title": "Small",
 		"url": "#linkurl1",
 		"icon": [{
-			"item": {
+			"attribute": {
 		        "modifier": "",
 		        "size": ""
 			},

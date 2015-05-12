@@ -1,5 +1,5 @@
 {
-	"item": {
+	"attribute": {
     	"modifier": "",
 		"size": "",
 		"disabled": true,
@@ -10,7 +10,7 @@
 		"title": "This is a No Link Button",
 		"url": "",
 		"icon": [{
-			"item": {
+			"attribute": {
 		        "modifier": "",
 		        "size": ""
 			},

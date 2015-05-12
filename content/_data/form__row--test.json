@@ -1,11 +1,11 @@
 {
-  "item": {},
+  "attribute": {},
   "content": {
     "labels": [{
-      "item": {},
+      "attribute": {},
       "content": {
         "icons": [{
-          "item": {
+          "attribute": {
             "modifier": "",
             "size": ""
           },
@@ -16,19 +16,19 @@
       }
     }],
     "controls": [{
-      "item": {},
+      "attribute": {},
       "content": {
         "groups": [{
-          "item": {},
+          "attribute": {},
           "content": {
             "inputs": [{
-              "item": {},
+              "attribute": {},
               "content": {
                 "types": [
                   {
                     "addons": [
                       {
-                        "item": {
+                        "attribute": {
                           "modifier": "",
                           "size": ""
                         },
@@ -41,7 +41,7 @@
                   {
                     "texts": [
                       {
-                        "item": {
+                        "attribute": {
                           "modifier": "",
                           "size": "",
                           "id": "unique123",
@@ -61,7 +61,7 @@
                   },
                   {
                     "buttons": [{
-                      "item": {
+                      "attribute": {
                         "modifier": "",
                         "size": "",
                         "disabled": "",
@@ -73,7 +73,7 @@
                         "text": "Button",
                         "title": "Button",
                         "icon": [{
-                          "item": {
+                          "attribute": {
                             "modifier": "",
                             "size": ""
                           },
@@ -93,7 +93,7 @@
                   },
                   {
                     "notes": [{
-                      "item": {
+                      "attribute": {
                         "modifier": "",
                         "size": ""
                       },
@@ -108,13 +108,13 @@
           }
         }],
         "inputs": [{
-          "item": {},
+          "attribute": {},
           "content": {
             "types": [
               {
                 "addons": [
                   {
-                    "item": {
+                    "attribute": {
                       "modifier": "",
                       "size": ""
                     },
@@ -127,7 +127,7 @@
               {
                 "texts": [
                   {
-                    "item": {
+                    "attribute": {
                       "modifier": "",
                       "size": "",
                       "id": "unique123",
@@ -147,7 +147,7 @@
               },
               {
                 "buttons": [{
-                  "item": {
+                  "attribute": {
                     "modifier": "",
                     "size": "",
                     "disabled": "",
@@ -159,7 +159,7 @@
                     "text": "Button",
                     "title": "Button",
                     "icon": [{
-                      "item": {
+                      "attribute": {
                         "modifier": "",
                         "size": ""
                       },
@@ -179,7 +179,7 @@
               },
               {
                 "note": [{
-                  "item": {
+                  "attribute": {
                     "modifier": "",
                     "size": ""
                   },
@@ -194,7 +194,7 @@
       }
     }],
     "notes": [{
-      "item": {},
+      "attribute": {},
       "content": {
         "body": "this is a <b>form note</b>."
       }
