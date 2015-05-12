@@ -1,4 +1,4 @@
-require(['watchdog', 'toastrack', 'flash', 'configretriever'],function () {
+require(['watchdog', 'toastrack', 'flash', 'configretriever', 'mustacheretriever'],function () {
 
     var createRandomPuppy = function() {
         ALLOY.Watchdog.upsertPuppy({
@@ -8,11 +8,7 @@ require(['watchdog', 'toastrack', 'flash', 'configretriever'],function () {
                 var chance = 0.25;
                 if (Math.random() > chance) {
                     $.configretriever("toast", undefined, undefined, undefined,
-                        { success: function(config) {
-                            $.mustacheretriever("toast", config.content, function(html) {
-                                ALLOY.Toastrack.add({html: html});
-                            });
-                        }
+                        { success: function(config) { $.mustacheretriever("toast", config.content, function(html) { ALLOY.Toastrack.add({html: html}); }); }
                     });
                 }
             },
@@ -25,7 +21,9 @@ require(['watchdog', 'toastrack', 'flash', 'configretriever'],function () {
             bite: function(data) {
                 var chance = 0.95;
                 if (Math.random() > chance) {
-                    $.configretriever("flash", undefined, undefined, undefined, { success: function(config) { $.flash(config.content); } } );
+                    $.configretriever("flash", undefined, undefined, undefined,
+                        { success: function(config) { $.mustacheretriever("flash", config, function(html) { $.flash({html: html}); }); }
+                    });
                 }
             },
             intervalMs: 60000
