@@ -1,0 +1,123 @@
+---
+title: Buttons
+layout: alloy.hbs
+
+nav-thumb: "systems/buttons.jpg"
+nav-title: "Buttons"
+nav-text: "Buttons"
+nav-variant: "buttons"
+page-category: "systems"
+---
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+<!-- example -->
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Example: Statuses</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+					        {{> button button-success}}
+					        {{> button button-info}}
+					        {{> button button-warning}}
+					        {{> button button-danger}}
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Examples: Sizes</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+					        {{> button button-xsmall}}
+					        {{> button button-small}}
+					        {{> button button}}
+					        {{> button button-large}}
+					        {{> button button-xlarge}}
+					        {{> button button-block}}
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Examples: Icons</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+					        {{> button button-tick}}
+					        {{> button button-cross}}
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Examples: Bages</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+					        {{> button button-badge}}
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Code</h2>
+		            </header>
+
+		            <div class="section__body">
+			            <pre class="prettyprint linenums"><code class="html">
+
+			             </code></pre>
+		            </div>
+
+		        </section>
+
+<!-- reference -->
+
+		        <section class="section section--reference">
+		            <header class="section__head">
+		                <h2 class="section__title">References</h2>
+		            </header>
+		            <div class="section__body rte">
+
+		            </div>
+		        </section>
+
+	        </div>
+
+	    </div>
+	</div>
+</main>

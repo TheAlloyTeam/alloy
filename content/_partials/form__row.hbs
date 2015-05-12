@@ -1,5 +1,5 @@
 {{#this}}
-    <div class="form__row{{#if item.modifier}} form__row--{{item.modifier}}{{/if}}{{#if item.offset}} offset{{/if}}{{#if item.disabled}} disabled{{/if}}
+    <div class="form__row{{#if attribute.modifier}} form__row--{{attribute.modifier}}{{/if}}{{#if attribute.offset}} offset{{/if}}{{#if attribute.disabled}} disabled{{/if}}
 ">
         {{#if content.labels}}
             {{#each content.labels}}
@@ -9,7 +9,7 @@
 
         {{> form__control }}
 
-        {{#if item.required}}
+        {{#if attribute.required}}
             {{#this}}{{> form__asterisk }}{{/this}}
         {{/if}}
     </div>

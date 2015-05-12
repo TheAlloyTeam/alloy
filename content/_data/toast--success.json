@@ -1,12 +1,12 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "status": "success"
     },
     "content": {
         "text": "You did it! It's all fixed!",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "tick7",
                 "size": "xlarge"
             },

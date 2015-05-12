@@ -1,12 +1,12 @@
 {{#this}}
-<div class="cite{{#if item.modifier}} cite--{{item.modifier}}{{/if}}">
+<div class="cite{{#if attribute.modifier}} cite--{{attribute.modifier}}{{/if}}">
     <a href="{{content.url}}"
-        {{#if item.disabled}} disabled="disabled"{{/if}}
-        {{#if item.target}} target="{{item.target}}"{{/if}}
+        {{#if attribute.disabled}} disabled="disabled"{{/if}}
+        {{#if attribute.target}} target="{{attribute.target}}"{{/if}}
         class="cite__link
-            {{#if item.disabled}} disabled{{/if}}
-            {{#if item.size}} {{item.size}}{{/if}}
-            {{#if item.block}} block{{/if}}"
+            {{#if attribute.disabled}} disabled{{/if}}
+            {{#if attribute.size}} {{attribute.size}}{{/if}}
+            {{#if attribute.block}} block{{/if}}"
         {{#if content.title}} title="{{content.title}}"{{/if}}>
         {{#if content.image}}
         <img src="{{content.image}}" class="cite__image" />

@@ -1,0 +1,15 @@
+{
+  "attribute": {
+     "modifier": ""
+    },
+    "content": {
+      "title": "Designing with Alloy",
+      "subtitle": "Lets get you started...",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit&hellip;",
+      "body": "",
+      "sections": [{
+        "attribute": {},
+        "content": {}
+     }]
+  }
+}

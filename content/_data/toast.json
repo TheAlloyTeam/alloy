@@ -1,12 +1,12 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "status": ""
     },
     "content": {
         "text": "I did something.",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "round52",
                 "size": "xlarge"
             },

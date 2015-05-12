@@ -1,17 +1,17 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": true
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
             },
             "content": {
                 "text": "Radios Test",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -22,7 +22,7 @@
             }
         }],
         "groups": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "checkbox": true,
                 "vertical": "",
@@ -30,12 +30,20 @@
             },
             "content": {
                 "inputs": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "check"
                     },
+                    "labels": [{
+                        "attribute": {
+                            "for": "formrow-disabled-radio-1"
+                        },
+                        "content": {
+                            "text": "Yes"
+                        }
+                    }],
                     "radios": [{
-                        "item": {
-                            "modifier": "",
+                        "attribute": {
+                            "modifier": "check",
                             "checked": "",
                             "required": "",
                             "disabled": true,
@@ -46,24 +54,25 @@
                             "accesskey": ""
                         },
                         "content": {
-                            "labels": [{
-                                "item": {
-                                    "for": "formrow-disabled-radio-1"
-                                },
-                                "content": {
-                                    "text": "Yes"
-                                }
-                            }]
+
                         }
                     }]
                 },
                     {
-                        "item": {
+                        "attribute": {
                             "modifier": "check"
                         },
+                        "labels": [{
+                            "attribute": {
+                                "for": "formrow-disabled-radio-2"
+                            },
+                            "content": {
+                                "text": "No"
+                            }
+                        }],
                         "radios": [{
-                            "item": {
-                                "modifier": "",
+                            "attribute": {
+                                "modifier": "check",
                                 "checked": "",
                                 "required": "",
                                 "disabled": true,
@@ -74,23 +83,33 @@
                                 "accesskey": ""
                             },
                             "content": {
-                                "labels": [{
-                                    "item": {
-                                        "for": "formrow-disabled-radio-2"
-                                    },
-                                    "content": {
-                                        "text": "No"
-                                    }
-                                }]}
+                                }
                         }]
                     },
                     {
-                        "item": {
+                        "attribute": {
                             "modifier": "check"
                         },
+                        "labels": [{
+                            "attribute": {
+                                "for": "formrow-disabled-radio-3"
+                            },
+                            "content": {
+                                "text": "Maybe",
+                                "icons": [{
+                                    "attribute": {
+                                        "modifier": "",
+                                        "size": ""
+                                    },
+                                    "content": {
+                                        "title": ""
+                                    }
+                                }]
+                            }
+                        }],
                         "radios": [{
-                            "item": {
-                                "modifier": "",
+                            "attribute": {
+                                "modifier": "check",
                                 "checked": "",
                                 "required": "",
                                 "disabled": true,
@@ -100,24 +119,7 @@
                                 "tabindex": "",
                                 "accesskey": ""
                             },
-                            "content": {
-                                "labels": [{
-                                    "item": {
-                                        "for": "formrow-disabled-radio-3"
-                                    },
-                                    "content": {
-                                        "text": "Maybe",
-                                        "icons": [{
-                                            "item": {
-                                                "modifier": "",
-                                                "size": ""
-                                            },
-                                            "content": {
-                                                "title": ""
-                                            }
-                                        }]
-                                    }
-                                }]}
+                            "content": {}
                         }]
                     }]
             }

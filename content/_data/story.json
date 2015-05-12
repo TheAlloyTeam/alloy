@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "ice"
     },
     "content": {
@@ -7,7 +7,7 @@
         "body": "<p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Mauris nec purus turpis. Praesent et feugiat magna, eget elementum sem. Ut congue consectetur libero, sit amet placerat ex aliquam sit amet. Proin ornare nisl vel purus interdum molestie. Aliquam consectetur arcu vitae ligula faucibus, nec dapibus nisl mollis. Mauris id cursus ipsum. Sed vulputate libero vitae enim rutrum, non tempus tortor efficitur. Integer ut malesuada metus, aliquam pulvinar enim. In turpis nulla, fermentum in ligula nec, tristique efficitur nibh. Etiam ullamcorper, ex in pharetra faucibus, ipsum magna bibendum nulla, in mollis orci enim et eros. Nullam luctus sollicitudin tortor ut imperdiet. Nam condimentum libero nec est fermentum posuere. Vivamus turpis ex, venenatis ac venenatis facilisis, tempus eget quam. Nunc congue dui nec venenatis tempus. Etiam in ligula ultricies, dictum orci nec, varius diam.</p>",
         "ident": [
             {
-                "item": {
+                "attribute": {
                     "modifier": "story",
                     "target": ""
                 },
@@ -42,7 +42,7 @@
         ],
         "cite": [
             {
-                "item": {
+                "attribute": {
                     "modifier": "story",
                     "target": ""
                 },
@@ -54,7 +54,7 @@
                     "url": "#linkurl1",
                     "icon": [
                         {
-                            "item": {
+                            "attribute": {
                                 "modifier": "",
                                 "size": ""
                             },
@@ -71,7 +71,7 @@
         {
             "buttons": [
                 {
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": "",
                         "disabled": "",
@@ -84,7 +84,7 @@
                         "url": "#linkurl1",
                         "icon": [
                             {
-                                "item": {
+                                "attribute": {
                                     "modifier": "",
                                     "size": ""
                                 },
@@ -96,7 +96,7 @@
                     }
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "modifier": "alt",
                         "size": "",
                         "disabled": "",
@@ -109,7 +109,7 @@
                         "url": "#linkurl2",
                         "icon": [
                             {
-                                "item": {
+                                "attribute": {
                                     "modifier": "",
                                     "size": ""
                                 },

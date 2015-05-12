@@ -1,12 +1,12 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "status": "danger"
     },
     "content": {
         "text": "It's all going wrong - WE ARE ALL DOOMED!",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "round52",
                 "size": "xlarge"
             },

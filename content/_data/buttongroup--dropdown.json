@@ -1,12 +1,12 @@
 {
-    "item": {
+    "attribute": {
         "modifier": ""
     },
     "content": {},
     "actions": [
     {
         "buttons": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "size": "",
                 "disabled": "",
@@ -18,7 +18,7 @@
                 "title": "Default",
                 "url": "#linkurl1",
                 "icon": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -29,13 +29,13 @@
             }
         },
         {
-            "item": {
+            "attribute": {
                 "menu": true
             },
             "content": {
                 "url": "#linkurl2",
                 "icon": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "downwards",
                         "size": ""
                     },
@@ -46,13 +46,13 @@
             }
         }],
         "menus": [{
-            "item": {
+            "attribute": {
                 "modifier": "dropdown"
             },
             "content": {
                 "listitems": [
                 {
-                    "item": {
+                    "attribute": {
                         "modifier": "head"
                     },
                     "content": {
@@ -60,7 +60,7 @@
                     }
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "modifier": "item"
                     },
                     "content": {
@@ -68,14 +68,14 @@
                         "title": "Option with icon",
                         "url": "#",
                         "icons": [{
-                            "item": {
+                            "attribute": {
                                 "modifier": "round52"
                             }
                         }]
                     }
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "modifier": "item"
                     },
                     "content": {
@@ -83,7 +83,7 @@
                         "title": "Option with badge",
                         "url": "#",
                         "badges": [{
-                            "item": {
+                            "attribute": {
                                 "status": "success"
                             },
                             "content": {
@@ -93,12 +93,12 @@
                     }
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "modifier": "separator"
                     }
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "modifier": "item"
                     },
                     "content": {

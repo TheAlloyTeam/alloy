@@ -8,19 +8,19 @@
         {{/each}}
     {{/if}}
 
-    <span class="input{{#if item.modifier}} input--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
+    <span class="input{{#if attribute.modifier}} input--{{attribute.modifier}}{{/if}}{{#if attribute.status}} {{attribute.status}}{{/if}}{{#if attribute.disabled}} disabled{{/if}}">
 
         <select
             class="input__field input__field--select"
-            {{#if item.multiple}} multiple="multiple"{{/if}}
-            {{#if item.required}} required="required" aria-required="true"{{/if}}
-            {{#if item.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
-            {{#if item.id}} id="{{item.id}}"{{/if}}
-            {{#if item.form}} form="{{item.form}}"{{/if}}
-            {{#if item.name}} name="{{item.name}}"{{/if}}
-            {{#if item.size}} size="{{item.size}}"{{/if}}
-            {{#if item.tabindex}} tabindex="{{item.tabindex}}"{{/if}}
-            {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
+            {{#if attribute.multiple}} multiple="multiple"{{/if}}
+            {{#if attribute.required}} required="required" aria-required="true"{{/if}}
+            {{#if attribute.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
+            {{#if attribute.id}} id="{{attribute.id}}"{{/if}}
+            {{#if attribute.form}} form="{{attribute.form}}"{{/if}}
+            {{#if attribute.name}} name="{{attribute.name}}"{{/if}}
+            {{#if attribute.size}} size="{{attribute.size}}"{{/if}}
+            {{#if attribute.tabindex}} tabindex="{{attribute.tabindex}}"{{/if}}
+            {{#if attribute.accesskey}} accesskey="{{attribute.accesskey}}"{{/if}}
         >
 
             {{#if content.optgroups}}

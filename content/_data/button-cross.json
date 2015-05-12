@@ -1,5 +1,5 @@
 {
-	"item": {
+	"attribute": {
     	"modifier": "",
 		"size": "",
 		"disabled": "",
@@ -10,7 +10,7 @@
 		"title": "Icon button example (cross)",
 		"url": "#linkurl1",
 		"icon": [{
-			"item": {
+			"attribute": {
 		        "modifier": "close47",
 		        "size": ""
 			},

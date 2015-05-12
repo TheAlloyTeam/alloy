@@ -1,0 +1,95 @@
+---
+title: Accordions
+layout: alloy.hbs
+
+nav-thumb: "components/accordions.jpg"
+nav-title: "Accordions"
+nav-text: "Accordions"
+nav-variant: "accordions"
+page-category: "components"
+js-accordion: true
+---
+
+<main class="w w--main" role="main">
+	<div class="g">
+		<div class="c__lg--1">
+
+			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+				<section class="section section--example">
+					<header class="section__head">
+						 <h2 class="section__title">Example</h2>
+					</header>
+
+					<div class="section__body">
+						{{> accordion accordion }}
+					</div>
+
+				</section>
+
+
+				<section class="section section--code">
+					<header class="section__head">
+						<h2 class="section__title">Code</h2>
+					</header>
+
+					<div class="section__body">
+						<pre class="prettyprint linenums"><code class="html">
+&lt;div class="accordion accordion--variant" aria-multiselectable="true" aria-live="polite"&gt;
+
+	&lt;div id="acc__tab_1" class="accordion__head" aria-controls="acc__content_1" role="tab"&gt;
+		&lt;span class="accordion__title"&gt;[TITLE]&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div id="acc__content_1" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_1"&gt;
+		[CONTENT]
+	&lt;/div&gt;
+
+	&lt;div id="acc__tab_2" class="accordion__head" aria-controls="acc__content_2" role="tab"&gt;
+		&lt;span class="accordion__title"&gt;[TITLE]&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div id="acc__content_2" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_2"&gt;
+		[CONTENT]
+	&lt;/div&gt;
+
+	&lt;div id="acc__tab_3" class="accordion__head" aria-controls="acc__content_3" role="tab"&gt;
+		&lt;span class="accordion__title">[TITLE]&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div id="acc__content_3" class="accordion__content rte" role="tabpanel" aria-labeledby="acc__tab_3"&gt;
+		[CONTENT]
+	&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+					</div>
+
+				</section>
+
+				<section class="section section--reference">
+					<header class="section__head">
+						 <h2 class="section__title">References</h2>
+					</header>
+					<div class="section__body rte">
+						
+						<ul>
+							<li><a href="http://test.cita.illinois.edu/aria/tabpanel/tabpanel2.php" target="_blank">http://test.cita.illinois.edu/aria/tabpanel/tabpanel2.php</a></li>
+							<li><a href="http://codepen.io/chrisyaxley/pen/JsKhb/" target="_blank">http://codepen.io/chrisyaxley/pen/JsKhb/</a></li>
+							<li><a href="http://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/" target="_blank">http://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/</a></li>
+						</ul>
+
+					</div>
+				</section>
+
+			</div>
+			
+		</div>
+	 </div>
+</main>

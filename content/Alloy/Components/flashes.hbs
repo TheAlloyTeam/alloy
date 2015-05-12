@@ -1,0 +1,104 @@
+---
+title: Flashes
+layout: alloy.hbs
+
+nav-thumb: "components/flashes.jpg"
+nav-title: "Flashes"
+nav-text: "Flashes"
+nav-variant: "flashes"
+page-category: "components"
+js-flash: true
+---
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+<!-- example -->
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Example</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+
+				        {{> flash flash }}
+			        </div>
+
+		        </section>
+
+<!-- example -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Example: Status</h2>
+		            </header>
+                    <div class="section__body">
+				        {{> flash flash--info }}
+				        {{> flash flash--warn }}
+				        {{> flash flash--danger }}
+				        {{> flash flash--success }}
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+<!-- example -->
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Example: Flash</h2>
+		            </header>
+                    <div class="section__body">
+						<a href="#" class="button flash-trigger">Click here to see a live flash</a>
+		            	<!-- end of code -->
+			        </div>
+
+		        </section>
+
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Code</h2>
+		            </header>
+
+		            <div class="section__body">
+			            <pre class="prettyprint linenums"><code class="html">
+
+
+			             </code></pre>
+		            </div>
+
+		        </section>
+
+<!-- reference -->
+
+		        <section class="section section--reference">
+		            <header class="section__head">
+		                <h2 class="section__title">References</h2>
+		            </header>
+		            <div class="section__body rte">
+
+		            </div>
+		        </section>
+
+	        </div>
+
+	    </div>
+	</div>
+</main>
