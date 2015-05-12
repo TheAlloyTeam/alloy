@@ -1,0 +1,98 @@
+---
+title: Wells
+layout: alloy.hbs
+
+nav-thumb: "components/wells.jpg"
+nav-title: "Wells"
+nav-text: "Wells"
+nav-variant: "wells"
+page-category: "components"
+---
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+<!-- example -->
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Example: Status</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+
+				        {{> well well }}
+				        {{> well well--info }}
+				        {{> well well--warn }}
+				        {{> well well--danger }}
+				        {{> well well--success }}
+			        </div>
+
+		        </section>
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Example: Size</h2>
+		            </header>
+                    <div class="section__body">
+
+				        {{> well well--xsmall }}
+				        {{> well well--small }}
+				        {{> well well }}
+				        {{> well well--large }}
+				        {{> well well--xlarge }}
+
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Code</h2>
+		            </header>
+
+		            <div class="section__body">
+			            <pre class="prettyprint linenums"><code class="html">
+&lt;div class="well success"&gt;
+	&lt;p&gt;A well is prmeraly just a box of text - unless we can find another useage for it.&lt;/p&gt;
+&lt;/div&gt;
+			             </code></pre>
+		            </div>
+
+		        </section>
+
+<!-- reference -->
+
+		        <section class="section section--reference">
+		            <header class="section__head">
+		                <h2 class="section__title">References</h2>
+		            </header>
+		            <div class="section__body rte">
+
+		            </div>
+		        </section>
+
+	        </div>
+	        
+	    </div>
+	</div>
+</main>
