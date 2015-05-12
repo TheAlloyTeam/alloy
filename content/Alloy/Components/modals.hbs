@@ -1,0 +1,78 @@
+---
+title: Modals
+layout: alloy.hbs
+
+nav-thumb: "placeholder.jpg"
+nav-title: "Modals"
+nav-text: "Modals"
+nav-variant: "modals"
+page-category: "components"
+js-modal: true
+---
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+<!-- example -->
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Example</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+
+				        <a href="#" class="button modal" data-modal='{"content": "<div class=&#39;g&#39;><div class=&#39;c__lg--1&#39;><div class=&#39;panel full&#39;>This is the content inside of the modal from the data-modal attribute of the button!<br/><a href=&#39;#&#39; class=&#39;button close-modal-content&#39;>Close</a></div></div></div>"}'>This example modal</a>
+
+				        <a href="#" class="button modal--alt">Another example</a>
+
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Code</h2>
+		            </header>
+
+		            <div class="section__body">
+			            <pre class="prettyprint linenums"><code class="html">
+
+			             </code></pre>
+		            </div>
+
+		        </section>
+
+<!-- reference -->
+
+		        <section class="section section--reference">
+		            <header class="section__head">
+		                <h2 class="section__title">References</h2>
+		            </header>
+		            <div class="section__body rte">
+
+		            </div>
+		        </section>
+
+	        </div>
+
+	    </div>
+	</div>
+</main>
