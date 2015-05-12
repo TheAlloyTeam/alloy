@@ -1,6 +1,6 @@
 {
     "name": "Alloy",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "repository": {
         "type": "git",
         "url": "git://github.com/gfinbow/alloy.git"
@@ -14,6 +14,7 @@
         "jquery": "1.11.0",
         "respond": "latest",
         "requirejs": "latest",
+        "mustache": "latest",
         "selectivizr": "latest"
     }
 }
