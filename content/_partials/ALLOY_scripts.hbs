@@ -58,19 +58,13 @@
 
 {{#if js-flash}} 
 <script type="text/JavaScript">
-	require(["flash", "mustacheretriever"], function() {
- 		$(".flash-trigger").click(function(e) {
- 			e.preventDefault();
-
-			$.configretriever("flash", undefined, undefined, undefined, 
-				{ success: function(config) { 
-					$.mustacheretriever("flash", config, function(html) {
-						$.flash({html: html});
-					});
-				}
-			});
- 		}); 		
- 	});
+	require(["flash"], function() {
+		$('[data-flash]').click(function(e) {
+			e.preventDefault();
+			var json = $(this).data("flash");
+			$.flash(json);
+		});
+	});
 </script>
 {{/if}}
 
