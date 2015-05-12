@@ -3,13 +3,14 @@
 <!--[if IE 9]> <html class="no-js ie ie9" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
 
-    <title>{{ page.title }} - ALLOY</title>
+    <title>{{ page.title }} - {{ app.title }}</title>
 
     <meta name="description" content="{{ page.description }}" />
     <meta name="keywords" content="{{ page.title }}, {{ page.keywords }}, {{ app.keywords }} " />
-    <meta name="author" content="The Alloy Team" />
+    <meta name="author" content="{{ app.author }}" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{{ assets }}/css/fontloader.css" />
     <link rel="stylesheet" href="{{ assets }}/css/main.css" />
@@ -27,7 +28,7 @@
     <!-- For everything else -->
     <!-- <link href="{{ assets }}/img/icons/favicon.png" rel="shortcut icon" type="image/png"/> -->
     <!-- <link href="{{ assets }}/img/icons/favicon.ico" rel="shortcut icon" type="image/x-icon"/> -->
-
+    
     <script src="{{ assets }}/js/ALLOY.initial.js"></script>
     <script src="{{ assets }}/js/app/conf.js"></script>
 
@@ -39,19 +40,14 @@
 
 </head>
 
-<body id="{{{app.siteclass}}}-alloy"  class="m{{#if page.class-master }} m--{{page.class-master }} {{/if}}">
+<body id="{{{app.siteclass}}}"  class="m{{#if page.class-master }} m--{{page.class-master }} {{/if}}">
 
     <!--[if lt IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    {{> ALLOY_header }}
-    {{> ALLOY_navigation }}
     {{> body }}
-    {{> ALLOY_footer }}
-    {{> ALLOY_copyright }}
     {{> ALLOY_scripts }}
-    {{> ALLOY_debug }}
 
     <!-- <div class="modal__mask modal__mask--visible"></div> -->
 

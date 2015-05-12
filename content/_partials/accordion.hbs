@@ -1,5 +1,5 @@
 {{#this}}
-<div class="accordion{{#if item.modifier}} accordion--{{item.modifier}}{{/if}}"{{#if item.multiselectable}} aria-multiselectable="true"{{/if}} aria-live="polite" role="tablist">
+<div class="accordion{{#if attribute.modifier}} accordion--{{attribute.modifier}}{{/if}}"{{#if attribute.multiselectable}} aria-multiselectable="true"{{/if}} aria-live="polite" role="tablist">
 	{{#each content.tabs}}
 	<div id="tab--{{content.id}}" class="accordion__tab{{#if content.expanded}} open{{/if}} tab--{{content.id}}" aria-controls="{{content.id}}" role="tab" data-accordionindex="#{{content.id}}">
 		<a href="#{{content.id}}" class="accordion__title"><span>{{content.title}}</span><i class="icon"></i></a>

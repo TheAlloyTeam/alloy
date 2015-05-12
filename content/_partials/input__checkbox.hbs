@@ -1,19 +1,19 @@
 {{#this}}
 
-    <span class="input{{#if item.modifier}} input--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
+    <span class="input{{#if attribute.modifier}} input--{{attribute.modifier}}{{/if}}{{#if attribute.status}} {{attribute.status}}{{/if}}{{#if attribute.disabled}} disabled{{/if}}">
     <input
         type="checkbox"
         class="input__field input_field--checkbox"
-        {{#if item.checked}} checked="checked" aria-checked="true"{{/if}}
-        {{#if item.required}} required="required" aria-required="true"{{/if}}
-        {{#if item.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
-        {{#if item.id}} id="{{item.id}}"{{/if}}
-        {{#if item.name}} name="{{item.name}}"{{/if}}
-        {{#if item.value}} value="{{item.value}}"{{/if}}
-        {{#if item.tabindex}} tabindex="{{item.tabindex}}"{{/if}}
-        {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
+        {{#if attribute.checked}} checked="checked" aria-checked="true"{{/if}}
+        {{#if attribute.required}} required="required" aria-required="true"{{/if}}
+        {{#if attribute.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
+        {{#if attribute.id}} id="{{attribute.id}}"{{/if}}
+        {{#if attribute.name}} name="{{attribute.name}}"{{/if}}
+        {{#if attribute.value}} value="{{attribute.value}}"{{/if}}
+        {{#if attribute.tabindex}} tabindex="{{attribute.tabindex}}"{{/if}}
+        {{#if attribute.accesskey}} accesskey="{{attribute.accesskey}}"{{/if}}
     />
-        <label class="input__faux input__faux--checkbox" for=""{{item.id}}"></label>
+        <label class="input__faux input__faux--checkbox" for=""{{attribute.id}}"></label>
 </span>
 
 {{/this}}

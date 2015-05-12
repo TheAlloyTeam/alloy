@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": "",
@@ -8,11 +8,11 @@
     },
     "content": {
         "labels": [{
-            "item": {},
+            "attribute": {},
             "content": {
                 "text": "Label for text input",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -24,7 +24,7 @@
         }],
         "inputs": [{
             "texts": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "size": "",
                     "required": "",

@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": "",
@@ -7,13 +7,13 @@
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-tel-1"
             },
             "content": {
                 "text": "Telephone",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -24,11 +24,11 @@
             }
         }],
         "inputs": [{
-            "item": {
+            "attribute": {
               "size": "small"
             },
             "tels": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "size": "",
                     "required": "",

@@ -1,17 +1,17 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "modifier",
         "required": true
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-size-90"
             },
             "content": {
                 "text": "Extra Large Width",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -22,11 +22,11 @@
             }
         }],
         "inputs": [{
-            "item": {
+            "attribute": {
                 "size": "xlarge"
             },
             "texts": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "required": "",
                     "readonly": "",
@@ -48,7 +48,7 @@
             }]
         }],
         "notes": [{
-            "item": {},
+            "attribute": {},
             "content": {
                 "body": "This is a note for the xlarge width text test."
             }

@@ -1,11 +1,11 @@
 {
-	"item": {
+	"attribute": {
     	"status": "warn"
 	},
     "content": {
 		"title": "This is a warning alert",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "round52",
                 "size": "xlarge"
             }

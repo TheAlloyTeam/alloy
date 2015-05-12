@@ -13,7 +13,7 @@
 
             {{#if notes}}
 
-                <div class="input__wrap{{#if item.modifier}} input__wrap--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
+                <div class="input__wrap{{#if attribute.modifier}} input__wrap--{{attribute.modifier}}{{/if}}{{#if attribute.size}} {{attribute.size}}{{/if}}">
                     {{#each labels}}
                         {{#this}}
                             {{> input__label }}
@@ -29,7 +29,7 @@
 
             {{else}}
 
-                <div class="input__wrap{{#if item.modifier}} input__wrap--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
+                <div class="input__wrap{{#if attribute.modifier}} input__wrap--{{attribute.modifier}}{{/if}}{{#if attribute.size}} {{attribute.size}}{{/if}}">
                     {{#each labels}}
                         {{#this}}
                             {{> input__label }}
@@ -44,7 +44,7 @@
 
             {{#if notes}}
 
-                <div class="input__wrap{{#if item.modifier}} input__wrap--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
+                <div class="input__wrap{{#if attribute.modifier}} input__wrap--{{attribute.modifier}}{{/if}}{{#if attribute.size}} {{attribute.size}}{{/if}}">
                     {{> input__choose }}
                     {{#each notes}}
                         {{#this}}
@@ -55,7 +55,7 @@
 
             {{else}}
 
-                <div class="input__wrap{{#if item.modifier}} input__wrap--{{item.modifier}}{{/if}}{{#if item.size}} {{item.size}}{{/if}}">
+                <div class="input__wrap{{#if attribute.modifier}} input__wrap--{{attribute.modifier}}{{/if}}{{#if attribute.size}} {{attribute.size}}{{/if}}">
                     {{> input__choose }}
                 </div>
 

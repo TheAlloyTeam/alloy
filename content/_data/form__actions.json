@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": ""
     },
@@ -8,7 +8,7 @@
     },
     "actions": [{
         "buttons": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "size": "",
                 "disabled": "",
@@ -28,7 +28,7 @@
                 "count": ""
             }
         },{
-            "item": {
+            "attribute": {
                 "modifier": "alt",
                 "size": "",
                 "disabled": "",

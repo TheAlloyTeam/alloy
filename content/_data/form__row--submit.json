@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": "",
@@ -12,7 +12,7 @@
     "actions": [{
         "buttons": [
         {
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "size": "",
                 "disabled": "",
@@ -24,7 +24,7 @@
                 "title": "Default",
                 "type": "submit",
                 "icon": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
