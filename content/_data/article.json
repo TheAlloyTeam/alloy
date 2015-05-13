@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": ""
     },
     "content": {
@@ -18,7 +18,7 @@
     {
         "buttons": [
         {
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "size": "",
                 "disabled": "",
@@ -30,7 +30,7 @@
                 "title": "Default",
                 "url": "#linkurl1",
                 "icon": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -41,7 +41,7 @@
             }
         },
         {
-            "item": {
+            "attribute": {
                 "modifier": "alt",
                 "size": "",
                 "disabled": "",
@@ -53,7 +53,7 @@
                 "title": "Default",
                 "url": "#linkurl2",
                 "icon": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },

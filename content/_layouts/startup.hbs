@@ -1,0 +1,55 @@
+<!doctype html>
+<!--[if IE 8]> <html class="no-js ie ie8 lt-ie8" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie ie9" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>{{ page.title }} - {{ app.title }}</title>
+
+    <meta name="description" content="{{ page.description }}" />
+    <meta name="keywords" content="{{ page.title }}, {{ page.keywords }}, {{ app.keywords }} " />
+    <meta name="author" content="{{ app.author }}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ assets }}/css/fontloader.css" />
+    <link rel="stylesheet" href="{{ assets }}/css/main.css" />
+
+    <!-- For retina-display iPads -->
+    <!-- <link href="{{ assets }}/img/icons/retina_ipad_home.png" rel="apple-touch-icon-precomposed" sizes="144x144" type="image/png"/> -->
+    <!-- For retina-display iPhones -->
+    <!-- <link href="{{ assets }}/img/icons/iphone_home.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png"/> -->
+    <!-- For iPad 1 -->
+    <!-- <link href="{{ assets }}/img/icons/ipad_home.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png"/> -->
+    <!-- For iPhone 3G, iPod Touch and Android -->
+    <!-- <link href="{{ assets }}/img/icons/iphone_home.png" rel="apple-touch-icon-precomposed" type="image/png"/> -->
+    <!-- For Nokia -->
+    <!-- <link href="{{ assets }}/img/icons/iphone_home.png" rel="shortcut icon"/> -->
+    <!-- For everything else -->
+    <!-- <link href="{{ assets }}/img/icons/favicon.png" rel="shortcut icon" type="image/png"/> -->
+    <!-- <link href="{{ assets }}/img/icons/favicon.ico" rel="shortcut icon" type="image/x-icon"/> -->
+    
+    <script src="{{ assets }}/js/ALLOY.initial.js"></script>
+    <script src="{{ assets }}/js/app/conf.js"></script>
+
+    <!-- IE8 and below fallbacks -->
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script type="text/javascript" src="{{ assets }}/js/libs/respond/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="{{{app.siteclass}}}"  class="m{{#if page.class-master }} m--{{page.class-master }} {{/if}}">
+
+    <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    {{> body }}
+    {{> ALLOY_scripts }}
+
+    <!-- <div class="modal__mask modal__mask--visible"></div> -->
+
+</body>
+</html>

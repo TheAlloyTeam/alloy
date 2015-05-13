@@ -1,10 +1,10 @@
 {
-    "item": {
+    "attribute": {
         "required": true
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-postcode-1"
             },
             "content": {
@@ -13,11 +13,11 @@
         }],
         "text": "",
         "inputs": [{
-            "item": {
+            "attribute": {
                 "size": "small"
             },
             "texts": [{
-                "item": {
+                "attribute": {
                     "id": "formrow-postcode-1"
                 },
                 "content": {

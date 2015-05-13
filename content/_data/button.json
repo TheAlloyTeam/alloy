@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "size": "",
         "disabled": "",
@@ -11,7 +11,7 @@
         "title": "Button",
         "url": "#butonUrl",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "size": ""
             },

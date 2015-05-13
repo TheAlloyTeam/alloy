@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "size": "",
         "disabled": "",
@@ -14,7 +14,7 @@
         "subtitle": "237K followers",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat augue vel varius tincidunt. Suspendisse blandit gravida egestas.",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "size": ""
             },
@@ -27,7 +27,7 @@
     {
         "buttons": [
         {
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "size": "",
                 "disabled": "",
@@ -39,7 +39,7 @@
                 "title": "Profile",
                 "url": "#linkurl1",
                 "icon": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -50,7 +50,7 @@
             }
         },
         {
-            "item": {
+            "attribute": {
                 "modifier": "alt",
                 "size": "",
                 "disabled": "",
@@ -62,7 +62,7 @@
                 "title": "Follow",
                 "url": "#linkurl2",
                 "icon": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },

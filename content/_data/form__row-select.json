@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": "",
@@ -7,13 +7,13 @@
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-select-1"
             },
             "content": {
                 "text": "Select",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -25,7 +25,7 @@
         }],
         "inputs": [{
             "selects": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "multiple": "",
                     "required": "",
@@ -40,7 +40,7 @@
                 },
                 "content": {
                     "options": [{
-                        "item": {
+                        "attribute": {
                             "value": "",
                             "selected": "",
                             "disabled": ""
@@ -50,7 +50,7 @@
                             "text": "Option 1 Text"
                         }
                     },{
-                        "item": {
+                        "attribute": {
                             "value": "",
                             "selected": "",
                             "disabled": ""
@@ -60,7 +60,7 @@
                             "text": "Option 2 Text"
                         }
                     },{
-                        "item": {
+                        "attribute": {
                             "value": "",
                             "selected": "",
                             "disabled": ""

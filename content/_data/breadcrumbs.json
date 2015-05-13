@@ -1,17 +1,17 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "variant"
     },
     "content": {
         "crumb": [{
-            "item": {
+            "attribute": {
                 "modifier": "root"
                 },
             "content": {
                 "text": "Home",
                 "title": "Go to the homepage",
                 "icon": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "home",
                         "size": ""
                     },
@@ -22,12 +22,12 @@
                 "url": "/",
 
                 "crumb": [{
-                    "item": {},
+                    "attribute": {},
                     "content": {
                         "text": "Category",
                         "title": "Go to the category",
                         "icon": [{
-                            "item": {
+                            "attribute": {
                                 "modifier": "",
                                 "size": ""
                             },
@@ -38,12 +38,12 @@
                         "url": "#",
 
                         "crumb": [{
-                            "item": {},
+                            "attribute": {},
                             "content": {
                                 "text": "Subcategory",
                                 "title": "Go to the subcategory",
                                 "icon": [{
-                                    "item": {
+                                    "attribute": {
                                         "modifier": "",
                                         "size": ""
                                     },
@@ -54,14 +54,14 @@
                                 "url": "#",
 
                                 "crumb": [{
-                                    "item": {
+                                    "attribute": {
                                         "modifier": "current"
                                         },
                                     "content": {
                                         "text": "Page",
                                         "title": "Go to the page",
                                         "icon": [{
-                                            "item": {
+                                            "attribute": {
                                                 "modifier": "",
                                                 "size": ""
                                             },

@@ -1,11 +1,11 @@
 {
-	"item": {
+	"attribute": {
     	"status": "success"
 	},
     "content": {
 		"title": "This is a success alert",
         "icon": [{
-            "item": {
+            "attribute": {
                 "modifier": "tick7",
                 "size": "xlarge"
             }

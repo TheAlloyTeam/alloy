@@ -1,12 +1,12 @@
 {{#this}}
 {{#if content.tabs}}
-<div{{#if item.id}} id="{{item.id}}"{{/if}} class="tabs{{#if item.modifier}} tabs--{{item.modifier}}{{/if}}{{#if item.orientation}} {{item.orientation}}{{/if}}">
+<div{{#if attribute.id}} id="{{attribute.id}}"{{/if}} class="tabs{{#if attribute.modifier}} tabs--{{attribute.modifier}}{{/if}}{{#if attribute.orientation}} {{attribute.orientation}}{{/if}}">
 	<div class="tabs__tray">
 		<ul class="list list__tabs">
 			{{#each content.tabs}}
 				{{#this}}
 					<li class="list__item">
-						<a href="#{{#if item.id}}{{item.id}}{{/if}}" class="list__link"{{#if content.tabTitle}} title="{{content.tabTitle}}"{{/if}}><span>{{{content.tabText}}}</span></a>
+						<a href="#{{#if attribute.id}}{{attribute.id}}{{/if}}" class="list__link"{{#if content.tabTitle}} title="{{content.tabTitle}}"{{/if}}><span>{{{content.tabText}}}</span></a>
 					</li>
 				{{/this}}
 			{{/each}}
@@ -15,7 +15,7 @@
 	<div class="tabs__content">
 		{{#each content.tabs}}
 			{{#this}}
-				<div{{#if item.id}} id="{{item.id}}"{{/if}} class="tabs__body rte">{{{content.body}}}</div>
+				<div{{#if attribute.id}} id="{{attribute.id}}"{{/if}} class="tabs__body rte">{{{content.body}}}</div>
 			{{/this}}
 		{{/each}}
 	</div>

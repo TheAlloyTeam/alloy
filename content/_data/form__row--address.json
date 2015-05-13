@@ -1,16 +1,16 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": true,
         "disabled": ""
     },
     "content": {
         "labels": [{
-            "item": {},
+            "attribute": {},
             "content": {
                 "text": "Address",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -22,7 +22,7 @@
         }],
         "text": "",
         "groups": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "checkbox": "",
                 "vertical": true,
@@ -30,11 +30,11 @@
             },
             "content": {
                 "inputs": [{
-                    "item": {
+                    "attribute": {
                         "size": "small"
                     },
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "required": "",
                             "readonly": "",
@@ -55,17 +55,17 @@
                         }
                     }],
                     "notes": [{
-                        "item": {},
+                        "attribute": {},
                         "content": {
                             "body": "House name / number"
                         }
                     }]
                 },{
-                    "item": {
+                    "attribute": {
                         "size": ""
                     },
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "required": "",
                             "readonly": "",
@@ -86,17 +86,17 @@
                         }
                     }],
                     "notes": [{
-                        "item": {},
+                        "attribute": {},
                         "content": {
                             "body": "Street"
                         }
                     }]
                 },{
-                    "item": {
+                    "attribute": {
                         "size": ""
                     },
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "required": "",
                             "readonly": "",
@@ -117,21 +117,21 @@
                         }
                     }],
                     "notes": [{
-                        "item": {},
+                        "attribute": {},
                         "content": {
                             "body": "Locality"
                         }
                     }]
                 },{
-                    "item": {
+                    "attribute": {
                         "size": ""
                     },
                     "labels": [{
-                        "item": {},
+                        "attribute": {},
                         "content": {
                             "text": "This is a town",
                             "icons": [{
-                                "item": {
+                                "attribute": {
                                     "modifier": "",
                                     "size": ""
                                 },
@@ -142,7 +142,7 @@
                         }
                     }],
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "required": "",
                             "readonly": "",
@@ -163,7 +163,7 @@
                         }
                     }],
                     "notes": [{
-                        "item": {},
+                        "attribute": {},
                         "content": {
                             "body": "e.g. Town/City"
                         }

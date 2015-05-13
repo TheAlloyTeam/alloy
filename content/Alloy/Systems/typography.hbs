@@ -1,0 +1,151 @@
+---
+title: Typography
+layout: alloy.hbs
+
+nav-thumb: "systems/typography.jpg"
+nav-title: "Typography"
+nav-text: "Typography"
+nav-variant: "typography"
+page-category: "systems"
+---
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+		        <section class="section">
+			        <header class="section__head">
+			        	<h2 class="section__title">Headings</h2>
+			        </header>
+			        <div class="section__body rte">
+			        	<h1 class="omega">Omega Heading title <strong>bold</strong> &amp; <em>italic</em></h1>
+			        	<h1>Alpha Heading title <strong>bold</strong> &amp; <em>italic</em></h1>
+			        	<h2>Beta Heading title <strong>bold</strong> &amp; <em>italic</em></h2>
+			        	<h3>Gamma Heading title <strong>bold</strong> &amp; <em>italic</em></h3>
+			        	<h4>Delta Heading title <strong>bold</strong> &amp; <em>italic</em></h4>
+			        	<h5>Epsilon Heading title <strong>bold</strong> &amp; <em>italic</em></h5>
+			        	<h6>Zeta Heading title <strong>bold</strong> &amp; <em>italic</em></h6>
+			        </div>
+		        </section>
+
+		        <section class="section">
+			        <header class="section__head">
+			        	<h3 class="section__title">Body Text</h3>
+			        </header>
+
+		        	<div class="section__body"><!-- unused body --></div>
+
+			        <section class="section">
+		        		<header class="section__head">
+				        	<h4 class="section__title">Paragraph Text</h4>
+		        		</header>
+
+		        		<div class="section__body rte">
+
+				        	<p>Nam rhoncus eget enim quis porta. <u>Praesent malesuada posuere</u> ligula, sed molestie nisi fermentum a. Morbi ullamcorper viverra vestibulum. Integer felis tellus, lobortis ut porta a, <s>sollicitudin vitae lectus</s>. Nulla interdum ligula at nunc accumsan congue. Curabitur non lacinia ex. Donec vitae ex vitae justo vestibulum porta non eget mauris. Sed eget ex urna. Vivamus scelerisque. Interdum<sub>2</sub> et malesuada <abbr title="For All Memes">fames</abbr> ac ante <em>ipsum</em> primis <strong>in faucibus</strong>. Praesent <ins>non massa</ins> a lectus <mark>molestie sollicitudin</mark>. Ut<sup>[3]</sup> pharetra diam <dfn>non mollis</dfn> varius.</p>
+		        		
+		        		</div>
+		        	</section>
+
+			        <section class="section">
+		        		<header class="section__head">
+				        	<h4 class="section__title">Blockquote</h4>
+		        		</header>
+
+		        		<div class="section__body rte">
+
+				        	<blockquote>
+					        	<p>Aenean sollicitudin neque risus, at sollicitudin est accumsan ac. Donec ultrices fermentum euismod. Suspendisse eu suscipit ex&hellip;</p>
+					        	<cite>&mdash; karl dubost (<a href="https://twitter.com/karlpro">@karlpro</a>) <a href="https://twitter.com/karlpro/statuses/370905307293442048">August 23, 2013</a></cite>
+				        	</blockquote>
+
+			        	</div>
+		        	</section>
+
+			        <section class="section">
+		        		<header class="section__head">
+				        	<h4 class="section__title">Inline Quotes</h4>
+		        		</header>
+
+		        		<div class="section__body rte">
+
+		        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut nibh vel ipsum lacinia rutrum. Aenean maximus nibh vitae est cursus dignissim. Nunc at finibus erat. <q>Aenean sollicitudin neque risus, at sollicitudin est accumsan ac.</q> Donec ultrices fermentum euismod. Suspendisse eu suscipit ex. Quisque sit amet augue efficitur, lobortis justo a, auctor magna.</p>
+
+			        	</div>
+		        	</section>
+
+			        <section class="section">
+		        		<header class="section__head">
+				        	<h4 class="section__title">Small Text</h4>
+		        		</header>
+
+		        		<div class="section__body rte">
+
+				        	<p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut nibh vel ipsum lacinia rutrum. Aenean maximus nibh vitae est cursus dignissim. Nunc at finibus erat. Aenean sollicitudin neque risus, at sollicitudin est accumsan ac. Donec ultrices fermentum euismod. Suspendisse eu suscipit ex. Quisque sit amet augue efficitur, lobortis justo a, auctor magna.</p>
+
+				        	<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut nibh vel ipsum lacinia rutrum. Aenean maximus nibh vitae est cursus dignissim. Nunc at finibus erat. Aenean sollicitudin neque risus, at sollicitudin est accumsan ac. Donec ultrices fermentum euismod. Suspendisse eu suscipit ex. Quisque sit amet augue efficitur, lobortis justo a, auctor magna.</small>
+
+			        	</div>
+		        	</section>
+
+			        <section class="section">
+		        		<header class="section__head">
+				        	<h4 class="section__title">Lists</h4>
+		        		</header>
+
+		        		<div class="section__body rte">
+
+				        	<ul>
+				        		<li>Sed eget ex urna.</li>
+				        		<li>Nulla interdum ligula at nunc accumsan congue.</li>
+				        		<li>Donec vitae ex vitae.
+				        			<ol>
+						        		<li>Sed eget ex urna.</li>
+						        		<li>Nulla interdum ligula at nunc accumsan congue.</li>
+						        		<li>Donec vitae ex vitae.</li>
+						        	</ol>
+				        		</li>
+				        		<li>Nam rhoncus eget enim quis porta.</li>
+				        		<li>Sollicitudin est accumsan.</li>
+				        	</ul>
+
+				        	<ol>
+				        		<li>Sed eget ex urna.</li>
+				        		<li>Nulla interdum ligula at nunc accumsan congue.</li>
+				        		<li>Donec vitae ex vitae.
+					        		<ul>
+						        		<li>Sed eget ex urna.</li>
+						        		<li>Nulla interdum ligula at nunc accumsan congue.</li>
+						        		<li>Donec vitae ex vitae.</li>
+						        	</ul>
+						        </li>
+				        		<li>Nam rhoncus eget enim quis porta.</li>
+				        		<li>Sollicitudin est accumsan.</li>
+				        	</ol>
+
+			        	</div>
+		        	</section>
+
+		        </section>
+
+		        <footer class="page__foot">
+		        	
+		        </footer>
+
+	        </div>
+
+	    </div>
+	</div>
+</main>

@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "modifier",
         "required": "",
         "disabled": "",
@@ -8,13 +8,13 @@
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": ""
             },
             "content": {
                 "text": "Validated input",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -25,7 +25,7 @@
             }
         }],
         "groups": [{
-            "item": {
+            "attribute": {
                 "modifier": "",
                 "checkbox": "",
                 "vertical": "true",
@@ -33,11 +33,11 @@
             },
             "content": {
                 "inputs": [{
-                    "item": {
+                    "attribute": {
                         "status": ""
                     },
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "size": "large",
                             "required": "",
@@ -60,11 +60,11 @@
                     }]
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "status": "success"
                     },
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "size": "",
                             "required": "",
@@ -88,11 +88,11 @@
                     }]
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "status": "info"
                     },
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "size": "",
                             "required": "",
@@ -116,11 +116,11 @@
                     }]
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "status": "warn"
                     },
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "size": "",
                             "required": "",
@@ -144,11 +144,11 @@
                     }]
                 },
                 {
-                    "item": {
+                    "attribute": {
                         "status": "danger"
                     },
                     "texts": [{
-                        "item": {
+                        "attribute": {
                             "modifier": "",
                             "size": "",
                             "required": "",

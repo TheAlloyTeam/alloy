@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": "",
@@ -7,13 +7,13 @@
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-name-1"
             },
             "content": {
                 "text": "First &amp; Last Name",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -24,11 +24,11 @@
             }
         }],
         "inputs": [{
-            "item": {
+            "attribute": {
                 "size": "small"
             },
             "texts": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "size": "",
                     "required": "",
@@ -50,11 +50,11 @@
                 }
             }]
         },{
-            "item": {
+            "attribute": {
                 "size": "small"
             },
             "texts": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "size": "",
                     "required": "",

@@ -164,7 +164,7 @@ module.exports = function(grunt) {
             tasks: ['less']
           },
           watchjs: {
-            files: ['<%= pkg.alloy.js %>/app.js','<%= pkg.alloy.js %>/modules/*.js'],
+            files: ['<%= pkg.alloy.js %>/app.js','<%= pkg.alloy.js %>/modules/*.js','<%= pkg.alloy.js %>/examples/*.js'],
             tasks: ['jshint','requirejs']
           },
           watchimages: {

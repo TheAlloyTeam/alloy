@@ -1,30 +1,30 @@
 {{#this}}
     {{#if content.url}}
     <a href="{{content.url}}"
-        {{#if item.target}} target="{{item.target}}"{{/if}}
+        {{#if attribute.target}} target="{{attribute.target}}"{{/if}}
         class="button
-            {{#if item.modifier}} button--{{item.modifier}}{{/if}}
-            {{#if item.disabled}} disabled{{/if}}
-            {{#if item.status}} {{item.status}}{{/if}}
-            {{#if item.size}} {{item.size}}{{/if}}
-            {{#if item.block}} block{{/if}}"
+            {{#if attribute.modifier}} button--{{attribute.modifier}}{{/if}}
+            {{#if attribute.disabled}} disabled{{/if}}
+            {{#if attribute.status}} {{attribute.status}}{{/if}}
+            {{#if attribute.size}} {{attribute.size}}{{/if}}
+            {{#if attribute.block}} block{{/if}}"
         {{#if content.title}} title="{{content.title}}"{{/if}}
-        {{#if item.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
+        {{#if attribute.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
         {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
         {{#if content.text}}<span>{{content.text}}</span>{{/if}}
         {{#if content.badges}}{{#each content.badges}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
-        {{#if item.menu}}<span></span>{{/if}}
+        {{#if attribute.menu}}<span></span>{{/if}}
     </a>
     {{else}}
         {{#if content.type}}
             <button class="button
-                    {{#if item.modifier}} button--{{item.modifier}}{{/if}}
-                    {{#if item.disabled}} disabled{{/if}}
-                    {{#if item.size}} {{item.size}}{{/if}}
-                    {{#if item.block}} block{{/if}}"
+                    {{#if attribute.modifier}} button--{{attribute.modifier}}{{/if}}
+                    {{#if attribute.disabled}} disabled{{/if}}
+                    {{#if attribute.size}} {{attribute.size}}{{/if}}
+                    {{#if attribute.block}} block{{/if}}"
                 type="submit"
-                {{#if item.disabled}} disabled="disabled"{{/if}}
-                {{#if item.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
+                {{#if attribute.disabled}} disabled="disabled"{{/if}}
+                {{#if attribute.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
                 <span class="ripple"></span>
                 {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
                 {{#if content.text}}<span>{{content.text}}</span>{{/if}}
@@ -32,11 +32,11 @@
             </button>
         {{else}}
             <span class="button
-                    {{#if item.modifier}} button--{{item.modifier}}{{/if}}
-                    {{#if item.disabled}} disabled{{/if}}
-                    {{#if item.size}} {{item.size}}{{/if}}"
+                    {{#if attribute.modifier}} button--{{attribute.modifier}}{{/if}}
+                    {{#if attribute.disabled}} disabled{{/if}}
+                    {{#if attribute.size}} {{attribute.size}}{{/if}}"
                 {{#if content.title}} title="{{content.title}}"{{/if}}
-                {{#if item.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
+                {{#if attribute.menu}} data-toggle="menu" aria-expanded="false"{{/if}}>
                 {{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
                 {{#if content.text}}<span>{{content.text}}</span>{{/if}}
                 {{#if content.badges}}{{#each content.badges}}{{#this}}{{>badge}}{{/this}}{{/each}}{{/if}}
