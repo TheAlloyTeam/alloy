@@ -13,7 +13,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{{ assets }}/css/fontloader.css" />
-    <link rel="stylesheet" href="{{ assets }}/css/main.css" />
+    <link rel="stylesheet" href="{{ assets }}/css/startup.css" />
 
     <!-- For retina-display iPads -->
     <!-- <link href="{{ assets }}/img/icons/retina_ipad_home.png" rel="apple-touch-icon-precomposed" sizes="144x144" type="image/png"/> -->
@@ -46,7 +46,20 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    {{> body }}
+    <div class="stage">
+        <div class="page">
+
+            {{> body }}
+
+        </div>
+        <div class="menu">
+
+            Menu Items
+
+        </div>
+    </div>
+
+
     {{> ALLOY_scripts }}
 
     <!-- <div class="modal__mask modal__mask--visible"></div> -->
