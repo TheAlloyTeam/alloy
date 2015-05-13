@@ -3,9 +3,10 @@
 // =========================================================================*/
 
 // Start the main app logic.
-require(['jquery', 'fontloader', 'navigation', 'logging', 'core', 'mobile', 'iefixes', 'prettyprint', 'dragdrop', 'configretriever', 'watchdog'],
+require(['jquery', 'fontloader', 'navigation', 'logging', 'core', 'mobile', 'iefixes', 'highlight', 'dragdrop', 'configretriever', 'watchdog'],
     function ($) {
         ALLOY.Logger.startup('ALLOY.Main Started');
+		hljs.initHighlightingOnLoad();
     }
 );
 

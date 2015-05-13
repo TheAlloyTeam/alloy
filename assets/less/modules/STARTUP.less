@@ -1,33 +1,18 @@
 /* =========================================================================
-// SECTION
+// ALLOY STARTUP
 // =======================================================================*/
 
-// BASE
+// VARIABLES
 // ----------------------------------------------------
 
-.section {
-	._margin-bottom (@TYPE-LineHeight*1.5);
+// Styles specifically only used by the toolkit site
+// ----------------------------------------------------
 
-	&:last-of-type {
-		margin-bottom: 0;
-	}
-
-  + .section {
-	border-top: 2px solid @COLOR-GreyLightest;
-	._padding-top(@TYPE-LineHeight);
+.m--startup {
+  .main {
+    ._padding-top(@TYPE-LineHeight*2);
   }
-
 }
-
-.section__head {}
-
-.section__title {}
-
-.section__body {}
-
-.section__nav {}
-
-.section__foot {}
 
 // MOBILE
 // ----------------------------------------------------
@@ -36,10 +21,10 @@
 
 }
 
-// TABLET
+// TABLET & UP
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+@media only screen and (min-width: @MQ-Medium-min) {
 
 }
 

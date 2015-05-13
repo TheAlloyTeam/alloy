@@ -1,0 +1,17 @@
+{{#this}}
+    <nav class="main_nav" role="navigation">
+        <ul class="main_nav__list">
+            {{#if navigation-main}}
+                {{#withSort navigation-main "data.navigation-order"}}
+                    {{#each this.pages}}
+                        {{#if data.navigation-main }}
+                            {{#this}}
+                                <li class="main_nav__item"><a href="{{relative ../../../../page.dest this.dest}}" class="main_nav__link{{#if page.nav-variant}} main_nav__link--{{data.nav-variant}}{{/if}}{{#is ../../../../page.dest this.dest}} current{{/is}}" title="{{data.nav-title}}"{{#if data.nav-target}} target="{{data.nav-target}}"{{/if}}><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+                            {{/this}}
+                        {{/if}}
+                    {{/each}}
+                {{/withSort}}
+            {{/if}}
+        </ul>
+    </nav>
+{{/this}}
