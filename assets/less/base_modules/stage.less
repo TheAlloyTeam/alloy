@@ -23,28 +23,44 @@
   }
 
   .stage__toggle {
-    text-decoration: none;
     position: absolute;
-    z-index: @Z-INDEX-Level5;
     display: block;
     left: 20px;
     top: 20px;
+    z-index: @Z-INDEX-Level5;
+    text-decoration: none;
+    line-height: 1;
+    ._padding-top (1);
+    ._font-size (@TYPE-LineHeight);
 
-    &:link {}
-    &:visited {}
-    &:hover {}
-    &:focus {}
-    &:active {}
+    &:link {
+      color: @COLOR-GreyLightest;
+    }
+
+    &:visited {
+      color: lighten(@COLOR-GreyLightest, 20%);
+    }
+
+    &:hover,
+    &:focus {
+      color: darken(@COLOR-GreyLightest, 10%);
+    }
+
+    &:active {
+      color: darken(@COLOR-GreyLightest, 20%);
+    }
   }
 
   .stage__page {
+    z-index: @Z-INDEX-Level1;
+
     position: relative;
     background-color: @COLOR-White;
-    ._box-shadow();
+    ._box-shadow-custom(~"0 0 40px rgba(0,0,0,0.9)");
   }
 
   .stage__menu {
-    z-index: @Z-INDEX-Level6;
+    z-index: @Z-INDEX-Level0;
     position: fixed;
     top:0;
     left:0;
