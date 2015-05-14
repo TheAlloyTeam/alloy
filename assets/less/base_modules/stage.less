@@ -1,0 +1,77 @@
+.stage-styles() when not (@MODULE-Stage) { }
+.stage-styles() when (@MODULE-Stage) {
+
+/* =========================================================================
+// STAGE
+// =======================================================================*/
+
+// COLOURS
+// ----------------------------------------------------
+
+@BOX-HeadColor:                 @COLOR-White;
+
+// BASE
+// ----------------------------------------------------
+
+  .stage {
+    min-height: 100%;
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: @COLOR-GreyLight;
+    padding-left: 300px;
+  }
+
+  .stage__toggle {
+    text-decoration: none;
+    position: absolute;
+    z-index: @Z-INDEX-Level5;
+    display: block;
+    left: 20px;
+    top: 20px;
+
+    &:link {}
+    &:visited {}
+    &:hover {}
+    &:focus {}
+    &:active {}
+  }
+
+  .stage__page {
+    position: relative;
+    background-color: @COLOR-White;
+    ._box-shadow();
+  }
+
+  .stage__menu {
+    z-index: @Z-INDEX-Level6;
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 300px;
+    background-color: @COLOR-GreyDarkest;
+  }
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+} .stage-styles();
