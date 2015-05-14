@@ -18,18 +18,168 @@
 @PRETTIFY-Attribute:            @COLOR-Emerald;
 @PRETTIFY-AttributeValue:       @COLOR-YellowLight;
 @PRETTIFY-Decimal:              @COLOR-GreyLighter;
+@PRETTIFY-Emphasis:             @COLOR-GreyLight;
+
+
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
 
 .prettyprint {
-    display: block;
-    color: @COLOR-GreyLighter;
-    background-color: @COLOR-GreyDarker;
-    padding: 1em;
-    overflow: hidden;
 
-    code {
-        display: inline;
-        line-height: 1.3;
+    .hljs {
+        display: block;
+        overflow: hidden;
+        overflow-x: auto;
+        padding: 1em;
+        color: @COLOR-GreyLighter;
+        background-color: @COLOR-GreyDarker;
+        -webkit-text-size-adjust: none;
     }
+
+.hljs,
+.hljs-tag,
+.css .hljs-rule,
+.css .hljs-value,
+.aspectj .hljs-function,
+.css .hljs-function
+.hljs-preprocessor,
+.hljs-pragma {
+    color: @PRETTIFY-Plaintext;
+}
+
+.hljs-strongemphasis,
+.hljs-strong,
+.hljs-emphasis {
+    color: @PRETTIFY-Emphasis;
+}
+
+.hljs-bullet,
+.hljs-blockquote,
+.hljs-horizontal_rule,
+.hljs-number,
+.hljs-regexp,
+.alias .hljs-keyword,
+.hljs-literal,
+.hljs-hexcolor {
+    color: @PRETTIFY-Literal;
+}
+
+.hljs-tag .hljs-value,
+.hljs-code,
+.hljs-title,
+.css .hljs-class,
+.hljs-class .hljs-title:last-child {
+    color: @PRETTIFY-Attribute;
+}
+
+.hljs-link_url {
+    font-size: 80%;
+}
+
+.hljs-strong,
+.hljs-strongemphasis {
+    font-weight: bold;
+}
+
+.hljs-emphasis,
+.hljs-strongemphasis,
+.hljs-class .hljs-title:last-child,
+.hljs-typename {
+    font-style: italic;
+}
+
+.hljs-keyword,
+.ruby .hljs-class .hljs-keyword:first-child,
+.ruby .hljs-function .hljs-keyword,
+.hljs-function,
+.hljs-change,
+.hljs-winutils,
+.hljs-flow,
+.nginx .hljs-title,
+.tex .hljs-special,
+.hljs-header,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.hljs-tag .hljs-title,
+.hljs-value,
+.alias .hljs-keyword:first-child,
+.css .hljs-tag,
+.css .unit,
+.css .hljs-important {
+    color: @PRETTIFY-AttributeValue;
+}
+
+.hljs-function .hljs-keyword,
+.hljs-class .hljs-keyword:first-child,
+.hljs-aspect .hljs-keyword:first-child,
+.hljs-constant,
+.hljs-typename,
+.hljs-name,
+.css .hljs-attribute {
+    color: @PRETTIFY-Keyword;
+}
+
+.hljs-variable,
+.hljs-params,
+.hljs-class .hljs-title,
+.hljs-aspect .hljs-title {
+    color: #f8f8f2;
+}
+
+.hljs-string,
+.css .hljs-id,
+.hljs-subst,
+.hljs-type,
+.ruby .hljs-class .hljs-parent,
+.hljs-built_in,
+.django .hljs-template_tag,
+.django .hljs-variable,
+.smalltalk .hljs-class,
+.django .hljs-filter .hljs-argument,
+.smalltalk .hljs-localvars,
+.smalltalk .hljs-array,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-addition,
+.hljs-stream,
+.hljs-envvar,
+.apache .hljs-tag,
+.apache .hljs-cbracket,
+.tex .hljs-command,
+.hljs-prompt,
+.hljs-link_label,
+.hljs-link_url {
+    color: @PRETTIFY-Tag;
+}
+
+.hljs-comment,
+.hljs-javadoc,
+.hljs-annotation,
+.hljs-decorator,
+.hljs-pi,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-shebang,
+.apache .hljs-sqbracket,
+.tex .hljs-formula {
+    color: #75715e;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata,
+.xml .php,
+.php .xml {
+    opacity: 0.5;
+}
 
     *::selection {
         color: @COLOR-GreyLighter;
@@ -40,91 +190,4 @@
         color: @COLOR-GreyLighter;
         background: @COLOR-PinkDarker;
     }
-
-    .nocode { background-color: none; color: @PRETTIFY-NoCode }
-    .str { color: @PRETTIFY-String; }
-    .kwd { color: @PRETTIFY-Keyword; }
-    .com { color: @PRETTIFY-Comment; }
-    .typ { color: @PRETTIFY-Type; }
-    .lit { color: @PRETTIFY-Literal; }
-    .pun { color: @PRETTIFY-Punctuation; }
-    .pln { color: @PRETTIFY-Plaintext; }
-    .tag { color: @PRETTIFY-Tag; }
-    .atn { color: @PRETTIFY-Attribute; }
-    .atv { color: @PRETTIFY-AttributeValue; }
-    .dec { color: @PRETTIFY-Decimal; }
-
-}
-
-// LANGUAGE SPECIFIC COLOURS
-// =========================================================================
-
-@media screen {
-    .lang-css {
-        .pln{ color:#a0e22a; }  /* plaintext - green    */
-        .lit{ color:#F92672; }  /* literal   - pink/red */
-    }
-
-    .lang-js {
-        .kwd{ color:#AE81FF; } /* keyword  - purple */
-    }
-
-    .lang-sql {
-        .kwd{ color:#F92672; }  /* keyword  - pink/red */
-    }
-}
-
-// LINENUMBERS (.linenums)
-// =========================================================================
-
-.prettyprint {
-    .linenums {
-        color: @COLOR-Grey;
-        margin: 0;
-        padding-left: 0;
-        counter-reset: item;
-        list-style-type: none;
-
-        li {
-            display: block;
-            position: relative;
-            line-height: 1.4;
-
-            code {
-                border-left: 1px solid @COLOR-Grey;
-                line-height: 1.4;
-                ._margin-left (50);
-            }
-
-            &:before {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 50px;
-                display: block;
-                content: counter(item) "  ";
-                counter-increment: item;
-                text-align: right;
-            }
-        }
-    }
-}
-
-// PRINT STYLES
-// =========================================================================
-
-@media print {
-
-    .prettyprint { background-color: none }
-    .str { color: #060 }
-    .kwd { color: #006; font-weight: bold }
-    .com { color: #600; font-style: italic }
-    .typ { color: #404; font-weight: bold }
-    .lit { color: #044 }
-    .pun { color: #440 }
-    .pln { color: #000 }
-    .tag { color: #006; font-weight: bold }
-    .atn { color: #404 }
-    .atv { color: #060 }
-
 }
