@@ -14,7 +14,7 @@
         that: {},
 
         defaults: {
-            classes: {},
+            classes: {}
         },
 
         _init: function() {
@@ -35,7 +35,7 @@
 
         _update: function(id, toOpen) {
             that.$element.find("." + that.config.classes.title).each(function() { that._handleTitle(this, id, toOpen); });
-        },
+        }
 
     };
 
