@@ -47,7 +47,8 @@ var require = {
         'mustacheretriever': "modules/alloy.mustacheretriever",
         'configretriever': "modules/alloy.configretriever",
         'watchdog': "modules/alloy.watchdog",
-        'scrollbar': "modules/alloy.scrollbar"
+        'scrollbar': "modules/alloy.scrollbar",
+        'stage': "modules/alloy.stage"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -75,7 +76,8 @@ var require = {
         'mustacheretriever': {deps: ['jquery', 'core', 'logging', 'mustache']},
         'configretriever': {deps: ['jquery', 'core', 'logging']},
         'watchdog': {deps: ['jquery', 'core', 'logging']},
-        'scrollbar': {deps: ['jquery', 'core', 'logging']}
+        'scrollbar': {deps: ['jquery', 'core', 'logging']},
+        'stage': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
