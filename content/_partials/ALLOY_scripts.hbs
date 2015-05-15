@@ -184,6 +184,16 @@
 </script>
 {{/if}}
 
+{{#if js-scrollbar}}
+<script>
+	require(["scrollbar"], function() {
+		$(".scrollable").scrollbar({
+			
+		});
+	});
+</script>
+{{/if}}
+
 
 <!-- Example functionality -->
 <script>
