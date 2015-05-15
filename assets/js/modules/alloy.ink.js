@@ -70,4 +70,5 @@
     // Autostart Plugin
     ALLOY.Logger.trace('ALLOY.Ink Initialized');
     $('.button').ink();
+    $('.ink').ink();
 })();

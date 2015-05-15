@@ -1,0 +1,121 @@
+.sidemenu-styles() when not (@MODULE-SideMenu) { }
+.sidemenu-styles() when (@MODULE-SideMenu) {
+
+/* =========================================================================
+// BOX
+// =======================================================================*/
+
+// COLOURS
+// ----------------------------------------------------
+
+// BASE
+// ----------------------------------------------------
+
+
+  .sidemenu {
+    ._padding(20);
+  }
+  .sidemenu__head {
+    position: relative;
+  }
+  .sidemenu__title {
+    color: @COLOR-GreyLight;
+  }
+  .sidemenu__close {
+    float: right;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    line-height: 1;
+    ._padding-top (1);
+    ._font-size (@TYPE-LineHeight);
+
+    color: lighten(@COLOR-GreyDarkest, 20%);
+
+    &:link,
+    &:visited {
+      color: lighten(@COLOR-GreyDarkest, 20%);
+    }
+
+    &:hover,
+    &:focus {
+      color: lighten(@COLOR-GreyDarkest, 10%);
+    }
+
+    &:active {
+      color: lighten(@COLOR-GreyDarkest, 5%);
+    }
+  }
+  .sidemenu__body {
+    overflow-y: auto;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 60px;
+    bottom: 20px;
+  }
+  .sidemenu__list {
+    border-top: 1px solid @COLOR-GreyDarker;}
+  .sidemenu__item {
+    border-bottom: 1px solid @COLOR-GreyDarker;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .sidemenu__link {
+    color: @COLOR-GreyLightest;
+    display:block;
+    text-decoration: none;
+    ._padding(@TYPE-LineHeight/2, @TYPE-FontSize);
+    ._transition(background-color, 0.2s);
+
+    &:link {
+      color: @COLOR-GreyLightest;
+    }
+    &:visited {
+      color: @COLOR-GreyLightest;
+    }
+    &:hover {
+      color: @COLOR-GreyLightest;
+      background-color: fade(@COLOR-GreyDark, 50%);
+    }
+    &:focus {
+      color: @COLOR-YellowLight;
+    }
+    &:active {
+
+      color: @COLOR-GreyLighter;
+      background-color: fade(@COLOR-Black, 50%);}
+  }
+
+// VARIANTS
+// ----------------------------------------------------
+
+  .sidemenu__list--root {
+    border-bottom: 1px solid @COLOR-GreyDarker;
+  }
+  .sidemenu__list--sub {}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}
+
+} .sidemenu-styles();
