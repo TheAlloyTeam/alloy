@@ -25,7 +25,19 @@
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
             
             var that = this;
-            this.$element.click(function(e) { that._onClick(this, e.pageX, e.pageY); } );
+            this.$element.click(function(e) {
+
+                if (that.$element.hasClass("event-paused")) {
+                    that.$element.removeClass("event-paused");
+                    return true;
+                } else {
+                    setTimeout(function() { that.$element[0].click(); }, that.config.rippleInterval);
+                    that.$element.addClass("event-paused");
+                    that._onClick(this, e.pageX, e.pageY, e);
+                    return false;
+                }
+            });
+
             ALLOY.Logger.startup('ALLOY.Ink Started');
         },
  

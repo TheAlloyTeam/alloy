@@ -85,8 +85,8 @@
             var elWidth = that.$element.width();
             var scWidth = that.$scrollContainer.width();
 
-            var elHeight = that.$element.height();
-            that.$scrollContainer.css({ height: elHeight + "px" });
+            that.$element.css({ height: that.$scrollwrap.height() + "px" });
+            that.$scrollContainer.css({ height: that.$scrollwrap.height() + "px" });
         },
 
         _initEvents: function(that) {
