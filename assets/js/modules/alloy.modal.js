@@ -12,6 +12,7 @@
     Modal.prototype = {
         defaults: {
             content: undefined,
+            imageAltText: "",
 
             maskClass: "modal__mask",
             maskActiveClass: "modal__mask--visible",
@@ -57,6 +58,7 @@
         },
 
         _getContent: function(that) {
+            
             // Content has already been set
             if (that.htmlContent !== undefined) {
                 // Do nothing, let the minifier handle it
@@ -69,6 +71,11 @@
             } else if (that._checkVideos(that)) {
                 // Do nothing, let the minifier handle it
             }
+            // Check for image url
+            else if (that._checkImage(that))
+            {
+                that.htmlContent = '<img src="' + that.config.content + '" alt="' + that.config.imageAltText + '" />';
+            }
             // Just default to the content that was passed through
             else {
                 that.htmlContent = that.config.content;
@@ -76,6 +83,10 @@
             // Handle situations where it is a url that we can get a partial from
 
             return that.htmlContent;
+        },
+
+        _checkImage: function(that) {
+            return(that.config.content.match(/\.(jpeg|jpg|gif|png|bmp)$/) !== null);
         },
 
         _checkVideos: function(that) {
