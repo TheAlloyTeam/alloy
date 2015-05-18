@@ -23,6 +23,9 @@
                 trayOpening: "opening",
                 trayClosing: "closing"
             },
+
+            trayOpenIndex: 1,
+            trayCloseIndex: 0,
             dataPushFrom: "pushfrom"
         },
 
@@ -31,6 +34,7 @@
 
             var that = this;
             this._initStageElements(that);
+            this._initSizes(that);
             this._initEvents(that);
 
             ALLOY.Logger.startup('ALLOY.Stage Started');
@@ -40,18 +44,26 @@
             that.$page = that.$element.find("." + that.config.classes.page);
             that.$trays = that.$element.find("." + that.config.classes.tray);
             that.$toggles = that.$element.find("." + that.config.classes.toggle);
+        },
 
-            // Set required styles for stage element
-            that.$element.css({ overflow: "hidden", width: "100%" });
+        _initSizes: function(that) {
+            that.$element.css({ overflow: "", width: "" });
+            that.$trays.css({ left: "", right: ""});
+            that.$page.css({ top: "", left: "", width: "" });
 
-            // Set required styles for tray elements (if left move left, if right move right)
-            that.$trays.each(function(i) {
-                $(this).css($(this).data(that.config.dataPushFrom), "-" + $(this).width() + "px");
-                $(this).data("stagetrayindex", i);
+            setTimeout(function() {
+                // Set required styles for stage element
+                that.$element.css({ overflow: "hidden", width: "100%" });
+
+                // Set required styles for tray elements (if left move left, if right move right)
+                that.$trays.each(function(i) {
+                    $(this).css($(this).data(that.config.dataPushFrom), "-" + $(this).width() + "px");
+                    $(this).data("stagetrayindex", i);
+                });
+
+                // Set required styles for page element
+                that.$page.css({ top: "0", left: "0", width: that.$element.outerWidth(true) + "px" });
             });
-
-            // Set required styles for page element
-            that.$page.css({ top: "0", left: "0", width: that.$element.outerWidth(true) + "px" });
         },
 
         _initEvents: function(that) {
@@ -59,6 +71,20 @@
                 e.preventDefault();
                 that._handleToggle($(this), that);
             });
+
+            $(window).resize(function() {
+                that._initSizes(that);
+                that._closeAllToggles(that);
+            });
+        },
+
+        _closeAllToggles: function(that) {
+            that.$toggles.each(function() {
+                var $tray = that.$element.find($(this).attr("href"));
+                that._toggleTray($tray, false, false, that);
+            });
+
+            that._movePageOut(that);
         },
 
         _handleToggle: function($toggle, that) {
@@ -97,8 +123,8 @@
 
         _openTray: function($tray, includePage, that, width, direction) {
             $tray.addClass(that.config.classes.trayOpening)
-                 .removeClass(that.config.classes.trayClosing)                 
-                 .css(direction, "0");
+                 .removeClass(that.config.classes.trayClosing)
+                 .css(direction, "0").css("z-index", that.config.trayOpenIndex);
 
             if (includePage) {
                 var moveVal = direction === "left" ? width : width * -1;
@@ -113,15 +139,17 @@
         _closeTray: function($tray, includePage, that, width, direction) {
             $tray.addClass(that.config.classes.trayClosing)
                  .removeClass(that.config.classes.trayOpening)
-                 .css(direction, "-" + width + "px");
+                 .css(direction, "-" + width + "px").css("z-index", that.config.trayCloseIndex);
 
-            if (includePage) {
-                that.$page.removeClass(that.config.classes.pageMovingIn)
-                          .addClass(that.config.classes.pageMovingOut)
-                          .css({ left: "0" });
-            }
+            if (includePage) { that._movePageOut(that); }
 
             ALLOY.Logger.debug("ALLOY.Stage - Closed tray");
+        },
+
+        _movePageOut: function(that) {
+            that.$page.removeClass(that.config.classes.pageMovingIn)
+                .addClass(that.config.classes.pageMovingOut)
+                .css({ left: "0" });
         },
 
         _setToggles: function(href, open, that) {
