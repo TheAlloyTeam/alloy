@@ -20,6 +20,7 @@
                 buttonDown: "button-down",
                 scrollbar: "scrollbar",
                 scroller: "button-scroller",
+                hoverFocus: "hoverfocus",
                 focus: "hasfocus"
             },
             steps: {
@@ -100,6 +101,9 @@
                 e.stopPropagation();
             });
 
+            that.$scrollwrap.hover(function() { that.$scrollwrap.addClass(that.config.classes.hoverFocus); },
+                                   function() { that.$scrollwrap.removeClass(that.config.classes.hoverFocus); });
+
             /* Scroll by keyboard events */
             $('body').keydown(function(e) { that._onKeydown(e, that); });
 
@@ -131,6 +135,10 @@
             var scrollerHeight = that.$scrollbar.height() - that.$scroller.height();
             var elScroll = scrollerHeight * scrollPercent;
             this.$scroller.css({ top: elScroll + "px" });
+        },
+
+        _hasFocus: function(that) {
+            return that.hasFocus || that.$scrollwrap.hasClass(that.config.classes.hoverFocus);
         },
 
         /* Scroller */
@@ -199,7 +207,7 @@
 
         /* Keyboard */
         _onKeydown: function(e, that) {
-            if (that.hasFocus) {
+            if (that._hasFocus(that)) {
                 var pixels;
                 switch(e.keyCode) {
                     case ALLOY.Keyboard.keycodes.PAGE_UP:
@@ -232,7 +240,7 @@
 
         /* Mouse */
         _onMouseScroll: function(e, that) {
-            if (that.hasFocus) {
+            if (that._hasFocus(that)) {
                 var pixels;
                 if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
                     // Scroll up
