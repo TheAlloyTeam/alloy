@@ -44,13 +44,17 @@
                 that.$toast.removeClass(that.config.classes.activating).addClass(that.config.classes.active);
 
                 // Triggers for closing toast
-                that.timer = setTimeout(function() { that._deactivate(onCooked); }, that.config.despawnInterval );
+                if (that.config.despawnInterval > 0) {
+                    that.timer = setTimeout(function() { that._deactivate(onCooked); }, that.config.despawnInterval );
+                }
                 that.$toast.find("." + that.config.classes.close).click(function(e) { e.preventDefault(); that._handleCloseButton(onCooked); });
 
             }, this.config.transitionLength);
 
             // Set progress bar
-            this.progress = setInterval(function() { that._progressTick(that); }, Math.floor(that.config.despawnInterval / 100));
+            if (that.config.despawnInterval > 0) {
+                this.progress = setInterval(function() { that._progressTick(that); }, Math.floor(that.config.despawnInterval / 100));
+            }
         },
 
         _handleCloseButton: function(onCooked) {

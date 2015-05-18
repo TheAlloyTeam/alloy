@@ -1,0 +1,63 @@
+.scrollbar-styles() when not (@MODULE-Scrollbar) { }
+.scrollbar-styles() when (@MODULE-Scrollbar) {
+
+/* ==========================================================================
+// SCROLLBAR
+// =========================================================================*/
+
+	@SCROLLBAR-Anim:					@ANIM-Curve;
+
+	.scroll-wrap {
+		position: relative;
+
+		& .scrollable {
+			margin-right: 1em;
+		}
+
+		.scrollcontainer {
+			background-color: @COLOR-GreyLightest;
+		  	background-color: fade(@COLOR-Grey, 50%);
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 1em;
+			height: 100%;
+          ._padding(2);
+
+			opacity: 0;		
+		    ._transition (opacity, 0.4s, @SCROLLBAR-Anim);
+		}
+
+		&.hasfocus {
+	  		 .scrollcontainer {
+	  			opacity: 1;
+	  		}
+	  	}
+
+  		&:hover, &:focus {
+	  		 .scrollcontainer {
+	  			opacity: 1;
+	  		}
+	  	}
+	}
+
+	.button-up {
+
+	}
+
+	.button-down {
+
+	}
+
+	.scrollbar {
+		width: 100%;
+		height: 100%;
+	}
+
+	.button-scroller {
+	  width: 100%;
+	  height: 1em;
+	  background-color: @COLOR-GreyDark;
+	}
+
+} .scrollbar-styles();

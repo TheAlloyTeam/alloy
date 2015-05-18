@@ -9,6 +9,10 @@
 // ----------------------------------------------------
 
 @BOX-HeadColor:                 @COLOR-White;
+@STAGEPAGE-IN-Anim:             @ANIM-Curve;
+@STAGEPAGE-OUT-Anim:            @ANIM-Curve;
+@STAGETRAY-OPEN-Anim:           @ANIM-Curve;
+@STAGETRAY-CLOSE-Anim:          @ANIM-Curve;
 
 // BASE
 // ----------------------------------------------------
@@ -19,38 +23,73 @@
     height: 100%;
     overflow: hidden;
     background-color: @COLOR-GreyLight;
-    padding-left: 300px;
   }
 
   .stage__toggle {
-    text-decoration: none;
     position: absolute;
-    z-index: @Z-INDEX-Level5;
     display: block;
     left: 20px;
     top: 20px;
+    z-index: @Z-INDEX-Level5;
+    text-decoration: none;
+    line-height: 1;
+    ._padding-top (1);
+    ._font-size (@TYPE-LineHeight);
 
-    &:link {}
-    &:visited {}
-    &:hover {}
-    &:focus {}
-    &:active {}
+    &:link {
+      color: @COLOR-GreyLightest;
+    }
+
+    &:visited {
+      color: lighten(@COLOR-GreyLightest, 20%);
+    }
+
+    &:hover,
+    &:focus {
+      color: darken(@COLOR-GreyLightest, 10%);
+    }
+
+    &:active {
+      color: darken(@COLOR-GreyLightest, 20%);
+    }
   }
 
   .stage__page {
+    z-index: @Z-INDEX-Level1;
+
     position: relative;
     background-color: @COLOR-White;
-    ._box-shadow();
+    ._box-shadow-custom(~"0 0 40px rgba(0,0,0,0.9)");
+
+    &.movingIn {
+      ._transition (left, 0.4s, @STAGEPAGE-IN-Anim);
+    }
+
+    &.movingOut {
+      ._transition (left, 0.4s, @STAGEPAGE-OUT-Anim);
+    }
+
   }
 
-  .stage__menu {
-    z-index: @Z-INDEX-Level6;
+  .stage__tray {
+    z-index: @Z-INDEX-Level0;
     position: fixed;
     top:0;
-    left:0;
+    // left:0;
     height: 100%;
     width: 300px;
     background-color: @COLOR-GreyDarkest;
+
+    /* Todo - This shouldn't be on all, but should be on left and right only */
+    &.opening {
+      ._transition (all, 0.2s, @STAGETRAY-OPEN-Anim);
+    }
+
+    /* Todo - This shouldn't be on all, but should be on left and right only */
+    &.closing {
+      ._transition (all, 0.2s, @STAGETRAY-CLOSE-Anim);
+    }
+
   }
 
 // MOBILE

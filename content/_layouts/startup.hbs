@@ -1,3 +1,8 @@
+---
+js-scrollbar: true
+js-stage: true
+---
+
 <!doctype html>
 <!--[if IE 8]> <html class="no-js ie ie8 lt-ie8" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie ie9" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
@@ -49,130 +54,140 @@
 
     <div class="stage">
         <div class="stage__page">
-            <a class="stage__toggle" href="#menu"><i class="icon icon--menu55"></i><span class="hidden-text">Open Menu</span></a>
-
+            <a class="stage__toggle" accesskey="m" href="#menu"><i class="icon icon--menu55"></i><span class="hidden-text">Open Menu</span></a>
+            <a class="stage__toggle" accesskey="m" href="#anothermenu" style="left: 50px;"><i class="icon icon--menu55"></i><span class="hidden-text">Open Another Menu</span></a>
+            <a class="stage__toggle" accesskey="m" href="#thirdmenu" style="left: 80px;"><i class="icon icon--menu55"></i><span class="hidden-text">Open Third Menu</span></a>
+    
             {{> body }}
 
         </div>
-        <div id="menu" class="stage__menu">
 
+        <div id="anothermenu" class="stage__tray" data-pushfrom="right">
+            <div class="sidemenu__head"><span class="sidemenu__title">Another menu</span> <a href="#anothermenu" class="sidemenu__close stage__toggle">&times;</a></div>
+        </div>
+
+        <div id="thirdmenu" class="stage__tray" data-pushfrom="left">
+            <div class="sidemenu__head"><span class="sidemenu__title">Third menu</span> <a href="#thirdmenu" class="sidemenu__close stage__toggle">&times;</a></div>
+        </div>
+
+        <div id="menu" class="stage__tray" data-pushfrom="left">
             <div class="sidemenu">
-                <div class="sidemenu__head"><span class="sidemenu__title">Alloy Navigation</span> <a href="#" class="sidemenu__close">&times;</a></div>
-                <nav class="sidemenu__body">
+                <div class="sidemenu__head"><span class="sidemenu__title">Alloy Navigation</span> <a href="#menu" class="sidemenu__close stage__toggle">&times;</a></div>
+                <nav class="sidemenu__body scrollable">
                     <ul class="sidemenu__list sidemenu__list--root">
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
 
                             <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
                             </ul>
 
                         </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
 
                             <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
                             </ul>
 
                         </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
 
                             <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
                             </ul>
 
                         </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
 
                             <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
                             </ul>
 
                         </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
 
                             <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
                             </ul>
 
                         </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
 
                             <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
                             </ul>
 
                         </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
 
                             <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
                             </ul>
 
                         </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
                     </ul>
 
                 </nav>

@@ -14,6 +14,14 @@
 
   .sidemenu {
     ._padding(20);
+
+    .scroll-wrap {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      top: 60px;
+      bottom: 20px;
+    }
   }
   .sidemenu__head {
     position: relative;
@@ -23,14 +31,35 @@
   }
   .sidemenu__close {
     float: right;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    line-height: 1;
+    ._padding-top (1);
+    ._font-size (@TYPE-LineHeight);
+
+    color: lighten(@COLOR-GreyDarkest, 20%);
+
+    &:link,
+    &:visited {
+      color: lighten(@COLOR-GreyDarkest, 20%);
+    }
+
+    &:hover,
+    &:focus {
+      color: lighten(@COLOR-GreyDarkest, 10%);
+    }
+
+    &:active {
+      color: lighten(@COLOR-GreyDarkest, 5%);
+    }
   }
   .sidemenu__body {
-    overflow-y: auto;
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    top: 60px;
-    bottom: 20px;
+    //overflow-y: auto;
+    //left: 20px;
+    //right: 20px;
+    // top: 60px;
+    // bottom: 20px;
   }
   .sidemenu__list {
     border-top: 1px solid @COLOR-GreyDarker;}
