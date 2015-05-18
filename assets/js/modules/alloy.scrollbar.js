@@ -12,6 +12,7 @@
     Scrollbar.prototype = {
 
         defaults: {
+            cursor: "pointer",
             classes: {
                 wrapper: "scroll-wrap",
                 scrollContainer: "scrollcontainer",
@@ -28,21 +29,6 @@
             }
         },
 
-        _moveBy: function(pixels, that) {
-            var currentScroll = that.$element.scrollTop();
-            currentScroll += pixels;
-            var maxScroll = that.$element.prop("scrollHeight") - that.$element.height();
-
-            if (currentScroll >= maxScroll) { currentScroll = maxScroll; }
-            if (currentScroll < 0) { currentScroll = 0; }
-            this.$element.scrollTop(currentScroll);
-
-            var scrollPercent = currentScroll / maxScroll;
-            var scrollerHeight = that.$scrollbar.height() - that.$scroller.height();
-            var elScroll = scrollerHeight * scrollPercent;
-            this.$scroller.css({ top: elScroll + "px" });
-        },
-
         _init: function() {
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
             var that = this;
@@ -51,6 +37,11 @@
             this._setStyles();
             this._setSizes(that);
             this._initEvents(that);
+
+            $(window).resize(function() {
+                that._setSizes(that);
+                that.$scroller.css({top: "0"});
+            });
 
             ALLOY.Logger.startup('ALLOY.Scrollbar Started');
         },
@@ -85,8 +76,12 @@
             var elWidth = that.$element.width();
             var scWidth = that.$scrollContainer.width();
 
-            that.$element.css({ height: that.$scrollwrap.height() + "px" });
-            that.$scrollContainer.css({ height: that.$scrollwrap.height() + "px" });
+            that.$element.css({ height: "" });
+            that.$scrollContainer.css({ height: "" });
+            setTimeout(function() {
+                that.$element.css({ height: that.$scrollwrap.height() + "px" });
+                that.$scrollContainer.css({ height: that.$scrollwrap.height() + "px" });
+            });
         },
 
         _initEvents: function(that) {
@@ -122,6 +117,22 @@
             that.$scrollwrap.removeClass(that.config.classes.focus);
         },
 
+        /* Helpers */
+        _moveBy: function(pixels, that) {
+            var currentScroll = that.$element.scrollTop();
+            currentScroll += pixels;
+            var maxScroll = that.$element.prop("scrollHeight") - that.$element.height();
+
+            if (currentScroll >= maxScroll) { currentScroll = maxScroll; }
+            if (currentScroll < 0) { currentScroll = 0; }
+            this.$element.scrollTop(currentScroll);
+
+            var scrollPercent = currentScroll / maxScroll;
+            var scrollerHeight = that.$scrollbar.height() - that.$scroller.height();
+            var elScroll = scrollerHeight * scrollPercent;
+            this.$scroller.css({ top: elScroll + "px" });
+        },
+
         /* Scroller */
         _beginScroll: function(e, that) {
             that.startY = e.pageY;
@@ -136,6 +147,7 @@
             });
 
             $("*").attr("unselectable", "on");
+            $("html").css({ cursor: that.config.cursor });
 
             ALLOY.Logger.debug('ALLOY.Scrollbar Scrolling started');
         },
@@ -162,6 +174,7 @@
                 });
 
                 $("*").attr("unselectable", "");
+                $("html").css({ cursor: "" });
 
                 that._removeFocus(that);
 
@@ -189,24 +202,23 @@
             if (that.hasFocus) {
                 var pixels;
                 switch(e.keyCode) {
-
-                    case 33: // Page up
+                    case ALLOY.Keyboard.keycodes.PAGE_UP:
                         pixels = that.config.steps.keyboard * -1;
                         break;
-                    case 32: // Spacebar
-                    case 34: // Page down
+                    case ALLOY.Keyboard.keycodes.SPACEBAR: // Spacebar
+                    case ALLOY.Keyboard.keycodes.PAGE_DOWN: // Page down
                         pixels = that.config.steps.keyboard;
                         break;
-                    case 36: // Home
+                    case ALLOY.Keyboard.keycodes.HOME: // Home
                         pixels = that.$element.prop("scrollHeight") * -1;
                         break;
-                    case 35: // End
+                    case ALLOY.Keyboard.keycodes.END: // End
                         pixels = that.$element.prop("scrollHeight");
                         break;
-                    case 38: // Button up
+                    case ALLOY.Keyboard.keycodes.ARROW_UP: // Button up
                         pixels = that.config.steps.button * -1;
                         break;
-                    case 40: // Button down
+                    case ALLOY.Keyboard.keycodes.ARROW_DOWN: // Button down
                         pixels = that.config.steps.button;
                         break;
                 }
