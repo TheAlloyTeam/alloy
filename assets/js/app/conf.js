@@ -48,7 +48,8 @@ var require = {
         'configretriever': "modules/alloy.configretriever",
         'watchdog': "modules/alloy.watchdog",
         'scrollbar': "modules/alloy.scrollbar",
-        'stage': "modules/alloy.stage"
+        'stage': "modules/alloy.stage",
+        'keyboard': "modules/alloy.keyboard"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -76,7 +77,8 @@ var require = {
         'mustacheretriever': {deps: ['jquery', 'core', 'logging', 'mustache']},
         'configretriever': {deps: ['jquery', 'core', 'logging']},
         'watchdog': {deps: ['jquery', 'core', 'logging']},
-        'scrollbar': {deps: ['jquery', 'core', 'logging']},
+        'keyboard': {deps: ['jquery', 'core', 'logging']},
+        'scrollbar': {deps: ['jquery', 'core', 'logging', 'keyboard']},
         'stage': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },

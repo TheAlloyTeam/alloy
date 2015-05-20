@@ -12,6 +12,7 @@
     Scrollbar.prototype = {
 
         defaults: {
+            cursor: "pointer",
             classes: {
                 wrapper: "scroll-wrap",
                 scrollContainer: "scrollcontainer",
@@ -19,6 +20,7 @@
                 buttonDown: "button-down",
                 scrollbar: "scrollbar",
                 scroller: "button-scroller",
+                hoverFocus: "hoverfocus",
                 focus: "hasfocus"
             },
             steps: {
@@ -26,21 +28,6 @@
                 button: 10,
                 keyboard: 20,
             }
-        },
-
-        _moveBy: function(pixels, that) {
-            var currentScroll = that.$element.scrollTop();
-            currentScroll += pixels;
-            var maxScroll = that.$element.prop("scrollHeight") - that.$element.height();
-
-            if (currentScroll >= maxScroll) { currentScroll = maxScroll; }
-            if (currentScroll < 0) { currentScroll = 0; }
-            this.$element.scrollTop(currentScroll);
-
-            var scrollPercent = currentScroll / maxScroll;
-            var scrollerHeight = that.$scrollbar.height() - that.$scroller.height();
-            var elScroll = scrollerHeight * scrollPercent;
-            this.$scroller.css({ top: elScroll + "px" });
         },
 
         _init: function() {
@@ -51,6 +38,11 @@
             this._setStyles();
             this._setSizes(that);
             this._initEvents(that);
+
+            $(window).resize(function() {
+                that._setSizes(that);
+                that.$scroller.css({top: "0"});
+            });
 
             ALLOY.Logger.startup('ALLOY.Scrollbar Started');
         },
@@ -85,8 +77,12 @@
             var elWidth = that.$element.width();
             var scWidth = that.$scrollContainer.width();
 
-            that.$element.css({ height: that.$scrollwrap.height() + "px" });
-            that.$scrollContainer.css({ height: that.$scrollwrap.height() + "px" });
+            that.$element.css({ height: "" });
+            that.$scrollContainer.css({ height: "" });
+            setTimeout(function() {
+                that.$element.css({ height: that.$scrollwrap.height() + "px" });
+                that.$scrollContainer.css({ height: that.$scrollwrap.height() + "px" });
+            });
         },
 
         _initEvents: function(that) {
@@ -105,6 +101,9 @@
                 e.stopPropagation();
             });
 
+            that.$scrollwrap.hover(function() { that.$scrollwrap.addClass(that.config.classes.hoverFocus); },
+                                   function() { that.$scrollwrap.removeClass(that.config.classes.hoverFocus); });
+
             /* Scroll by keyboard events */
             $('body').keydown(function(e) { that._onKeydown(e, that); });
 
@@ -122,6 +121,26 @@
             that.$scrollwrap.removeClass(that.config.classes.focus);
         },
 
+        /* Helpers */
+        _moveBy: function(pixels, that) {
+            var currentScroll = that.$element.scrollTop();
+            currentScroll += pixels;
+            var maxScroll = that.$element.prop("scrollHeight") - that.$element.height();
+
+            if (currentScroll >= maxScroll) { currentScroll = maxScroll; }
+            if (currentScroll < 0) { currentScroll = 0; }
+            this.$element.scrollTop(currentScroll);
+
+            var scrollPercent = currentScroll / maxScroll;
+            var scrollerHeight = that.$scrollbar.height() - that.$scroller.height();
+            var elScroll = scrollerHeight * scrollPercent;
+            this.$scroller.css({ top: elScroll + "px" });
+        },
+
+        _hasFocus: function(that) {
+            return that.hasFocus || that.$scrollwrap.hasClass(that.config.classes.hoverFocus);
+        },
+
         /* Scroller */
         _beginScroll: function(e, that) {
             that.startY = e.pageY;
@@ -136,6 +155,7 @@
             });
 
             $("*").attr("unselectable", "on");
+            $("html").css({ cursor: that.config.cursor });
 
             ALLOY.Logger.debug('ALLOY.Scrollbar Scrolling started');
         },
@@ -162,6 +182,7 @@
                 });
 
                 $("*").attr("unselectable", "");
+                $("html").css({ cursor: "" });
 
                 that._removeFocus(that);
 
@@ -186,27 +207,26 @@
 
         /* Keyboard */
         _onKeydown: function(e, that) {
-            if (that.hasFocus) {
+            if (that._hasFocus(that)) {
                 var pixels;
                 switch(e.keyCode) {
-
-                    case 33: // Page up
+                    case ALLOY.Keyboard.keycodes.PAGE_UP:
                         pixels = that.config.steps.keyboard * -1;
                         break;
-                    case 32: // Spacebar
-                    case 34: // Page down
+                    case ALLOY.Keyboard.keycodes.SPACEBAR: // Spacebar
+                    case ALLOY.Keyboard.keycodes.PAGE_DOWN: // Page down
                         pixels = that.config.steps.keyboard;
                         break;
-                    case 36: // Home
+                    case ALLOY.Keyboard.keycodes.HOME: // Home
                         pixels = that.$element.prop("scrollHeight") * -1;
                         break;
-                    case 35: // End
+                    case ALLOY.Keyboard.keycodes.END: // End
                         pixels = that.$element.prop("scrollHeight");
                         break;
-                    case 38: // Button up
+                    case ALLOY.Keyboard.keycodes.ARROW_UP: // Button up
                         pixels = that.config.steps.button * -1;
                         break;
-                    case 40: // Button down
+                    case ALLOY.Keyboard.keycodes.ARROW_DOWN: // Button down
                         pixels = that.config.steps.button;
                         break;
                 }
@@ -220,7 +240,7 @@
 
         /* Mouse */
         _onMouseScroll: function(e, that) {
-            if (that.hasFocus) {
+            if (that._hasFocus(that)) {
                 var pixels;
                 if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
                     // Scroll up
