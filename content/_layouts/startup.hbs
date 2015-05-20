@@ -54,25 +54,22 @@ js-stage: true
 
     <div class="stage">
         <div class="stage__page">
-            <a class="stage__toggle" accesskey="m" href="#menu"><i class="icon icon--menu55"></i><span class="hidden-text">Open Menu</span></a>
-            <a class="stage__toggle" accesskey="n" href="#anothermenu" style="left: 50px;"><i class="icon icon--menu55"></i><span class="hidden-text">Open Another Menu</span></a>
-            <a class="stage__toggle" accesskey="b" href="#thirdmenu" style="left: 80px;"><i class="icon icon--menu55"></i><span class="hidden-text">Open Third Menu</span></a>
-    
+            <div class="stage__controls">
+                <a class="stage__toggle" accesskey="m" href="#menu"><i class="icon icon--menu55"></i><span class="hidden-text">Open Navigation Menu</span></a>
+                <a class="stage__toggle" accesskey="b" href="#sharing"><i class="icon icon--circles23"></i><span class="hidden-text">Open Sharing Menu</span></a>
+            </div>
+
+            <div class="stage__controls stage__controls--right">
+                <a class="stage__toggle stage__toggle--right" accesskey="n" href="#config"><i class="icon icon--settings49"></i><span class="hidden-text">Open Config Menu</span></a>
+            </div>
+
             {{> body }}
 
         </div>
 
-        <div id="anothermenu" class="stage__tray" data-pushfrom="right">
-            <div class="sidemenu__head"><span class="sidemenu__title">Another menu</span> <a href="#anothermenu" class="sidemenu__close stage__toggle">&times;</a></div>
-        </div>
-
-        <div id="thirdmenu" class="stage__tray" data-pushfrom="left">
-            <div class="sidemenu__head"><span class="sidemenu__title">Third menu</span> <a href="#thirdmenu" class="sidemenu__close stage__toggle">&times;</a></div>
-        </div>
-
         <div id="menu" class="stage__tray" data-pushfrom="left">
             <div class="sidemenu">
-                <div class="sidemenu__head"><span class="sidemenu__title">Alloy Navigation</span> <a href="#menu" class="sidemenu__close stage__toggle">&times;</a></div>
+                <div class="sidemenu__head"><span class="sidemenu__title">Alloy Navigation</span> <a href="#menu" class="sidemenu__close stage__close">&times;</a></div>
                 <nav class="sidemenu__body scrollable">
                     <ul class="sidemenu__list sidemenu__list--root">
                         <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
@@ -193,6 +190,18 @@ js-stage: true
                 </nav>
             </div>
 
+        </div>
+        <div id="config" class="stage__tray" data-pushfrom="right">
+            <div class="sidemenu">
+
+                <div class="sidemenu__head"><span class="sidemenu__title">Another menu</span> <a href="#anothermenu" class="sidemenu__close stage__close">&times;</a></div>
+            </div>
+        </div>
+        <div id="sharing" class="stage__tray" data-pushfrom="left">
+            <div class="sidemenu">
+                <div class="sidemenu__head"><span class="sidemenu__title">Third menu</span> <a href="#thirdmenu" class="sidemenu__close stage__close">&times;</a></div>
+
+            </div>
         </div>
     </div>
 
