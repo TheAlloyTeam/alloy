@@ -9,10 +9,10 @@
 // ----------------------------------------------------
 
 @BOX-HeadColor:                 @COLOR-White;
-@STAGEPAGE-IN-Anim:             @ANIM-Curve;
-@STAGEPAGE-OUT-Anim:            @ANIM-Curve;
-@STAGETRAY-OPEN-Anim:           @ANIM-Curve;
-@STAGETRAY-CLOSE-Anim:          @ANIM-Curve;
+@STAGEPAGE-IN-Anim:             ease-in;
+@STAGEPAGE-OUT-Anim:            ease-out;
+@STAGETRAY-OPEN-Anim:           ease-in;
+@STAGETRAY-CLOSE-Anim:          ease-out;
 
 // BASE
 // ----------------------------------------------------
@@ -25,12 +25,21 @@
     background-color: @COLOR-GreyLight;
   }
 
-  .stage__toggle {
+  .stage__controls {
     position: absolute;
     display: block;
     left: 20px;
     top: 20px;
     z-index: @Z-INDEX-Level5;
+  }
+
+  .stage__controls--right {
+    left: auto;
+    right: 20px;
+    top: 20px;
+  }
+
+  .stage__toggle {
     text-decoration: none;
     line-height: 1;
     ._padding-top (1);
@@ -54,6 +63,7 @@
     }
   }
 
+
   .stage__page {
     z-index: @Z-INDEX-Level1;
 
@@ -62,11 +72,11 @@
     ._box-shadow-custom(~"0 0 40px rgba(0,0,0,0.9)");
 
     &.movingIn {
-      ._transition (left, 0.4s, @STAGEPAGE-IN-Anim);
+      ._transition (left, 0.4s, ease);
     }
 
     &.movingOut {
-      ._transition (left, 0.4s, @STAGEPAGE-OUT-Anim);
+      ._transition (left, 0.4s, ease);
     }
 
   }
@@ -75,19 +85,18 @@
     z-index: @Z-INDEX-Level0;
     position: fixed;
     top:0;
-    // left:0;
     height: 100%;
     width: 300px;
     background-color: @COLOR-GreyDarkest;
 
     /* Todo - This shouldn't be on all, but should be on left and right only */
     &.opening {
-      ._transition (all, 0.2s, @STAGETRAY-OPEN-Anim);
+      ._transition (all, 0.3s, ease);
     }
 
     /* Todo - This shouldn't be on all, but should be on left and right only */
     &.closing {
-      ._transition (all, 0.2s, @STAGETRAY-CLOSE-Anim);
+      ._transition (all, 0.5s, ease);
     }
 
   }
@@ -95,22 +104,22 @@
 // MOBILE
 // ----------------------------------------------------
 
-@media only screen and (max-width: @MQ-Small) {
+  @media only screen and (max-width: @MQ-Small) {
 
-}
+  }
 
 // TABLET
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+  @media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
 
-}
+  }
 
 // DESKTOP
 // ----------------------------------------------------
 
-@media only screen and (min-width: @MQ-Large-min) {
+  @media only screen and (min-width: @MQ-Large-min) {
 
-}
+  }
 
 } .stage-styles();
