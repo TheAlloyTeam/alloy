@@ -31,19 +31,20 @@ js-stage: true
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-
     <div class="stage">
         <div class="stage__page">
             <div class="stage__controls">
-                <a class="stage__toggle" accesskey="m" href="#menu"><i class="icon icon--menu55"></i><span class="hidden-text">Open Navigation Menu</span></a>
-                <a class="stage__toggle" accesskey="b" href="#sharing"><i class="icon icon--circles23"></i><span class="hidden-text">Open Sharing Menu</span></a>
-            </div>
+            <a class="stage__toggle" tabindex="0" accesskey="m" href="#menu"><i class="icon icon--menu55"></i><span class="hidden-text">Open Navigation Menu</span></a>
+            <a class="stage__toggle" tabindex="1" accesskey="b" href="#sharing"><i class="icon icon--circles23"></i><span class="hidden-text">Open Sharing Menu</span></a>
+        </div>
 
             <div class="stage__controls stage__controls--right">
-                <a class="stage__toggle stage__toggle--right" accesskey="n" href="#config"><i class="icon icon--settings49"></i><span class="hidden-text">Open Config Menu</span></a>
+                <a class="stage__toggle" tabindex="2" accesskey="n" href="#config"><i class="icon icon--settings49"></i><span class="hidden-text">Open Config Menu</span></a>
             </div>
 
             {{> body }}
+
+            {{> STARTUP_footer }}
 
         </div>
 
@@ -64,10 +65,7 @@ js-stage: true
         </div>
     </div>
 
-
     {{> ALLOY_scripts }}
-
-    <!-- <div class="modal__mask modal__mask--visible"></div> -->
 
 </body>
 </html>
