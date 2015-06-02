@@ -1,0 +1,34 @@
+{{#this}}
+
+<div class="sidemenu">
+    <div class="sidemenu__head"><span class="sidemenu__title">Alloy Navigation</span> <a href="#menu" class="sidemenu__close stage__close">&times;</a></div>
+
+    <nav class="sidemenu__body scrollable">
+        <ul class="sidemenu__list sidemenu__list--root">
+
+            {{#if navigation-main}}
+                {{#withSort navigation-main "data.navigation-order"}}
+                    {{#each this.pages}}
+                        {{#if data.navigation-main }}
+                            {{#this}}
+                                <li class="sidemenu__item"><a class="sidemenu__link ink{{#if page.nav-variant}} list__link--{{data.nav-variant}}{{/if}}{{#is ../../../../page.dest this.dest}} current{{/is}}" href="{{relative ../../../../page.dest this.dest}}" title="{{data.nav-title}}"{{#if data.nav-target}} target="{{data.nav-target}}"{{/if}}>{{capitalizeFirst data.nav-text}}</a>
+
+{{!
+                                    <ul class="sidemenu__list sidemenu__list--sub">
+                                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
+                                    </ul>
+}}
+
+                                </li>
+                            {{/this}}
+                        {{/if}}
+                    {{/each}}
+                {{/withSort}}
+            {{/if}}
+
+        </ul>
+
+    </nav>
+</div>
+
+{{/this}}
