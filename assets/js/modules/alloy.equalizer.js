@@ -5,7 +5,7 @@
         var defaults = {
             minimumWidth: 601,                  // The minimum width at which resizing will still occur
             applyWhat: "padding-bottom",        // The style to apply the difference in height to
-            applyTo: ".element-selector",       // The element on which to apply the style to
+            applyTo: ".element-selector"        // The element on which to apply the style to
         };
 
         function _doEqualize(els, options) {

@@ -7,10 +7,10 @@ var ALLOY = ALLOY || {};
 window.ALLOY = ALLOY;
 
 // Env Setup
-var DEBUG = true;
+var DEBUG = false;
 window.DEBUG = DEBUG;
 
-var DEV = true;
+var DEV = false;
 window.DEV = DEV;
 
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
