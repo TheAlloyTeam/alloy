@@ -17,7 +17,7 @@
             tabBodyClass: ".tabs__body",                    // The selector for a tabbed content item
             activeClass: "active",                          // The class to use when an element is active
             inactiveClass: "inactive",                      // The class to use when an element is inactive
-            defaultTab: undefined,                          // The id of the tab which is to be selected by default
+            defaultTab: undefined                           // The id of the tab which is to be selected by default
         },
  
         _init: function() { 
@@ -40,7 +40,7 @@
         },
 
         _getButtonIndex: function(btn) {
-            if (this.config.btnIndexAttr.substring(0, 5) == "data-") { 
+            if (this.config.btnIndexAttr.substring(0, 5) === "data-") {
                 var att = this.config.btnIndexAttr.substring(5); 
                 return $(btn).data(att); 
             }
@@ -54,7 +54,7 @@
 
         _setBtnActive: function(btn, id, content) {
             var elId = this._getButtonIndex($(btn)[0]);
-            if (elId == id) { $(btn).removeClass(this.config.inactiveClass).addClass(this.config.activeClass); } 
+            if (elId === id) { $(btn).removeClass(this.config.inactiveClass).addClass(this.config.activeClass); }
             else { $(btn).removeClass(this.config.activeClass).addClass(this.config.inactiveClass); }
         },
 
@@ -63,7 +63,7 @@
             this.$element.find(this.config.tabListClass + " " + this.config.tabItemClass).each(function() { that._setBtnActive(this, id, false); });
             this.$element.find(this.config.tabContentClass + " " + this.config.tabBodyClass).removeClass(this.config.activeClass).addClass(this.config.inactiveClass);
             $(id).removeClass(this.config.inactiveClass).addClass(this.config.activeClass);
-        },
+        }
 
     };
 

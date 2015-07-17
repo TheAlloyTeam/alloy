@@ -130,7 +130,7 @@
         },
 
         _getTitleIndex: function(el) {
-            if (this.config.titleIndexAttr.substring(0, 5) == "data-") {
+            if (this.config.titleIndexAttr.substring(0, 5) === "data-") {
                 var att = this.config.titleIndexAttr.substring(5);
                 return $(el).data(att);
             }

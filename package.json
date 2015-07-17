@@ -6,7 +6,7 @@
     "url": "https://github.com/gfinbow/alloy.git"
   },
   "alloy": {
-    "dev": true,
+    "dev": false,
     "content": "content",
     "layouts": "_layouts",
     "partials": "_partials",

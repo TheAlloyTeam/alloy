@@ -1,16 +1,17 @@
 {
     "attribute": {
-        "modifier": "modifier",
-        "required": true,
-        "disabled": ""
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "hidden": ""
     },
     "content": {
         "labels": [{
             "attribute": {
-                "for": "frm-password"
+                "for": "frm_username"
             },
             "content": {
-                "text": "Password",
+                "text": "Username",
                 "icons": [{
                     "attribute": {
                         "modifier": "",
@@ -26,34 +27,35 @@
             "attribute": {
                 "size": "full"
             },
-            "passwords": [{
+            "texts": [{
                 "attribute": {
                     "modifier": "",
                     "size": "",
                     "required": true,
                     "readonly": "",
                     "disabled": "",
-                    "id": "frm-password",
+                    "spellcheck": "",
+                    "id": "frm_username",
                     "name": "",
                     "maxlength": "",
                     "minlength": "",
+                    "pattern": "",
                     "autocomplete": "",
                     "tabindex": "",
                     "accesskey": ""
                 },
                 "content": {
-                    "placeholder": "pa55w0rd",
+                    "placeholder": "jbloggs",
                     "value": ""
-                }
+                },
+
+                "notes": [{
+                    "attribute": {},
+                    "content": {
+                        "body": "This is a note for default text item 1"
+                    }
+                }]
             }]
         }]
-    },
-    "actions": {},
-    "tracking": {
-        "category": "",
-        "action": "",
-        "label": "",
-        "value": "",
-        "count": ""
     }
 }
