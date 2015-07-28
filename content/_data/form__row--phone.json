@@ -1,18 +1,18 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": ""
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-phone-1"
             },
             "content": {
                 "text": "Phone Number",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -23,11 +23,11 @@
             }
         }],
         "inputs": [{
-            "item": {
+            "attribute": {
               "size": "small"
             },
             "tels": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "size": "",
                     "required": "",

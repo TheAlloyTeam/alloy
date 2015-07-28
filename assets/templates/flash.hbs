@@ -1,0 +1,9 @@
+<div class="flash example{{#attribute.modifier}} flash--{{attribute.modifier}}{{/attribute.modifier}}{{#attribute.status}} {{attribute.status}}{{/attribute.status}}">
+    <a href="#" class="flash__close">&times;</a>
+    <div class="flash__icon">{{#content.icon}}
+        {{#attribute.modifier}}
+        	<i class="icon icon--{{attribute.modifier}}{{#attribute.size}} {{attribute.size}}{{/attribute.size}}"{{#content.title}} title="{{content.title}}"{{/content.title}} aria-hidden="true" role="img"></i>
+    	{{/attribute.modifier}}
+    {{/content.icon}}</div>
+    <div class="flash__content">{{content.text}}</div>
+</div>

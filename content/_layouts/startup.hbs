@@ -1,0 +1,71 @@
+---
+js-scrollbar: true
+js-stage: true
+---
+
+<!doctype html>
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>{{ page.title }} - {{ app.title }}</title>
+
+    {{> metatags }}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ assets }}/css/fontloader.css" />
+    <link rel="stylesheet" href="{{ assets }}/css/startup.css" />
+
+    {{> metaicons }}
+
+    {{> metacard }}
+
+    {{> ALLOY_headscripts }}
+
+</head>
+
+<body id="{{{app.siteclass}}}"  class="m{{#if page.class-master }} m--{{page.class-master }} {{/if}}">
+
+    <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="stage">
+        <div class="stage__page">
+            <div class="stage__controls">
+            <a class="stage__toggle" tabindex="0" accesskey="m" href="#menu"><i class="icon icon--menu55"></i><span class="hidden-text">Open Navigation Menu</span></a>
+            <a class="stage__toggle" tabindex="1" accesskey="b" href="#sharing"><i class="icon icon--circles23"></i><span class="hidden-text">Open Sharing Menu</span></a>
+        </div>
+
+            <div class="stage__controls stage__controls--right">
+                <a class="stage__toggle" tabindex="2" accesskey="n" href="#config"><i class="icon icon--settings49"></i><span class="hidden-text">Open Config Menu</span></a>
+            </div>
+
+            {{> body }}
+
+            {{> STARTUP_footer }}
+
+        </div>
+
+        <div id="menu" class="stage__tray" data-pushfrom="left">
+            {{> sidemenu }}
+        </div>
+        <div id="config" class="stage__tray" data-pushfrom="right">
+            <div class="sidemenu">
+
+                <div class="sidemenu__head"><span class="sidemenu__title">Another menu</span> <a href="#anothermenu" class="sidemenu__close stage__close">&times;</a></div>
+            </div>
+        </div>
+        <div id="sharing" class="stage__tray" data-pushfrom="left">
+            <div class="sidemenu">
+                <div class="sidemenu__head"><span class="sidemenu__title">Third menu</span> <a href="#thirdmenu" class="sidemenu__close stage__close">&times;</a></div>
+
+            </div>
+        </div>
+    </div>
+
+    {{> ALLOY_scripts }}
+
+</body>
+</html>

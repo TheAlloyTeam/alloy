@@ -1,0 +1,125 @@
+.stage-styles() when not (@MODULE-Stage) { }
+.stage-styles() when (@MODULE-Stage) {
+
+/* =========================================================================
+// STAGE
+// =======================================================================*/
+
+// COLOURS
+// ----------------------------------------------------
+
+@BOX-HeadColor:                 @COLOR-White;
+@STAGEPAGE-IN-Anim:             ease-in;
+@STAGEPAGE-OUT-Anim:            ease-out;
+@STAGETRAY-OPEN-Anim:           ease-in;
+@STAGETRAY-CLOSE-Anim:          ease-out;
+
+// BASE
+// ----------------------------------------------------
+
+  .stage {
+    min-height: 100%;
+    max-height: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: @COLOR-GreyLight;
+  }
+
+  .stage__controls {
+    position: absolute;
+    display: block;
+    left: 20px;
+    top: 20px;
+    z-index: @Z-INDEX-Level5;
+  }
+
+  .stage__controls--right {
+    left: auto;
+    right: 20px;
+    top: 20px;
+  }
+
+  .stage__toggle {
+    text-decoration: none;
+    line-height: 1;
+    ._padding-top (1);
+    ._font-size (@TYPE-LineHeight);
+
+    &:link {
+      color: @COLOR-GreyLightest;
+    }
+
+    &:visited {
+      color: lighten(@COLOR-GreyLightest, 20%);
+    }
+
+    &:hover,
+    &:focus {
+      color: darken(@COLOR-GreyLightest, 10%);
+    }
+
+    &:active {
+      color: darken(@COLOR-GreyLightest, 20%);
+    }
+  }
+
+
+  .stage__page {
+    z-index: @Z-INDEX-Level1;
+
+    position: relative;
+    background-color: @COLOR-White;
+    ._box-shadow-custom(~"0 0 40px rgba(0,0,0,0.9)");
+
+    &.movingIn {
+      ._transition (left, 0.4s, ease);
+    }
+
+    &.movingOut {
+      ._transition (left, 0.4s, ease);
+    }
+
+  }
+
+  .stage__tray {
+    z-index: @Z-INDEX-Level0;
+    position: fixed;
+    top:0;
+    height: 100%;
+    width: 300px;
+    background-color: @COLOR-GreyDarkest;
+
+    /* Todo - This shouldn't be on all, but should be on left and right only */
+    &.opening {
+      ._transition (all, 0.3s, ease);
+    }
+
+    /* Todo - This shouldn't be on all, but should be on left and right only */
+    &.closing {
+      ._transition (all, 0.5s, ease);
+    }
+
+  }
+
+// MOBILE
+// ----------------------------------------------------
+
+  @media only screen and (max-width: @MQ-Small) {
+
+  }
+
+// TABLET
+// ----------------------------------------------------
+
+  @media only screen and (min-width: @MQ-Medium-min) and (max-width: @MQ-Medium) {
+
+  }
+
+// DESKTOP
+// ----------------------------------------------------
+
+  @media only screen and (min-width: @MQ-Large-min) {
+
+  }
+
+} .stage-styles();

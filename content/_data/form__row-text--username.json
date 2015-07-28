@@ -1,0 +1,61 @@
+{
+    "attribute": {
+        "modifier": "",
+        "required": "",
+        "disabled": "",
+        "hidden": ""
+    },
+    "content": {
+        "labels": [{
+            "attribute": {
+                "for": "frm_username"
+            },
+            "content": {
+                "text": "Username",
+                "icons": [{
+                    "attribute": {
+                        "modifier": "",
+                        "size": ""
+                    },
+                    "content": {
+                        "title": ""
+                    }
+                }]
+            }
+        }],
+        "inputs": [{
+            "attribute": {
+                "size": "full"
+            },
+            "texts": [{
+                "attribute": {
+                    "modifier": "",
+                    "size": "",
+                    "required": true,
+                    "readonly": "",
+                    "disabled": "",
+                    "spellcheck": "",
+                    "id": "frm_username",
+                    "name": "",
+                    "maxlength": "",
+                    "minlength": "",
+                    "pattern": "",
+                    "autocomplete": "",
+                    "tabindex": "",
+                    "accesskey": ""
+                },
+                "content": {
+                    "placeholder": "jbloggs",
+                    "value": ""
+                },
+
+                "notes": [{
+                    "attribute": {},
+                    "content": {
+                        "body": "This is a note for default text item 1"
+                    }
+                }]
+            }]
+        }]
+    }
+}

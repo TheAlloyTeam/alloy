@@ -1,0 +1,97 @@
+.navigation-styles() when not (@MODULE-Navigation) { }
+.navigation-styles() when (@MODULE-Navigation) {
+
+/* =========================================================================
+// NAVIGATION
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+@NAVIGATION-Color:                 		@COLOR-White;
+@NAVIGATION-BgColor:                   	@COLOR-Base;
+@NAVIGATION-HoverColor:            		@COLOR-White;
+@NAVIGATION-HoverBgColor:              	lighten(@NAVIGATION-BgColor, 5%);
+@NAVIGATION-ActiveBorder:             	@COLOR-Base;
+@NAVIGATION-FontFamily:             	@TYPE-HeadingsFontFamily;
+
+// BASE
+// ----------------------------------------------------
+
+.mainnav {
+	font-family: @NAVIGATION-FontFamily;
+    ._clearfix();
+
+}
+
+.mainnav__toggle {
+
+}
+
+.mainnav__item {
+
+    .current {
+        color: @NAVIGATION-HoverColor;
+        background-color: @NAVIGATION-HoverBgColor;
+    }
+}
+
+.mainnav__link {
+    color: @NAVIGATION-Color;
+    display: block;
+    text-decoration: none;
+    line-height: 1;
+    ._padding (@TYPE-LineHeight);
+    ._font-size (@TYPE-SIZE-Gamma);
+    ._transition (all, 0.1s);
+
+    &:hover {
+        color: @NAVIGATION-HoverColor;
+        background-color: @NAVIGATION-HoverBgColor;
+    }
+}
+
+// VARIANTS
+// ----------------------------------------------------
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+    .mainnav {
+
+    }
+
+    .mainnav__link {
+        text-align: center;
+        ._padding (@TYPE-LineHeight/2);
+    }
+
+}
+
+// TABLET and UP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) {
+
+    .mainnav {
+        .mainnav__item {
+            float: left;
+        }
+    }
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+    .mainnav {
+        ._padding (0, @TYPE-LineHeight/2);
+    }
+
+}
+
+} .navigation-styles();

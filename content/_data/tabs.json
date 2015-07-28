@@ -1,12 +1,12 @@
 {
-    "item": {
+    "attribute": {
     	"id": "tabgroup1",
         "modifier": "variant"
     },
     "content": {
     	"tabs": [
 		{
-			"item": {
+			"attribute": {
 		    	"id": "tab-1",
 		        "modifier": ""
 	        },
@@ -17,7 +17,7 @@
 			}
 		},
 		{
-			"item": {
+			"attribute": {
 		    	"id": "tab-2",
 		        "modifier": ""
 	        },
@@ -28,7 +28,7 @@
 			}
 		},
 		{
-			"item": {
+			"attribute": {
 		    	"id": "tab-3",
 		        "modifier": ""
 	        },

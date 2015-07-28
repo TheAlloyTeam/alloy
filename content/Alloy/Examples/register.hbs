@@ -1,0 +1,51 @@
+---
+title: Register Layout
+subtitle: Register Page
+layout: example.hbs
+
+nav-thumb: "placeholder.jpg"
+nav-title: "Register Layout"
+nav-text: "Register Layout"
+nav-variant: "examples"
+page-category: "examples"
+---
+
+<header class="w w--head">
+	<div class="g">
+	    <div class="c__lg--1">
+	    	<h1 class="page__title">{{title}}</h1>
+	    </div>
+	</div>
+</header>
+
+<nav class="w w--nav">
+	<div class="g">
+	    <div class="c__lg--1">
+	    	[SITE MAINNAV]
+	    </div>
+	</div>
+</nav>
+
+<main class="main">
+	<div class="w w--headlines">
+		<div class="g">
+		    <div class="c__lg--3-16 c__md--1-2">
+		    [LOGIN/REGISTER]
+		    </div>
+		    <div class="c__lg--13-16 c__md--1">
+		    [REASONS]
+		    </div>
+		</div>
+	</div>
+</main>
+
+<footer class="w w--foot">
+	<div class="g">
+	    <div class="c__lg--1">
+	    	[SITE FOOTERNAV]
+	    </div>
+	    <div class="c__lg--1">
+			{{> footer }} {{! footer uses the app.json for its information at present }}
+	    </div>
+	</div>
+</footer>

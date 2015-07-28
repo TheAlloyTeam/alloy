@@ -1,0 +1,48 @@
+{
+  "attribute": {
+     "modifier": ""
+    },
+    "content": {
+      "title": "Designing with Alloy",
+      "subtitle": "Lets get you started...",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit&hellip;",
+      "body": "",
+      "sections": [{
+        "attribute": {},
+        "content": {
+          "title": "Have you got what you need?",
+          "body": "<p>Here in the ALLOY team we usually like to start with a good amount of information before we begin; everything from sketches and notes, mockups and wire-frames, to prototypes and style-guides.</p><p><a href=\"/alloy/\" class=\"button\">View the Toolkit</a></p>"
+        }
+      },{
+        "attribute": {},
+        "content": {
+          "title": "Create",
+          "body": "<p>Alloy takes the approach of <a href=\"http://bradfrost.com/blog/post/atomic-web-design/\" target=\"_blank\">atomic based design</a> - so rather than creating an entire page from top to bottom it is usually better to create each object separately so they can be re-used within the many modules of your creation. So you simply create the modules for your site individually - but just like you always did.</p>"
+        }
+      },{
+        "attribute": {},
+        "content": {
+          "title": "Standardise",
+          "body": "<p></p>"
+        }
+      },{
+        "attribute": {},
+        "content": {
+          "title": "Make something beautiful",
+          "body": "<p></p>"
+        }
+      },{
+        "attribute": {},
+        "content": {
+          "title": "Save for later",
+          "body": "<p>Pull your modules back into ALLOY, spiting up the module design, content and style in a simple structure.</p><ul><li><code>mymodule.less</code></li><li><code>mymodule.json</code></li><li><code>mymodule.hbs</code></li></ul>"
+        }
+      },{
+        "attribute": {},
+        "content": {
+          "title": "Build up your library",
+          "body": "<p>Make your process faster, your UI's more complete, your code more friendly, your modules more feature complete with every iteration.</p>"
+        }
+      }]
+  }
+}

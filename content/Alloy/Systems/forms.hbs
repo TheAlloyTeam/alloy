@@ -1,0 +1,306 @@
+---
+title: Forms
+layout: alloy.hbs
+
+nav-thumb: "placeholder.jpg"
+nav-title: "Forms"
+nav-text: "Forms"
+nav-variant: "forms"
+page-category: "systems"
+---
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+				<div class="page__body rte">
+					<form id="form-example-default" class="form" role="" method="">
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Form Default</legend>
+
+							{{> form__row form__row }}
+
+						</fieldset>
+						{{> form__actions form__actions }}
+					</form>
+
+					<form id="form-example-inline" class="form inline" role="" method="">
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Form Inline</legend>
+
+							{{> form__row form__row-search--inline}}
+
+						</fieldset>
+
+					</form>
+
+					<form id="form-example-split" class="form inline" role="" method="">
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend hidden-text">Form Split</legend>
+
+							{{> form__row form__row-text}}
+
+						</fieldset>
+
+						<fieldset class="form__fieldset">
+
+							{{> form__row form__row--submit}}
+
+						</fieldset>
+
+					</form>
+
+
+
+					<form id="form-example-fields" class="form aligned" role="" method="">
+
+						{{! form__hidden form__hidden }}
+
+
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Show me the fields</legend>
+
+							{{> form__row form__row-text}}
+							{{> form__row form__row-email}}
+							{{> form__row form__row-telephone}}
+							{{> form__row form__row-url}}
+							{{> form__row form__row-password}}
+							{{> form__row form__row-textarea}}
+							{{> form__row form__row-select}}
+							{{> form__row form__row-select--optgroup}}
+							{{> form__row form__row-search}}
+							{{> form__row form__row-radio}}
+							{{> form__row form__row-checkbox}}
+
+						</fieldset>
+
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Submit button</legend>
+
+							{{> form__row form__row--submit}}
+
+						</fieldset>
+
+					</form>
+
+
+					<form id="form-example-validation" class="form aligned" role="" method="">
+
+						{{! form__hidden form__hidden }}
+
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Form Validation Examples</legend>
+
+							{{> form__row form__row-text--validation }}
+
+
+
+							{{! form__row form__row-email--validation}}
+							{{! form__row form__row-telephone--validation}}
+							{{! form__row form__row-url--validation}}
+							{{! form__row form__row-password--validation}}
+							{{! form__row form__row-textarea--validation}}
+							{{! form__row form__row-select--validation}}
+							{{! form__row form__row-select__optgroup--validation}}
+
+							{{! form__row form__row-search--validation}}
+
+							{{! form__row form__row-radio--validation}}
+							{{! form__row form__row-checkbox--validation}}
+							{{! form__row form__row--submit--validation}}
+
+						</fieldset>
+
+					</form>
+
+					<form id="form-example-aligned" class="form aligned" role="" method="">
+						
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Form Aligned</legend>
+
+								{{> button button-submit }}
+
+						</fieldset>
+					</form>
+
+
+					<form id="form-example-disabled" class="form aligned" role="" method="">
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Form with Disabled Inputs</legend>
+
+							{{> form__row form__row-text--disabled}}
+							{{> form__row form__row-select--disabled}}
+							{{> form__row form__row-radio--disabled}}
+							{{> form__row form__row-checkbox--disabled}}
+
+						</fieldset>
+
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Readonly Input</legend>
+
+							{{> form__row form__row-text--readonly}}
+						</fieldset>
+
+						<fieldset class="form__fieldset">
+						    <legend class="form__legend">Required Input</legend>
+
+							{{> form__row form__row-text--required}}
+						</fieldset>
+
+					</form>
+
+
+					<form id="form-example-sizes" class="form aligned" role="" method="">
+
+                            <fieldset class="form__fieldset">
+                                <legend class="form__legend">Example Sizes</legend>
+
+								{{> form__row form__row-text--xsmall }}
+								{{> form__row form__row-text--small }}
+								{{> form__row form__row-text--large }}
+								{{> form__row form__row-text--xlarge }}
+								{{> form__row form__row-text--full }}
+
+                            </fieldset>
+
+                        </form>
+
+
+                    <form id="form-example-checkboxes" class="form aligned" role="" method="">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Checkbox/Radio Layouts</legend>
+
+                            [vertical checkbox]
+                            [horizontal checkbox]
+                            [vertical radio]
+                            [horizontal radio]
+
+
+                        </fieldset>
+                    </form>
+
+
+                    <form id="form-example-grid" class="form" role="" method="">
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Checkbox/Radio Layouts</legend>
+
+							<div class="g">
+                                <div class="c--1-2">
+
+								</div>
+
+								<div class="c--1-2">
+
+								</div>
+
+
+
+							</div>
+
+                        </fieldset>
+                    </form>
+
+
+		        </div>
+
+<!-- example -->
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Example: Contact Us</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+                        <form id="form-example-address" class="form aligned" role="" method="">
+
+                            <fieldset class="form__fieldset">
+                                <legend class="form__legend">Contact Us</legend>
+
+								{{> form__row form__row--name}}
+								{{> form__row form__row--email}}
+								{{> form__row form__row--phone}}
+								{{> form__row form__row--address}}
+								{{> form__row form__row--postcode}}
+
+								{{> form__actions form__actions }}
+
+                            </fieldset>
+                        </form>
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+                <section class="section section--example">
+                    <header class="section__head">
+                        <h2 class="section__title">Example: Contact Us</h2>
+                    </header>
+
+                    <div class="section__body">
+                        <!-- code -->
+                        <form id="form-example-address-2" class="form" role="" method="">
+
+                            <fieldset class="form__fieldset">
+                                <legend class="form__legend">Contact Us</legend>
+
+								{{> form__row form__row--name}}
+								{{> form__row form__row--email}}
+								{{> form__row form__row--phone}}
+								{{> form__row form__row--address}}
+								{{> form__row form__row--postcode}}
+
+								{{> form__actions form__actions }}
+
+                            </fieldset>
+                        </form>
+                        <!-- end of code -->
+                    </div>
+
+                </section>
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Code</h2>
+		            </header>
+
+		            <div class="section__body">
+			            <pre class="prettyprint linenums"><code class="html">
+
+			             </code></pre>
+		            </div>
+
+		        </section>
+
+<!-- reference -->
+
+		        <section class="section section--reference">
+		            <header class="section__head">
+		                <h2 class="section__title">References</h2>
+		            </header>
+
+		            <div class="section__body rte">
+
+		            	<ul>
+		            		<li><a href="http://tympanus.net/Development/TextInputEffects/" target="_blank">http://tympanus.net/Development/TextInputEffects/</a></li>
+		            	</ul>
+
+		            </div>
+
+		        </section>
+
+	        </div>
+
+	    </div>
+	</div>
+</main>

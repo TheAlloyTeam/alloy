@@ -32,6 +32,15 @@
     zoom: 1;
 }
 
+// TRUNCATION
+// ----------------------------------------------------
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 // TEXT MANIPULTAION
 // ----------------------------------------------------
 
@@ -47,10 +56,14 @@
     *display: inline;
 }
 
+/* TEXT is still read by screen readers */
 .hidden-text {
-    position: absolute;
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
     overflow: hidden;
-    height: 0;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
 .no-select {

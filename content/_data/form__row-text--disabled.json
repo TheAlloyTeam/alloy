@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": "disabled",
@@ -7,13 +7,13 @@
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-disabled-1"
             },
             "content": {
                 "text": "Text Disabled",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -25,7 +25,7 @@
         }],
         "inputs": [{
             "texts": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "size": "",
                     "required": "",

@@ -1,9 +1,9 @@
 {{#this}}
 <option
-    value="{{item.value}}"
+    value="{{attribute.value}}"
     {{#if content.label}} label="{{content.label}}"{{/if}}
-    {{#if item.selected}} selected="selected"{{/if}}
-    {{#if item.disabled}} disabled="disabled"{{/if}}
+    {{#if attribute.selected}} selected="selected"{{/if}}
+    {{#if attribute.disabled}} disabled="disabled"{{/if}}
 >
     {{content.text}}
 </option>

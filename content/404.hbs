@@ -1,35 +1,17 @@
----
-title: Oops!
-subtitle: Something went wrong...
+--
+title: Error 404...
+subtitle: oops there seems to have been an issue!
+layout: startup.hbs
 
-nav-thumb: "placeholder.jpg"
-nav-title: "404 Error"
-nav-text: "404 Error"
-nav-variant: "error"
+class-master: startup
 ---
 
-<main class="w w--main">
-	<div class="g">
-	    <div class="c__lg--1">
+{{> banner ALLOY_banner--welcome }}
 
-			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
-				<div class="page__head">
-					<h1 class="page__title">{{title}}</h1>
-					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
-				</div>
+<main class="main">
+    <div class="g">
+        <div class="c--1">
 
-		        <div class="page__body rte">
-			        <p><strong>Unfortunately the page you requested could not be found. Please try one of the following:</strong></p>
-
-			        <ul>
-			            <li>Go back to the <a href="javascript:window.history.back()">previous page</a></li>
-			            <li>Visit the <a href="/">homepage</a></li>
-			            <li>Use the navigation at the top of the page</li>
-			        </ul>
-		        </div>
-	        </div>
-
-	    </div>
-
-	</div>
+        </div>
+    </div>
 </main>

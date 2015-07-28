@@ -1,17 +1,17 @@
 {{#this}}
 	{{#if content.text}}
-		{{#if item.for}}
+		{{#if attribute.for}}
 			<label
-				{{#if item.for}}for="{{item.for}}"{{/if}}
-				class="input__label{{#if item.modifier}} input__label--{{item.modifier}}{{/if}}
-				{{#if item.disabled}} disabled{{/if}}">
+				{{#if attribute.for}}for="{{attribute.for}}"{{/if}}
+				class="input__label{{#if attribute.modifier}} input__label--{{attribute.modifier}}{{/if}}
+				{{#if attribute.disabled}} disabled{{/if}}">
 				{{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
-				<span{{#if item.hidden}} class="hidden-text"{{/if}}>{{{content.text}}}</span>
+				<span{{#if attribute.hidden}} class="hidden-text"{{/if}}>{{{content.text}}}</span>
 			</label>
 		{{else}}
-			<div class="input__label{{#if item.modifier}} input__label--{{item.modifier}}{{/if}}">
+			<div class="input__label{{#if attribute.modifier}} input__label--{{attribute.modifier}}{{/if}}">
 				{{#if content.icon}}{{#each content.icon}}{{#this}}{{>icon}}{{/this}}{{/each}}{{/if}}
-				<span{{#if item.hidden}} class="hidden-text"{{/if}}>{{{content.text}}}</span>
+				<span{{#if attribute.hidden}} class="hidden-text"{{/if}}>{{{content.text}}}</span>
 			</div>
 		{{/if}}
 	{{/if}}

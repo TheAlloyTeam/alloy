@@ -81,12 +81,14 @@
 
     .form__row {
         position: relative;
+        max-width: 60em;
         ._clearfix ();
         ._margin (0, 0, @TYPE-LineHeight/2, 0);
     }
 
     .form__label  {
         display: block;
+        ._padding (7, 0, 0, 0);
 
         &.disabled {
             cursor: not-allowed;
@@ -106,12 +108,12 @@
         }
     }
 
-    span.form__label,
-    .form__label span {
-        &:after {
-            content: ":";
-        }
-    }
+    //span.form__label,
+    //.form__label span {
+    //    &:after {
+    //        content: ":";
+    //    }
+    //}
 
     .form__control {
         position:relative;
@@ -119,6 +121,7 @@
     }
 
     .form__note {
+        clear: both;
         display: block;
         font-style: italic;
         color: @FORM-DefaultTextColor;
@@ -129,6 +132,12 @@
     .form__required {
         color: @FORM-Asterisk;
         border-bottom: none !important;
+        cursor: help;
+        position: absolute;
+        cursor: help;
+        right: 0;
+        top: 8px;
+        width: 0.6em;
     }
 
     .form__actions {
@@ -157,6 +166,7 @@
         display: block;
         border: 1px solid @FORM-DefaultBordercolor;
         background-color: @FORM-DefaultBgColor;
+        width: 100%;
 
         &.success {
             ._input-create (@FORM-SuccessBgColor, @FORM-SuccessTextColor, @FORM-SuccessBordercolor);
@@ -176,10 +186,13 @@
     }
 
     .input__wrap {
-        .input {
-            width: 100%;
-        }
+        width: 100%;
 
+        &--check {
+            .input__label {
+                ._inline-block();
+            }
+        }
     }
 
     .input__addon {
@@ -211,8 +224,8 @@
             color:@FORM-SuccessTextColor;
         }
         &.info {
-            color:@FORM-InfoTextColor
-        ;}
+            color:@FORM-InfoTextColor;
+        }
         &.warn {
             color:@FORM-WarnTextColor;
         }
@@ -228,7 +241,7 @@
         width: 100%;
         display: table;
         //._border-radius (4);
-        ._padding (8, 5, 7, 5);
+        ._padding (6, 5, 6, 5);
         ._inline-block();
 
         &:focus {
@@ -238,10 +251,22 @@
         }
     }
 
+    .input__field--check {
+        width: auto;
+    }
+
     .input__group {
+
+        .input {
+            ._inline-block();
+        }
 
         .input__wrap {
             ._inline-block();
+
+            .input {
+                display:block;
+            }
 
             &:last-child {
                 padding-right: 0;
@@ -251,9 +276,6 @@
                 position:relative;
                 bottom: -1px;
             }
-        }
-        .input__field {
-            width: 100%;
         }
 
         &.inline {
@@ -280,6 +302,7 @@
 
             .input--check {
                 margin-bottom: 0;
+                width: auto;
             }
         }
     }
@@ -291,14 +314,12 @@
 // ----------------------------------------------------
 
     .input--check {
-        ._padding(8,5,7,5);
-
-
+        ._padding(7,5,0,5);
 
         .input__label {
             display: inline;
             position:static;
-            ._font-size(@TYPE-SIZE-Eta);
+            ._font-size(@TYPE-FontSize);
 
         }
 
@@ -310,24 +331,32 @@
             ._margin-right(@TYPE-FontSize/1.5);
 
             &:focus {
-                ._depth-0 ();
             }
         }
     }
 
 
     .input__group--check {
-
+        .input__wrap {
+            ._margin(0, @TYPE-FontSize*2, 0, 0);
+        }
         .input {
             width: auto;
             margin-top: 0;
             border: none;
             ._inline-block ();
-            ._margin(0, @TYPE-FontSize*2, 0, @TYPE-FontSize);
+            // no border so needs extra pixels
+            ._margin(0, @TYPE-FontSize/2, 0, 0);
+            ._padding (9, 0, 8, 0);
 
             &:first-child {
                 margin-left: 0;
             }
+        }
+
+        .input__label {
+            // no border so needs extra pixels
+            ._padding (9, 0, 8, 0);
         }
 
         .input--check {
@@ -348,12 +377,6 @@
 
 @media only screen and (max-width: @MQ-Small) {
 
-    .form__required {
-        position: absolute;
-        cursor: help;
-        right: 0;
-        top: 0;
-    }
 }
 
 // TABLET
@@ -369,7 +392,6 @@
 @media only screen and (min-width: @MQ-Medium-min) {
 
     .form__label {
-        ._margin-top (2);
     }
 
     .form__note {
@@ -382,80 +404,96 @@
         vertical-align: top;
         ._inline-block ();
 
+        &--check {
+            width: auto;
+        }
+
         &.xsmall {
             width: 10%;
+            min-width: 2em;
         }
 
         &.small {
             width: 20%;
-            ._font-size(@TYPE-SIZE-Eta);
+            min-width: 5em;
+            ._font-size(@TYPE-FontSize);
         }
 
         &.large {
             width: 60%;
+            min-width: 10em;
         }
 
         &.xlarge {
             width: 75%;
+            min-width: 15em;
         }
 
         &.full {
             width: 100%;
+            min-width: 20em;
         }
     }
 
-    .form {
-        &.inline {
+    .form.inline {
 
-            .form__label {
+        .form__label {
+            ._inline-block();
+        }
+
+        .form__row {
+            display: inline;
+        }
+
+        .form__input {
+            //width: auto;
+        }
+
+    }
+
+    .form.aligned {
+
+        .form__required {
+            position: absolute;
+            left: @FORM-OffsetAsterisk;
+            top: 8px;
+        }
+
+        .form__label {
+            width: @FORM-OffsetLabel;
+            text-align: right;
+            margin-right: @FORM-OffsetGap;
+            float: left;
+        }
+
+
+        .input__wrap--check {
+            ._margin-bottom(0);
+            .input__label {
                 ._inline-block();
             }
 
-            .form__row {
-                display: inline;
+            .input {float: left;
             }
-
-            .form__input {
-                //width: auto;
-            }
-
         }
 
-        &.aligned {
+        .input__group {
+            display: block;
+            width: 100%;
+        }
 
-            .form__required {
-                position: absolute;
-                left: @FORM-OffsetAsterisk;
-                top: 0;
-            }
+        .input__label {
+            width: auto;
+            text-align: left;
+            margin-right: auto;
+            float: none;
+        }
 
-            .form__label {
-                width: @FORM-OffsetLabel;
-                text-align: right;
-                margin-right: @FORM-OffsetGap;
-                float: left;
-            }
-
-            .input__group {
-                display: block;
-            }
-
-            .input__label {
-                width: auto;
-                text-align: left;
-                margin-right: auto;
-                float: none;
-            }
-
-            .input__group {
-                width: 100%;
-            }
-
-            .form__note {
-                display: block;
-            }
+        .form__note {
+            display: block;
         }
     }
+
 
 }
 // DESKTOP

@@ -1,21 +1,21 @@
 {{#this}}
 
-    <span class="input{{#if item.modifier}} input--{{item.modifier}}{{/if}}{{#if item.status}} {{item.status}}{{/if}}{{#if item.disabled}} disabled{{/if}}">
+    <span class="input{{#if attribute.modifier}} input--{{attribute.modifier}}{{/if}}{{#if attribute.status}} {{attribute.status}}{{/if}}{{#if attribute.disabled}} disabled{{/if}}">
     <input
         type="date"
         role="textbox"
         class="input__field input__field--date"
-        {{#if item.required}} required="required" aria-required="true"{{/if}}
-        {{#if item.readonly}} readonly="readonly" aria-readonly="true"{{/if}}
-        {{#if item.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
-        {{#if item.spellcheck}} spellcheck="true"{{/if}}
-        {{#if item.id}} id="{{item.id}}"{{/if}}
-        {{#if item.name}} name="{{item.name}}"{{/if}}
-        {{#if item.maxlength}} maxlength="{{item.maxlength}}"{{/if}}
-        {{#if item.pattern}} pattern="{{item.pattern}}"{{/if}}
-        {{#if item.autocomplete}} autocomplete="{{item.autocomplete}}"{{/if}}
-        {{#if item.tabindex}} tabindex="{{item.tabindex}}"{{/if}}
-        {{#if item.accesskey}} accesskey="{{item.accesskey}}"{{/if}}
+        {{#if attribute.required}} required="required" aria-required="true"{{/if}}
+        {{#if attribute.readonly}} readonly="readonly" aria-readonly="true"{{/if}}
+        {{#if attribute.disabled}} disabled="disabled" aria-disabled="true"{{/if}}
+        {{#if attribute.spellcheck}} spellcheck="true"{{/if}}
+        {{#if attribute.id}} id="{{attribute.id}}"{{/if}}
+        {{#if attribute.name}} name="{{attribute.name}}"{{/if}}
+        {{#if attribute.maxlength}} maxlength="{{attribute.maxlength}}"{{/if}}
+        {{#if attribute.pattern}} pattern="{{attribute.pattern}}"{{/if}}
+        {{#if attribute.autocomplete}} autocomplete="{{attribute.autocomplete}}"{{/if}}
+        {{#if attribute.tabindex}} tabindex="{{attribute.tabindex}}"{{/if}}
+        {{#if attribute.accesskey}} accesskey="{{attribute.accesskey}}"{{/if}}
         {{#if content.placeholder}} placeholder="{{content.placeholder}}"{{/if}}
         {{#if content.value}} value="{{content.value}}"{{/if}}
     />

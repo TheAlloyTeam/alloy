@@ -16,6 +16,8 @@ module.exports = function(grunt) {
             },
             files: {
               '<%= pkg.alloy.site %>/<%= pkg.alloy.css %>/fontloader.css': '<%= pkg.alloy.less %>/fontloader.less',
+              '<%= pkg.alloy.site %>/<%= pkg.alloy.css %>/alloy.css': '<%= pkg.alloy.less %>/alloy.less',
+              '<%= pkg.alloy.site %>/<%= pkg.alloy.css %>/startup.css': '<%= pkg.alloy.less %>/startup.less',
               '<%= pkg.alloy.site %>/<%= pkg.alloy.css %>/main.css': '<%= pkg.alloy.less %>/main.less'
             }
           }
@@ -164,7 +166,7 @@ module.exports = function(grunt) {
             tasks: ['less']
           },
           watchjs: {
-            files: ['<%= pkg.alloy.js %>/app.js','<%= pkg.alloy.js %>/modules/*.js'],
+            files: ['<%= pkg.alloy.js %>/app.js','<%= pkg.alloy.js %>/modules/*.js','<%= pkg.alloy.js %>/examples/*.js'],
             tasks: ['jshint','requirejs']
           },
           watchimages: {

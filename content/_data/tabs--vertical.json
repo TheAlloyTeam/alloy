@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
     	"id": "tabgroup2",
         "modifier": "variant",
         "orientation": "vertical"
@@ -7,7 +7,7 @@
     "content": {
     	"tabs": [
 		{
-			"item": {
+			"attribute": {
 		    	"id": "tab-7",
 		        "modifier": ""
 	        },
@@ -18,7 +18,7 @@
 			}
 		},
 		{
-			"item": {
+			"attribute": {
 		    	"id": "tab-8",
 		        "modifier": ""
 	        },
@@ -29,7 +29,7 @@
 			}
 		},
 		{
-			"item": {
+			"attribute": {
 		    	"id": "tab-9",
 		        "modifier": ""
 	        },

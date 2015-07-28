@@ -15,10 +15,11 @@ var require = {
         modules: "modules",
         jquery: "libs/jquery/jquery.min",
         fontfaceobserver: "libs/fontfaceobserver/fontfaceobserver",
+        highlight: "libs/highlight/highlight",
         async: "libs/async",
         'bezier' : "libs/easing/index",
         'mustache' : "libs/mustache/mustache",
-        'prettyprint': "libs/google-code-prettify/run_prettify",
+        //'prettyprint': "libs/google-code-prettify/run_prettify",
         'selectivizr': "libs/selectivizr",
         'logging': "modules/alloy.logging",
         'core': "modules/alloy.core",
@@ -45,7 +46,10 @@ var require = {
         'modal': "modules/alloy.modal",
         'mustacheretriever': "modules/alloy.mustacheretriever",
         'configretriever': "modules/alloy.configretriever",
-        'watchdog': "modules/alloy.watchdog"
+        'watchdog': "modules/alloy.watchdog",
+        'scrollbar': "modules/alloy.scrollbar",
+        'stage': "modules/alloy.stage",
+        'keyboard': "modules/alloy.keyboard"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -72,7 +76,10 @@ var require = {
         'modal': {deps: ['jquery', 'core', 'logging']},
         'mustacheretriever': {deps: ['jquery', 'core', 'logging', 'mustache']},
         'configretriever': {deps: ['jquery', 'core', 'logging']},
-        'watchdog': {deps: ['jquery', 'core', 'logging']}
+        'watchdog': {deps: ['jquery', 'core', 'logging']},
+        'keyboard': {deps: ['jquery', 'core', 'logging']},
+        'scrollbar': {deps: ['jquery', 'core', 'logging', 'keyboard']},
+        'stage': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }

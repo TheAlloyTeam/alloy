@@ -34,7 +34,7 @@
 
 			'logToScreenFunc' : undefined,
 			'logToServerUrl' : undefined,
-			'logInterval' : 1500,
+			'logInterval' : 1500
 		};
 
 		var logs = [];

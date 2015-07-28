@@ -2,27 +2,16 @@
   "name": "alloy",
   "repository": {
     "type": "git",
-    "url": "git://github.com/gfinbow/alloy.git"
+    "url": "git://github.com/thealloyteam/alloy.git"
   },
   "main": [
     "index.html",
-    "assets/js/main.js",
+    "assets/js/app/main.js",
     "assets/less/main.less"
   ],
   "devDependencies": {
     "jquery": "1.11.0",
-    "respond": "latest",
     "selectivizr": "latest"
   },
-  "homepage": "https://github.com/gfinbow/alloy",
-  "_release": "c760c60889",
-  "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "c760c60889d39cef9c60c8477502da295d06bb1c"
-  },
-  "_source": "git://github.com/gfinbow/alloy.git",
-  "_target": "*",
-  "_originalSource": "alloy",
-  "_direct": true
+  "homepage": "https://github.com/thealloyteam/alloy"
 }

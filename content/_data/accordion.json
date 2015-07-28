@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
     	"id": "",
         "modifier": "variant",
         "multiselectable": true

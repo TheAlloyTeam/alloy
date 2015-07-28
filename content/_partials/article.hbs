@@ -1,5 +1,5 @@
 {{#this}}
-<article class="article{{#if item.modifier}} article--{{item.modifier}}{{/if}}" role="article">
+<article class="article{{#if attribute.modifier}} article--{{attribute.modifier}}{{/if}}" role="article">
 	<header class="article__head">
 		<h1 class="article__title">{{{content.title}}}</h1>
 		{{#if "subtitle"}}
@@ -28,18 +28,27 @@
 		{{/if}}
 		
 		{{{content.body}}}
-		
+
+		{{#if content.sections }}
+			{{#each content.sections}}
+				{{#this}}
+					{{> section }}
+				{{/this}}
+			{{/each}}
+		{{/if}}
+
+		{{#if content.aside}}
 		<aside class="article__aside rte">
-
 			{{{content.aside}}}
-
 		</aside>
+		{{/if}}
 	</div>
-	
-	<footer class="article__foot">
+	{{#if attribute.shareable}}
+		<footer class="article__foot">
 
-		{{> share }}
-		
-	</footer>
+			{{> share }}
+
+		</footer>
+	{{/if}}
 </article>
 {{/this}}

@@ -1,0 +1,260 @@
+// ==========================================================================
+// VARIABLES
+// =========================================================================//
+
+// SETUP
+// =========================================================================//
+
+// DEBUG
+// ----------------------------------------------------
+
+@DEBUG:                         false;
+@DEBUGGER:						true;
+
+// COLOURS
+// ----------------------------------------------------
+
+@COLOR-Black:					#000000;
+@COLOR-White:					#FFFFFF;
+
+@COLOR-RedLightest:				#FAE8EB;
+@COLOR-RedLighter:				#F5BDC3;
+@COLOR-RedLight:				#ED8288;
+@COLOR-Red:						#E2383D;
+@COLOR-RedDark:					#BC2A2D;
+@COLOR-RedDarker:				#9B2123;
+@COLOR-RedDarkest:				#7C1E21;
+
+@COLOR-PinkLightest:			#F8EDF2;
+@COLOR-PinkLighter:				#EECCD7;
+@COLOR-PinkLight:				#E09DB1;
+@COLOR-Pink:					#CC5E7B;
+@COLOR-PinkDark:				#A33F4F;
+@COLOR-PinkDarker:				#812932;
+@COLOR-PinkDarkest:				#641E21;
+
+@COLOR-PurpleLightest:			#F0E5EF;
+@COLOR-PurpleLighter:			#E1C6DC;
+@COLOR-PurpleLight:				#D0A3C5;
+@COLOR-Purple:					#BB7AAA;
+@COLOR-PurpleDark:				#8F4E83;
+@COLOR-PurpleDarker:			#6C3065;
+@COLOR-PurpleDarkest:			#511E4E;
+
+@COLOR-IndigoLightest:			#ECE8F7;
+@COLOR-IndigoLighter:			#D5CDF0;
+@COLOR-IndigoLight:				#BDAEE6;
+@COLOR-Indigo:					#9E8ADB;
+@COLOR-IndigoDark:				#6D5AB9;
+@COLOR-IndigoDarker:			#49389A;
+@COLOR-IndigoDarkest:			#31237E;
+
+@COLOR-BlueLightest:			#DEECF8;
+@COLOR-BlueLighter:				#B6D7F1;
+@COLOR-BlueLight:				#8CBFE9;
+@COLOR-Blue:					#5AA2E0;
+@COLOR-BlueDark:				#3C75BE;
+@COLOR-BlueDarker:				#28549F;
+@COLOR-BlueDarkest:				#1D3C82;
+
+@COLOR-CyanLightest:			#D9F0F5;
+@COLOR-CyanLighter:				#A9E0E9;
+@COLOR-CyanLight:				#79CEDD;
+@COLOR-Cyan:					#41B7CC;
+@COLOR-CyanDark:				#2E8DA9;
+@COLOR-CyanDarker:				#226C89;
+@COLOR-CyanDarkest:				#1D526F;
+
+@COLOR-TealLightest:			#DCF1F0;
+@COLOR-TealLighter:				#B0E2DD;
+@COLOR-TealLight:				#83D2C7;
+@COLOR-Teal:					#4EBEAC;
+@COLOR-TealDark:				#359685;
+@COLOR-TealDarker:				#257467;
+@COLOR-TealDarkest:				#1D5A50;
+
+@COLOR-GreenLightest:			#EAF4E0;
+@COLOR-GreenLighter:			#D3E8B6;
+@COLOR-GreenLight:				#B9DC88;
+@COLOR-Green:					#9ACC54;
+@COLOR-GreenDark:				#69A53A;
+@COLOR-GreenDarker:				#458429;
+@COLOR-GreenDarkest:			#2D6821;
+
+@COLOR-EmeraldLightest:			#DFF3E8;
+@COLOR-EmeraldLighter:			#B8E6CB;
+@COLOR-EmeraldLight:			#8FD8AA;
+@COLOR-Emerald:					#62C884;
+@COLOR-EmeraldDark:				#41A158;
+@COLOR-EmeraldDarker:			#297F39;
+@COLOR-EmeraldDarkest:			#21652A;
+
+@COLOR-YellowLightest:			#F5F0D9;
+@COLOR-YellowLighter:			#ECDEA4;
+@COLOR-YellowLight:				#E3CB6D;
+@COLOR-Yellow:					#D7B431;
+@COLOR-YellowDark:				#B18A28;
+@COLOR-YellowDarker:			#8D6821;
+@COLOR-YellowDarkest:			#704E21;
+
+@COLOR-OrangeLightest:			#FAEDD4;
+@COLOR-OrangeLighter:			#F8D89B;
+@COLOR-OrangeLight:				#F6C25E;
+@COLOR-Orange:					#F5A61D;
+@COLOR-OrangeDark:				#D37A1B;
+@COLOR-OrangeDarker:			#B2581C;
+@COLOR-OrangeDarkest:			#924223;
+
+@COLOR-RustLightest:			#FCEFEA;
+@COLOR-RustLighter:			    #F9D3C1;
+@COLOR-RustLight:				#F7AA86;
+@COLOR-Rust:					#F5733A;
+@COLOR-RustDark:				#D34A2B;
+@COLOR-RustDarker:			    #B33025;
+@COLOR-RustDarkest:			    #911E21;
+
+@COLOR-BrownLightest:			#E1D9D9;
+@COLOR-BrownLighter:			#BDA8A6;
+@COLOR-BrownLight:				#96766F;
+@COLOR-Brown:					#693D32;
+@COLOR-BrownDark:				#442C27;
+@COLOR-BrownDarker:				#2B2221;
+@COLOR-BrownDarkest:			#1D1E21;
+
+@COLOR-GreyLightest:			#E7E9ED;
+@COLOR-GreyLighter:				#CBD0D7;
+@COLOR-GreyLight:				#ADB4BC;
+@COLOR-Grey:					#8A949F;
+@COLOR-GreyDark:				#556375;
+@COLOR-GreyDarker:				#324156;
+@COLOR-GreyDarkest:				#1D2C41;
+
+@COLOR-Base:                    @COLOR-Blue;
+
+// ANNIMATION CURVES
+// ----------------------------------------------------
+
+@ANIM-Curve:					~"cubic-bezier(0.4, 0, 0.2, 1)";
+@ANIM-Exit:                     ~"cubic-bezier(0,0,0.6,1)";
+@ANIM-Entrance:                 ~"cubic-bezier(0.4,0,1,1)";
+
+// DEPTH
+// ----------------------------------------------------
+
+@DEPTH-Level0:                  ~"0 0 0 0 rgba(0, 0, 0, 0.0)";
+@DEPTH-Level1:                  ~"0 1px 4px 0 rgba(0, 0, 0, 0.37)";
+@DEPTH-Level2:                  ~"0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2)";
+@DEPTH-Level3:                  ~"0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19)";
+@DEPTH-Level4:                  ~"0 20px 40px 0 rgba(0, 0, 0, 0.3), 0 14px 12px 0 rgba(0, 0, 0, 0.17)";
+@DEPTH-Level5:                  ~"0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15)";
+
+// Z-INDEX
+// ----------------------------------------------------
+
+@Z-INDEX-Level0:				0;		// Page
+@Z-INDEX-Level1:				100;	// Page
+@Z-INDEX-Level2:				200;	// Page
+@Z-INDEX-Level3:				300;	// Page
+@Z-INDEX-Level4:				400;	// Alerts
+@Z-INDEX-Level5:				500;	// Navigation
+@Z-INDEX-Level6:				600;	// Header
+@Z-INDEX-Level7:				700;	// Takeover
+@Z-INDEX-Level8:				800;	// Flyout
+@Z-INDEX-Level9:				900;	// Toast
+@Z-INDEX-Level10:				2000;	// System
+
+// TYPOGRAPHY
+// ----------------------------------------------------
+
+@TYPE-FontSize:                 16;
+@TYPE-LineHeight:               24;
+@TYPE-FontFamily:               Arial, Helvetica, sans-serif;
+@TYPE-MonoSpaceFontFamily:      Consolas, monospace;
+@TYPE-FontColor:                @COLOR-GreyDarker;
+@TYPE-HeadingsFontFamily:       serif;
+@TYPE-HeadingsColor:            @COLOR-GreyDarker;
+
+@TYPE-SIZE-Omega:               60;
+@TYPE-SIZE-Alpha:               40;
+@TYPE-SIZE-Beta:                28;
+@TYPE-SIZE-Gamma:               20;
+@TYPE-SIZE-Delta:               18;
+@TYPE-SIZE-Epsilon:             16;
+@TYPE-SIZE-Zeta:                15;
+@TYPE-SIZE-Eta:                 14;
+@TYPE-SIZE-Iota:                12;
+
+@TYPE-CodeFontFamily:           Monaco, Courier New, monospace, serif;
+
+// GRID
+// ----------------------------------------------------
+
+@GRID-MaxWidth:                 980;
+@GRID-GutterWidth:              20;
+@GRID-MobileGutterWidth:        10;
+
+// MEDIA QUERIES
+// ----------------------------------------------------
+
+@MQ-Smallest:                 ((339/16)*1em);  // Phone Portrait     = 21.1875
+@MQ-Small-min:                ((340/16)*1em);  //                    = 21.25
+@MQ-Small:                    ((600/16)*1em);  // Tablet Portrait    = 37.5
+@MQ-Medium-min:               ((601/16)*1em);  //                    = 37.5625
+@MQ-Medium:                   ((800/16)*1em);  // Min Tab Landscape  = 50
+@MQ-Large-min:                ((801/16)*1em);  //                    = 50.0625
+@MQ-Large:                    ((980/16)*1em);  // Average PC Monitor = 61.25
+@MQ-Larger-min:               ((981/16)*1em);  //                    = 61.3125
+@MQ-Larger:                   ((1260/16)*1em); // HD TV              = 78.75
+@MQ-Largest-min:              ((1261/16)*1em); //                    = 78.8125
+@MQ-Largest:                  ((1900/16)*1em); // Full HD TV         = 118.75
+
+// PATHS
+// ----------------------------------------------------
+
+@PATH-Assets:                   "../";
+@PATH-Images:                   "../img/";
+@PATH-Fonts:                    "../fonts/";
+
+// BASE MODULES
+// Change to false if not using
+// =========================================================================//
+
+@MODULE-Accordion:              true;
+@MODULE-Alert:                  true;
+@MODULE-Badge:                  true;
+@MODULE-Banner:                 true;
+@MODULE-Box:                    true;
+@MODULE-Breadcrumbs:            true;
+@MODULE-Browsehappy:            true;
+@MODULE-Button:                 true;
+@MODULE-Card:                   true;
+@MODULE-Cardslider:             true;
+@MODULE-Column:                 true;
+@MODULE-Flash:                  true;
+@MODULE-Focus:                  true;
+@MODULE-Form:                   true;
+@MODULE-Icon:                   true;
+@MODULE-HoverCard:				true;
+@MODULE-Gmap:					true;
+@MODULE-Image:                  true;
+@MODULE-Label:                  true;
+@MODULE-Map:                    true;
+@MODULE-Gridify:                true;
+@MODULE-Media:                  true;
+@MODULE-Modal:                  true;
+@MODULE-Navigation:             true;
+@MODULE-Overlay:                true;
+@MODULE-Pagination:             true;
+@MODULE-Panel:					true;
+@MODULE-Popover:				true;
+@MODULE-Print:                  true;
+@MODULE-Scrollbar:				true;
+@MODULE-Story:             		true;
+@MODULE-RTE:					true;
+@MODULE-Stage:                  true;
+@MODULE-SideMenu:               true;
+@MODULE-Tabs:                   true;
+@MODULE-Toast:                  true;
+@MODULE-Tooltip:                true;
+@MODULE-Typography:             true;
+@MODULE-Well:                   true;

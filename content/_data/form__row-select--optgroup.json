@@ -1,5 +1,5 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": "",
@@ -9,7 +9,7 @@
         "text": "Label for select, with option group",
         "types": [{
             "selects": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "multiple": "",
                     "required": "",
@@ -25,12 +25,12 @@
                 
                 "content": {
                     "optgroups": [{
-                        "item": {
+                        "attribute": {
                             "label": "OptionGroup Label"
                         },
                         "content": {
                             "options": [{
-                                "item": {
+                                "attribute": {
                                     "value": "",
                                     "selected": "",
                                     "disabled": ""

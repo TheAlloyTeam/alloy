@@ -1,0 +1,17 @@
+{{#this}}
+    <div class="login{{#if attribute.modifier}} login login--{{attribute.modifier}}{{/if}}">
+        {{#if content.title}}
+            <div class="login__title">{{{content.title}}}</div>
+        {{/if}}
+        <form id="login__form" class="form" role="" method="">
+
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Login</legend>
+                    {{> form__row form__row-text--username }}
+                    {{> form__row form__row-password }}
+                </fieldset>
+                {{> form__actions form__actions--login }}
+            </form>
+        </div>
+    </div>
+{{/this}}

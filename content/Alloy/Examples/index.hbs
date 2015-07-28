@@ -1,0 +1,53 @@
+---
+title: Examples
+subtitle: Some layout tests
+layout: example.hbs
+
+navigation-main: true
+navigation-order: 6
+
+nav-title: "Examples"
+nav-text: "Examples"
+nav-target: "_blank"
+nav-variant: "examples"
+page-category: "examples"
+---
+
+<header class="w w--head">
+	<div class="g">
+	    <div class="c__lg--1">
+	    	<h1 class="page__title">{{title}}</h1>
+	    </div>
+	</div>
+</header>
+
+<main class="main">
+	<div class="w w--content">
+		<div class="g">
+		    <div class="c__lg--1">
+		    	{{#withSort page-category "page.title"}}
+				{{#is page-category "examples"}}
+				<ul>
+    				{{#each this.pages}}
+	            		{{#this}}
+						{{#isnt data.navigation-main true}}
+                        <li><a class="list__link list__link--{{data.nav-variant}}" href="{{relative ../../../../../page.dest this.dest}}" title="{{data.nav-title}}"><span>{{capitalizeFirst data.nav-text}}</span></a></li>
+                        {{/isnt}}
+                        {{/this}}
+        			{{/each}}
+                </ul>
+                {{/is}}
+                {{/withSort}}
+		    </div>
+		</div>
+	</div>
+
+</main>
+
+<footer class="w w--foot">
+	<div class="g">
+	    <div class="c__lg--1">
+			{{> footer }} {{! footer uses the app.json for its information at present }}
+	    </div>
+	</div>
+</footer>

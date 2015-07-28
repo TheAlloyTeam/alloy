@@ -1,0 +1,32 @@
+{
+    "attribute": {
+        "modifier": "",
+        "required": ""
+    },
+    "content": {
+        "body": ""
+    },
+    "actions": [{
+        "buttons": [{
+            "attribute": {
+                "modifier": "",
+                "size": "",
+                "disabled": "",
+                "target": "",
+                "block": ""
+            },
+            "content":{
+                "type": "Submit",
+                "text": "Login",
+                "title": "Login to Website"
+            },
+            "tracking": {
+                "category": "",
+                "action": "",
+                "label": "",
+                "value": "",
+                "count": ""
+            }
+        }]
+    }]
+}

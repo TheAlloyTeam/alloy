@@ -1,18 +1,18 @@
 {
-    "item": {
+    "attribute": {
         "modifier": "",
         "required": "",
         "disabled": ""
     },
     "content": {
         "labels": [{
-            "item": {
+            "attribute": {
                 "for": "formrow-textarea-1"
             },
             "content": {
                 "text": "Textarea",
                 "icons": [{
-                    "item": {
+                    "attribute": {
                         "modifier": "",
                         "size": ""
                     },
@@ -23,11 +23,11 @@
             }
         }],
         "inputs": [{
-            "item": {
+            "attribute": {
                 "size": "full"
             },
             "textareas": [{
-                "item": {
+                "attribute": {
                     "modifier": "",
                     "size": "",
                     "required": "",

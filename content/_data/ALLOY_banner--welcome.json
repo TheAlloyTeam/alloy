@@ -1,0 +1,13 @@
+{
+  "attribute": {
+    "modifier": ""
+  },
+  "content": {
+    "backgroundUrl": "/assets/img/banner-welcome.png",
+    "foregroundUrl": "",
+    "foregroundAlt": "",
+    "title": "Thank you!",
+    "subtitle": "You are amazing!",
+    "body": "<p>Thank you for choosing Alloy. We can't wait to see what you make with it!<br/> <i class=\"icon--favorite22\"></i></p>"
+  }
+}
