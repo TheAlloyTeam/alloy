@@ -8,7 +8,7 @@
   "@context" : "http://schema.org",
   "@type" : "Organization",
   {{#if content.image}}"image": "{{content.image}}",{{/if}}
-  {{#if content.name}}"name": "{{content.name}}",{{/if}}
+  "name": "{{../app.name}}",
   "url": "{{../app.url}}",
 
   {{#if social }}
