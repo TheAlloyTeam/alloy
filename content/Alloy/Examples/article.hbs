@@ -37,12 +37,10 @@ page-category: "examples"
 </main>
 
 <footer class="w w--foot">
+	{{> footernav }}
 	<div class="g">
 	    <div class="c__lg--1">
-	    	[SITE FOOTERNAV]
-	    </div>
-	    <div class="c__lg--1">
-	    	[SITE COPYRIGHT]
+			{{> footer }} {{! footer uses the app.json for its information at present }}
 	    </div>
 	</div>
 </footer>

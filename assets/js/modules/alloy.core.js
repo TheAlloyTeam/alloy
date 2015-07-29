@@ -19,6 +19,11 @@
                 start: 30,
                 end: 200,
                 dir: -1
+            },
+            gmaps:
+            {
+                lat: 0,
+                lng: 0,
             }
         };
 

@@ -6,7 +6,7 @@
         var addFlash = function(flash) {
             flashes.push(flash);
 
-            if (flashes.length == 1) {
+            if (flashes.length === 1) {
                 _displayFlash(flash);
             }
         };
@@ -25,11 +25,11 @@
             if (flashes.length > 0) { _displayFlash(flashes[0]); }
         };
 
-        var public = {
+        var output = {
             add : addFlash
         };
 
-        return public;
+        return output;
 
     }();
 

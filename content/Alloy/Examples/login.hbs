@@ -29,10 +29,10 @@ page-category: "examples"
 <main class="main">
 	<div class="w w--headlines">
 		<div class="g">
-		    <div class="c__lg--3-16 c__md--1-2">
-		    [LOGIN/REGISTER]
+		    <div class="c__lg--5-16 c__md--1-2">
+		    {{> login }}
 		    </div>
-		    <div class="c__lg--13-16 c__md--1">
+		    <div class="c__lg--11-16 c__md--1">
 		    [REASONS]
 		    </div>
 		</div>
@@ -40,12 +40,10 @@ page-category: "examples"
 </main>
 
 <footer class="w w--foot">
+	{{> footernav }}
 	<div class="g">
 	    <div class="c__lg--1">
-	    	[SITE FOOTERNAV]
-	    </div>
-	    <div class="c__lg--1">
-	    	[SITE COPYRIGHT]
+			{{> footer }} {{! footer uses the app.json for its information at present }}
 	    </div>
 	</div>
 </footer>

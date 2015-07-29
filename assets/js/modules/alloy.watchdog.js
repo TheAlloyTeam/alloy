@@ -101,14 +101,14 @@
             puppy.update(options);
         };
 
-        var public = {
+        var output = {
             stopAll: _stopAll,
             startAll: _startAll,
             upsertPuppy: _upsertPuppy
         };
 
         ALLOY.Logger.trace("ALLOY.Watchdog initialised");
-        return public;
+        return output;
     }();
 
 })();

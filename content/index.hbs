@@ -19,8 +19,7 @@ class-master: startup
 <footer class="w w--foot">
     <div class="g">
         <div class="c--1">
-            <div class="copyright" role="contentinfo">&copy; Copyright {{year}} ALLOY, The ALLOY Team, All rights reserved.</div>
-            <small><strong>Last Built:</strong> {{now}}</small>
+            {{> footer }} {{! footer uses the app.json for its information at present }}
         </div>
     </div>
 </footer>
