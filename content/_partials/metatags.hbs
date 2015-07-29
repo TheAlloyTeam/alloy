@@ -1,6 +1,7 @@
 <meta name="description" content="{{ page.description }}" />
 <meta name="keywords" content="{{ page.title }}, {{ page.keywords }}, {{ app.keywords }} " />
 <meta name="author" content="{{ app.author }}" />
+<meta itemprop="url" content="{{ app.url }}" />
 {{#if app.addr }}
 <meta name="geography" content="{{ app.address }}" />
 {{/if}}
@@ -12,7 +13,7 @@
 {{#if app.designer }}
 <meta name="designer" content="{{ app.designer }}" />
 {{else}}
- <meta name="designer" content="{{ app.author }}" />
+<meta name="designer" content="{{ app.author }}" />
 {{/if}}
 {{#if app.publisher }}
 <meta name="publisher" content="{{ app.publisher }}" />

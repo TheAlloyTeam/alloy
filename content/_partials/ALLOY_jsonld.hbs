@@ -1,0 +1,47 @@
+{{#if app.organization }}
+{{#each app.organization }}
+
+
+<script type="application/ld+json">
+{
+
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  {{#if content.image}}"image": "{{content.image}}",{{/if}}
+  {{#if content.name}}"name": "{{content.name}}",{{/if}}
+  "url": "{{../app.url}}",
+
+  {{#if social }}
+  "sameAs": [
+    {{#each social}}"{{content.url}}"{{#if @last}}{{else}},{{/if}}
+    {{/each}}
+  ],
+  {{/if}}
+
+  {{#if contactpoint }}
+  "contactPoint" : [{
+    "@type" : "ContactPoint",
+  {{#each contactpoint }}
+    {{#if content.email}}"email": "{{content.email}}",{{/if}}
+    {{#if content.telephone}}"telephone": "{{content.telephone}}",{{/if}}
+    {{#if content.contacttype}}"contactType": "{{content.contacttype}}"{{/if}}
+  {{/each}}
+  }],
+  {{/if}}
+
+  {{#if postaladdress }}
+  "address": [{
+    "@type": "PostalAddress",
+    {{#each postaladdress }}
+    {{#if content.streetaddress}}"streetAddress": "{{content.streetaddress}}", {{/if}}
+    {{#if content.addresslocality}}"addressLocality": "{{content.addresslocality}}", {{/if}}
+    {{#if content.postalcode}}"postalCode": "{{content.postalcode}}" {{/if}}
+  {{/each}}
+  }]
+  {{/if}}
+}
+</script>
+
+
+{{/each}}
+{{/if}}

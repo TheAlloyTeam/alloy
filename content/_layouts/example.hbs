@@ -2,16 +2,17 @@
 <!--[if IE 8]> <html class="no-js ie ie8 lt-ie8" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
 <!--[if IE 9]> <html class="no-js ie ie9" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
-<head>
+<head itemscope itemtype="http://schema.org/WebSite">
     <meta charset="utf-8">
 
-    <title>{{ page.title }} - {{ app.title }}</title>
+    <title itemprop='name'>{{ page.title }} - {{ app.title }}</title>
 
     <meta name="description" content="{{ page.description }}" />
     <meta name="keywords" content="{{ page.title }}, {{ page.keywords }}, {{ app.keywords }} " />
     <meta name="author" content="{{ app.author }}" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="{{ app.url }}" itemprop="url">
     <link rel="stylesheet" href="{{ assets }}/css/fontloader.css" />
     <link rel="stylesheet" href="{{ assets }}/css/main.css" />
 
@@ -48,6 +49,7 @@
 
     {{> body }}
     {{> ALLOY_scripts }}
+    {{> ALLOY_jsonld }}
 
     <!-- <div class="modal__mask modal__mask--visible"></div> -->
 

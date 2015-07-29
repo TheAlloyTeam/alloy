@@ -1,8 +1,58 @@
 {
 	"title": "ALLOY Visual Language",
 	"siteclass": "alloy-visual-language",
+    "url": "https://XXXXXXXXXXXXX/",
 	"analytics": "UA-XXXXX-X",
 	"author": "ALLOY Team",
 	"description": "This is the default description from the app.json file",
-	"keywords": "sample, keywords, from, the, app.json, file"
+	"keywords": "sample, keywords, from, the, app.json, file",
+
+    "organization": [
+    {
+        "content": {
+            "name": "ALLOY Default Name in app.json",
+            "image": "https://XXXXXXXXXXXXX/"
+        },
+        "social": [
+        {
+            "content": {
+                "name": "Facebook",
+                "url": "https://www.facebook.com/USERXXXXXXX"
+            }
+        },
+        {
+            "content": {
+                "name": "Twitter",
+                "url": "https://twitter.com/USERXXXXXXX"
+            }
+        },
+        {
+            "content": {
+                "name": "LinkedIn",
+                "url": "https://linkedin.com/USERXXXXXXX"
+            }
+        },
+        {
+            "content": {
+                "name": "Google Plus",
+                "url": "https://plus.google.com/USERXXXXXXX/"
+            }
+        }],
+        "contactpoint": [
+        {
+            "content": {
+                "telephone": "+44(0)000 00000 0000",
+                "email": "Default.email@app.json.file",
+                "contacttype": "Customer Support"
+            }
+        }],
+        "postaladdress": [
+        {
+            "content": {
+			    "streetaddress": "Default streetaddress from the app.json file",
+			    "addresslocality": "Default addresslocality from the app.json file",
+			    "postalcode": "Default postalcode from the app.json file"
+            }
+        }]
+    }]
 }

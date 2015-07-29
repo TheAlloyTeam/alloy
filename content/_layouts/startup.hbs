@@ -5,11 +5,11 @@ js-stage: true
 
 <!doctype html>
 <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
-<head>
+<head itemscope itemtype="http://schema.org/WebSite">
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <title>{{ page.title }} - {{ app.title }}</title>
+    <title itemprop='name'>{{ page.title }} - {{ app.title }}</title>
 
     {{> metatags }}
 
@@ -66,6 +66,7 @@ js-stage: true
     </div>
 
     {{> ALLOY_scripts }}
+    {{> ALLOY_jsonld }}
 
 </body>
 </html>

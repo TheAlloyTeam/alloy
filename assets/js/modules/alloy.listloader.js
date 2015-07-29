@@ -46,7 +46,7 @@
 
                 }, config.listHeightPause);
             });
-        };
+        }
 
         function onTemplateRetrieved(template, json, config) {
             var $list = $("." + config.classes.list);
@@ -89,7 +89,7 @@
             } else {
                 bringInMore(template, json, config, $list, newHeight);
             }
-        };
+        }
 
         function onJsonRetrieved(json, config) {
             // Get the template to put the list of json objects into
@@ -102,7 +102,7 @@
                     ALLOY.Logger.error("ALLOY.ListLoader - Error retrieving mustache template: " + errorThrown);
                 }
             });
-        };
+        }
 
         function doGet(args) {
             var config = $.extend({}, defaults, args, undefined);
@@ -120,7 +120,7 @@
                     ALLOY.Logger.error("ALLOY.ListLoader - Error retrieving more news posts: " + errorThrown);
                 }
             });
-        };
+        }
 
         doGet(options);
     };
