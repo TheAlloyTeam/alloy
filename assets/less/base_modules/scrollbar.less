@@ -11,7 +11,6 @@
 		position: relative;
 
 		& .scrollable {
-			margin-right: 1em;
 		}
 
 		.scrollcontainer {
@@ -19,10 +18,11 @@
 		  	background-color: fade(@COLOR-Grey, 50%);
 			position: absolute;
 			top: 0;
-			right: 0;
-			width: 1em;
+			right: -0.6em;
+			width: 0.5em;
 			height: 100%;
           ._padding(2);
+          ._border-radius(5);
 
 			opacity: 0;		
 		    ._transition (opacity, 0.4s, @SCROLLBAR-Anim);
@@ -56,8 +56,9 @@
 
 	.button-scroller {
 	  width: 100%;
-	  height: 1em;
-	  background-color: red; //@COLOR-GreyDark;
+	  height: 3em;
+	  background-color: @COLOR-GreyDarkest;
+      ._border-radius(5);
 	}
 
 } .scrollbar-styles();

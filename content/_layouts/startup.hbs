@@ -4,44 +4,24 @@ js-stage: true
 ---
 
 <!doctype html>
-<!--[if IE 8]> <html class="no-js ie ie8 lt-ie8" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
-<!--[if IE 9]> <html class="no-js ie ie9" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     <title>{{ page.title }} - {{ app.title }}</title>
 
-    <meta name="description" content="{{ page.description }}" />
-    <meta name="keywords" content="{{ page.title }}, {{ page.keywords }}, {{ app.keywords }} " />
-    <meta name="author" content="{{ app.author }}" />
+    {{> metatags }}
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{{ assets }}/css/fontloader.css" />
     <link rel="stylesheet" href="{{ assets }}/css/startup.css" />
 
-    <!-- For retina-display iPads -->
-    <!-- <link href="{{ assets }}/img/icons/retina_ipad_home.png" rel="apple-touch-icon-precomposed" sizes="144x144" type="image/png"/> -->
-    <!-- For retina-display iPhones -->
-    <!-- <link href="{{ assets }}/img/icons/iphone_home.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png"/> -->
-    <!-- For iPad 1 -->
-    <!-- <link href="{{ assets }}/img/icons/ipad_home.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png"/> -->
-    <!-- For iPhone 3G, iPod Touch and Android -->
-    <!-- <link href="{{ assets }}/img/icons/iphone_home.png" rel="apple-touch-icon-precomposed" type="image/png"/> -->
-    <!-- For Nokia -->
-    <!-- <link href="{{ assets }}/img/icons/iphone_home.png" rel="shortcut icon"/> -->
-    <!-- For everything else -->
-    <!-- <link href="{{ assets }}/img/icons/favicon.png" rel="shortcut icon" type="image/png"/> -->
-    <!-- <link href="{{ assets }}/img/icons/favicon.ico" rel="shortcut icon" type="image/x-icon"/> -->
-    
-    <script src="{{ assets }}/js/ALLOY.initial.js"></script>
-    <script src="{{ assets }}/js/app/conf.js"></script>
+    {{> metaicons }}
 
-    <!-- IE8 and below fallbacks -->
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <script type="text/javascript" src="{{ assets }}/js/libs/respond/respond.min.js"></script>
-    <![endif]-->
+    {{> metacard }}
+
+    {{> ALLOY_headscripts }}
 
 </head>
 
@@ -51,155 +31,42 @@ js-stage: true
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-
     <div class="stage">
         <div class="stage__page">
-            <a class="stage__toggle" accesskey="m" href="#menu"><i class="icon icon--menu55"></i><span class="hidden-text">Open Menu</span></a>
-            <a class="stage__toggle" accesskey="n" href="#anothermenu" style="left: 50px;"><i class="icon icon--menu55"></i><span class="hidden-text">Open Another Menu</span></a>
-            <a class="stage__toggle" accesskey="b" href="#thirdmenu" style="left: 80px;"><i class="icon icon--menu55"></i><span class="hidden-text">Open Third Menu</span></a>
-    
+            <div class="stage__controls">
+            <a class="stage__toggle" tabindex="0" accesskey="m" href="#menu"><i class="icon icon--menu55"></i><span class="hidden-text">Open Navigation Menu</span></a>
+            <a class="stage__toggle" tabindex="1" accesskey="b" href="#sharing"><i class="icon icon--circles23"></i><span class="hidden-text">Open Sharing Menu</span></a>
+        </div>
+
+            <div class="stage__controls stage__controls--right">
+                <a class="stage__toggle" tabindex="2" accesskey="n" href="#config"><i class="icon icon--settings49"></i><span class="hidden-text">Open Config Menu</span></a>
+            </div>
+
             {{> body }}
 
-        </div>
+            {{> STARTUP_footer }}
 
-        <div id="anothermenu" class="stage__tray" data-pushfrom="right">
-            <div class="sidemenu__head"><span class="sidemenu__title">Another menu</span> <a href="#anothermenu" class="sidemenu__close stage__toggle">&times;</a></div>
-        </div>
-
-        <div id="thirdmenu" class="stage__tray" data-pushfrom="left">
-            <div class="sidemenu__head"><span class="sidemenu__title">Third menu</span> <a href="#thirdmenu" class="sidemenu__close stage__toggle">&times;</a></div>
         </div>
 
         <div id="menu" class="stage__tray" data-pushfrom="left">
+            {{> sidemenu }}
+        </div>
+        <div id="config" class="stage__tray" data-pushfrom="right">
             <div class="sidemenu">
-                <div class="sidemenu__head"><span class="sidemenu__title">Alloy Navigation</span> <a href="#menu" class="sidemenu__close stage__toggle">&times;</a></div>
-                <nav class="sidemenu__body scrollable">
-                    <ul class="sidemenu__list sidemenu__list--root">
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
 
-                            <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
-
-                            <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
-
-                            <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
-
-                            <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
-
-                            <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
-
-                            <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li><li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a>
-
-                            <ul class="sidemenu__list sidemenu__list--sub">
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                                <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                        <li class="sidemenu__item"><a href="#" class="sidemenu__link ink">Menu Item</a></li>
-                    </ul>
-
-                </nav>
+                <div class="sidemenu__head"><span class="sidemenu__title">Another menu</span> <a href="#anothermenu" class="sidemenu__close stage__close">&times;</a></div>
             </div>
+        </div>
+        <div id="sharing" class="stage__tray" data-pushfrom="left">
+            <div class="sidemenu">
+                <div class="sidemenu__head"><span class="sidemenu__title">Third menu</span> <a href="#thirdmenu" class="sidemenu__close stage__close">&times;</a></div>
 
+            </div>
         </div>
     </div>
 
-
     {{> ALLOY_scripts }}
-
-    <!-- <div class="modal__mask modal__mask--visible"></div> -->
+    {{> ALLOY_jsonld }}
 
 </body>
 </html>

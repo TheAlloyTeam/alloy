@@ -12,6 +12,7 @@
         defaults: {
             classes: {
                 toggle: "stage__toggle",
+                close: "stage__close",
                 page: "stage__page",
                 tray: "stage__tray",
 
@@ -44,6 +45,7 @@
             that.$page = that.$element.find("." + that.config.classes.page);
             that.$trays = that.$element.find("." + that.config.classes.tray);
             that.$toggles = that.$element.find("." + that.config.classes.toggle);
+            that.$closes = that.$element.find("." + that.config.classes.close);
         },
 
         _initSizes: function(that) {
@@ -70,6 +72,11 @@
             that.$toggles.click(function(e) {
                 e.preventDefault();
                 that._handleToggle($(this), that);
+            });
+
+            that.$closes.click(function(e) {
+                e.preventDefault();
+                that._closeAllToggles(that);
             });
 
             $(window).resize(function() {

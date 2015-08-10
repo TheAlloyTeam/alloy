@@ -20,9 +20,9 @@
             $(window).scroll(function() {
                 var totop = $(".button__totop");
 
-                if ($(window).scrollTop() >= 200 && totop.data("visible") != 'true') {
+                if ($(window).scrollTop() >= 200 && totop.data("visible") !== 'true') {
                     totop.data("visible", "true").stop(true, true).fadeIn(200);
-                } else if ($(window).scrollTop() < 200 && totop.data("visible") != "false") {
+                } else if ($(window).scrollTop() < 200 && totop.data("visible") !== "false") {
                     totop.data("visible", "false").stop(true, true).fadeOut(200);
                 }
             });

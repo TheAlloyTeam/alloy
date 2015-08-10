@@ -1,20 +1,23 @@
 ---
-title: Login Layout
-subtitle: Quick Login Page
+title: System Layout
+subtitle: System Page
 layout: example.hbs
 
 nav-thumb: "placeholder.jpg"
-nav-title: "Login Layout"
-nav-text: "Login Layout"
+nav-title: "System Layout"
+nav-text: "System Layout"
 nav-variant: "examples"
 page-category: "examples"
 ---
 
 <header class="w w--head">
 	<div class="g">
-	    <div class="c__lg--1">
+	    <div class="c__lg--3-4">
 	    	<h1 class="page__title">{{title}}</h1>
 	    </div>
+		<div class="c__lg--1-4">
+			[TOOLS]
+		</div>
 	</div>
 </header>
 
@@ -28,22 +31,23 @@ page-category: "examples"
 
 <main class="main">
 	<div class="w w--headlines">
-		<div class="g">
-		    <div class="c__lg--5-16 c__md--1-2">
-		    {{> login }}
+		<div class="g g--rtl">
+		    <div class="c__lg--13-16 c__md--4-5">
+				{{> alert alert }}
+				{{> panel panel }}
 		    </div>
-		    <div class="c__lg--11-16 c__md--1">
-		    [REASONS]
+		    <div class="c__lg--3-16 c__md--4-5">
+		    [SIDEBAR]
 		    </div>
 		</div>
 	</div>
 </main>
 
 <footer class="w w--foot">
-	{{> footernav }}
 	<div class="g">
 	    <div class="c__lg--1">
 			{{> footer }} {{! footer uses the app.json for its information at present }}
+			[SITELINK]
 	    </div>
 	</div>
 </footer>
