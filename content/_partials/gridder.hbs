@@ -1,0 +1,14 @@
+{{#this}}
+<div class="c gridder{{#if attribute.modifier}} gridder--{{attribute.modifier}}{{/if}}">
+	{{#each content.cards}}
+	<div class="card card--gridder{{#if class}} {{class}}{{/if}}">
+		<div class="card__front--gridder">
+			<div class="card__content">
+				<div class="card__title">{{content.title}}</div>
+				<div class="card__body"><p>{{content.body}}</p></div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>
+{{/this}}

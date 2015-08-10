@@ -1,7 +1,7 @@
 /* ==========================================================================
 // conf.js
 // =========================================================================*/
- 
+
 // Main Require configuration
 
 var require = {
@@ -49,7 +49,8 @@ var require = {
         'watchdog': "modules/alloy.watchdog",
         'scrollbar': "modules/alloy.scrollbar",
         'stage': "modules/alloy.stage",
-        'keyboard': "modules/alloy.keyboard"
+        'keyboard': "modules/alloy.keyboard",
+        'gridder': "modules/alloy.gridder"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -79,7 +80,8 @@ var require = {
         'watchdog': {deps: ['jquery', 'core', 'logging']},
         'keyboard': {deps: ['jquery', 'core', 'logging']},
         'scrollbar': {deps: ['jquery', 'core', 'logging', 'keyboard']},
-        'stage': {deps: ['jquery', 'core', 'logging']}
+        'stage': {deps: ['jquery', 'core', 'logging']},
+        'gridder': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
