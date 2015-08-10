@@ -1,0 +1,35 @@
+.modeless-styles() when not (@MODULE-Modeless) { }
+.modeless-styles() when (@MODULE-Modeless) {
+
+	@MODELESS-Anim:					@ANIM-Curve;
+
+	.modeless-dialog {
+		box-shadow: 10px 10px 5px #888888;
+	}
+
+	.modelesswrap {
+		position: fixed;
+		z-index: @Z-INDEX-Level7;
+		top: 0;
+		left: 0;
+
+    	._transition (opacity, 0.4s, @MODELESS-Anim);
+
+		opacity: 1;
+
+		&.closing {
+			opacity: 0;
+		}
+
+		&.closed {
+			display: none;
+		}
+
+		& .modeless_draggable {
+			height: 40px;
+			width: 100%;
+			background-color: purple;
+		}
+	}
+
+}.modeless-styles();

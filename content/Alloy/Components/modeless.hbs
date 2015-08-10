@@ -1,0 +1,76 @@
+---
+title: Modeless
+layout: alloy.hbs
+
+nav-thumb: "placeholder.jpg"
+nav-title: "Modeless"
+nav-text: "Modeless"
+nav-variant: "modeless"
+page-category: "components"
+js-modeless: true
+---
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+<!-- example -->
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Example</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+
+				        <a href="#" class="button modeless" data-modeless='{"content": "<div class=&#39;modeless-dialog&#39;><div class=&#39;modeless_draggable&#39;></div><div class=&#39;panel full&#39;>This is the content inside of the modeless dialog from the data-modeless attribute of the button!<br/><a href=&#39;#&#39; class=&#39;button close-modeless-content&#39;>Close</a></div></div>", "draggableClass": "modeless_draggable" }'>This example modeless dialog</a>
+
+				        <!-- end of code -->
+			        </div>
+
+		        </section>
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Code</h2>
+		            </header>
+
+		            <div class="section__body">
+			            <pre class="prettyprint linenums"><code class="html">
+
+			             </code></pre>
+		            </div>
+
+		        </section>
+
+<!-- reference -->
+
+		        <section class="section section--reference">
+		            <header class="section__head">
+		                <h2 class="section__title">References</h2>
+		            </header>
+		            <div class="section__body rte">
+
+		            </div>
+		        </section>
+
+	        </div>
+
+	    </div>
+	</div>
+</main>

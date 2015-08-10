@@ -191,6 +191,15 @@
 </script>
 {{/if}}
 
+{{#if js-modeless}}
+<script>
+	require(["modeless"], function() {
+
+	});
+</script>
+{{/if}}
+
+
 {{#if js-scrollbar}}
 <script>
 	require(["scrollbar"], function() {
