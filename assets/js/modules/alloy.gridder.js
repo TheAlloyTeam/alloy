@@ -11,8 +11,8 @@
         defaults: {
             cardClass: "card--gridder",      // The class given to cards that should be included in the gridder grid
             lockedClass: "locked",          // The class to be given to cards that cannot have their size altered
-            columns: 3,					    // The number of columns to try and fit in to the mason'ified element
-            minColumnWidth: 250,		    // The minimum width that a column can be, before moving down to one less column
+            columns: 5,					    // The number of columns to try and fit in to the mason'ified element
+            minColumnWidth: 50,		    // The minimum width that a column can be, before moving down to one less column
             minHeight: 120,                 // The smallest possible height for a card
             heights: [                      // The classes for each possible multiple of the minHeight (starting at the first - default)
                 "normal",
@@ -21,7 +21,9 @@
                 "tallest"
             ],
             verticalSpace: 20,              // The spacing vertically between cards
-            horizontalSpace: 20             // The spacing horizontally between cards
+            horizontalSpace: 20,            // The spacing horizontally between cards
+
+            increaseAttempts: 100
         },
 
         _init: function () {
@@ -181,14 +183,18 @@
             var increasesReq = Math.floor(diff / that.config.minHeight);
 
             var increasesCovered = 0;
+            var attempts = 0;
 
-            while (increasesCovered < increasesReq) {
+            while (increasesCovered < increasesReq && attempts < that.config.increaseAttempts) {
+                // Ensure we can't get stuck in an infinite loop attempting to increase column heights
+                attempts ++;
+
                 // Select a random card and make it one size bigger if possible
                 var rnd = Math.floor(Math.random() * column.cards.length);
                 var card = column.cards[rnd];
 
                 // Don't allow scaling up if card is locked
-                if (!card.isLocked) {
+                if (card !== undefined && !card.isLocked) {
                     var newClass = that._getNextHeightClass(that, card.heightClass);
 
                     // Try again if the card is already at the largest size
