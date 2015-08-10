@@ -48,17 +48,17 @@
             setTimeout(function() { $mask.addClass(that.config.maskActiveClass); });
 
             var htmlContent = that._getContent(that);
-            
+
             var $content = $('<div class="' + that.config.modalClass + '">' + htmlContent + '</div>');
             $("body").append($content);
             $content.addClass(that.config.modalActiveClass);
 
             $(that.config.closeButtonSelector).one("click", function(e) { e.preventDefault(); that._doClose(that); });
-            setTimeout(function() { that._checkForClose(that);}, 100);  // Timeout to stop the 'opening' click closing the modal
+            setTimeout(function() { that._checkForClose(that); }, 500);  // Timeout to stop the 'opening' click closing the modal
         },
 
         _getContent: function(that) {
-            
+
             // Content has already been set
             if (that.htmlContent !== undefined) {
                 // Do nothing, let the minifier handle it

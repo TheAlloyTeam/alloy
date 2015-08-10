@@ -6,7 +6,7 @@
 
 <script type="text/JavaScript">
 	require(["ink", "equalizer", "sticky"], function() {
-		setTimeout(function(){ 
+		setTimeout(function(){
 			$(".w--foot .panel").equalizer({
 		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
 		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
@@ -44,39 +44,39 @@
  		$(".toast-trigger").click(function(e) {
  			e.preventDefault();
 
-			$.configretriever("toast", undefined, undefined, undefined, 
-				{ success: function(config) { 
+			$.configretriever("toast", undefined, undefined, undefined,
+				{ success: function(config) {
 					$.mustacheretriever("toast", config.content, function(html) {
 						ALLOY.Toastrack.add({html: html});
 					});
 				}
 			});
- 		}); 		
+ 		});
  	});
 </script>
 {{/if}}
 
-{{#if js-flash}} 
+{{#if js-flash}}
 <script type="text/JavaScript">
 	require(["flash", "mustacheretriever"], function() {
  		$(".flash-trigger").click(function(e) {
  			e.preventDefault();
 
-			$.configretriever("flash", undefined, undefined, undefined, 
-				{ success: function(config) { 
+			$.configretriever("flash", undefined, undefined, undefined,
+				{ success: function(config) {
 					$.mustacheretriever("flash", config, function(html) {
 						$.flash({html: html});
 					});
 				}
 			});
- 		}); 		
+ 		});
  	});
 </script>
 {{/if}}
 
-{{#if js-cardflipper}} 
+{{#if js-cardflipper}}
 <script type="text/JavaScript">
-	require(["cardflipper"], function() { 
+	require(["cardflipper"], function() {
 		$(".card").cardflipper();
 	});
 </script>
@@ -89,6 +89,13 @@
 	});
 </script>
 {{/if}}
+
+{{#if js-gridder}}
+<script type="text/JavaScript">
+	require(["gridder"], function() { });
+</script>
+{{/if}}
+
 
 {{#if js-cardslider}}
 <script type="text/JavaScript">
@@ -137,7 +144,7 @@
 	            var nonmatches = [];
 
 	            $cards.each(function() {
-	                if (searchArgs.randomise === false || Math.random() > 0.5) { matches.push(this); } 
+	                if (searchArgs.randomise === false || Math.random() > 0.5) { matches.push(this); }
 	                else { nonmatches.push(this); }
 	            });
 
@@ -188,7 +195,7 @@
 <script>
 	require(["scrollbar"], function() {
 		$(".scrollable").scrollbar({
-			
+
 		});
 	});
 </script>
@@ -198,7 +205,7 @@
 <script>
 	require(["stage"], function() {
 		$(".stage").stage({
-			
+
 		});
 	});
 </script>
