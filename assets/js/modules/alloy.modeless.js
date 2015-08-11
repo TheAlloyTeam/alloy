@@ -22,7 +22,9 @@
 
             closingClass: "closing",
             closedClass: "closed",
-            closingTransitionLength: 400
+            closingTransitionLength: 400,
+            startX: undefined,
+            startY: undefined
         },
 
         _init: function () {
@@ -46,14 +48,35 @@
 
         _loadContent: function(that) {
             if (!that.config.stateful || that.$html === undefined) {
-                that._removeEvents(that);
-                that.$html = $(that.config.content);
-                that.$html.wrap('<div class="' + that.config.wrapClass + '"></div>');
-                that.$html = $(that.$html.parent("." + that.config.wrapClass));
-                $('body').append(that.$html);
+                that._createDialog(that);
             } else {
                 that.$html.removeClass(that.config.closingClass).removeClass(that.config.closedClass);
             }
+        },
+
+        _createDialog: function(that) {
+            that._removeEvents(that);
+            that.$html = $(that.config.content);
+            that.$html.wrap('<div class="' + that.config.wrapClass + '"></div>');
+            that.$html = $(that.$html.parent("." + that.config.wrapClass));
+            $('body').append(that.$html);
+            var pos = that._getStartPosition(that);
+            that.$html.css({ left: pos.x + "px", top: pos.y + "px" });
+        },
+
+        _getStartPosition: function(that) {
+            var startX = 0;
+            var startY = 0;
+
+            if (that.config.startX !== undefined) { startX = that.config.startX; }
+            else { startX = that.$element.offset().left - $(window).scrollLeft(); }
+            if (that.config.startY !== undefined) { startY = that.config.startY; }
+            else { startY = that.$element.offset().top - $(window).scrollTop(); }
+
+            return {
+                x: startX,
+                y: startY
+            };
         },
 
         _setupEvents: function(that) {
