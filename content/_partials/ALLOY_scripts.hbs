@@ -92,7 +92,51 @@
 
 {{#if js-gridder}}
 <script type="text/JavaScript">
-	require(["gridder"], function() { });
+	require(["gridder"], function() {
+		// Set default spacing
+		var startSpacing = 20;
+		var startColumns = 4;
+		if (window.innerWidth <= 1000) {
+			startSpacing = 0;
+			startColumns = 3
+		} else if (window.innerWidth > 1200) {
+			startSpacing = 25;
+			startColumns = 6;
+		}
+
+		// Init gridder
+		$(".gridder").gridder({
+			verticalSpace: startSpacing,
+			horizontalSpace: startSpacing,
+			columns: startColumns
+		});
+
+		// Get gridder from the elements data attr
+		var gridder = $(".gridder").data("gridder");
+
+		// On resize overwrite the settings for spacing
+		$(window).resize(function() {
+			if (window.innerWidth <= 1000) {
+				gridder.changeSettings({
+					verticalSpace: 0,
+					horizontalSpace: 0,
+					columns: 3
+				});
+			} else if (window.innerWidth > 1200) {
+				gridder.changeSettings({
+					verticalSpace: 25,
+					horizontalSpace: 25,
+					columns: 6
+				})
+			} else {
+				gridder.changeSettings({
+					verticalSpace: 20,
+					horizontalSpace: 20,
+					columns: 4
+				})
+			}
+		});
+	});
 </script>
 {{/if}}
 
