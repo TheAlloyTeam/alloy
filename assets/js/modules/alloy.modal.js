@@ -53,7 +53,7 @@
             $("body").append($content);
             $content.addClass(that.config.modalActiveClass);
 
-            $(that.config.closeButtonSelector).one("click", function(e) { e.preventDefault(); that._doClose(that); });
+            $(that.config.closeButtonSelector).one("click.modal", function(e) { e.preventDefault(); that._doClose(that); });
             setTimeout(function() { that._checkForClose(that); }, 500);  // Timeout to stop the 'opening' click closing the modal
         },
 
@@ -108,8 +108,8 @@
         },
 
         _checkForClose: function(that) {
-            $("." + that.config.modalClass).one("click", function(e) { e.stopPropagation(); that._checkForClose(that); });
-            $('html').one("click", function(e) { e.preventDefault(); that._doClose(that); });
+            $("." + that.config.modalClass).one("click.modal", function(e) { e.stopPropagation(); that._checkForClose(that); });
+            $('html').one("click.modal", function(e) { e.preventDefault(); that._doClose(that); });
         },
 
         _doClose: function(that) {
@@ -120,6 +120,9 @@
             var $mask = $("." + that.config.maskClass);
             $mask.removeClass(that.config.maskActiveClass);
             setTimeout(function() { $mask.remove(); }, that.config.maskTransitionLength);
+
+            $("." + that.config.modalClass).off("click.modal");
+            $("html").off("click.modal");
         }
     };
 
