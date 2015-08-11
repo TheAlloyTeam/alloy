@@ -9,28 +9,31 @@
 
     Gridder.prototype = {
         defaults: {
-            cardClass: "card--gridder",      // The class given to cards that should be included in the gridder grid
-            lockedClass: "locked",          // The class to be given to cards that cannot have their size altered
-            columns: 5,					    // The number of columns to try and fit in to the mason'ified element
-            minColumnWidth: 50,		    // The minimum width that a column can be, before moving down to one less column
-            minHeight: 120,                 // The smallest possible height for a card
-            heights: [                      // The classes for each possible multiple of the minHeight (starting at the first - default)
+            cardClass: "card--gridder",         // The class given to cards that should be included in the gridder grid
+            lockedClass: "locked",              // The class to be given to cards that cannot have their size altered
+            columns: 5,					        // The number of columns to try and fit in to the mason'ified element
+            minColumnWidth: 170,		        // The minimum width that a column can be, before moving down to one less column
+            minHeight: 120,                     // The smallest possible height for a card
+            heights: [                          // The classes for each possible multiple of the minHeight (starting at the first - default)
                 "normal",
                 "tall",
                 "taller",
                 "tallest"
             ],
-            verticalSpace: 20,              // The spacing vertically between cards
-            horizontalSpace: 20,            // The spacing horizontally between cards
+            verticalSpace: 20,                  // The spacing vertically between cards
+            horizontalSpace: 20,                // The spacing horizontally between cards
 
             increaseAttempts: 100
+        },
+
+        changeSettings: function(newSettings) {
+            this.config = $.extend({}, this.config, newSettings, undefined);
         },
 
         _init: function () {
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
             this.$cards = this.$element.find("." + this.config.cardClass);
 
-            // New well thought-out functionality
             var that = this;
 
             var gridInfo = that._calculateGridInfo(that);
@@ -114,11 +117,18 @@
 
         _getHeightClass: function(that, card) {
             var heightClass = that.config.heights[0];
-            for(var i = 0; i < that.config.heights.length; i++) {
-                if ($(card).hasClass(that.config.heights[i])) {
-                    heightClass = that.config.heights[i];
+            if ($(card).data("heightClass") !== undefined) {
+                heightClass = $(card).data("heightClass");
+            }
+            else {
+                for(var i = 0; i < that.config.heights.length; i++) {
+                    if ($(card).hasClass(that.config.heights[i])) {
+                        heightClass = that.config.heights[i];
+                    }
                 }
             }
+
+            $(card).data("heightClass", heightClass);
             return heightClass;
         },
 
@@ -227,6 +237,8 @@
                     var card = column.cards[c];
                     var cardHeight = that._getHeightByClass(that, card.heightClass);
 
+                    for(var i = 0; i < that.config.heights.length; i++) { $(card.element).removeClass(that.config.heights[i]); }
+
                     $(card.element).css({
                         height: cardHeight + "px",
                         width: columnWidth + "px",
@@ -266,11 +278,16 @@
 
     $.fn.gridder = function (options) {
         return this.each(function () {
-            new Gridder(this, options)._init();
+            // If already started up then ignore
+            if ($(this).data("gridder") === undefined) {
+                var gridder = new Gridder(this, options);
+                gridder._init();
+                $(this).data("gridder", gridder);
+            }
         });
     };
 
     // Autostart Plugin
     ALLOY.Logger.trace('ALLOY.Gridder Initializing');
-    $(".gridder").gridder();
+    //$(".gridder").gridder();
 })();
