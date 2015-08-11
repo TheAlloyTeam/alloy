@@ -51,7 +51,8 @@ var require = {
         'scrollbar': "modules/alloy.scrollbar",
         'stage': "modules/alloy.stage",
         'keyboard': "modules/alloy.keyboard",
-        'gridder': "modules/alloy.gridder"
+        'gridder': "modules/alloy.gridder",
+        'scrollspy': "modules/alloy.scrollspy"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -83,7 +84,8 @@ var require = {
         'keyboard': {deps: ['jquery', 'core', 'logging']},
         'scrollbar': {deps: ['jquery', 'core', 'logging', 'keyboard']},
         'stage': {deps: ['jquery', 'core', 'logging']},
-        'gridder': {deps: ['jquery', 'core', 'logging']}
+        'gridder': {deps: ['jquery', 'core', 'logging']},
+        'scrollspy': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }

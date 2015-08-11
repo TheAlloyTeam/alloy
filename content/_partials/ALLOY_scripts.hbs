@@ -16,6 +16,12 @@
 	});
 </script>
 
+{{#if js-scrollspy}}
+<script type="text/JavaScript">
+	require(["scrollspy"], function() { });
+</script>
+{{/if}}
+
 {{#if js-accordion}}
 <script type="text/JavaScript">
 	require(["accordion"], function() {
