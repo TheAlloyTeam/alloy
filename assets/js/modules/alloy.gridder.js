@@ -11,9 +11,10 @@
         defaults: {
             cardClass: "card--gridder",         // The class given to cards that should be included in the gridder grid
             lockedClass: "locked",              // The class to be given to cards that cannot have their size altered
+            ignoreClass: "ignore",              // The class to be given to cards that are ignored from the grid entirely (and should be set to invisible using css)
             columns: 5,					        // The number of columns to try and fit in to the mason'ified element
             minColumnWidth: 170,		        // The minimum width that a column can be, before moving down to one less column
-            minHeight: 120,                     // The smallest possible height for a card
+            minHeight: 50,                      // The smallest possible height for a card
             heights: [                          // The classes for each possible multiple of the minHeight (starting at the first - default)
                 "normal",
                 "tall",
@@ -23,27 +24,36 @@
             verticalSpace: 20,                  // The spacing vertically between cards
             horizontalSpace: 20,                // The spacing horizontally between cards
 
-            increaseAttempts: 100
+            increaseAttempts: 100,
+            beforeResize: undefined
         },
 
+        // Changes will not take effect until update is called or a resize occurs
         changeSettings: function(newSettings) {
             this.config = $.extend({}, this.config, newSettings, undefined);
         },
 
-        _init: function () {
-            this.config = $.extend({}, this.defaults, this.options, this.metadata);
-            this.$cards = this.$element.find("." + this.config.cardClass);
-
+        update: function() {
             var that = this;
-
+            that._getCards(that);
             var gridInfo = that._calculateGridInfo(that);
             that.currentColumns = gridInfo.columns;
-
             that._doWork(that, gridInfo);
+        },
+
+        _init: function () {
+            this.config = $.extend({}, this.defaults, this.options, this.metadata);
+
+            var that = this;
+            that.update();
 
             $(window).resize(function(e) { that._onResize(e, that); });
 
             ALLOY.Logger.startup('ALLOY.Gridder Started');
+        },
+
+        _getCards: function(that) {
+            this.$cards = this.$element.find("." + this.config.cardClass).not("." + that.config.ignoreClass);
         },
 
         _calculateGridInfo: function(that) {
@@ -84,9 +94,6 @@
                     cards: colCards
                 });
             }
-
-            ALLOY.Logger.log("Columns created");
-            console.log(that.columns);
         },
 
         _getCardsByColumn: function(that, index, totalColumns) {
@@ -135,11 +142,9 @@
         _initColumnHeights: function(that){
             // Find the potential height of each column
             for(var i = 0; i < that.columns.length; i++) {
-                that.columns[i].potentialHeight = that._addHeights(that, that.columns[i].cards);
+                var potentialHeight = that._addHeights(that, that.columns[i].cards);
+                that.columns[i].potentialHeight = potentialHeight;
             }
-
-            ALLOY.Logger.log("Column Heights calculated");
-            console.log(that.columns);
 
             var tallest  = that._getTallestHeight(that.columns);
             that._increaseColumnHeights(that, tallest);
@@ -181,21 +186,12 @@
             for(var i = 0; i < that.columns.length; i++) {
                 that._increaseColumnHeight(that, that.columns[i], increaseTo);
             }
-
-            ALLOY.Logger.log("increased heights");
-            console.log(that.columns);
         },
 
         _increaseColumnHeight: function(that, column, increaseTo) {
-            var diff = increaseTo - column.potentialHeight;
-            if (diff === 0) { return; }
-
-            var increasesReq = Math.floor(diff / that.config.minHeight);
-
-            var increasesCovered = 0;
             var attempts = 0;
-
-            while (increasesCovered < increasesReq && attempts < that.config.increaseAttempts) {
+            var potentialHeight = column.potentialHeight;
+            while (potentialHeight < increaseTo) {
                 // Ensure we can't get stuck in an infinite loop attempting to increase column heights
                 attempts ++;
 
@@ -210,7 +206,9 @@
                     // Try again if the card is already at the largest size
                     if (newClass !== undefined) {
                         card.heightClass = newClass;
-                        increasesCovered ++;
+
+                        // Check the new height of the column
+                        potentialHeight = that._addHeights(that, column.cards);
                     }
                 }
             }
@@ -263,6 +261,8 @@
         },
 
         _onResize: function(e, that) {
+            if (that.config.beforeResize !== undefined) { that.config.beforeResize(that); }
+
             var newGridInfo = that._calculateGridInfo(that);
 
             // If columns is different then will need to do all this again
@@ -271,7 +271,7 @@
             else { that._setCards(that, newGridInfo.columnWidth); }
 
             that._setWrapperHeight(that);
-        },
+        }
     };
 
     Gridder.defaults = Gridder.prototype.defaults;
