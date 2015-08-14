@@ -1,7 +1,7 @@
 /* ==========================================================================
 // conf.js
 // =========================================================================*/
- 
+
 // Main Require configuration
 
 var require = {
@@ -44,12 +44,15 @@ var require = {
         'sticky': "modules/alloy.sticky",
         'dragdrop': "modules/alloy.dragdrop",
         'modal': "modules/alloy.modal",
+        'modeless': "modules/alloy.modeless",
         'mustacheretriever': "modules/alloy.mustacheretriever",
         'configretriever': "modules/alloy.configretriever",
         'watchdog': "modules/alloy.watchdog",
         'scrollbar': "modules/alloy.scrollbar",
         'stage': "modules/alloy.stage",
-        'keyboard': "modules/alloy.keyboard"
+        'keyboard': "modules/alloy.keyboard",
+        'gridder': "modules/alloy.gridder",
+        'scrollspy': "modules/alloy.scrollspy"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -74,12 +77,15 @@ var require = {
         'sticky': { deps: ['jquery', 'core', 'logging'] },
         'dragdrop': {deps: ['jquery']},
         'modal': {deps: ['jquery', 'core', 'logging']},
+        'modeless': {deps: ['jquery', 'core', 'logging']},
         'mustacheretriever': {deps: ['jquery', 'core', 'logging', 'mustache']},
         'configretriever': {deps: ['jquery', 'core', 'logging']},
         'watchdog': {deps: ['jquery', 'core', 'logging']},
         'keyboard': {deps: ['jquery', 'core', 'logging']},
         'scrollbar': {deps: ['jquery', 'core', 'logging', 'keyboard']},
-        'stage': {deps: ['jquery', 'core', 'logging']}
+        'stage': {deps: ['jquery', 'core', 'logging']},
+        'gridder': {deps: ['jquery', 'core', 'logging']},
+        'scrollspy': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }

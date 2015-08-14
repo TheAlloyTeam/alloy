@@ -1,0 +1,35 @@
+.gridder-styles() when not (@MODULE-Gridder) { }
+.gridder-styles() when (@MODULE-Gridder) {
+
+.gridder {
+
+ 	.card--gridder {
+
+    	._transition (all, 0.4s, @ACCORDION-Anim);
+
+        &.normal {
+            background-color: #FF9999;
+        }
+
+        &.tall {
+            background-color: #FF1919;
+        }
+
+        &.taller {
+            background-color: #FF0000;
+        }
+
+        &.tallest {
+            background-color: #7F0000;
+        }
+
+    }
+}
+
+.gridder--alt {
+    .card--gridder {
+        background-color: blue;
+    }
+}
+
+} .gridder-styles();

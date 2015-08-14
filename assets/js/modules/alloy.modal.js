@@ -48,17 +48,17 @@
             setTimeout(function() { $mask.addClass(that.config.maskActiveClass); });
 
             var htmlContent = that._getContent(that);
-            
+
             var $content = $('<div class="' + that.config.modalClass + '">' + htmlContent + '</div>');
             $("body").append($content);
             $content.addClass(that.config.modalActiveClass);
 
-            $(that.config.closeButtonSelector).one("click", function(e) { e.preventDefault(); that._doClose(that); });
-            setTimeout(function() { that._checkForClose(that);}, 100);  // Timeout to stop the 'opening' click closing the modal
+            $(that.config.closeButtonSelector).one("click.modal", function(e) { e.preventDefault(); that._doClose(that); });
+            setTimeout(function() { that._checkForClose(that); }, 500);  // Timeout to stop the 'opening' click closing the modal
         },
 
         _getContent: function(that) {
-            
+
             // Content has already been set
             if (that.htmlContent !== undefined) {
                 // Do nothing, let the minifier handle it
@@ -108,8 +108,8 @@
         },
 
         _checkForClose: function(that) {
-            $("." + that.config.modalClass).one("click", function(e) { e.stopPropagation(); that._checkForClose(that); });
-            $('html').one("click", function(e) { e.preventDefault(); that._doClose(that); });
+            $("." + that.config.modalClass).one("click.modal", function(e) { e.stopPropagation(); that._checkForClose(that); });
+            $('html').one("click.modal", function(e) { e.preventDefault(); that._doClose(that); });
         },
 
         _doClose: function(that) {
@@ -120,6 +120,9 @@
             var $mask = $("." + that.config.maskClass);
             $mask.removeClass(that.config.maskActiveClass);
             setTimeout(function() { $mask.remove(); }, that.config.maskTransitionLength);
+
+            $("." + that.config.modalClass).off("click.modal");
+            $("html").off("click.modal");
         }
     };
 

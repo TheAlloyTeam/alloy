@@ -1,0 +1,22 @@
+{{#this}}
+<div class="scrollspy c">
+	<div class="c__lg--1-5" style="position: fixed;">
+		<ul>
+			{{#each content.blocks}}
+				<li class="nav__spy" data-scrollspy="#{{id}}">
+					<a href="#{{id}}">{{navtitle}}</a>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	<div class="c__lg--3-10"></div>
+	<div class="c__lg--7-10">
+		{{#each content.blocks}}
+			<div id={{id}}>
+				<h2>{{content.title}}</h2>
+				<p>{{content.body}}</p>
+			</div>
+		{{/each}}
+	</div>
+</div>
+{{/this}}
