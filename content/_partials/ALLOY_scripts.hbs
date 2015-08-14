@@ -6,7 +6,7 @@
 
 <script type="text/JavaScript">
 	require(["ink", "equalizer", "sticky"], function() {
-		setTimeout(function(){ 
+		setTimeout(function(){
 			$(".w--foot .panel").equalizer({
 		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
 		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
@@ -15,6 +15,12 @@
 		}, 2000);
 	});
 </script>
+
+{{#if js-scrollspy}}
+<script type="text/JavaScript">
+	require(["scrollspy"], function() { });
+</script>
+{{/if}}
 
 {{#if js-accordion}}
 <script type="text/JavaScript">
@@ -44,39 +50,39 @@
  		$(".toast-trigger").click(function(e) {
  			e.preventDefault();
 
-			$.configretriever("toast", undefined, undefined, undefined, 
-				{ success: function(config) { 
+			$.configretriever("toast", undefined, undefined, undefined,
+				{ success: function(config) {
 					$.mustacheretriever("toast", config.content, function(html) {
 						ALLOY.Toastrack.add({html: html});
 					});
 				}
 			});
- 		}); 		
+ 		});
  	});
 </script>
 {{/if}}
 
-{{#if js-flash}} 
+{{#if js-flash}}
 <script type="text/JavaScript">
 	require(["flash", "mustacheretriever"], function() {
  		$(".flash-trigger").click(function(e) {
  			e.preventDefault();
 
-			$.configretriever("flash", undefined, undefined, undefined, 
-				{ success: function(config) { 
+			$.configretriever("flash", undefined, undefined, undefined,
+				{ success: function(config) {
 					$.mustacheretriever("flash", config, function(html) {
 						$.flash({html: html});
 					});
 				}
 			});
- 		}); 		
+ 		});
  	});
 </script>
 {{/if}}
 
-{{#if js-cardflipper}} 
+{{#if js-cardflipper}}
 <script type="text/JavaScript">
-	require(["cardflipper"], function() { 
+	require(["cardflipper"], function() {
 		$(".card").cardflipper();
 	});
 </script>
@@ -89,6 +95,37 @@
 	});
 </script>
 {{/if}}
+
+{{#if js-gridder}}
+<script type="text/JavaScript">
+	require(["gridder"], function() {
+
+		var beforeResize = function(gridder) {
+			if (window.innerWidth < 400) {
+				gridder.changeSettings({ verticalSpace: 5, horizontalSpace: 5, columns: 1 });
+			} else if (window.innerWidth < 750) {
+				gridder.changeSettings({ verticalSpace: 0, horizontalSpace: 0, columns: 5 });
+			} else if (window.innerWidth < 1250) {
+				gridder.changeSettings({ verticalSpace: 10, horizontalSpace: 10, columns: 5 });
+			} else {
+				gridder.changeSettings({ verticalSpace: 20, horizontalSpace: 20, columns: 5 });
+			}
+		};
+
+		// Init gridder
+		$(".gridder").gridder({
+			beforeResize: beforeResize
+		});
+
+		// Gridder alt example
+		$(".gridder--alt").gridder({
+			columns: 3,
+			heights: ["normal"]
+		});
+	});
+</script>
+{{/if}}
+
 
 {{#if js-cardslider}}
 <script type="text/JavaScript">
@@ -137,7 +174,7 @@
 	            var nonmatches = [];
 
 	            $cards.each(function() {
-	                if (searchArgs.randomise === false || Math.random() > 0.5) { matches.push(this); } 
+	                if (searchArgs.randomise === false || Math.random() > 0.5) { matches.push(this); }
 	                else { nonmatches.push(this); }
 	            });
 
@@ -184,11 +221,20 @@
 </script>
 {{/if}}
 
+{{#if js-modeless}}
+<script>
+	require(["modeless"], function() {
+
+	});
+</script>
+{{/if}}
+
+
 {{#if js-scrollbar}}
 <script>
 	require(["scrollbar"], function() {
 		$(".scrollable").scrollbar({
-			
+
 		});
 	});
 </script>
@@ -198,7 +244,7 @@
 <script>
 	require(["stage"], function() {
 		$(".stage").stage({
-			
+
 		});
 	});
 </script>
