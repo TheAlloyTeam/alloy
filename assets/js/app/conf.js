@@ -16,6 +16,7 @@ var require = {
         jquery: "libs/jquery/jquery.min",
         fontfaceobserver: "libs/fontfaceobserver/fontfaceobserver",
         highlight: "libs/highlight/highlight",
+        smartresize: "libs/smartresize/smartresize",
         async: "libs/async",
         'bezier' : "libs/easing/index",
         'mustache' : "libs/mustache/mustache",
@@ -84,8 +85,9 @@ var require = {
         'keyboard': {deps: ['jquery', 'core', 'logging']},
         'scrollbar': {deps: ['jquery', 'core', 'logging', 'keyboard']},
         'stage': {deps: ['jquery', 'core', 'logging']},
-        'gridder': {deps: ['jquery', 'core', 'logging']},
-        'scrollspy': {deps: ['jquery', 'core', 'logging']}
+        'gridder': {deps: ['jquery', 'core', 'logging', 'smartresize']},
+        'scrollspy': {deps: ['jquery', 'core', 'logging']},
+        'smartresize': {deps: ['jquery']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
