@@ -117,10 +117,53 @@
 			beforeResize: beforeResize
 		});
 
-		// Gridder alt example
-		$(".gridder--alt").gridder({
-			columns: 3,
-			heights: ["normal"]
+		var gridder = $(".gridder").data("gridder");
+
+		/* Update the heights of the cards in the first gridder */
+		$(".updateGridderWithHeight").click(function(e) {
+			e.preventDefault();
+			var height = parseInt($("#height").val());
+			gridder.changeSettings({ minHeight: height });
+			gridder.update();
+		});
+
+		$(window).load(function() {
+			// Gridder alt example
+			$(".gridder--alt").gridder({
+				columns: 3,
+				heights: [
+					"small",
+				 	"normal",
+				 	"tall",
+				 	"taller"
+			 	],
+				minHeight: null,
+				calculateHeights: true
+			});
+
+			var altgridder = $(".gridder--alt").data("gridder");
+
+			/* Randomise the cards in the alternate grid */
+			$(".randomisegrid").click(function(e) {
+				e.preventDefault();
+				// Todo - find why this is triggering twice?!?!/
+				var $cards = $(".gridder--alt .card--gridder");
+				for(var i = 0; i < $cards.length; i++) {
+					var rand = Math.random();
+					if (rand < 0.5) {
+						$($cards[i]).toggleClass("ignore");
+					}
+				}
+
+				altgridder.update();
+			});
+
+			/* Reset the cards in the alternate grid */
+			$(".resetgrid").click(function(e) {
+				e.preventDefault();
+				var $cards = $(".gridder--alt .card--gridder").removeClass("ignore");
+				altgridder.update();
+			});
 		});
 	});
 </script>
