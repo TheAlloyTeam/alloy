@@ -1,0 +1,24 @@
+.sidesider-styles() when not (@MODULE-SideSlider) { }
+.sidesider-styles() when (@MODULE-SideSlider) {
+
+	@SIDESLIDER-Anim:					@ANIM-Curve;
+
+	.sideslider {
+
+		margin: 0;
+		padding: 0;
+
+		.slider__card {
+			width: 30%;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			position: relative;
+
+			&.sliderTransition {
+	    		._transition (left, 0.5s, @SIDESLIDER-Anim);
+	    	}
+		}
+
+	}
+
+} .sidesider-styles();

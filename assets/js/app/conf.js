@@ -41,7 +41,6 @@ var require = {
         'cardslider': "modules/alloy.cardslider",
         'gmap': "modules/alloy.gmap",
         'equalizer': "modules/alloy.equalizer",
-        'gridify': "modules/alloy.gridify",
         'sticky': "modules/alloy.sticky",
         'dragdrop': "modules/alloy.dragdrop",
         'modal': "modules/alloy.modal",
@@ -53,7 +52,8 @@ var require = {
         'stage': "modules/alloy.stage",
         'keyboard': "modules/alloy.keyboard",
         'gridder': "modules/alloy.gridder",
-        'scrollspy': "modules/alloy.scrollspy"
+        'scrollspy': "modules/alloy.scrollspy",
+        'sideslider': "modules/alloy.sideslider"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -74,7 +74,6 @@ var require = {
         'cardslider': {deps: ['jquery', 'core', 'logging']},
         'gmap': {deps: ['jquery', 'core', 'logging', 'async!http://maps.google.com/maps/api/js?sensor=false']},
         'equalizer': {deps: ['jquery', 'core', 'logging']},
-        'gridify': {deps: ['jquery', 'core', 'logging']},
         'sticky': { deps: ['jquery', 'core', 'logging'] },
         'dragdrop': {deps: ['jquery']},
         'modal': {deps: ['jquery', 'core', 'logging']},
@@ -87,7 +86,8 @@ var require = {
         'stage': {deps: ['jquery', 'core', 'logging']},
         'gridder': {deps: ['jquery', 'core', 'logging', 'smartresize']},
         'scrollspy': {deps: ['jquery', 'core', 'logging']},
-        'smartresize': {deps: ['jquery']}
+        'smartresize': {deps: ['jquery']},
+        'sideslider': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
