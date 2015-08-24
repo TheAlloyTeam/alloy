@@ -1,0 +1,52 @@
+{
+    "attribute": {
+        "modifier": ""
+    },
+    "content": {
+        "cards": [
+            {
+                "content": {
+                    "title": "stuff",
+                    "img": "/assets/img/bg.jpg",
+                    "body": "blah blah blah"
+                }
+            },{
+                "content": {
+                    "title": "stuff n things",
+                    "img": "/assets/img/bg.jpg",
+                    "body": "blah blah blah"
+                }
+            },{
+                "content": {
+                    "title": "more stuff",
+                    "img": "/assets/img/bg.jpg",
+                    "body": "blah blah blah"
+                }
+            },{
+                "content": {
+                    "title": "more stuff n things",
+                    "img": "/assets/img/bg.jpg",
+                    "body": "blah blah blah"
+                }
+            },{
+                "content": {
+                    "title": "even more stuff",
+                    "img": "/assets/img/bg.jpg",
+                    "body": "blah blah blah"
+                }
+            },{
+                "content": {
+                    "title": "even more stuff n things",
+                    "img": "/assets/img/bg.jpg",
+                    "body": "blah blah blah"
+                }
+            },{
+                "content": {
+                    "title": "so many stuff n things",
+                    "img": "/assets/img/bg.jpg",
+                    "body": "blah blah blah"
+                }
+            }
+        ]
+    }
+}

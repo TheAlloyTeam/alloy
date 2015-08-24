@@ -1,0 +1,30 @@
+{{#this}}
+
+<ul class="sideslider">
+	{{#each content.cards}}
+		<li class="item slider__card">
+
+			<div class="card">
+
+				<div class="card__front">
+					<div class="card__head">
+						<img src="{{content.img}}" alt="" class="card__image" />
+						<div class="card__title">{{content.title}}</div>
+					</div>
+					<div class="card__content">
+						<div class="card__summary">{{{content.body}}}</div>
+					</div>
+				</div>
+			</div>
+
+		</lI>
+	{{/each}}
+</ul>
+
+<a href="#" class="sideslider__left"><< Left</a>
+<a href="#" class="sideslider__right">Right >></a>
+
+<a href="#" class="sliderintro">DO INTRO AGAIN</a>
+<a href="#" class="slideroutro">TRIGGER OUTRO</a>
+
+{{/this}}
