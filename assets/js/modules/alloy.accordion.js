@@ -1,7 +1,5 @@
 (function() {
-    var myAccordion;
 
-    // how to bring in the options
     var Accordion = function(element, options) {
     	this.element = element;
     	this.$element = $(element);
@@ -100,7 +98,7 @@
             // Trigger change event
             if (this.config.onChangeFunc !== undefined) { this.config.onChangeFunc($title, $content, toOpen); }
 
-            // If transitions turned on, then transition to end go to end, or transitions off so just go to end          
+            // If transitions turned on, then transition to end go to end, or transitions off so just go to end
             if (this.config.transitionTime > 0) {
                 this._handleTransition($title, $content, fromTran, fromEnd, toTran, toEnd);
             } else {
@@ -135,7 +133,8 @@
                 return $(el).data(att);
             }
             else { return $(el).attr(this.config.titleIndexAttr); }
-        },
+        }
+
     };
 
     Accordion.defaults = Accordion.prototype.defaults;

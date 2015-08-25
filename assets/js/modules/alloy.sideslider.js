@@ -11,7 +11,8 @@
         var that = this;
         this.public = {
         	triggerIntro: function() { that._introAnim(that); },
-        	triggerOutro: function() { that._outroAnim(that); }
+        	triggerOutro: function() { that._outroAnim(that); },
+            resetCards: function() { that._initCards(that); }
         };
     };
 
@@ -31,13 +32,12 @@
         	buttonSteps: 10,							// The number of steps to move on click of the button
 
         	introAnim: "fromRight",						// The intro animation to use - can choose: "", "fromRight",
-        	introTime: 250,								// The number of milliseconds between each card in the intro animation
+        	introLength: 1500,							// The number of milliseconds that the intro animation should last
 
         	outroAnim: "toLeft",						// The outro animation to use - can choose: "", "toLeft",
-        	outroTime: 250,								// The number of milliseconds between each card in the outro animation
-        	onOutroComplete: function() { },			// The function to call once the outro has finished
+        	outroLength: 1000,   						// The number of milliseconds that the outro animation should last
 
-        	cardTransitionClass: "sliderTransition",	// The class to give to cards when they are transitioning
+        	onOutroComplete: function() { } 			// The function to call once the outro has finished
         },
 
         _init: function () {
@@ -72,45 +72,6 @@
         	$(that.$cards.last()).css("margin-right", "0");
         },
 
-        _introAnim: function(that) {
-        	if (that.config.introAnim === "fromRight") { that._introFromRight(that); }
-        },
-
-        _introFromRight: function(that) {
-        	that.$element.css({ left: "0" });
-        	that.$cards.css({ left: that._addCardWidths(that) + "px" });
-
-        	that.$cards.each(function(i, el) {
-				setTimeout(function() {
-        			$(el).css({ left: "0px", position: "relative" }).addClass(that.config.cardTransitionClass);
-        			x = $(el).offsetHeight;   // Trigger a reflow, flushing the css changes
-        			setTimeout(function() {
-        				$(el).removeClass(that.config.cardTransitionClass);
-        			}, 500);	// Length of transition
-        		}, (i + 1) * that.config.introTime);
-        	});
-        },
-
-        _outroAnim: function(that) {
-        	if (that.config.outroAnim === "toLeft") { that._outroToLeft(that); }
-        },
-
-        _outroToLeft: function(that) {
-        	that.$cards.each(function(i, el) {
-				setTimeout(function() {
-        			$(el).css({ left: (-1 * that._addCardWidths(that) - 200) + "px", position: "relative" }).addClass(that.config.cardTransitionClass);
-        			x = $(el).offsetHeight;   // Trigger a reflow, flushing the css changes
-        			setTimeout(function() {
-        				$(el).removeClass(that.config.cardTransitionClass);
-
-        				if (i === that.$cards.length - 1 && that.config.onOutroComplete !== undefined) {
-        					that.config.onOutroComplete();
-        				}
-        			}, 500);	// Length of transition
-        		}, (i + 1) * that.config.introTime);
-        	});
-        },
-
         _updateWrapper: function(that) {
         	that.$wrapper.css({ width: "" });
         	var width = that.$element.outerWidth(true);
@@ -138,6 +99,8 @@
 
 		_initButtonEvent: function(that, buttonSelector, steps) {
            	if (buttonSelector !== undefined) {
+                $(buttonSelector).click(function(e) { e.preventDefault(); });
+
            		$(buttonSelector).mousedown(function(e) {
            			e.preventDefault();
            			that.buttontimeout = setInterval(function() {
@@ -239,11 +202,12 @@
         },
 
         _moveBy: function(that, distance) {
+            var totalWidth = that._addCardWidths(that);
+            if (totalWidth < that.$wrapper.width()) { return; }
         	var leftVal = parseInt(that.$element.css("left"));
         	if (isNaN(leftVal)) { leftVal = 0; }
 
         	var moveTo = leftVal - distance;
-        	var totalWidth = that._addCardWidths(that);
         	var maxLeft = (totalWidth - that.$wrapper.width()) * -1;
 
         	if (moveTo > 0) { moveTo = 0; }
@@ -255,7 +219,45 @@
         _onResize: function(that) {
         	that._updateWrapper(that);
         	that._moveBy(that, 0);
+        },
+
+        _introAnim: function(that) {
+            if (that.config.introAnim === "fromRight") { that._introFromRight(that); }
+        },
+
+        _introFromRight: function(that) {
+            that.$element.css({ left: "0" });
+            that.$cards.css({ left: (that._addCardWidths(that) + 200) + "px" });
+
+            var transitionLength = that.config.introLength / that.$cards.length;
+            that.$cards.each(function (i, el) {
+                $(el).animate({ left: "0" }, transitionLength, 'alloy');
+                transitionLength = transitionLength + (transitionLength / 2);
+            });
+        },
+
+        _outroAnim: function(that) {
+            if (that.config.outroAnim === "toLeft") { that._outroToLeft(that); }
+        },
+
+        _outroToLeft: function(that) {
+            var transitionLength = that.config.outroLength / that.$cards.length;
+            var startTime = 0;
+
+            function doAnimate($el, start, trans) {
+                setTimeout(function() {
+                    $el.animate({ left: (-1 * that._addCardWidths(that) - 200) + "px" }, trans, 'alloy');
+                }, start);
+            }
+
+            that.$cards.each(function (i, el) {
+                doAnimate($(el), startTime, transitionLength);
+                startTime += transitionLength / 2;
+            });
+
+            if (that.config.onOutroComplete !== undefined) { setTimeout(that.config.onOutroComplete, that.config.outroLength); }
         }
+
     };
 
     SideSlider.defaults = SideSlider.prototype.defaults;

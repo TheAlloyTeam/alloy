@@ -19,14 +19,14 @@ require(['watchdog', 'toastrack', 'flash', 'configretriever', 'mustacheretriever
             name: "example-flash-alert",
             url: "/assets/data/flash.json",
             bite: function(data) {
-                var chance = 0.95;
+                var chance = 0.25;
                 if (Math.random() > chance) {
                     $.configretriever("flash", undefined, undefined, undefined,
                         { success: function(config) { $.mustacheretriever("flash", config, function(html) { $.flash({html: html}); }); }
                     });
                 }
             },
-            intervalMs: 60000
+            intervalMs: 25000
         });
 
     };

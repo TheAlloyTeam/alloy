@@ -10,7 +10,7 @@ window.ALLOY = ALLOY;
 var DEBUG = false;
 window.DEBUG = DEBUG;
 
-var DEV = false;
+var DEV = true;
 window.DEV = DEV;
 
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {

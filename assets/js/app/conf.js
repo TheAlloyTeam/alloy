@@ -87,7 +87,7 @@ var require = {
         'gridder': {deps: ['jquery', 'core', 'logging', 'smartresize']},
         'scrollspy': {deps: ['jquery', 'core', 'logging']},
         'smartresize': {deps: ['jquery']},
-        'sideslider': {deps: ['jquery', 'core', 'logging']}
+        'sideslider': {deps: ['jquery', 'core', 'logging', 'easing']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
