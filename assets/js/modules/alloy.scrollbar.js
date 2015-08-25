@@ -56,7 +56,12 @@
             this.$scrollwrap.append('<div class="' + this.config.classes.scrollContainer + '"></div>');
             this.$scrollContainer = this.$scrollwrap.find("." + this.config.classes.scrollContainer);
 
-            this.$scrollContainer.html('<div class="' + this.config.classes.scrollbar + '"><div class="' + this.config.classes.scroller + '"></div></div>');
+            this.$scrollContainer.html(
+                '<div class="' + this.config.classes.buttonUp + '"></div>' +
+                '<div class="' + this.config.classes.scrollbar + '">' +
+                    '<div class="' + this.config.classes.scroller + '"></div>' +
+                '</div>' +
+                '<div class="' + this.config.classes.buttonDown + '"></div>');
             this.$scrollbar = this.$scrollContainer.find("." + this.config.classes.scrollbar);
             this.$scroller = this.$scrollContainer.find("." + this.config.classes.scroller);
         },
@@ -119,6 +124,30 @@
 
             /* Scroll by mouse events */
             $('body').on('DOMMouseScroll mousewheel', function(e) { that._onMouseScroll(e, that); });
+
+            /* Scroll by scrollbar buttons */
+            that._initButtonEvent(that, "." + that.config.classes.buttonUp, that.config.steps.button * -1);
+            that._initButtonEvent(that, "." + that.config.classes.buttonDown, that.config.steps.button);
+        },
+
+        _initButtonEvent: function(that, buttonSelector, steps) {
+            if (buttonSelector !== undefined) {
+                $(buttonSelector).click(function(e) { e.preventDefault(); });
+
+                $(buttonSelector).mousedown(function(e) {
+                    e.preventDefault();
+                    that.buttontimeout = setInterval(function() {
+                        that._moveBy(steps, that);
+                    }, 10);
+                });
+
+                $(document).mouseup(function(e) {
+                    e.preventDefault();
+                    if (that.buttontimeout !== undefined) {
+                        clearInterval(that.buttontimeout);
+                    }
+                });
+            }
         },
 
         _addFocus: function(that) {
@@ -135,7 +164,7 @@
             currentScroll += pixels;
             var maxScroll = that.$element.prop("scrollHeight") - that.$element.height();
 
-            if (currentScroll >= maxScroll) { currentScroll = maxScroll; }
+            if (currentScroll > maxScroll) { currentScroll = maxScroll; }
             if (currentScroll < 0) { currentScroll = 0; }
             this.$element.scrollTop(currentScroll);
 
