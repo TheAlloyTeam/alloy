@@ -1,0 +1,76 @@
+---
+title: Card Fader
+layout: alloy.hbs
+
+nav-thumb: "placeholder.jpg"
+nav-title: "Card Fader"
+nav-text: "Card Fader"
+nav-variant: "cardfader"
+page-category: "components"
+js-cardfader: true
+---
+
+<main class="w w--main">
+	<div class="g">
+	    <div class="c__lg--1">
+
+  			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+<!-- example -->
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Example</h2>
+		            </header>
+
+		            <div class="section__body">
+				        <!-- code -->
+
+				        {{> cardfader cardfader }}
+
+			        </div>
+
+		        </section>
+
+<!-- code -->
+
+		    	<section class="section section--code">
+		            <header class="section__head">
+		            	<h2 class="section__title">Code</h2>
+		            </header>
+
+		            <div class="section__body">
+			            <pre class="prettyprint linenums">
+			            	<code class="html">
+				            </code>
+				         </pre>
+		            </div>
+
+		        </section>
+
+<!-- reference -->
+
+		        <section class="section section--reference">
+		            <header class="section__head">
+		                <h2 class="section__title">References</h2>
+		            </header>
+		            <div class="section__body rte">
+
+		            </div>
+		        </section>
+
+	        </div>
+
+	    </div>
+	</div>
+</main>

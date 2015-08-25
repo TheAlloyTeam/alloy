@@ -16,6 +16,13 @@
 	});
 </script>
 
+
+{{#if js-cardfader}}
+<script type="text/JavaScript">
+	require(["cardfader"], function() { });
+</script>
+{{/if}}
+
 {{#if js-sideslider}}
 <script type="text/JavaScript">
 	require(["sideslider"], function() {
@@ -194,7 +201,6 @@
 	});
 </script>
 {{/if}}
-
 
 {{#if js-cardslider}}
 <script type="text/JavaScript">
