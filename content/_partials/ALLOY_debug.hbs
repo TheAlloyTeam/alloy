@@ -1,20 +1,32 @@
 <div class="debugger">
-    <div class="debugger__head"><em>Debugger</em></div>
-    <div class="debugger__body">
+    <div class="debugger__head"><em>Debugger</em><a href="#" class="debugger__toggle right" title="Toggle Debugger" data-accordionindex="#debugger">&#8225;</a></div>
+    <div class="debugger__body" id="debugger">
         <ul class="list list__debugger"></ul>
     </div>
 </div>
 
 <script type="text/javascript">
-    require(['logging'], function() {
-        ALLOY.Logger.alterConfig({ 
+    require(['logging','accordion'], function() {
+        ALLOY.Logger.alterConfig({
             logToScreenFunc : function(ev) {
                 $(".list__debugger").append(
                     "<li class=\"list__item " + ev.level.toLowerCase() + "\"><strong>" + ev.timeStr() + "</strong> " + ev.message + "</li>"
                 );
-                var $debugger = $(".debugger__body");            
+                var $debugger = $(".debugger__body");
                 var height = $debugger[0].scrollHeight;
-                $debugger.scrollTop(height);    
+                $debugger.scrollTop(height);
+            }
+        });
+
+        $(".debugger").accordion({
+            classes: {
+                'title': "debugger__toggle",
+                'content': "debugger__body",
+                'opened'    : 'open',
+                'closed'    : 'closed',
+                'opening'   : 'opening',
+                'closing'   : 'closing',
+                'disabled'  : 'disabled'
             }
         });
     });
