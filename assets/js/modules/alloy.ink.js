@@ -1,4 +1,5 @@
 // Taken and modified from: http://webdesign.tutsplus.com/tutorials/recreating-the-touch-ripple-effect-as-seen-on-google-design--cms-21655
+// For event re-ordering see: http://www.robeesworld.com/blog/67/changing-the-order-of-the-jquery-event-queue
 (function() {
 
     // how to bring in the options
@@ -23,10 +24,9 @@
 
         _init: function() {
             this.config = $.extend({}, this.defaults, this.options, this.metadata);
-            
-            var that = this;
-            this.$element.click(function(e) {
 
+            var that = this;
+            this.$element.on("click.ink", function(e) {
                 if (that.$element.hasClass("event-paused")) {
                     that.$element.removeClass("event-paused");
                     return true;
@@ -34,13 +34,24 @@
                     setTimeout(function() { that.$element[0].click(); }, that.config.rippleInterval);
                     that.$element.addClass("event-paused");
                     that._onClick(this, e.pageX, e.pageY, e);
+
+                    e.stopImmediatePropagation();
                     return false;
                 }
             });
 
+            // Ensure this event is the first in the queue
+            var eventList = $._data(this.$element[0], "events");
+            for(var i = 0; i < eventList.click.length; i++) {
+                if (eventList.click[i].namespace === "ink") {
+                    var inkEvent = eventList.click.splice(i, 1);
+                    eventList.click.unshift(inkEvent[0]);
+                }
+            }
+
             ALLOY.Logger.startup('ALLOY.Ink Started');
         },
- 
+
         _onClick: function(el, x, y) {
             // In case button isn't position relative
             $(el).css({ position: "relative" });
@@ -52,7 +63,7 @@
             var setY = parseInt(clickY);
             $(el).find("." + this.config.classes.svg).remove();
             $(el).append('<svg class="' + this.config.classes.svg + '"><circle class="' + this.config.classes.ripple + '" cx="'+setX+'" cy="'+setY+'" r="'+0+'"></circle></svg>');
-               
+
             var c = $(box).find("." + this.config.classes.ripple);
             c.animate(
             {
