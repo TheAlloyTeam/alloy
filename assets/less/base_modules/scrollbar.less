@@ -7,6 +7,11 @@
 
 	@SCROLLBAR-Anim:					@ANIM-Curve;
 
+	.scrollable-example {
+		height: 200px;
+		overflow: auto;
+	}
+
 	.scroll-wrap {
 		position: relative;
 
@@ -24,19 +29,19 @@
           ._padding(2);
           ._border-radius(5);
 
-			opacity: 0;		
+			opacity: 0;
 		    ._transition (opacity, 0.4s, @SCROLLBAR-Anim);
 		}
 
-		&.hasfocus {
-	  		 .scrollcontainer {
+		&.hasfocus, &.hoverfocus {
+	  		.scrollcontainer {
 	  			opacity: 1;
 	  		}
 	  	}
 
-  		&:hover, &:focus {
-	  		 .scrollcontainer {
-	  			opacity: 1;
+	  	&.disabled {
+	  		.scrollcontainer {
+	  			opacity: 0;
 	  		}
 	  	}
 	}

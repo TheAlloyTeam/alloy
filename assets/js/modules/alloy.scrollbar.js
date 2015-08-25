@@ -5,8 +5,6 @@
         this.$element = $(element);
         this.options = options;
         this.metadata = this.$element.data('options');
-
-        this.hasFocus = false;
     };
 
     Scrollbar.prototype = {
@@ -21,7 +19,8 @@
                 scrollbar: "scrollbar",
                 scroller: "button-scroller",
                 hoverFocus: "hoverfocus",
-                focus: "hasfocus"
+                focus: "hasfocus",
+                disabled: "disabled"
             },
             steps: {
                 scrollWheel: 20,
@@ -38,10 +37,12 @@
             this._setStyles();
             this._setSizes(that);
             this._initEvents(that);
+            this._setDisabled(that);
 
             $(window).resize(function() {
                 that._setSizes(that);
                 that.$scroller.css({top: "0"});
+                that._setDisabled(that);
             });
 
             ALLOY.Logger.startup('ALLOY.Scrollbar Started');
@@ -85,6 +86,15 @@
             });
         },
 
+        _setDisabled: function(that) {
+            var oldScrollableHeight = that.$element.css("height");
+            var scrollableHeight = that.$element.css({ height: "" }).height();
+            that.$element.css({ height: oldScrollableHeight });
+
+            if (scrollableHeight <= that.$scrollContainer.height()) { that.$scrollwrap.addClass(that.config.classes.disabled); }
+            else { that.$scrollwrap.removeClass(that.config.classes.disabled); }
+        },
+
         _initEvents: function(that) {
             /* Scroll by the scroller */
             that.$scroller.mousedown(function(e) { that._beginScroll(e, that); });
@@ -112,12 +122,10 @@
         },
 
         _addFocus: function(that) {
-            that.hasFocus = true;
             that.$scrollwrap.addClass(that.config.classes.focus);
         },
 
         _removeFocus: function(that) {
-            that.hasFocus = false;
             that.$scrollwrap.removeClass(that.config.classes.focus);
         },
 
@@ -138,13 +146,13 @@
         },
 
         _hasFocus: function(that) {
-            return that.hasFocus || that.$scrollwrap.hasClass(that.config.classes.hoverFocus);
+            return that.$scrollwrap.hasClass(that.config.classes.focus) || that.$scrollwrap.hasClass(that.config.classes.hoverFocus);
         },
 
         /* Scroller */
         _beginScroll: function(e, that) {
             that.startY = e.pageY;
-            
+
             $('body').css({
                 "-moz-user-select": "-moz-none",
                 "-o-user-select": "none",
