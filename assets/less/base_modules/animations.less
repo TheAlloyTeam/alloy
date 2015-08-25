@@ -1,0 +1,40 @@
+.animations-styles() when not (@MODULE-Animations) { }
+.animations-styles() when (@MODULE-Animations) {
+
+	@ANIMATION-Anim:					@ANIM-Curve;
+
+	.animexample {
+		background-color: #D3D3D3;
+		position: relative;
+
+		/* The cubiz bezier example animations */
+		&.example--bezier {
+
+			width: 100%;
+			height: 225px;
+
+			.circle {
+				position: absolute;
+
+	    		width: 50px;
+				height: 50px;
+				._border-radius(25);
+
+			    &.circle--cssbezier {
+					top: 50px;
+					left: 70px;
+					background-color: red;
+			    	._transition (left, 1s, @ANIMATION-Anim);
+			    }
+
+			    &.circle--jsbezier {
+			    	top: 120px;
+					left: 70px;
+					background-color: blue;
+			    }
+			}
+		}
+
+	}
+
+} .animations-styles();

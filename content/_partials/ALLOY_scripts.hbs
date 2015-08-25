@@ -275,12 +275,16 @@
 
 <!-- Example functionality -->
 <script>
-	require(["examples/example.watchdog"], function(){ });
+	require(["examples/example.watchdog"], function() { });
 </script>
 
-{{#dev}}
+{{#if js-animations}}
+<script type="text/JavaScript">
+	require(["examples/example.animations"], function() { });
+</script>
+{{/if}}
+
 <script src="http://localhost:35730/livereload.js"></script>
-{{/dev}}
 
 <!-- Google Analytics -->
 <script>
