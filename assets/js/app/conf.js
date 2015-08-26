@@ -54,7 +54,8 @@ var require = {
         'keyboard': "modules/alloy.keyboard",
         'gridder': "modules/alloy.gridder",
         'scrollspy': "modules/alloy.scrollspy",
-        'sideslider': "modules/alloy.sideslider"
+        'sideslider': "modules/alloy.sideslider",
+        'animate': "modules/alloy.animate"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -90,6 +91,7 @@ var require = {
         'smartresize': {deps: ['jquery']},
         'sideslider': {deps: ['jquery', 'core', 'logging', 'easing']},
         'cardfader': {deps: ['jquery', 'core', 'logging']},
+        'animate': {deps: ['jquery', 'core', 'logging']},
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
