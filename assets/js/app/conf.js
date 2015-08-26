@@ -16,6 +16,7 @@ var require = {
         jquery: "libs/jquery/jquery.min",
         fontfaceobserver: "libs/fontfaceobserver/fontfaceobserver",
         highlight: "libs/highlight/highlight",
+        smartresize: "libs/smartresize/smartresize",
         async: "libs/async",
         'bezier' : "libs/easing/index",
         'mustache' : "libs/mustache/mustache",
@@ -40,7 +41,6 @@ var require = {
         'cardslider': "modules/alloy.cardslider",
         'gmap': "modules/alloy.gmap",
         'equalizer': "modules/alloy.equalizer",
-        'gridify': "modules/alloy.gridify",
         'sticky': "modules/alloy.sticky",
         'dragdrop': "modules/alloy.dragdrop",
         'modal': "modules/alloy.modal",
@@ -52,7 +52,8 @@ var require = {
         'stage': "modules/alloy.stage",
         'keyboard': "modules/alloy.keyboard",
         'gridder': "modules/alloy.gridder",
-        'scrollspy': "modules/alloy.scrollspy"
+        'scrollspy': "modules/alloy.scrollspy",
+        'sideslider': "modules/alloy.sideslider"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -73,7 +74,6 @@ var require = {
         'cardslider': {deps: ['jquery', 'core', 'logging']},
         'gmap': {deps: ['jquery', 'core', 'logging', 'async!http://maps.google.com/maps/api/js?sensor=false']},
         'equalizer': {deps: ['jquery', 'core', 'logging']},
-        'gridify': {deps: ['jquery', 'core', 'logging']},
         'sticky': { deps: ['jquery', 'core', 'logging'] },
         'dragdrop': {deps: ['jquery']},
         'modal': {deps: ['jquery', 'core', 'logging']},
@@ -84,8 +84,10 @@ var require = {
         'keyboard': {deps: ['jquery', 'core', 'logging']},
         'scrollbar': {deps: ['jquery', 'core', 'logging', 'keyboard']},
         'stage': {deps: ['jquery', 'core', 'logging']},
-        'gridder': {deps: ['jquery', 'core', 'logging']},
-        'scrollspy': {deps: ['jquery', 'core', 'logging']}
+        'gridder': {deps: ['jquery', 'core', 'logging', 'smartresize']},
+        'scrollspy': {deps: ['jquery', 'core', 'logging']},
+        'smartresize': {deps: ['jquery']},
+        'sideslider': {deps: ['jquery', 'core', 'logging', 'easing']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }

@@ -5,8 +5,6 @@
         this.$element = $(element);
         this.options = options;
         this.metadata = this.$element.data('options');
-
-        this.hasFocus = false;
     };
 
     Scrollbar.prototype = {
@@ -21,7 +19,8 @@
                 scrollbar: "scrollbar",
                 scroller: "button-scroller",
                 hoverFocus: "hoverfocus",
-                focus: "hasfocus"
+                focus: "hasfocus",
+                disabled: "disabled"
             },
             steps: {
                 scrollWheel: 20,
@@ -38,10 +37,12 @@
             this._setStyles();
             this._setSizes(that);
             this._initEvents(that);
+            this._setDisabled(that);
 
             $(window).resize(function() {
                 that._setSizes(that);
                 that.$scroller.css({top: "0"});
+                that._setDisabled(that);
             });
 
             ALLOY.Logger.startup('ALLOY.Scrollbar Started');
@@ -55,7 +56,12 @@
             this.$scrollwrap.append('<div class="' + this.config.classes.scrollContainer + '"></div>');
             this.$scrollContainer = this.$scrollwrap.find("." + this.config.classes.scrollContainer);
 
-            this.$scrollContainer.html('<div class="' + this.config.classes.scrollbar + '"><div class="' + this.config.classes.scroller + '"></div></div>');
+            this.$scrollContainer.html(
+                '<div class="' + this.config.classes.buttonUp + '"></div>' +
+                '<div class="' + this.config.classes.scrollbar + '">' +
+                    '<div class="' + this.config.classes.scroller + '"></div>' +
+                '</div>' +
+                '<div class="' + this.config.classes.buttonDown + '"></div>');
             this.$scrollbar = this.$scrollContainer.find("." + this.config.classes.scrollbar);
             this.$scroller = this.$scrollContainer.find("." + this.config.classes.scroller);
         },
@@ -85,6 +91,15 @@
             });
         },
 
+        _setDisabled: function(that) {
+            var oldScrollableHeight = that.$element.css("height");
+            var scrollableHeight = that.$element.css({ height: "" }).height();
+            that.$element.css({ height: oldScrollableHeight });
+
+            if (scrollableHeight <= that.$scrollContainer.height()) { that.$scrollwrap.addClass(that.config.classes.disabled); }
+            else { that.$scrollwrap.removeClass(that.config.classes.disabled); }
+        },
+
         _initEvents: function(that) {
             /* Scroll by the scroller */
             that.$scroller.mousedown(function(e) { that._beginScroll(e, that); });
@@ -109,15 +124,37 @@
 
             /* Scroll by mouse events */
             $('body').on('DOMMouseScroll mousewheel', function(e) { that._onMouseScroll(e, that); });
+
+            /* Scroll by scrollbar buttons */
+            that._initButtonEvent(that, "." + that.config.classes.buttonUp, that.config.steps.button * -1);
+            that._initButtonEvent(that, "." + that.config.classes.buttonDown, that.config.steps.button);
+        },
+
+        _initButtonEvent: function(that, buttonSelector, steps) {
+            if (buttonSelector !== undefined) {
+                $(buttonSelector).click(function(e) { e.preventDefault(); });
+
+                $(buttonSelector).mousedown(function(e) {
+                    e.preventDefault();
+                    that.buttontimeout = setInterval(function() {
+                        that._moveBy(steps, that);
+                    }, 10);
+                });
+
+                $(document).mouseup(function(e) {
+                    e.preventDefault();
+                    if (that.buttontimeout !== undefined) {
+                        clearInterval(that.buttontimeout);
+                    }
+                });
+            }
         },
 
         _addFocus: function(that) {
-            that.hasFocus = true;
             that.$scrollwrap.addClass(that.config.classes.focus);
         },
 
         _removeFocus: function(that) {
-            that.hasFocus = false;
             that.$scrollwrap.removeClass(that.config.classes.focus);
         },
 
@@ -127,7 +164,7 @@
             currentScroll += pixels;
             var maxScroll = that.$element.prop("scrollHeight") - that.$element.height();
 
-            if (currentScroll >= maxScroll) { currentScroll = maxScroll; }
+            if (currentScroll > maxScroll) { currentScroll = maxScroll; }
             if (currentScroll < 0) { currentScroll = 0; }
             this.$element.scrollTop(currentScroll);
 
@@ -138,13 +175,13 @@
         },
 
         _hasFocus: function(that) {
-            return that.hasFocus || that.$scrollwrap.hasClass(that.config.classes.hoverFocus);
+            return that.$scrollwrap.hasClass(that.config.classes.focus) || that.$scrollwrap.hasClass(that.config.classes.hoverFocus);
         },
 
         /* Scroller */
         _beginScroll: function(e, that) {
             that.startY = e.pageY;
-            
+
             $('body').css({
                 "-moz-user-select": "-moz-none",
                 "-o-user-select": "none",

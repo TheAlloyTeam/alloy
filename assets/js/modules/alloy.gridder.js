@@ -1,6 +1,6 @@
 (function() {
 
- var Gridder = function (element, options) {
+    var Gridder = function (element, options) {
         this.element = element;
         this.$element = $(element);
         this.options = options;
@@ -9,12 +9,12 @@
 
     Gridder.prototype = {
         defaults: {
-            cardClass: "card--gridder",          // The class given to cards that should be included in the gridder grid
+            cardClass: "card--gridder",         // The class given to cards that should be included in the gridder grid
             lockedClass: "locked",              // The class to be given to cards that cannot have their size altered
             ignoreClass: "ignore",              // The class to be given to cards that are ignored from the grid entirely (and should be set to invisible using css)
             columns: 3,                         // The number of columns to try and fit in to the mason'ified element
             minColumnWidth: 120,                // The minimum width that a column can be, before moving down to one less column
-            minHeight: 50,                     // The smallest possible height for a card
+            minHeight: 50,                      // The smallest possible height for a card
             heights: [                          // The classes for each possible multiple of the minHeight (starting at the first - default)
                 "normal",
                 "tall",
@@ -23,6 +23,7 @@
             ],
             verticalSpace: 20,                  // The spacing vertically between cards
             horizontalSpace: 20,                // The spacing horizontally between cards
+            calculateHeights: false,            // If true, then the heights will be calculated by gridder
 
             increaseAttempts: 100,
             beforeResize: undefined
@@ -37,6 +38,7 @@
             var that = this;
             that._getCards(that);
             var gridInfo = that._calculateGridInfo(that);
+            that._handleNoMinHeight(that, gridInfo.columnWidth);
             that.currentColumns = gridInfo.columns;
             that._doWork(that, gridInfo);
         },
@@ -47,7 +49,7 @@
             var that = this;
             that.update();
 
-            $(window).resize(function(e) { that._onResize(e, that); });
+            $(window).smartresize(function() { that._onResize(that); });
 
             ALLOY.Logger.startup('ALLOY.Gridder Started');
         },
@@ -73,6 +75,68 @@
                 columnWidth: colWidth,
                 columns: columns
             };
+        },
+
+        _handleNoMinHeight: function(that, width){
+            if (!that.config.calculateHeights) { return; }
+
+            var tallest = that._getTallestCard(that, width);
+            that._calculateMinHeight(that, tallest);
+
+            // Don't need to continue if there is only 1 possible height, as everything will be the minheight
+            if (that.config.heights.length === 1) { return; }
+
+            that._setCardsHeightFromMin(that);
+        },
+
+        _getTallestCard: function(that, width) {
+            var tallest = 0;
+
+            that.$cards.each(function(i) {
+                var $card = $(that.$cards[i]);
+                var oldHeight = $card.css("height");
+                var oldWidth = $card.css("width");
+
+                $card.addClass("notransition");
+                $card.css({ width: width + "px", height: "", margin: "0", padding: "0" });
+                x = $card[0].offsetHeight;   // Trigger a reflow, flushing the css changes
+
+                var height = $card.outerHeight();
+                $card.data("gridderHeight", height);
+                if (height > tallest) { tallest = height; }
+
+                $card.css({ width: oldWidth, height: oldHeight });
+                $card.removeClass("notransition");
+            });
+
+            return tallest;
+        },
+
+        _setCardsHeightFromMin: function(that) {
+            var classHeights = [];
+            for(var c = 0; c < that.config.heights.length; c++) {
+                classHeights.push(that._getHeightByClass(that, that.config.heights[c]));
+            }
+
+            // Find heights of the cards based on the new minheight
+            for(var i = 0; i < that.$cards.length; i++) {
+                var $card = $(that.$cards[i]);
+                var gridderHeight = $card.data("gridderHeight");
+                var found = false;
+                for(var ch = 0; ch < classHeights.length && !found; ch++) {
+                    if (classHeights[ch] >= gridderHeight) {
+                        $card.data("heightClass", that.config.heights[ch]);
+                        found = true;
+                    }
+                }
+            }
+        },
+
+        _calculateMinHeight: function(that, tallest) {
+            var withoutSpace = tallest - (that.config.verticalSpace * (that.config.heights.length - 1));
+            var minHeight = withoutSpace / that.config.heights.length;
+            console.log("tallest: " + tallest + ", withoutSpace: " + withoutSpace + ", minHeight: " + minHeight);
+            that.config.minHeight = minHeight;
         },
 
         _doWork: function(that, gridInfo) {
@@ -194,7 +258,7 @@
         _increaseColumnHeight: function(that, column, increaseTo) {
             var attempts = 0;
             var potentialHeight = column.potentialHeight;
-            while (potentialHeight < increaseTo) {
+            while (potentialHeight < increaseTo && attempts < that.config.increaseAttempts) {
                 // Ensure we can't get stuck in an infinite loop attempting to increase column heights
                 attempts ++;
 
@@ -265,18 +329,21 @@
             that.$element.css({ height: tallest + "px" });
         },
 
-        _onResize: function(e, that) {
+        _onResize: function(that, isRepeat) {
             if (that.config.beforeResize !== undefined) { that.config.beforeResize(that); }
 
-            var newGridInfo = that._calculateGridInfo(that);
-            console.log("old Columns: " + that.currentColumns + ", new columns: " + newGridInfo.columns);
+                var newGridInfo = that._calculateGridInfo(that);
 
-            // If columns is different then will need to do all this again
-            if (newGridInfo.columns !== that.currentColumns) { that.currentColumns = newGridInfo.columns; that._doWork(that, newGridInfo); }
-            // If columns is the same then just take the sizes set of each card and jsut have to figure out the widths
-            else { that._setCards(that, newGridInfo.columnWidth); that._setWrapperHeight(that);}
+                // If columns is different then will need to do all this again or if we have to find the minimum height ourselves
+                // else the number of columns is the same so just take the sizes set of each card and figure out the widths
+                if (newGridInfo.columns !== that.currentColumns || that.config.calculateHeights) {
+                    that._handleNoMinHeight(that, newGridInfo.columnWidth);
+                    that.currentColumns = newGridInfo.columns;
+                    that._doWork(that, newGridInfo);
+                } else { that._setCards(that, newGridInfo.columnWidth); that._setWrapperHeight(that);}
 
-            that._setWrapperHeight(that);
+                that._setWrapperHeight(that);
+
         }
     };
 
