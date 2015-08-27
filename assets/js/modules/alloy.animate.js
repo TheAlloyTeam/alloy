@@ -1,6 +1,6 @@
 (function() {
 
-	ALLOY.Animate = function() {
+	ALLOY.Animator = function() {
 		/***** Variables *****/
 		var styles = [];
 
@@ -47,12 +47,36 @@
 		function _animate(el, properties, time, method, callback, type) {
 			if (method !== "css" && method !== "js") { method = _chooseBestAnimationMethod(); }
 
-			if (method === "css" && transitionsSupported) { _animateCss($(el), properties, time, callback, type); }
-			else if (method === "js") { _animateJs($(el), properties, time, callback, type); }
+			var props = _setProperties(el, properties);
+
+			if (method === "css" && transitionsSupported) { _animateCss($(el), props, time, callback, type); }
+			else if (method === "js") { _animateJs($(el), props, time, callback, type); }
 		}
 
 		function _chooseBestAnimationMethod() {
 			return transitionsSupported ? "css" : "js";
+		}
+
+		function _setProperties(el, properties) {
+			var props = $.extend({}, properties);	// Clone the object so that it doesn't override anything in a calling function
+
+			if ("width" in props && props.width === "full") {
+				var oldwidth = $(el).width();
+				$(el).css({ width: "" });
+				var setwidth = $(el).width();
+				$(el).css({ width: oldwidth });
+				props.width = setwidth + "px";
+			}
+
+			if ("height" in props && props.height === "full") {
+				var oldheight = $(el).height();
+				$(el).css({ height : "" });
+				var setheight = $(el).height();
+				$(el).css({ height : oldheight });
+				props.height = setheight + "px";
+			}
+
+			return props;
 		}
 
 		function _animateCss($el, properties, time, callback, type) {

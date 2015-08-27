@@ -50,6 +50,7 @@
 			}
 		}
 
+		/* The do it yourself example with form */
 		&.example--diy {
 			width: 100%;
 			height: 500px;
@@ -64,6 +65,90 @@
 
 				top: 250px;
 				left: 50%;
+			}
+		}
+
+		/* The examples of emerging cards */
+		&.example--emerger, &.example--emerger-squares, &.example--emerger-effects {
+			height: 780px;
+			overflow: hidden;
+
+			.emerging {
+				width: 150px;
+				height: 150px;
+				margin: 20px;
+				background-color: #BADA55;
+				float: left;
+
+				&.emerging--wide {
+					width: 250px;
+				}
+
+				&.emerging--narrow {
+					width: 75px;
+				}
+			}
+		}
+
+		&.example--exansions {
+			height: 500px;
+
+			.expansion {
+				position: absolute;
+				background-color: #EE82EE;
+				width: 200px;
+				height: 400px;
+			}
+
+			.expand--topleft {
+				position: absolute;
+				background-color: orange;
+				width: 150px;
+				top: 0;
+				left: 0;
+				cursor: pointer;
+			}
+
+			.expand--bottomleft {
+				position: absolute;
+				background-color: cyan;
+				width: 150px;
+				bottom: 0;
+				left: 0;
+				cursor: pointer;
+
+				.expansion {
+					top: -400px;
+				}
+			}
+
+			.expand--topright {
+				position: absolute;
+				background-color: green;
+				width: 150px;
+				top: 0;
+				right: 0;
+				cursor: pointer;
+
+				.expansion {
+					top: 24px;
+					right: 0;
+				}
+			}
+
+			.expand--bottomright {
+				position: absolute;
+				background-color: yellow;
+				width: 150px;
+				bottom: 0;
+				right: 0;
+				cursor: pointer;
+
+				.expansion {
+					top: -400px;
+					right: 0;
+				}
+
 			}
 		}
 
