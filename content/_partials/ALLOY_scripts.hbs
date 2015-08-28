@@ -216,7 +216,13 @@
 
 		equalizeSliderCards();
 		$(".cardslider").cardslider({
-			onScreenResize: equalizeSliderCards
+			onScreenResize: equalizeSliderCards,
+			beforeScroll: function(index) {
+				console.log("BEFORE sliding to: " + index);
+			},
+			afterScroll: function(index) {
+				console.log("AFTER sliding to: " + index);
+			}
 		});
 
 	});
