@@ -1,0 +1,157 @@
+.animations-styles() when not (@MODULE-Animations) { }
+.animations-styles() when (@MODULE-Animations) {
+
+	@ANIMATION-Anim-Enter:					@ANIM-Entrance;
+	@ANIMATION-Anim-Exit:					@ANIM-Exit;
+	@ANIMATION-Anim-Curve:					@ANIM-Curve;
+
+	.anim__opacity {
+		._transition (opacity, 0.35s, @ANIMATION-Anim-Curve);
+	}
+
+	.anim__opacity--enter {
+		._transition (opacity, 0.35s, @ANIMATION-Anim-Enter);
+	}
+
+	.anim__opacity--exit {
+		._transition (opacity, 0.35s, @ANIMATION-Anim-Exit);
+	}
+
+
+
+
+	.animexample {
+		background-color: #D3D3D3;
+		position: relative;
+
+		/* The cubiz bezier example animations */
+		&.example--bezier {
+
+			width: 100%;
+			height: 225px;
+
+			.circle {
+				position: absolute;
+	    		width: 50px;
+				height: 50px;
+				._border-radius(25);
+
+			    &.circle--cssbezier {
+					top: 50px;
+					left: 70px;
+					background-color: red;
+			    }
+
+			    &.circle--jsbezier {
+			    	top: 120px;
+					left: 70px;
+					background-color: blue;
+			    }
+			}
+		}
+
+		/* The do it yourself example with form */
+		&.example--diy {
+			width: 100%;
+			height: 500px;
+			overflow: hidden;
+
+			.circle {
+	    		position: relative;
+	    		width: 50px;
+				height: 50px;
+				._border-radius(25);
+				background-color: purple;
+
+				top: 250px;
+				left: 50%;
+			}
+		}
+
+		/* The examples of emerging cards */
+		&.example--emerger, &.example--emerger-squares, &.example--emerger-effects {
+			height: 780px;
+			overflow: hidden;
+
+			.emerging {
+				width: 150px;
+				height: 150px;
+				margin: 20px;
+				background-color: #BADA55;
+				float: left;
+
+				&.emerging--wide {
+					width: 250px;
+				}
+
+				&.emerging--narrow {
+					width: 75px;
+				}
+			}
+		}
+
+		&.example--exansions {
+			height: 500px;
+
+			.expansion {
+				position: absolute;
+				background-color: #EE82EE;
+				width: 200px;
+				height: 400px;
+			}
+
+			.expand--topleft {
+				position: absolute;
+				background-color: orange;
+				width: 150px;
+				top: 0;
+				left: 0;
+				cursor: pointer;
+			}
+
+			.expand--bottomleft {
+				position: absolute;
+				background-color: cyan;
+				width: 150px;
+				bottom: 0;
+				left: 0;
+				cursor: pointer;
+
+				.expansion {
+					top: -400px;
+				}
+			}
+
+			.expand--topright {
+				position: absolute;
+				background-color: green;
+				width: 150px;
+				top: 0;
+				right: 0;
+				cursor: pointer;
+
+				.expansion {
+					top: 24px;
+					right: 0;
+				}
+			}
+
+			.expand--bottomright {
+				position: absolute;
+				background-color: yellow;
+				width: 150px;
+				bottom: 0;
+				right: 0;
+				cursor: pointer;
+
+				.expansion {
+					top: -400px;
+					right: 0;
+				}
+
+			}
+		}
+
+	}
+
+} .animations-styles();

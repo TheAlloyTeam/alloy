@@ -1,0 +1,30 @@
+.cardfader-styles() when not (@MODULE-Cardfader) { }
+.cardfader-styles() when (@MODULE-Cardfader) {
+
+    @CARDFADER-Anim:                    @ANIM-Curve;
+
+    .cardfader {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+
+        .card {
+            opacity: 0;
+            height: 250px;
+
+            ._transition (opacity, 0.2s, @CARDFADER-Anim);
+
+            &.current {
+                opacity: 1;
+            }
+        }
+
+        .cardfader__control {
+
+            &.current {
+                font-weight: bold;
+            }
+        }
+    }
+
+} .cardfader-styles();
