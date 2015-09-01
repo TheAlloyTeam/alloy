@@ -1,4 +1,4 @@
-require(['jquery', 'easing', 'animate', 'animate.emerger'], function ($) {
+require(['jquery', 'easing', 'animate', 'animate.emerger', 'accordion'], function ($) {
 
 	exampleBezier();
 	exampleDiy();
@@ -6,6 +6,22 @@ require(['jquery', 'easing', 'animate', 'animate.emerger'], function ($) {
 	exampleEmerger();
 	exampleEmergerSquares();
 	exampleEmergerEffects();
+
+	exampleFancyAccordion();
+
+	function exampleFancyAccordion() {
+		$(".example--fancy-accordion").accordion({
+			classes: {
+				'title': "card--button",
+				'content': "card--content",
+                'opened'    : 'open',                   // The class given to open accordion elements (elements with this class on startup will start expanded)
+                'closed'    : 'closed',                 // The class given to closed accordion elements
+                'opening'   : 'opening',                // The class given to accordion elements in the process of opening
+                'closing'   : 'closing',                // The class given to accordion elements in the process of closing
+                'disabled'  : 'disabled'                // The class given to accordion elements that cannot have their state altered
+			}
+		});
+	}
 
 	function exampleBezier() {
 		var toggled = false;
@@ -127,7 +143,7 @@ require(['jquery', 'easing', 'animate', 'animate.emerger'], function ($) {
 			$(".example--emerger-effects .emerging").css({ opacity: 0 });
 			$(".example--emerger-effects").emerger({
 				order: "random",
-effect: "expansion",
+				effect: "expansion",
 				properties: { }
 		 	});
 		});
