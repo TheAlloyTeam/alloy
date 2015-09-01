@@ -1,11 +1,12 @@
-require(['jquery', 'easing', 'animate', 'animate.emerger'], function ($) {
+require(['jquery', 'easing', 'animate', 'animate.emerger', 'accordion'], function ($) {
 
 	exampleBezier();
 	exampleDiy();
 
 	exampleEmerger();
 	exampleEmergerSquares();
-	exampleEmergerEffects();
+
+	exampleFancyAccordion();
 
 	function exampleBezier() {
 		var toggled = false;
@@ -79,6 +80,98 @@ require(['jquery', 'easing', 'animate', 'animate.emerger'], function ($) {
 			$(".example--emerger .emerging").css({ opacity: 0 });
 			$(".example--emerger").emerger({ order: "random" });
 		});
+
+		$(".example__fade--pop").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger .emerging").css({ opacity: 0 });
+			$(".example--emerger").emerger({
+				order: "",
+				effect: "expansion",
+				properties: { }
+		 	});
+		});
+
+		$(".example__fade--randpop").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger .emerging").css({ opacity: 0 });
+			$(".example--emerger").emerger({
+				order: "random",
+				effect: "expansion",
+				properties: { }
+		 	});
+		});
+
+		$(".example__slide--left").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger").emerger({
+				order: "",
+				effect: "slideleft",
+				properties: { }
+		 	});
+		});
+
+		$(".example__slide--right").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger").emerger({
+				order: "",
+				effect: "slideright",
+				properties: { }
+		 	});
+		});
+
+		$(".example__slide--up").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger").emerger({
+				order: "",
+				effect: "slideup",
+				properties: { }
+		 	});
+		});
+
+		$(".example__slide--down").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger").emerger({
+				order: "",
+				effect: "slidedown",
+				properties: { }
+		 	});
+		});
+
+		$(".example__slide--leftrandom").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger").emerger({
+				order: "random",
+				effect: "slideleft",
+				properties: { }
+		 	});
+		});
+
+		$(".example__slide--rightrandom").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger").emerger({
+				order: "random",
+				effect: "slideright",
+				properties: { }
+		 	});
+		});
+
+		$(".example__slide--uprandom").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger").emerger({
+				order: "random",
+				effect: "slideup",
+				properties: { }
+		 	});
+		});
+
+		$(".example__slide--downrandom").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger").emerger({
+				order: "random",
+				effect: "slidedown",
+				properties: { }
+		 	});
+		});
 	}
 
 	function exampleEmergerSquares() {
@@ -102,56 +195,55 @@ require(['jquery', 'easing', 'animate', 'animate.emerger'], function ($) {
 			$(".example--emerger-squares .emerging").css({ opacity: 0 });
 			$(".example--emerger-squares").emerger({ order: "verticalchain" });
 		});
-	}
 
-	function exampleEmergerEffects() {
-		$(".example--emerger-effects .emerging").css({ opacity: 0 });
-		$(".example--emerger-effects").emerger({
-			order: "",
-			effect: "expansion",
-			properties: { }
-	 	});
-
-		$(".example__fade--pop").click(function(e) {
+		$(".example__deal--default").click(function(e) {
 			e.preventDefault();
-			$(".example--emerger-effects .emerging").css({ opacity: 0 });
-			$(".example--emerger-effects").emerger({
+			$(".example--emerger-squares").emerger({
 				order: "",
-				effect: "expansion",
-				properties: { }
+				effect: "deal",
+				properties: { },
+				between: 155,
+				animLength: 150
 		 	});
 		});
 
-		$(".example__fade--randpop").click(function(e) {
+		$(".example__deal--random").click(function(e) {
 			e.preventDefault();
-			$(".example--emerger-effects .emerging").css({ opacity: 0 });
-			$(".example--emerger-effects").emerger({
+			$(".example--emerger-squares").emerger({
 				order: "random",
-effect: "expansion",
-				properties: { }
+				effect: "deal",
+				properties: { },
+				between: 155,
+				animLength: 150
 		 	});
 		});
 
-		$(".example__fade--slide").click(function(e) {
+		$(".example__deal--verticalchain").click(function(e) {
 			e.preventDefault();
-			$(".example--emerger-effects .emerging").css({ left: "120%", position: "relative" });
-			$(".example--emerger-effects").emerger({
-				order: "",
-				properties: { left: "0" },
-				afterFinal: function() { $(".example--emerger-effects .emerging").css({ position: "" }); }
+			$(".example--emerger-squares").emerger({
+				order: "verticalchain",
+				effect: "deal",
+				properties: { },
+				between: 155,
+				animLength: 150
 		 	});
 		});
-
-		// Todo
-		// $(".example__fade--randslide").click(function(e) {
-		// 	e.preventDefault();
-		// 	$(".example--emerger-effects .emerging").css({ "margin-left": "120%" });
-		// 	$(".example--emerger-effects").emerger({
-		// 		order: "random",
-		// 		properties: { "margin-left": "20px" }
-		//  	});
-		// });
 
 	}
+
+	function exampleFancyAccordion() {
+		$(".example--fancy-accordion").accordion({
+			classes: {
+				'title': "card--button",
+				'content': "card--content",
+                'opened'    : 'open',                   // The class given to open accordion elements (elements with this class on startup will start expanded)
+                'closed'    : 'closed',                 // The class given to closed accordion elements
+                'opening'   : 'opening',                // The class given to accordion elements in the process of opening
+                'closing'   : 'closing',                // The class given to accordion elements in the process of closing
+                'disabled'  : 'disabled'                // The class given to accordion elements that cannot have their state altered
+			}
+		});
+	}
+
 
 })();

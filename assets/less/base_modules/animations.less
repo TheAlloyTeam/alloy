@@ -69,7 +69,7 @@
 		}
 
 		/* The examples of emerging cards */
-		&.example--emerger, &.example--emerger-squares, &.example--emerger-effects {
+		&.example--emerger, &.example--emerger-squares {
 			height: 780px;
 			overflow: hidden;
 
@@ -149,6 +149,91 @@
 					right: 0;
 				}
 
+			}
+		}
+
+		&.example--fancy-accordion {
+			height: 500px;
+
+			.buttons {
+				width: 100%;
+			}
+
+			.contents {
+				width: 100%;
+			}
+
+			.card--button {
+				width: 100px;
+				height: 100px;
+				float: left;
+				background-color: cyan;
+				margin: 15px;
+			}
+
+			.topbuttons .card--button {
+				&.opening {
+			    	margin-bottom: 0px;
+				    margin-top: 30px;
+					._transition (all, 0.1s, @ANIMATION-Anim-Curve);
+				}
+
+				&.closing {
+					._transition (all, 0.1s, @ANIMATION-Anim-Curve);
+				}
+
+				&.open {
+				    margin-bottom: 0px;
+				    margin-top: 30px;
+				}
+
+				&.closed {
+					margin-top: 15px;
+					margin-bottom: 15px;
+				}
+			}
+
+			.bottombuttons .card--button {
+				&.opening {
+			    	margin-bottom: 30px;
+				    margin-top: 0px;
+					._transition (all, 0.1s, @ANIMATION-Anim-Curve);
+				}
+
+				&.closing {
+					._transition (all, 0.1s, @ANIMATION-Anim-Curve);
+				}
+
+				&.open {
+				    margin-bottom: 30px;
+				    margin-top: 0px;
+				}
+
+				&.closed {
+					margin-top: 15px;
+					margin-bottom: 15px;
+				}
+			}
+
+
+			.card--content {
+				overflow: hidden;
+
+				&.opening {
+				    ._transition (height, 0.1s, @ANIMATION-Anim-Curve);
+				}
+
+				&.closing {
+				    ._transition (height, 0.1s, @ANIMATION-Anim-Curve);
+				}
+
+				&.open {
+				    height: 100%;
+				}
+
+				&.closed {
+					height: 0;
+				}
 			}
 		}
 
