@@ -8,6 +8,7 @@ nav-variant: "animation"
 navigation-main: true
 navigation-order: 4
 page-category: "animation"
+js-animations: true
 ---
 
 <main class="w w--main">
@@ -27,17 +28,263 @@ page-category: "animation"
 <!-- example -->
 				<section class="section section--example">
 		            <header class="section__head">
-		                <h2 class="section__title">Example</h2>
+		                <h2 class="section__title">Alloy Animations</h2>
 		            </header>
 
 		            <div class="section__body">
-				        <!-- code -->
 
-				        <!-- end of code -->
+				        <div class="g">
+				        	<div class="c__lg--2-3">
+					        	<div class="animexample example--bezier">
+					        		<div class="circle circle--cssbezier"></div>
+					        		<div class="circle circle--jsbezier"></div>
+					        	</div>
+				        	</div>
+				        	<div class="c__lg--1-3">
+				        		<p>Here at Alloy we typically use the cubic-bezier curve shown to the left.<br/>
+				        		The <strong style="color: red;">red</strong> circle is using a CSS transition to animate its movement.<br/>
+				        		The <strong style="color: blue;">blue</strong> circle is using JQuery animate and a custom cubic-bezier easing to animate.<br />
+				        		We don't just want to animate circles though...<br />
+			        			We also want to animate all sorts of effects like shrinking, expanding, fades, slides, and probably more that I've forgotten about.  <strong>So let's get to it!</strong></p>
+			        		</div>
+				        </div>
+
 			        </div>
 
 		        </section>
 
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Do It Yourself</h2>
+		            </header>
+
+		            <div class="section__body">
+
+				        <div class="g">
+				        	<div class="c__lg--2-3">
+					        	<div class="animexample example--diy">
+					        		<div class="circle"></div>
+					        	</div>
+				        	</div>
+				        	<div class="c__lg--1-3">
+				        		<p>Use the form below to animate the circle dynamically or click in the area to do some other magic:</p>
+				        		<form class="animform">
+
+				        			<label>Property:</label>
+				        			<input type="text" class="animform__property" value="left" />
+
+				        			<label>Value:</label>
+				        			<input type="text" class="animform__value" value="-=50px" />
+
+				        			<label>Time:</label>
+				        			<input type="number" class="animform__time" value="500" />
+
+				        			<button class="button" type="submit">Go!</button>
+
+				        		</form>
+			        		</div>
+				        </div>
+
+			        </div>
+
+		        </section>
+
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Emerger - Fade</h2>
+		            </header>
+
+		            <div class="section__body">
+
+				        <div class="g">
+				        	<div class="c__lg--2-3">
+					        	<div class="animexample example--emerger">
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging emerging--wide"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging emerging--narrow"></div>
+					        		<div class="emerging emerging--narrow"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging emerging--wide"></div>
+					        		<div class="emerging emerging--wide"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging emerging--narrow"></div>
+					        		<div class="emerging emerging--wide"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+				        		</div>
+				        	</div>
+				        	<div class="c__lg--1-3">
+				        		<p>We want to be able to bring in an element, and then have the items within that element transition in nicely...</p>
+				        		<a href="#" class="button example__fade--default">Horizontal</a>
+				        		<a href="#" class="button example__fade--random">Random</a>
+				        		<a href="#" class="button example__fade--pop">Horizontal Pop</a>
+				        		<a href="#" class="button example__fade--randpop">Random Pop</a>
+								<a href="#" class="button example__slide--left">Slide Left</a>
+								<a href="#" class="button example__slide--right">Slide Right</a>
+								<a href="#" class="button example__slide--up">Slide Up</a>
+								<a href="#" class="button example__slide--down">Slide Down</a>
+								<a href="#" class="button example__slide--leftrandom">Slide Left Random</a>
+								<a href="#" class="button example__slide--rightrandom">Slide Right Random</a>
+								<a href="#" class="button example__slide--uprandom">Slide Up Random</a>
+								<a href="#" class="button example__slide--downrandom">Slide Down Random</a>
+			        		</div>
+				        </div>
+
+			        </div>
+		        </section>
+
+				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Emerger - Squares Fade</h2>
+		            </header>
+
+		            <div class="section__body">
+
+				        <div class="g">
+				        	<div class="c__lg--2-3">
+					        	<div class="animexample example--emerger-squares">
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+					        		<div class="emerging"></div>
+				        		</div>
+				        	</div>
+				        	<div class="c__lg--1-3">
+				        		<p>
+				        			These methods are based upon the idea that there are multiple rows and columns of elements being displayed, and that there is the same number of elements across a column.
+				        			<br />
+					        		<a href="#" class="button example__fade--diagonal">Diagonal</a>
+					        		<a href="#" class="button example__fade--vertical">Vertical</a>
+					        		<a href="#" class="button example__fade--verticalchain">Vertical chain</a>
+					        		<br />
+					        		The deal effect works best if the cards are all of the same size (as a deck of cards would be).
+					        		<br />
+					        		<a href="#" class="button example__deal--default">Deal</a>
+					        		<a href="#" class="button example__deal--random">Deal Random Order</a>
+					        		<a href="#" class="button example__deal--verticalchain">Deal Vertical Chain</a>
+				        		</p>
+			        		</div>
+				        </div>
+
+			        </div>
+
+		        </section>
+
+				<section class="section section--fancyaccordion">
+		            <header class="section__head">
+		                <h2 class="section__title">Fancy Accordion</h2>
+		            </header>
+
+		            <div class="section__body">
+
+				        <div class="g">
+				        	<div class="c__lg--2-3">
+					        	<div class="animexample example--fancy-accordion">
+
+					        		<div class="buttons topbuttons c">
+						        		<div class="card--button" data-accordionindex="#acc1">
+						        			<a href="#acc1" ><h1>1</h1></a>
+						        		</div class="card--button">
+						        		<div class="card--button" data-accordionindex="#acc2">
+						        			<a href="#acc2"><h1>2</h1></a>
+						        		</div class="card--button">
+						        		<div class="card--button" data-accordionindex="#acc3">
+						        			<a href="#acc3"><h1>3</h1></a>
+						        		</div class="card--button">
+					        		</div>
+
+									<div class="contents c">
+										<div class="card--content" id="acc1" style="background-color: #F8D6B4;">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id tristique est. In blandit dolor eu mi bibendum, et hendrerit tellus scelerisque. Sed vehicula risus eu sem pharetra varius. Fusce sed congue diam. Aliquam ac scelerisque dolor. Vivamus facilisis hendrerit tincidunt. Cras erat leo, aliquet non lorem porta, finibus fringilla ante. Maecenas id commodo enim.</p>
+										</div>
+										<div class="card--content" id="acc2" style="background-color: #F2AE69;">
+											<p>Pellentesque pellentesque sed elit vel tincidunt. Sed posuere volutpat massa et cursus. Praesent iaculis bibendum aliquam. Phasellus porttitor diam nunc, a consectetur leo vestibulum non. Vestibulum lobortis efficitur vehicula. .</p>
+										</div>
+										<div class="card--content" id="acc3" style="background-color: #EA7805;">
+											<p>Etiam ac ultricies sapien, ut ornare est. Aenean quis tortor et est fermentum ultricies eu et ipsum. Sed vestibulum magna laoreet libero commodo pellentesque. Vivamus dictum rhoncus libero, eu dictum magna.</p>
+										</div>
+										<div class="card--content" id="acc4" style="background-color: #BB6004;">
+											<p>Ut lacinia aliquet turpis, sit amet mattis ex tincidunt eu. Nulla sit amet sapien a arcu lobortis tempor. Cras ultrices lorem sed vulputate volutpat. Sed neque justo, cursus et posuere a, vulputate ut magna. Proin pharetra lorem sodales diam vulputate vestibulum.</p>
+										</div>
+										<div class="card--content" id="acc5" style="background-color: #703902">
+											<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat. Integer at mattis quam. Suspendisse potenti. Vivamus nec lectus in urna porta laoreet at a mi. Sed convallis eu nunc eu viverra. Sed mi nulla, laoreet congue vehicula in, euismod at libero. Aliquam quis est posuere, suscipit orci non, vestibulum tortor.</p>
+										</div>
+										<div class="card--content" id="acc6" style="background-color: #2C1600;">
+											<p>Nam luctus interdum urna, a pellentesque mauris tincidunt in. Curabitur ac cursus elit. Nunc non nisi elementum, convallis mauris id, iaculis dui. Proin vel ullamcorper dolor. Donec ullamcorper sapien id libero commodo cursus. In feugiat ornare risus ac ullamcorper. Pellentesque purus nibh, malesuada eu dignissim eu, cursus sodales lectus. Phasellus odio est, dictum et enim nec, bibendum semper felis. Donec non mollis lorem, id iaculis diam. In viverra interdum arcu, ac iaculis ante mattis in. In dictum magna ut vestibulum porttitor. Duis faucibus condimentum turpis at porttitor. Aliquam imperdiet ante a blandit mollis. Vivamus vulputate feugiat lorem et sodales. Phasellus tincidunt tortor eros, vel maximus orci suscipit at.</p>
+										</div>
+					        		</div>
+
+									<div class="buttons bottombuttons c">
+						        		<div class="card--button" data-accordionindex="#acc4">
+						        			<a href="#acc4"><h1>4</h1></a>
+						        		</div class="card--button">
+						        		<div class="card--button" data-accordionindex="#acc5">
+						        			<a href="#acc5"><h1>5</h1></a>
+						        		</div class="card--button">
+						        		<div class="card--button" data-accordionindex="#acc6">
+						        			<a href="#acc6"><h1>6</h1></a>
+						        		</div class="card--button">
+					        		</div>
+				        		</div>
+				        	</div>
+				        	<div class="c__lg--1-3">
+				        		<p>Maybe we want something a bit more interesting than your standard accordion.</p>
+			        		</div>
+				        </div>
+
+			        </div>
+		        </section>
+
+
+
+{{!-- 				<section class="section section--example">
+		            <header class="section__head">
+		                <h2 class="section__title">Expanding & Shrinking</h2>
+		            </header>
+
+		            <div class="section__body">
+
+				        <div class="g">
+				        	<div class="c__lg--2-3">
+					        	<div class="animexample example--exansions">
+					        		<div class="expand--topright">From top right<div class="expansion"></div></div>
+					        		<div class="expand--bottomright">From bottom right<div class="expansion"></div></div>
+					        		<div class="expand--topleft">From top left<div class="expansion"></div></div>
+					        		<div class="expand--bottomleft">From bottom left<div class="expansion"></div></div>
+					        	</div>
+				        	</div>
+				        	<div class="c__lg--1-3">
+				        		<p>It is important for elements such as dropdowns to be able to expand and shrink in a way that describes their source.</p>
+			        		</div>
+				        </div>
+
+			        </div>
+
+		        </section>
+ --}}
 <!-- code -->
 		    	<section class="section section--code">
 		            <header class="section__head">

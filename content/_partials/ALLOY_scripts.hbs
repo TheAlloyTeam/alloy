@@ -16,6 +16,13 @@
 	});
 </script>
 
+
+{{#if js-cardfader}}
+<script type="text/JavaScript">
+	require(["cardfader"], function() { });
+</script>
+{{/if}}
+
 {{#if js-sideslider}}
 <script type="text/JavaScript">
 	require(["sideslider"], function() {
@@ -195,7 +202,6 @@
 </script>
 {{/if}}
 
-
 {{#if js-cardslider}}
 <script type="text/JavaScript">
 	require(["cardslider", "equalizer"], function() {
@@ -210,7 +216,13 @@
 
 		equalizeSliderCards();
 		$(".cardslider").cardslider({
-			onScreenResize: equalizeSliderCards
+			onScreenResize: equalizeSliderCards,
+			beforeScroll: function(index) {
+				console.log("BEFORE sliding to: " + index);
+			},
+			afterScroll: function(index) {
+				console.log("AFTER sliding to: " + index);
+			}
 		});
 
 	});
@@ -269,12 +281,16 @@
 
 <!-- Example functionality -->
 <script>
-	require(["examples/example.watchdog"], function(){ });
+	require(["examples/example.watchdog"], function() { });
 </script>
 
-{{#dev}}
+{{#if js-animations}}
+<script type="text/JavaScript">
+	require(["animate", "examples/example.animations"], function() { });
+</script>
+{{/if}}
+
 <script src="http://localhost:35730/livereload.js"></script>
-{{/dev}}
 
 <!-- Google Analytics -->
 <script>
