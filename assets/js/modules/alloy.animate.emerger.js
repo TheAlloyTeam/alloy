@@ -16,15 +16,13 @@
     Emerger.prototype = {
 
     	defaults: {
-    		properties: {
-    			opacity: 1
-    		},
-    		effect: undefined,						// Can choose from "expansion", "slideleft", "slideright", "deal"...
-    		animLength: 350,
-    		emerging: ".emerging",
-    		order: "horizontal",					// Can choose from "horizontal"(default), "random", "diagonal" (only works correctly if all elements are the same width), "vertical" (only works correctly if all elements are the same width), "verticalchain" (only works correctly if all elements are the same width)
-    		between: 125,
-    		afterFinal: function() { }
+    		properties: { opacity: 1 },               // The properties to animate while emerging.
+            between: 125,                             // The number of milliseconds between each card being emerged.
+    		animLength: 350,                          // The number of milliseconds that the emerging animation should take.
+    		emergingSelector: ".emerging",            // The selector to choose cards that should be emerged beneath the element that this plugin was called upon.
+    		order: "horizontal",					  // The method for selecting the order in which to emerge the cards.  Can choose from "horizontal"(default), "random", "diagonal" (only works correctly if all elements are the same width), "vertical" (only works correctly if all elements are the same width), "verticalchain" (only works correctly if all elements are the same width).
+            effect: undefined,                        // An additional effect to apply to the cards as they are emerged.  Some of these will ignore the properties set above.  Can choose from "expansion", "slideleft", "slideright", "deal".
+    		afterFinal: function() { }                // A function that is called once, after all of the cards have been emerged.
     	},
 
         _display: function() {
@@ -33,10 +31,13 @@
             var that = this;
 
             // Get the cards that need to be emerged
-            that.$emerging = $(that.$element.find(that.config.emerging));
+            that.$emerging = $(that.$element.find(that.config.emergingSelector));
 
             // Set the order that we will be emerging cards
             that._setOrder(that);
+
+            // Ensure all cards are in the same order as they will be displayed
+            that.$emerging = that.$emerging.sort(function(a, b) { return $(a).data("emergertimestep") - $(b).data("emergertimestep"); });
 
             // Set the effect that we will be using to transition the emergence
             that._setEffect(that);
@@ -150,6 +151,10 @@
                 that._effectSetup = that._dealSetup;
                 that._effectDeinit = that._dealDeinit;
                 that._cardAnimation = that._dealCardAnimation;
+            } else if (that.config.effect === "slideleft" || that.config.effect === "slideright" || that.config.effect === "slideup" || that.config.effect === "slidedown") {
+                that._effectInit = that._slideInit;
+                that._effectSetup = that._slideSetup;
+                that._effectDeinit = that._slideDeinit;
             }
         },
 
@@ -199,9 +204,9 @@
 
         // Deal
         _dealInit: function(that) {
-            // Ensure all emerging are position absolute'd and the $emerger list is ordered by emergertimestep
-            var emerging = that.$emerging.sort(function(a, b) { return $(a).data("emergertimestep") - $(b).data("emergertimestep"); });
-            that.$emerging = $(emerging);
+            // It just won't work otherwise
+            if (that.config.animLength >= that.config.between + 5) { that.config.animLength = that.config.between - 5; }
+
             for(var i = 0; i < that.$emerging.length; i++) {
                 var el = that.$emerging[i];
 
@@ -215,7 +220,7 @@
         },
 
         _dealDeinit: function(that) {
-            that.$emerging.css({ position: "" });
+            that.$emerging.css({ position: "", top: "", left: "" });
         },
 
         _dealCardAnimation: function(that, el, index, props, lastCardCallback) {
@@ -224,6 +229,41 @@
             for(var i = index; i < that.$emerging.length; i++) {
                ALLOY.Animator.animate(that.$emerging[i], { left: left + "px", top: top + "px" }, that.config.animLength, undefined, lastCardCallback);
             }
+        },
+
+        // Slide left, right, up and down
+        _slideInit: function(that) {
+            for(var i = 0; i < that.$emerging.length; i++) {
+                var el = that.$emerging[i];
+                $(el).data("emergerleft", $(el).position().left);
+                $(el).data("emergertop", $(el).position().top);
+            }
+        },
+
+        _slideSetup: function(that, el, props) {
+            $(el).css({ position: "absolute" });
+
+            var left = $(el).data("emergerleft");
+            var top = $(el).data("emergertop");
+
+            props.left = left + "px";
+            props.top = top + "px";
+
+            var startLeft = left;
+            if (that.config.effect === "slideleft") { startLeft = that.$element.outerWidth(true); }
+            else if (that.config.effect === "slideright") { startLeft = 0 - $(el).outerWidth(true); }
+
+            var startTop = top;
+            if (that.config.effect === "slideup") { startTop = that.$element.outerHeight(true); }
+            else if (that.config.effect === "slidedown") { startTop = 0 - $(el).outerHeight(true); }
+
+            $(el).css({ left: startLeft + "px", top: startTop + "px" });
+
+            return props;
+        },
+
+        _slideDeinit: function(that) {
+            that.$emerging.css({ position: "", top: "", left: "" });
         },
 
         /***** Actual transition functionality *****/
