@@ -202,8 +202,8 @@ require(['jquery', 'easing', 'animate', 'animate.emerger', 'accordion'], functio
 				order: "",
 				effect: "deal",
 				properties: { },
-				between: 155,
-				animLength: 150
+				between: 200,
+				animLength: 185
 		 	});
 		});
 
@@ -213,8 +213,8 @@ require(['jquery', 'easing', 'animate', 'animate.emerger', 'accordion'], functio
 				order: "random",
 				effect: "deal",
 				properties: { },
-				between: 155,
-				animLength: 150
+				between: 200,
+				animLength: 185
 		 	});
 		});
 
@@ -224,8 +224,8 @@ require(['jquery', 'easing', 'animate', 'animate.emerger', 'accordion'], functio
 				order: "verticalchain",
 				effect: "deal",
 				properties: { },
-				between: 155,
-				animLength: 150
+				between: 200,
+				animLength: 185
 		 	});
 		});
 
