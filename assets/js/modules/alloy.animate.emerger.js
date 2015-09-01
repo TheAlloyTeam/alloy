@@ -6,7 +6,11 @@
     	this.options = options;
     	this.metadata = this.$element.data('options');
 
-    	this.useEffect = false;
+        this._effectInit = function() { };
+        this._effectSetup = function() { };
+        this._effectDeinit = function() { };
+
+        this._cardAnimation = this._defaultCardAnimation;  // By default do this, but override it for some effects (ie, deal)
     };
 
     Emerger.prototype = {
@@ -15,10 +19,10 @@
     		properties: {
     			opacity: 1
     		},
-    		effect: undefined,						// Can choose from "expansion", "slideleft", "slideright"... Cannot be used if method chosen is deal.
+    		effect: undefined,						// Can choose from "expansion", "slideleft", "slideright", "deal"...
     		animLength: 350,
     		emerging: ".emerging",
-    		order: "horizontal",					// Can choose from "horizontal"(default), "random", "deal", "diagonal" (can only be used if all elements are the same width), "vertical" (can only be used if all elements are the same width), "verticalchain" (can only be used if all elements are the same width)
+    		order: "horizontal",					// Can choose from "horizontal"(default), "random", "diagonal" (only works correctly if all elements are the same width), "vertical" (only works correctly if all elements are the same width), "verticalchain" (only works correctly if all elements are the same width)
     		between: 125,
     		afterFinal: function() { }
     	},
@@ -28,34 +32,37 @@
             this.config = $.extend(true, {}, this.defaults, this.options, this.metadata);
             var that = this;
 
+            // Get the cards that need to be emerged
             that.$emerging = $(that.$element.find(that.config.emerging));
 
-			if (that.config.effect !== undefined) { that._initEffect(that); }
+            // Set the order that we will be emerging cards
+            that._setOrder(that);
 
-            if (that.config.order === "random") {
-            	that._random(that);
-            } else if (that.config.order === "deal") {
-            	that._deal(that);
-            } else if (that.config.order === "diagonal") {
-            	that._diagonal(that);
-            } else if (that.config.order === "pop") {
-            	that._pop(that);
-            } else if (that.config.order === "vertical") {
-            	that._vertical(that);
-            } else if (that.config.order === "verticalchain") {
-            	that._verticalChain(that);
-            } else {
-            	that._horizontal(that);
-            }
+            // Set the effect that we will be using to transition the emergence
+            that._setEffect(that);
+
+            // Initialise the effect
+            that._effectInit(that);
+
+            // Emerge the cards
+            that.$emerging.each(function(index) { that._doTransition(that, this, $(this).data("emergertimestep"), index); });
         },
 
         /***** Ordering Methods *****/
-        _deal: function(that) {
-        	that.config.includeExpansion = false;
-
-        	that.$emerging.each(function(i, el) {
-        		// Todo!
-        	});
+        _setOrder: function(that) {
+            if (that.config.order === "random") {
+                that._random(that);
+            } else if (that.config.order === "diagonal") {
+                that._diagonal(that);
+            } else if (that.config.order === "pop") {
+                that._pop(that);
+            } else if (that.config.order === "vertical") {
+                that._vertical(that);
+            } else if (that.config.order === "verticalchain") {
+                that._verticalChain(that);
+            } else {
+                that._horizontal(that);
+            }
         },
 
         _verticalChain: function(that) {
@@ -68,7 +75,8 @@
 
         	that.$emerging.each(function(i) {
         		var multiplier = (col * perRow) + row;
-        		that._doTransition(that, this, multiplier * that.config.between, i);
+
+                $(this).data("emergertimestep", multiplier * that.config.between);
 
         		col = col + 1;
         		if (col >= perRow) {
@@ -86,7 +94,7 @@
         	var col = 0;
 
         	that.$emerging.each(function(i) {
-        		that._doTransition(that, this, col * that.config.between, i);
+                $(this).data("emergertimestep", col * that.config.between);
 
         		col = col + 1;
         		if (col >= perRow) {
@@ -105,7 +113,7 @@
 
         	that.$emerging.each(function(i) {
         		var multiplier = row + col;
-        		that._doTransition(that, this, multiplier * that.config.between, i);
+                $(this).data("emergertimestep", multiplier * that.config.between);
 
         		col = col + 1;
         		if (col >= perRow) {
@@ -122,54 +130,33 @@
 			that.$emerging.each(function(i) {
 				var rnd = Math.floor(Math.random() * toUnfade.length);
         		var selected = toUnfade.splice(rnd, 1);
-        		that._doTransition(that, selected, i * that.config.between, i);
+                $(selected).data("emergertimestep", i * that.config.between);
 			});
         },
 
         _horizontal: function(that) {
 			that.$emerging.each(function(i, el) {
-				that._doTransition(that, el, i * that.config.between, i);
+                $(this).data("emergertimestep", i * that.config.between);
            	});
         },
 
-        _initEffect: function(that) {
-        	if (that.config.effect === "expansion") {
-        		that.useEffect = true;
-        		that._expansionInit(that);
-			}
-        },
-
-        _effectSetup: function(that, el, props) {
-        	if (that.config.effect === "expansion") {
-        		return that._expansionSetup(that, el, props);
-			}
-
-			return props;
+        /***** Effect Methods *****/
+        _setEffect: function(that) {
+            if (that.config.effect === "expansion") {
+                that._effectInit = that._expansionInit;
+                that._effectSetup = that._expansionSetup;
+            } else if (that.config.effect === "deal") {
+                that._effectInit = that._dealInit;
+                that._effectSetup = that._dealSetup;
+                that._effectDeinit = that._dealDeinit;
+                that._cardAnimation = that._dealCardAnimation;
+            }
         },
 
         _deinitEffect: function(that) {
-			that.$emerging.css({ position: "" });
+            that.$emerging.css({ position: "" });
         },
 
-        _doTransition: function(that, el, timeout, index) {
-			var props = $.extend({}, that.config.properties);	// Clone the object so that it doesn't override anything in a calling function
-
-			if (that.useEffect) {
-				props = that._effectSetup(that, el, props);
-			}
-
-			setTimeout(function() {
-       			ALLOY.Animator.enter(el, props, that.config.animLength, undefined, function() {
-
-       				if (index === that.$emerging.length - 1) {
-	       				if (that.useEffect) { that._deinitEffect(that); }
-       					that.config.afterFinal();
-	       			}
-       			});
-			}, timeout);
-        },
-
-        /***** Effect functionality *****/
         // Expansion
         _expansionInit: function(that) {
 	    	for(var i = 0; i < that.$emerging.length; i++) {
@@ -208,8 +195,58 @@
 			$(el).css({ width: "0", height: "0", left: (left + width / 2) + "px", top: (top + height / 2) + "px"});
 
 			return props;
-        }
+        },
 
+        // Deal
+        _dealInit: function(that) {
+            // Ensure all emerging are position absolute'd and the $emerger list is ordered by emergertimestep
+            var emerging = that.$emerging.sort(function(a, b) { return $(a).data("emergertimestep") - $(b).data("emergertimestep"); });
+            that.$emerging = $(emerging);
+            for(var i = 0; i < that.$emerging.length; i++) {
+                var el = that.$emerging[i];
+
+                $(el).data("emergerleft", $(el).position().left);
+                $(el).data("emergertop", $(el).position().top);
+            }
+        },
+
+        _dealSetup: function(that, el, props) {
+            $(el).css({ position: "absolute" });
+        },
+
+        _dealDeinit: function(that) {
+            that.$emerging.css({ position: "" });
+        },
+
+        _dealCardAnimation: function(that, el, index, props, lastCardCallback) {
+            var left = $(el).data("emergerleft");
+            var top = $(el).data("emergertop");
+            for(var i = index; i < that.$emerging.length; i++) {
+               ALLOY.Animator.animate(that.$emerging[i], { left: left + "px", top: top + "px" }, that.config.animLength, undefined, lastCardCallback);
+            }
+        },
+
+        /***** Actual transition functionality *****/
+        _doTransition: function(that, el, timeout, index) {
+            var props = $.extend({}, that.config.properties);   // Clone the object so that it doesn't override anything in a calling function
+
+            that._effectSetup(that, el, props);
+
+            setTimeout(function() {
+                that._cardAnimation(that, el, index, props, function() {
+
+                    if (index === that.$emerging.length - 1) {
+                        that._effectDeinit(that);
+                        that.config.afterFinal();
+                    }
+
+                });
+            }, timeout);
+        },
+
+        _defaultCardAnimation: function(that, el, index, props, lastCardCallback) {
+            ALLOY.Animator.enter(el, props, that.config.animLength, undefined, lastCardCallback);
+        }
     };
 
     Emerger.defaults = Emerger.prototype.defaults;

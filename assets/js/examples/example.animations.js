@@ -6,6 +6,7 @@ require(['jquery', 'easing', 'animate', 'animate.emerger', 'accordion'], functio
 	exampleEmerger();
 	exampleEmergerSquares();
 	exampleEmergerEffects();
+	exampleEmergerMoreEffects();
 
 	exampleFancyAccordion();
 
@@ -150,12 +151,10 @@ require(['jquery', 'easing', 'animate', 'animate.emerger', 'accordion'], functio
 
 		$(".example__fade--slide").click(function(e) {
 			e.preventDefault();
-			$(".example--emerger-effects .emerging").css({ left: "120%", position: "relative" });
 			$(".example--emerger-effects").emerger({
 				order: "",
-				properties: { left: "0" },
-				afterFinal: function() { $(".example--emerger-effects .emerging").css({ position: "" }); }
-		 	});
+				effect: "slideleft"
+			});
 		});
 
 		// Todo
@@ -167,6 +166,51 @@ require(['jquery', 'easing', 'animate', 'animate.emerger', 'accordion'], functio
 		// 		properties: { "margin-left": "20px" }
 		//  	});
 		// });
+	}
+
+	function exampleEmergerMoreEffects() {
+		$(".example--emerger-moreeffects").emerger({
+			order: "",
+			effect: "deal",
+			properties: { },
+			between: 155,
+			animLength: 150
+	 	});
+
+		$(".example__deal--default").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger-moreeffects").emerger({
+				order: "",
+				effect: "deal",
+				properties: { },
+				between: 155,
+				animLength: 150
+		 	});
+		});
+
+
+		$(".example__deal--random").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger-moreeffects").emerger({
+				order: "random",
+				effect: "deal",
+				properties: { },
+				between: 155,
+				animLength: 150
+		 	});
+		});
+
+		$(".example__deal--verticalchain").click(function(e) {
+			e.preventDefault();
+			$(".example--emerger-moreeffects").emerger({
+				order: "verticalchain",
+				effect: "deal",
+				properties: { },
+				between: 155,
+				animLength: 150
+		 	});
+		});
+
 
 	}
 
