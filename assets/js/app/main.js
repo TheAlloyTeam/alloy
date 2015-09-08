@@ -7,6 +7,17 @@ require(['jquery', 'fontloader', 'navigation', 'logging', 'core', 'mobile', 'ief
     function ($) {
         ALLOY.Logger.startup('ALLOY.Main Started');
 		hljs.initHighlightingOnLoad();
+
+		var setCardBlurWidth = function() {
+            $(".blurMask__width").each(function() {
+                var width = $(this).closest(".blurMask").width();
+                $(this).css({ width: width + "px" });
+            });
+        };
+
+        setCardBlurWidth();
+        $(window).resize(setCardBlurWidth);
+
     }
 );
 

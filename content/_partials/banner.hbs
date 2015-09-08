@@ -1,6 +1,16 @@
 {{#this}}
 <div class="banner{{#if attribute.modifier}} banner--{{attribute.modifier}}{{/if}}"{{#if content.backgroundUrl}} style="background-image:url('{{content.backgroundUrl}}')"{{/if}}>
-    <div class="banner__overlay"></div>
+    
+    {{#if content.blurUrl}}
+    <div class="blurMask">
+        <div class="blurMask__overlay">
+            <div class="blurMask__width">
+                <div class="blurMask__background" style="background-image:url('{{content.blurUrl}}')"></div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+
     <div class="banner__content">
         <div class="banner__foreground">
 
