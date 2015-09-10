@@ -16,7 +16,6 @@
 	});
 </script>
 
-
 {{#if js-cardfader}}
 <script type="text/JavaScript">
 	require(["cardfader"], function() { });
@@ -287,6 +286,12 @@
 {{#if js-animations}}
 <script type="text/JavaScript">
 	require(["animate", "examples/example.animations"], function() { });
+</script>
+{{/if}}
+
+{{#if js-parallax}}
+<script type="text/JavaScript">
+	require(["parallax"], function() { $(".parallax").parallax(); });
 </script>
 {{/if}}
 
