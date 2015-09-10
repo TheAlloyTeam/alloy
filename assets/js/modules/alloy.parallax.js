@@ -10,7 +10,7 @@
     Parallax.prototype = {
 
     	defaults: {
-            speed: 0.25,
+            speed: 0.5,
             start: 0
     	},
 
@@ -26,7 +26,7 @@
 
         _onScroll: function(that) {
             var diff = $(window).scrollTop();
-            that.$element.css({ "background-position-y" : (that.config.start + (diff * that.config.speed * -1)) + "px" });
+            that.$element.css({ "background-position" : "0 " + (that.config.start + (diff * that.config.speed * -1)) + "px" });
         }
 
     };
