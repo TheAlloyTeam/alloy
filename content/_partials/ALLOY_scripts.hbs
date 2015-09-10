@@ -304,6 +304,12 @@
 </script>
 {{/if}}
 
+{{#if js-parallax}}
+<script type="text/JavaScript">
+	require(["parallax"], function() { $(".parallax").parallax(); });
+</script>
+{{/if}}
+
 <script src="http://localhost:35730/livereload.js"></script>
 
 <!-- Google Analytics -->
