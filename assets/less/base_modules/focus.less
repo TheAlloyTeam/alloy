@@ -20,13 +20,11 @@
 
 .focus {
     background-image: url('/assets/img/bg.jpg');
-    background-size: cover;
     display: block;
     max-width: 300px;
     ._margin (0, 0, @TYPE-LineHeight, 0);
     ._clearfix();
-
-    -ms-behavior: url('/assets/handlers/backgroundsize.min.htc');
+    ._background-size();
 }
 
 .focus__head {

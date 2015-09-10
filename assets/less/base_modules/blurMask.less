@@ -1,0 +1,73 @@
+/* =========================================================================
+// BLUR MASK
+// =======================================================================*/
+
+// VARIABLES
+// ----------------------------------------------------
+
+@BLURMASK-Height:					@BANNER-Height;
+@BLURMASK-Indent:					@BANNER-Indent;
+@BLURMASK-BgPosition:				@BANNER-BgPosition;
+@BLURMASK-BlurRadius:				5px;
+
+// BASE
+// ----------------------------------------------------
+
+.blurMask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.blurMask__overlay {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.blurMask__width {
+    height: 100%;
+}
+
+.blurMask__background {
+    background-position: @BLURMASK-BgPosition;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-filter: blur(@BLURMASK-BlurRadius);
+    filter: blur(@BLURMASK-BlurRadius);
+    ._background-size();
+}
+
+// VARIANTS
+// ----------------------------------------------------
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+}
+
+// TABLET+
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Medium-min) {
+
+    .blurMask__overlay {
+        left: @BLURMASK-Indent;
+        width: @BLURMASK-Height;
+    }
+
+    .blurMask__background {
+        left: -@BLURMASK-Indent;
+    }
+
+}
+
+// DESKTOP
+// ----------------------------------------------------
+
+@media only screen and (min-width: @MQ-Large-min) {
+
+}

@@ -277,6 +277,21 @@
 </script>
 {{/if}}
 
+{{#if js-banner}}
+<script>
+	require(["jquery"], function() {
+		var setCardBlurWidth = function() {
+		    $(".blurMask__width").each(function() {
+		        var width = $(this).closest(".blurMask").width();
+		        $(this).css({ width: width + "px" });
+		    });
+		};
+
+		setCardBlurWidth();
+		$(window).resize(setCardBlurWidth);
+	});
+</script>
+{{/if}}
 
 <!-- Example functionality -->
 <script>

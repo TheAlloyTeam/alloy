@@ -4,6 +4,7 @@
   },
   "content": {
     "backgroundUrl": "/assets/img/bg.jpg",
+    "blurUrl": "/assets/img/bg.jpg",
     "foregroundUrl": "",
     "foregroundAlt": "",
     "title": "Banner Title",
