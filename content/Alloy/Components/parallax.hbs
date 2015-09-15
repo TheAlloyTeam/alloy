@@ -1,0 +1,72 @@
+---
+title: Parallax
+layout: alloy.hbs
+
+nav-thumb: "placeholder.jpg"
+nav-title: "Parallax"
+nav-text: "Parallax"
+nav-variant: "parallax"
+page-category: "components"
+js-parallax: true
+---
+
+<main class="w w--main" role="main">
+	<div class="g">
+		<div class="c__lg--1">
+
+			<div class="page{{#if nav-variant}} page--{{nav-variant}}{{/if}}">
+				<div class="page__head">
+					<h1 class="page__title">{{title}}</h1>
+					{{#if subtitle}}<p class="page__subtitle">{{subtitle}}</p>{{/if}}
+				</div>
+
+<!-- writings -->
+
+		        <div class="page__body rte">
+
+		        </div>
+
+				<section class="section section--example">
+					<header class="section__head">
+						 <h2 class="section__title">Example</h2>
+					</header>
+
+					<div class="section__body">
+
+						<div class="parallax" style="background-image: url('/assets/img/bg.jpg'); height: 400px; background-size: 100% auto;"></div>
+
+						<div class="parallax" data-options='{"speed": -0.5, "start": -400}' style="background-image: url('/assets/img/bg.jpg'); height: 400px; margin-top: 20px; background-size: 100% auto;"></div>
+
+						<div class="parallax" data-options='{"speed": -1.5, "start": -200}' style="background-image: url('/assets/img/bg.jpg'); height: 400px; margin-top: 20px; background-size: 100% auto;"></div>
+
+						<div class="parallax" data-options='{"speed": 1.5, "start": 0}' style="background-image: url('/assets/img/bg.jpg'); height: 400px; margin-top: 20px; background-size: 100% auto;"></div>
+
+					</div>
+
+				</section>
+
+				<section class="section section--code">
+					<header class="section__head">
+						<h2 class="section__title">Code</h2>
+					</header>
+
+					<div class="section__body">
+
+					</div>
+
+				</section>
+
+				<section class="section section--reference">
+					<header class="section__head">
+						 <h2 class="section__title">References</h2>
+					</header>
+					<div class="section__body rte">
+
+					</div>
+				</section>
+
+			</div>
+
+		</div>
+	 </div>
+</main>

@@ -56,7 +56,8 @@ var require = {
         'scrollspy': "modules/alloy.scrollspy",
         'sideslider': "modules/alloy.sideslider",
         'animate': "modules/alloy.animate",
-        'animate.emerger': "modules/alloy.animate.emerger"
+        'animate.emerger': "modules/alloy.animate.emerger",
+        'parallax': "modules/alloy.parallax"
     },
     shim: {
         'logging': {deps: ['jquery']},
@@ -94,6 +95,7 @@ var require = {
         'cardfader': {deps: ['jquery', 'core', 'logging']},
         'animate': {deps: ['jquery', 'core', 'logging']},
         'animate.emerger': {deps: ['jquery', 'core', 'logging', 'animate']},
+        'parallax': {deps: ['jquery', 'core', 'logging']}
         //jqueryvalidate: { deps: ['jquery'] },
         //jqueryvalidateunobtrusive: { deps: ['jquery', 'jqueryvalidate'] },
         //jqueryunobtrusive: { deps: ['jquery'] }
