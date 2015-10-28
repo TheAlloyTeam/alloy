@@ -7,7 +7,7 @@
     	};
 
         var navButton = function() {
-            $(".button__mobile--navigation").click(function() {
+            $(".button__mobile--mainnav").click(function() {
                 $(".w--nav").slideToggle(200);
                 this.classList.toggle( "active" );
             });
