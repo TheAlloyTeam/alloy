@@ -27,7 +27,9 @@
             automaticDirection: "left",                                 // The direction to automatically scroll - "left" or "right", defaults to "right" if unrecognised
             startIndex: 0,                                              // The index to start the cardslider at
             endless: true,                                              // True to endlessly scroll the carousel, or false to 'go' back to the beginning
-            onScreenResize: function() { }                              // Function to call during the standard screen resize function
+            onScreenResize: function() { },                             // Function to call during the standard screen resize function
+            beforeScroll: function() { },                               // Function to call before the the slider scrolls to a different card
+            afterScroll: function() { }                                 // Function to call after the the slider scrolls to a different card
         },
 
         _init: function () {
@@ -125,6 +127,14 @@
 
             // Scroll normally
             this.index = index;
+
+            var sendIndex = index;
+            if (sendIndex === this.$cards.length) { sendIndex = 0; }
+
+            if (this.config.beforeScroll !== undefined) {
+                this.config.beforeScroll(sendIndex);
+            }
+
             var goto = (this._getCardsliderWidth() * this.index) * -1;
             this.$tray.addClass(this.config.animationClass).css({ left: goto + "px" });
 
@@ -133,14 +143,15 @@
             this._updateControls(index);
             this.$cards.removeClass(this.config.currentClass);
             $(this.$cards.get(this.index)).addClass(this.config.currentClass);
-            if (index >= this.$cards.length) { 
-                var tempindex = index - this.$cards.length; 
-                $(this.$cards.get(tempindex)).addClass(this.config.currentClass); 
+            if (index >= this.$cards.length) {
+                var tempindex = index - this.$cards.length;
+                $(this.$cards.get(tempindex)).addClass(this.config.currentClass);
             }
 
             // Remove the animation class from the tray at the end of the animation
             setTimeout(function () {
                 that.$tray.removeClass(that.config.animationClass);
+                if (that.config.afterScroll !== undefined) { that.config.afterScroll(sendIndex); }
             }, this.config.animationLength);
         },
 
@@ -161,7 +172,7 @@
             var $clone = this._cloneAndInsertFirst();
             var that = this;
             this.$tray.css({ left: ((that._getCardsliderWidth() * this.$cards.length) * -1) + "px" });
-            
+
             this.index = this.$cards.length;
             that._goto(this.$cards.length - 1);
             setTimeout(function() {

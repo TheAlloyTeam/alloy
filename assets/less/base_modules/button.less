@@ -12,7 +12,7 @@
 @BUTTON-HoverColor:             lighten(@BUTTON-BgColor, 5%);
 @BUTTON-TextColor:              @COLOR-White;
 
-@BUTTON-AltColor:               spin(@BUTTON-BgColor, 180);
+@BUTTON-AltColor:               spin(@BUTTON-BgColor, 90);
 @BUTTON-AltHoverColor:          lighten(@BUTTON-AltColor, 5%);
 @BUTTON-AltTextColor:           @COLOR-White;
 
@@ -245,64 +245,64 @@
         display: block;
     }
 
-    .button__mobile--navigation {
+    .button__mobile--mainnav {
         position: absolute;
         top: 0;
         right: 0;
         height: 44px;
         width: 44px;
         cursor: pointer;
-        ._padding (21, 12, 0, 12);
+        ._padding (21, 12);
     }
     
-    .button__mobile--navigation span,
-    .button__mobile--navigation span:before,
-    .button__mobile--navigation span:after {
+    .button__mobile--mainnav span,
+    .button__mobile--mainnav span:before,
+    .button__mobile--mainnav span:after {
         cursor: pointer;
         border-radius: 2px;
         height: 2px;
         width: 20px;
-        background: @COLOR-White;
+        background: @COLOR-Base;
         position: absolute;
         display: block;
         content: "";
     }
     
-    .button__mobile--navigation span:before {
+    .button__mobile--mainnav span:before {
         top: -4px; 
     }
     
-    .button__mobile--navigation span:after {
+    .button__mobile--mainnav span:after {
         bottom: -4px;
     }
     
-    .button__mobile--navigation span,
-    .button__mobile--navigation span:before,
-    .button__mobile--navigation span:after {
+    .button__mobile--mainnav span,
+    .button__mobile--mainnav span:before,
+    .button__mobile--mainnav span:after {
         transition: all 500ms ease-in-out;
     }
     
-    .button__mobile--navigation.active span {
+    .button__mobile--mainnav.active span {
         background-color: transparent;
     }
     
-    .button__mobile--navigation.active span:before,
-    .button__mobile--navigation.active span:after {
+    .button__mobile--mainnav.active span:before,
+    .button__mobile--mainnav.active span:after {
         top: 0;
     }
     
-    .button__mobile--navigation.active span:before {
+    .button__mobile--mainnav.active span:before {
         transform: rotate(45deg);
     }
     
-    .button__mobile--navigation.active span:after {
+    .button__mobile--mainnav.active span:after {
         transform: translateY(-4px) rotate(-45deg);
         top: 4px;
     }
 
 }
 
-// TABLET & UP
+// TABLET+
 // ----------------------------------------------------
 
 @media only screen and (min-width: @MQ-Medium-min) { 

@@ -13,15 +13,12 @@
 @NAVIGATION-HoverColor:            		@COLOR-White;
 @NAVIGATION-HoverBgColor:              	lighten(@NAVIGATION-BgColor, 5%);
 @NAVIGATION-ActiveBorder:             	@COLOR-Base;
-@NAVIGATION-FontFamily:             	@TYPE-HeadingsFontFamily;
 
 // BASE
 // ----------------------------------------------------
 
 .mainnav {
-	font-family: @NAVIGATION-FontFamily;
     ._clearfix();
-
 }
 
 .mainnav__toggle {
@@ -29,7 +26,6 @@
 }
 
 .mainnav__item {
-
     .current {
         color: @NAVIGATION-HoverColor;
         background-color: @NAVIGATION-HoverBgColor;
@@ -45,7 +41,13 @@
     ._font-size (@TYPE-SIZE-Gamma);
     ._transition (all, 0.1s);
 
-    &:hover {
+    &:link,
+    &:visited {
+        color: @NAVIGATION-Color;
+    }
+
+    &:hover,
+    &:active {
         color: @NAVIGATION-HoverColor;
         background-color: @NAVIGATION-HoverBgColor;
     }
@@ -58,10 +60,6 @@
 // ----------------------------------------------------
 
 @media only screen and (max-width: @MQ-Small) {
-
-    .mainnav {
-
-    }
 
     .mainnav__link {
         text-align: center;

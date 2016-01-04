@@ -16,6 +16,38 @@
 	});
 </script>
 
+{{#if js-cardfader}}
+<script type="text/JavaScript">
+	require(["cardfader"], function() { });
+</script>
+{{/if}}
+
+{{#if js-sideslider}}
+<script type="text/JavaScript">
+	require(["sideslider"], function() {
+
+		var slider;
+
+    	$(".sideslider").sideslider({
+    		onOutroComplete: function() { slider.public.triggerIntro(); }
+    	});
+
+		slider = $(".sideslider").data("sideslider");
+
+		$(".sliderintro").click(function(e) {
+			e.preventDefault();
+			slider.public.triggerIntro();
+		});
+
+		$(".slideroutro").click(function(e) {
+			e.preventDefault();
+			slider.public.triggerOutro();
+		});
+
+	});
+</script>
+{{/if}}
+
 {{#if js-scrollspy}}
 <script type="text/JavaScript">
 	require(["scrollspy"], function() { });
@@ -117,15 +149,57 @@
 			beforeResize: beforeResize
 		});
 
-		// Gridder alt example
-		$(".gridder--alt").gridder({
-			columns: 3,
-			heights: ["normal"]
+		var gridder = $(".gridder").data("gridder");
+
+		/* Update the heights of the cards in the first gridder */
+		$(".updateGridderWithHeight").click(function(e) {
+			e.preventDefault();
+			var height = parseInt($("#height").val());
+			gridder.changeSettings({ minHeight: height });
+			gridder.update();
+		});
+
+		$(window).load(function() {
+			// Gridder alt example
+			$(".gridder--alt").gridder({
+				columns: 3,
+				heights: [
+					"small",
+				 	"normal",
+				 	"tall",
+				 	"taller"
+			 	],
+				minHeight: null,
+				calculateHeights: true
+			});
+
+			var altgridder = $(".gridder--alt").data("gridder");
+
+			/* Randomise the cards in the alternate grid */
+			$(".randomisegrid").click(function(e) {
+				e.preventDefault();
+				// Todo - find why this is triggering twice?!?!/
+				var $cards = $(".gridder--alt .card--gridder");
+				for(var i = 0; i < $cards.length; i++) {
+					var rand = Math.random();
+					if (rand < 0.5) {
+						$($cards[i]).toggleClass("ignore");
+					}
+				}
+
+				altgridder.update();
+			});
+
+			/* Reset the cards in the alternate grid */
+			$(".resetgrid").click(function(e) {
+				e.preventDefault();
+				var $cards = $(".gridder--alt .card--gridder").removeClass("ignore");
+				altgridder.update();
+			});
 		});
 	});
 </script>
 {{/if}}
-
 
 {{#if js-cardslider}}
 <script type="text/JavaScript">
@@ -141,62 +215,15 @@
 
 		equalizeSliderCards();
 		$(".cardslider").cardslider({
-			onScreenResize: equalizeSliderCards
+			onScreenResize: equalizeSliderCards,
+			beforeScroll: function(index) {
+				console.log("BEFORE sliding to: " + index);
+			},
+			afterScroll: function(index) {
+				console.log("AFTER sliding to: " + index);
+			}
 		});
 
-	});
-</script>
-{{/if}}
-
-{{#if js-gridify}}
-<script type="text/JavaScript">
-	require(["gridify", "equalizer"], function() {
-		var equalizeMasonryCards = function() {
-		    $(".card--gridify").equalizer({
-		        minimumWidth: 601,                  // The minimum width at which resizing will still occur
-		        applyWhat: "padding-bottom",        // The style to apply the difference in height to
-		        applyTo: ".card__body"       		// The element on which to apply the style to
-		    });
-		};
-
-		equalizeMasonryCards();
-		$(".gridify").gridify({
-            cardSelector: ".card", // The selector for cards within this.$element
-	        activeClass: "active",
-	        transitionClass: "deactivating",
-	        inactiveClass: "inactive",
-	        transitionLength: 400,
-	        noItemsEl: '<div class="alert alert--info">There were no results for your current search.  Try adjusting your search options.</div>',
-	        searchArgs: { randomise: false },
-	        // Example search function to randomly select which elements to display
-	        searchFunction: function ($cards, searchArgs) {
-	            var matches = [];
-	            var nonmatches = [];
-
-	            $cards.each(function() {
-	                if (searchArgs.randomise === false || Math.random() > 0.5) { matches.push(this); }
-	                else { nonmatches.push(this); }
-	            });
-
-	            var results = { $matches: $(matches), $nonmatches: $(nonmatches) };
-	            return results;
-	        },
-		});
-
-		$(".gridify__control.randomise").click(function(e) {
-			e.preventDefault();
-	        $(".gridify").gridify({ randomise: true });
-		});
-
-		$(".gridify__control.reset").click(function(e) {
-			e.preventDefault();
-	        $(".gridify").gridify({ randomise: false });
-		});
-
-		$(window).resize(function() {
-			equalizeMasonryCards();
-	        $(".gridify").gridify();
-		});
 	});
 </script>
 {{/if}}
@@ -250,15 +277,40 @@
 </script>
 {{/if}}
 
+{{#if js-banner}}
+<script>
+	require(["jquery"], function() {
+		var setCardBlurWidth = function() {
+		    $(".blurMask__width").each(function() {
+		        var width = $(this).closest(".blurMask").width();
+		        $(this).css({ width: width + "px" });
+		    });
+		};
+
+		setCardBlurWidth();
+		$(window).resize(setCardBlurWidth);
+	});
+</script>
+{{/if}}
 
 <!-- Example functionality -->
 <script>
-	require(["examples/example.watchdog"], function(){ });
+	require(["examples/example.watchdog"], function() { });
 </script>
 
-{{#dev}}
+{{#if js-animations}}
+<script type="text/JavaScript">
+	require(["animate", "examples/example.animations"], function() { });
+</script>
+{{/if}}
+
+{{#if js-parallax}}
+<script type="text/JavaScript">
+	require(["parallax"], function() { $(".parallax").parallax(); });
+</script>
+{{/if}}
+
 <script src="http://localhost:35730/livereload.js"></script>
-{{/dev}}
 
 <!-- Google Analytics -->
 <script>

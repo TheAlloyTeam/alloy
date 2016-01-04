@@ -36,6 +36,12 @@ js-gridder: true
 		            <div class="section__body">
 				        <!-- code -->
 				        <div class="g">
+							<div class="c--lg__1">
+								<label for="height">Height:</label><input name="height" id="height" type="number" value="50" />
+								<input class="updateGridderWithHeight" type="submit" value="Update" /><br />
+							</div>
+				    	</div>
+				        <div class="g">
 				        	{{> gridder gridder }}
 				    	</div>
 			        </div>
@@ -50,8 +56,18 @@ js-gridder: true
 
 		            <div class="section__body">
 				        <!-- code -->
+
+						<div class="g">
+							<div class="c--lg__1">
+								<a href="#" class="randomisegrid">Randomise Gridder</a><br />
+								<a href="#" class="resetgrid">Reset Gridder</a>
+							</div>
+						</div>
+
 				        <div class="g">
-				        	{{!-- {{> gridder gridder--alt }} --}}
+			        		<div class="c--lg__1">
+				        		{{> gridder gridder--alt }}
+							</div>
 				    	</div>
 			        </div>
 

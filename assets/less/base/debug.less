@@ -1,7 +1,7 @@
-
 .debugger-styles() when not (@DEBUGGER) { }
 .debugger-styles() when (@DEBUGGER) {
 
+@DEBUG-Anim:                    @ANIM-Curve;
 /* =========================================================================
 // DEBUG
 // =======================================================================*/
@@ -9,24 +9,44 @@
 .debugger {
     background-color: @COLOR-GreyLightest;
     position: fixed;
-    top: 40px;
-    right: 40px;
+    top: 10px;
+    right: 10px;
     max-width: 300px;
     z-index: @Z-INDEX-Level10;
     width: 100%;
-    ._padding (@TYPE-LineHeight/2, @TYPE-FontSize);
-    ._opacity (0.7);
+    ._opacity (0.9);
     ._depth-1();
- }
+    ._padding (@TYPE-LineHeight/2);
+}
 
- .debugger__body {
- 	max-height: 100px;
+.debugger__body {
+ 	max-height: 300px;
  	overflow-y: scroll;
- }
+
+    &.opening {
+        ._transition (height, 0.1s, @DEBUG-Anim);
+    }
+
+    &.closing {
+        ._transition (height, 0.1s, @DEBUG-Anim);
+    }
+
+    &.open {
+        height: 100%;
+    }
+
+    &.closed {
+        height: 0;
+    }
+}
+
+.debugger__toggle {
+    text-decoration: none;
+}
 
 .list__debugger {
     pointer-events: none;
-	
+
     .list__item {
 		color: @COLOR-GreyDark;
 		._font-size(@TYPE-SIZE-Iota);
@@ -40,6 +60,17 @@
 	.error {color: @COLOR-Red;}
 	.fatal {color: @COLOR-Red;}
 	.off {color: @COLOR-GreyLight;}
+}
+
+// MOBILE
+// ----------------------------------------------------
+
+@media only screen and (max-width: @MQ-Small) {
+
+    .debugger {
+        display: none;
+    }
+
 }
 
 } .debugger-styles();

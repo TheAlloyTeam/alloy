@@ -1,7 +1,17 @@
 .gridder-styles() when not (@MODULE-Gridder) { }
 .gridder-styles() when (@MODULE-Gridder) {
 
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+
 .gridder {
+
+    ._transition (height, 0.4s, @ACCORDION-Anim);
 
  	.card--gridder {
 
@@ -27,8 +37,34 @@
 }
 
 .gridder--alt {
+    ._transition (height, 0.4s, @ACCORDION-Anim);
+
     .card--gridder {
-        background-color: blue;
+
+        font-size: 1em;
+
+        ._transition (all, 0.4s, @ACCORDION-Anim);
+        opacity: 1;
+
+        &.ignore {
+            opacity: 0;
+        }
+
+        &.small {
+            background-color: #4C4CFF;
+        }
+
+        &.normal {
+            background-color: #0000FF;
+        }
+
+        &.tall {
+            background-color: #000033;
+        }
+
+        &.taller {
+            background-color: #000019;
+        }
     }
 }
 

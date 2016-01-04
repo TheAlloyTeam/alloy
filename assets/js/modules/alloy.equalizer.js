@@ -13,7 +13,7 @@
             ALLOY.Logger.startup('ALLOY.Equalizer Working');
 
             // Reset the value to start with
-            $(els).find(config.applyTo).css(config.applyWhat, "");
+            $(els).find(config.applyTo).andSelf().filter(config.applyTo).css(config.applyWhat, "");
             if ($(window).width() <= config.minimumWidth) { return; }
             var that = this;
 
@@ -26,7 +26,7 @@
             $(els).each(function () {
                 var height = $(this).outerHeight(true);
                 var diff = tallest - height;
-                $(this).find(config.applyTo).css(config.applyWhat, diff + "px");
+                $(this).find(config.applyTo).andSelf().filter(config.applyTo).css(config.applyWhat, diff + "px");
             });
         }
 
