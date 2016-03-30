@@ -6,7 +6,7 @@ var dragDrop = (function() {
 		_dragSourceClassName = null;
 
 	var _isDnDTypesSupported = true,
-		
+
 		isDnDTypesSupported = function() {
 			return _isDnDTypesSupported;
 		},
@@ -16,11 +16,11 @@ var dragDrop = (function() {
 				e.preventDefault();
 			}
 
-			if (e.stopPropagation) { 
+			if (e.stopPropagation) {
 				e.stopPropagation();
 			}
 
-			return false; 
+			return false;
 		},
 
 		dragStart = function(e) {
@@ -34,10 +34,10 @@ var dragDrop = (function() {
 			if (_dragSourceClassName !== null) {
 				element.addClass(_dragSourceClassName);
 			}
-			
+
 			// try {
 			// 	e.dataTransfer .setData('text/plain', e.target.id);
-		
+
 			// } catch (e) {
 			// 	_isDnDTypesSupported = false;
 			// }

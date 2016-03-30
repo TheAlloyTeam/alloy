@@ -1,0 +1,32 @@
+{{#this}}
+
+<div class="endless-slider">
+
+    <a href="#" class="scroll-left">Go Left</a>
+
+    <ul class="c">
+        {{#each content.cards}}
+            <li class="item slider__card">
+
+                <div class="card">
+
+                    <div class="card__front">
+                        <div class="card__head">
+                            <img src="{{content.img}}" alt="" class="card__image" />
+                            <div class="card__title">{{content.title}}</div>
+                        </div>
+                        <div class="card__content">
+                            <div class="card__summary">{{{content.body}}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+        {{/each}}
+    </ul>
+
+    <a href="#" class="scroll-right">Go Right</a>
+
+</div>
+
+{{/this}}

@@ -55,6 +55,7 @@ var require = {
         'gridder': "modules/alloy.gridder",
         'scrollspy': "modules/alloy.scrollspy",
         'sideslider': "modules/alloy.sideslider",
+        'endlessslider': "modules/alloy.endlessslider",
         'animate': "modules/alloy.animate",
         'animate.emerger': "modules/alloy.animate.emerger",
         'parallax': "modules/alloy.parallax"
@@ -92,6 +93,7 @@ var require = {
         'scrollspy': {deps: ['jquery', 'core', 'logging']},
         'smartresize': {deps: ['jquery']},
         'sideslider': {deps: ['jquery', 'core', 'logging', 'easing']},
+        'endlessslider': {deps: ['jquery', 'core', 'logging']},
         'cardfader': {deps: ['jquery', 'core', 'logging']},
         'animate': {deps: ['jquery', 'core', 'logging']},
         'animate.emerger': {deps: ['jquery', 'core', 'logging', 'animate']},
