@@ -6,48 +6,6 @@
 // .c = column
 // .w = wrapper
 
-// COLUMN CALCULATIONS
-// ----------------------------------------------------
-
-._colwidth (@numberOfcols: 1, @numberOfTotalCols: 2){
-
-    // Single c
-    @singlecPx: (@GRID-MaxWidth - 1)/@numberOfTotalCols;
-    @singleColPercentage: 100%*(@singlecPx/@GRID-MaxWidth);
-
-    // This c offset
-    @thisColWidth: @singleColPercentage*@numberOfcols;
-
-    // All together
-    width: @thisColWidth;
-}
-
-._gutterPadding () {
-    // Gutters
-    @horizontalPadding: ((@GRID-GutterWidth)/2)+0px;
-    @verticalPadding: ((@TYPE-LineHeight)/2)+0px;
-    padding: ceil(@verticalPadding) floor(@horizontalPadding) floor(@verticalPadding) ceil(@horizontalPadding);
-}
-._gutterMarginReverse() {
-    // Gutters
-    @horiMargin: -((@GRID-GutterWidth)/2)+0px;
-    @vertMargin: -((@TYPE-LineHeight)/2)+0px;
-    margin: ceil(@vertMargin) floor(@horiMargin) floor(@vertMargin) ceil(@horiMargin);
-}
-
-._coloffset (@numberOfcols: 1, @numberOfTotalCols: 2) {
-    // Single c
-    @singlecPx: (@GRID-MaxWidth - 1)/@numberOfTotalCols;
-    @singleColPercentage: 100%*(@singlecPx/@GRID-MaxWidth);
-
-    // This c offset
-    @thisColWidth: @singleColPercentage*@numberOfcols;
-
-    // All together
-    margin-left: @thisColWidth;
-
-}
-
 // BASE
 // ----------------------------------------------------
 
@@ -187,11 +145,35 @@
 
 @media only screen and (min-width: @MQ-Large-min) {
 
-    .g {
-        //max-width: (@GRID-MaxWidth/@TYPE-FontSize) * 1em; // Make ems
-        padding: 0 10%;
-        margin: 0 auto;
+	.g {
+		.fluidgrid-styles() when not (@GRID-FluidWidth) {
+			max-width: (@GRID-MaxWidth/@TYPE-FontSize) * 1em; // Make ems
+			padding: 0;
+			margin: 0 auto;
+		}
+		.fluidgrid-styles() when (@GRID-FluidWidth) {
+			padding: 0 10%;
+			margin: 0 auto;
+		}
+		.fluidgrid-styles();
     }
+
+    .g--tight {
+        max-width: ((@GRID-MaxWidth/@TYPE-FontSize) * 10/12) * 1em; // Make ems
+    }
+
+    .g--tighter {
+        max-width: ((@GRID-MaxWidth/@TYPE-FontSize) * 8/12) * 1em; // Make ems
+    }
+
+    .g--tightest {
+        max-width: ((@GRID-MaxWidth/@TYPE-FontSize) * 6/12) * 1em; // Make ems
+    }
+
+    .g--wide {
+        max-width: ((@GRID-MaxWidth/@TYPE-FontSize) * 14/12) * 1em; // Make ems
+    }
+
 
 // Columns
 

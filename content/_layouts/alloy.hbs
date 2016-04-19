@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html class="no-js ie ie9" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
 <head itemscope itemtype="http://schema.org/WebSite">
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
 
     <title>{{ page.title }} - ALLOY</title>
 
@@ -23,9 +23,7 @@
 
 <body id="{{{app.siteclass}}}-alloy"  class="m{{#if page.class-master }} m--{{page.class-master }} {{/if}}">
 
-    <!--[if lt IE 8]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+	{{> browsehappy }}
 
     {{> ALLOY_header }}
     {{> ALLOY_navigation }}
@@ -38,5 +36,6 @@
 
     <!-- <div class="modal__mask modal__mask--visible"></div> -->
 
+    <div id="mediaquery"></div>
 </body>
 </html>
