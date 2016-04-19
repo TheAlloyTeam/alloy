@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gfinbow/alloy.git"
+    "url": "https://github.com/TheAlloyTeam/alloy.git"
   },
   "alloy": {
     "dev": false,
@@ -30,6 +30,7 @@
     "grunt-contrib-less": "*",
     "grunt-contrib-requirejs": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-watch": "*",
+    "grunt-svgmin": "*"
   }
 }
