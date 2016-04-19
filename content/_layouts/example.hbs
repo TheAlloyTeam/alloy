@@ -34,6 +34,7 @@
 
     <!-- IE8 and below fallbacks -->
     <!--[if lt IE 9]>
+    <link rel="stylesheet" href="{{ assets }}/css/ie8.css" />
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script type="text/javascript" src="{{ assets }}/js/libs/respond/respond.min.js"></script>
     <![endif]-->
@@ -42,9 +43,7 @@
 
 <body id="{{{app.siteclass}}}"  class="m{{#if page.class-master }} m--{{page.class-master }} {{/if}}">
 
-    <!--[if lt IE 8]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+	{{> browsehappy }}
 
     {{> body }}
     {{> ALLOY_scripts }}
@@ -52,5 +51,6 @@
 
     <!-- <div class="modal__mask modal__mask--visible"></div> -->
 
+    <div id="mediaquery"></div>
 </body>
 </html>

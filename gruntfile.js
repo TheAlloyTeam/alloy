@@ -15,6 +15,7 @@ module.exports = function(grunt) {
               cleancss: true
             },
             files: {
+              '<%= pkg.alloy.site %>/<%= pkg.alloy.css %>/ie8.css': '<%= pkg.alloy.less %>/ie8.less',
               '<%= pkg.alloy.site %>/<%= pkg.alloy.css %>/fontloader.css': '<%= pkg.alloy.less %>/fontloader.less',
               '<%= pkg.alloy.site %>/<%= pkg.alloy.css %>/alloy.css': '<%= pkg.alloy.less %>/alloy.less',
               '<%= pkg.alloy.site %>/<%= pkg.alloy.css %>/startup.css': '<%= pkg.alloy.less %>/startup.less',
@@ -63,6 +64,33 @@ module.exports = function(grunt) {
                 }
               ]
             }
+        },
+
+        svgmin: {
+            options: {
+                plugins: [
+
+					{ removeDoctype: false },
+					{ removeViewBox: false },
+					{ convertColors: false },
+					{ removeUselessStrokeAndFill: false },
+					{ removeEmptyAttrs: false },
+	                { removeAttrs:
+	                	//{ attrs: ['xmlns'] }
+	                	false
+	                }
+	            ]
+            },
+			assets: {
+				files: [
+				{           
+					expand: true, 
+					cwd: '<%= pkg.alloy.img %>/',
+					src: ['**/*.svg'],
+					dest: '<%= pkg.alloy.site %>/<%= pkg.alloy.img %>'
+				}
+				]
+			}
         },
 
         requirejs:{
@@ -176,6 +204,12 @@ module.exports = function(grunt) {
             ],
             tasks: ['imagemin']
           },
+          watchsvgs: {
+            files: [
+              '<%= pkg.alloy.img %>/**/*.svg'
+            ],
+            tasks: ['svgmin']
+          },
           watchassets: {
             files: [
               '<%= pkg.alloy.assets %>/**/*',
@@ -203,12 +237,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-svgmin');
     grunt.loadNpmTasks('assemble');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default Tasks
-    grunt.registerTask('default', ['less','jshint','requirejs','imagemin','clean','assemble','copy','connect','watch']);
+    grunt.registerTask('default', ['less','jshint','requirejs','imagemin','svgmin','clean','assemble','copy','connect','watch']);
 
 };

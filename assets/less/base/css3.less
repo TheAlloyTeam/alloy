@@ -23,6 +23,24 @@
     animation-duration:         @duration;
 }
 
+._animation-name (@name: animationname) {
+    -webkit-animation-name: @name;
+    -moz-animation-name:    @name;
+    animation-name:         @name;
+}
+
+._animation-delay (@duration: -1.0s) {
+    -webkit-animation-delay: @duration;
+    -moz-animation-delay:    @duration;
+    animation-delay:         @duration;
+}
+
+._animation-custom (@animationcustom) {
+    -webkit-animation:  @animationcustom;
+    -moz-animation:     @animationcustom;
+    animation:          @animationcustom;
+}
+
 ._transition (@range: all, @time: 1s, @ease: ease-in-out) {
     -webkit-transition: @range @time @ease;
     -moz-transition:    @range @time @ease;
@@ -33,6 +51,17 @@
     -webkit-transition: @value;
     -moz-transition:    @value;
     transition:         @value;
+}
+
+._transition-custom-multi (@value, @value2) {
+    -webkit-transition: @value, @value2;
+    -moz-transition:    @value, @value2;
+    transition:         @value, @value2;
+}
+._transition-custom-multi (@value, @value2, @value3) {
+    -webkit-transition: @value, @value2, @value3;
+    -moz-transition:    @value, @value2, @value3;
+    transition:         @value, @value2, @value3;
 }
 
 ._transition-none () {
@@ -111,6 +140,22 @@
     background-image: -moz-linear-gradient(@origin, @start, @stop);
     background-image: linear-gradient(@origin, @start, @stop);
 }
+
+._gradient-custom2 (@origin: left, @start: #ffffff, @stop: #000000, @startpos, @stoppos) {
+    background-color: mix(@start, @stop);
+    background-image: -webkit-linear-gradient(@origin, @start @startpos, @stop @stoppos);
+    background-image: -moz-linear-gradient(@origin, @start @startpos, @stop @stoppos);
+    background-image: linear-gradient(@origin, @start @startpos, @stop @stoppos);
+}
+
+._gradient-custom4 (@origin: left, @col1, @pos1, @col2, @pos2, @col3, @pos3, @col4, @pos4) {
+    background-color: mix(@col1, @col4);
+    background-image: -webkit-linear-gradient(@origin, @col1 @pos1, @col2 @pos2, @col3 @pos3, @col4 @pos4);
+    background-image: -moz-linear-gradient(@origin, @col1 @pos1, @col2 @pos2, @col3 @pos3, @col4 @pos4);
+    background-image: linear-gradient(@origin, @col1 @pos1, @col2 @pos2, @col3 @pos3, @col4 @pos4);
+}
+
+
 
 // 3D
 // ----------------------------------------------------
@@ -273,7 +318,14 @@
     -ms-behavior: url('/assets/handlers/backgroundsize.min.htc');
 }
 
-// OVERLAY (doesn't work in IE8 yet)
+._background-size-custom (@url, @bgColour: transparent, @size1: 100%, @size2: 100%, @posX: 0, @posY: 0, @repeat: no-repeat) {
+    background: @bgColour url('@{url}') @posX @posY @repeat;
+    background-size: @size1 @size2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}',sizingMethod='scale')";
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{url}',sizingMethod='scale');
+}
+
+// OVERLAY (doesn't work in IE8)
 // ----------------------------------------------------
 
 ._overlay (@color: @COLOR-Black, @alpha: 0.5) {
