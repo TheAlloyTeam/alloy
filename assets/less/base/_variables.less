@@ -8,8 +8,22 @@
 // DEBUG
 // ----------------------------------------------------
 
-@DEBUG:                         false;
-@DEBUGGER:						true;
+@DEBUG: 						false;
+@DEBUGGER: 						true;
+
+// DOTLESS
+// ----------------------------------------------------
+// Using DotLess (escaped expressions) or 'standard' LESS?
+// LESS won't ignore escaped expression so still have to search for and
+// uncomment DotLess markup, designated with this variable:
+@COMPILER-DotLess: 				false;
+
+// IE8 Compatible Functions
+// There is a separate IE8-only stylesheet, which reduces the 5KB+ of specific
+// IE8 classes that most users won't need. In addition, extra classes can
+// still be included:
+@IE8-Compatible: 				true;
+
 
 // COLOURS
 // ----------------------------------------------------
@@ -192,6 +206,7 @@
 @GRID-MaxWidth:                 980;
 @GRID-GutterWidth:              20;
 @GRID-MobileGutterWidth:        10;
+@GRID-FluidWidth:		        false; // False uses max-width, True uses 10% padding-wdith.
 
 // MEDIA QUERIES
 // ----------------------------------------------------

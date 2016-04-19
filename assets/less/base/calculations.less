@@ -2,163 +2,308 @@
 // CALCULATIONS
 // =========================================================================//
 
+
+// GRID COLUMN CALCULATIONS
+// ----------------------------------------------------
+
+._colwidth (@numberOfcols: 1, @numberOfTotalCols: 2){
+
+	// Single c
+	@singlecPx: (@GRID-MaxWidth - 1)/@numberOfTotalCols; // = 1023 / 2
+	@singleColPercentage: 100%*(@singlecPx/@GRID-MaxWidth); // = 100% * (511.5 / 1024)
+
+	// This c offset
+	@thisColWidth: @singleColPercentage*@numberOfcols; // = 49.951171875 * 1
+
+	// All together
+	width: @thisColWidth;
+}
+
+._colwidth-ie8 (@numberOfcols: 1, @numberOfTotalCols: 2){
+
+	// ie8 needs the percentages to be smaller, as it's box model calculates width + padding + margin
+	// this affects both grids and grids within grids. adjust to Gutterwidth,
+
+	// Single c
+	@singlecPx: ((@GRID-MaxWidth - 1) - (@GRID-GutterWidth * @numberOfTotalCols))/@numberOfTotalCols; // = (1024 - 1) - (20 * 7) / 7 = (1023 - 140) / 7 = 883 / 7 = 126.1428571428571
+	@singleColPercentage: 100%*(@singlecPx/@GRID-MaxWidth); // = 100% * (126 / 1024) = 12.318%
+
+	// This c offset
+	@thisColWidth: @singleColPercentage*@numberOfcols; // = 47.998046875 * 1
+
+	// All together
+	width: @thisColWidth;
+}
+
+._gutterPadding () {
+	// Gutters
+	@horizontalPadding: ((@GRID-GutterWidth)/2)+0px;
+	@verticalPadding: ((@TYPE-LineHeight)/2)+0px;
+	padding: ceil(@verticalPadding) floor(@horizontalPadding) floor(@verticalPadding) ceil(@horizontalPadding);
+}
+._gutterMarginReverse() {
+	// Gutters
+	@horiMargin: -((@GRID-GutterWidth)/2)+0px;
+	@vertMargin: -((@TYPE-LineHeight)/2)+0px;
+	margin: ceil(@vertMargin) floor(@horiMargin) floor(@vertMargin) ceil(@horiMargin);
+}
+
+._coloffset (@numberOfcols: 1, @numberOfTotalCols: 2) {
+	// Single c
+	@singlecPx: (@GRID-MaxWidth - 1)/@numberOfTotalCols;
+	@singleColPercentage: 100%*(@singlecPx/@GRID-MaxWidth);
+
+	// This c offset
+	@thisColWidth: @singleColPercentage*@numberOfcols;
+
+	// All together
+	margin-left: @thisColWidth;
+
+}
+
+
 // FONT SIZE
 // ----------------------------------------------------
 
 ._font-size (@px-size) {
-    @rem-size: (@px-size / @TYPE-FontSize);
-    font-size: (@px-size * 1px);
-    font-size: (@rem-size * 1rem);
+	@rem-size: (@px-size / @TYPE-FontSize);
+	font-size: (@px-size * 1px);
+	font-size: (@rem-size * 1rem);
 }
 
 ._font-size (@px-size, @line-height) {
-    @rem-font-size: (@px-size / @TYPE-FontSize);
-    @rem-line-height: (@line-height / @TYPE-FontSize);
-    font-size: (@px-size * 1px);
-    font-size: (@rem-font-size * 1rem);
-    line-height: (@line-height * 1px);
-    line-height: (@rem-line-height * 1rem);
+	@rem-font-size: (@px-size / @TYPE-FontSize);
+	@rem-line-height: (@line-height / @TYPE-FontSize);
+	font-size: (@px-size * 1px);
+	font-size: (@rem-font-size * 1rem);
+	line-height: (@line-height * 1px);
+	line-height: (@rem-line-height * 1rem);
 }
 
 ._font-size-heading (@font-size) {
-    ._font-size (@font-size);
-    ._line-height (@font-size);
+	._font-size (@font-size);
+	._line-height (@font-size);
 }
 
 // LINE HEIGHT
 // ----------------------------------------------------
 
 ._line-height (@font-size) when (@font-size >= @TYPE-LineHeight) {
-    line-height: ((@TYPE-LineHeight * 2)/@font-size);
+	line-height: ((@TYPE-LineHeight * 2)/@font-size);
 }
 
 ._line-height (@font-size) when (@font-size < @TYPE-LineHeight) {
-    line-height: (@TYPE-LineHeight/@font-size);
+	line-height: (@TYPE-LineHeight/@font-size);
 }
 
 // PADDINGS/MARGINS
 // ----------------------------------------------------
 
 ._height (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    height: (@px-size * 1px);
-    height: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	height: (@px-size * 1px);
+	height: (@rem-size * 1rem);
 }
 
 ._min-height (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    min-height: (@px-size * 1px);
-    min-height: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	min-height: (@px-size * 1px);
+	min-height: (@rem-size * 1rem);
 }
 
 ._margin (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    margin: (@px-size * 1px);
-    margin: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	margin: (@px-size * 1px);
+	margin: (@rem-size * 1rem);
 }
 
 ._margin (@top, @left) {
-    @top-rem: @top / @TYPE-FontSize;
-    @left-rem: @left / @TYPE-FontSize;
-    margin: (@top * 1px) (@left * 1px) ;
-    margin: (@top-rem * 1rem) (@left-rem * 1rem);
+	@top-rem: @top / @TYPE-FontSize;
+	@left-rem: @left / @TYPE-FontSize;
+	margin: (@top * 1px) (@left * 1px) ;
+	margin: (@top-rem * 1rem) (@left-rem * 1rem);
 }
 
 ._margin (@top, @right, @bottom, @left) {
-    @top-rem: @top / @TYPE-FontSize;
-    @right-rem: @right / @TYPE-FontSize;
-    @bottom-rem: @bottom / @TYPE-FontSize;
-    @left-rem: @left / @TYPE-FontSize;
-    margin: (@top * 1px) (@right * 1px)  (@bottom * 1px)  (@left * 1px) ;
-    margin: (@top-rem * 1rem) (@right-rem * 1rem) (@bottom-rem * 1rem) (@left-rem * 1rem);
+	@top-rem: @top / @TYPE-FontSize;
+	@right-rem: @right / @TYPE-FontSize;
+	@bottom-rem: @bottom / @TYPE-FontSize;
+	@left-rem: @left / @TYPE-FontSize;
+	margin: (@top * 1px) (@right * 1px)  (@bottom * 1px)  (@left * 1px) ;
+	margin: (@top-rem * 1rem) (@right-rem * 1rem) (@bottom-rem * 1rem) (@left-rem * 1rem);
 }
 
 ._margin-top (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    margin-top: (@px-size * 1px);
-    margin-top: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	margin-top: (@px-size * 1px);
+	margin-top: (@rem-size * 1rem);
 }
 
 ._margin-right (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    margin-right: (@px-size * 1px);
-    margin-right: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	margin-right: (@px-size * 1px);
+	margin-right: (@rem-size * 1rem);
 }
 
 ._margin-bottom (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    margin-bottom: (@px-size * 1px);
-    margin-bottom: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	margin-bottom: (@px-size * 1px);
+	margin-bottom: (@rem-size * 1rem);
 }
 
 ._margin-left (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    margin-left: (@px-size * 1px);
-    margin-left: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	margin-left: (@px-size * 1px);
+	margin-left: (@rem-size * 1rem);
 }
 
 ._padding (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    padding: (@px-size * 1px);
-    padding: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	padding: (@px-size * 1px);
+	padding: (@rem-size * 1rem);
 }
 
 ._padding (@top,  @left) {
-    @top-rem: @top / @TYPE-FontSize;
-    @left-rem: @left / @TYPE-FontSize;
-    padding: (@top * 1px) (@left * 1px) ;
-    padding: (@top-rem * 1rem) (@left-rem * 1rem);
+	@top-rem: @top / @TYPE-FontSize;
+	@left-rem: @left / @TYPE-FontSize;
+	padding: (@top * 1px) (@left * 1px) ;
+	padding: (@top-rem * 1rem) (@left-rem * 1rem);
 }
 
 ._padding (@top, @right, @bottom, @left) {
-    @top-rem: @top / @TYPE-FontSize;
-    @right-rem: @right / @TYPE-FontSize;
-    @bottom-rem: @bottom / @TYPE-FontSize;
-    @left-rem: @left / @TYPE-FontSize;
-    padding: (@top * 1px) (@right * 1px)  (@bottom * 1px)  (@left * 1px) ;
-    padding: (@top-rem * 1rem) (@right-rem * 1rem) (@bottom-rem * 1rem) (@left-rem * 1rem);
+	@top-rem: @top / @TYPE-FontSize;
+	@right-rem: @right / @TYPE-FontSize;
+	@bottom-rem: @bottom / @TYPE-FontSize;
+	@left-rem: @left / @TYPE-FontSize;
+	padding: (@top * 1px) (@right * 1px)  (@bottom * 1px)  (@left * 1px) ;
+	padding: (@top-rem * 1rem) (@right-rem * 1rem) (@bottom-rem * 1rem) (@left-rem * 1rem);
 }
 
 ._padding-top (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    padding-top: (@px-size * 1px);
-    padding-top: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	padding-top: (@px-size * 1px);
+	padding-top: (@rem-size * 1rem);
 }
 
 ._padding-right (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    padding-right: (@px-size * 1px);
-    padding-right: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	padding-right: (@px-size * 1px);
+	padding-right: (@rem-size * 1rem);
 }
 
 ._padding-bottom (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    padding-bottom: (@px-size * 1px);
-    padding-bottom: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	padding-bottom: (@px-size * 1px);
+	padding-bottom: (@rem-size * 1rem);
 }
 
 ._padding-left (@px-size){
-    @rem-size: @px-size / @TYPE-FontSize;
-    padding-left: (@px-size * 1px);
-    padding-left: (@rem-size * 1rem);
+	@rem-size: @px-size / @TYPE-FontSize;
+	padding-left: (@px-size * 1px);
+	padding-left: (@rem-size * 1rem);
 }
 
 // PERCENTAGES
 // ----------------------------------------------------
 
 ._percentage (@first, @second) {
-    width: ((@first/@second) * 100%);
+	width: ((@first/@second) * 100%);
 }
 
 // SIZE
 // ----------------------------------------------------
 
 ._size (@size) {
-    width: @size;
-    height: @size;
+	width: @size;
+	height: @size;
 }
 
 ._size (@width, @height) {
-    width: @width;
-    height: @height;
+	width: @width;
+	height: @height;
+}
+
+
+// LIST COLUMNS
+// ----------------------------------------------------
+
+.list-column (@num-cols, @gap){
+	@totalgap: (@gap * (@num-cols - 1));
+	width: ((100% - @totalgap) / @num-cols);
+	margin-right: (@gap * 1%);
+
+	.dotless-styles() when not (@COMPILER-DotLess) {
+
+		&:nth-child( @{num-cols}n+@{num-cols}) {
+			margin-right: 0;
+		}
+		&:nth-child(@{num-cols}n+1) {
+			clear:both;
+		}
+	}
+	.dotless-styles() when (@COMPILER-DotLess) {
+
+		//@nselector: e("@{num-cols}n+@{num-cols}");
+		//&:nth-child(@nselector) {
+		//    margin-right: 0;
+		//}
+		//nEndSelector: e("@{num-cols}n+1");
+		//:nth-child(@nEndSelector) {
+		//   clear: both;
+		//
+	}
+	.dotless-styles();
+
+/*
+// http://rachaelmoore.name/posts/design/css/interpolate-strings-dotless/
+// https://github.com/less/less.js/issues/293
+// https://groups.google.com/forum/#!topic/dotless/IgzOO2GKXV4
+*/
+}
+
+
+._list-column-custom (@row1-cols, @row2-cols, @gap){
+	@totalgap: (@gap * (@row2-cols - 1));
+	@totalrow2: @row1-cols + @row2-cols;
+	@totalrow2clear: @totalrow2 +1;
+	width: ((100% - @totalgap) / @row2-cols);
+	margin-right: (@gap * 1%);
+
+	&:first-child {
+		width: 100%;
+		margin-right: 0;
+	}
+
+
+	.dotless-styles() when not (@COMPILER-DotLess) {
+
+		&:nth-child( @{row2-cols}n+@{totalrow2} ) {
+			margin-right: 0;
+		}
+		&:nth-child( @{row2-cols}n+@{totalrow2clear} ) {
+			clear: both;
+		}
+
+	}
+	.dotless-styles() when (@COMPILER-DotLess) {
+
+		//@nselector: e("@{row2-cols}n+@{totalrow2}");
+		//&:nth-child(@nselector) {
+		//@nEndSelector: e("@{row2-cols}n+@{totalrow2clear}");
+		//&:nth-child(@nEndSelector) {
+	}
+	.dotless-styles();
+}
+
+
+// ICON SPRITE
+// ----------------------------------------------------
+
+._iconSprite (@sprite-width, @sprite-height, @sprite-url, @sprite-bg:transparent){
+	background: @sprite-bg url( @sprite-url ) 0 0 no-repeat;
+	width: @sprite-width *1px;
+	height: @sprite-height *1px;
+	line-height: 1/(@sprite-height / @TYPE-FontSize *1em);
+	vertical-align: middle;
+	._inline-block;
 }

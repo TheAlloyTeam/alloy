@@ -4,19 +4,10 @@
 
 // IE8
 // ----------------------------------------------------
+// IE8 styles should go in the ie8.less stylesheet (it's called separately in the HTML)
+// If there are any calculations or mixins required for them to work,
+// you need to also import @the-mixin-file in the ie8-vars.less
 
-.ie8 {
-
-	// Elements which use translate to centre vertically
-	.banner__foreground {
-		top: 0;
-	}
-
-	.ie8-hide {
-		display: none;
-	}
-
-}
 
 // IE9
 // ----------------------------------------------------
