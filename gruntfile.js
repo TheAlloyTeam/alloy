@@ -246,4 +246,7 @@ module.exports = function(grunt) {
     // Default Tasks
     grunt.registerTask('default', ['less','jshint','requirejs','imagemin','svgmin','clean','assemble','copy','connect','watch']);
 
+    // Static build without watch
+    grunt.registerTask('build', ['less','jshint','requirejs','imagemin','svgmin','clean','assemble','copy']);
+
 };

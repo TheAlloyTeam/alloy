@@ -355,8 +355,11 @@
 </script>
 {{/if}}
 
+{{#if currently-developing}}
 <script src="http://localhost:35730/livereload.js"></script>
+{{/if}}
 
+{{#if analytics-and-tracking}}
 <!-- Google Analytics -->
 <script>
     var _gaq=[['_setAccount','{{app.analytics}}'],['_trackPageview']];
@@ -364,3 +367,4 @@
     g.src='//www.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
+{{/if}}

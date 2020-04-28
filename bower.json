@@ -1,9 +1,9 @@
 {
     "name": "Alloy",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "repository": {
         "type": "git",
-        "url": "git://github.com/gfinbow/alloy.git"
+        "url": "git://github.com/jamcow/alloy.git"
     },
     "main": [
         "index.html",
